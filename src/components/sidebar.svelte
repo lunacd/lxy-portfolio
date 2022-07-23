@@ -5,12 +5,12 @@
 </script>
 
 <div
-  class="relative h-screen min-h-132 flex-shrink-0 bg-white shadow-lg transition-[width] duration-200 ease-in-out xl:min-h-152"
+  class="relative h-screen min-h-[30rem] flex-shrink-0 bg-white shadow-lg transition-[width] duration-200 ease-in-out xl:min-h-[34rem]"
   class:w-64={open}
   class:xl:w-84={open}
   class:w-0={!open}
 >
-  <div class="absolute top-0 right-18 flex h-full w-36 flex-col justify-between py-24 xl:right-24">
+  <div class="absolute top-0 right-18 flex h-full w-36 flex-col justify-between py-16 xl:right-24">
     <a href="/">
       <img src={Logo} alt="Shirley Lyu Logo" class="w-full" loading="lazy" />
     </a>
@@ -26,7 +26,7 @@
       <a href="/More" class="paragraph">More</a>
 
       <a href="/mini" class="subtitle">Mini Works</a>
-      <a href="/resume" class="subtitle pb-8">Resume</a>
+      <a href="/resume" class="subtitle pb-4">Resume</a>
     </div>
     <div class="flex flex-row justify-between">
       <a href="https://www.instagram.com/lyu.shirley/" target="_blank">

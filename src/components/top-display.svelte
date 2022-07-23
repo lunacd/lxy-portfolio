@@ -4,7 +4,7 @@
   export let image: string, description: ProjectDescription, titleColor: string;
 </script>
 
-<div class="mb-spacing-3lg flex h-screen min-h-132 flex-col xl:min-h-152">
+<div class="mb-spacing-3lg flex h-screen min-h-[30rem] flex-col xl:min-h-[34rem]">
   <div class="relative min-h-0 w-full flex-shrink flex-grow">
     <img src={image} alt={description.name} class="h-full w-full object-cover" loading="lazy" />
     <div class={`absolute left-spacing-lg top-24 text-3xl ${titleColor}`}>{description.name}</div>
