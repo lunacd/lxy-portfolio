@@ -5,3 +5,7 @@
 :root {
   font-family: 'Catamaran', sans-serif;
 }
+
+body {
+  overflow-x: hidden;
+}
