@@ -11,7 +11,7 @@
   </div>
   <div class="flex flex-col items-center">
     <div class="single mx-spacing-lg flex flex-row space-x-spacing py-8">
-      <div class="half space-y-2">
+      <div class="half flex flex-col justify-around space-y-1">
         <div class="section">
           <span class="heading">Duration:</span>
           {description.duration}
@@ -25,16 +25,11 @@
           {description.focus}
         </div>
       </div>
-      <div class="half space-y-2">
+      <div class="half flex flex-col justify-around space-y-1">
         <div class="section">
           <span class="heading">Project Brief:</span>
           {description.brief}
         </div>
-        {#if description.comment !== undefined}
-          <div class="text-xs">
-            * {description.comment}
-          </div>
-        {/if}
       </div>
     </div>
   </div>

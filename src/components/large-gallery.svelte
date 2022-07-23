@@ -2,7 +2,9 @@
   import { GalleryRow, GalleryRowConfig } from '../utils/gallery-row';
   import Animatable from './animatable.svelte';
 
-  export let rows: GalleryRow[], description: string;
+  export let rows: GalleryRow[],
+    description: string,
+    botSpacing = true;
 
   var width: number;
   let rowFactors = rows.map((row) =>
@@ -10,7 +12,12 @@
   );
 </script>
 
-<div class="mb-spacing-3lg space-y-spacing" bind:clientWidth={width}>
+<div
+  class="space-y-spacing"
+  bind:clientWidth={width}
+  class:mb-spacing-3lg={botSpacing}
+  class:mb-spacing={!botSpacing}
+>
   {#each rows as row, i}
     {#if row.config === GalleryRowConfig.FixedHeight}
       <div class="flex flex-row space-x-8">

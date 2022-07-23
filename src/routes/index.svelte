@@ -19,6 +19,7 @@
   import CenterImage from '../components/center-image.svelte';
   import ProjectNavigation from '../components/project-navigation.svelte';
   import { GalleryRow } from '../utils/gallery-row';
+  import Spacing from '../components/spacing.svelte';
 
   import TopImage from '../images/overlap/top.jpg?webp&w=1920';
   import ManifestoImage from '../images/overlap/manifesto.jpg?webp&w=960';
@@ -97,8 +98,7 @@
         '14 Weeks',
         'Lifestyle Product Design',
         'Prototype, Techdrawing, Modelmaking, Manufacture',
-        'Designing and making a line of accessories for Hay. The design will include a range of small and functional objects, which fits the brand identity and considers the company’s manufacturing techniques, as well their use of materials.',
-        'This is not a product of Hay. Branding and logo marks are used for demonstration purposes only.'
+        'Designing and making a line of accessories for Hay. The design will include a range of small and functional objects, which fits the brand identity and considers the company’s manufacturing techniques, as well their use of materials.'
       )}
       titleColor="text-gray-900"
     />
@@ -242,7 +242,13 @@
         new GalleryRow([new Image(Gallery6, 12767, 7125)])
       ]}
       description="Overlap"
+      botSpacing={false}
     />
+    <div class="text-center text-xs">
+      This is not a product of Hay. Branding and logo marks are used for demonstration purposes
+      only.
+    </div>
+    <Spacing />
 
     <ProjectNavigation next="/lyu" />
   </Scroller>

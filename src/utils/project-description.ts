@@ -4,7 +4,6 @@ class ProjectDescription {
   category: string;
   focus: string;
   brief: string;
-  comment: string | undefined;
 
   constructor(
     name: string,
@@ -12,14 +11,12 @@ class ProjectDescription {
     category: string,
     focus: string,
     brief: string,
-    comment?: string
   ) {
     this.name = name;
     this.duration = duration;
     this.category = category;
     this.focus = focus;
     this.brief = brief;
-    this.comment = comment;
   }
 }
 
