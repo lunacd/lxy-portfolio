@@ -4,11 +4,11 @@
   export let bgColor: string;
 </script>
 
-<div class={`flex-grow ${bgColor}`}>
-  <div class="h-screen min-h-[30rem] overflow-x-hidden overflow-y-scroll xl:min-h-[34rem]">
-    <div class="flex flex-col items-center">
-      <slot />
-      <Spacing />
-    </div>
+<div
+  class={`flex-grow ${bgColor} h-screen min-h-[30rem] xl:min-h-[34rem] overflow-x-hidden overflow-y-scroll`}
+>
+  <div class="flex flex-col items-center">
+    <slot />
+    <Spacing />
   </div>
 </div>
