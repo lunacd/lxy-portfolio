@@ -2,10 +2,10 @@
   import '../app.css';
 </script>
 
-<div class="hidden md:block">
+<div class="hidden lg:block">
   <slot />
 </div>
-<div class="m-12 block font-semibold md:hidden">
+<div class="m-12 block font-semibold lg:hidden">
   Your screen is too small. Use a larger device or enlarge your browser window.
 </div>
 

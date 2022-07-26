@@ -7,7 +7,9 @@
 <div class="mb-spacing-3lg flex h-screen min-h-[30rem] flex-col xl:min-h-[34rem]">
   <div class="relative min-h-0 w-full flex-shrink flex-grow">
     <img src={image} alt={description.name} class="h-full w-full object-cover" loading="lazy" />
-    <div class={`absolute left-spacing-lg top-24 text-3xl ${titleColor}`}>{description.name}</div>
+    <div class="absolute left-0 top-0 flex h-full w-full justify-center">
+      <div class={`single mt-12 xl:mt-24 text-3xl ${titleColor}`}>{description.name}</div>
+    </div>
   </div>
   <div class="flex flex-col items-center">
     <div class="single mx-spacing-lg flex flex-row space-x-spacing py-8">
