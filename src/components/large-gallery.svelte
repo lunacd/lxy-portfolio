@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { GalleryRow, GalleryRowConfig } from '../utils/gallery-row';
   import Animatable from './animatable.svelte';
 
@@ -6,10 +7,18 @@
     description: string,
     botSpacing = true;
 
-  var width: number;
+  let width: number;
   let rowFactors = rows.map((row) =>
     row.images.map((curr) => curr.width / curr.height).reduce((prev, curr) => prev + curr)
   );
+  let index = 0;
+
+  onMount(() => {
+    setInterval(() => {
+      index += 1;
+      console.log(index);
+    }, 1500);
+  });
 </script>
 
 <div
@@ -23,11 +32,12 @@
       <div class="flex flex-row space-x-8">
         {#each row.images as image}
           {#if row.images.length === 1}
-            <Animatable source={image} alt={`${description} gallery image`} />
+            <Animatable source={image} alt={`${description} gallery image`} frame={index} />
           {:else}
             <Animatable
               source={image}
               alt={`${description} gallery image`}
+              frame={index}
               adaptiveHeight={true}
               totalWidth={width}
               rowCount={row.images.length}
@@ -43,7 +53,7 @@
         class:items-end={row.config === GalleryRowConfig.EqualWidthEnd}
       >
         {#each row.images as image}
-          <Animatable source={image} alt={`${description} gallery image`} />
+          <Animatable source={image} alt={`${description} gallery image`} frame={index} />
         {/each}
       </div>
     {/if}
