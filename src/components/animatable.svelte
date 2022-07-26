@@ -10,8 +10,8 @@
     rowCount = 0,
     rowFactor = 0;
 
-  let currentImage: string = '';
-  let alternateImage: string = '';
+  let currentImage = '';
+  let alternateImage = '';
   let mainVisible = true;
   let currentIndex = 0;
 

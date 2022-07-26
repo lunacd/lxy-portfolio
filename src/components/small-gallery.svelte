@@ -8,7 +8,7 @@
   {#each items as item}
     <div class="flex flex-col items-center">
       <img src={item.image} alt={item.title} loading="lazy" />
-      <div class="mt-2 subtitle">{item.title}</div>
+      <div class="subtitle mt-2">{item.title}</div>
     </div>
   {/each}
 </div>
