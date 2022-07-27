@@ -1,7 +1,21 @@
 <script lang="ts">
+  import { Route } from '../utils/route';
   import Logo from '../images/logo.svg';
+  import { crossfade } from '../utils/crossfade';
 
-  var open = true;
+  const [send, receive] = crossfade;
+
+  export let currentRoute: string;
+
+  let open = true;
+  const routes = [
+    new Route('overlap', 'Overlap'),
+    new Route('lyu', 'Lyu'),
+    new Route('soul', 'Soul'),
+    new Route('sunrise', 'Sunrise Speaker'),
+    new Route('mode', 'Mode Bag'),
+    new Route('more', 'More')
+  ];
 </script>
 
 <div
@@ -18,12 +32,22 @@
       <a href="/about" class="subtitle">About</a>
       <a href="/portfolio" class="subtitle">Portfolio</a>
 
-      <a href="/overlap" class="paragraph">Overlap</a>
-      <a href="/lyu" class="paragraph">Lyu</a>
-      <a href="/soul" class="paragraph">Soul</a>
-      <a href="/sunrise" class="paragraph">Sunrise Speaker</a>
-      <a href="/mode" class="paragraph">Mode Bag</a>
-      <a href="/More" class="paragraph">More</a>
+      {#each routes as route}
+        <div class="flex flex-row items-center">
+          <!-- <div class="absolute transition-opacity" class:opacity-0={route.uri !== currentRoute}>
+            -
+          </div> -->
+          <a
+            href={`/${route.uri}`}
+            class="paragraph transition-transform"
+            class:translate-x-3={route.uri === currentRoute}
+            out:send={{ key: route.uri }}
+            in:receive={{ key: route.uri }}
+          >
+            {route.name}
+          </a>
+        </div>
+      {/each}
 
       <a href="/mini" class="subtitle">Mini Works</a>
       <a href="/resume" class="subtitle pb-4">Resume</a>

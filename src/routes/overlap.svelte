@@ -89,7 +89,7 @@
 </svelte:head>
 
 <PageRoot>
-  <Sidebar />
+  <Sidebar currentRoute="overlap" />
   <Scroller bgColor="bg-[#FDF9F1]">
     <TopDisplay
       image={TopImage}

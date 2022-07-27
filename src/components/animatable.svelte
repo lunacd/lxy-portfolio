@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Animation } from '../utils/animation';
   import type { Image } from '../utils/image';
-  import { onMount } from 'svelte';
 
   export let source: Animation | Image,
     alt: string,

@@ -16,7 +16,6 @@
   onMount(() => {
     setInterval(() => {
       index += 1;
-      console.log(index);
     }, 1500);
   });
 </script>

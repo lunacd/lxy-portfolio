@@ -88,7 +88,7 @@
 </svelte:head>
 
 <PageRoot>
-  <Sidebar />
+  <Sidebar currentRoute="lyu" />
   <Scroller bgColor="bg-[#EFF2F3]">
     <TopDisplay
       image={DisplayImage}
@@ -145,7 +145,8 @@
         new GalleryItem(BagMaking9, 'Cylinder Sewing')
       ]}
     />
-    <!-- Tote bag making process -->
+
+    <!-- Slipper making process -->
     <Title title="Slippers Making Process" />
     <SmallGallery
       items={[
@@ -204,6 +205,6 @@
       description="Lyu"
     />
 
-    <ProjectNavigation prev="/overlay" next="/soul" />
+    <ProjectNavigation prev="/overlap" next="/soul" />
   </Scroller>
 </PageRoot>
