@@ -11,17 +11,31 @@ for dirpath, dirnames, filenames in os.walk("./images"):
         basename, ext = os.path.splitext(name)
 
         # Check extension
-        if ext.lower() not in [".png", ".jpg"]:
+        if ext.lower() not in [".png", ".jpg", ".webp"]:
             print(colorama.Fore.RED + "Image of type " +
                   ext + " is not supported")
             err_count += 1
             continue
 
+        if basename.endswith("full"):
+            target_width = 1920
+        elif basename.endswith("big"):
+            target_width = 1280
+        elif basename.endswith("half"):
+            target_width = 960
+        elif basename.endswith("small"):
+            target_width = 640
+        else:
+            print(colorama.Fore.RED + "Unknown width: " + name)
+            err_count += 1
+            continue
+
         src = os.path.join(dirpath, name)
+        dest = os.path.join(dirpath, basename + ".webp")
 
         im = Image.open(src)
         w, h = im.size
-        if w <= 1920:
+        if w <= target_width and ext in [".webp"]:
             continue
 
         subprocess.call([
@@ -33,11 +47,11 @@ for dirpath, dirnames, filenames in os.walk("./images"):
             "-quality",
             "85",
             "-resize",
-            '1920',
-            src
+            str(target_width),
+            dest
         ])
         print(colorama.Fore.GREEN + "===>" +
-              colorama.Fore.RESET + " Successfully outputed " + src)
+              colorama.Fore.RESET + " Successfully generated " + src)
 
 if err_count == 0:
     print("Completed successfully.")

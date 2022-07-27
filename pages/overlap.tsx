@@ -23,67 +23,67 @@ import { GalleryRow } from "../utils/gallery-row";
 import ImageData from "../utils/image-data";
 import ProjectDescription from "../utils/project-description";
 
-import CMF1 from "../images/overlap/CMF/CMF-01.png";
-import CMF2 from "../images/overlap/CMF/CMF-02.png";
-import CMF3 from "../images/overlap/CMF/CMF-03.png";
-import CMF4 from "../images/overlap/CMF/CMF-04.png";
-import CMF5 from "../images/overlap/CMF/CMF-05.png";
-import CMF6 from "../images/overlap/CMF/CMF-06.png";
-import CMF7 from "../images/overlap/CMF/CMF-07.png";
-import CMF8 from "../images/overlap/CMF/CMF-08.png";
-import AcrylicGluing from "../images/overlap/acrylic-gluing.png";
-import Assembly from "../images/overlap/assembly.png";
-import BandSawCut from "../images/overlap/band-saw-cut.png";
-import Benchmark from "../images/overlap/benchmark.png";
-import Accessible from "../images/overlap/brand-dna/accessible.png";
-import Adaptive from "../images/overlap/brand-dna/adaptive.png";
-import Contemporary from "../images/overlap/brand-dna/contemporary.png";
-import Playful from "../images/overlap/brand-dna/playful.png";
-import Vibrant from "../images/overlap/brand-dna/vibrant.png";
-import ClearMatteFinishSpray from "../images/overlap/clear-matte-finish-spray.png";
-import CNC from "../images/overlap/cnc.png";
-import TopImage from "../images/overlap/display.jpg";
-import FileSorterUseImage1 from "../images/overlap/file-sorter-use-1.png";
-import FileSorterUseImage2 from "../images/overlap/file-sorter-use-2.png";
-import FileSorterImage from "../images/overlap/file-sorter.png";
-import Gallery1 from "../images/overlap/gallery/gallery-1.png";
-import Gallery2 from "../images/overlap/gallery/gallery-2.png";
-import Gallery3 from "../images/overlap/gallery/gallery-3.png";
-import Gallery4 from "../images/overlap/gallery/gallery-4.png";
-import Gallery5 from "../images/overlap/gallery/gallery-5.png";
-import Gallery6 from "../images/overlap/gallery/gallery-6.png";
-import HandSanding from "../images/overlap/hand-sanding.png";
-import Ideation from "../images/overlap/ideation.png";
-import LaserCut from "../images/overlap/laser-cut.png";
-import MachineSanding from "../images/overlap/machine-sanding.png";
-import ManifestoImage from "../images/overlap/manifesto.jpg";
-import Overlay1 from "../images/overlap/overlay-1.png";
-import Overlay2 from "../images/overlap/overlay-2.png";
-import Overlay3 from "../images/overlap/overlay-3.png";
-import Prototype from "../images/overlap/prototype.png";
-import RouterChamfer from "../images/overlap/router-chamfer.png";
-import Set1 from "../images/overlap/set-1.png";
-import Set2 from "../images/overlap/set-2.png";
-import Set3 from "../images/overlap/set-3.png";
-import TechDrawing1 from "../images/overlap/tech-drawing/tech-drawing-01.png";
-import TechDrawing2 from "../images/overlap/tech-drawing/tech-drawing-02.png";
-import TechDrawing3 from "../images/overlap/tech-drawing/tech-drawing-03.png";
-import TechDrawing4 from "../images/overlap/tech-drawing/tech-drawing-04.png";
-import TechDrawing5 from "../images/overlap/tech-drawing/tech-drawing-05.png";
-import TechDrawing6 from "../images/overlap/tech-drawing/tech-drawing-06.png";
-import TechDrawing7 from "../images/overlap/tech-drawing/tech-drawing-07.png";
-import TechDrawing8 from "../images/overlap/tech-drawing/tech-drawing-08.png";
-import TechDrawing9 from "../images/overlap/tech-drawing/tech-drawing-09.png";
-import TechDrawing10 from "../images/overlap/tech-drawing/tech-drawing-10.png";
-import TechDrawing11 from "../images/overlap/tech-drawing/tech-drawing-11.png";
-import TimerUseImage from "../images/overlap/timer-use.png";
-import TimerImage from "../images/overlap/timer.png";
-import TrayUseImage1 from "../images/overlap/tray-use-1.png";
-import TrayUseImage2 from "../images/overlap/tray-use-2.png";
-import TrayImage from "../images/overlap/tray.png";
-import WoodCut from "../images/overlap/wood-cut.png";
-import WoodFlatten from "../images/overlap/wood-flatten.png";
-import WoodStain from "../images/overlap/wood-stain.png";
+import CMF1 from "../images/overlap/CMF/CMF-01-full.webp";
+import CMF2 from "../images/overlap/CMF/CMF-02-full.webp";
+import CMF3 from "../images/overlap/CMF/CMF-03-full.webp";
+import CMF4 from "../images/overlap/CMF/CMF-04-full.webp";
+import CMF5 from "../images/overlap/CMF/CMF-05-full.webp";
+import CMF6 from "../images/overlap/CMF/CMF-06-full.webp";
+import CMF7 from "../images/overlap/CMF/CMF-07-full.webp";
+import CMF8 from "../images/overlap/CMF/CMF-08-full.webp";
+import AcrylicGluing from "../images/overlap/acrylic-gluing-small.webp";
+import Assembly from "../images/overlap/assembly-small.webp";
+import BandSawCut from "../images/overlap/band-saw-cut-small.webp";
+import Benchmark from "../images/overlap/benchmark-full.webp";
+import Accessible from "../images/overlap/brand-dna/accessible-small.webp";
+import Adaptive from "../images/overlap/brand-dna/adaptive-small.webp";
+import Contemporary from "../images/overlap/brand-dna/contemporary-small.webp";
+import Playful from "../images/overlap/brand-dna/playful-small.webp";
+import Vibrant from "../images/overlap/brand-dna/vibrant-small.webp";
+import ClearMatteFinishSpray from "../images/overlap/clear-matte-finish-spray-small.webp";
+import CNC from "../images/overlap/cnc-small.webp";
+import DisplayImage from "../images/overlap/display-full.webp";
+import FileSorterImage from "../images/overlap/file-sorter-half.webp";
+import FileSorterUseImage1 from "../images/overlap/file-sorter-use-1-big.webp";
+import FileSorterUseImage2 from "../images/overlap/file-sorter-use-2-big.webp";
+import Gallery1 from "../images/overlap/gallery/gallery-1-full.webp";
+import Gallery2 from "../images/overlap/gallery/gallery-2-half.webp";
+import Gallery3 from "../images/overlap/gallery/gallery-3-half.webp";
+import Gallery4 from "../images/overlap/gallery/gallery-4-half.webp";
+import Gallery5 from "../images/overlap/gallery/gallery-5-full.webp";
+import Gallery6 from "../images/overlap/gallery/gallery-6-full.webp";
+import HandSanding from "../images/overlap/hand-sanding-small.webp";
+import Ideation from "../images/overlap/ideation-full.webp";
+import LaserCut from "../images/overlap/laser-cut-small.webp";
+import MachineSanding from "../images/overlap/machine-sanding-small.webp";
+import ManifestoImage from "../images/overlap/manifesto-half.webp";
+import Overlay1 from "../images/overlap/overlay-1-full.webp";
+import Overlay2 from "../images/overlap/overlay-2-full.webp";
+import Overlay3 from "../images/overlap/overlay-3-full.webp";
+import Prototype from "../images/overlap/prototype-full.webp";
+import RouterChamfer from "../images/overlap/router-chamfer-small.webp";
+import Set1 from "../images/overlap/set-1-half.webp";
+import Set2 from "../images/overlap/set-2-half.webp";
+import Set3 from "../images/overlap/set-3-half.webp";
+import TechDrawing1 from "../images/overlap/tech-drawing/tech-drawing-01-full.webp";
+import TechDrawing2 from "../images/overlap/tech-drawing/tech-drawing-02-full.webp";
+import TechDrawing3 from "../images/overlap/tech-drawing/tech-drawing-03-full.webp";
+import TechDrawing4 from "../images/overlap/tech-drawing/tech-drawing-04-full.webp";
+import TechDrawing5 from "../images/overlap/tech-drawing/tech-drawing-05-full.webp";
+import TechDrawing6 from "../images/overlap/tech-drawing/tech-drawing-06-full.webp";
+import TechDrawing7 from "../images/overlap/tech-drawing/tech-drawing-07-full.webp";
+import TechDrawing8 from "../images/overlap/tech-drawing/tech-drawing-08-full.webp";
+import TechDrawing9 from "../images/overlap/tech-drawing/tech-drawing-09-full.webp";
+import TechDrawing10 from "../images/overlap/tech-drawing/tech-drawing-10-full.webp";
+import TechDrawing11 from "../images/overlap/tech-drawing/tech-drawing-11-full.webp";
+import TimerImage from "../images/overlap/timer-half.webp";
+import TimerUseImage from "../images/overlap/timer-use-big.webp";
+import TrayImage from "../images/overlap/tray-half.webp";
+import TrayUseImage1 from "../images/overlap/tray-use-1-big.webp";
+import TrayUseImage2 from "../images/overlap/tray-use-2-big.webp";
+import WoodCut from "../images/overlap/wood-cut-small.webp";
+import WoodFlatten from "../images/overlap/wood-flatten-small.webp";
+import WoodStain from "../images/overlap/wood-stain-small.webp";
 
 const Overlap: NextPage = () => {
   return (
@@ -96,7 +96,7 @@ const Overlap: NextPage = () => {
         <Sidebar route="overlap" />
         <Scroller bgColor="bg-[#FDF9F1]">
           <TopDisplay
-            image={TopImage}
+            image={DisplayImage}
             description={
               new ProjectDescription(
                 "Overlap",
