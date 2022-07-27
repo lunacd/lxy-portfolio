@@ -1,0 +1,6 @@
+.section {
+  @apply font-extralight;
+  & span {
+    @apply font-semibold;
+  }
+}

@@ -1,0 +1,3 @@
+.angle {
+  @apply relative transition-opacity duration-150;
+}

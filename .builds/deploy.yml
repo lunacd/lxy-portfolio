@@ -1,0 +1,22 @@
+image: rockylinux/8
+secrets:
+  - 2a951cc8-a728-4dfc-947f-63fdb66e8fee
+triggers:
+  - action: email
+    condition: failure
+    to: Haowen Liu <lhw@lunacd.com>
+tasks:
+  - setup: |
+      sudo dnf module install nodejs:16 -y
+      sudo dnf install nodejs -y
+      sudo corepack enable
+  # - build: |
+  #     cd lxy-portfolio-next
+  #     yarn
+  #     yarn export
+  - deploy: |
+      cd lxy-portfolio-next
+      set +x
+      source ~/.vercel_token
+      yarn dlx -q vercel -t $VERCEL_TOKEN -c --prod
+      set -x
