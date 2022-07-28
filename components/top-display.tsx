@@ -30,24 +30,47 @@ const TopDisplay: React.FC<TopDisplayProps> = (props) => {
       </div>
       <div className="flex flex-col items-center">
         <div className="single mx-spacing-lg flex flex-row space-x-spacing py-8">
-          <div className="half flex flex-col justify-around space-y-1">
-            <div className={styles.section}>
+          <div className="half flex flex-col space-y-1 relative">
+            <div className={`${styles.section} opacity-0`}>
               <span className={styles.heading}>Duration: </span>
-              {props.description.duration}
+              14 Weeks
             </div>
-            <div className={styles.section}>
+            <div className={`${styles.section} opacity-0`}>
               <span className={styles.heading}>Category: </span>
-              {props.description.category}
+              Lifestyle Product Design
             </div>
-            <div className={styles.section}>
+            <div className={`${styles.section} opacity-0`}>
               <span className={styles.heading}>Project Focus: </span>
-              {props.description.focus}
+              Prototype, Tech Drawing, Model Making, Manufacture
+            </div>
+            <div className="absolute left-0 top-0 w-full h-full !mt-0 flex flex-col justify-start space-y-1">
+              <div className={styles.section}>
+                <span className={styles.heading}>Duration: </span>
+                {props.description.duration}
+              </div>
+              <div className={styles.section}>
+                <span className={styles.heading}>Category: </span>
+                {props.description.category}
+              </div>
+              <div className={styles.section}>
+                <span className={styles.heading}>Project Focus: </span>
+                {props.description.focus}
+              </div>
             </div>
           </div>
-          <div className="half flex flex-col justify-around space-y-1">
-            <div className={styles.section}>
+          <div className="half flex flex-col justify-center relative">
+            <div className={`${styles.section} opacity-0`}>
               <span className={styles.heading}>Project Brief: </span>
-              {props.description.brief}
+              Designing and making a line of accessories for Hay. The design
+              will include a range of small and functional objects, which fits
+              the brand identity and considers the company&apos;s manufacturing
+              techniques, as well their use of materials.
+            </div>
+            <div className="half flex flex-col absolute left-0 top-0 w-full h-full justify-start">
+              <div className={styles.section}>
+                <span className={styles.heading}>Project Brief: </span>
+                {props.description.brief}
+              </div>
             </div>
           </div>
         </div>
