@@ -17,7 +17,6 @@ import TopDisplay from "../components/top-display";
 import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRow, GalleryRowConfig } from "../utils/gallery-row";
-import ProjectDescription from "../utils/project-description";
 
 import BagMaking1 from "../images/lyu/bag-making-1-small.webp";
 import BagMaking2 from "../images/lyu/bag-making-2-small.webp";
@@ -28,7 +27,6 @@ import BagMaking6 from "../images/lyu/bag-making-6-small.webp";
 import BagMaking7 from "../images/lyu/bag-making-7-small.webp";
 import BagMaking8 from "../images/lyu/bag-making-8-small.webp";
 import BagMaking9 from "../images/lyu/bag-making-9-small.webp";
-import DisplayImage from "../images/lyu/display-full.webp";
 import Ease1 from "../images/lyu/ease-1-half.webp";
 import Ease2 from "../images/lyu/ease-2-half.webp";
 import Ease3 from "../images/lyu/ease-3-half.webp";
@@ -92,21 +90,9 @@ const Lyu: NextPage = () => {
       </Head>
 
       <PageRoot>
-        <Sidebar route="lyu" />
+        <Sidebar route="lyu" prevRoute="" />
         <Scroller bgColor="bg-[#EFF2F3]">
-          <TopDisplay
-            image={DisplayImage}
-            description={
-              new ProjectDescription(
-                "Lyu",
-                "2 Weeks Daily",
-                "Soft Goods",
-                "Craft, Tech Drawing, Manufacture",
-                "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
-              )
-            }
-            titleColor="text-gray-100"
-          />
+          <TopDisplay project="lyu" />
 
           {/* Manifesto */}
           <TextImage

@@ -21,7 +21,6 @@ import TopDisplay from "../components/top-display";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRow } from "../utils/gallery-row";
 import ImageData from "../utils/image-data";
-import ProjectDescription from "../utils/project-description";
 
 import CMF1 from "../images/overlap/CMF/CMF-01-full.webp";
 import CMF2 from "../images/overlap/CMF/CMF-02-full.webp";
@@ -42,7 +41,6 @@ import Playful from "../images/overlap/brand-dna/playful-small.webp";
 import Vibrant from "../images/overlap/brand-dna/vibrant-small.webp";
 import ClearMatteFinishSpray from "../images/overlap/clear-matte-finish-spray-small.webp";
 import CNC from "../images/overlap/cnc-small.webp";
-import DisplayImage from "../images/overlap/display-full.webp";
 import FileSorterImage from "../images/overlap/file-sorter-half.webp";
 import FileSorterUseImage1 from "../images/overlap/file-sorter-use-1-big.webp";
 import FileSorterUseImage2 from "../images/overlap/file-sorter-use-2-big.webp";
@@ -93,21 +91,9 @@ const Overlap: NextPage = () => {
       </Head>
 
       <PageRoot>
-        <Sidebar route="overlap" />
+        <Sidebar route="overlap" prevRoute="" />
         <Scroller bgColor="bg-[#FDF9F1]">
-          <TopDisplay
-            image={DisplayImage}
-            description={
-              new ProjectDescription(
-                "Overlap",
-                "14 Weeks",
-                "Lifestyle Product Design",
-                "Prototype, Tech Drawing, Model Making, Manufacture",
-                "Designing and making a line of accessories for Hay. The design will include a range of small and functional objects, which fits the brand identity and considers the company’s manufacturing techniques, as well their use of materials.",
-              )
-            }
-            titleColor="text-gray-900"
-          />
+          <TopDisplay project="overlap" />
 
           {/* Manifesto */}
           <TextImage

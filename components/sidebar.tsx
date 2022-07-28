@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 import styles from "../styles/Sidebar.module.css";
@@ -20,6 +20,7 @@ const routes = [
 
 interface SidebarProps {
   route: string;
+  prevRoute: string;
 }
 
 export const Sidebar: React.FC<SidebarProps> = (props) => {
@@ -67,10 +68,10 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                   className="absolute"
                   transition={transitionDefault}
                   initial={{
-                    opacity: "0",
+                    opacity: props.prevRoute === route.uri ? 1 : 0,
                   }}
                   animate={{
-                    opacity: props.route === route.uri ? "100%" : "0",
+                    opacity: props.route === route.uri ? 1 : 0,
                   }}
                 >
                   -
@@ -78,14 +79,11 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                 <motion.div
                   className="paragraph"
                   transition={transitionDefault}
-                  initial={{
-                    transform: "translateX(0)",
+                  style={{
+                    x: props.prevRoute === route.uri ? "0.75rem" : "0rem",
                   }}
                   animate={{
-                    transform:
-                      props.route === route.uri
-                        ? "translateX(0.75rem)"
-                        : "translateX(0)",
+                    x: props.route === route.uri ? "0.75rem" : "0rem",
                   }}
                 >
                   <Link href={`/${route.uri}`}>{route.name}</Link>
