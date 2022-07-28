@@ -135,7 +135,7 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
             </a>
           </div>
         </div>
-        <div className="absolute top-20 -right-16 z-10 h-24 w-16 overflow-hidden xl:-right-20 xl:w-20">
+        <div className="absolute top-20 -right-16 z-20 h-24 w-16 overflow-hidden xl:-right-20 xl:w-20">
           <div
             className="absolute top-0 -left-8 flex h-16 w-16 cursor-pointer items-center rounded-full bg-white shadow-lg xl:-left-10 xl:h-20 xl:w-20"
             onClick={() => {

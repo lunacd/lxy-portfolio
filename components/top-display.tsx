@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import styles from "../styles/TopDisplay.module.css";
@@ -9,6 +10,7 @@ import OverlapDisplay from "../images/overlap/display-full.webp";
 
 interface TopDisplayProps {
   project: "overlap" | "lyu";
+  link?: boolean;
 }
 
 const projectDisplay = {
@@ -31,6 +33,11 @@ const projectDescriptions = {
     "Craft, Tech Drawing, Manufacture",
     "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
   ),
+};
+
+const projectLinks = {
+  overlap: "/overlap?autoscroll=true",
+  lyu: "/lyu?autoscroll=true",
 };
 
 const titleColors = {
@@ -68,6 +75,11 @@ const TopDisplay: React.FC<TopDisplayProps> = (props) => {
           >
             {description.name}
           </div>
+          {props.link && (
+            <Link href={projectLinks[props.project]} passHref>
+              <a className="absolute w-full h-full top-0 left-0 block"></a>
+            </Link>
+          )}
         </div>
       </div>
       <div className="flex flex-col items-center">

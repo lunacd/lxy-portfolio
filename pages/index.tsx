@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -55,16 +56,23 @@ const Home: NextPage = () => {
             style={{ opacity: 1 }}
             animate={{ opacity: mainDisplay ? 1 : 0 }}
             transition={transitionSlow}
+            className={classNames("relative", {
+              "z-10": mainDisplay,
+              "z-0": !mainDisplay,
+            })}
           >
-            <TopDisplay project={projects[mainIndex]} />
+            <TopDisplay project={projects[mainIndex]} link />
           </motion.div>
           <motion.div
-            className="absolute left-0 top-0 h-full w-full"
+            className={classNames("absolute left-0 top-0 h-full w-full", {
+              "z-10": !mainDisplay,
+              "z-0": mainDisplay,
+            })}
             style={{ opacity: 0 }}
             animate={{ opacity: mainDisplay ? 0 : 1 }}
             transition={transitionSlow}
           >
-            <TopDisplay project={projects[alternateIndex]} />
+            <TopDisplay project={projects[alternateIndex]} link />
           </motion.div>
         </div>
       </PageRoot>
