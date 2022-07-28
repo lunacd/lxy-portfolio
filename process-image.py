@@ -45,9 +45,11 @@ for dirpath, dirnames, filenames in os.walk("./images"):
             "-interlace",
             "Plane",
             "-quality",
-            "85",
+            "95",
             "-resize",
             str(target_width),
+            "-define",
+            "webp:lossless=true",
             dest
         ])
         print(colorama.Fore.GREEN + "===>" +
