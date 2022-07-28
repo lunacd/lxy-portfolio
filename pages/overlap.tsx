@@ -1,5 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
+import { useInterval } from "usehooks-ts";
 
 import Carousel from "../components/carousel";
 import CenterImage from "../components/center-image";
@@ -18,6 +20,7 @@ import Subtitle from "../components/subtitle";
 import TextImage from "../components/text-image";
 import Title from "../components/title";
 import TopDisplay from "../components/top-display";
+import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRowData } from "../utils/gallery-row-data";
 import ImageData from "../utils/image-data";
@@ -44,7 +47,9 @@ import ClearMatteFinishSpray from "../images/overlap/clear-matte-finish-spray-sm
 import CNC from "../images/overlap/cnc-small.webp";
 import FileSorterImage from "../images/overlap/file-sorter-half.webp";
 import FileSorterUseImage1 from "../images/overlap/file-sorter-use-1-big.webp";
-import FileSorterUseImage2 from "../images/overlap/file-sorter-use-2-big.webp";
+import FileSorterUseImage21 from "../images/overlap/file-sorter-use-2-1-big.webp";
+import FileSorterUseImage22 from "../images/overlap/file-sorter-use-2-2-big.webp";
+import FileSorterUseImage23 from "../images/overlap/file-sorter-use-2-3-big.webp";
 import Gallery1 from "../images/overlap/gallery/gallery-1-full.webp";
 import Gallery2 from "../images/overlap/gallery/gallery-2-half.webp";
 import Gallery3 from "../images/overlap/gallery/gallery-3-half.webp";
@@ -86,6 +91,10 @@ import WoodStain from "../images/overlap/wood-stain-small.webp";
 
 const Overlap: NextPage = () => {
   const scrollDiv = useAutoscroll();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  useInterval(() => {
+    setCurrentIndex((orig) => orig + 1);
+  }, 2000);
 
   return (
     <>
@@ -163,9 +172,7 @@ const Overlap: NextPage = () => {
           <ImageText
             title="Timer usage"
             content={["Set a Time", "Set-time Passing"]}
-            image={TimerUseImage}
-            width={6400}
-            height={4517}
+            source={new ImageData(TimerUseImage, 6400, 4517)}
           />
 
           {/* File Sorter */}
@@ -181,16 +188,23 @@ const Overlap: NextPage = () => {
           <ImageText
             title="File sorter usage 1"
             content={["Put in file"]}
-            image={FileSorterUseImage1}
-            width={6300}
-            height={4500}
+            source={new ImageData(FileSorterUseImage1, 6300, 4500)}
           />
           <ImageText
             title="File sorter usage 2"
             content={["Different Overlapping Order"]}
-            image={FileSorterUseImage2}
-            width={6300}
-            height={4500}
+            source={
+              new Animation(
+                [
+                  FileSorterUseImage21,
+                  FileSorterUseImage22,
+                  FileSorterUseImage23,
+                ],
+                6300,
+                5387,
+              )
+            }
+            frame={currentIndex}
           />
 
           {/* Tray */}
@@ -206,16 +220,12 @@ const Overlap: NextPage = () => {
           <ImageText
             title="Tray usage 1"
             content={["Different combinations"]}
-            image={TrayUseImage1}
-            width={6300}
-            height={4500}
+            source={new ImageData(TrayUseImage1, 6300, 4500)}
           />
           <ImageText
             title="Tray usage 2"
             content={["Different usage"]}
-            image={TrayUseImage2}
-            width={6296}
-            height={4500}
+            source={new ImageData(TrayUseImage2, 6296, 4500)}
           />
 
           {/* Tech Drawing */}

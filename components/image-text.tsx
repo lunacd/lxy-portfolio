@@ -1,15 +1,17 @@
+import Animatable from "./animatable";
 import { motion, useInView } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import React, { useRef } from "react";
 
+import Animation from "../utils/animation";
+import ImageData from "../utils/image-data";
 import { transitionSlow } from "../utils/transition";
 
 interface ImageTextProps {
   title: string;
   content: string[];
-  image: string | StaticImageData;
-  width: number;
-  height: number;
+  source: ImageData | Animation;
+  frame?: number;
 }
 
 const ImageText: React.FC<ImageTextProps> = (props) => {
@@ -24,14 +26,7 @@ const ImageText: React.FC<ImageTextProps> = (props) => {
       ref={ref}
     >
       <div className="two-thirds">
-        <Image
-          src={props.image}
-          alt={props.title}
-          layout="responsive"
-          width={props.width}
-          height={props.height}
-          placeholder="blur"
-        />
+        <Animatable source={props.source} frame={props.frame} />
       </div>
       <div className="one-third flex flex-col justify-end">
         <div className="paragraph text-right">

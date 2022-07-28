@@ -24,11 +24,6 @@ const LargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
   useInterval(() => {
     setCurrentFrame((orig) => orig + 1);
   }, 1500);
-  let rowFactors = props.rows.map((row) =>
-    row.images
-      .map((curr) => curr.width / curr.height)
-      .reduce((prev, curr) => prev + curr),
-  );
 
   return (
     <div
