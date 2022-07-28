@@ -19,7 +19,7 @@ import TextImage from "../components/text-image";
 import Title from "../components/title";
 import TopDisplay from "../components/top-display";
 import GalleryItem from "../utils/gallery-item";
-import { GalleryRow } from "../utils/gallery-row";
+import { GalleryRowData } from "../utils/gallery-row-data";
 import ImageData from "../utils/image-data";
 import useAutoscroll from "../utils/use-autoscroll";
 
@@ -319,14 +319,14 @@ const Overlap: NextPage = () => {
           <Title title="Product Gallery" />
           <LargeGallery
             rows={[
-              new GalleryRow([new ImageData(Gallery1, 12767, 7167)]),
-              new GalleryRow([
+              new GalleryRowData([new ImageData(Gallery1, 12767, 7167)]),
+              new GalleryRowData([
                 new ImageData(Gallery2, 4684, 3750),
                 new ImageData(Gallery3, 4684, 3750),
                 new ImageData(Gallery4, 3067, 3750),
               ]),
-              new GalleryRow([new ImageData(Gallery5, 12767, 7167)]),
-              new GalleryRow([new ImageData(Gallery6, 12767, 7125)]),
+              new GalleryRowData([new ImageData(Gallery5, 12767, 7167)]),
+              new GalleryRowData([new ImageData(Gallery6, 12767, 7125)]),
             ]}
             description="Overlap"
             botSpacing={false}

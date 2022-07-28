@@ -7,7 +7,7 @@ export enum GalleryRowConfig {
   EqualWidthEnd,
 }
 
-export class GalleryRow {
+export class GalleryRowData {
   config: GalleryRowConfig;
   images: (Image | Animation)[];
 

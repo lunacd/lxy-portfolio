@@ -1,6 +1,9 @@
 import classNames from "classnames";
+import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+
+import { transitionSlow } from "../utils/transition";
 
 interface CenterImageProps {
   image: string | StaticImageData;
@@ -15,13 +18,19 @@ const defaultProps = {
 };
 
 const CenterImage: React.FC<CenterImageProps> = (propsIn) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const props = { ...defaultProps, ...propsIn };
   return (
-    <div
+    <motion.div
       className={classNames("single", {
         "mb-spacing-3lg": props.botSpacing,
         "mb-spacing": !props.botSpacing,
       })}
+      style={{ y: "3rem" }}
+      animate={{ y: isInView ? "0rem" : "3rem" }}
+      transition={transitionSlow}
+      ref={ref}
     >
       <Image
         src={props.image}
@@ -31,7 +40,7 @@ const CenterImage: React.FC<CenterImageProps> = (propsIn) => {
         height={props.height}
         placeholder="blur"
       />
-    </div>
+    </motion.div>
   );
 };
 

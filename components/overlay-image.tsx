@@ -1,5 +1,8 @@
+import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+
+import { transitionSlow } from "../utils/transition";
 
 interface OverlayImageProps {
   title: string;
@@ -10,8 +13,16 @@ interface OverlayImageProps {
 }
 
 const OverlayImage: React.FC<OverlayImageProps> = (props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <div className="single relative mx-spacing-lg mb-spacing-3lg">
+    <motion.div
+      className="single relative mx-spacing-lg mb-spacing-3lg"
+      style={{ y: "3rem" }}
+      animate={{ y: isInView ? "0rem" : "3rem" }}
+      transition={transitionSlow}
+      ref={ref}
+    >
       <Image
         src={props.image}
         alt={props.title}
@@ -25,7 +36,7 @@ const OverlayImage: React.FC<OverlayImageProps> = (props) => {
         <div className="subtitle">{props.title}</div>
         <div className="paragraph">{props.content}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,7 +1,9 @@
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 
 import GalleryItem from "../utils/gallery-item";
+import { transitionSlow } from "../utils/transition";
 
 interface SmallGalleryProps {
   items: GalleryItem[];
@@ -10,8 +12,16 @@ interface SmallGalleryProps {
 }
 
 const SmallGallery: React.FC<SmallGalleryProps> = (props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <div className="single paragraph mx-spacing-lg mb-spacing-3lg grid grid-cols-3 gap-y-spacing gap-x-8">
+    <motion.div
+      className="single paragraph mx-spacing-lg mb-spacing-3lg grid grid-cols-3 gap-y-spacing gap-x-8"
+      style={{ y: "3rem" }}
+      animate={{ y: isInView ? "0rem" : "3rem" }}
+      transition={transitionSlow}
+      ref={ref}
+    >
       {props.items.map((item, index) => (
         <div className="flex flex-col items-center" key={index}>
           <div className="w-full">
@@ -27,7 +37,7 @@ const SmallGallery: React.FC<SmallGalleryProps> = (props) => {
           <div className="subtitle mt-2">{item.title}</div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

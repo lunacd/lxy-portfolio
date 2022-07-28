@@ -16,7 +16,7 @@ import Title from "../components/title";
 import TopDisplay from "../components/top-display";
 import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
-import { GalleryRow, GalleryRowConfig } from "../utils/gallery-row";
+import { GalleryRowConfig, GalleryRowData } from "../utils/gallery-row-data";
 import useAutoscroll from "../utils/use-autoscroll";
 
 import BagMaking1 from "../images/lyu/bag-making-1-small.webp";
@@ -212,22 +212,22 @@ const Lyu: NextPage = () => {
           <Title title="Project Gallery" />
           <LargeGallery
             rows={[
-              new GalleryRow(
+              new GalleryRowData(
                 [
                   new Animation([Gallery11, Gallery12, Gallery13], 4694, 7017),
                   new Animation([Gallery21, Gallery22, Gallery23], 4684, 5625),
                 ],
                 GalleryRowConfig.EqualWidthEnd,
               ),
-              new GalleryRow([
+              new GalleryRowData([
                 new Animation([Gallery31, Gallery32], 6467, 4159),
                 new Animation([Gallery41, Gallery42, Gallery43], 2900, 4159),
               ]),
-              new GalleryRow([
+              new GalleryRowData([
                 new Animation([Gallery51, Gallery52, Gallery53], 2900, 4159),
                 new Animation([Gallery61, Gallery62, Gallery63], 6467, 4159),
               ]),
-              new GalleryRow(
+              new GalleryRowData(
                 [
                   new Animation([Gallery71, Gallery72, Gallery73], 4694, 7017),
                   new Animation([Gallery81, Gallery82, Gallery83], 4684, 5625),

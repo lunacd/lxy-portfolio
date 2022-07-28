@@ -1,5 +1,8 @@
+import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+
+import { transitionSlow } from "../utils/transition";
 
 interface ImageTextProps {
   title: string;
@@ -10,8 +13,16 @@ interface ImageTextProps {
 }
 
 const ImageText: React.FC<ImageTextProps> = (props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <div className="single mx-spacing-lg mb-spacing-3lg flex flex-row space-x-spacing">
+    <motion.div
+      className="single mx-spacing-lg mb-spacing-3lg flex flex-row space-x-spacing"
+      style={{ y: "3rem" }}
+      animate={{ y: isInView ? "0rem" : "3rem" }}
+      transition={transitionSlow}
+      ref={ref}
+    >
       <div className="two-thirds">
         <Image
           src={props.image}
@@ -29,7 +40,7 @@ const ImageText: React.FC<ImageTextProps> = (props) => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

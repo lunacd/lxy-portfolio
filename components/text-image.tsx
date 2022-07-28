@@ -1,5 +1,8 @@
+import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+
+import { transitionSlow } from "../utils/transition";
 
 interface TextImageProps {
   title: string;
@@ -10,8 +13,16 @@ interface TextImageProps {
 }
 
 const TextImage: React.FC<TextImageProps> = (props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <div className="single mx-spacing-lg mb-spacing-3lg flex flex-row space-x-spacing">
+    <motion.div
+      className="single mx-spacing-lg mb-spacing-3lg flex flex-row space-x-spacing"
+      style={{ y: "3rem" }}
+      animate={{ y: isInView ? "0rem" : "3rem" }}
+      transition={transitionSlow}
+      ref={ref}
+    >
       <div className="half flex flex-col justify-end">
         <div className="title mb-24">{props.title}</div>
         <div className="paragraph">
@@ -30,7 +41,7 @@ const TextImage: React.FC<TextImageProps> = (props) => {
           placeholder="blur"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

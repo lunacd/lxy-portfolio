@@ -1,8 +1,10 @@
 import classNames from "classnames";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 
 import GalleryItem from "../utils/gallery-item";
+import { transitionSlow } from "../utils/transition";
 
 interface HorizontalGalleryProps {
   items: GalleryItem[];
@@ -18,15 +20,21 @@ const defaultProps = {
 };
 
 const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const props = { ...defaultProps, ...propsIn };
   return (
-    <div
+    <motion.div
       className={classNames("single grid grid-flow-col auto-cols-fr", {
         "mb-spacing-3lg": props.botSpacing,
         "mb-spacing": !props.botSpacing,
         "gap-spacing-lg": props.sparse,
         "gap-spacing": !props.sparse,
       })}
+      style={{ y: "3rem" }}
+      animate={{ y: isInView ? "0rem" : "3rem" }}
+      transition={transitionSlow}
+      ref={ref}
     >
       {props.items.map((item, index) => (
         <div className="flex flex-col items-center w-full" key={index}>
@@ -48,7 +56,7 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
           )}
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

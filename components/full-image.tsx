@@ -1,6 +1,9 @@
 import classNames from "classnames";
+import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+
+import { transitionSlow } from "../utils/transition";
 
 interface FullImageProps {
   image: string | StaticImageData;
@@ -15,13 +18,19 @@ const defaultProps = {
 };
 
 const FullImage: React.FC<FullImageProps> = (propsIn) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const props = { ...defaultProps, ...propsIn };
   return (
-    <div
+    <motion.div
       className={classNames("w-full", {
         "mb-spacing-3lg": props.botSpacing,
         "mb-spacing": !props.botSpacing,
       })}
+      style={{ y: "3rem" }}
+      animate={{ y: isInView ? "0rem" : "3rem" }}
+      transition={transitionSlow}
+      ref={ref}
     >
       <Image
         src={props.image}
@@ -31,7 +40,7 @@ const FullImage: React.FC<FullImageProps> = (propsIn) => {
         height={props.height}
         placeholder="blur"
       />
-    </div>
+    </motion.div>
   );
 };
 

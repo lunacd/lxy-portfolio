@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import styles from "../styles/carousel.module.css";
-import { transitionFast } from "../utils/transition";
+import { transitionFast, transitionSlow } from "../utils/transition";
 
 interface CarouselProps {
   images: (string | StaticImageData)[];
@@ -14,10 +14,17 @@ interface CarouselProps {
 }
 
 const Carousel: React.FC<CarouselProps> = (props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <>
+    <motion.div
+      style={{ y: "3rem" }}
+      animate={{ y: isInView ? "0rem" : "3rem" }}
+      transition={transitionSlow}
+      ref={ref}
+    >
       <div className="single flex w-full flex-row items-center space-x-4 text-gray-900">
         <i
           className={classNames("fa-solid fa-angle-left fa-3x", {
@@ -87,7 +94,7 @@ const Carousel: React.FC<CarouselProps> = (props) => {
           ))}
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 
