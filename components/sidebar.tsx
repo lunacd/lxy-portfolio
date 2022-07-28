@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { prototype } from "events";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,9 +22,17 @@ const routes = [
 interface SidebarProps {
   route: string;
   prevRoute: string;
+  hoverProject?: (project: string) => void;
+  stopHover?: () => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = (props) => {
+const defaultProps = {
+  hoverProject: (_: string) => {},
+  stopHover: () => {},
+};
+
+export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
+  const props = { ...defaultProps, ...propsIn };
   const [open, setOpen] = useState(true);
   const isXL = useMediaQuery("(min-width: 1280px)");
 
@@ -84,6 +93,12 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                   }}
                   animate={{
                     x: props.route === route.uri ? "0.75rem" : "0rem",
+                  }}
+                  onMouseEnter={() => {
+                    props.hoverProject(route.uri);
+                  }}
+                  onMouseLeave={() => {
+                    props.stopHover();
                   }}
                 >
                   <Link href={`/${route.uri}`}>{route.name}</Link>
