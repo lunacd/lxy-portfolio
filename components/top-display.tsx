@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -6,16 +6,24 @@ import styles from "../styles/TopDisplay.module.css";
 import ProjectDescription from "../utils/project-description";
 
 import LyuDisplay from "../images/lyu/display-full.webp";
+import ModeDisplay from "../images/mode/display-full.webp";
 import OverlapDisplay from "../images/overlap/display-full.webp";
+import SoulDisplay from "../images/soul/display-full.webp";
+import SunriseDisplay from "../images/sunrise/display-full.webp";
+import TronDisplay from "../images/tron/display-full.webp";
 
 interface TopDisplayProps {
-  project: "overlap" | "lyu";
+  project: "overlap" | "lyu" | "soul" | "sunrise" | "mode" | "tron";
   link?: boolean;
 }
 
 const projectDisplay = {
   overlap: OverlapDisplay,
   lyu: LyuDisplay,
+  soul: SoulDisplay,
+  sunrise: SunriseDisplay,
+  mode: ModeDisplay,
+  tron: TronDisplay,
 };
 
 const projectDescriptions = {
@@ -23,7 +31,7 @@ const projectDescriptions = {
     "Overlap",
     "14 Weeks",
     "Lifestyle Product Design",
-    "Prototype, Tech Drawing, Model Making, Manufacture",
+    "Prototyping, Tech Drawing, Model Making, Manufacture",
     "Designing and making a line of accessories for Hay. The design will include a range of small and functional objects, which fits the brand identity and considers the company’s manufacturing techniques, as well their use of materials.",
   ),
   lyu: new ProjectDescription(
@@ -33,21 +41,61 @@ const projectDescriptions = {
     "Craft, Tech Drawing, Manufacture",
     "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
   ),
+  soul: new ProjectDescription(
+    "Soul",
+    "14 Weeks, 2022 Spring",
+    "Lux lifestyle Product Set",
+    "Brand Research, Form Study, 3D Modeling",
+    "To propose a new product category for Rolls-Royce by designing a unified collection of objects.",
+  ),
+  sunrise: new ProjectDescription(
+    "Sunrise Speaker",
+    "14 Weeks , 2021 Fall",
+    "Electronic Product",
+    "Form Study, Prototyping, Model Making, Manufacture",
+    "Reverse-engineered a speaker and put all parts back together in personal designed product for Yamaha.",
+  ),
+  mode: new ProjectDescription(
+    "Mode Bag",
+    "14 Weeks , 2021 Fall",
+    "Soft Goods",
+    "Design Research, Prototyping, Concept development, 3D Modeling",
+    "To create new concepts that relate to EDC (Everyday Carry) products for Benchmade by designing a new EDC product and related services.",
+  ),
+  tron: new ProjectDescription(
+    "M-Tron",
+    "5 Weeks , 2021 Spring",
+    "Transportation",
+    "3D Modeling, Rendering",
+    "A shared semi-automatic scooter inside Walt Disney World for both kids and adult to transport between different rides.",
+  ),
 };
 
 const projectLinks = {
   overlap: "/overlap?autoscroll=true",
   lyu: "/lyu?autoscroll=true",
+  soul: "/soul?autoscroll=true",
+  sunrise: "https://www.shirleylyu.com/sunrisespeaker",
+  mode: "https://www.shirleylyu.com/mode",
+  tron: "https://www.shirleylyu.com/m-tron",
 };
 
 const titleColors = {
   overlap: "text-gray-900",
   lyu: "text-gray-100",
+  soul: "text-gray-100",
+  sunrise: "text-gray-100",
+  mode: "text-gray-100",
+  tron: "text-gray-100",
 };
 
 const bgColors = {
   overlap: "bg-[#FDF9F1]",
   lyu: "bg-[#EFF2F3]",
+  soul: "bg-[#EEEAE2]",
+  sunrise: "bg-[#F2F2F2]",
+  mode: "bg-[#ECF4F0]",
+  tron: "bg-[#E4F2F5]",
 };
 
 const TopDisplay: React.FC<TopDisplayProps> = (props) => {
@@ -75,11 +123,19 @@ const TopDisplay: React.FC<TopDisplayProps> = (props) => {
           >
             {description.name}
           </div>
-          {props.link && (
-            <Link href={projectLinks[props.project]} passHref>
-              <a className="absolute w-full h-full top-0 left-0 block"></a>
-            </Link>
-          )}
+          {props.link &&
+            (projectLinks[props.project].startsWith("https") ? (
+              <a
+                className="absolute w-full h-full top-0 left-0 block"
+                href={projectLinks[props.project]}
+                target="_blank"
+                rel="noreferrer"
+              ></a>
+            ) : (
+              <Link href={projectLinks[props.project]} passHref>
+                <a className="absolute w-full h-full top-0 left-0 block"></a>
+              </Link>
+            ))}
         </div>
       </div>
       <div className="flex flex-col items-center">

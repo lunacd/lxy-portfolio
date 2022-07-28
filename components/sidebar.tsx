@@ -16,8 +16,17 @@ const routes = [
   new Route("soul", "Soul"),
   new Route("sunrise", "Sunrise Speaker"),
   new Route("mode", "Mode Bag"),
-  new Route("more", "More"),
+  new Route("tron", "M-Tron"),
 ];
+
+const projectLinks = {
+  overlap: "/overlap?autoscroll=true",
+  lyu: "/lyu?autoscroll=true",
+  soul: "/soul?autoscroll=true",
+  sunrise: "https://www.shirleylyu.com/sunrisespeaker",
+  mode: "https://www.shirleylyu.com/mode",
+  tron: "https://www.shirleylyu.com/m-tron",
+};
 
 interface SidebarProps {
   route: string;
@@ -65,14 +74,23 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
             </div>
           </Link>
           <div className="flex flex-col space-y-1">
-            <Link href="/about" passHref>
+            {/* <Link href="/about" passHref>
               <a className="subtitle">About</a>
-            </Link>
+            </Link> */}
             <Link href="/" passHref>
               <a className="subtitle">Portfolio</a>
             </Link>
             {routes.map((route) => (
-              <div className="flex flex-row items-center" key={route.uri}>
+              <div
+                className="flex flex-row items-center"
+                key={route.uri}
+                onMouseEnter={() => {
+                  props.hoverProject(route.uri);
+                }}
+                onMouseLeave={() => {
+                  props.stopHover();
+                }}
+              >
                 <motion.div
                   className="absolute"
                   transition={transitionDefault}
@@ -94,26 +112,38 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
                   animate={{
                     x: props.route === route.uri ? "0.75rem" : "0rem",
                   }}
-                  onMouseEnter={() => {
-                    props.hoverProject(route.uri);
-                  }}
-                  onMouseLeave={() => {
-                    props.stopHover();
-                  }}
                 >
-                  <Link href={`/${route.uri}?autoscroll=true`}>
-                    {route.name}
-                  </Link>
+                  {projectLinks[route.uri].startsWith("http") ? (
+                    <a
+                      href={projectLinks[route.uri]}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {route.name}
+                    </a>
+                  ) : (
+                    <Link href={projectLinks[route.uri]}>{route.name}</Link>
+                  )}
                 </motion.div>
               </div>
             ))}
 
-            <Link href="/mini">
-              <a className="subtitle">Mini Works</a>
-            </Link>
-            <Link href="/resume">
-              <a className="subtitle pb-4">Resume</a>
-            </Link>
+            <a
+              className="subtitle"
+              href="https://www.shirleylyu.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              More Works
+            </a>
+            <a
+              className="subtitle pb-4"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume
+            </a>
           </div>
           <div className="flex flex-row justify-between">
             <a

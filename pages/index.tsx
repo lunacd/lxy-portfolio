@@ -10,7 +10,14 @@ import { Sidebar } from "../components/sidebar";
 import TopDisplay from "../components/top-display";
 import { transitionSlow } from "../utils/transition";
 
-const projects: ("overlap" | "lyu")[] = ["overlap", "lyu"];
+const projects: ("overlap" | "lyu" | "soul" | "sunrise" | "mode" | "tron")[] = [
+  "overlap",
+  "lyu",
+  "soul",
+  "sunrise",
+  "mode",
+  "tron",
+];
 
 const Home: NextPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
