@@ -21,6 +21,7 @@ import TopDisplay from "../components/top-display";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRow } from "../utils/gallery-row";
 import ImageData from "../utils/image-data";
+import useAutoscroll from "../utils/use-autoscroll";
 
 import CMF1 from "../images/overlap/CMF/CMF-01-full.webp";
 import CMF2 from "../images/overlap/CMF/CMF-02-full.webp";
@@ -84,6 +85,8 @@ import WoodFlatten from "../images/overlap/wood-flatten-small.webp";
 import WoodStain from "../images/overlap/wood-stain-small.webp";
 
 const Overlap: NextPage = () => {
+  const scrollDiv = useAutoscroll();
+
   return (
     <>
       <Head>
@@ -92,7 +95,7 @@ const Overlap: NextPage = () => {
 
       <PageRoot>
         <Sidebar route="overlap" prevRoute="" />
-        <Scroller bgColor="bg-[#FDF9F1]">
+        <Scroller bgColor="bg-[#FDF9F1]" divRef={scrollDiv}>
           <TopDisplay project="overlap" />
 
           {/* Manifesto */}

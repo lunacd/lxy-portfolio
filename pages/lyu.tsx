@@ -17,6 +17,7 @@ import TopDisplay from "../components/top-display";
 import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRow, GalleryRowConfig } from "../utils/gallery-row";
+import useAutoscroll from "../utils/use-autoscroll";
 
 import BagMaking1 from "../images/lyu/bag-making-1-small.webp";
 import BagMaking2 from "../images/lyu/bag-making-2-small.webp";
@@ -83,6 +84,8 @@ import TechPack6 from "../images/lyu/tech-pack-6-full.webp";
 import TechPack7 from "../images/lyu/tech-pack-7-full.webp";
 
 const Lyu: NextPage = () => {
+  const scrollDiv = useAutoscroll();
+
   return (
     <>
       <Head>
@@ -91,7 +94,7 @@ const Lyu: NextPage = () => {
 
       <PageRoot>
         <Sidebar route="lyu" prevRoute="" />
-        <Scroller bgColor="bg-[#EFF2F3]">
+        <Scroller bgColor="bg-[#EFF2F3]" divRef={scrollDiv}>
           <TopDisplay project="lyu" />
 
           {/* Manifesto */}

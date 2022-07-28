@@ -68,7 +68,7 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
             <Link href="/about" passHref>
               <a className="subtitle">About</a>
             </Link>
-            <Link href="/portfolio" passHref>
+            <Link href="/" passHref>
               <a className="subtitle">Portfolio</a>
             </Link>
             {routes.map((route) => (
@@ -101,7 +101,9 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
                     props.stopHover();
                   }}
                 >
-                  <Link href={`/${route.uri}`}>{route.name}</Link>
+                  <Link href={`/${route.uri}?autoscroll=true`}>
+                    {route.name}
+                  </Link>
                 </motion.div>
               </div>
             ))}

@@ -47,7 +47,7 @@ const TopDisplay: React.FC<TopDisplayProps> = (props) => {
   const description = projectDescriptions[props.project];
   return (
     <div
-      className={`mb-spacing-3lg flex h-screen min-h-[30rem] flex-col xl:min-h-[34rem] w-full ${
+      className={`mb-spacing-2lg flex h-screen min-h-[30rem] flex-col xl:min-h-[34rem] w-full ${
         bgColors[props.project]
       }`}
     >
