@@ -81,50 +81,58 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
               <a className="subtitle">Portfolio</a>
             </Link>
             {routes.map((route) => (
-              <div
-                className="flex flex-row items-center"
-                key={route.uri}
-                onMouseEnter={() => {
-                  props.hoverProject(route.uri);
-                }}
-                onMouseLeave={() => {
-                  props.stopHover();
-                }}
-              >
-                <motion.div
-                  className="absolute"
-                  transition={transitionDefault}
-                  initial={{
-                    opacity: props.prevRoute === route.uri ? 1 : 0,
+              <div key={route.uri} className="flex flex-row">
+                <div
+                  className="flex flex-row items-center"
+                  onMouseEnter={() => {
+                    props.hoverProject(route.uri);
                   }}
-                  animate={{
-                    opacity: props.route === route.uri ? 1 : 0,
+                  onMouseLeave={() => {
+                    props.stopHover();
                   }}
                 >
-                  -
-                </motion.div>
-                <motion.div
-                  className="paragraph"
-                  transition={transitionDefault}
-                  style={{
-                    x: props.prevRoute === route.uri ? "0.75rem" : "0rem",
-                  }}
-                  animate={{
-                    x: props.route === route.uri ? "0.75rem" : "0rem",
-                  }}
-                >
-                  {projectLinks[route.uri].startsWith("http") ? (
-                    <a
-                      href={projectLinks[route.uri]}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {route.name}
-                    </a>
-                  ) : (
-                    <Link href={projectLinks[route.uri]}>{route.name}</Link>
-                  )}
-                </motion.div>
+                  <motion.div
+                    className="absolute"
+                    transition={transitionDefault}
+                    initial={{
+                      opacity: props.prevRoute === route.uri ? 1 : 0,
+                    }}
+                    animate={{
+                      opacity: props.route === route.uri ? 1 : 0,
+                    }}
+                  >
+                    -
+                  </motion.div>
+                  <motion.div
+                    className="paragraph"
+                    transition={transitionDefault}
+                    style={{
+                      x: props.prevRoute === route.uri ? "0.75rem" : "0rem",
+                    }}
+                    animate={{
+                      x: props.route === route.uri ? "0.75rem" : "0rem",
+                    }}
+                  >
+                    {projectLinks[route.uri].startsWith("http") ? (
+                      <a
+                        href={projectLinks[route.uri]}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {route.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={
+                          projectLinks[route.uri] +
+                          (props.route.length > 0 ? `&prev=${props.route}` : "")
+                        }
+                      >
+                        {route.name}
+                      </Link>
+                    )}
+                  </motion.div>
+                </div>
               </div>
             ))}
 

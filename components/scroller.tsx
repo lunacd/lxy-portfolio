@@ -3,7 +3,7 @@ import React, { PropsWithChildren, RefObject } from "react";
 
 interface ScrollerProps {
   bgColor: string;
-  divRef: RefObject<HTMLDivElement>;
+  divRef?: RefObject<HTMLDivElement>;
 }
 
 const Scroller: React.FC<PropsWithChildren<ScrollerProps>> = (props) => {

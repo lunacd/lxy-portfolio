@@ -32,7 +32,7 @@ const projectDescriptions = {
     "14 Weeks",
     "Lifestyle Product Design",
     "Prototyping, Tech Drawing, Model Making, Manufacture",
-    "Designing and making a line of accessories for Hay. The design will include a range of small and functional objects, which fits the brand identity and considers the company’s manufacturing techniques, as well their use of materials.",
+    "A range of small and functional objects for Hay, focusing on brand identity, manufacturing techniques, and use of materials.",
   ),
   lyu: new ProjectDescription(
     "Lyu",
@@ -143,15 +143,27 @@ const TopDisplay: React.FC<TopDisplayProps> = (props) => {
           <div className="half flex flex-col space-y-1 relative">
             <div className={`${styles.section} opacity-0`}>
               <span className={styles.heading}>Duration: </span>
-              14 Weeks
+              {Object.values(projectDescriptions).reduce(
+                (prev, curr) =>
+                  prev.length > curr.duration.length ? prev : curr.duration,
+                "",
+              )}
             </div>
             <div className={`${styles.section} opacity-0`}>
               <span className={styles.heading}>Category: </span>
-              Lifestyle Product Design
+              {Object.values(projectDescriptions).reduce(
+                (prev, curr) =>
+                  prev.length > curr.category.length ? prev : curr.category,
+                "",
+              )}
             </div>
             <div className={`${styles.section} opacity-0`}>
               <span className={styles.heading}>Project Focus: </span>
-              Prototype, Tech Drawing, Model Making, Manufacture
+              {Object.values(projectDescriptions).reduce(
+                (prev, curr) =>
+                  prev.length > curr.focus.length ? prev : curr.focus,
+                "",
+              )}
             </div>
             <div className="absolute left-0 top-0 w-full h-full !mt-0 flex flex-col justify-start space-y-1">
               <div className={styles.section}>
@@ -171,10 +183,11 @@ const TopDisplay: React.FC<TopDisplayProps> = (props) => {
           <div className="half flex flex-col justify-center relative">
             <div className={`${styles.section} opacity-0`}>
               <span className={styles.heading}>Project Brief: </span>
-              Designing and making a line of accessories for Hay. The design
-              will include a range of small and functional objects, which fits
-              the brand identity and considers the company&apos;s manufacturing
-              techniques, as well their use of materials.
+              {Object.values(projectDescriptions).reduce(
+                (prev, curr) =>
+                  prev.length > curr.brief.length ? prev : curr.brief,
+                "",
+              )}
             </div>
             <div className="half flex flex-col absolute left-0 top-0 w-full h-full justify-start">
               <div className={styles.section}>

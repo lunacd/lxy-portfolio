@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import Carousel from "../components/carousel";
 import FullImage from "../components/full-image";
@@ -18,6 +19,7 @@ import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRowConfig, GalleryRowData } from "../utils/gallery-row-data";
 import useAutoscroll from "../utils/use-autoscroll";
+import usePrev from "../utils/use-prev";
 
 import BagMaking1 from "../images/lyu/bag-making-1-small.webp";
 import BagMaking2 from "../images/lyu/bag-making-2-small.webp";
@@ -85,6 +87,7 @@ import TechPack7 from "../images/lyu/tech-pack-7-full.webp";
 
 const Lyu: NextPage = () => {
   const scrollDiv = useAutoscroll();
+  const prevRoute = usePrev();
 
   return (
     <>
@@ -93,7 +96,7 @@ const Lyu: NextPage = () => {
       </Head>
 
       <PageRoot>
-        <Sidebar route="lyu" prevRoute="" />
+        <Sidebar route="lyu" prevRoute={prevRoute} />
         <Scroller bgColor="bg-[#EFF2F3]" divRef={scrollDiv}>
           <TopDisplay project="lyu" />
 

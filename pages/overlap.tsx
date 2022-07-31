@@ -25,6 +25,8 @@ import GalleryItem from "../utils/gallery-item";
 import { GalleryRowData } from "../utils/gallery-row-data";
 import ImageData from "../utils/image-data";
 import useAutoscroll from "../utils/use-autoscroll";
+import useFrameIndex from "../utils/use-frame-index";
+import usePrev from "../utils/use-prev";
 
 import CMF1 from "../images/overlap/CMF/CMF-01-full.webp";
 import CMF2 from "../images/overlap/CMF/CMF-02-full.webp";
@@ -91,10 +93,8 @@ import WoodStain from "../images/overlap/wood-stain-small.webp";
 
 const Overlap: NextPage = () => {
   const scrollDiv = useAutoscroll();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  useInterval(() => {
-    setCurrentIndex((orig) => orig + 1);
-  }, 2000);
+  const currentIndex = useFrameIndex(2000);
+  const prev = usePrev();
 
   return (
     <>
@@ -103,7 +103,7 @@ const Overlap: NextPage = () => {
       </Head>
 
       <PageRoot>
-        <Sidebar route="overlap" prevRoute="" />
+        <Sidebar route="overlap" prevRoute={prev} />
         <Scroller bgColor="bg-[#FDF9F1]" divRef={scrollDiv}>
           <TopDisplay project="overlap" />
 

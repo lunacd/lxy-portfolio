@@ -7,11 +7,13 @@ import { Sidebar } from "../components/sidebar";
 import TextImage from "../components/text-image";
 import TopDisplay from "../components/top-display";
 import useAutoscroll from "../utils/use-autoscroll";
+import usePrev from "../utils/use-prev";
 
 import ManifestoImage from "../images/soul/manifesto-half.webp";
 
 const Soul: NextPage = () => {
   const scrollDiv = useAutoscroll();
+  const prev = usePrev();
 
   return (
     <>
@@ -20,7 +22,7 @@ const Soul: NextPage = () => {
       </Head>
 
       <PageRoot>
-        <Sidebar route="soul" prevRoute="" />
+        <Sidebar route="soul" prevRoute={prev} />
         <Scroller bgColor="bg-[#EEEAE2]" divRef={scrollDiv}>
           <TopDisplay project="soul" />
 
