@@ -46,7 +46,7 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
         }
         className={classNames("transition-opacity duration-700 ease-linear", {
           "max-w-full": props.adaptiveHeight,
-          "opacity-0": props.frame % images.length !== 0,
+          "opacity-0": props.frame ? props.frame % images.length !== 0 : false,
         })}
       >
         <Image

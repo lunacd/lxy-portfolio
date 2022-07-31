@@ -1,7 +1,5 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import { useState } from "react";
-import { useInterval } from "usehooks-ts";
 
 import Carousel from "../components/carousel";
 import CenterImage from "../components/center-image";
@@ -28,25 +26,20 @@ import useAutoscroll from "../utils/use-autoscroll";
 import useFrameIndex from "../utils/use-frame-index";
 import usePrev from "../utils/use-prev";
 
-import CMF1 from "../images/overlap/CMF/CMF-01-full.webp";
-import CMF2 from "../images/overlap/CMF/CMF-02-full.webp";
-import CMF3 from "../images/overlap/CMF/CMF-03-full.webp";
-import CMF4 from "../images/overlap/CMF/CMF-04-full.webp";
-import CMF5 from "../images/overlap/CMF/CMF-05-full.webp";
-import CMF6 from "../images/overlap/CMF/CMF-06-full.webp";
-import CMF7 from "../images/overlap/CMF/CMF-07-full.webp";
-import CMF8 from "../images/overlap/CMF/CMF-08-full.webp";
-import AcrylicGluing from "../images/overlap/acrylic-gluing-small.webp";
-import Assembly from "../images/overlap/assembly-small.webp";
-import BandSawCut from "../images/overlap/band-saw-cut-small.webp";
 import Benchmark from "../images/overlap/benchmark-full.webp";
-import Accessible from "../images/overlap/brand-dna/accessible-small.webp";
-import Adaptive from "../images/overlap/brand-dna/adaptive-small.webp";
-import Contemporary from "../images/overlap/brand-dna/contemporary-small.webp";
-import Playful from "../images/overlap/brand-dna/playful-small.webp";
-import Vibrant from "../images/overlap/brand-dna/vibrant-small.webp";
-import ClearMatteFinishSpray from "../images/overlap/clear-matte-finish-spray-small.webp";
-import CNC from "../images/overlap/cnc-small.webp";
+import CMF1 from "../images/overlap/cmf/cmf-1-full.webp";
+import CMF2 from "../images/overlap/cmf/cmf-2-full.webp";
+import CMF3 from "../images/overlap/cmf/cmf-3-full.webp";
+import CMF4 from "../images/overlap/cmf/cmf-4-full.webp";
+import CMF5 from "../images/overlap/cmf/cmf-5-full.webp";
+import CMF6 from "../images/overlap/cmf/cmf-6-full.webp";
+import CMF7 from "../images/overlap/cmf/cmf-7-full.webp";
+import CMF8 from "../images/overlap/cmf/cmf-8-full.webp";
+import DNA1 from "../images/overlap/dna/dna-1-small.webp";
+import DNA2 from "../images/overlap/dna/dna-2-small.webp";
+import DNA3 from "../images/overlap/dna/dna-3-small.webp";
+import DNA4 from "../images/overlap/dna/dna-4-small.webp";
+import DNA5 from "../images/overlap/dna/dna-5-small.webp";
 import FileSorterImage from "../images/overlap/file-sorter-half.webp";
 import FileSorterUseImage1 from "../images/overlap/file-sorter-use-1-big.webp";
 import FileSorterUseImage21 from "../images/overlap/file-sorter-use-2-1-big.webp";
@@ -58,16 +51,24 @@ import Gallery3 from "../images/overlap/gallery/gallery-3-half.webp";
 import Gallery4 from "../images/overlap/gallery/gallery-4-half.webp";
 import Gallery5 from "../images/overlap/gallery/gallery-5-full.webp";
 import Gallery6 from "../images/overlap/gallery/gallery-6-full.webp";
-import HandSanding from "../images/overlap/hand-sanding-small.webp";
 import Ideation from "../images/overlap/ideation-full.webp";
-import LaserCut from "../images/overlap/laser-cut-small.webp";
-import MachineSanding from "../images/overlap/machine-sanding-small.webp";
 import ManifestoImage from "../images/overlap/manifesto-half.webp";
 import Overlay1 from "../images/overlap/overlay-1-full.webp";
 import Overlay2 from "../images/overlap/overlay-2-full.webp";
 import Overlay3 from "../images/overlap/overlay-3-full.webp";
+import Process1 from "../images/overlap/process/process-01-small.webp";
+import Process2 from "../images/overlap/process/process-02-small.webp";
+import Process3 from "../images/overlap/process/process-03-small.webp";
+import Process4 from "../images/overlap/process/process-04-small.webp";
+import Process5 from "../images/overlap/process/process-05-small.webp";
+import Process6 from "../images/overlap/process/process-06-small.webp";
+import Process7 from "../images/overlap/process/process-07-small.webp";
+import Process8 from "../images/overlap/process/process-08-small.webp";
+import Process9 from "../images/overlap/process/process-09-small.webp";
+import Process10 from "../images/overlap/process/process-10-small.webp";
+import Process11 from "../images/overlap/process/process-11-small.webp";
+import Process12 from "../images/overlap/process/process-12-small.webp";
 import Prototype from "../images/overlap/prototype-full.webp";
-import RouterChamfer from "../images/overlap/router-chamfer-small.webp";
 import Set1 from "../images/overlap/set-1-half.webp";
 import Set2 from "../images/overlap/set-2-half.webp";
 import Set3 from "../images/overlap/set-3-half.webp";
@@ -87,9 +88,6 @@ import TimerUseImage from "../images/overlap/timer-use-big.webp";
 import TrayImage from "../images/overlap/tray-half.webp";
 import TrayUseImage1 from "../images/overlap/tray-use-1-big.webp";
 import TrayUseImage2 from "../images/overlap/tray-use-2-big.webp";
-import WoodCut from "../images/overlap/wood-cut-small.webp";
-import WoodFlatten from "../images/overlap/wood-flatten-small.webp";
-import WoodStain from "../images/overlap/wood-stain-small.webp";
 
 const Overlap: NextPage = () => {
   const scrollDiv = useAutoscroll();
@@ -254,11 +252,11 @@ const Overlap: NextPage = () => {
           <Subtitle subtitle="HAY's Brand DNA Analysis" />
           <HorizontalGallery
             items={[
-              new GalleryItem(Playful, undefined, "Playful"),
-              new GalleryItem(Accessible, undefined, "Accessible"),
-              new GalleryItem(Adaptive, undefined, "Adaptive"),
-              new GalleryItem(Contemporary, undefined, "Contemporary"),
-              new GalleryItem(Vibrant, undefined, "Vibrant"),
+              new GalleryItem(DNA1, undefined, "Playful"),
+              new GalleryItem(DNA2, undefined, "Accessible"),
+              new GalleryItem(DNA3, undefined, "Adaptive"),
+              new GalleryItem(DNA4, undefined, "Contemporary"),
+              new GalleryItem(DNA5, undefined, "Vibrant"),
             ]}
             sparse={false}
             width={926}
@@ -305,21 +303,18 @@ const Overlap: NextPage = () => {
           <Title title="Final Model Making Process" />
           <SmallGallery
             items={[
-              new GalleryItem(WoodCut, "Wood Cut"),
-              new GalleryItem(WoodFlatten, "Wood Flatten"),
-              new GalleryItem(CNC, "CNC"),
-              new GalleryItem(LaserCut, "Laser Cut"),
-              new GalleryItem(BandSawCut, "Band Saw Cut"),
-              new GalleryItem(MachineSanding, "Machine Sanding"),
-              new GalleryItem(HandSanding, "Hand Sanding"),
-              new GalleryItem(RouterChamfer, "Router Chamfer"),
-              new GalleryItem(WoodStain, "Wood Stain"),
-              new GalleryItem(AcrylicGluing, "Acrylic Gluing"),
-              new GalleryItem(
-                ClearMatteFinishSpray,
-                "Clear Matte Finish Spray",
-              ),
-              new GalleryItem(Assembly, "Assembly"),
+              new GalleryItem(Process1, "Wood Cut"),
+              new GalleryItem(Process2, "Wood Flatten"),
+              new GalleryItem(Process3, "CNC"),
+              new GalleryItem(Process4, "Laser Cut"),
+              new GalleryItem(Process5, "Band Saw Cut"),
+              new GalleryItem(Process6, "Machine Sanding"),
+              new GalleryItem(Process7, "Hand Sanding"),
+              new GalleryItem(Process8, "Router Chamfer"),
+              new GalleryItem(Process9, "Wood Stain"),
+              new GalleryItem(Process10, "Acrylic Gluing"),
+              new GalleryItem(Process11, "Clear Matte Finish Spray"),
+              new GalleryItem(Process12, "Assembly"),
             ]}
             width={3063}
             height={2248}
