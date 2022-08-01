@@ -22,6 +22,7 @@ import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRowData } from "../utils/gallery-row-data";
 import ImageData from "../utils/image-data";
+import { projectData, projects } from "../utils/project-data";
 import useAutoscroll from "../utils/use-autoscroll";
 import useFrameIndex from "../utils/use-frame-index";
 import usePrev from "../utils/use-prev";
@@ -103,7 +104,7 @@ const Overlap: NextPage = () => {
       <PageRoot>
         <Sidebar route="overlap" prevRoute={prev} />
         <Scroller bgColor="bg-[#FDF9F1]" divRef={scrollDiv}>
-          <TopDisplay project="overlap" />
+          <TopDisplay project={projectData[projects.indexOf("overlap")]} />
 
           {/* Manifesto */}
           <TextImage

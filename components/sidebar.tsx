@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { prototype } from "events";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,22 +10,21 @@ import Route from "../utils/route";
 import { transitionFast as transitionDefault } from "../utils/transition";
 
 const routes = [
-  new Route("overlap", "Overlap"),
-  new Route("lyu", "Lyu"),
-  new Route("soul", "Soul"),
-  new Route("sunrise", "Sunrise Speaker"),
-  new Route("mode", "Mode Bag"),
-  new Route("tron", "M-Tron"),
+  new Route("projects", "Projects", "/projects", "subtitle"),
+  new Route("overlap", "Overlap", "/overlap?autoscroll=true", "paragraph"),
+  new Route("lyu", "Lyu", "/lyu?autoscroll=true", "paragraph"),
+  new Route("soul", "Soul", "/soul?autoscroll=true", "paragraph"),
+  new Route(
+    "sunrise",
+    "Sunrise Speaker",
+    "https://www.shirleylyu.com/sunrisespeaker",
+    "paragraph",
+  ),
+  new Route("mode", "Mode Bag", "https://www.shirleylyu.com/mode", "paragraph"),
+  new Route("tron", "M-Tron", "https://www.shirleylyu.com/m-tron", "paragraph"),
 ];
 
-const projectLinks = {
-  overlap: "/overlap?autoscroll=true",
-  lyu: "/lyu?autoscroll=true",
-  soul: "/soul?autoscroll=true",
-  sunrise: "https://www.shirleylyu.com/sunrisespeaker",
-  mode: "https://www.shirleylyu.com/mode",
-  tron: "https://www.shirleylyu.com/m-tron",
-};
+const projects = ["overlap", "lyu", "soul", "sunrise", "mode", "tron"];
 
 interface SidebarProps {
   route: string;
@@ -77,22 +75,37 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
             {/* <Link href="/about" passHref>
               <a className="subtitle">About</a>
             </Link> */}
-            <Link href="/" passHref>
-              <a className="subtitle">Portfolio</a>
-            </Link>
             {routes.map((route) => (
               <div key={route.uri} className="flex flex-row">
                 <div
                   className="flex flex-row items-center"
-                  onMouseEnter={() => {
-                    props.hoverProject(route.uri);
-                  }}
-                  onMouseLeave={() => {
-                    props.stopHover();
-                  }}
+                  onMouseEnter={
+                    projects.includes(route.uri)
+                      ? () => {
+                          console.log(route.uri);
+                          props.hoverProject(
+                            route.uri as
+                              | "overlap"
+                              | "lyu"
+                              | "soul"
+                              | "sunrise"
+                              | "mode"
+                              | "tron",
+                          );
+                        }
+                      : () => {}
+                  }
+                  onMouseLeave={
+                    projects.includes(route.uri)
+                      ? () => {
+                          console.log(route.uri);
+                          props.stopHover();
+                        }
+                      : () => {}
+                  }
                 >
                   <motion.div
-                    className="absolute"
+                    className={`absolute ${route.typeClass}`}
                     transition={transitionDefault}
                     initial={{
                       opacity: props.prevRoute === route.uri ? 1 : 0,
@@ -104,7 +117,7 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
                     -
                   </motion.div>
                   <motion.div
-                    className="paragraph"
+                    className={route.typeClass}
                     transition={transitionDefault}
                     style={{
                       x: props.prevRoute === route.uri ? "0.75rem" : "0rem",
@@ -113,19 +126,19 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
                       x: props.route === route.uri ? "0.75rem" : "0rem",
                     }}
                   >
-                    {projectLinks[route.uri].startsWith("http") ? (
-                      <a
-                        href={projectLinks[route.uri]}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                    {route.link.startsWith("http") ? (
+                      <a href={route.link} target="_blank" rel="noreferrer">
                         {route.name}
                       </a>
                     ) : (
                       <Link
                         href={
-                          projectLinks[route.uri] +
-                          (props.route.length > 0 ? `&prev=${props.route}` : "")
+                          route.link +
+                          (props.route.length > 0
+                            ? route.link.includes("?")
+                              ? `&prev=${props.route}`
+                              : `?prev=${props.route}`
+                            : "")
                         }
                       >
                         {route.name}

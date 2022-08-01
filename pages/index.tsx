@@ -8,27 +8,19 @@ import { useInterval } from "usehooks-ts";
 import PageRoot from "../components/page-root";
 import { Sidebar } from "../components/sidebar";
 import TopDisplay from "../components/top-display";
+import { projectData, projects } from "../utils/project-data";
 import { transitionSlow } from "../utils/transition";
-
-const projects: ("overlap" | "lyu" | "soul" | "sunrise" | "mode" | "tron")[] = [
-  "overlap",
-  "lyu",
-  "soul",
-  "sunrise",
-  "mode",
-  "tron",
-];
 
 const Home: NextPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(projects.length - 1);
+  const [prevIndex, setPrevIndex] = useState(-1);
   const [mainDisplay, setMainDisplay] = useState(true);
   const [interval, setInterval] = useState<number | null>(3000);
   const mainIndex = mainDisplay ? currentIndex : prevIndex;
   const alternateIndex = mainDisplay ? prevIndex : currentIndex;
 
   const hoverProject = (project: string) => {
-    const index = projects.indexOf(project as "overlap" | "lyu");
+    const index = projects.indexOf(project);
     setPrevIndex(currentIndex);
     setCurrentIndex(index);
     setInterval(null);
@@ -54,7 +46,7 @@ const Home: NextPage = () => {
       <PageRoot>
         <Sidebar
           route={projects[currentIndex]}
-          prevRoute={projects[prevIndex]}
+          prevRoute={prevIndex >= 0 ? projects[prevIndex] : ""}
           hoverProject={hoverProject}
           stopHover={stopHover}
         />
@@ -68,7 +60,7 @@ const Home: NextPage = () => {
               "z-0": !mainDisplay,
             })}
           >
-            <TopDisplay project={projects[mainIndex]} link />
+            <TopDisplay project={projectData[mainIndex]} link />
           </motion.div>
           <motion.div
             className={classNames("absolute left-0 top-0 h-full w-full", {
@@ -79,7 +71,14 @@ const Home: NextPage = () => {
             animate={{ opacity: mainDisplay ? 0 : 1 }}
             transition={transitionSlow}
           >
-            <TopDisplay project={projects[alternateIndex]} link />
+            <TopDisplay
+              project={
+                alternateIndex >= 0
+                  ? projectData[alternateIndex]
+                  : projectData[0]
+              }
+              link
+            />
           </motion.div>
         </div>
       </PageRoot>

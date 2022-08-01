@@ -18,6 +18,7 @@ import TopDisplay from "../components/top-display";
 import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRowConfig, GalleryRowData } from "../utils/gallery-row-data";
+import { projectData, projects } from "../utils/project-data";
 import useAutoscroll from "../utils/use-autoscroll";
 import usePrev from "../utils/use-prev";
 
@@ -98,7 +99,7 @@ const Lyu: NextPage = () => {
       <PageRoot>
         <Sidebar route="lyu" prevRoute={prevRoute} />
         <Scroller bgColor="bg-[#EFF2F3]" divRef={scrollDiv}>
-          <TopDisplay project="lyu" />
+          <TopDisplay project={projectData[projects.indexOf("lyu")]} />
 
           {/* Manifesto */}
           <TextImage

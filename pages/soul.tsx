@@ -6,6 +6,7 @@ import Scroller from "../components/scroller";
 import { Sidebar } from "../components/sidebar";
 import TextImage from "../components/text-image";
 import TopDisplay from "../components/top-display";
+import { projectData, projects } from "../utils/project-data";
 import useAutoscroll from "../utils/use-autoscroll";
 import usePrev from "../utils/use-prev";
 
@@ -24,7 +25,7 @@ const Soul: NextPage = () => {
       <PageRoot>
         <Sidebar route="soul" prevRoute={prev} />
         <Scroller bgColor="bg-[#EEEAE2]" divRef={scrollDiv}>
-          <TopDisplay project="soul" />
+          <TopDisplay project={projectData[projects.indexOf("soul")]} />
 
           {/* Manifesto */}
           <TextImage
