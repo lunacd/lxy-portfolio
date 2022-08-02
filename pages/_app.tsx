@@ -78,7 +78,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         hoverLeave={hoverLeave}
         onLink={onLink}
       />
-      <div className="flex-grow relative">
+      <div className="flex-grow relative overflow-x-hidden">
         <AnimatePresence initial={false}>
           <motion.div
             className="absolute w-full h-full left-0 top-0 z-0"
