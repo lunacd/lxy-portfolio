@@ -66,7 +66,7 @@ export const projectData = [
   new ProjectData(
     "overlap",
     "Overlap",
-    "14 Weeks",
+    "14 Weeks, 2022 Spring",
     "Lifestyle Product Design",
     "Prototyping, Tech Drawing, Model Making, Manufacture",
     "A range of small and functional objects for Hay, focusing on brand identity, manufacturing techniques, and use of materials.",
@@ -79,7 +79,7 @@ export const projectData = [
   new ProjectData(
     "lyu",
     "Lyu",
-    "2 Weeks Daily",
+    "2 Weeks Daily, 2022 Spring",
     "Soft Goods",
     "Craft, Tech Drawing, Manufacture",
     "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
