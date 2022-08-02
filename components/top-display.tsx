@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { forwardRef } from "react";
 
 import styles from "../styles/TopDisplay.module.css";
-import { appendQueryToInternalLinks } from "../utils/helper-funcs";
 import ProjectData, { projectData } from "../utils/project-data";
 
 export interface TopDisplayProps {
@@ -49,13 +48,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                 rel="noreferrer"
               ></a>
             ) : (
-              <Link
-                href={appendQueryToInternalLinks(
-                  props.project.link,
-                  `prev=${props.project.uri}`,
-                )}
-                passHref
-              >
+              <Link href={props.project.link} passHref>
                 <a className="absolute w-full h-full top-0 left-0 block"></a>
               </Link>
             ))}

@@ -3,14 +3,9 @@ import Head from "next/head";
 
 import ProjectsGallery from "../components/projects-gallery";
 import Scroller from "../components/scroller";
-import { projectData, projects } from "../utils/project-data";
-import usePrev from "../utils/use-prev";
+import { projectData } from "../utils/project-data";
 
 const Projects: NextPage = () => {
-  let prevRoute = usePrev();
-  if (!projects.includes(prevRoute)) {
-    prevRoute = "";
-  }
   return (
     <>
       <Head>
