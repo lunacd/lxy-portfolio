@@ -9,6 +9,19 @@ import { Sidebar } from "../components/sidebar";
 import "../styles/globals.css";
 import { projects } from "../utils/project-data";
 
+const isProject = (link: string) => {
+  if (!link.startsWith("/")) {
+    return false;
+  }
+  const linkName = link.slice(1);
+  for (const project of projects) {
+    if (linkName.startsWith(project)) {
+      return true;
+    }
+  }
+  return false;
+};
+
 function MyApp({ Component, pageProps }: AppProps) {
   // Routing
   const router = useRouter();
@@ -16,21 +29,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [swipeAnimation, setSwipeAnimation] = useState(true);
   const onLink = (link: string) => {
     setDisplayAnimation(false);
-    if (router.pathname === "/" && link.startsWith("/")) {
-      const linkName = link.slice(1);
-      let isProject = false;
-      for (const project of projects) {
-        if (linkName.startsWith(project)) {
-          isProject = true;
-          break;
-        }
-      }
-      if (isProject) {
-        setSwipeAnimation(false);
-        console.log(linkName);
-      } else {
-        setSwipeAnimation(true);
-      }
+    const currentPageIsProject = isProject(router.pathname);
+    const targetPageIsProject = isProject(link);
+    if (
+      (router.pathname === "/" || currentPageIsProject) &&
+      targetPageIsProject
+    ) {
+      setSwipeAnimation(false);
     } else {
       setSwipeAnimation(true);
     }
