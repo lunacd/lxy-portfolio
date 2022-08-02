@@ -1,20 +1,30 @@
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { forwardRef } from "react";
 
 import styles from "../styles/TopDisplay.module.css";
 import { appendQueryToInternalLinks } from "../utils/helper-funcs";
 import ProjectData, { projectData } from "../utils/project-data";
 
-interface TopDisplayProps {
+export interface TopDisplayProps {
   project: ProjectData;
+  animation: boolean;
+  absolute?: boolean;
   link?: boolean;
 }
 
-const TopDisplay: React.FC<TopDisplayProps> = (props) => {
+const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
   return (
     <div
-      className={`mb-spacing-2lg flex h-screen min-h-[30rem] flex-col xl:min-h-[34rem] w-full ${props.project.bgColor}`}
+      className={classNames(
+        "mb-spacing-2lg flex h-screen min-h-[30rem] flex-col xl:min-h-[34rem] w-full",
+        {
+          [props.project.bgColor]: true,
+          "absolute top-0 left-0": props.absolute,
+        },
+      )}
+      ref={ref}
     >
       <div className="relative min-h-0 w-full flex-shrink flex-grow overflow-hidden">
         <Image
@@ -113,6 +123,8 @@ const TopDisplay: React.FC<TopDisplayProps> = (props) => {
       </div>
     </div>
   );
-};
+});
+
+TopDisplay.displayName = "Top Display";
 
 export default TopDisplay;

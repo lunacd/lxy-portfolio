@@ -74,7 +74,7 @@ export const projectData = [
     OverlapSmall,
     "text-gray-900",
     "bg-[#FDF9F1]",
-    "/overlap?autoscroll=true",
+    "/overlap",
   ),
   new ProjectData(
     "lyu",
@@ -87,7 +87,7 @@ export const projectData = [
     LyuSmall,
     "text-gray-100",
     "bg-[#EFF2F3]",
-    "/lyu?autoscroll=true",
+    "/lyu",
   ),
   new ProjectData(
     "soul",
@@ -100,7 +100,7 @@ export const projectData = [
     SoulSmall,
     "text-gray-100",
     "bg-[#EEEAE2]",
-    "/soul?autoscroll=true",
+    "/soul",
   ),
   new ProjectData(
     "sunrise",

@@ -1,15 +1,12 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import { useRouter } from "next/router";
 
 import Carousel from "../components/carousel";
 import FullImage from "../components/full-image";
 import HorizontalGallery from "../components/horizontal-gallery";
 import LargeGallery from "../components/large-gallery";
-import PageRoot from "../components/page-root";
 import ProjectNavigation from "../components/project-navigation";
 import Scroller from "../components/scroller";
-import { Sidebar } from "../components/sidebar";
 import SmallGallery from "../components/small-gallery";
 import Subtitle from "../components/subtitle";
 import TextImage from "../components/text-image";
@@ -18,9 +15,9 @@ import TopDisplay from "../components/top-display";
 import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRowConfig, GalleryRowData } from "../utils/gallery-row-data";
+import { PageProps } from "../utils/page-props";
 import { projectData, projects } from "../utils/project-data";
-import useAutoscroll from "../utils/use-autoscroll";
-import usePrev from "../utils/use-prev";
+import useScroll from "../utils/use-scroll";
 
 import BagMaking1 from "../images/lyu/bag-making/bag-making-1-small.webp";
 import BagMaking2 from "../images/lyu/bag-making/bag-making-2-small.webp";
@@ -86,9 +83,8 @@ import TechPack5 from "../images/lyu/tech-pack/tech-pack-5-full.webp";
 import TechPack6 from "../images/lyu/tech-pack/tech-pack-6-full.webp";
 import TechPack7 from "../images/lyu/tech-pack/tech-pack-7-full.webp";
 
-const Lyu: NextPage = () => {
-  const scrollDiv = useAutoscroll();
-  const prevRoute = usePrev();
+const Lyu: NextPage<PageProps> = (props) => {
+  const scrollDiv = useScroll(!props.swipeAnimation);
 
   return (
     <>
@@ -96,10 +92,12 @@ const Lyu: NextPage = () => {
         <title>Lyu | Shirley Lyu Portfolio</title>
       </Head>
 
-      <PageRoot>
-        <Sidebar route="lyu" prevRoute={prevRoute} />
+      <div className="flex-grow" key="lyu-page">
         <Scroller bgColor="bg-[#EFF2F3]" divRef={scrollDiv}>
-          <TopDisplay project={projectData[projects.indexOf("lyu")]} />
+          <TopDisplay
+            project={projectData[projects.indexOf("lyu")]}
+            animation={false}
+          />
 
           {/* Manifesto */}
           <TextImage
@@ -244,7 +242,7 @@ const Lyu: NextPage = () => {
 
           <ProjectNavigation prev="/overlap" next="/soul" />
         </Scroller>
-      </PageRoot>
+      </div>
     </>
   );
 };

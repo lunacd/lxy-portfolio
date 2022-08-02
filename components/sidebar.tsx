@@ -6,14 +6,15 @@ import React, { useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 import styles from "../styles/Sidebar.module.css";
+import { projects } from "../utils/project-data";
 import Route from "../utils/route";
 import { transitionFast as transitionDefault } from "../utils/transition";
 
 const routes = [
   new Route("projects", "Projects", "/projects", "subtitle"),
-  new Route("overlap", "Overlap", "/overlap?autoscroll=true", "paragraph"),
-  new Route("lyu", "Lyu", "/lyu?autoscroll=true", "paragraph"),
-  new Route("soul", "Soul", "/soul?autoscroll=true", "paragraph"),
+  new Route("overlap", "Overlap", "/overlap", "paragraph"),
+  new Route("lyu", "Lyu", "/lyu", "paragraph"),
+  new Route("soul", "Soul", "/soul", "paragraph"),
   new Route(
     "sunrise",
     "Sunrise Speaker",
@@ -24,24 +25,17 @@ const routes = [
   new Route("tron", "M-Tron", "https://www.shirleylyu.com/m-tron", "paragraph"),
 ];
 
-const projects = ["overlap", "lyu", "soul", "sunrise", "mode", "tron"];
-
 interface SidebarProps {
   route: string;
-  prevRoute: string;
-  hoverProject?: (project: string) => void;
-  stopHover?: () => void;
+  hoverEnter: (project: string) => void;
+  hoverLeave: () => void;
+  onLink: (link: string) => void;
 }
 
-const defaultProps = {
-  hoverProject: (_: string) => {},
-  stopHover: () => {},
-};
-
-export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
-  const props = { ...defaultProps, ...propsIn };
+export const Sidebar: React.FC<SidebarProps> = (props) => {
   const [open, setOpen] = useState(true);
   const isXL = useMediaQuery("(min-width: 1280px)");
+  const [hovered, setHovered] = useState("");
 
   return (
     <>
@@ -55,7 +49,7 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
         }}
         transition={transitionDefault}
         className={classNames(
-          "relative h-screen min-h-[30rem] flex-shrink-0 bg-white shadow-lg xl:min-h-[34rem]",
+          "relative h-screen min-h-[30rem] flex-shrink-0 bg-white shadow-lg xl:min-h-[34rem] z-10",
         )}
       >
         <div className="absolute top-0 right-14 flex h-full w-36 flex-col justify-between py-16 xl:right-24">
@@ -72,9 +66,6 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
             </div>
           </Link>
           <div className="flex flex-col space-y-1">
-            {/* <Link href="/about" passHref>
-              <a className="subtitle">About</a>
-            </Link> */}
             {routes.map((route) => (
               <div key={route.uri} className="flex flex-row">
                 <div
@@ -82,24 +73,16 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
                   onMouseEnter={
                     projects.includes(route.uri)
                       ? () => {
-                          console.log(route.uri);
-                          props.hoverProject(
-                            route.uri as
-                              | "overlap"
-                              | "lyu"
-                              | "soul"
-                              | "sunrise"
-                              | "mode"
-                              | "tron",
-                          );
+                          setHovered(route.uri);
+                          props.hoverEnter(route.uri);
                         }
                       : () => {}
                   }
                   onMouseLeave={
                     projects.includes(route.uri)
                       ? () => {
-                          console.log(route.uri);
-                          props.stopHover();
+                          setHovered("");
+                          props.hoverLeave();
                         }
                       : () => {}
                   }
@@ -107,11 +90,14 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
                   <motion.div
                     className={`absolute ${route.typeClass}`}
                     transition={transitionDefault}
-                    initial={{
-                      opacity: props.prevRoute === route.uri ? 1 : 0,
+                    style={{
+                      opacity: 0,
                     }}
                     animate={{
-                      opacity: props.route === route.uri ? 1 : 0,
+                      opacity:
+                        hovered === route.uri || props.route === route.uri
+                          ? 1
+                          : 0,
                     }}
                   >
                     -
@@ -120,10 +106,13 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
                     className={route.typeClass}
                     transition={transitionDefault}
                     style={{
-                      x: props.prevRoute === route.uri ? "0.75rem" : "0rem",
+                      x: "0rem",
                     }}
                     animate={{
-                      x: props.route === route.uri ? "0.75rem" : "0rem",
+                      x:
+                        hovered === route.uri || props.route === route.uri
+                          ? "0.75rem"
+                          : "0rem",
                     }}
                   >
                     {route.link.startsWith("http") ? (
@@ -131,18 +120,14 @@ export const Sidebar: React.FC<SidebarProps> = (propsIn) => {
                         {route.name}
                       </a>
                     ) : (
-                      <Link
-                        href={
-                          route.link +
-                          (props.route.length > 0
-                            ? route.link.includes("?")
-                              ? `&prev=${props.route}`
-                              : `?prev=${props.route}`
-                            : "")
-                        }
+                      <div
+                        onClick={() => {
+                          props.onLink(route.link);
+                        }}
+                        className="cursor-pointer"
                       >
                         {route.name}
-                      </Link>
+                      </div>
                     )}
                   </motion.div>
                 </div>

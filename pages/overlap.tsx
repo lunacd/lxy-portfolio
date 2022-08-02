@@ -8,10 +8,8 @@ import HorizontalGallery from "../components/horizontal-gallery";
 import ImageText from "../components/image-text";
 import LargeGallery from "../components/large-gallery";
 import OverlayImage from "../components/overlay-image";
-import PageRoot from "../components/page-root";
 import ProjectNavigation from "../components/project-navigation";
 import Scroller from "../components/scroller";
-import { Sidebar } from "../components/sidebar";
 import SmallGallery from "../components/small-gallery";
 import Spacing from "../components/spacing";
 import Subtitle from "../components/subtitle";
@@ -22,10 +20,10 @@ import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRowData } from "../utils/gallery-row-data";
 import ImageData from "../utils/image-data";
+import { PageProps } from "../utils/page-props";
 import { projectData, projects } from "../utils/project-data";
-import useAutoscroll from "../utils/use-autoscroll";
+import useScroll from "../utils/use-scroll";
 import useFrameIndex from "../utils/use-frame-index";
-import usePrev from "../utils/use-prev";
 
 import Benchmark from "../images/overlap/benchmark-full.webp";
 import CMF1 from "../images/overlap/cmf/cmf-1-full.webp";
@@ -90,10 +88,9 @@ import TrayImage from "../images/overlap/tray-half.webp";
 import TrayUseImage1 from "../images/overlap/tray-use-1-big.webp";
 import TrayUseImage2 from "../images/overlap/tray-use-2-big.webp";
 
-const Overlap: NextPage = () => {
-  const scrollDiv = useAutoscroll();
+const Overlap: NextPage<PageProps> = (props) => {
+  const scrollDiv = useScroll(!props.swipeAnimation);
   const currentIndex = useFrameIndex(2000);
-  const prev = usePrev();
 
   return (
     <>
@@ -101,252 +98,252 @@ const Overlap: NextPage = () => {
         <title>Overlap | Shirley Lyu Portfolio</title>
       </Head>
 
-      <PageRoot>
-        <Sidebar route="overlap" prevRoute={prev} />
-        <Scroller bgColor="bg-[#FDF9F1]" divRef={scrollDiv}>
-          <TopDisplay project={projectData[projects.indexOf("overlap")]} />
+      <Scroller bgColor="bg-[#FDF9F1]" divRef={scrollDiv}>
+        <TopDisplay
+          project={projectData[projects.indexOf("overlap")]}
+          animation={false}
+        />
 
-          {/* Manifesto */}
-          <TextImage
-            title="Project Manifesto"
-            content={[
-              "A collection of office accessories that can provide users with an intuitive concept of category. To help users better organize their time, space, and objects.",
-            ]}
-            image={ManifestoImage}
-            width={6240}
-            height={4160}
-          />
+        {/* Manifesto */}
+        <TextImage
+          title="Project Manifesto"
+          content={[
+            "A collection of office accessories that can provide users with an intuitive concept of category. To help users better organize their time, space, and objects.",
+          ]}
+          image={ManifestoImage}
+          width={6240}
+          height={4160}
+        />
 
-          {/* Overlap */}
-          <Title title="Overlap Set" />
-          <HorizontalGallery
-            items={[
-              new GalleryItem(Set1, "Timer", "Section Time"),
-              new GalleryItem(
-                Set2,
-                "File Sorter",
-                "Categorize files, books, etc.",
-              ),
-              new GalleryItem(Set3, "Tray", "Store pens, pins, etc."),
-            ]}
-            sparse={true}
-            width={1084}
-            height={1084}
-          />
-          <Title title="Moodboard: Time, Space, Organizing" />
-          <OverlayImage
-            title="Overlapped"
-            content="Time and space sometimes overlap."
-            image={Overlay1}
-            width={9534}
-            height={3742}
-          />
-          <OverlayImage
-            title="Changeable"
-            content="Time changes are unnoticeable, so objects’ movements and Changes are used to define time pass and environment change."
-            image={Overlay2}
-            width={9534}
-            height={3742}
-          />
-          <OverlayImage
-            title="Joyful"
-            content="Categorizing can be a joyful thing!"
-            image={Overlay3}
-            width={9534}
-            height={3742}
-          />
+        {/* Overlap */}
+        <Title title="Overlap Set" />
+        <HorizontalGallery
+          items={[
+            new GalleryItem(Set1, "Timer", "Section Time"),
+            new GalleryItem(
+              Set2,
+              "File Sorter",
+              "Categorize files, books, etc.",
+            ),
+            new GalleryItem(Set3, "Tray", "Store pens, pins, etc."),
+          ]}
+          sparse={true}
+          width={1084}
+          height={1084}
+        />
+        <Title title="Moodboard: Time, Space, Organizing" />
+        <OverlayImage
+          title="Overlapped"
+          content="Time and space sometimes overlap."
+          image={Overlay1}
+          width={9534}
+          height={3742}
+        />
+        <OverlayImage
+          title="Changeable"
+          content="Time changes are unnoticeable, so objects’ movements and Changes are used to define time pass and environment change."
+          image={Overlay2}
+          width={9534}
+          height={3742}
+        />
+        <OverlayImage
+          title="Joyful"
+          content="Categorizing can be a joyful thing!"
+          image={Overlay3}
+          width={9534}
+          height={3742}
+        />
 
-          {/* Timer */}
-          <TextImage
-            title="Timer"
-            content={[
-              "Overlapped part = Set up time",
-              "1 Slice = 10 mins",
-              "Total: 1 hour",
-            ]}
-            image={TimerImage}
-            height={4125}
-            width={4684}
-          />
-          <ImageText
-            title="Timer usage"
-            content={["Set a Time", "Set-time Passing"]}
-            source={new ImageData(TimerUseImage, 6400, 4517)}
-          />
+        {/* Timer */}
+        <TextImage
+          title="Timer"
+          content={[
+            "Overlapped part = Set up time",
+            "1 Slice = 10 mins",
+            "Total: 1 hour",
+          ]}
+          image={TimerImage}
+          height={4125}
+          width={4684}
+        />
+        <ImageText
+          title="Timer usage"
+          content={["Set a Time", "Set-time Passing"]}
+          source={new ImageData(TimerUseImage, 6400, 4517)}
+        />
 
-          {/* File Sorter */}
-          <TextImage
-            title="File Sorter"
-            content={[
-              "Four different translucent colored blockers categorize files with height and colors.",
-            ]}
-            image={FileSorterImage}
-            width={4162}
-            height={4125}
-          />
-          <ImageText
-            title="File sorter usage 1"
-            content={["Put in file"]}
-            source={new ImageData(FileSorterUseImage1, 6300, 4500)}
-          />
-          <ImageText
-            title="File sorter usage 2"
-            content={["Different Overlapping Order"]}
-            source={
-              new Animation(
-                [
-                  FileSorterUseImage21,
-                  FileSorterUseImage22,
-                  FileSorterUseImage23,
-                ],
-                6300,
-                5387,
-              )
-            }
-            frame={currentIndex}
-          />
+        {/* File Sorter */}
+        <TextImage
+          title="File Sorter"
+          content={[
+            "Four different translucent colored blockers categorize files with height and colors.",
+          ]}
+          image={FileSorterImage}
+          width={4162}
+          height={4125}
+        />
+        <ImageText
+          title="File sorter usage 1"
+          content={["Put in file"]}
+          source={new ImageData(FileSorterUseImage1, 6300, 4500)}
+        />
+        <ImageText
+          title="File sorter usage 2"
+          content={["Different Overlapping Order"]}
+          source={
+            new Animation(
+              [
+                FileSorterUseImage21,
+                FileSorterUseImage22,
+                FileSorterUseImage23,
+              ],
+              6300,
+              5387,
+            )
+          }
+          frame={currentIndex}
+        />
 
-          {/* Tray */}
-          <TextImage
-            title="Tray"
-            content={[
-              "4 Different color, size, and depth trays to categorize office accessories.",
-            ]}
-            image={TrayImage}
-            width={4684}
-            height={4125}
-          />
-          <ImageText
-            title="Tray usage 1"
-            content={["Different combinations"]}
-            source={new ImageData(TrayUseImage1, 6300, 4500)}
-          />
-          <ImageText
-            title="Tray usage 2"
-            content={["Different usage"]}
-            source={new ImageData(TrayUseImage2, 6296, 4500)}
-          />
+        {/* Tray */}
+        <TextImage
+          title="Tray"
+          content={[
+            "4 Different color, size, and depth trays to categorize office accessories.",
+          ]}
+          image={TrayImage}
+          width={4684}
+          height={4125}
+        />
+        <ImageText
+          title="Tray usage 1"
+          content={["Different combinations"]}
+          source={new ImageData(TrayUseImage1, 6300, 4500)}
+        />
+        <ImageText
+          title="Tray usage 2"
+          content={["Different usage"]}
+          source={new ImageData(TrayUseImage2, 6296, 4500)}
+        />
 
-          {/* Tech Drawing */}
-          <Title title="Tech Drawing" />
-          <Carousel
-            images={[
-              TechDrawing1,
-              TechDrawing2,
-              TechDrawing3,
-              TechDrawing4,
-              TechDrawing5,
-              TechDrawing6,
-              TechDrawing7,
-              TechDrawing8,
-              TechDrawing9,
-              TechDrawing10,
-              TechDrawing11,
-            ]}
-            description="Tech Drawing"
-            width={8000}
-            height={4500}
-          />
+        {/* Tech Drawing */}
+        <Title title="Tech Drawing" />
+        <Carousel
+          images={[
+            TechDrawing1,
+            TechDrawing2,
+            TechDrawing3,
+            TechDrawing4,
+            TechDrawing5,
+            TechDrawing6,
+            TechDrawing7,
+            TechDrawing8,
+            TechDrawing9,
+            TechDrawing10,
+            TechDrawing11,
+          ]}
+          description="Tech Drawing"
+          width={8000}
+          height={4500}
+        />
 
-          {/* Design Process */}
-          <Title title="Design Process" />
-          <Subtitle subtitle="HAY's Brand DNA Analysis" />
-          <HorizontalGallery
-            items={[
-              new GalleryItem(DNA1, undefined, "Playful"),
-              new GalleryItem(DNA2, undefined, "Accessible"),
-              new GalleryItem(DNA3, undefined, "Adaptive"),
-              new GalleryItem(DNA4, undefined, "Contemporary"),
-              new GalleryItem(DNA5, undefined, "Vibrant"),
-            ]}
-            sparse={false}
-            width={926}
-            height={1321}
-          />
+        {/* Design Process */}
+        <Title title="Design Process" />
+        <Subtitle subtitle="HAY's Brand DNA Analysis" />
+        <HorizontalGallery
+          items={[
+            new GalleryItem(DNA1, undefined, "Playful"),
+            new GalleryItem(DNA2, undefined, "Accessible"),
+            new GalleryItem(DNA3, undefined, "Adaptive"),
+            new GalleryItem(DNA4, undefined, "Contemporary"),
+            new GalleryItem(DNA5, undefined, "Vibrant"),
+          ]}
+          sparse={false}
+          width={926}
+          height={1321}
+        />
 
-          {/* Brand Benchmark */}
-          <Subtitle subtitle="HAY's Brand Benchmarks" />
-          <CenterImage
-            image={Benchmark}
-            alt="Brand benchmark"
-            width={4784}
-            height={2735}
-          />
+        {/* Brand Benchmark */}
+        <Subtitle subtitle="HAY's Brand Benchmarks" />
+        <CenterImage
+          image={Benchmark}
+          alt="Brand benchmark"
+          width={4784}
+          height={2735}
+        />
 
-          {/* Ideation */}
-          <Subtitle subtitle="Overlap Ideation" />
-          <FullImage
-            image={Ideation}
-            alt="Ideation for Overlap"
-            width={8000}
-            height={4500}
-          />
+        {/* Ideation */}
+        <Subtitle subtitle="Overlap Ideation" />
+        <FullImage
+          image={Ideation}
+          alt="Ideation for Overlap"
+          width={8000}
+          height={4500}
+        />
 
-          {/* Prototype */}
-          <Subtitle subtitle="Prototype &amp; Form Perfection" />
-          <FullImage
-            image={Prototype}
-            alt="Prototype for Overlap"
-            width={7677}
-            height={4163}
-          />
+        {/* Prototype */}
+        <Subtitle subtitle="Prototype &amp; Form Perfection" />
+        <FullImage
+          image={Prototype}
+          alt="Prototype for Overlap"
+          width={7677}
+          height={4163}
+        />
 
-          {/* CMF & Manufacturing */}
-          <Title title="CMF &amp; Manufacturing" />
-          <Carousel
-            images={[CMF1, CMF2, CMF3, CMF4, CMF5, CMF6, CMF7, CMF8]}
-            description="CMF"
-            width={8000}
-            height={4500}
-          />
+        {/* CMF & Manufacturing */}
+        <Title title="CMF &amp; Manufacturing" />
+        <Carousel
+          images={[CMF1, CMF2, CMF3, CMF4, CMF5, CMF6, CMF7, CMF8]}
+          description="CMF"
+          width={8000}
+          height={4500}
+        />
 
-          {/* Making Process */}
-          <Title title="Final Model Making Process" />
-          <SmallGallery
-            items={[
-              new GalleryItem(Process1, "Wood Cut"),
-              new GalleryItem(Process2, "Wood Flatten"),
-              new GalleryItem(Process3, "CNC"),
-              new GalleryItem(Process4, "Laser Cut"),
-              new GalleryItem(Process5, "Band Saw Cut"),
-              new GalleryItem(Process6, "Machine Sanding"),
-              new GalleryItem(Process7, "Hand Sanding"),
-              new GalleryItem(Process8, "Router Chamfer"),
-              new GalleryItem(Process9, "Wood Stain"),
-              new GalleryItem(Process10, "Acrylic Gluing"),
-              new GalleryItem(Process11, "Clear Matte Finish Spray"),
-              new GalleryItem(Process12, "Assembly"),
-            ]}
-            width={3063}
-            height={2248}
-          />
+        {/* Making Process */}
+        <Title title="Final Model Making Process" />
+        <SmallGallery
+          items={[
+            new GalleryItem(Process1, "Wood Cut"),
+            new GalleryItem(Process2, "Wood Flatten"),
+            new GalleryItem(Process3, "CNC"),
+            new GalleryItem(Process4, "Laser Cut"),
+            new GalleryItem(Process5, "Band Saw Cut"),
+            new GalleryItem(Process6, "Machine Sanding"),
+            new GalleryItem(Process7, "Hand Sanding"),
+            new GalleryItem(Process8, "Router Chamfer"),
+            new GalleryItem(Process9, "Wood Stain"),
+            new GalleryItem(Process10, "Acrylic Gluing"),
+            new GalleryItem(Process11, "Clear Matte Finish Spray"),
+            new GalleryItem(Process12, "Assembly"),
+          ]}
+          width={3063}
+          height={2248}
+        />
 
-          {/* Gallery */}
-          <Title title="Product Gallery" />
-          <LargeGallery
-            rows={[
-              new GalleryRowData([new ImageData(Gallery1, 12767, 7167)]),
-              new GalleryRowData([
-                new ImageData(Gallery2, 4684, 3750),
-                new ImageData(Gallery3, 4684, 3750),
-                new ImageData(Gallery4, 3067, 3750),
-              ]),
-              new GalleryRowData([new ImageData(Gallery5, 12767, 7167)]),
-              new GalleryRowData([new ImageData(Gallery6, 12767, 7125)]),
-            ]}
-            description="Overlap"
-            botSpacing={false}
-          />
+        {/* Gallery */}
+        <Title title="Product Gallery" />
+        <LargeGallery
+          rows={[
+            new GalleryRowData([new ImageData(Gallery1, 12767, 7167)]),
+            new GalleryRowData([
+              new ImageData(Gallery2, 4684, 3750),
+              new ImageData(Gallery3, 4684, 3750),
+              new ImageData(Gallery4, 3067, 3750),
+            ]),
+            new GalleryRowData([new ImageData(Gallery5, 12767, 7167)]),
+            new GalleryRowData([new ImageData(Gallery6, 12767, 7125)]),
+          ]}
+          description="Overlap"
+          botSpacing={false}
+        />
 
-          <div className="text-center text-xs">
-            This is not a product of Hay. Branding and logo marks are used for
-            demonstration purposes only.
-          </div>
-          <Spacing />
+        <div className="text-center text-xs">
+          This is not a product of Hay. Branding and logo marks are used for
+          demonstration purposes only.
+        </div>
+        <Spacing />
 
-          <ProjectNavigation next="/lyu" />
-        </Scroller>
-      </PageRoot>
+        <ProjectNavigation next="/lyu" />
+      </Scroller>
     </>
   );
 };
