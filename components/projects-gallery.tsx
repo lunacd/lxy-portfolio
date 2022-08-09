@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 import ProjectData from "../utils/project-data";
+import { transitionFast } from "../utils/transition";
 
 interface ProjectsGalleryProps {
   data: ProjectData[];
@@ -15,7 +17,7 @@ const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
     <div className="single grid grid-cols-3 gap-spacing my-spacing-3lg">
       {props.data.map((data, index) => {
         return (
-          <div key={index}>
+          <motion.div key={index} style={{ y: '0rem' }} whileHover={{ y: '-1rem' }} transition={transitionFast}>
             <Link href={data.link} passHref>
               <a>
                 <Image
@@ -31,7 +33,7 @@ const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
               <span className="subtitle">{data.name}</span>
               <span className="paragraph"> - {data.category}</span>
             </div>
-          </div>
+          </motion.div>
         );
       })}
     </div>
