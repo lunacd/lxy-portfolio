@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef } from "react";
@@ -10,14 +11,29 @@ interface OverlayImageProps {
   image: string | StaticImageData;
   width: number;
   height: number;
+  fullScreen?: boolean;
+  botSpacing?: boolean;
+  lightText?: boolean;
 }
 
-const OverlayImage: React.FC<OverlayImageProps> = (props) => {
+const defaultProps = {
+  fullScreen: false,
+  botSpacing: true,
+  lightText: false,
+};
+
+const OverlayImage: React.FC<OverlayImageProps> = (propsIn) => {
+  const props = { ...defaultProps, ...propsIn };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className="single relative mx-spacing-lg mb-spacing-3lg"
+      className={classNames("relative mb-spacing-3lg", {
+        "single mx-spacing-lg": !props.fullScreen,
+        "w-full": props.fullScreen,
+        "mb-spacing-3lg": props.botSpacing,
+        "mb-spacing": !props.botSpacing,
+      })}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}
@@ -32,9 +48,26 @@ const OverlayImage: React.FC<OverlayImageProps> = (props) => {
         height={props.height}
         placeholder="blur"
       />
-      <div className="absolute left-0 right-2/3 top-0 bottom-2/3 pr-4">
-        <div className="subtitle">{props.title}</div>
-        <div className="paragraph">{props.content}</div>
+      <div
+        className={classNames("absolute right-2/3 bottom-2/3 pr-4", {
+          "top-0 left-0": !props.fullScreen,
+          "top-4 left-spacing-lg": props.fullScreen,
+        })}
+      >
+        <div
+          className={classNames("subtitle", {
+            "text-white": props.lightText,
+          })}
+        >
+          {props.title}
+        </div>
+        <div
+          className={classNames("paragraph", {
+            "text-white": props.lightText,
+          })}
+        >
+          {props.content}
+        </div>
       </div>
     </motion.div>
   );

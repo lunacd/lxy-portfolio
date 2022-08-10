@@ -51,9 +51,10 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
           {item.title !== undefined && (
             <div className="subtitle text-center">{item.title}</div>
           )}
-          {item.description !== undefined && (
-            <div className="paragraph text-center">{item.description}</div>
-          )}
+          {item.content !== undefined &&
+            item.content.map((line) => (
+              <div className="paragraph text-center">{line}</div>
+            ))}
         </div>
       ))}
     </motion.div>

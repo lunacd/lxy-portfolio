@@ -10,9 +10,15 @@ interface TextImageProps {
   image: string | StaticImageData;
   width: number;
   height: number;
+  titleClass?: string;
 }
 
-const TextImage: React.FC<TextImageProps> = (props) => {
+const defaultProps = {
+  titleClass: "title",
+};
+
+const TextImage: React.FC<TextImageProps> = (propsIn) => {
+  const props = { ...defaultProps, ...propsIn };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -24,7 +30,7 @@ const TextImage: React.FC<TextImageProps> = (props) => {
       ref={ref}
     >
       <div className="half flex flex-col justify-end">
-        <div className="title mb-24">{props.title}</div>
+        <div className={`${props.titleClass} mb-24`}>{props.title}</div>
         <div className="paragraph">
           {props.content.map((line, index) => (
             <div key={index}>{line}</div>

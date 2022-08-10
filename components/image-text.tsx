@@ -1,6 +1,5 @@
 import Animatable from "./animatable";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import React, { useRef } from "react";
 
 import Animation from "../utils/animation";
@@ -8,13 +7,20 @@ import ImageData from "../utils/image-data";
 import { transitionSlow } from "../utils/transition";
 
 interface ImageTextProps {
-  title: string;
   content: string[];
   source: ImageData | Animation;
+  alt: string;
   frame?: number;
+  title?: string;
+  titleClass?: string;
 }
 
-const ImageText: React.FC<ImageTextProps> = (props) => {
+const defaultProps = {
+  titleClass: "title",
+};
+
+const ImageText: React.FC<ImageTextProps> = (propsIn) => {
+  const props = { ...defaultProps, ...propsIn };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -29,7 +35,10 @@ const ImageText: React.FC<ImageTextProps> = (props) => {
         <Animatable source={props.source} frame={props.frame} />
       </div>
       <div className="one-third flex flex-col justify-end">
-        <div className="paragraph text-right">
+        {props.title && (
+          <div className={`${props.titleClass} mb-24`}>{props.title}</div>
+        )}
+        <div className="paragraph">
           {props.content.map((line, index) => (
             <div key={index}>{line}</div>
           ))}

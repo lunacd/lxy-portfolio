@@ -22,8 +22,8 @@ import { GalleryRowData } from "../utils/gallery-row-data";
 import ImageData from "../utils/image-data";
 import { PageProps } from "../utils/page-props";
 import { projectData, projects } from "../utils/project-data";
-import useScroll from "../utils/use-scroll";
 import useFrameIndex from "../utils/use-frame-index";
+import useScroll from "../utils/use-scroll";
 
 import Benchmark from "../images/overlap/benchmark-full.webp";
 import CMF1 from "../images/overlap/cmf/cmf-1-full.webp";
@@ -159,7 +159,7 @@ const Overlap: NextPage<PageProps> = (props) => {
           title="Timer"
           content={[
             "Overlapped part = Set up time",
-            "1 Slice = 10 mins",
+            "1 Slice = 10 min",
             "Total: 1 hour",
           ]}
           image={TimerImage}
@@ -167,7 +167,7 @@ const Overlap: NextPage<PageProps> = (props) => {
           width={4684}
         />
         <ImageText
-          title="Timer usage"
+          alt="Timer usage"
           content={["Set a Time", "Set-time Passing"]}
           source={new ImageData(TimerUseImage, 6400, 4517)}
         />
@@ -183,12 +183,12 @@ const Overlap: NextPage<PageProps> = (props) => {
           height={4125}
         />
         <ImageText
-          title="File sorter usage 1"
+          alt="File sorter usage 1"
           content={["Put in file"]}
           source={new ImageData(FileSorterUseImage1, 6300, 4500)}
         />
         <ImageText
-          title="File sorter usage 2"
+          alt="File sorter usage 2"
           content={["Different Overlapping Order"]}
           source={
             new Animation(
@@ -215,12 +215,12 @@ const Overlap: NextPage<PageProps> = (props) => {
           height={4125}
         />
         <ImageText
-          title="Tray usage 1"
+          alt="Tray usage 1"
           content={["Different combinations"]}
           source={new ImageData(TrayUseImage1, 6300, 4500)}
         />
         <ImageText
-          title="Tray usage 2"
+          alt="Tray usage 2"
           content={["Different usage"]}
           source={new ImageData(TrayUseImage2, 6296, 4500)}
         />
