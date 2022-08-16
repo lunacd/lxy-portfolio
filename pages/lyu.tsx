@@ -92,157 +92,155 @@ const Lyu: NextPage<PageProps> = (props) => {
         <title>Lyu | Shirley Lyu Portfolio</title>
       </Head>
 
-      <div className="flex-grow" key="lyu-page">
-        <Scroller bgColor="bg-[#EFF2F3]" divRef={scrollDiv}>
-          <TopDisplay
-            project={projectData[projects.indexOf("lyu")]}
-            animation={false}
-          />
+      <Scroller bgColor="bg-[#EFF2F3]" divRef={scrollDiv}>
+        <TopDisplay
+          project={projectData[projects.indexOf("lyu")]}
+          animation={false}
+        />
 
-          {/* Manifesto */}
-          <TextImage
-            title="Project Manifesto"
-            content={[
-              "Design and handmade a leather tote bag and a pair of leather footwear that match my personal style.",
-            ]}
-            image={ManifestoImage}
-            width={4684}
-            height={5625}
-          />
+        {/* Manifesto */}
+        <TextImage
+          title="Project Manifesto"
+          content={[
+            "Design and handmade a leather tote bag and a pair of leather footwear that match my personal style.",
+          ]}
+          image={ManifestoImage}
+          width={4684}
+          height={5625}
+        />
 
-          {/* Personal Style */}
-          <Title title="What is My Personal Style?" />
-          <Subtitle subtitle="Stylish" />
-          <HorizontalGallery
-            items={[
-              new GalleryItem(Stylish1),
-              new GalleryItem(Stylish2),
-              new GalleryItem(Stylish3),
-            ]}
-            sparse={false}
-            botSpacing={false}
-            width={736}
-            height={900}
-          />
-          <Subtitle subtitle="Neutral and Ease" />
-          <HorizontalGallery
-            items={[
-              new GalleryItem(Ease1),
-              new GalleryItem(Ease2),
-              new GalleryItem(Ease3),
-            ]}
-            width={736}
-            height={900}
-          />
+        {/* Personal Style */}
+        <Title title="What is My Personal Style?" />
+        <Subtitle subtitle="Stylish" />
+        <HorizontalGallery
+          items={[
+            new GalleryItem(Stylish1),
+            new GalleryItem(Stylish2),
+            new GalleryItem(Stylish3),
+          ]}
+          sparse={false}
+          botSpacing={false}
+          width={736}
+          height={900}
+        />
+        <Subtitle subtitle="Neutral and Ease" />
+        <HorizontalGallery
+          items={[
+            new GalleryItem(Ease1),
+            new GalleryItem(Ease2),
+            new GalleryItem(Ease3),
+          ]}
+          width={736}
+          height={900}
+        />
 
-          {/* Ideation */}
-          <Title title="Ideation - Tote" />
-          <FullImage
-            image={IdeationTote}
-            alt="Ideation for the tote"
-            width={2400}
-            height={1053}
-          />
-          <Title title="Ideation - Slippers" />
-          <FullImage
-            image={IdeationSlipper}
-            alt="Ideation for the slippers"
-            width={5047}
-            height={2242}
-          />
+        {/* Ideation */}
+        <Title title="Ideation - Tote" />
+        <FullImage
+          image={IdeationTote}
+          alt="Ideation for the tote"
+          width={2400}
+          height={1053}
+        />
+        <Title title="Ideation - Slippers" />
+        <FullImage
+          image={IdeationSlipper}
+          alt="Ideation for the slippers"
+          width={5047}
+          height={2242}
+        />
 
-          {/* Tote bag making process */}
-          <Title title="Tote Bag Making Process" />
-          <SmallGallery
-            items={[
-              new GalleryItem(BagMaking1, "Cutting Template"),
-              new GalleryItem(BagMaking2, "Material Cutting"),
-              new GalleryItem(BagMaking3, "Buckle Selection"),
-              new GalleryItem(BagMaking4, "Thinning Leather"),
-              new GalleryItem(BagMaking5, "Glue Spray"),
-              new GalleryItem(BagMaking6, "Taping Pieces"),
-              new GalleryItem(BagMaking7, "Stitch Positioning"),
-              new GalleryItem(BagMaking8, "Flat Stitching"),
-              new GalleryItem(BagMaking9, "Cylinder Sewing"),
-            ]}
-            width={1534}
-            height={1125}
-          />
+        {/* Tote bag making process */}
+        <Title title="Tote Bag Making Process" />
+        <SmallGallery
+          items={[
+            new GalleryItem(BagMaking1, "Cutting Template"),
+            new GalleryItem(BagMaking2, "Material Cutting"),
+            new GalleryItem(BagMaking3, "Buckle Selection"),
+            new GalleryItem(BagMaking4, "Thinning Leather"),
+            new GalleryItem(BagMaking5, "Glue Spray"),
+            new GalleryItem(BagMaking6, "Taping Pieces"),
+            new GalleryItem(BagMaking7, "Stitch Positioning"),
+            new GalleryItem(BagMaking8, "Flat Stitching"),
+            new GalleryItem(BagMaking9, "Cylinder Sewing"),
+          ]}
+          width={1534}
+          height={1125}
+        />
 
-          {/* Slipper making process */}
-          <Title title="Slippers Making Process" />
-          <SmallGallery
-            items={[
-              new GalleryItem(SlipperMaking1, "Taping Design"),
-              new GalleryItem(SlipperMaking2, "Cutting Material"),
-              new GalleryItem(SlipperMaking3, "Sticking Pieces Together"),
-              new GalleryItem(SlipperMaking4, "Heating up Lining"),
-              new GalleryItem(SlipperMaking5, "Stitching"),
-              new GalleryItem(SlipperMaking6, "Making Insole"),
-              new GalleryItem(SlipperMaking7, "Closing the Back"),
-              new GalleryItem(SlipperMaking8, "Gluing"),
-              new GalleryItem(SlipperMaking9, "Hammering and Nailing"),
-              new GalleryItem(SlipperMaking10, "Putting on Shoelaces"),
-              new GalleryItem(SlipperMaking11, "Sanding the Bottom"),
-              new GalleryItem(SlipperMaking12, "Applying Glue to Sole"),
-              new GalleryItem(SlipperMaking13, "Heating up the Glue"),
-              new GalleryItem(SlipperMaking14, "Pressing Sole"),
-              new GalleryItem(SlipperMaking15, "Removing Shoe Lasts"),
-            ]}
-            width={1534}
-            height={1125}
-          />
+        {/* Slipper making process */}
+        <Title title="Slippers Making Process" />
+        <SmallGallery
+          items={[
+            new GalleryItem(SlipperMaking1, "Taping Design"),
+            new GalleryItem(SlipperMaking2, "Cutting Material"),
+            new GalleryItem(SlipperMaking3, "Sticking Pieces Together"),
+            new GalleryItem(SlipperMaking4, "Heating up Lining"),
+            new GalleryItem(SlipperMaking5, "Stitching"),
+            new GalleryItem(SlipperMaking6, "Making Insole"),
+            new GalleryItem(SlipperMaking7, "Closing the Back"),
+            new GalleryItem(SlipperMaking8, "Gluing"),
+            new GalleryItem(SlipperMaking9, "Hammering and Nailing"),
+            new GalleryItem(SlipperMaking10, "Putting on Shoelaces"),
+            new GalleryItem(SlipperMaking11, "Sanding the Bottom"),
+            new GalleryItem(SlipperMaking12, "Applying Glue to Sole"),
+            new GalleryItem(SlipperMaking13, "Heating up the Glue"),
+            new GalleryItem(SlipperMaking14, "Pressing Sole"),
+            new GalleryItem(SlipperMaking15, "Removing Shoe Lasts"),
+          ]}
+          width={1534}
+          height={1125}
+        />
 
-          {/* Tech Pack */}
-          <Title title="Tech Pack" />
-          <Carousel
-            images={[
-              TechPack1,
-              TechPack2,
-              TechPack3,
-              TechPack4,
-              TechPack5,
-              TechPack6,
-              TechPack7,
-            ]}
-            description="Tech Pack"
-            width={6384}
-            height={3584}
-          />
+        {/* Tech Pack */}
+        <Title title="Tech Pack" />
+        <Carousel
+          images={[
+            TechPack1,
+            TechPack2,
+            TechPack3,
+            TechPack4,
+            TechPack5,
+            TechPack6,
+            TechPack7,
+          ]}
+          description="Tech Pack"
+          width={6384}
+          height={3584}
+        />
 
-          {/* Gallery */}
-          <Title title="Project Gallery" />
-          <LargeGallery
-            rows={[
-              new GalleryRowData(
-                [
-                  new Animation([Gallery11, Gallery12, Gallery13], 4694, 7017),
-                  new Animation([Gallery21, Gallery22, Gallery23], 4684, 5625),
-                ],
-                GalleryRowConfig.EqualWidthEnd,
-              ),
-              new GalleryRowData([
-                new Animation([Gallery31, Gallery32], 6467, 4159),
-                new Animation([Gallery41, Gallery42, Gallery43], 2900, 4159),
-              ]),
-              new GalleryRowData([
-                new Animation([Gallery51, Gallery52, Gallery53], 2900, 4159),
-                new Animation([Gallery61, Gallery62, Gallery63], 6467, 4159),
-              ]),
-              new GalleryRowData(
-                [
-                  new Animation([Gallery71, Gallery72, Gallery73], 4694, 7017),
-                  new Animation([Gallery81, Gallery82, Gallery83], 4684, 5625),
-                ],
-                GalleryRowConfig.EqualWidthStart,
-              ),
-            ]}
-            description="Lyu"
-          />
+        {/* Gallery */}
+        <Title title="Project Gallery" />
+        <LargeGallery
+          rows={[
+            new GalleryRowData(
+              [
+                new Animation([Gallery11, Gallery12, Gallery13], 4694, 7017),
+                new Animation([Gallery21, Gallery22, Gallery23], 4684, 5625),
+              ],
+              GalleryRowConfig.EqualWidthEnd,
+            ),
+            new GalleryRowData([
+              new Animation([Gallery31, Gallery32], 6467, 4159),
+              new Animation([Gallery41, Gallery42, Gallery43], 2900, 4159),
+            ]),
+            new GalleryRowData([
+              new Animation([Gallery51, Gallery52, Gallery53], 2900, 4159),
+              new Animation([Gallery61, Gallery62, Gallery63], 6467, 4159),
+            ]),
+            new GalleryRowData(
+              [
+                new Animation([Gallery71, Gallery72, Gallery73], 4694, 7017),
+                new Animation([Gallery81, Gallery82, Gallery83], 4684, 5625),
+              ],
+              GalleryRowConfig.EqualWidthStart,
+            ),
+          ]}
+          description="Lyu"
+        />
 
-          <ProjectNavigation prev="/overlap" next="/soul" />
-        </Scroller>
-      </div>
+        <ProjectNavigation prev="/overlap" next="/soul" />
+      </Scroller>
     </>
   );
 };

@@ -1,4 +1,3 @@
-import Animatable from "./animatable";
 import GalleryRow from "./gallery-row";
 import classNames from "classnames";
 import React, { useState } from "react";

@@ -10,10 +10,6 @@ tasks:
       sudo dnf module install nodejs:16 -y
       sudo dnf install nodejs -y
       sudo corepack enable
-  # - build: |
-  #     cd lxy-portfolio-next
-  #     yarn
-  #     yarn export
   - deploy: |
       cd lxy-portfolio-next
       set +x

@@ -39,6 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     } else {
       setSwipeAnimation(true);
     }
+    // noinspection JSIgnoredPromiseFromCall
     router.push(link);
   };
 

@@ -2,14 +2,14 @@
   transform: rotateY(180deg);
 }
 
-.angle_icon {
+.angleIcon {
   font-size: 1.25em;
   line-height: 0.05em;
   vertical-align: -0.075em;
 }
 
 @media (min-width: 1280px) {
-  .angle_icon {
+  .angleIcon {
     font-size: 1.5em;
     line-height: 0.04167em;
     vertical-align: -0.125em;

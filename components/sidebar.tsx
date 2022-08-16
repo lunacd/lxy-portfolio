@@ -182,7 +182,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
               className={classNames(
                 "fa-solid fa-angle-left relative left-9 transition-transform duration-200 ease-in-out xl:left-12",
                 {
-                  [styles.angle_icon]: true,
+                  [styles.angleIcon]: true,
                   [styles.rotate]: !open,
                 },
               )}

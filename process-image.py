@@ -5,9 +5,9 @@ from PIL import Image
 
 err_count = 0
 
-for dirpath, dirnames, filenames in os.walk("./images"):
+for dirPath, dirNames, filenames in os.walk("./images"):
     for name in filenames:
-        print(colorama.Fore.RESET + "Processing " + os.path.join(dirpath, name))
+        print(colorama.Fore.RESET + "Processing " + os.path.join(dirPath, name))
         basename, ext = os.path.splitext(name)
 
         # Check extension
@@ -30,8 +30,8 @@ for dirpath, dirnames, filenames in os.walk("./images"):
             err_count += 1
             continue
 
-        src = os.path.join(dirpath, name)
-        dest = os.path.join(dirpath, basename + ".webp")
+        src = os.path.join(dirPath, name)
+        dest = os.path.join(dirPath, basename + ".webp")
 
         im = Image.open(src)
         w, h = im.size
