@@ -56,6 +56,9 @@ import Gallery82 from "../images/lyu/gallery/gallery-8-2-half.webp";
 import Gallery83 from "../images/lyu/gallery/gallery-8-3-half.webp";
 import IdeationSlipper from "../images/lyu/ideation-slipper-full.webp";
 import IdeationTote from "../images/lyu/ideation-tote-full.webp";
+import Joyful1 from "../images/lyu/joyful-1-half.webp";
+import Joyful2 from "../images/lyu/joyful-2-half.webp";
+import Joyful3 from "../images/lyu/joyful-3-half.webp";
 import ManifestoImage from "../images/lyu/manifesto-half.webp";
 import SlipperMaking1 from "../images/lyu/slipper-making/slipper-making-01-small.webp";
 import SlipperMaking2 from "../images/lyu/slipper-making/slipper-making-02-small.webp";
@@ -72,9 +75,6 @@ import SlipperMaking12 from "../images/lyu/slipper-making/slipper-making-12-smal
 import SlipperMaking13 from "../images/lyu/slipper-making/slipper-making-13-small.webp";
 import SlipperMaking14 from "../images/lyu/slipper-making/slipper-making-14-small.webp";
 import SlipperMaking15 from "../images/lyu/slipper-making/slipper-making-15-small.webp";
-import Stylish1 from "../images/lyu/stylish-1-half.webp";
-import Stylish2 from "../images/lyu/stylish-2-half.webp";
-import Stylish3 from "../images/lyu/stylish-3-half.webp";
 import TechPack1 from "../images/lyu/tech-pack/tech-pack-1-full.webp";
 import TechPack2 from "../images/lyu/tech-pack/tech-pack-2-full.webp";
 import TechPack3 from "../images/lyu/tech-pack/tech-pack-3-full.webp";
@@ -102,7 +102,7 @@ const Lyu: NextPage<PageProps> = (props) => {
         <TextImage
           title="Project Manifesto"
           content={[
-            "Design and handmade a leather tote bag and a pair of leather footwear that match my personal style.",
+            "Design and make a leather, eccentric tote bag and shoes, to go with my artistic style.",
           ]}
           image={ManifestoImage}
           width={4684}
@@ -111,27 +111,27 @@ const Lyu: NextPage<PageProps> = (props) => {
 
         {/* Personal Style */}
         <Title title="What is My Personal Style?" />
-        <Subtitle subtitle="Stylish" />
-        <HorizontalGallery
-          items={[
-            new GalleryItem(Stylish1),
-            new GalleryItem(Stylish2),
-            new GalleryItem(Stylish3),
-          ]}
-          sparse={false}
-          botSpacing={false}
-          width={736}
-          height={900}
-        />
-        <Subtitle subtitle="Neutral and Ease" />
+        <Subtitle subtitle="Ease" />
         <HorizontalGallery
           items={[
             new GalleryItem(Ease1),
             new GalleryItem(Ease2),
             new GalleryItem(Ease3),
           ]}
-          width={736}
-          height={900}
+          sparse={false}
+          botSpacing={false}
+          width={960}
+          height={1174}
+        />
+        <Subtitle subtitle="Joyful" />
+        <HorizontalGallery
+          items={[
+            new GalleryItem(Joyful1),
+            new GalleryItem(Joyful2),
+            new GalleryItem(Joyful3),
+          ]}
+          width={960}
+          height={1174}
         />
 
         {/* Ideation */}

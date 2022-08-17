@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 
+import Button from "../components/button";
 import FullImage from "../components/full-image";
 import HorizontalGallery from "../components/horizontal-gallery";
 import ImageText from "../components/image-text";
@@ -99,7 +100,13 @@ const Soul: NextPage<PageProps> = (props) => {
           alt="Brand research"
           width={1920}
           height={1080}
+          botSpacing={false}
         />
+        <Button
+          text="Full Book"
+          href="https://drive.google.com/file/d/170AtY9rEoj9Msp1hRsGn0R4lRbDeCad0/view"
+        />
+        <div className="pt-spacing-3lg" />
 
         <TextImage
           title="Rolls-Royce Brand Value: Inspiring Greatness"

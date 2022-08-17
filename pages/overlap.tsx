@@ -141,7 +141,7 @@ const Overlap: NextPage<PageProps> = (props) => {
         />
         <OverlayImage
           title="Changeable"
-          content="Time changes are unnoticeable, so objects’ movements and Changes are used to define time pass and environment change."
+          content="Time changes are unnoticeable, so objects' movements and changes are used to track time passing and environmental change."
           image={Overlay2}
           width={9534}
           height={3742}
@@ -168,7 +168,7 @@ const Overlap: NextPage<PageProps> = (props) => {
         />
         <ImageText
           alt="Timer usage"
-          content={["Set a Time", "Set-time Passing"]}
+          content={["Set a Timer"]}
           source={new ImageData(TimerUseImage, 6400, 4517)}
         />
 
@@ -176,7 +176,7 @@ const Overlap: NextPage<PageProps> = (props) => {
         <TextImage
           title="File Sorter"
           content={[
-            "Four different translucent colored blockers categorize files with height and colors.",
+            "Four different translucent colored blockers categorize files with height and color.",
           ]}
           image={FileSorterImage}
           width={4162}
@@ -208,7 +208,7 @@ const Overlap: NextPage<PageProps> = (props) => {
         <TextImage
           title="Tray"
           content={[
-            "4 Different color, size, and depth trays to categorize office accessories.",
+            "Four different colors, size, and depth trays to categorize office accessories",
           ]}
           image={TrayImage}
           width={4684}

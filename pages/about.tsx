@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 import Animatable from "../components/animatable";
+import Button from "../components/button";
 import Scroller from "../components/scroller";
 import Title from "../components/title";
 import styles from "../styles/about.module.css";
@@ -251,13 +252,7 @@ const About: NextPage = () => {
             </motion.div>
           ))}
         </div>
-        <a
-          className="py-4 px-10 subtitle rounded-full bg-black text-white"
-          href="/resume.pdf"
-          target="_blank"
-        >
-          Resume
-        </a>
+        <Button text="Resume" href="/resume.pdf" />
       </Scroller>
       <AnimatePresence>
         {overlayOpen && (

@@ -16,14 +16,14 @@ const routes = [
   new Route("overlap", "Overlap", "/overlap", "paragraph"),
   new Route("lyu", "Lyu", "/lyu", "paragraph"),
   new Route("soul", "Soul", "/soul", "paragraph"),
-  new Route(
-    "sunrise",
-    "Sunrise Speaker",
-    "https://www.shirleylyu.com/sunrisespeaker",
-    "paragraph",
-  ),
-  new Route("mode", "Mode Bag", "https://www.shirleylyu.com/mode", "paragraph"),
-  new Route("tron", "M-Tron", "https://www.shirleylyu.com/m-tron", "paragraph"),
+  // new Route(
+  //   "sunrise",
+  //   "Sunrise Speaker",
+  //   "https://www.shirleylyu.com/sunrisespeaker",
+  //   "paragraph",
+  // ),
+  // new Route("mode", "Mode Bag", "https://www.shirleylyu.com/mode", "paragraph"),
+  // new Route("tron", "M-Tron", "https://www.shirleylyu.com/m-tron", "paragraph"),
 ];
 
 interface SidebarProps {
@@ -141,7 +141,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
               target="_blank"
               rel="noreferrer"
             >
-              More Works
+              More Work
             </a>
             <a
               className="subtitle pb-4"
