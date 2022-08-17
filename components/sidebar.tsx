@@ -11,6 +11,7 @@ import Route from "../utils/route";
 import { transitionFast as transitionDefault } from "../utils/transition";
 
 const routes = [
+  new Route("about", "About", "/about", "subtitle"),
   new Route("projects", "Projects", "/projects", "subtitle"),
   new Route("overlap", "Overlap", "/overlap", "paragraph"),
   new Route("lyu", "Lyu", "/lyu", "paragraph"),

@@ -1,11 +1,11 @@
 class Route {
-  uri: "projects" | "overlap" | "lyu" | "soul" | "sunrise" | "mode" | "tron";
+  uri: string;
   name: string;
   link: string;
   typeClass: string;
 
   constructor(
-    uri: "projects" | "overlap" | "lyu" | "soul" | "sunrise" | "mode" | "tron",
+    uri: string,
     name: string,
     link: string,
     typeClass: string,

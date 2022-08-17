@@ -11,6 +11,8 @@ for dirPath, dirNames, filenames in os.walk("./images"):
         basename, ext = os.path.splitext(name)
 
         # Check extension
+        if ext.lower() in [".gif"]:
+            continue
         if ext.lower() not in [".png", ".jpg", ".webp"]:
             print(colorama.Fore.RED + "Image of type " +
                   ext + " is not supported")
@@ -25,6 +27,8 @@ for dirPath, dirNames, filenames in os.walk("./images"):
             target_width = 960
         elif basename.endswith("small"):
             target_width = 640
+        elif basename.endswith("icon"):
+            target_width = 128
         else:
             print(colorama.Fore.RED + "Unknown width: " + name)
             err_count += 1
