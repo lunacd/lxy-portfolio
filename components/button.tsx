@@ -11,6 +11,7 @@ const Button: React.FC<ButtonProps> = (props) => {
       className="py-4 px-10 subtitle rounded-full bg-black text-white"
       href={props.href}
       target="_blank"
+      rel="noreferrer"
     >
       {props.text}
     </a>

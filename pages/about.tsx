@@ -66,7 +66,13 @@ const About: NextPage = () => {
       <Scroller bgColor="bg-[FDF9F1]">
         <div className="single grid grid-cols-2 gap-spacing my-spacing-3lg">
           <div className={styles.rounded}>
-            <Image src={Profile} layout="responsive" width={960} height={900} />
+            <Image
+              src={Profile}
+              layout="responsive"
+              width={960}
+              height={900}
+              alt="Shirley Lyu profile photo"
+            />
           </div>
           <div className="self-end">
             Hello! This is Shirley Lyu. I am a product designer with infinite
