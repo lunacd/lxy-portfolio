@@ -63,7 +63,7 @@ const About: NextPage = () => {
         <title>About | Shirley Lyu Portfolio</title>
       </Head>
 
-      <Scroller bgColor="bg-[FDF9F1]">
+      <Scroller bgColor="bg-[#FDF9F1]">
         <div className="single grid grid-cols-2 gap-spacing my-spacing-3lg">
           <div className={styles.rounded}>
             <Image
