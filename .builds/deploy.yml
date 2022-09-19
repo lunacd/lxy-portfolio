@@ -8,8 +8,7 @@ triggers:
 tasks:
   - setup: |
       sudo dnf module install nodejs:16 -y
-      sudo dnf install nodejs -y
-      sudo corepack enable
+      sudo npm i -g corepack
   - deploy: |
       cd lxy-portfolio-next
       set +x
