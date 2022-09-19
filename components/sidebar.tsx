@@ -22,8 +22,18 @@ const routes = [
     "https://shirleylyu.wixsite.com/shirley-portfolio/sunrisespeaker",
     "paragraph",
   ),
-  new Route("mode", "Mode Bag", "https://shirleylyu.wixsite.com/shirley-portfolio/mode", "paragraph"),
-  new Route("tron", "M-Tron", "https://shirleylyu.wixsite.com/shirley-portfolio/m-tron", "paragraph"),
+  new Route(
+    "mode",
+    "Mode Bag",
+    "https://shirleylyu.wixsite.com/shirley-portfolio/mode",
+    "paragraph",
+  ),
+  new Route(
+    "tron",
+    "M-Tron",
+    "https://shirleylyu.wixsite.com/shirley-portfolio/m-tron",
+    "paragraph",
+  ),
 ];
 
 interface SidebarProps {
@@ -137,7 +147,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
 
             <a
               className="subtitle"
-              href="https://www.shirleylyu.com"
+              href="https://shirleylyu.wixsite.com/shirley-portfolio/"
               target="_blank"
               rel="noreferrer"
             >
