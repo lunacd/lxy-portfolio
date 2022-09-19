@@ -16,14 +16,14 @@ const routes = [
   new Route("overlap", "Overlap", "/overlap", "paragraph"),
   new Route("lyu", "Lyu", "/lyu", "paragraph"),
   new Route("soul", "Soul", "/soul", "paragraph"),
-  // new Route(
-  //   "sunrise",
-  //   "Sunrise Speaker",
-  //   "https://www.shirleylyu.com/sunrisespeaker",
-  //   "paragraph",
-  // ),
-  // new Route("mode", "Mode Bag", "https://www.shirleylyu.com/mode", "paragraph"),
-  // new Route("tron", "M-Tron", "https://www.shirleylyu.com/m-tron", "paragraph"),
+  new Route(
+    "sunrise",
+    "Sunrise Speaker",
+    "https://shirleylyu.wixsite.com/shirley-portfolio/sunrisespeaker",
+    "paragraph",
+  ),
+  new Route("mode", "Mode Bag", "https://shirleylyu.wixsite.com/shirley-portfolio/mode", "paragraph"),
+  new Route("tron", "M-Tron", "https://shirleylyu.wixsite.com/shirley-portfolio/m-tron", "paragraph"),
 ];
 
 interface SidebarProps {

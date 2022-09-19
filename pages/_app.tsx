@@ -22,7 +22,13 @@ const isProject = (link: string) => {
   return false;
 };
 
-function MyApp({ Component, pageProps }: AppProps) {
+interface AppPageProps {
+  displayProject: number;
+  displayAnimation: boolean;
+  swipeAnimation: boolean;
+}
+
+function MyApp({ Component, pageProps }: AppProps<AppPageProps>) {
   // Routing
   const router = useRouter();
   const [displayAnimation, setDisplayAnimation] = useState(true);
