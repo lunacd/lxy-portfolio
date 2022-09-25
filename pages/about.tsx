@@ -72,6 +72,7 @@ const About: NextPage = () => {
               width={960}
               height={900}
               alt="Shirley Lyu profile photo"
+              placeholder="blur"
             />
           </div>
           <div className="self-end">
