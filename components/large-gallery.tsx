@@ -9,10 +9,12 @@ interface LargeGalleryProps {
   rows: GalleryRowData[];
   description: string;
   botSpacing?: boolean;
+  xSpacing?: boolean;
 }
 
 const defaultProps = {
   botSpacing: true,
+  xSpacing: false,
 };
 
 const LargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
@@ -26,9 +28,11 @@ const LargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
 
   return (
     <div
-      className={classNames("w-full", {
+      className={classNames({
         "mb-spacing-3lg": props.botSpacing,
         "mb-spacing": !props.botSpacing,
+        "w-full": !props.xSpacing,
+        single: props.xSpacing,
       })}
     >
       <div className="space-y-spacing w-full" ref={containerRef}>

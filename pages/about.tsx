@@ -122,6 +122,7 @@ const About: NextPage = () => {
                   )
                 }
                 frame={frame}
+                alt="Traveller"
               />
             </div>
             <div className={styles.textOverlay}>
@@ -142,6 +143,7 @@ const About: NextPage = () => {
                     )
                   }
                   frame={frame}
+                  alt="Craftsperson"
                 />
               </div>
               <div className={styles.textOverlay}>
@@ -159,6 +161,7 @@ const About: NextPage = () => {
                     )
                   }
                   frame={frame}
+                  alt="Photographer"
                 />
               </div>
               <div className={styles.textOverlay}>
@@ -187,6 +190,7 @@ const About: NextPage = () => {
                     <Animatable
                       source={new Animation([Dog1, Dog2, Dog3, Dog4], 640, 838)}
                       frame={frame}
+                      alt="Dog lover"
                     />
                   </div>
                   <div className={styles.textOverlay}>
@@ -206,6 +210,7 @@ const About: NextPage = () => {
                         )
                       }
                       frame={frame}
+                      alt="Thinker"
                     />
                   </div>
                   <div className={styles.textOverlay}>

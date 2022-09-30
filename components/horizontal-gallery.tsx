@@ -12,11 +12,13 @@ interface HorizontalGalleryProps {
   height: number;
   sparse?: boolean;
   botSpacing?: boolean;
+  textColor?: string;
 }
 
 const defaultProps = {
   sparse: false,
   botSpacing: true,
+  textColor: "text-black",
 };
 
 const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
@@ -30,6 +32,7 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
         "mb-spacing": !props.botSpacing,
         "gap-spacing-lg": props.sparse,
         "gap-spacing": !props.sparse,
+        [props.textColor]: true,
       })}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}

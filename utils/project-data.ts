@@ -11,7 +11,7 @@ import SoulSmall from "../images/projects/soul-half.webp";
 import SunriseSmall from "../images/projects/sunrise-half.webp";
 import SoulDisplay from "../images/soul/display-full.webp";
 import SunriseDisplay from "../images/sunrise/display-full.webp";
-import TronDisplay from "../images/tron/display-full.webp";
+import TronDisplay from "../images/m-tron/display-full.webp";
 
 class ProjectData {
   uri: string;
@@ -59,7 +59,7 @@ export const projects: string[] = [
   "soul",
   "sunrise",
   "mode",
-  "tron",
+  "m-tron",
 ];
 
 export const projectData = [

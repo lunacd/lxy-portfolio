@@ -2,12 +2,10 @@ import { NextPage } from "next";
 import Head from "next/head";
 
 import Carousel from "../components/carousel";
-import CenterImage from "../components/center-image";
-import FullImage from "../components/full-image";
+import DisplayImage from "../components/display-image";
 import HorizontalGallery from "../components/horizontal-gallery";
 import ImageText from "../components/image-text";
 import LargeGallery from "../components/large-gallery";
-import OverlayImage from "../components/overlay-image";
 import ProjectNavigation from "../components/project-navigation";
 import Scroller from "../components/scroller";
 import SmallGallery from "../components/small-gallery";
@@ -132,26 +130,26 @@ const Overlap: NextPage<PageProps> = (props) => {
           height={1084}
         />
         <Title title="Moodboard: Time, Space, Organizing" />
-        <OverlayImage
-          title="Overlapped"
-          content="Time and space sometimes overlap."
-          image={Overlay1}
-          width={9534}
-          height={3742}
+        <DisplayImage
+          source={new ImageData(Overlay1, 9534, 3742)}
+          alt="Overlapped moodboard"
+          overlayTitle="Overlapped"
+          overlayText="Time and space sometimes overlap."
+          xSpacing={true}
         />
-        <OverlayImage
-          title="Changeable"
-          content="Time changes are unnoticeable, so objects' movements and changes are used to track time passing and environmental change."
-          image={Overlay2}
-          width={9534}
-          height={3742}
+        <DisplayImage
+          source={new ImageData(Overlay2, 9534, 3742)}
+          alt="Overlapped moodboard"
+          overlayTitle="Changeable"
+          overlayText="Time changes are unnoticeable, so objects' movements and changes are used to track time passing."
+          xSpacing={true}
         />
-        <OverlayImage
-          title="Joyful"
-          content="Categorizing can be a joyful thing!"
-          image={Overlay3}
-          width={9534}
-          height={3742}
+        <DisplayImage
+          source={new ImageData(Overlay3, 9534, 3742)}
+          alt="Overlapped moodboard"
+          overlayTitle="Joyful"
+          overlayText="Categorizing can be a joyful thing!"
+          xSpacing={true}
         />
 
         {/* Timer */}
@@ -264,29 +262,24 @@ const Overlap: NextPage<PageProps> = (props) => {
 
         {/* Brand Benchmark */}
         <Subtitle subtitle="HAY's Brand Benchmarks" />
-        <CenterImage
-          image={Benchmark}
+        <DisplayImage
+          source={new ImageData(Benchmark, 4784, 2735)}
           alt="Brand benchmark"
-          width={4784}
-          height={2735}
+          xSpacing
         />
 
         {/* Ideation */}
         <Subtitle subtitle="Overlap Ideation" />
-        <FullImage
-          image={Ideation}
+        <DisplayImage
+          source={new ImageData(Ideation, 8000, 4500)}
           alt="Ideation for Overlap"
-          width={8000}
-          height={4500}
         />
 
         {/* Prototype */}
         <Subtitle subtitle="Prototype &amp; Form Perfection" />
-        <FullImage
-          image={Prototype}
+        <DisplayImage
+          source={new ImageData(Prototype, 7677, 4163)}
           alt="Prototype for Overlap"
-          width={7677}
-          height={4163}
         />
 
         {/* CMF & Manufacturing */}
@@ -340,7 +333,7 @@ const Overlap: NextPage<PageProps> = (props) => {
           This is not a product of Hay. Branding and logo marks are used for
           demonstration purposes only.
         </div>
-        <Spacing />
+        <Spacing size="medium" />
 
         <ProjectNavigation next="/lyu" />
       </Scroller>

@@ -11,10 +11,12 @@ interface TextImageProps {
   width: number;
   height: number;
   titleClass?: string;
+  textColor?: string;
 }
 
 const defaultProps = {
   titleClass: "title",
+  textColor: "text-black",
 };
 
 const TextImage: React.FC<TextImageProps> = (propsIn) => {
@@ -23,7 +25,7 @@ const TextImage: React.FC<TextImageProps> = (propsIn) => {
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className="single mx-spacing-lg mb-spacing-3lg flex flex-row space-x-spacing"
+      className={`single mx-spacing-lg mb-spacing-3lg flex flex-row space-x-spacing ${props.textColor}`}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}

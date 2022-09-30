@@ -28,12 +28,7 @@ const routes = [
     "https://shirleylyu.wixsite.com/shirley-portfolio/mode",
     "paragraph",
   ),
-  new Route(
-    "tron",
-    "M-Tron",
-    "https://shirleylyu.wixsite.com/shirley-portfolio/m-tron",
-    "paragraph",
-  ),
+  new Route("m-tron", "M-Tron", "/m-tron", "paragraph"),
 ];
 
 interface SidebarProps {

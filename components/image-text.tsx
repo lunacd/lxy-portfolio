@@ -32,7 +32,7 @@ const ImageText: React.FC<ImageTextProps> = (propsIn) => {
       ref={ref}
     >
       <div className="two-thirds">
-        <Animatable source={props.source} frame={props.frame} />
+        <Animatable source={props.source} frame={props.frame} alt={props.alt} />
       </div>
       <div className="one-third flex flex-col justify-end">
         {props.title && (

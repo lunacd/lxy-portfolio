@@ -2,6 +2,7 @@ import os
 import subprocess
 import colorama
 from PIL import Image
+Image.MAX_IMAGE_PIXELS = 1000000000 
 
 err_count = 0
 
@@ -19,7 +20,9 @@ for dirPath, dirNames, filenames in os.walk("./images"):
             err_count += 1
             continue
 
-        if basename.endswith("full"):
+        if basename.endswith("6x"):
+            target_width = 1920 * 6
+        elif basename.endswith("full"):
             target_width = 1920
         elif basename.endswith("big"):
             target_width = 1280
@@ -43,7 +46,7 @@ for dirPath, dirNames, filenames in os.walk("./images"):
             continue
 
         subprocess.call([
-            "magick",
+            "convert",
             src,
             "-strip",
             "-interlace",

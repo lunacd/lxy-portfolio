@@ -14,7 +14,7 @@ const Scroller: React.FC<PropsWithChildren<ScrollerProps>> = (props) => {
     >
       <div className="flex flex-col items-center">
         {props.children}
-        <Spacing />
+        <Spacing size="medium" />
       </div>
     </div>
   );

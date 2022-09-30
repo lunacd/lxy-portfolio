@@ -7,7 +7,7 @@ import ImageData from "../utils/image-data";
 
 interface AnimatableProps {
   source: Animation | ImageData;
-  alt?: string;
+  alt: string;
   frame?: number;
   adaptiveHeight?: boolean;
   totalWidth?: number;

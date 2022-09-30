@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 
 import Carousel from "../components/carousel";
-import FullImage from "../components/full-image";
+import DisplayImage from "../components/display-image";
 import HorizontalGallery from "../components/horizontal-gallery";
 import LargeGallery from "../components/large-gallery";
 import ProjectNavigation from "../components/project-navigation";
@@ -15,6 +15,7 @@ import TopDisplay from "../components/top-display";
 import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
 import { GalleryRowConfig, GalleryRowData } from "../utils/gallery-row-data";
+import ImageData from "../utils/image-data";
 import { PageProps } from "../utils/page-props";
 import { projectData, projects } from "../utils/project-data";
 import useScroll from "../utils/use-scroll";
@@ -136,18 +137,14 @@ const Lyu: NextPage<PageProps> = (props) => {
 
         {/* Ideation */}
         <Title title="Ideation - Tote" />
-        <FullImage
-          image={IdeationTote}
+        <DisplayImage
+          source={new ImageData(IdeationTote, 2400, 1053)}
           alt="Ideation for the tote"
-          width={2400}
-          height={1053}
         />
         <Title title="Ideation - Slippers" />
-        <FullImage
-          image={IdeationSlipper}
+        <DisplayImage
+          source={new ImageData(IdeationSlipper, 5047, 2242)}
           alt="Ideation for the slippers"
-          width={5047}
-          height={2242}
         />
 
         {/* Tote bag making process */}

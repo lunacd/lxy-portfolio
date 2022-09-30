@@ -2,11 +2,10 @@ import { NextPage } from "next";
 import Head from "next/head";
 
 import Button from "../components/button";
-import FullImage from "../components/full-image";
+import DisplayImage from "../components/display-image";
 import HorizontalGallery from "../components/horizontal-gallery";
 import ImageText from "../components/image-text";
 import LargeGallery from "../components/large-gallery";
-import OverlayImage from "../components/overlay-image";
 import ProjectNavigation from "../components/project-navigation";
 import Scroller from "../components/scroller";
 import Spacing from "../components/spacing";
@@ -95,11 +94,9 @@ const Soul: NextPage<PageProps> = (props) => {
         {/* Brand Research */}
         <Title title="Rolls-Royce Brand Research" />
         <Subtitle subtitle="Brand Research Book" />
-        <FullImage
-          image={BrandResearch}
+        <DisplayImage
+          source={new ImageData(BrandResearch, 1920, 1080)}
           alt="Brand research"
-          width={1920}
-          height={1080}
           botSpacing={false}
         />
         <Button
@@ -170,52 +167,49 @@ const Soul: NextPage<PageProps> = (props) => {
 
         {/* Design Direction */}
         <Title title="Design Direction" />
-        <OverlayImage
-          title="Soothing Curves"
-          content="Contour line | decoration line"
-          image={Direction1}
-          width={1920}
-          height={961}
-          fullScreen={true}
+        <DisplayImage
+          source={new ImageData(Direction1, 1920, 961)}
+          alt="Soothing Curves"
+          xSpacing={false}
           botSpacing={false}
+          overlayTitle="Soothing Curves"
+          overlayText="Contour line | decoration line"
         />
-        <OverlayImage
-          title="Subtle Repeated Surfacing"
-          content="Array | Concave & Extrude"
-          image={Direction2}
-          width={1920}
-          height={961}
-          fullScreen={true}
+        <DisplayImage
+          source={new ImageData(Direction2, 1920, 961)}
+          alt="Soothing Curves"
+          xSpacing={false}
           botSpacing={false}
+          overlayTitle="Subtle Repeated Surfacing"
+          overlayText="Array | Concave &amp; Extrude"
         />
-        <OverlayImage
-          title="Calm"
-          content="Stretch Out Balance"
-          image={Direction3}
-          width={1920}
-          height={961}
-          fullScreen={true}
+        <DisplayImage
+          source={new ImageData(Direction3, 1920, 961)}
+          alt="Soothing Curves"
+          xSpacing={false}
+          botSpacing={false}
+          overlayTitle="Calm"
+          overlayText="Stretch Out Balance"
         />
 
         {/* CMF Board */}
         <Title title="CMF Moodboard" />
-        <OverlayImage
-          title="Color"
-          content="Low saturation brown and green different shades of Grey"
-          image={CMF}
-          width={1920}
-          height={961}
-          fullScreen={true}
+        <DisplayImage
+          source={new ImageData(CMF, 1920, 961)}
+          alt="CMF Color"
+          xSpacing={false}
           botSpacing={false}
+          overlayTitle="Color"
+          overlayText="Low saturation brown and green different shades of Grey"
         />
-        <OverlayImage
-          title="Materials and Finish"
-          content="Wood, metal, glass, and ceramic"
-          image={Materials}
-          width={1920}
-          height={961}
-          fullScreen={true}
-          lightText={true}
+        <DisplayImage
+          source={new ImageData(Materials, 1920, 961)}
+          alt="CMF Materials"
+          xSpacing={false}
+          botSpacing={false}
+          overlayTitle="Materials and Finish"
+          overlayText="Wood, metal, glass, and ceramic"
+          textColor="text-white"
         />
 
         {/* Proposal */}
@@ -240,7 +234,10 @@ const Soul: NextPage<PageProps> = (props) => {
         {/* Form Ideation */}
         <Title title="Form Ideation" />
         <div className="single">2D Sketch, Shaping Foam, 3D Modeling</div>
-        <FullImage image={Ideation} alt="Ideation" width={1920} height={711} />
+        <DisplayImage
+          source={new ImageData(Ideation, 1920, 711)}
+          alt="Ideation"
+        />
 
         {/* Instrument */}
         <TextImage
@@ -256,19 +253,15 @@ const Soul: NextPage<PageProps> = (props) => {
         {/* Tech Drawing */}
         <Subtitle subtitle="Tech Drawing" />
         <div className="single">Soul Instrument Body</div>
-        <FullImage
-          image={InstrumentTech}
+        <DisplayImage
+          source={new ImageData(InstrumentTech, 1920, 990)}
           alt="Soul Instrument Tech Drawing"
-          width={1920}
-          height={990}
           botSpacing={false}
         />
         <div className="single">Wireless Charger</div>
-        <FullImage
-          image={ChargerTech}
+        <DisplayImage
+          source={new ImageData(ChargerTech, 1920, 990)}
           alt="Wireless Charger Tech Drawing"
-          width={1920}
-          height={990}
         />
 
         <ImageText
@@ -337,11 +330,9 @@ const Soul: NextPage<PageProps> = (props) => {
 
         <Subtitle subtitle="Tech Drawing" />
         <div className="single">Lamp</div>
-        <FullImage
-          image={LightTech}
+        <DisplayImage
+          source={new ImageData(LightTech, 1920, 990)}
           alt="Light Tech Drawing"
-          width={1920}
-          height={990}
         />
         <ImageText
           title="Peaceful Breathing Atmosphere"
@@ -405,7 +396,7 @@ const Soul: NextPage<PageProps> = (props) => {
           This is not a product of Rolls Royce. Branding and logo marks are used
           for demonstration purposes only.
         </div>
-        <Spacing />
+        <Spacing size="medium" />
 
         <ProjectNavigation prev="/lyu" />
       </Scroller>
