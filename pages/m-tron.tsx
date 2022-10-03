@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import DisplayImage from "../components/display-image";
 import HorizontalGallery from "../components/horizontal-gallery";
+import HorizontalScroll from "../components/horizontal-scroll";
 import LargeGallery from "../components/large-gallery";
 import Scroller from "../components/scroller";
 import Spacing from "../components/spacing";
@@ -43,7 +44,7 @@ import SpeedController from "../images/m-tron/speed-controller-full.webp";
 
 const MTron: NextPage<PageProps> = (props) => {
   const scrollDiv = useScroll(!props.swipeAnimation);
-  const currentIndex = useFrameIndex(2000);
+  const currentIndex = useFrameIndex(1500);
   return (
     <>
       <Head>
@@ -96,25 +97,18 @@ const MTron: NextPage<PageProps> = (props) => {
         {/* Ideation */}
         <Title title="Ideation" textColor="text-white" />
         <DisplayImage
-          source={new ImageData(Ideation, 1920, 691)}
+          source={new ImageData(Ideation, 1920, 961)}
           alt="Ideation"
         />
 
         {/* User Scenario */}
         <Title title="User Scenario" textColor="text-white" />
-        <div className="single overflow-x-scroll mb-spacing-3lg">
-          <div className="w-[400%]">
-            <Image
-              src={UserScenario}
-              alt="User scenario"
-              width={11520}
-              height={1489}
-              layout="responsive"
-              placeholder="blur"
-              unoptimized
-            />
-          </div>
-        </div>
+        <HorizontalScroll
+          prompt="Scroll horizontally to see the whole scenario!"
+          source={new ImageData(UserScenario, 11520, 1489)}
+          alt="User scenario"
+          textColor="text-white"
+        />
 
         {/* Features */}
         <Title title="Features" textColor="text-white" />
@@ -131,7 +125,7 @@ const MTron: NextPage<PageProps> = (props) => {
           alt="Brake"
           frame={currentIndex}
           botSpacing={false}
-          overlayTitle="Brake"
+          overlayTitle="Squeeze to Brake"
           textPosition="left"
           textColor="text-white"
         />
