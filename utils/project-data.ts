@@ -1,17 +1,17 @@
 import { StaticImageData } from "next/image";
 
 import LyuDisplay from "../images/lyu/display-full.webp";
-import ModeDisplay from "../images/mode/display-full.webp";
+import TronDisplay from "../images/m-tron/display-full.webp";
 import OverlapDisplay from "../images/overlap/display-full.webp";
 import LyuSmall from "../images/projects/lyu-half.webp";
-import ModeSmall from "../images/projects/mode-half.webp";
-import TronSmall from "../images/projects/mtron-half.webp";
+import TronSmall from "../images/projects/m-tron-half.webp";
 import OverlapSmall from "../images/projects/overlap-half.webp";
+import RefugiaSmall from "../images/projects/refugia-half.webp";
 import SoulSmall from "../images/projects/soul-half.webp";
 import SunriseSmall from "../images/projects/sunrise-half.webp";
+import RefugiaDisplay from "../images/refugia/display-full.webp";
 import SoulDisplay from "../images/soul/display-full.webp";
 import SunriseDisplay from "../images/sunrise/display-full.webp";
-import TronDisplay from "../images/m-tron/display-full.webp";
 
 class ProjectData {
   uri: string;
@@ -55,10 +55,10 @@ class ProjectData {
 
 export const projects: string[] = [
   "overlap",
+  "refugia",
   "lyu",
   "soul",
   "sunrise",
-  "mode",
   "m-tron",
 ];
 
@@ -75,6 +75,19 @@ export const projectData = [
     "text-gray-900",
     "bg-[#FDF9F1]",
     "/overlap",
+  ),
+  new ProjectData(
+    "refugia",
+    "Refugia",
+    "14 Weeks, 2022 Summer",
+    "Spatial Experience Design",
+    "Sustainability, Model making",
+    "See through their eyes; hear through their ears; sense through their senses. Learn and feel animals' adaptation to the urban environment.",
+    RefugiaDisplay,
+    RefugiaSmall,
+    "text-gray-100",
+    "bg-[#E0E4E0]",
+    "/refugia",
   ),
   new ProjectData(
     "lyu",
@@ -114,19 +127,6 @@ export const projectData = [
     "text-gray-100",
     "bg-[#F2F2F2]",
     "https://www.shirleylyu.com/sunrisespeaker",
-  ),
-  new ProjectData(
-    "mode",
-    "Mode Bag",
-    "14 Weeks , 2021 Fall",
-    "Soft Goods",
-    "Design Research, Prototyping, Concept development, 3D Modeling",
-    "To create new concepts that relate to EDC (Everyday Carry) products for Benchmade by designing a new EDC product and related services.",
-    ModeDisplay,
-    ModeSmall,
-    "text-gray-100",
-    "bg-[#ECF4F0]",
-    "https://www.shirleylyu.com/mode",
   ),
   new ProjectData(
     "tron",
