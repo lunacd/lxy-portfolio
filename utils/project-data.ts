@@ -124,9 +124,9 @@ export const projectData = [
     "Reverse-engineered a speaker and put all parts back together in personal designed product for Yamaha.",
     SunriseDisplay,
     SunriseSmall,
-    "text-gray-100",
-    "bg-[#F2F2F2]",
-    "https://www.shirleylyu.com/sunrisespeaker",
+    "text-gray-900",
+    "bg-[#D8D6D4]",
+    "/sunrise",
   ),
   new ProjectData(
     "tron",
@@ -139,7 +139,7 @@ export const projectData = [
     TronSmall,
     "text-gray-100",
     "bg-[#E4F2F5]",
-    "https://www.shirleylyu.com/m-tron",
+    "/m-tron",
   ),
 ];
 

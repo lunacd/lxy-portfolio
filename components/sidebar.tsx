@@ -17,12 +17,7 @@ const routes = [
   new Route("refugia", "Refugia", "/refugia", "paragraph"),
   new Route("lyu", "Lyu", "/lyu", "paragraph"),
   new Route("soul", "Soul", "/soul", "paragraph"),
-  new Route(
-    "sunrise",
-    "Sunrise Speaker",
-    "https://shirleylyu.wixsite.com/shirley-portfolio/sunrisespeaker",
-    "paragraph",
-  ),
+  new Route("sunrise", "Sunrise Speaker", "/sunrise", "paragraph"),
   new Route("m-tron", "M-Tron", "/m-tron", "paragraph"),
 ];
 

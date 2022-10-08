@@ -7,17 +7,17 @@ import { PageProps } from "../utils/page-props";
 import { projectData, projects } from "../utils/project-data";
 import useScroll from "../utils/use-scroll";
 
-const Refugia: React.FC<PageProps> = (props) => {
+const Sunrise: React.FC<PageProps> = (props) => {
   const scrollDiv = useScroll(!props.swipeAnimation);
   return (
     <>
       <Head>
-        <title>Refugia | Shirley Lyu Portfolio</title>
+        <title>Sunrise Speaker | Shirley Lyu Portfolio</title>
       </Head>
 
-      <Scroller bgColor="bg-[#EEEAE2]" divRef={scrollDiv}>
+      <Scroller bgColor="bg-[#D8D6D4]" divRef={scrollDiv}>
         <TopDisplay
-          project={projectData[projects.indexOf("refugia")]}
+          project={projectData[projects.indexOf("sunrise")]}
           animation={false}
         />
       </Scroller>
@@ -25,4 +25,4 @@ const Refugia: React.FC<PageProps> = (props) => {
   );
 };
 
-export default Refugia;
+export default Sunrise;
