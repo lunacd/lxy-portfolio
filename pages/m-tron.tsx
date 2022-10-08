@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 
 import DisplayImage from "../components/display-image";
 import HorizontalGallery from "../components/horizontal-gallery";
@@ -73,7 +72,7 @@ const MTron: NextPage<PageProps> = (props) => {
         <TextImage
           title="Inspiration: Shared Mobility"
           content={[
-            "The target user of todays’ shared mobility is mainly adults. There is an exclusiveness of kids. Therefore, I design this shared semi-automatic scooter inside Walt Disney World for both kids and adult. ",
+            "The target user of today's shared mobility is mainly adults. There is an exclusiveness of kids. Therefore, I design this shared semi-automatic scooter inside Walt Disney World for both kids and adult. ",
           ]}
           image={Inspiration}
           width={960}

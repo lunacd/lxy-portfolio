@@ -44,10 +44,6 @@ body {
   @apply text-sm font-extralight xl:text-base;
 }
 
-.button {
-  @apply rounded-full bg-gray-200 shadow;
-}
-
 .single {
   width: calc(100vw - var(--sidebar) - 2 * var(--spacing-lg));
 }
