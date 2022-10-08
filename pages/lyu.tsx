@@ -236,7 +236,7 @@ const Lyu: NextPage<PageProps> = (props) => {
           description="Lyu"
         />
 
-        <ProjectNavigation prev="/overlap" next="/soul" />
+        <ProjectNavigation prev="/m-tron" next="/refugia" />
       </Scroller>
     </>
   );

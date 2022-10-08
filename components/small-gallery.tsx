@@ -9,14 +9,20 @@ interface SmallGalleryProps {
   items: GalleryItem[];
   width: number;
   height: number;
+  textColor?: string;
 }
 
-const SmallGallery: React.FC<SmallGalleryProps> = (props) => {
+const defaultProps = {
+  textColor: "text-black",
+};
+
+const SmallGallery: React.FC<SmallGalleryProps> = (propsIn) => {
+  const props = { ...defaultProps, ...propsIn };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className="single paragraph mx-spacing-lg mb-spacing-3lg grid grid-cols-3 gap-y-spacing gap-x-8"
+      className={`single paragraph mx-spacing-lg mb-spacing-3lg grid grid-cols-3 gap-y-spacing gap-x-8 ${props.textColor}`}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}

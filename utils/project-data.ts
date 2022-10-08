@@ -119,7 +119,7 @@ export const projectData = [
     "sunrise",
     "Sunrise Speaker",
     "14 Weeks , 2021 Fall",
-    "Electronic Product",
+    "Consumer Electronics",
     "Form Study, Prototyping, Model Making, Manufacture",
     "Reverse-engineered a speaker and put all parts back together in personal designed product for Yamaha.",
     SunriseDisplay,

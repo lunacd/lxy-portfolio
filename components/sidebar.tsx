@@ -14,11 +14,11 @@ const routes = [
   new Route("about", "About", "/about", "subtitle"),
   new Route("projects", "Projects", "/projects", "subtitle"),
   new Route("overlap", "Overlap", "/overlap", "paragraph"),
-  new Route("refugia", "Refugia", "/refugia", "paragraph"),
-  new Route("lyu", "Lyu", "/lyu", "paragraph"),
-  new Route("soul", "Soul", "/soul", "paragraph"),
   new Route("sunrise", "Sunrise Speaker", "/sunrise", "paragraph"),
+  new Route("soul", "Soul", "/soul", "paragraph"),
   new Route("m-tron", "M-Tron", "/m-tron", "paragraph"),
+  new Route("lyu", "Lyu", "/lyu", "paragraph"),
+  new Route("refugia", "Refugia", "/refugia", "paragraph"),
 ];
 
 interface SidebarProps {

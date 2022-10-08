@@ -398,7 +398,7 @@ const Soul: NextPage<PageProps> = (props) => {
         </div>
         <Spacing size="medium" />
 
-        <ProjectNavigation prev="/lyu" />
+        <ProjectNavigation prev="/sunrise" next="/m-tron" />
       </Scroller>
     </>
   );

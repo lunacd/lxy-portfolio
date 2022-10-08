@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 
+import ProjectNavigation from "../components/project-navigation";
 import Scroller from "../components/scroller";
 import TopDisplay from "../components/top-display";
 import { PageProps } from "../utils/page-props";
@@ -20,6 +21,8 @@ const Refugia: React.FC<PageProps> = (props) => {
           project={projectData[projects.indexOf("refugia")]}
           animation={false}
         />
+
+        <ProjectNavigation prev="/lyu" />
       </Scroller>
     </>
   );

@@ -5,6 +5,7 @@ import DisplayImage from "../components/display-image";
 import HorizontalGallery from "../components/horizontal-gallery";
 import HorizontalScroll from "../components/horizontal-scroll";
 import LargeGallery from "../components/large-gallery";
+import ProjectNavigation from "../components/project-navigation";
 import Scroller from "../components/scroller";
 import Spacing from "../components/spacing";
 import TextImage from "../components/text-image";
@@ -183,6 +184,7 @@ const MTron: NextPage<PageProps> = (props) => {
           used for demonstration purposes only as part of a student work.
         </div>
         <Spacing size="medium" />
+        <ProjectNavigation prev="/soul" next="/lyu" textColor="text-white" />
       </Scroller>
     </>
   );

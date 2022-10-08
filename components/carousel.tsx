@@ -11,9 +11,15 @@ interface CarouselProps {
   description: string;
   height: number;
   width: number;
+  textColor?: string;
 }
 
-const Carousel: React.FC<CarouselProps> = (props) => {
+const defaultProps = {
+  textColor: "text-black",
+};
+
+const Carousel: React.FC<CarouselProps> = (propsIn) => {
+  const props = { ...defaultProps, ...propsIn };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +31,9 @@ const Carousel: React.FC<CarouselProps> = (props) => {
       transition={transitionSlow}
       ref={ref}
     >
-      <div className="single flex w-full flex-row items-center space-x-4 text-gray-900">
+      <div
+        className={`single flex w-full flex-row items-center space-x-4 ${props.textColor}`}
+      >
         <i
           className={classNames("fa-solid fa-angle-left fa-3x", {
             "cursor-pointer": currentIndex !== 0,
@@ -75,7 +83,7 @@ const Carousel: React.FC<CarouselProps> = (props) => {
         <div className="absolute left-1/2 top-0 bottom-0 flex -translate-x-1/2 flex-row space-x-3">
           {props.images.map((_, index) => (
             <div
-              className="relative h-3 w-3 cursor-pointer text-gray-900"
+              className={`relative h-3 w-3 cursor-pointer ${props.textColor}`}
               onClick={() => {
                 setCurrentIndex(index);
               }}
