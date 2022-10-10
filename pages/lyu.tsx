@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import { useEffect } from "react";
 
 import Carousel from "../components/carousel";
 import DisplayImage from "../components/display-image";

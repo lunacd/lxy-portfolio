@@ -79,14 +79,17 @@ const Sunrise: React.FC<PageProps> = (props) => {
         {/* Manifesto */}
         <TextImage
           title="Project Manifesto"
-          content={["TODO"]}
+          content={[
+            "Sunrise speaker is a professional-grade speaker ideal for both indoor and outdoor use. The speaker, shining against the rising sun, complements the peaceful and reflective lifestyle of its owners.",
+          ]}
           image={Manifesto}
           width={960}
           height={1153}
         />
 
         {/* Usage Scenario */}
-        <Title title="Usage Scenario Setting" />
+        <Title title="Usage Scenario" />
+        <Subtitle subtitle="Balcony" />
         <DisplayImage
           source={new ImageData(UsageScenario, 1920, 961)}
           alt="Usage scenario setting"
@@ -98,9 +101,9 @@ const Sunrise: React.FC<PageProps> = (props) => {
         <Subtitle subtitle="Balcony Speaker Form Inspiration " />
         <HorizontalGallery
           items={[
-            new GalleryItem(Form1, "Slope"),
-            new GalleryItem(Form2, "Segmented"),
-            new GalleryItem(Form3, "Round"),
+            new GalleryItem(Form1, undefined, "Slope"),
+            new GalleryItem(Form2, undefined, "Segmented"),
+            new GalleryItem(Form3, undefined, "Round"),
           ]}
           width={640}
           height={866}
@@ -109,9 +112,9 @@ const Sunrise: React.FC<PageProps> = (props) => {
         <Subtitle subtitle="Balcony Speaker Details Inspiration " />
         <HorizontalGallery
           items={[
-            new GalleryItem(Detail1, "Chamfer"),
-            new GalleryItem(Detail2, "Rope Wrapping"),
-            new GalleryItem(Detail3, "Transparent"),
+            new GalleryItem(Detail1, undefined, "Chamfer"),
+            new GalleryItem(Detail2, undefined, "Rope Wrapping"),
+            new GalleryItem(Detail3, undefined, "Transparent"),
           ]}
           width={640}
           height={560}

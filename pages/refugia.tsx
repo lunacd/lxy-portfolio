@@ -22,6 +22,10 @@ const Refugia: React.FC<PageProps> = (props) => {
           animation={false}
         />
 
+        <div className="title text-center mb-32">
+          Site still under construction!
+        </div>
+
         <ProjectNavigation prev="/lyu" />
       </Scroller>
     </>

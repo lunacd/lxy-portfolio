@@ -41,7 +41,7 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
     >
       {props.items.map((item, index) => (
         <div className="flex flex-col items-center w-full" key={index}>
-          <div className="mb-4 xl:mb-8 w-full">
+          <div className="mb-2 xl:mb-6 w-full">
             <Image
               src={item.image}
               alt={item.title}
@@ -52,7 +52,7 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
             />
           </div>
           {item.title !== undefined && (
-            <div className="subtitle text-center">{item.title}</div>
+            <div className="subtitle text-center mt-2">{item.title}</div>
           )}
           {item.content !== undefined &&
             item.content.map((line, index) => (
