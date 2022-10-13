@@ -138,14 +138,6 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
             >
               More Work
             </a>
-            <a
-              className="subtitle pb-4"
-              href="/resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Resume
-            </a>
           </div>
           <div className="flex flex-row justify-between">
             <a
@@ -164,6 +156,9 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
               rel="noreferrer"
             >
               <i className="fa-brands fa-linkedin-in" />
+            </a>
+            <a href="/resume.pdf" target="_blank" rel="noreferrer">
+              <i className="fa-regular fa-file"></i>
             </a>
           </div>
         </div>

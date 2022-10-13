@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 import Animatable from "../components/animatable";
 import Button from "../components/button";
 import Scroller from "../components/scroller";
+import Spacing from "../components/spacing";
 import Title from "../components/title";
 import styles from "../styles/about.module.css";
 import Animation from "../utils/animation";
@@ -64,7 +65,7 @@ const About: NextPage = () => {
       </Head>
 
       <Scroller bgColor="bg-[#FDF9F1]">
-        <div className="single grid grid-cols-2 gap-spacing my-spacing-3lg">
+        <div className="single grid grid-cols-2 gap-spacing my-spacing-lg">
           <div className={styles.rounded}>
             <Image
               src={Profile}
@@ -82,6 +83,9 @@ const About: NextPage = () => {
             consumer electronics.
           </div>
         </div>
+
+        <Button text="Resume" href="/resume.pdf" />
+        <Spacing size="medium" />
 
         <Title title="Who I am" />
         <div className="mb-4 grid grid-cols-12 gap-4 single">
@@ -264,7 +268,6 @@ const About: NextPage = () => {
             </motion.div>
           ))}
         </div>
-        <Button text="Resume" href="/resume.pdf" />
       </Scroller>
       <AnimatePresence>
         {overlayOpen && (
