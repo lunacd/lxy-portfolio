@@ -1,12 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 import { useInterval } from "usehooks-ts";
 
 import PageRoot from "../components/page-root";
 import { Sidebar } from "../components/sidebar";
 import "../styles/globals.css";
+import * as gtag from "../utils/gtag";
 import { projects } from "../utils/project-data";
 
 const isProject = (link: string) => {
@@ -29,8 +31,21 @@ interface AppPageProps {
 }
 
 function MyApp({ Component, pageProps }: AppProps<AppPageProps>) {
-  // Routing
+  // Google Analytics
   const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      gtag.pageView(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    router.events.on("hashChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+      router.events.off("hashChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
+  // Routing
   const [displayAnimation, setDisplayAnimation] = useState(true);
   const [swipeAnimation, setSwipeAnimation] = useState(true);
   const onLink = (link: string) => {
@@ -84,6 +99,16 @@ function MyApp({ Component, pageProps }: AppProps<AppPageProps>) {
 
   return (
     <>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-26S1RW6P14"
+        strategy="afterInteractive"
+      ></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-26S1RW6P14');`}
+      </Script>
       <div className="subtitle lg:hidden mt-8 text-center">
         Use a larger screen to view this page!
       </div>
