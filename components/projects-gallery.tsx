@@ -1,13 +1,13 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { motion } from "framer-motion";
 
-import ProjectData from "../utils/project-data";
+import { ProjectDataLean } from "../utils/project-data";
 import { transitionFast } from "../utils/transition";
 
 interface ProjectsGalleryProps {
-  data: ProjectData[];
+  data: ProjectDataLean[];
   width: number;
   height: number;
 }
@@ -17,7 +17,12 @@ const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
     <div className="single grid grid-cols-3 gap-spacing my-spacing-3lg">
       {props.data.map((data, index) => {
         return (
-          <motion.div key={index} style={{ y: '0rem' }} whileHover={{ y: '-1rem' }} transition={transitionFast}>
+          <motion.div
+            key={index}
+            style={{ y: "0rem" }}
+            whileHover={{ y: "-1rem" }}
+            transition={transitionFast}
+          >
             <Link href={data.link} passHref>
               <a>
                 <Image

@@ -9,7 +9,7 @@ const Projects: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Overlap | Shirley Lyu Portfolio</title>
+        <title>Projects | Shirley Lyu Portfolio</title>
       </Head>
 
       <Scroller bgColor="bg-[#FDF9F1]">

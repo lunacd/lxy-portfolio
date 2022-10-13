@@ -19,6 +19,7 @@ const routes = [
   new Route("m-tron", "M-Tron", "/m-tron", "paragraph"),
   new Route("lyu", "Lyu", "/lyu", "paragraph"),
   new Route("refugia", "Refugia", "/refugia", "paragraph"),
+  new Route("others", "More Work", "/others", "subtitle"),
 ];
 
 interface SidebarProps {
@@ -129,15 +130,6 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                 </div>
               </div>
             ))}
-
-            <a
-              className="subtitle"
-              href="https://shirleylyu.wixsite.com/shirley-portfolio/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              More Work
-            </a>
           </div>
           <div className="flex flex-row justify-between">
             <a

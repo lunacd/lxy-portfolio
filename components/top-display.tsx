@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { forwardRef } from "react";
 
 import styles from "../styles/TopDisplay.module.css";
-import ProjectData, { projectData } from "../utils/project-data";
+import { ProjectData, projectData } from "../utils/project-data";
 
 export interface TopDisplayProps {
   project: ProjectData;

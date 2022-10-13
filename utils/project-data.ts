@@ -3,28 +3,53 @@ import { StaticImageData } from "next/image";
 import LyuDisplay from "../images/lyu/display-full.webp";
 import TronDisplay from "../images/m-tron/display-full.webp";
 import OverlapDisplay from "../images/overlap/display-full.webp";
+import ErgoSmall from "../images/projects/ergo-half.webp";
+import ItoSmall from "../images/projects/ito-half.webp";
+import LissSmall from "../images/projects/liss-half.webp";
 import LyuSmall from "../images/projects/lyu-half.webp";
 import TronSmall from "../images/projects/m-tron-half.webp";
+import ModeSmall from "../images/projects/mode-half.webp";
+import MumSmall from "../images/projects/mum-half.webp";
 import OverlapSmall from "../images/projects/overlap-half.webp";
+import PlantSmall from "../images/projects/plant-half.webp";
 import RefugiaSmall from "../images/projects/refugia-half.webp";
+import SaturnSmall from "../images/projects/saturn-half.webp";
 import SoulSmall from "../images/projects/soul-half.webp";
 import SunriseSmall from "../images/projects/sunrise-half.webp";
+import TuraSmall from "../images/projects/tura-half.webp";
 import RefugiaDisplay from "../images/refugia/display-full.webp";
 import SoulDisplay from "../images/soul/display-full.webp";
 import SunriseDisplay from "../images/sunrise/display-full.webp";
 
-class ProjectData {
+export class ProjectDataLean {
   uri: string;
   name: string;
-  duration: string;
   category: string;
+  smallImage: string | StaticImageData;
+  link: string;
+
+  constructor(
+    uri: string,
+    name: string,
+    category: string,
+    smallImage: string | StaticImageData,
+    link: string,
+  ) {
+    this.uri = uri;
+    this.name = name;
+    this.category = category;
+    this.smallImage = smallImage;
+    this.link = link;
+  }
+}
+
+export class ProjectData extends ProjectDataLean {
+  duration: string;
   focus: string;
   brief: string;
   displayImage: string | StaticImageData;
-  smallImage: string | StaticImageData;
   titleColor: string;
   bgColor: string;
-  link: string;
 
   constructor(
     uri: string,
@@ -39,17 +64,13 @@ class ProjectData {
     bgColor: string,
     link: string,
   ) {
-    this.uri = uri;
-    this.name = name;
+    super(uri, name, category, smallImage, link);
     this.duration = duration;
-    this.category = category;
     this.focus = focus;
     this.brief = brief;
     this.displayImage = displayImage;
-    this.smallImage = smallImage;
     this.titleColor = titleColor;
     this.bgColor = bgColor;
-    this.link = link;
   }
 }
 
@@ -143,4 +164,61 @@ export const projectData = [
   ),
 ];
 
-export default ProjectData;
+export const otherProjectsData = [
+  new ProjectDataLean(
+    "mode",
+    "Mode Bag",
+    "Soft Goods",
+    ModeSmall,
+    "https://shirleylyu.wixsite.com/shirley-portfolio/mode",
+  ),
+  new ProjectDataLean(
+    "liss",
+    "Liss",
+    "Hard Goods",
+    LissSmall,
+    "https://shirleylyu.wixsite.com/shirley-portfolio/liss",
+  ),
+  new ProjectDataLean(
+    "saturn",
+    "Saturn",
+    "Pet Furniture",
+    SaturnSmall,
+    "https://shirleylyu.wixsite.com/shirley-portfolio/saturn",
+  ),
+  new ProjectDataLean(
+    "ergo",
+    "Ergo Care",
+    "Consumer Electronics",
+    ErgoSmall,
+    "https://shirleylyu.wixsite.com/shirley-portfolio/ergo-care",
+  ),
+  new ProjectDataLean(
+    "ito",
+    "Ito Suitcase",
+    "Hard Goods",
+    ItoSmall,
+    "https://shirleylyu.wixsite.com/shirley-portfolio/ito",
+  ),
+  new ProjectDataLean(
+    "tura",
+    "Tura",
+    "UI/UX Design",
+    TuraSmall,
+    "https://shirleylyu.wixsite.com/shirley-portfolio/tura",
+  ),
+  new ProjectDataLean(
+    "plant",
+    "Plant Phone",
+    "Consumer Electronics",
+    PlantSmall,
+    "https://shirleylyu.wixsite.com/shirley-portfolio/plantphone",
+  ),
+  new ProjectDataLean(
+    "mum",
+    "Mum",
+    "Soft Goods",
+    MumSmall,
+    "https://shirleylyu.wixsite.com/shirley-portfolio/mum",
+  ),
+];
