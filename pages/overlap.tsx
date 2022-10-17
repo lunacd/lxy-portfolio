@@ -42,7 +42,6 @@ import FileSorterUseImage1 from "../images/overlap/file-sorter-use-1-big.webp";
 import FileSorterUseImage21 from "../images/overlap/file-sorter-use-2-1-big.webp";
 import FileSorterUseImage22 from "../images/overlap/file-sorter-use-2-2-big.webp";
 import FileSorterUseImage23 from "../images/overlap/file-sorter-use-2-3-big.webp";
-import Gallery1 from "../images/overlap/gallery/gallery-1-full.webp";
 import Gallery2 from "../images/overlap/gallery/gallery-2-half.webp";
 import Gallery3 from "../images/overlap/gallery/gallery-3-half.webp";
 import Gallery4 from "../images/overlap/gallery/gallery-4-half.webp";
@@ -316,7 +315,6 @@ const Overlap: NextPage<PageProps> = (props) => {
         <Title title="Product Gallery" />
         <LargeGallery
           rows={[
-            new GalleryRowData([new ImageData(Gallery1, 12767, 7167)]),
             new GalleryRowData([
               new ImageData(Gallery2, 4684, 3750),
               new ImageData(Gallery3, 4684, 3750),

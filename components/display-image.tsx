@@ -23,6 +23,7 @@ const defaultProps = {
   botSpacing: true,
   xSpacing: false,
   textColor: "text-black",
+  textPosition: "left",
 };
 
 const DisplayImage: React.FC<DisplayImageProps> = (propsIn) => {
