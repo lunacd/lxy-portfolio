@@ -13,5 +13,5 @@ tasks:
       cd lxy-portfolio-next
       set +x
       source ~/.vercel_token
-      yarn dlx -q vercel -t $VERCEL_TOKEN -c --prod
+      yarn dlx -q vercel -t $VERCEL_TOKEN --yes --prod
       set -x
