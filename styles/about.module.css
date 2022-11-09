@@ -1,16 +1,15 @@
 .darken {
-    filter: brightness(0.7);
-
+  filter: brightness(0.7);
 }
 
 .textOverlay {
-    @apply absolute w-full h-full left-0 top-0 flex items-center justify-center;
+  @apply absolute left-0 top-0 flex h-full w-full items-center justify-center;
 
-    & div {
-        @apply text-white font-bold text-lg;
-    }
+  & div {
+    @apply text-lg font-bold text-white;
+  }
 }
 
 .rounded {
-    @apply rounded-lg overflow-hidden;
+  @apply overflow-hidden rounded-lg;
 }

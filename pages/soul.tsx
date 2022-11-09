@@ -216,16 +216,12 @@ const Soul: NextPage<PageProps> = (props) => {
         <Title title="Rolls-Royce Meditation Proposal" />
         <HorizontalGallery
           items={[
-            new GalleryItem(
-              Instrument1,
-              "Soul Instrument",
+            new GalleryItem(Instrument1, "Soul Instrument", [
               "Self-perfection through sound and touch",
-            ),
-            new GalleryItem(
-              Light1,
-              "Ambient Lighting Lamp",
+            ]),
+            new GalleryItem(Light1, "Ambient Lighting Lamp", [
               "Self-perfection through sight",
-            ),
+            ]),
           ]}
           width={960}
           height={645}

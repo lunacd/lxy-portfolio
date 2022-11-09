@@ -58,7 +58,6 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
                 <Image
                   src={image}
                   alt={`${props.description} ${index}`}
-                  layout="responsive"
                   height={props.height}
                   width={props.width}
                   placeholder="blur"

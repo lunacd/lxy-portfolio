@@ -38,7 +38,6 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
             alt={props.alt}
             width={props.source.width}
             height={props.source.height}
-            layout="responsive"
             placeholder="blur"
             unoptimized
           />

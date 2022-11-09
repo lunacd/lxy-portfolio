@@ -116,13 +116,11 @@ const Overlap: NextPage<PageProps> = (props) => {
         <Title title="Overlap Set" />
         <HorizontalGallery
           items={[
-            new GalleryItem(Set1, "Timer", "Section Time"),
-            new GalleryItem(
-              Set2,
-              "File Sorter",
+            new GalleryItem(Set1, "Timer", ["Section Time"]),
+            new GalleryItem(Set2, "File Sorter", [
               "Categorize files, books, etc.",
-            ),
-            new GalleryItem(Set3, "Tray", "Store pens, pins, etc."),
+            ]),
+            new GalleryItem(Set3, "Tray", ["Store pens, pins, etc."]),
           ]}
           sparse={true}
           width={1084}
@@ -248,15 +246,16 @@ const Overlap: NextPage<PageProps> = (props) => {
         <Subtitle subtitle="HAY's Brand DNA Analysis" />
         <HorizontalGallery
           items={[
-            new GalleryItem(DNA1, undefined, "Playful"),
-            new GalleryItem(DNA2, undefined, "Accessible"),
-            new GalleryItem(DNA3, undefined, "Adaptive"),
-            new GalleryItem(DNA4, undefined, "Contemporary"),
-            new GalleryItem(DNA5, undefined, "Vibrant"),
+            new GalleryItem(DNA1, "Playful"),
+            new GalleryItem(DNA2, "Accessible"),
+            new GalleryItem(DNA3, "Adaptive"),
+            new GalleryItem(DNA4, "Contemporary"),
+            new GalleryItem(DNA5, "Vibrant"),
           ]}
           sparse={false}
           width={926}
           height={1321}
+          titleClass="paragraph"
         />
 
         {/* Brand Benchmark */}

@@ -13,12 +13,14 @@ interface HorizontalGalleryProps {
   sparse?: boolean;
   botSpacing?: boolean;
   textColor?: string;
+  titleClass?: "title" | "subtitle" | "paragraph";
 }
 
 const defaultProps = {
   sparse: false,
   botSpacing: true,
   textColor: "text-black",
+  titleClass: "subtitle",
 };
 
 const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
@@ -45,14 +47,15 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
             <Image
               src={item.image}
               alt={item.title}
-              layout="responsive"
               width={props.width}
               height={props.height}
               placeholder="blur"
             />
           </div>
           {item.title !== undefined && (
-            <div className="subtitle text-center mt-2">{item.title}</div>
+            <div className={`${props.titleClass} text-center mt-2`}>
+              {item.title}
+            </div>
           )}
           {item.content !== undefined &&
             item.content.map((line, index) => (

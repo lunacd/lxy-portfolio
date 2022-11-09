@@ -43,7 +43,6 @@ const TextImage: React.FC<TextImageProps> = (propsIn) => {
         <Image
           src={props.image}
           alt={props.title}
-          layout="responsive"
           width={props.width}
           height={props.height}
           placeholder="blur"

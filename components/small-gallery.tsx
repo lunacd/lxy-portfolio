@@ -34,7 +34,6 @@ const SmallGallery: React.FC<SmallGalleryProps> = (propsIn) => {
             <Image
               src={item.image}
               alt={item.title}
-              layout="responsive"
               width={props.width}
               height={props.height}
               placeholder="blur"

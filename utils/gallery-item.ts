@@ -1,21 +1,17 @@
 import { StaticImageData } from "next/image";
 
 class GalleryItem {
-  title?: string;
+  title: string;
   content?: string[];
   image: string | StaticImageData;
 
   constructor(
     image: string | StaticImageData,
-    title?: string,
-    content?: string[] | string,
+    title: string,
+    content?: string[],
   ) {
     this.title = title;
-    if (typeof content === "string") {
-      this.content = [content];
-    } else {
-      this.content = content;
-    }
+    this.content = content;
     this.image = image;
   }
 }

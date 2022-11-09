@@ -69,7 +69,6 @@ const About: NextPage = () => {
           <div className={styles.rounded}>
             <Image
               src={Profile}
-              layout="responsive"
               width={960}
               height={900}
               alt="Shirley Lyu profile photo"
@@ -228,7 +227,6 @@ const About: NextPage = () => {
                     className={styles.darken}
                     src={Sports}
                     alt="Sports Lover"
-                    layout="responsive"
                     width={480}
                     height={360}
                   />
@@ -263,7 +261,6 @@ const About: NextPage = () => {
                 width={128}
                 height={128}
                 placeholder="blur"
-                layout="responsive"
               />
             </motion.div>
           ))}

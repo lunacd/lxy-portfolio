@@ -29,9 +29,8 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
         <Image
           src={props.project.displayImage}
           alt={props.project.name}
-          objectPosition="center center"
-          objectFit="cover"
-          layout="fill"
+          fill
+          className="object-center object-cover"
         />
         <div className="absolute left-0 top-0 flex h-full w-full justify-center">
           <div
@@ -48,9 +47,10 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                 rel="noreferrer"
               ></a>
             ) : (
-              <Link href={props.project.link} passHref>
-                <a className="absolute w-full h-full top-0 left-0 block"></a>
-              </Link>
+              <Link
+                href={props.project.link}
+                className="absolute w-full h-full top-0 left-0 block"
+              ></Link>
             ))}
         </div>
       </div>

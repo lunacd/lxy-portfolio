@@ -28,7 +28,6 @@ const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
                 <Image
                   src={data.smallImage}
                   alt={data.name}
-                  layout="responsive"
                   width={props.width}
                   height={props.height}
                 />

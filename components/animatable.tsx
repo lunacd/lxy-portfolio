@@ -52,7 +52,6 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
         <Image
           src={images[0]}
           alt={props.alt}
-          layout="responsive"
           width={props.source.width}
           height={props.source.height}
           placeholder="blur"
@@ -83,7 +82,6 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
               <Image
                 src={image}
                 alt={props.alt}
-                layout="responsive"
                 width={props.source.width}
                 height={props.source.height}
                 placeholder="blur"

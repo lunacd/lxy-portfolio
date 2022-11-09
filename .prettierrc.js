@@ -5,9 +5,8 @@ module.exports = {
   printWidth: 80,
   tabWidth: 2,
   useTabs: false,
-  jsxBracketSameLine: false,
   bracketSpacing: true,
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
-  importOrder: ["^\.\.\/(?!images).*", "^\.\.\/images\/.*"],
+  importOrder: ["^../(?!images).*", "^../images/.*"],
 };

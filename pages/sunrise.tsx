@@ -101,23 +101,25 @@ const Sunrise: React.FC<PageProps> = (props) => {
         <Subtitle subtitle="Balcony Speaker Form Inspiration " />
         <HorizontalGallery
           items={[
-            new GalleryItem(Form1, undefined, "Slope"),
-            new GalleryItem(Form2, undefined, "Segmented"),
-            new GalleryItem(Form3, undefined, "Round"),
+            new GalleryItem(Form1, "Slope"),
+            new GalleryItem(Form2, "Segmented"),
+            new GalleryItem(Form3, "Round"),
           ]}
           width={640}
           height={866}
           botSpacing={false}
+          titleClass="paragraph"
         />
         <Subtitle subtitle="Balcony Speaker Details Inspiration " />
         <HorizontalGallery
           items={[
-            new GalleryItem(Detail1, undefined, "Chamfer"),
-            new GalleryItem(Detail2, undefined, "Rope Wrapping"),
-            new GalleryItem(Detail3, undefined, "Transparent"),
+            new GalleryItem(Detail1, "Chamfer"),
+            new GalleryItem(Detail2, "Rope Wrapping"),
+            new GalleryItem(Detail3, "Transparent"),
           ]}
           width={640}
           height={560}
+          titleClass="paragraph"
         />
 
         <div className="bg-[#212121] flex flex-col items-center">
@@ -134,10 +136,10 @@ const Sunrise: React.FC<PageProps> = (props) => {
           <Title title="Model Evolution" textColor="text-white" />
           <HorizontalGallery
             items={[
-              new GalleryItem(Evo1),
-              new GalleryItem(Evo2),
-              new GalleryItem(Evo3),
-              new GalleryItem(Evo4),
+              new GalleryItem(Evo1, "Model Evolution"),
+              new GalleryItem(Evo2, "Model Evolution"),
+              new GalleryItem(Evo3, "Model Evolution"),
+              new GalleryItem(Evo4, "Model Evolution"),
             ]}
             width={640}
             height={543}

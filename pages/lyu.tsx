@@ -115,9 +115,9 @@ const Lyu: NextPage<PageProps> = (props) => {
         <Subtitle subtitle="Ease" />
         <HorizontalGallery
           items={[
-            new GalleryItem(Ease1),
-            new GalleryItem(Ease2),
-            new GalleryItem(Ease3),
+            new GalleryItem(Ease1, "Style: Ease"),
+            new GalleryItem(Ease2, "Style: Ease"),
+            new GalleryItem(Ease3, "Style: Ease"),
           ]}
           sparse={false}
           botSpacing={false}
@@ -127,9 +127,9 @@ const Lyu: NextPage<PageProps> = (props) => {
         <Subtitle subtitle="Joyful" />
         <HorizontalGallery
           items={[
-            new GalleryItem(Joyful1),
-            new GalleryItem(Joyful2),
-            new GalleryItem(Joyful3),
+            new GalleryItem(Joyful1, "Style: Joyful"),
+            new GalleryItem(Joyful2, "Style: Joyful"),
+            new GalleryItem(Joyful3, "Style: Joyful"),
           ]}
           width={960}
           height={1174}

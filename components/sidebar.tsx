@@ -56,7 +56,6 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                 src="/logo.svg"
                 alt="Shirley Lyu Logo"
                 className="cursor-pointer"
-                layout="responsive"
                 height={75}
                 width={167}
               />
