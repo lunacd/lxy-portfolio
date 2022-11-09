@@ -1,4 +1,4 @@
-image: rockylinux/8
+image: rockylinux/9
 secrets:
   - 5c4d163b-247a-42ef-a017-f58c7494fd92
 triggers:
