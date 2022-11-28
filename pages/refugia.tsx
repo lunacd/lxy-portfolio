@@ -1,8 +1,10 @@
 import Head from "next/head";
 import React from "react";
 
+import Button from "../components/button";
 import ProjectNavigation from "../components/project-navigation";
 import Scroller from "../components/scroller";
+import Spacing from "../components/spacing";
 import TextImage from "../components/text-image";
 import TopDisplay from "../components/top-display";
 import { PageProps } from "../utils/page-props";
@@ -35,9 +37,8 @@ const Refugia: React.FC<PageProps> = (props) => {
           height={620}
         />
 
-        <div className="title text-center mb-32">
-          Site still under construction!
-        </div>
+        <Button text="View the Project" href="/refugia.pdf" />
+        <Spacing size="large" />
 
         <ProjectNavigation prev="/lyu" />
       </Scroller>

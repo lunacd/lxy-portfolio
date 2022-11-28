@@ -23,15 +23,13 @@ const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
             whileHover={{ y: "-1rem" }}
             transition={transitionFast}
           >
-            <Link href={data.link} passHref>
-              <a>
-                <Image
-                  src={data.smallImage}
-                  alt={data.name}
-                  width={props.width}
-                  height={props.height}
-                />
-              </a>
+            <Link href={data.link}>
+              <Image
+                src={data.smallImage}
+                alt={data.name}
+                width={props.width}
+                height={props.height}
+              />
             </Link>
             <div className="mt-2">
               <span className="subtitle">{data.name}</span>

@@ -77,7 +77,7 @@ const About: NextPage = () => {
           </div>
           <div className="self-end">
             Hello! This is Shirley Lyu. I am a product designer with infinite
-            bizarre ideas. I am interested in lifestyle products, spacial
+            bizarre ideas. I am interested in lifestyle products, spatial
             experience, sustainability, social innovation, soft goods, and
             consumer electronics.
           </div>

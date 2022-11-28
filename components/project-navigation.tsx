@@ -18,16 +18,12 @@ const ProjectNavigation: React.FC<ProjectNavigationProps> = (propsIn) => {
       {props.prev !== undefined && (
         <div className="mr-auto flex flex-row items-center space-x-4">
           <i className="fa-solid fa-angle-left" />
-          <Link href={props.prev} passHref>
-            <a>Previous Project</a>
-          </Link>
+          <Link href={props.prev}>Previous Project</Link>
         </div>
       )}
       {props.next !== undefined && (
         <div className="ml-auto flex flex-row items-center space-x-4">
-          <Link href={props.next} passHref>
-            <a>Next Project</a>
-          </Link>
+          <Link href={props.next}>Next Project</Link>
           <i className="fa-solid fa-angle-right" />
         </div>
       )}
