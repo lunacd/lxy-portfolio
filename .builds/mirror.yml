@@ -7,6 +7,6 @@ triggers:
     to: Haowen Liu <lhw@lunacd.com>
 tasks:
   - mirror: |
-      cd lxy-portfolio-next
+      cd lxy-portfolio
       git remote add mirror git@github.com:andyliuhaowen/lxy-portfolio-next.git
       GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa -o "StrictHostKeyChecking=no"' git push --mirror mirror

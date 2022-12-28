@@ -11,7 +11,7 @@ tasks:
   - setup: |
       sudo npm i -g corepack
   - deploy: |
-      cd lxy-portfolio-next
+      cd lxy-portfolio
       set +x
       source ~/.vercel_token
       yarn dlx -q vercel -t $VERCEL_TOKEN --yes --prod
