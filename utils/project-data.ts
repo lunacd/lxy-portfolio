@@ -75,9 +75,9 @@ export class ProjectData extends ProjectDataLean {
 }
 
 export const projects: string[] = [
+  "soul",
   "overlap",
   "sunrise",
-  "soul",
   "m-tron",
   "lyu",
   "refugia",
