@@ -85,6 +85,19 @@ export const projects: string[] = [
 
 export const projectData = [
   new ProjectData(
+    "soul",
+    "Soul",
+    "14 Weeks, 2022 Spring",
+    "Lux lifestyle Product Set",
+    "Brand Research, Form Study, 3D Modeling",
+    "To propose a new product category for Rolls-Royce by designing a unified collection of objects.",
+    SoulDisplay,
+    SoulSmall,
+    "text-gray-100",
+    "bg-[#EEEAE2]",
+    "/soul",
+  ),
+  new ProjectData(
     "overlap",
     "Overlap",
     "14 Weeks, 2022 Spring",
@@ -109,19 +122,6 @@ export const projectData = [
     "text-gray-900",
     "bg-[#D8D6D4]",
     "/sunrise",
-  ),
-  new ProjectData(
-    "soul",
-    "Soul",
-    "14 Weeks, 2022 Spring",
-    "Lux lifestyle Product Set",
-    "Brand Research, Form Study, 3D Modeling",
-    "To propose a new product category for Rolls-Royce by designing a unified collection of objects.",
-    SoulDisplay,
-    SoulSmall,
-    "text-gray-100",
-    "bg-[#EEEAE2]",
-    "/soul",
   ),
   new ProjectData(
     "m-tron",
