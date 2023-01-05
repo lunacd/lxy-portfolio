@@ -105,7 +105,7 @@ const Overlap: NextPage<PageProps> = (props) => {
         <TextImage
           title="Project Manifesto"
           content={[
-            "A collection of office accessories that can provide users with an intuitive concept of category. To help users better organize their time, space, and objects.",
+            "A collection of office accessories that provides an intuitive concept of category to help users better organize their time, space, and objects.",
           ]}
           image={ManifestoImage}
           width={6240}

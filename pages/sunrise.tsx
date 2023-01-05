@@ -80,7 +80,7 @@ const Sunrise: React.FC<PageProps> = (props) => {
         <TextImage
           title="Project Manifesto"
           content={[
-            "Sunrise speaker is a professional-grade speaker ideal for both indoor and outdoor use. The speaker, shining against the rising sun, complements the peaceful and reflective lifestyle of its owners.",
+            "Sunrise speaker is a professional-grade speaker ideal for both indoor and outdoor use. The speaker, shining against the rising sun, complements the peaceful and reflective lifestyle of its users.",
           ]}
           image={Manifesto}
           width={960}
