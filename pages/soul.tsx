@@ -6,6 +6,7 @@ import DisplayImage from "../components/display-image";
 import HorizontalGallery from "../components/horizontal-gallery";
 import ImageText from "../components/image-text";
 import LargeGallery from "../components/large-gallery";
+import Paragraph from "../components/paragraph";
 import ProjectNavigation from "../components/project-navigation";
 import Scroller from "../components/scroller";
 import Spacing from "../components/spacing";
@@ -229,7 +230,7 @@ const Soul: NextPage<PageProps> = (props) => {
 
         {/* Form Ideation */}
         <Title title="Form Ideation" />
-        <div className="single">2D Sketch, Shaping Foam, 3D Modeling</div>
+        <Subtitle subtitle="2D Sketch, Shaping Foam, 3D Modeling" />
         <DisplayImage
           source={new ImageData(Ideation, 1920, 711)}
           alt="Ideation"
@@ -248,13 +249,13 @@ const Soul: NextPage<PageProps> = (props) => {
 
         {/* Tech Drawing */}
         <Subtitle subtitle="Tech Drawing" />
-        <div className="single">Soul Instrument Body</div>
+        <Paragraph paragraph="Soul Instrument Body" />
         <DisplayImage
           source={new ImageData(InstrumentTech, 1920, 990)}
           alt="Soul Instrument Tech Drawing"
           botSpacing={false}
         />
-        <div className="single">Wireless Charger</div>
+        <Paragraph paragraph="Wireless Charger" />
         <DisplayImage
           source={new ImageData(ChargerTech, 1920, 990)}
           alt="Wireless Charger Tech Drawing"
@@ -325,7 +326,7 @@ const Soul: NextPage<PageProps> = (props) => {
         />
 
         <Subtitle subtitle="Tech Drawing" />
-        <div className="single">Lamp</div>
+        <Paragraph paragraph="Lamp" />
         <DisplayImage
           source={new ImageData(LightTech, 1920, 990)}
           alt="Light Tech Drawing"
