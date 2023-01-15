@@ -14,6 +14,7 @@ const routes = [
   new Route("about", "About", "/about", "subtitle"),
   new Route("projects", "Projects", "/projects", "subtitle"),
   new Route("soul", "Soul", "/soul", "paragraph"),
+  new Route("skates", "Skates", "/skates", "paragraph"),
   new Route("overlap", "Overlap", "/overlap", "paragraph"),
   new Route("sunrise", "Sunrise Speaker", "/sunrise", "paragraph"),
   new Route("m-tron", "M-Tron", "/m-tron", "paragraph"),

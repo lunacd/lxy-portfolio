@@ -14,10 +14,12 @@ import OverlapSmall from "../images/projects/overlap-half.webp";
 import PlantSmall from "../images/projects/plant-half.webp";
 import RefugiaSmall from "../images/projects/refugia-half.webp";
 import SaturnSmall from "../images/projects/saturn-half.webp";
+import SkatesSmall from "../images/projects/skates-half.webp";
 import SoulSmall from "../images/projects/soul-half.webp";
 import SunriseSmall from "../images/projects/sunrise-half.webp";
 import TuraSmall from "../images/projects/tura-half.webp";
 import RefugiaDisplay from "../images/refugia/display-full.webp";
+import SkatesDisplay from "../images/skates/display-full.webp";
 import SoulDisplay from "../images/soul/display-full.webp";
 import SunriseDisplay from "../images/sunrise/display-full.webp";
 
@@ -76,6 +78,7 @@ export class ProjectData extends ProjectDataLean {
 
 export const projects: string[] = [
   "soul",
+  "skates",
   "overlap",
   "sunrise",
   "m-tron",
@@ -96,6 +99,19 @@ export const projectData = [
     "text-gray-100",
     "bg-[#EEEAE2]",
     "/soul",
+  ),
+  new ProjectData(
+    "skates",
+    "Skates",
+    "14 Weeks, 2022 Fall",
+    "Furniture Design",
+    "Form Study, Prototyping, Manufacturing",
+    "Designing and making furniture that reconfigures the spatial experience for Bernhardt. The design is engendered to meet Bernhardt's  brand identity and manufacturing requirements, as well their use of materials.",
+    SkatesDisplay,
+    SkatesSmall,
+    "text-gray-900",
+    "bg-[#F0EBE6]",
+    "/skates",
   ),
   new ProjectData(
     "overlap",

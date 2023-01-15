@@ -1,10 +1,20 @@
 import os
 import subprocess
 import colorama
+import shutil
 from PIL import Image
 Image.MAX_IMAGE_PIXELS = 1000000000 
 
 err_count = 0
+
+def cmd_exists(cmd):
+    return shutil.which(cmd) is not None
+
+if cmd_exists("magick"):
+    cmd = "magick"
+    print("Exists")
+else:
+    cmd = "convert"
 
 for dirPath, dirNames, filenames in os.walk("./images"):
     for name in filenames:
@@ -46,7 +56,7 @@ for dirPath, dirNames, filenames in os.walk("./images"):
             continue
 
         subprocess.call([
-            "convert",
+            cmd,
             src,
             "-strip",
             "-interlace",
@@ -60,7 +70,7 @@ for dirPath, dirNames, filenames in os.walk("./images"):
             dest
         ])
         print(colorama.Fore.GREEN + "===>" +
-              colorama.Fore.RESET + " Successfully generated " + src)
+              colorama.Fore.RESET + " Successfully generated " + dest)
 
 if err_count == 0:
     print("Completed successfully.")
