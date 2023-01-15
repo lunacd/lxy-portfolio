@@ -332,7 +332,7 @@ const Overlap: NextPage<PageProps> = (props) => {
         </div>
         <Spacing size="medium" />
 
-        <ProjectNavigation next="/sunrise" />
+        <ProjectNavigation prev="/skates" next="/sunrise" />
       </Scroller>
     </>
   );

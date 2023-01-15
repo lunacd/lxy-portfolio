@@ -184,7 +184,7 @@ const MTron: NextPage<PageProps> = (props) => {
           used for demonstration purposes only as part of a student work.
         </div>
         <Spacing size="medium" />
-        <ProjectNavigation prev="/soul" next="/lyu" textColor="text-white" />
+        <ProjectNavigation prev="/sunrise" next="/lyu" textColor="text-white" />
       </Scroller>
     </>
   );

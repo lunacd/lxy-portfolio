@@ -44,7 +44,7 @@ const Skates: NextPage<PageProps> = (props) => {
         </div>
         <Spacing size="medium" />
 
-        <ProjectNavigation prev="/lyu" />
+        <ProjectNavigation prev="/soul" next="/overlap" />
       </Scroller>
     </>
   );

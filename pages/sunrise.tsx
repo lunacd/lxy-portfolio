@@ -218,7 +218,7 @@ const Sunrise: React.FC<PageProps> = (props) => {
           description="Indoor gallery"
         />
 
-        <ProjectNavigation prev="/overlap" next="/soul" />
+        <ProjectNavigation prev="/overlap" next="/m-tron" />
       </Scroller>
     </>
   );
