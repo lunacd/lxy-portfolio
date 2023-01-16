@@ -12,7 +12,6 @@ def cmd_exists(cmd):
 
 if cmd_exists("magick"):
     cmd = "magick"
-    print("Exists")
 else:
     cmd = "convert"
 
@@ -32,6 +31,8 @@ for dirPath, dirNames, filenames in os.walk("./images"):
 
         if basename.endswith("6x"):
             target_width = 1920 * 6
+        elif basename.endswith("2x"):
+            target_width = 1920 * 2
         elif basename.endswith("full"):
             target_width = 1920
         elif basename.endswith("big"):

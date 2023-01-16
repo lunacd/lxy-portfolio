@@ -107,6 +107,7 @@ const MTron: NextPage<PageProps> = (props) => {
           prompt="Scroll horizontally to see the whole scenario!"
           source={new ImageData(UserScenario, 11520, 1489)}
           alt="User scenario"
+          xSzie="3.5x"
           textColor="text-white"
         />
 

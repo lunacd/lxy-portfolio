@@ -10,7 +10,7 @@ interface TextImageProps {
   image: string | StaticImageData;
   width: number;
   height: number;
-  titleClass?: string;
+  titleClass?: "title" | "subtitle" | "paragraph";
   textColor?: string;
 }
 

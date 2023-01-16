@@ -12,7 +12,7 @@ interface ImageTextProps {
   alt: string;
   frame?: number;
   title?: string;
-  titleClass?: string;
+  titleClass?: "title" | "subtitle" | "paragraph";
 }
 
 const defaultProps = {

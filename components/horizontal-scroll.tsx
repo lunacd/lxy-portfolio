@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
@@ -9,6 +10,7 @@ interface HorizontalScrollProps {
   source: ImageData;
   alt: string;
   prompt: string;
+  xSzie: "2x" | "3.5x";
   textColor?: string;
 }
 
@@ -32,7 +34,12 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
         {props.prompt}
       </div>
       <div className="w-full overflow-x-scroll mb-spacing-3lg">
-        <div className="w-[350%]">
+        <div
+          className={classNames({
+            "w-[200%]": props.xSzie === "2x",
+            "w-[350%]": props.xSzie === "3.5x",
+          })}
+        >
           <Image
             src={props.source.src}
             alt={props.alt}
