@@ -2,7 +2,8 @@ import { AnimatePresence, motion, useInView } from "framer-motion";
 import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
 
 import Animatable from "../components/animatable";
 import Button from "../components/button";
@@ -58,6 +59,15 @@ const About: NextPage = () => {
   const [videoLink, setVideoLink] = useState(
     "https://www.youtube.com/embed/cH5WShEmoR8",
   );
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.query.v === "kidmania") {
+      setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
+      setOverlayOpen(true);
+    }
+  }, [router]);
+
   return (
     <>
       <Head>
