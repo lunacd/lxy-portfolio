@@ -16,7 +16,7 @@ const Home: NextPage<PageProps> = (props) => {
       <Head>
         <title>Shirley Lyu Portfolio</title>
       </Head>
-      <div className="flex-grow h-screen overflow-hidden relative">
+      <div className="flex-grow h-full overflow-hidden relative">
         <AnimatePresence initial={false}>
           <MotionTopDisplay
             project={projectData[props.displayProject]}

@@ -174,7 +174,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
 
       {/* Sizing placeholder for desktop */}
       <motion.div
-        className="hidden lg:block"
+        className="hidden lg:block lg:min-h-[30rem] xl:min-h-[34rem]"
         suppressHydrationWarning={true}
         initial={{
           width: "0rem",

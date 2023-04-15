@@ -17,7 +17,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
   return (
     <div
       className={classNames(
-        "mb-spacing-2lg flex h-screen min-h-[30rem] flex-col xl:min-h-[34rem] w-full",
+        "mb-spacing-2lg flex h-full min-h-[30rem] flex-col xl:min-h-[34rem] w-full",
         {
           [props.project.bgColor]: true,
           "absolute top-0 left-0": props.absolute,
@@ -60,9 +60,11 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
       </div>
 
       {/* Project details */}
-      <div className="flex-col items-center hidden lg:flex">
+      <div className="flex flex-col items-center">
         <div className="single mx-spacing-lg flex flex-row space-x-spacing py-8">
-          <div className="half flex flex-col space-y-1 relative">
+
+          {/* Left column */}
+          <div className={`${styles.detailColumn} flex`}>
             <div className={`${styles.detailSection} opacity-0`}>
               <span className={styles.heading}>Duration: </span>
               {projectData.reduce(
@@ -102,7 +104,9 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               </div>
             </div>
           </div>
-          <div className="half flex flex-col justify-center relative">
+
+          {/* Right column */}
+          <div className={`${styles.detailColumn} hidden lg:flex`}>
             <div className={`${styles.detailSection} opacity-0`}>
               <span className={styles.heading}>Project Brief: </span>
               {projectData.reduce(
@@ -111,7 +115,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                 "",
               )}
             </div>
-            <div className="half flex flex-col absolute left-0 top-0 w-full h-full justify-start">
+            <div className="half flex-col absolute left-0 top-0 w-full h-full justify-start">
               <div className={styles.detailSection}>
                 <span className={styles.heading}>Project Brief: </span>
                 {props.project.brief}

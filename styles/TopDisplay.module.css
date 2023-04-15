@@ -14,3 +14,8 @@
     @apply font-semibold;
   }
 }
+
+.detailColumn {
+  @apply relative w-[var(--single)] flex-col space-y-1;
+  @apply lg:w-[var(--half)];
+}
