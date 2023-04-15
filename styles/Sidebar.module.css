@@ -1,17 +1,81 @@
-.rotate {
-  transform: rotateY(180deg);
+.mainContainer {
+  /* Sizing */
+  @apply h-screen w-[16rem] flex-shrink-0;
+  @apply lg:min-h-[30rem];
+  @apply xl:min-h-[34rem] xl:w-[21rem];
+
+  /* Position */
+  @apply absolute z-10;
+
+  /* Styles */
+  @apply bg-white shadow-lg;
+}
+
+.contentContainer {
+  /* Sizing */
+  @apply w-36;
+  @apply lg:h-full;
+
+  /* Position */
+  @apply absolute top-0 right-14 py-16 xl:right-24;
+
+  /* Layout */
+  @apply flex flex-col justify-between;
+}
+
+.routeContainer {
+  @apply flex flex-col space-y-1 pt-4 pb-6;
+}
+
+.angleIconContainer {
+  /* Display only on large screens */
+  @apply hidden lg:block;
+
+  /* Sizing */
+  @apply h-24 w-16;
+  @apply xl:w-20;
+
+  /* Position */
+  @apply absolute -right-16 top-20 z-20;
+  @apply xl:-right-20;
+
+  /* Display */
+  @apply overflow-hidden;
+}
+
+.angleIconBackground {
+  /* Sizing */
+  @apply h-16 w-16;
+  @apply xl:h-20 xl:w-20;
+
+  /* Position */
+  @apply absolute -left-8 top-0;
+  @apply xl:-left-10;
+
+  /* Styling */
+  @apply cursor-pointer rounded-full bg-white shadow-lg;
+
+  /* Layout */
+  @apply flex items-center;
 }
 
 .angleIcon {
-  font-size: 1.25em;
-  line-height: 0.05em;
-  vertical-align: -0.075em;
+  /* Sizing */
+  @apply align-[-0.075rem] text-xl leading-[0.05rem];
+  @apply align-[-0.125rem] xl:text-2xl xl:leading-[0.04167rem];
+
+  /* Position */
+  @apply relative left-9;
+  @apply xl:left-12;
 }
 
-@media (min-width: 1280px) {
-  .angleIcon {
-    font-size: 1.5em;
-    line-height: 0.04167em;
-    vertical-align: -0.125em;
-  }
+.hamburgerIcon {
+  /* Display only on small screens */
+  @apply lg:hidden;
+
+  /* Position */
+  @apply absolute top-8 right-8 ml-auto z-10;
+
+  /* Styling */
+  @apply cursor-pointer text-2xl;
 }

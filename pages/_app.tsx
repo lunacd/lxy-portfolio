@@ -109,35 +109,30 @@ function MyApp({ Component, pageProps }: AppProps<AppPageProps>) {
                 gtag('js', new Date());
                 gtag('config', 'G-26S1RW6P14');`}
       </Script>
-      <div className="subtitle lg:hidden mt-8 text-center">
-        Use a larger screen to view this page!
-      </div>
-      <div className="hidden lg:block">
-        <PageRoot>
-          <Sidebar
-            route={
-              useCounter ? projects[counter % projects.length] : currentRoute
-            }
-            hoverEnter={hoverEnter}
-            hoverLeave={hoverLeave}
-            onLink={onLink}
-          />
-          <div className="flex-grow relative overflow-x-hidden">
-            <AnimatePresence initial={false}>
-              <motion.div
-                className="absolute w-full h-full left-0 top-0 z-0"
-                initial={{ x: swipeAnimation ? "100%" : "0%" }}
-                animate={{ x: "0%" }}
-                exit={{ x: swipeAnimation ? "-100%" : "0%" }}
-                transition={{ ease: "easeInOut", duration: 0.5 }}
-                key={router.pathname}
-              >
-                <Component {...pageProps} />
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </PageRoot>
-      </div>
+      <PageRoot>
+        <Sidebar
+          route={
+            useCounter ? projects[counter % projects.length] : currentRoute
+          }
+          hoverEnter={hoverEnter}
+          hoverLeave={hoverLeave}
+          onLink={onLink}
+        />
+        <div className="flex-grow relative overflow-x-hidden min-h-screen">
+          <AnimatePresence initial={false}>
+            <motion.div
+              className="absolute w-full h-full left-0 top-0 z-0"
+              initial={{ x: swipeAnimation ? "100%" : "0%" }}
+              animate={{ x: "0%" }}
+              exit={{ x: swipeAnimation ? "-100%" : "0%" }}
+              transition={{ ease: "easeInOut", duration: 0.5 }}
+              key={router.pathname}
+            >
+              <Component {...pageProps} />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </PageRoot>
     </>
   );
 }

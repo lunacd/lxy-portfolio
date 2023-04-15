@@ -7,21 +7,8 @@ import { useMediaQuery } from "usehooks-ts";
 
 import styles from "../styles/Sidebar.module.css";
 import { projects } from "../utils/project-data";
-import Route from "../utils/route";
+import { sidebarRoutes } from "../utils/project-data";
 import { transitionFast as transitionDefault } from "../utils/transition";
-
-const routes = [
-  new Route("about", "About", "/about", "subtitle"),
-  new Route("projects", "Projects", "/projects", "subtitle"),
-  new Route("soul", "Soul", "/soul", "paragraph"),
-  new Route("skates", "Skates", "/skates", "paragraph"),
-  new Route("overlap", "Overlap", "/overlap", "paragraph"),
-  new Route("sunrise", "Sunrise Speaker", "/sunrise", "paragraph"),
-  new Route("m-tron", "M-Tron", "/m-tron", "paragraph"),
-  new Route("lyu", "Lyu", "/lyu", "paragraph"),
-  new Route("refugia", "Refugia", "/refugia", "paragraph"),
-  new Route("others", "More Work", "/others", "subtitle"),
-];
 
 interface SidebarProps {
   route: string;
@@ -37,20 +24,20 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
 
   return (
     <>
+      {/* Main container */}
       <motion.div
-        suppressHydrationWarning={true}
         initial={{
-          width: isXL ? "21rem" : "16rem",
+          x: "0%",
         }}
         animate={{
-          width: open ? (isXL ? "21rem" : "16rem") : "0rem",
+          x: open ? "0%" : "-100%",
         }}
         transition={transitionDefault}
-        className={classNames(
-          "relative h-screen min-h-[30rem] flex-shrink-0 bg-white shadow-lg xl:min-h-[34rem] z-10",
-        )}
+        className={styles.mainContainer}
       >
-        <div className="absolute top-0 right-14 flex h-full w-36 flex-col justify-between py-16 xl:right-24">
+        {/* Content container */}
+        <div className={styles.contentContainer}>
+          {/* Logo */}
           <Link href="/">
             <div className="w-full">
               <Image
@@ -62,8 +49,10 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
               />
             </div>
           </Link>
-          <div className="flex flex-col space-y-1">
-            {routes.map((route) => (
+
+          {/* Routes */}
+          <div className={styles.routeContainer}>
+            {sidebarRoutes.map((route) => (
               <div key={route.uri} className="flex flex-row">
                 <div
                   className="flex flex-row items-center"
@@ -131,6 +120,8 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
               </div>
             ))}
           </div>
+
+          {/* Social links */}
           <div className="flex flex-row justify-between">
             <a
               href="https://www.instagram.com/lyu.shirley/"
@@ -154,25 +145,53 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
             </a>
           </div>
         </div>
-        <div className="absolute top-20 -right-16 z-20 h-24 w-16 overflow-hidden xl:-right-20 xl:w-20">
+
+        {/* Open-close button: desktop */}
+        <div className={styles.angleIconContainer}>
           <div
-            className="absolute top-0 -left-8 flex h-16 w-16 cursor-pointer items-center rounded-full bg-white shadow-lg xl:-left-10 xl:h-20 xl:w-20"
+            className={styles.angleIconBackground}
             onClick={() => {
               setOpen((orig) => !orig);
             }}
           >
-            <i
+            <motion.i
+              animate={{
+                rotateY: open ? "0" : "180deg",
+              }}
               className={classNames(
-                "fa-solid fa-angle-left relative left-9 transition-transform duration-200 ease-in-out xl:left-12",
-                {
-                  [styles.angleIcon]: true,
-                  [styles.rotate]: !open,
-                },
+                `fa-solid fa-angle-left ${styles.angleIcon}`,
               )}
+              transition={{
+                duration: 0.2,
+              }}
             />
           </div>
         </div>
       </motion.div>
+
+      {/* Sizing placeholder for desktop */}
+      <motion.div
+        className="hidden lg:block"
+        suppressHydrationWarning={true}
+        initial={{
+          width: isXL ? "21rem" : "16rem",
+        }}
+        animate={{
+          width: open ? (isXL ? "21rem" : "16rem") : "0rem",
+        }}
+        transition={transitionDefault}
+      ></motion.div>
+
+      {/* Open-close button: mobile */}
+      <motion.i
+        animate={{
+          rotate: open ? "0" : "90deg",
+        }}
+        className={`fa-solid fa-bars ${styles.hamburgerIcon}`}
+        onClick={() => {
+          setOpen((orig) => !orig);
+        }}
+      ></motion.i>
     </>
   );
 };

@@ -22,6 +22,7 @@ import RefugiaDisplay from "../images/refugia/display-full.webp";
 import SkatesDisplay from "../images/skates/display-full.webp";
 import SoulDisplay from "../images/soul/display-full.webp";
 import SunriseDisplay from "../images/sunrise/display-full.webp";
+import Route from "./route";
 
 export class ProjectDataLean {
   uri: string;
@@ -237,4 +238,17 @@ export const otherProjectsData = [
     MumSmall,
     "https://shirleylyu.wixsite.com/shirley-portfolio/mum",
   ),
+];
+
+export const sidebarRoutes = [
+  new Route("about", "About", "/about", "subtitle"),
+  new Route("projects", "Projects", "/projects", "subtitle"),
+  new Route("soul", "Soul", "/soul", "paragraph"),
+  new Route("skates", "Skates", "/skates", "paragraph"),
+  new Route("overlap", "Overlap", "/overlap", "paragraph"),
+  new Route("sunrise", "Sunrise Speaker", "/sunrise", "paragraph"),
+  new Route("m-tron", "M-Tron", "/m-tron", "paragraph"),
+  new Route("lyu", "Lyu", "/lyu", "paragraph"),
+  new Route("refugia", "Refugia", "/refugia", "paragraph"),
+  new Route("others", "More Work", "/others", "subtitle"),
 ];
