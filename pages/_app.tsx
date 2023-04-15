@@ -9,6 +9,7 @@ import PageRoot from "../components/page-root";
 import { Sidebar } from "../components/sidebar";
 import "../styles/globals.css";
 import * as gtag from "../utils/gtag";
+import { PageProps } from "../utils/page-props";
 import { projects } from "../utils/project-data";
 
 const isProject = (link: string) => {
@@ -34,13 +35,7 @@ const hamburgerColors = [
   "text-black", // refugia
 ];
 
-interface AppPageProps {
-  displayProject: number;
-  displayAnimation: boolean;
-  swipeAnimation: boolean;
-}
-
-function MyApp({ Component, pageProps }: AppProps<AppPageProps>) {
+function MyApp({ Component, pageProps }: AppProps<PageProps>) {
   // Google Analytics
   const router = useRouter();
   useEffect(() => {
@@ -95,6 +90,7 @@ function MyApp({ Component, pageProps }: AppProps<AppPageProps>) {
   pageProps.displayProject = counter % projects.length;
   pageProps.displayAnimation = displayAnimation;
   pageProps.swipeAnimation = swipeAnimation;
+  pageProps.onLink = onLink;
 
   // Get current route
   const [currentRoute, setCurrentRoute] = useState("");

@@ -9,6 +9,7 @@ import { ProjectData, projectData } from "../utils/project-data";
 export interface TopDisplayProps {
   project: ProjectData;
   animation: boolean;
+  onLink?: (link: string) => void;
   absolute?: boolean;
   link?: boolean;
 }
@@ -51,10 +52,12 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                 rel="noreferrer"
               ></a>
             ) : (
-              <Link
-                href={props.project.link}
-                className="absolute w-full h-full top-0 left-0 block"
-              ></Link>
+              <a
+                onClick={() => {
+                  props.onLink!(props.project.link);
+                }}
+                className="absolute w-full h-full top-0 left-0 block cursor-pointer"
+              ></a>
             ))}
         </div>
       </div>
@@ -62,7 +65,6 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
       {/* Project details */}
       <div className="flex flex-col items-center">
         <div className="single mx-spacing-lg flex flex-row space-x-spacing py-8">
-
           {/* Left column */}
           <div className={`${styles.detailColumn} flex`}>
             <div className={`${styles.detailSection} opacity-0`}>

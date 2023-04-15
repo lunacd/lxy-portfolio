@@ -28,7 +28,9 @@ body {
   --two-thirds: calc(
     (100vw - var(--sidebar) - 2 * var(--spacing-lg) - var(--spacing)) * 2 / 3
   );
-  --one-third: calc((100vw - 21rem - 2 * var(--spacing-lg) - var(--spacing)) / 3);
+  --one-third: calc(
+    (100vw - 21rem - 2 * var(--spacing-lg) - var(--spacing)) / 3
+  );
 }
 
 @media (min-width: 1024px) {

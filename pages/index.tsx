@@ -28,6 +28,7 @@ const Home: NextPage<PageProps> = (props) => {
             exit={{ opacity: props.displayAnimation ? 0 : 1 }}
             transition={transitionSlow}
             key={props.displayProject}
+            onLink={props.onLink}
           />
         </AnimatePresence>
       </div>

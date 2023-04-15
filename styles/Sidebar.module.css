@@ -17,14 +17,14 @@
   @apply h-full;
 
   /* Position */
-  @apply absolute top-0 right-14 py-16 xl:right-24;
+  @apply absolute right-14 top-0 py-16 xl:right-24;
 
   /* Layout */
   @apply flex flex-col justify-between;
 }
 
 .routeContainer {
-  @apply flex flex-col space-y-1 pt-4 pb-6;
+  @apply flex flex-col space-y-1 pb-6 pt-4;
 }
 
 .angleIconContainer {
@@ -74,7 +74,7 @@
   @apply lg:hidden;
 
   /* Position */
-  @apply absolute top-8 right-6 ml-auto z-10;
+  @apply absolute right-6 top-8 z-10 ml-auto;
 
   /* Styling */
   @apply cursor-pointer text-2xl;

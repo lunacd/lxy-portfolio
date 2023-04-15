@@ -1,3 +1,4 @@
+import Route from "./route";
 import { StaticImageData } from "next/image";
 
 import LyuDisplay from "../images/lyu/display-full.webp";
@@ -22,7 +23,6 @@ import RefugiaDisplay from "../images/refugia/display-full.webp";
 import SkatesDisplay from "../images/skates/display-full.webp";
 import SoulDisplay from "../images/soul/display-full.webp";
 import SunriseDisplay from "../images/sunrise/display-full.webp";
-import Route from "./route";
 
 export class ProjectDataLean {
   uri: string;
