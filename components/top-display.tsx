@@ -17,7 +17,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
   return (
     <div
       className={classNames(
-        "mb-spacing-2lg flex h-full min-h-[30rem] flex-col xl:min-h-[34rem] w-full",
+        "mb-spacing-2lg flex h-full min-h-screen flex-col w-full",
         {
           [props.project.bgColor]: true,
           "absolute top-0 left-0": props.absolute,
