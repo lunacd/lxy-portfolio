@@ -18,16 +18,18 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = (props) => {
-  const [open, setOpen] = useState(true);
   const isXL = useMediaQuery("(min-width: 1280px)");
+  const isLG = useMediaQuery("(min-width: 1024px)");
+  const [open, setOpen] = useState(isLG);
   const [hovered, setHovered] = useState("");
 
   return (
     <>
       {/* Main container */}
       <motion.div
+        suppressHydrationWarning={true}
         initial={{
-          x: "0%",
+          x: "-100%",
         }}
         animate={{
           x: open ? "0%" : "-100%",
@@ -174,7 +176,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
         className="hidden lg:block"
         suppressHydrationWarning={true}
         initial={{
-          width: isXL ? "21rem" : "16rem",
+          width: "0rem",
         }}
         animate={{
           width: open ? (isXL ? "21rem" : "16rem") : "0rem",
@@ -185,7 +187,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
       {/* Open-close button: mobile */}
       <motion.i
         animate={{
-          rotate: open ? "0" : "90deg",
+          rotate: open ? "90deg" : "0",
         }}
         className={`fa-solid fa-bars ${styles.hamburgerIcon}`}
         onClick={() => {
