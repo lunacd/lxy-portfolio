@@ -12,6 +12,7 @@ import { transitionFast as transitionDefault } from "../utils/transition";
 
 interface SidebarProps {
   route: string;
+  hamburgerColor: string;
   hoverEnter: (project: string) => void;
   hoverLeave: () => void;
   onLink: (link: string) => void;
@@ -189,7 +190,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
         animate={{
           rotate: open ? "90deg" : "0",
         }}
-        className={`fa-solid fa-bars ${styles.hamburgerIcon}`}
+        className={`fa-solid fa-bars ${styles.hamburgerIcon} ${props.hamburgerColor}`}
         onClick={() => {
           setOpen((orig) => !orig);
         }}

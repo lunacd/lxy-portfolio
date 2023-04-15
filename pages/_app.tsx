@@ -24,6 +24,16 @@ const isProject = (link: string) => {
   return false;
 };
 
+const hamburgerColors = [
+  "text-white", // soul
+  "text-black", // skates
+  "text-black", // overlap
+  "text-black", // sunrise
+  "text-white", // m-tron
+  "text-black", // lyu
+  "text-black", // refugia
+];
+
 interface AppPageProps {
   displayProject: number;
   displayAnimation: boolean;
@@ -65,8 +75,12 @@ function MyApp({ Component, pageProps }: AppProps<AppPageProps>) {
   };
 
   // Main page cycling
+  const [hamburgerColor, setHamburgerColor] = useState("text-black");
   const [counter, setCounter] = useState(0);
   const [interval, setInterval] = useState<number | null>(3000);
+  useEffect(() => {
+    setHamburgerColor(hamburgerColors[counter % hamburgerColors.length]);
+  }, [counter]);
   const hoverEnter = (route: string) => {
     setInterval(null);
     setCounter(projects.indexOf(route));
@@ -117,6 +131,7 @@ function MyApp({ Component, pageProps }: AppProps<AppPageProps>) {
           hoverEnter={hoverEnter}
           hoverLeave={hoverLeave}
           onLink={onLink}
+          hamburgerColor={hamburgerColor}
         />
         <div className="flex-grow relative overflow-x-hidden min-h-screen">
           <AnimatePresence initial={false}>

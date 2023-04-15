@@ -25,6 +25,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
       )}
       ref={ref}
     >
+      {/* Project image */}
       <div className="relative min-h-0 w-full flex-shrink flex-grow overflow-hidden">
         <Image
           src={props.project.displayImage}
@@ -33,11 +34,14 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
           className="object-center object-cover"
         />
         <div className="absolute left-0 top-0 flex h-full w-full justify-center">
+          {/* Project name */}
           <div
-            className={`single mt-12 xl:mt-24 text-3xl ${props.project.titleColor}`}
+            className={`single ${styles.projectName} ${props.project.titleColor}`}
           >
             {props.project.name}
           </div>
+
+          {/* Link to page */}
           {props.link &&
             (props.project.link.startsWith("https") ? (
               <a
@@ -54,10 +58,12 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
             ))}
         </div>
       </div>
-      <div className="flex flex-col items-center">
+
+      {/* Project details */}
+      <div className="flex-col items-center hidden lg:flex">
         <div className="single mx-spacing-lg flex flex-row space-x-spacing py-8">
           <div className="half flex flex-col space-y-1 relative">
-            <div className={`${styles.section} opacity-0`}>
+            <div className={`${styles.detailSection} opacity-0`}>
               <span className={styles.heading}>Duration: </span>
               {projectData.reduce(
                 (prev, curr) =>
@@ -65,7 +71,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                 "",
               )}
             </div>
-            <div className={`${styles.section} opacity-0`}>
+            <div className={`${styles.detailSection} opacity-0`}>
               <span className={styles.heading}>Category: </span>
               {projectData.reduce(
                 (prev, curr) =>
@@ -73,7 +79,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                 "",
               )}
             </div>
-            <div className={`${styles.section} opacity-0`}>
+            <div className={`${styles.detailSection} opacity-0`}>
               <span className={styles.heading}>Project Focus: </span>
               {projectData.reduce(
                 (prev, curr) =>
@@ -82,22 +88,22 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               )}
             </div>
             <div className="absolute left-0 top-0 w-full h-full !mt-0 flex flex-col justify-start space-y-1">
-              <div className={styles.section}>
+              <div className={styles.detailSection}>
                 <span className={styles.heading}>Duration: </span>
                 {props.project.duration}
               </div>
-              <div className={styles.section}>
+              <div className={styles.detailSection}>
                 <span className={styles.heading}>Category: </span>
                 {props.project.category}
               </div>
-              <div className={styles.section}>
+              <div className={styles.detailSection}>
                 <span className={styles.heading}>Project Focus: </span>
                 {props.project.focus}
               </div>
             </div>
           </div>
           <div className="half flex flex-col justify-center relative">
-            <div className={`${styles.section} opacity-0`}>
+            <div className={`${styles.detailSection} opacity-0`}>
               <span className={styles.heading}>Project Brief: </span>
               {projectData.reduce(
                 (prev, curr) =>
@@ -106,7 +112,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               )}
             </div>
             <div className="half flex flex-col absolute left-0 top-0 w-full h-full justify-start">
-              <div className={styles.section}>
+              <div className={styles.detailSection}>
                 <span className={styles.heading}>Project Brief: </span>
                 {props.project.brief}
               </div>

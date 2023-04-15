@@ -1,4 +1,14 @@
-.section {
+.projectName {
+  /* Position */
+  @apply mt-8;
+  @apply lg:mt-12;
+  @apply xl:mt-24;
+
+  /* Sizing */
+  @apply text-3xl;
+}
+
+.detailSection {
   @apply font-extralight;
   & span {
     @apply font-semibold;

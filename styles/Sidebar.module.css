@@ -74,8 +74,11 @@
   @apply lg:hidden;
 
   /* Position */
-  @apply absolute top-8 right-8 ml-auto z-10;
+  @apply absolute top-8 right-6 ml-auto z-10;
 
   /* Styling */
   @apply cursor-pointer text-2xl;
+
+  /* Transition */
+  @apply transition-colors duration-200;
 }

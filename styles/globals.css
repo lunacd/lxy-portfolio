@@ -20,7 +20,15 @@ body {
 :root {
   --spacing: 1.5rem;
   --spacing-lg: 2rem;
-  --sidebar: 16rem;
+  --sidebar: 0rem;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --spacing: 1.5rem;
+    --spacing-lg: 2rem;
+    --sidebar: 16rem;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -44,6 +52,7 @@ body {
   @apply text-sm font-extralight xl:text-base;
 }
 
+/* 1 */
 .single {
   width: calc(100vw - var(--sidebar) - 2 * var(--spacing-lg));
 }
