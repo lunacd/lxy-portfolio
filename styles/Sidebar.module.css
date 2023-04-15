@@ -69,15 +69,20 @@
   @apply xl:left-12;
 }
 
-.hamburgerIcon {
+.hamburgerContainer {
   /* Display only on small screens */
   @apply lg:hidden;
 
   /* Position */
-  @apply absolute right-6 top-8 z-10 ml-auto;
+  @apply absolute right-2 top-4 z-10 p-4;
 
   /* Styling */
-  @apply cursor-pointer text-2xl;
+  @apply cursor-pointer;
+}
+
+.hamburgerIcon {
+  /* Styling */
+  @apply text-2xl;
 
   /* Transition */
   @apply transition-colors duration-200;

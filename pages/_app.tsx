@@ -127,7 +127,7 @@ function MyApp({ Component, pageProps }: AppProps<PageProps>) {
           hoverEnter={hoverEnter}
           hoverLeave={hoverLeave}
           onLink={onLink}
-          hamburgerColor={hamburgerColor}
+          hamburgerColor={useCounter ? hamburgerColor : "text-black"}
         />
         <div className="flex-grow relative overflow-x-hidden min-h-screen">
           <AnimatePresence initial={false}>

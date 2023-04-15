@@ -186,15 +186,17 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
       ></motion.div>
 
       {/* Open-close button: mobile */}
-      <motion.i
-        animate={{
-          rotate: open ? "90deg" : "0",
-        }}
-        className={`fa-solid fa-bars ${styles.hamburgerIcon} ${props.hamburgerColor}`}
-        onClick={() => {
-          setOpen((orig) => !orig);
-        }}
-      ></motion.i>
+      <div className={styles.hamburgerContainer}>
+        <motion.i
+          animate={{
+            rotate: open ? "90deg" : "0",
+          }}
+          className={`fa-solid fa-bars ${styles.hamburgerIcon} ${props.hamburgerColor}`}
+          onClick={() => {
+            setOpen((orig) => !orig);
+          }}
+        ></motion.i>
+      </div>
     </>
   );
 };
