@@ -2,8 +2,11 @@ import Route from "./route";
 import { StaticImageData } from "next/image";
 
 import LyuDisplay from "../images/lyu/display-full.webp";
+import LyuDisplayM from "../images/lyu/display-mobile-half.webp";
 import TronDisplay from "../images/m-tron/display-full.webp";
+import TronDisplayM from "../images/m-tron/display-mobile-half.webp";
 import OverlapDisplay from "../images/overlap/display-full.webp";
+import OverlapDisplayM from "../images/overlap/display-mobile-half.webp";
 import ErgoSmall from "../images/projects/ergo-half.webp";
 import ItoSmall from "../images/projects/ito-half.webp";
 import LissSmall from "../images/projects/liss-half.webp";
@@ -20,9 +23,13 @@ import SoulSmall from "../images/projects/soul-half.webp";
 import SunriseSmall from "../images/projects/sunrise-half.webp";
 import TuraSmall from "../images/projects/tura-half.webp";
 import RefugiaDisplay from "../images/refugia/display-full.webp";
+import RefugiaDisplayM from "../images/refugia/display-mobile-half.webp";
 import SkatesDisplay from "../images/skates/display-full.webp";
+import SkatesDisplayM from "../images/skates/display-mobile-half.webp";
 import SoulDisplay from "../images/soul/display-full.webp";
+import SoulDisplayM from "../images/soul/display-mobile-half.webp";
 import SunriseDisplay from "../images/sunrise/display-full.webp";
+import SunriseDisplayM from "../images/sunrise/display-mobile-half.webp";
 
 export class ProjectDataLean {
   uri: string;
@@ -50,7 +57,8 @@ export class ProjectData extends ProjectDataLean {
   duration: string;
   focus: string;
   brief: string;
-  displayImage: string | StaticImageData;
+  displayImage: StaticImageData;
+  displayImageMobile: StaticImageData;
   titleColor: string;
   bgColor: string;
 
@@ -61,8 +69,9 @@ export class ProjectData extends ProjectDataLean {
     category: string,
     focus: string,
     brief: string,
-    displayImage: string | StaticImageData,
-    smallImage: string | StaticImageData,
+    displayImage: StaticImageData,
+    displayImageMobile: StaticImageData,
+    smallImage: StaticImageData,
     titleColor: string,
     bgColor: string,
     link: string,
@@ -72,6 +81,7 @@ export class ProjectData extends ProjectDataLean {
     this.focus = focus;
     this.brief = brief;
     this.displayImage = displayImage;
+    this.displayImageMobile = displayImageMobile;
     this.titleColor = titleColor;
     this.bgColor = bgColor;
   }
@@ -96,6 +106,7 @@ export const projectData = [
     "Brand Research, Form Study, 3D Modeling",
     "To propose a new product category for Rolls-Royce by designing a unified collection of objects.",
     SoulDisplay,
+    SoulDisplayM,
     SoulSmall,
     "text-gray-100",
     "bg-[#EEEAE2]",
@@ -109,6 +120,7 @@ export const projectData = [
     "Form Study, Prototyping, Manufacturing",
     "Designing and making furniture that reconfigures the spatial experience for Bernhardt. The design is engendered to meet Bernhardt's  brand identity and manufacturing requirements, as well their use of materials.",
     SkatesDisplay,
+    SkatesDisplayM,
     SkatesSmall,
     "text-gray-900",
     "bg-[#F0EBE6]",
@@ -122,6 +134,7 @@ export const projectData = [
     "Prototyping, Tech Drawing, Model Making, Manufacturing",
     "A range of small and functional objects for Hay, focusing on brand identity, manufacturing techniques, and use of materials.",
     OverlapDisplay,
+    OverlapDisplayM,
     OverlapSmall,
     "text-gray-900",
     "bg-[#FDF9F1]",
@@ -135,6 +148,7 @@ export const projectData = [
     "Form Study, Prototyping, Model Making, Manufacturing",
     "Reverse-engineered a speaker and put all parts back together in personal designed product for Yamaha.",
     SunriseDisplay,
+    SunriseDisplayM,
     SunriseSmall,
     "text-gray-900",
     "bg-[#D8D6D4]",
@@ -148,6 +162,7 @@ export const projectData = [
     "3D Modeling, Rendering",
     "A shared semi-automatic scooter inside Walt Disney World for both kids and adult to transport between different rides.",
     TronDisplay,
+    TronDisplayM,
     TronSmall,
     "text-gray-100",
     "bg-[#E4F2F5]",
@@ -161,6 +176,7 @@ export const projectData = [
     "Craft, Tech Drawing, Manufacturing",
     "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
     LyuDisplay,
+    LyuDisplayM,
     LyuSmall,
     "text-gray-100",
     "bg-[#EFF2F3]",
@@ -174,6 +190,7 @@ export const projectData = [
     "Sustainability, Model making",
     "See through their eyes; hear through their ears; sense through their senses. Learn and feel animals' adaptation to the urban environment.",
     RefugiaDisplay,
+    RefugiaDisplayM,
     RefugiaSmall,
     "text-gray-100",
     "bg-[#E0E4E0]",

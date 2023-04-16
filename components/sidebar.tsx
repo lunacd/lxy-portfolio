@@ -41,7 +41,14 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
         {/* Content container */}
         <div className={styles.contentContainer}>
           {/* Logo */}
-          <Link href="/">
+          <Link
+            href="/"
+            onClick={() => {
+              if (!isLG) {
+                setOpen(false);
+              }
+            }}
+          >
             <div className="w-full">
               <Image
                 src="/logo.svg"

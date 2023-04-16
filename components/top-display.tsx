@@ -28,12 +28,17 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
     >
       {/* Project image */}
       <div className="relative min-h-0 w-full flex-shrink flex-grow overflow-hidden">
-        <Image
-          src={props.project.displayImage}
-          alt={props.project.name}
-          fill
-          className="object-center object-cover"
-        />
+        <picture className="absolute top-0 left-0 w-full h-full flex">
+          <source
+            media="(min-width: 1280px)"
+            srcSet={props.project.displayImage.src}
+          />
+          <img
+            src={props.project.displayImageMobile.src}
+            alt={props.project.name}
+            className="object-cover"
+          />
+        </picture>
         <div className="absolute left-0 top-0 flex h-full w-full justify-center">
           {/* Project name */}
           <div
