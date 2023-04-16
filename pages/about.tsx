@@ -284,8 +284,11 @@ const About: NextPage = () => {
 
         {/* Mobile */}
         {/* First row: Thinker / Social innovator */}
-        <div className="flex flex-row single space-x-4">
-          <div className={`relative ${styles.rounded}`}>
+        <div className="flex flex-row single space-x-4 mb-4">
+          <div
+            className={`relative ${styles.rounded}`}
+            style={{ flex: 640 / 933 }}
+          >
             <Animatable
               source={
                 new Animation(
@@ -302,11 +305,12 @@ const About: NextPage = () => {
             </div>
           </div>
           <div
-            className={`relative col-span-6 col-start-2 cursor-pointer ${styles.rounded}`}
+            className={`relative cursor-pointer ${styles.rounded}`}
             onClick={() => {
               setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
               setOverlayOpen(true);
             }}
+            style={{ flex: 960 / 580 }}
           >
             <video
               src="/social-innovator.mp4"
@@ -316,6 +320,136 @@ const About: NextPage = () => {
             />
             <div className={styles.textOverlay}>
               <div>Social Innovator</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Second row: Nature observer / Dog lover */}
+        <div className="flex flex-row single space-x-4 mb-4">
+          <div
+            className={`relative ${styles.rounded}`}
+            style={{ flex: 960 / 606 }}
+          >
+            <video
+              src="/nature-observer.mp4"
+              autoPlay
+              loop
+              className={styles.darken}
+            />
+            <div className={styles.textOverlay}>
+              <div>Nature Observer</div>
+            </div>
+          </div>
+          <div
+            className={`relative ${styles.rounded}`}
+            style={{
+              flex: 640 / 838,
+            }}
+          >
+            <div className={`w-full ${styles.darken}`}>
+              <Animatable
+                source={new Animation([Dog1, Dog2, Dog3, Dog4], 640, 838)}
+                frame={frame}
+                alt="Dog lover"
+              />
+            </div>
+            <div className={styles.textOverlay}>
+              <div>Dog Lover</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Third row: Craftsperson / Traveller */}
+        <div className="flex flex-row single space-x-4 mb-4">
+          <div
+            className={`relative ${styles.rounded}`}
+            style={{ flex: 640 / 652 }}
+          >
+            <div className={`w-full ${styles.darken}`}>
+              <Animatable
+                source={
+                  new Animation(
+                    [CraftsPerson1, CraftsPerson2, CraftsPerson3],
+                    640,
+                    652,
+                  )
+                }
+                frame={frame}
+                alt="Craftsperson"
+              />
+            </div>
+            <div className={styles.textOverlay}>
+              <div>Craftsperson</div>
+            </div>
+          </div>
+          <div
+            className={`relative ${styles.rounded}`}
+            style={{ flex: 640 / 440 }}
+          >
+            <div className={`w-full ${styles.darken}`}>
+              <Animatable
+                source={
+                  new Animation(
+                    [
+                      Traveller1,
+                      Traveller2,
+                      Traveller3,
+                      Traveller4,
+                      Traveller5,
+                      Traveller6,
+                    ],
+                    640,
+                    440,
+                  )
+                }
+                frame={frame}
+                alt="Traveller"
+              />
+            </div>
+            <div className={styles.textOverlay}>
+              <div>Traveller</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Third row: Sports lover / photographer */}
+        <div className="flex flex-row single space-x-4 mb-spacing-3lg">
+          <div
+            className={`relative ${styles.rounded}`}
+            style={{
+              flex: 480 / 360,
+            }}
+          >
+            <Image
+              className={styles.darken}
+              src={Sports}
+              alt="Sports Lover"
+              width={480}
+              height={360}
+            />
+            <div className={styles.textOverlay}>
+              <div>Sports Lover</div>
+            </div>
+          </div>
+          <div
+            className={`relative ${styles.rounded}`}
+            style={{ flex: 640 / 669 }}
+          >
+            <div className={`w-full ${styles.darken}`}>
+              <Animatable
+                source={
+                  new Animation(
+                    [Photo1, Photo2, Photo3, Photo4, Photo5],
+                    640,
+                    669,
+                  )
+                }
+                frame={frame}
+                alt="Photographer"
+              />
+            </div>
+            <div className={styles.textOverlay}>
+              <div>Photographer</div>
             </div>
           </div>
         </div>
@@ -366,15 +500,15 @@ const About: NextPage = () => {
                 <i className="fa-solid fa-x"></i>
               </button>
             </div>
-            <div className="flex flex-row h-full">
+            <div className="flex flex-col lg:flex-row h-full pt-16 lg:pt-0">
               <iframe
                 src={videoLink}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="border-0 w-2/3 h-full relative z-20"
+                className="border-0 w-full lg:w-2/3 lg:h-full relative z-20"
               ></iframe>
-              <div className="w-1/3 p-4 flex flex-col justify-center">
+              <div className="w-full lg:w-1/3 p-4 flex flex-col justify-center">
                 <div className="title mb-2">Organization Mission</div>
                 <div className="paragraph">
                   Wanyi is a city-based organization that designs and organizes
@@ -401,8 +535,3 @@ const About: NextPage = () => {
 };
 
 export default About;
-
-// thinker / Social
-// Nature / dog
-// Craftsperson / traveller
-// Sports / photo

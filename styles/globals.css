@@ -31,7 +31,6 @@ body {
   --one-third: calc(
     (100vw - 21rem - 2 * var(--spacing-lg) - var(--spacing)) / 3
   );
-  --column-spacing: 1rem;
 }
 
 @media (min-width: 1024px) {
@@ -39,7 +38,6 @@ body {
     --spacing: 1.5rem;
     --spacing-lg: 2rem;
     --sidebar: 16rem;
-    --column-spacing: 2rem;
   }
 }
 
