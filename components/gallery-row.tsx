@@ -10,15 +10,11 @@ interface GalleryRowProps {
   row: GalleryRowData;
   description: string;
   currentFrame: number;
-  width: number;
 }
 
 const GalleryRow: React.FC<GalleryRowProps> = (props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  let rowFactor = props.row.images
-    .map((curr) => curr.width / curr.height)
-    .reduce((prev, curr) => prev + curr);
   if (props.row.config === GalleryRowConfig.FixedHeight) {
     return (
       <motion.div
@@ -44,10 +40,6 @@ const GalleryRow: React.FC<GalleryRowProps> = (props) => {
                 source={image}
                 alt={`${props.description} gallery image`}
                 frame={props.currentFrame}
-                adaptiveHeight={true}
-                totalWidth={props.width}
-                rowCount={props.row.images.length}
-                rowFactor={rowFactor}
                 key={innerIndex}
               />
             );

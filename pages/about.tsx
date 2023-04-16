@@ -10,7 +10,7 @@ import Button from "../components/button";
 import Scroller from "../components/scroller";
 import Spacing from "../components/spacing";
 import Title from "../components/title";
-import styles from "../styles/about.module.css";
+import styles from "../styles/About.module.css";
 import Animation from "../utils/animation";
 import { transitionFast } from "../utils/transition";
 import useFrameIndex from "../utils/use-frame-index";
@@ -51,6 +51,10 @@ import Traveller6 from "../images/about/traveller-6-small.webp";
 
 const Tools = [Tool1, Tool2, Tool3, Tool4, Tool5, Tool6, Tool7, Tool8, Tool9];
 
+// Sum of width / height
+// Thinker / Social innovator
+const rowFactor1 = 640 / 933 + 960 / 580;
+
 const About: NextPage = () => {
   const frame = useFrameIndex(3000);
   const ref = useRef(null);
@@ -75,7 +79,11 @@ const About: NextPage = () => {
       </Head>
 
       <Scroller bgColor="bg-[#FDF9F1]">
-        <div className="single grid grid-cols-2 gap-spacing my-spacing-lg">
+        {/* Extra spacing on mobile */}
+        <div className="pt-16"></div>
+
+        {/* Profile */}
+        <div className="single grid lg:grid-cols-2 gap-spacing my-spacing-lg">
           <div className={styles.rounded}>
             <Image
               src={Profile}
@@ -85,7 +93,7 @@ const About: NextPage = () => {
               placeholder="blur"
             />
           </div>
-          <div className="self-end">
+          <div className="lg:self-end">
             Hello! This is Shirley Lyu. I am a product designer with an infinite
             range of ideas. I am interested in lifestyle products, spatial
             experience, sustainability, social innovation, soft goods, and
@@ -93,13 +101,17 @@ const About: NextPage = () => {
           </div>
         </div>
 
+        {/* Resume */}
         <Button text="Resume" href="/resume.pdf" />
-        <Spacing size="medium" />
+        <Spacing size="large" />
 
         <Title title="Who I am" />
-        <div className="mb-4 grid grid-cols-12 gap-4 single">
+
+        {/* Desktop first row */}
+        <div className="mb-4 hidden lg:grid grid-cols-12 gap-4 single">
+          {/* Social innovator */}
           <div
-            className={`col-start-2 col-span-6 relative cursor-pointer ${styles.rounded}`}
+            className={`relative col-span-6 col-start-2 cursor-pointer ${styles.rounded}`}
             onClick={() => {
               setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
               setOverlayOpen(true);
@@ -115,8 +127,10 @@ const About: NextPage = () => {
               <div>Social Innovator</div>
             </div>
           </div>
+
+          {/* Traveller */}
           <div
-            className={`col-start-8 col-span-4 self-end relative ${styles.rounded}`}
+            className={`relative self-end col-span-4 col-start-8 ${styles.rounded}`}
           >
             <div className={`w-full ${styles.darken}`}>
               <Animatable
@@ -143,8 +157,12 @@ const About: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-12 mb-spacing-3lg single gap-4">
+
+        {/* Desktop second row */}
+        <div className="hidden lg:grid grid-cols-12 mb-spacing-3lg single gap-4">
+          {/* Desktop first col of second row */}
           <div className={`space-y-4 col-span-3`}>
+            {/* Craftsperson */}
             <div className={`relative ${styles.rounded}`}>
               <div className={`w-full ${styles.darken}`}>
                 <Animatable
@@ -163,6 +181,8 @@ const About: NextPage = () => {
                 <div>Craftsperson</div>
               </div>
             </div>
+
+            {/* Photographer */}
             <div className={`relative ${styles.rounded}`}>
               <div className={`w-full ${styles.darken}`}>
                 <Animatable
@@ -182,81 +202,132 @@ const About: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="col-start-4 col-span-9">
-            <div className="space-y-4">
-              <div className="grid grid-cols-9 gap-4">
-                <div className={`col-span-6 relative ${styles.rounded}`}>
-                  <video
-                    src="/nature-observer.mp4"
-                    autoPlay
-                    loop
-                    className={styles.darken}
-                  />
-                  <div className={styles.textOverlay}>
-                    <div>Nature Observer</div>
-                  </div>
-                </div>
-                <div
-                  className={`col-span-3 relative ${styles.rounded} self-start`}
-                >
-                  <div className={`w-full ${styles.darken}`}>
-                    <Animatable
-                      source={new Animation([Dog1, Dog2, Dog3, Dog4], 640, 838)}
-                      frame={frame}
-                      alt="Dog lover"
-                    />
-                  </div>
-                  <div className={styles.textOverlay}>
-                    <div>Dog Lover</div>
-                  </div>
+
+          {/* Desktop second col second row */}
+          <div className="col-start-4 col-span-9 space-y-4">
+            {/* Desktop second col second row, inner first row */}
+            <div className="flex flex-row gap-4">
+              {/* Nature observer */}
+              <div
+                className={`relative ${styles.rounded}`}
+                style={{ flex: 960 / 606 }}
+              >
+                <video
+                  src="/nature-observer.mp4"
+                  autoPlay
+                  loop
+                  className={styles.darken}
+                />
+                <div className={styles.textOverlay}>
+                  <div>Nature Observer</div>
                 </div>
               </div>
-              <div className="grid grid-cols-9 gap-4">
-                <div className={`col-span-3 relative ${styles.rounded}`}>
-                  <div className={`w-full ${styles.darken}`}>
-                    <Animatable
-                      source={
-                        new Animation(
-                          [Thinker1, Thinker2, Thinker3, Thinker4],
-                          640,
-                          933,
-                        )
-                      }
-                      frame={frame}
-                      alt="Thinker"
-                    />
-                  </div>
-                  <div className={styles.textOverlay}>
-                    <div>Thinker</div>
-                  </div>
-                </div>
-                <div
-                  className={`col-span-4 relative ${styles.rounded} self-start`}
-                >
-                  <Image
-                    className={styles.darken}
-                    src={Sports}
-                    alt="Sports Lover"
-                    width={480}
-                    height={360}
+              {/* Dog lover */}
+              <div
+                className={`relative ${styles.rounded}`}
+                style={{
+                  flex: 640 / 838,
+                }}
+              >
+                <div className={`w-full ${styles.darken}`}>
+                  <Animatable
+                    source={new Animation([Dog1, Dog2, Dog3, Dog4], 640, 838)}
+                    frame={frame}
+                    alt="Dog lover"
                   />
-                  <div className={styles.textOverlay}>
-                    <div>Sports Lover</div>
-                  </div>
+                </div>
+                <div className={styles.textOverlay}>
+                  <div>Dog Lover</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop second col second row, inner second row */}
+            <div className="grid grid-cols-9 gap-4">
+              {/* Thinker */}
+              <div className={`col-span-3 relative ${styles.rounded}`}>
+                <div className={`w-full ${styles.darken}`}>
+                  <Animatable
+                    source={
+                      new Animation(
+                        [Thinker1, Thinker2, Thinker3, Thinker4],
+                        640,
+                        933,
+                      )
+                    }
+                    frame={frame}
+                    alt="Thinker"
+                  />
+                </div>
+                <div className={styles.textOverlay}>
+                  <div>Thinker</div>
+                </div>
+              </div>
+              {/* Sports lover */}
+              <div
+                className={`col-span-4 relative ${styles.rounded} self-start`}
+              >
+                <Image
+                  className={styles.darken}
+                  src={Sports}
+                  alt="Sports Lover"
+                  width={480}
+                  height={360}
+                />
+                <div className={styles.textOverlay}>
+                  <div>Sports Lover</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Mobile */}
+        {/* First row: Thinker / Social innovator */}
+        <div className="flex flex-row single space-x-4">
+          <div className={`relative ${styles.rounded}`}>
+            <Animatable
+              source={
+                new Animation(
+                  [Thinker1, Thinker2, Thinker3, Thinker4],
+                  640,
+                  933,
+                )
+              }
+              frame={frame}
+              alt="Thinker"
+            />
+            <div className={styles.textOverlay}>
+              <div>Thinker</div>
+            </div>
+          </div>
+          <div
+            className={`relative col-span-6 col-start-2 cursor-pointer ${styles.rounded}`}
+            onClick={() => {
+              setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
+              setOverlayOpen(true);
+            }}
+          >
+            <video
+              src="/social-innovator.mp4"
+              autoPlay
+              loop
+              className={styles.darken}
+            />
+            <div className={styles.textOverlay}>
+              <div>Social Innovator</div>
+            </div>
+          </div>
+        </div>
+
         <Title title="Tools I use" />
         <div
-          className="flex gap-4 flex-row flex-wrap single justify-between mb-spacing-3lg"
+          className="flex gap-4 flex-row flex-wrap single justify-center lg:justify-between mb-spacing-3lg"
           ref={ref}
         >
           {Tools.map((Tool, index) => (
             <motion.div
-              className="w-16"
+              className="w-12 lg:w-16"
               key={index}
               style={{ y: "3rem" }}
               animate={{ y: isInView ? "0rem" : "3rem" }}
@@ -330,3 +401,8 @@ const About: NextPage = () => {
 };
 
 export default About;
+
+// thinker / Social
+// Nature / dog
+// Craftsperson / traveller
+// Sports / photo

@@ -16,7 +16,7 @@ import Title from "../components/title";
 import TopDisplay from "../components/top-display";
 import Animation from "../utils/animation";
 import GalleryItem from "../utils/gallery-item";
-import { GalleryRowData } from "../utils/gallery-row-data";
+import { GalleryRowConfig, GalleryRowData } from "../utils/gallery-row-data";
 import ImageData from "../utils/image-data";
 import { PageProps } from "../utils/page-props";
 import { projectData, projects } from "../utils/project-data";
@@ -315,9 +315,9 @@ const Overlap: NextPage<PageProps> = (props) => {
         <LargeGallery
           rows={[
             new GalleryRowData([
-              new ImageData(Gallery2, 4684, 3750),
-              new ImageData(Gallery3, 4684, 3750),
-              new ImageData(Gallery4, 3067, 3750),
+              new ImageData(Gallery2, 960, 769),
+              new ImageData(Gallery3, 960, 769),
+              new ImageData(Gallery4, 960, 1537),
             ]),
             new GalleryRowData([new ImageData(Gallery5, 12767, 7167)]),
             new GalleryRowData([new ImageData(Gallery6, 12767, 7125)]),

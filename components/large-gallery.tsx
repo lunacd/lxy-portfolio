@@ -1,7 +1,7 @@
 import GalleryRow from "./gallery-row";
 import classNames from "classnames";
 import React, { useState } from "react";
-import { useElementSize, useInterval } from "usehooks-ts";
+import { useInterval } from "usehooks-ts";
 
 import { GalleryRowData } from "../utils/gallery-row-data";
 
@@ -20,7 +20,6 @@ const defaultProps = {
 const LargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
   const props = { ...defaultProps, ...propsIn };
 
-  const [containerRef, { width }] = useElementSize();
   const [currentFrame, setCurrentFrame] = useState(0);
   useInterval(() => {
     setCurrentFrame((orig) => orig + 1);
@@ -35,13 +34,12 @@ const LargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
         single: props.xSpacing,
       })}
     >
-      <div className="space-y-spacing w-full" ref={containerRef}>
+      <div className="space-y-spacing w-full">
         {props.rows.map((row, index) => (
           <GalleryRow
             row={row}
             description={props.description}
             currentFrame={currentFrame}
-            width={width}
             key={index}
           ></GalleryRow>
         ))}
