@@ -13,3 +13,23 @@
 .rounded {
   @apply overflow-hidden rounded-lg;
 }
+
+.overlayWindow {
+  /* Position */
+  @apply absolute bottom-spacing-lg left-spacing-lg right-spacing-lg top-spacing-lg z-20;
+
+  /* Layout */
+  @apply flex flex-row items-center;
+}
+
+.overlayInner {
+  /* Position */
+  @apply relative w-full;
+  @apply lg:h-full;
+
+  /* Styling */
+  @apply rounded-xl bg-white shadow-lg;
+
+  /* Display */
+  @apply overflow-hidden;
+}

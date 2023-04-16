@@ -473,46 +473,51 @@ const About: NextPage = () => {
       <AnimatePresence>
         {overlayOpen && (
           <motion.div
-            className="absolute left-spacing-lg right-spacing-lg top-spacing-lg bottom-spacing-lg bg-white rounded-xl shadow-lg overflow-hidden z-20"
+            className={styles.overlayWindow}
             style={{ y: "3rem" }}
             animate={{ y: "0rem" }}
             exit={{ y: "3rem", opacity: 0 }}
             transition={transitionFast}
           >
-            <div className="absolute top-4 right-4">
-              <button
-                onClick={() => {
-                  setOverlayOpen(false);
-                }}
-                className="p-2"
-              >
-                <i className="fa-solid fa-x"></i>
-              </button>
-            </div>
-            <div className="flex flex-col lg:flex-row h-full pt-16 lg:pt-0">
-              <iframe
-                src={videoLink}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="border-0 w-full lg:w-2/3 lg:h-full relative z-20"
-              ></iframe>
-              <div className="w-full lg:w-1/3 p-4 flex flex-col justify-center">
-                <div className="title mb-2">Organization Mission</div>
-                <div className="paragraph">
-                  Wanyi is a city-based organization that designs and organizes
-                  design-based learning after-school project for kids aged from
-                  5 to 16 to nurture their creativity, communication, critical
-                  thinking, and collaboration (4C) skills in China.
-                </div>
-                <div className="subtitle my-2">
-                  Activity Example: Little Fashion Designer
-                </div>
-                <div className="paragraph">
-                  An activity teaches kids how to make clothes by recycles.
-                  Then, there will be a fashion design show held in the
-                  community. Kids at different ages work together as groups to
-                  design clothes and have a fashion design show.
+            <div className={styles.overlayInner}>
+              {/* Close button */}
+              <div className="absolute top-4 right-4">
+                <button
+                  onClick={() => {
+                    setOverlayOpen(false);
+                  }}
+                  className="p-2"
+                >
+                  <i className="fa-solid fa-x"></i>
+                </button>
+              </div>
+              {/* Main content */}
+              <div className="flex flex-col lg:flex-row h-full pt-16 lg:pt-0">
+                <iframe
+                  src={videoLink}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="border-0 w-full lg:w-2/3 lg:h-full relative z-20"
+                ></iframe>
+                <div className="w-full lg:w-1/3 p-4 flex flex-col justify-center mb-4">
+                  <div className="title mb-2">Organization Mission</div>
+                  <div className="paragraph">
+                    Wanyi is a city-based organization that designs and
+                    organizes design-based learning after-school project for
+                    kids aged from 5 to 16 to nurture their creativity,
+                    communication, critical thinking, and collaboration (4C)
+                    skills in China.
+                  </div>
+                  <div className="subtitle my-2">
+                    Activity Example: Little Fashion Designer
+                  </div>
+                  <div className="paragraph">
+                    An activity teaches kids how to make clothes by recycles.
+                    Then, there will be a fashion design show held in the
+                    community. Kids at different ages work together as groups to
+                    design clothes and have a fashion design show.
+                  </div>
                 </div>
               </div>
             </div>
