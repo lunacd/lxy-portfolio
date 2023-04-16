@@ -32,7 +32,6 @@ import Sports from "../images/about/sports.gif";
 import Thinker1 from "../images/about/thinker-1-small.webp";
 import Thinker2 from "../images/about/thinker-2-small.webp";
 import Thinker3 from "../images/about/thinker-3-small.webp";
-import Thinker4 from "../images/about/thinker-4-small.webp";
 import Tool1 from "../images/about/tools-1-icon.webp";
 import Tool2 from "../images/about/tools-2-icon.webp";
 import Tool3 from "../images/about/tools-3-icon.webp";
@@ -249,11 +248,7 @@ const About: NextPage = () => {
                 <div className={`w-full ${styles.darken}`}>
                   <Animatable
                     source={
-                      new Animation(
-                        [Thinker1, Thinker2, Thinker3, Thinker4],
-                        640,
-                        933,
-                      )
+                      new Animation([Thinker1, Thinker2, Thinker3], 640, 933)
                     }
                     frame={frame}
                     alt="Thinker"
@@ -290,13 +285,7 @@ const About: NextPage = () => {
             style={{ flex: 640 / 933 }}
           >
             <Animatable
-              source={
-                new Animation(
-                  [Thinker1, Thinker2, Thinker3, Thinker4],
-                  640,
-                  933,
-                )
-              }
+              source={new Animation([Thinker1, Thinker2, Thinker3], 640, 933)}
               frame={frame}
               alt="Thinker"
             />
