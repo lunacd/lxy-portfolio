@@ -112,6 +112,9 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                       <div
                         onClick={() => {
                           props.onLink(route.link);
+                          if (!isLG) {
+                            setOpen(false);
+                          }
                         }}
                         className="cursor-pointer"
                       >
