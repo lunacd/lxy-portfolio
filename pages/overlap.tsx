@@ -99,6 +99,7 @@ const Overlap: NextPage<PageProps> = (props) => {
         <TopDisplay
           project={projectData[projects.indexOf("overlap")]}
           animation={false}
+          displayDescriptionOnMobile={true}
         />
 
         {/* Manifesto */}

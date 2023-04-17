@@ -79,6 +79,7 @@ const Soul: NextPage<PageProps> = (props) => {
         <TopDisplay
           project={projectData[projects.indexOf("soul")]}
           animation={false}
+          displayDescriptionOnMobile={true}
         />
 
         {/* Manifesto */}

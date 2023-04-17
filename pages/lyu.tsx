@@ -97,6 +97,7 @@ const Lyu: NextPage<PageProps> = (props) => {
         <TopDisplay
           project={projectData[projects.indexOf("lyu")]}
           animation={false}
+          displayDescriptionOnMobile={true}
         />
 
         {/* Manifesto */}

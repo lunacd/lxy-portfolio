@@ -55,6 +55,7 @@ const MTron: NextPage<PageProps> = (props) => {
         <TopDisplay
           project={projectData[projects.indexOf("m-tron")]}
           animation={false}
+          displayDescriptionOnMobile={true}
         />
 
         {/* Project Manifesto */}

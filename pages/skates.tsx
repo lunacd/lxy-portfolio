@@ -69,6 +69,7 @@ const Skates: NextPage<PageProps> = (props) => {
         <TopDisplay
           project={projectData[projects.indexOf("skates")]}
           animation={false}
+          displayDescriptionOnMobile={true}
         />
 
         <TextImage

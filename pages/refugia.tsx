@@ -25,6 +25,7 @@ const Refugia: React.FC<PageProps> = (props) => {
         <TopDisplay
           project={projectData[projects.indexOf("refugia")]}
           animation={false}
+          displayDescriptionOnMobile={true}
         />
 
         <TextImage
