@@ -279,7 +279,7 @@ const About: NextPage = () => {
 
         {/* Mobile */}
         {/* First row: Thinker / Social innovator */}
-        <div className="flex flex-row single space-x-4 mb-4">
+        <div className="flex flex-row single space-x-4 mb-4 lg:hidden">
           <div
             className={`relative ${styles.rounded}`}
             style={{ flex: 640 / 933 }}
@@ -314,7 +314,7 @@ const About: NextPage = () => {
         </div>
 
         {/* Second row: Nature observer / Dog lover */}
-        <div className="flex flex-row single space-x-4 mb-4">
+        <div className="flex flex-row single space-x-4 mb-4 lg:hidden">
           <div
             className={`relative ${styles.rounded}`}
             style={{ flex: 960 / 606 }}
@@ -349,7 +349,7 @@ const About: NextPage = () => {
         </div>
 
         {/* Third row: Craftsperson / Traveller */}
-        <div className="flex flex-row single space-x-4 mb-4">
+        <div className="flex flex-row single space-x-4 mb-4 lg:hidden">
           <div
             className={`relative ${styles.rounded}`}
             style={{ flex: 640 / 652 }}
@@ -401,8 +401,8 @@ const About: NextPage = () => {
           </div>
         </div>
 
-        {/* Third row: Sports lover / photographer */}
-        <div className="flex flex-row single space-x-4 mb-spacing-3lg">
+        {/* Fourth row: Sports lover / photographer */}
+        <div className="flex flex-row single space-x-4 mb-spacing-3lg lg:hidden">
           <div
             className={`relative ${styles.rounded}`}
             style={{
