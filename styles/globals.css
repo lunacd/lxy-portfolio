@@ -18,7 +18,7 @@ body {
 }
 
 :root {
-  --spacing: 1.5rem;
+  --spacing: 1rem;
   --spacing-lg: 2rem;
   --sidebar: 0rem;
   --single: calc(100vw - var(--sidebar) - 2 * var(--spacing-lg));

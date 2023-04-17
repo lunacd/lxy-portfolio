@@ -18,7 +18,7 @@ const GalleryRow: React.FC<GalleryRowProps> = (props) => {
   if (props.row.config === GalleryRowConfig.FixedHeight) {
     return (
       <motion.div
-        className="flex flex-row space-x-8"
+        className="flex flex-row space-x-spacing"
         style={{ y: "3rem" }}
         animate={{ y: isInView ? "0rem" : "3rem" }}
         transition={transitionSlow}
@@ -50,7 +50,7 @@ const GalleryRow: React.FC<GalleryRowProps> = (props) => {
   } else {
     return (
       <motion.div
-        className={classNames("grid auto-cols-fr grid-flow-col gap-8", {
+        className={classNames("grid auto-cols-fr grid-flow-col space-x-spacing", {
           "items-start": props.row.config === GalleryRowConfig.EqualWidthStart,
           "items-end": props.row.config === GalleryRowConfig.EqualWidthEnd,
         })}
