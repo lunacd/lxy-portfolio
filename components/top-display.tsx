@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import Image from "next/image";
-import Link from "next/link";
 import React, { forwardRef } from "react";
 
 import styles from "../styles/TopDisplay.module.css";
@@ -18,9 +17,8 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
   return (
     <div
       className={classNames(
-        "mb-spacing-2lg flex h-full min-h-screen flex-col w-full",
+        `mb-spacing-2lg flex h-full min-h-screen flex-col w-full ${props.project.bgColor}`,
         {
-          [props.project.bgColor]: true,
           "absolute top-0 left-0": props.absolute,
         },
       )}
@@ -28,17 +26,18 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
     >
       {/* Project image */}
       <div className="relative min-h-0 w-full flex-shrink flex-grow overflow-hidden">
-        <picture className="absolute top-0 left-0 w-full h-full flex">
-          <source
-            media="(min-width: 1280px)"
-            srcSet={props.project.displayImage.src}
-          />
-          <img
-            src={props.project.displayImageMobile.src}
-            alt={props.project.name}
-            className="object-cover"
-          />
-        </picture>
+        <Image
+          src={props.project.displayImage}
+          alt={props.project.name}
+          fill
+          className="object-center object-cover hidden md:block"
+        />
+        <Image
+          src={props.project.displayImageMobile}
+          alt={props.project.name}
+          fill
+          className="object-center object-cover md:hidden"
+        />
         <div className="absolute left-0 top-0 flex h-full w-full justify-center">
           {/* Project name */}
           <div
