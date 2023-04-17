@@ -82,7 +82,7 @@
 
 .hamburgerIcon {
   /* Styling */
-  @apply text-2xl;
+  @apply w-6;
 
   /* Transition */
   @apply transition-colors duration-200;

@@ -10,6 +10,9 @@ import { projects } from "../utils/project-data";
 import { sidebarRoutes } from "../utils/project-data";
 import { transitionFast as transitionDefault } from "../utils/transition";
 
+import HamburgerBlack from "../images/hamburger-black.svg";
+import HamburgerWhite from "../images/hamburger-white.svg";
+
 interface SidebarProps {
   route: string;
   hamburgerColor: string;
@@ -197,15 +200,21 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
 
       {/* Open-close button: mobile */}
       <div className={styles.hamburgerContainer}>
-        <motion.i
+        <motion.img
           animate={{
             rotate: open ? "90deg" : "0",
           }}
-          className={`fa-solid fa-bars ${styles.hamburgerIcon} ${props.hamburgerColor}`}
+          className={styles.hamburgerIcon}
+          src={
+            props.hamburgerColor === "text-black"
+              ? HamburgerBlack.src
+              : HamburgerWhite.src
+          }
+          alt="Menu"
           onClick={() => {
             setOpen((orig) => !orig);
           }}
-        ></motion.i>
+        />
       </div>
     </>
   );
