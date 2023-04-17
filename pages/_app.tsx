@@ -32,7 +32,6 @@ const hamburgerColors = [
   "text-black", // sunrise
   "text-white", // m-tron
   "text-black", // lyu
-  "text-black", // refugia
 ];
 
 function MyApp({ Component, pageProps }: AppProps<PageProps>) {

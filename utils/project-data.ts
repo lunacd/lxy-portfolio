@@ -22,8 +22,6 @@ import SkatesSmall from "../images/projects/skates-half.webp";
 import SoulSmall from "../images/projects/soul-half.webp";
 import SunriseSmall from "../images/projects/sunrise-half.webp";
 import TuraSmall from "../images/projects/tura-half.webp";
-import RefugiaDisplay from "../images/refugia/display-full.webp";
-import RefugiaDisplayM from "../images/refugia/display-mobile-half.webp";
 import SkatesDisplay from "../images/skates/display-full.webp";
 import SkatesDisplayM from "../images/skates/display-mobile-half.webp";
 import SoulDisplay from "../images/soul/display-full.webp";
@@ -94,7 +92,6 @@ export const projects: string[] = [
   "sunrise",
   "m-tron",
   "lyu",
-  "refugia",
 ];
 
 export const projectData = [
@@ -182,23 +179,16 @@ export const projectData = [
     "bg-[#EFF2F3]",
     "/lyu",
   ),
-  new ProjectData(
-    "refugia",
-    "Refugia",
-    "14 Weeks, 2022 Summer",
-    "Spatial Experience Design",
-    "Sustainability, Model making",
-    "See through their eyes; hear through their ears; sense through their senses. Learn and feel animals' adaptation to the urban environment.",
-    RefugiaDisplay,
-    RefugiaDisplayM,
-    RefugiaSmall,
-    "text-gray-100",
-    "bg-[#E0E4E0]",
-    "/refugia",
-  ),
 ];
 
 export const otherProjectsData = [
+  new ProjectDataLean(
+    "refugia",
+    "Refugia",
+    "Spatial Experience Design",
+    RefugiaSmall,
+    "https://www.shirleylyu.com/refugia",
+  ),
   new ProjectDataLean(
     "mode",
     "Mode Bag",
@@ -266,6 +256,5 @@ export const sidebarRoutes = [
   new Route("sunrise", "Sunrise Speaker", "/sunrise", "paragraph"),
   new Route("m-tron", "M-Tron", "/m-tron", "paragraph"),
   new Route("lyu", "Lyu", "/lyu", "paragraph"),
-  new Route("refugia", "Refugia", "/refugia", "paragraph"),
   new Route("others", "More Work", "/others", "subtitle"),
 ];
