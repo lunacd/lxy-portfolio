@@ -390,7 +390,7 @@ const Soul: NextPage<PageProps> = (props) => {
           description="Soul Project Gallery"
           botSpacing={false}
         />
-        <div className="text-center text-xs">
+        <div className="text-center text-xs single">
           This is not a product of Rolls Royce. Branding and logo marks are used
           for demonstration purposes only.
         </div>

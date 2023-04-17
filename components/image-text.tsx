@@ -6,6 +6,8 @@ import Animation from "../utils/animation";
 import ImageData from "../utils/image-data";
 import { transitionSlow } from "../utils/transition";
 
+import styles from "../styles/ImageText.module.css"
+
 interface ImageTextProps {
   content: string[];
   source: ImageData | Animation;
@@ -25,18 +27,18 @@ const ImageText: React.FC<ImageTextProps> = (propsIn) => {
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className="single mx-spacing-lg mb-spacing-3lg flex flex-row space-x-spacing"
+      className={styles.container}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}
       ref={ref}
     >
-      <div className="two-thirds">
+      <div className="w-full md:w-two-thirds">
         <Animatable source={props.source} frame={props.frame} alt={props.alt} />
       </div>
-      <div className="one-third flex flex-col justify-end">
+      <div className="w-full md:w-one-third flex flex-col justify-end">
         {props.title && (
-          <div className={`${props.titleClass} mb-24`}>{props.title}</div>
+          <div className={`${props.titleClass} mb-spacing-lg`}>{props.title}</div>
         )}
         <div className="paragraph">
           {props.content.map((line, index) => (
