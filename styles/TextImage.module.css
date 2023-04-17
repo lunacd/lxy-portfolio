@@ -1,8 +1,8 @@
 .container {
-    /* Sizing */
-    @apply w-single mx-spacing-lg mb-spacing-3lg;
+  /* Sizing */
+  @apply mx-spacing-lg mb-spacing-3lg w-single;
 
-    /* Layout */
-    @apply flex flex-col space-y-spacing;
-    @apply md:flex-row md:space-x-spacing md:space-y-0;
+  /* Layout */
+  @apply flex flex-col space-y-spacing;
+  @apply md:flex-row md:space-x-spacing md:space-y-0;
 }

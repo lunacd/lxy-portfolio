@@ -2,11 +2,10 @@ import Animatable from "./animatable";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 
+import styles from "../styles/ImageText.module.css";
 import Animation from "../utils/animation";
 import ImageData from "../utils/image-data";
 import { transitionSlow } from "../utils/transition";
-
-import styles from "../styles/ImageText.module.css"
 
 interface ImageTextProps {
   content: string[];
@@ -38,7 +37,9 @@ const ImageText: React.FC<ImageTextProps> = (propsIn) => {
       </div>
       <div className="w-full md:w-one-third flex flex-col justify-end">
         {props.title && (
-          <div className={`${props.titleClass} mb-spacing-lg`}>{props.title}</div>
+          <div className={`${props.titleClass} mb-spacing-lg`}>
+            {props.title}
+          </div>
         )}
         <div className="paragraph">
           {props.content.map((line, index) => (

@@ -2,9 +2,8 @@ import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef } from "react";
 
+import styles from "../styles/TextImage.module.css";
 import { transitionSlow } from "../utils/transition";
-
-import styles from "../styles/TextImage.module.css"
 
 interface TextImageProps {
   title: string;

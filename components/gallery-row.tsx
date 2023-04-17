@@ -50,10 +50,14 @@ const GalleryRow: React.FC<GalleryRowProps> = (props) => {
   } else {
     return (
       <motion.div
-        className={classNames("grid auto-cols-fr grid-flow-col space-x-spacing", {
-          "items-start": props.row.config === GalleryRowConfig.EqualWidthStart,
-          "items-end": props.row.config === GalleryRowConfig.EqualWidthEnd,
-        })}
+        className={classNames(
+          "grid auto-cols-fr grid-flow-col space-x-spacing",
+          {
+            "items-start":
+              props.row.config === GalleryRowConfig.EqualWidthStart,
+            "items-end": props.row.config === GalleryRowConfig.EqualWidthEnd,
+          },
+        )}
         style={{ y: "3rem" }}
         animate={{ y: isInView ? "0rem" : "3rem" }}
         transition={transitionSlow}

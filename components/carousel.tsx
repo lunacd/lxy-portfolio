@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef, useState } from "react";
 
-import styles from "../styles/carousel.module.css";
+import styles from "../styles/Carousel.module.css";
 import { transitionFast, transitionSlow } from "../utils/transition";
 
 interface CarouselProps {
@@ -32,18 +32,23 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
       ref={ref}
     >
       <div
-        className={`single flex w-full flex-row items-center space-x-4 ${props.textColor}`}
+        className={`w-single flex flex-row items-center md:space-x-4 ${props.textColor}`}
       >
-        <i
-          className={classNames("fa-solid fa-angle-left fa-3x", {
-            "cursor-pointer": currentIndex !== 0,
-            "opacity-0": currentIndex === 0,
-            [styles.angle]: true,
-          })}
-          onClick={() => {
-            if (currentIndex > 0) setCurrentIndex((orig) => orig - 1);
-          }}
-        />
+        <div className="relative w-0 md:w-auto h-full">
+          <i
+            className={classNames(
+              `left-0 top-0 fa-solid fa-angle-left ${styles.angle}`,
+              {
+                "cursor-pointer": currentIndex !== 0,
+                "opacity-0": currentIndex === 0,
+              },
+            )}
+            onClick={() => {
+              if (currentIndex > 0) setCurrentIndex((orig) => orig - 1);
+            }}
+          />
+        </div>
+
         <div className="overflow-hidden flex-grow">
           <motion.div
             className="flex w-full flex-row"
@@ -66,17 +71,22 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
             ))}
           </motion.div>
         </div>
-        <i
-          className={classNames("fa-solid fa-angle-right fa-3x", {
-            "cursor-pointer": currentIndex !== props.images.length - 1,
-            "opacity-0": currentIndex === props.images.length - 1,
-            [styles.angle]: true,
-          })}
-          onClick={() => {
-            if (currentIndex < props.images.length - 1)
-              setCurrentIndex((orig) => orig + 1);
-          }}
-        />
+
+        <div className="relative w-0 md:w-auto h-full">
+          <i
+            className={classNames(
+              `right-0 top-0 fa-solid fa-angle-right ${styles.angle}`,
+              {
+                "cursor-pointer": currentIndex !== props.images.length - 1,
+                "opacity-0": currentIndex === props.images.length - 1,
+              },
+            )}
+            onClick={() => {
+              if (currentIndex < props.images.length - 1)
+                setCurrentIndex((orig) => orig + 1);
+            }}
+          />
+        </div>
       </div>
       <div className="single relative mt-4 mb-spacing-3lg h-3">
         <div className="absolute left-1/2 top-0 bottom-0 flex -translate-x-1/2 flex-row space-x-3">

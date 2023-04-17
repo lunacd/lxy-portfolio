@@ -1,0 +1,9 @@
+.angle {
+  /* Position */
+  @apply absolute z-10 -translate-y-1/2;
+  @apply md:relative md:translate-y-0;
+
+  /* Styling */
+  @apply text-[2rem] opacity-60 transition-opacity duration-150;
+  @apply md:text-[3rem] md:opacity-100;
+}
