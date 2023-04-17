@@ -4,6 +4,8 @@ import React, { useRef } from "react";
 
 import { transitionSlow } from "../utils/transition";
 
+import styles from "../styles/TextImage.module.css"
+
 interface TextImageProps {
   title: string;
   content: string[];
@@ -25,21 +27,21 @@ const TextImage: React.FC<TextImageProps> = (propsIn) => {
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className={`single mx-spacing-lg mb-spacing-3lg flex flex-row space-x-spacing ${props.textColor}`}
+      className={`${styles.container} ${props.textColor}`}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}
       ref={ref}
     >
-      <div className="half flex flex-col justify-end">
-        <div className={`${props.titleClass} mb-24`}>{props.title}</div>
+      <div className="w-full md:w-half flex flex-col justify-end">
+        <div className={`${props.titleClass} mb-spacing-lg`}>{props.title}</div>
         <div className="paragraph">
           {props.content.map((line, index) => (
             <div key={index}>{line}</div>
           ))}
         </div>
       </div>
-      <div className="relative half">
+      <div className="relative w-full md:w-half">
         <Image
           src={props.image}
           alt={props.title}
