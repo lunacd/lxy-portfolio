@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
 
+import styles from "../styles/HorizontalGallery.module.css";
 import GalleryItem from "../utils/gallery-item";
 import { transitionSlow } from "../utils/transition";
 
@@ -29,12 +30,11 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
   const props = { ...defaultProps, ...propsIn };
   return (
     <motion.div
-      className={classNames("single grid grid-flow-col auto-cols-fr", {
+      className={classNames(`${styles.container} ${props.textColor}`, {
         "mb-spacing-3lg": props.botSpacing,
         "mb-spacing": !props.botSpacing,
         "gap-spacing-lg": props.sparse,
         "gap-spacing": !props.sparse,
-        [props.textColor]: true,
       })}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
@@ -42,8 +42,11 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
       ref={ref}
     >
       {props.items.map((item, index) => (
-        <div className="flex flex-col items-center w-full" key={index}>
-          <div className="mb-2 xl:mb-6 w-full">
+        <div
+          className={styles.itemContainer}
+          key={index}
+        >
+          <div className="mb-2 xl:mb-6 w-half sm:w-two-thirds md:w-full flex-shrink-0">
             <Image
               src={item.image}
               alt={item.title}
@@ -52,17 +55,19 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
               placeholder="blur"
             />
           </div>
-          {item.title !== undefined && (
-            <div className={`${props.titleClass} text-center mt-2`}>
-              {item.title}
-            </div>
-          )}
-          {item.content !== undefined &&
-            item.content.map((line, index) => (
-              <div className="paragraph text-center" key={index}>
-                {line}
+          <div className="text-left md:text-center">
+            {item.title !== undefined && (
+              <div className={`${props.titleClass} mt-2`}>
+                {item.title}
               </div>
-            ))}
+            )}
+            {item.content !== undefined &&
+              item.content.map((line, index) => (
+                <div className="paragraph" key={index}>
+                  {line}
+                </div>
+              ))}
+          </div>
         </div>
       ))}
     </motion.div>

@@ -24,6 +24,7 @@ module.exports = {
       width: {
         single: "var(--single)",
         half: "var(--half)",
+        "two-thirds": "var(--two-thirds)",
         84: "21rem",
       },
       inset: {

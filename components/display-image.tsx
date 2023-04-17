@@ -66,7 +66,7 @@ const DisplayImage: React.FC<DisplayImageProps> = (propsIn) => {
           </div>
         )}
         {props.overlayText && (
-          <div className={`paragraph ${props.textColor}`}>
+          <div className={`paragraph ${props.textColor} hidden md:block`}>
             {props.overlayText}
           </div>
         )}
