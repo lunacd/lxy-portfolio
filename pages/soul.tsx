@@ -189,7 +189,6 @@ const Soul: NextPage<PageProps> = (props) => {
           source={new ImageData(Direction3, 1920, 961)}
           alt="Soothing Curves"
           xSpacing={false}
-          botSpacing={false}
           overlayTitle="Calm"
           overlayText="Stretch Out Balance"
         />

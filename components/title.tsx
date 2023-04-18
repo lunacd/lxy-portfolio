@@ -18,7 +18,7 @@ const Title: React.FC<TitleProps> = (propsIn) => {
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className={`title single mx-spacing-lg mb-24 ${props.textColor}`}
+      className={`title single mx-spacing-lg mb-spacing-lg ${props.textColor}`}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}
