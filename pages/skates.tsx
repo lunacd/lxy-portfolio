@@ -55,7 +55,9 @@ import Manifesto from "../images/skates/manifesto-half.webp";
 import Overview from "../images/skates/overview-full.webp";
 import Structure from "../images/skates/structure-full.webp";
 import TechDrawing from "../images/skates/tech-drawing-full.webp";
-import Usage from "../images/skates/usage-full.webp";
+import Usage from "../images/skates/usage-desktop-full.webp";
+import UsageM1 from "../images/skates/usage-mobile-1-half.webp";
+import UsageM2 from "../images/skates/usage-mobile-2-half.webp";
 
 const Skates: NextPage<PageProps> = (props) => {
   const scrollDiv = useScroll(!props.swipeAnimation);
@@ -103,7 +105,13 @@ const Skates: NextPage<PageProps> = (props) => {
 
         <Title title="Different Usages" />
         <Subtitle subtitle="Normal chair, arm chair, chair with desktop, stool" />
-        <DisplayImage source={new ImageData(Usage, 1920, 622)} alt="Usages" />
+        <div className="hidden md:block">
+          <DisplayImage source={new ImageData(Usage, 1920, 622)} alt="Usages" />
+        </div>
+        <div className="md:hidden">
+          <DisplayImage source={new ImageData(UsageM1, 6535, 4474)} alt="Usage 1" botSpacing={false} />
+          <DisplayImage source={new ImageData(UsageM2, 6535, 4474)} alt="Usage 2" />
+        </div>
 
         <Title title="Usage Environment" />
         <Subtitle subtitle="Open Offices" />
