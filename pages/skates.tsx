@@ -109,8 +109,15 @@ const Skates: NextPage<PageProps> = (props) => {
           <DisplayImage source={new ImageData(Usage, 1920, 622)} alt="Usages" />
         </div>
         <div className="md:hidden">
-          <DisplayImage source={new ImageData(UsageM1, 6535, 4474)} alt="Usage 1" botSpacing={false} />
-          <DisplayImage source={new ImageData(UsageM2, 6535, 4474)} alt="Usage 2" />
+          <DisplayImage
+            source={new ImageData(UsageM1, 6535, 4474)}
+            alt="Usage 1"
+            botSpacing={false}
+          />
+          <DisplayImage
+            source={new ImageData(UsageM2, 6535, 4474)}
+            alt="Usage 2"
+          />
         </div>
 
         <Title title="Usage Environment" />
