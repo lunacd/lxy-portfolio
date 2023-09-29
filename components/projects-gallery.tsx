@@ -14,7 +14,7 @@ interface ProjectsGalleryProps {
 
 const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
   return (
-    <div className="single grid grid-cols-2 lg:grid-cols-3 gap-spacing my-spacing-3lg">
+    <div className="single my-spacing-3lg grid grid-cols-2 gap-spacing lg:grid-cols-3">
       {props.data.map((data, index) => {
         return (
           <motion.div
@@ -37,7 +37,7 @@ const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
                 {" "}
                 - {data.category}
               </span>
-              <span className="paragraph lg:hidden relative -top-1">
+              <span className="paragraph relative -top-1 lg:hidden">
                 <br />
                 {data.category}
               </span>

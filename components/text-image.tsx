@@ -32,7 +32,7 @@ const TextImage: React.FC<TextImageProps> = (propsIn) => {
       transition={transitionSlow}
       ref={ref}
     >
-      <div className="w-full md:w-half flex flex-col justify-end">
+      <div className="flex w-full flex-col justify-end md:w-half">
         <div className={`${props.titleClass} mb-spacing-lg`}>{props.title}</div>
         <div className="paragraph">
           {props.content.map((line, index) => (

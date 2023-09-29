@@ -35,7 +35,7 @@ const ImageText: React.FC<ImageTextProps> = (propsIn) => {
       <div className="w-full md:w-two-thirds">
         <Animatable source={props.source} frame={props.frame} alt={props.alt} />
       </div>
-      <div className="w-full md:w-one-third flex flex-col justify-end">
+      <div className="md:w-one-third flex w-full flex-col justify-end">
         {props.title && (
           <div className={`${props.titleClass} mb-spacing-lg`}>
             {props.title}

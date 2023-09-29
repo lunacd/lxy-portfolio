@@ -8,7 +8,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = (props) => {
   return (
     <a
-      className="py-2 lg:py-4 px-6 lg:px-10 subtitle rounded-full bg-black text-white"
+      className="subtitle rounded-full bg-black px-6 py-2 text-white lg:px-10 lg:py-4"
       href={props.href}
       target="_blank"
       rel="noreferrer"

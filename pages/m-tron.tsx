@@ -150,7 +150,7 @@ const MTron: NextPage<PageProps> = (props) => {
           textColor="text-white"
         />
 
-        <div className="w-full bg-[#E4F2F5] flex flex-col items-center">
+        <div className="flex w-full flex-col items-center bg-[#E4F2F5]">
           <Spacing size="medium" />
           <Title title="Details Showcase" />
           <LargeGallery

@@ -34,7 +34,7 @@ const LargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
         single: props.xSpacing,
       })}
     >
-      <div className="space-y-spacing w-full">
+      <div className="w-full space-y-spacing">
         {props.rows.map((row, index) => (
           <GalleryRow
             row={row}

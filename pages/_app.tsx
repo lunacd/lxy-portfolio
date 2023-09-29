@@ -128,10 +128,10 @@ function MyApp({ Component, pageProps }: AppProps<PageProps>) {
           onLink={onLink}
           hamburgerColor={useCounter ? hamburgerColor : "text-black"}
         />
-        <div className="flex-grow relative overflow-x-hidden min-h-screen">
+        <div className="relative min-h-screen flex-grow overflow-x-hidden">
           <AnimatePresence initial={false}>
             <motion.div
-              className="absolute w-full h-full left-0 top-0 z-0"
+              className="absolute left-0 top-0 z-0 h-full w-full"
               initial={{ x: swipeAnimation ? "100%" : "0%" }}
               animate={{ x: "0%" }}
               exit={{ x: swipeAnimation ? "-100%" : "0%" }}

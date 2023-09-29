@@ -56,8 +56,8 @@ const DisplayImage: React.FC<DisplayImageProps> = (propsIn) => {
           "left-spacing-lg": !props.xSpacing && props.textPosition === "left",
           "right-0": props.xSpacing && props.textPosition === "right",
           "right-spacing-lg": !props.xSpacing && props.textPosition === "right",
-          "pr-4 right-2/3": props.textPosition === "left",
-          "pl-4 left-2/3 text-right": props.textPosition === "right",
+          "right-2/3 pr-4": props.textPosition === "left",
+          "left-2/3 pl-4 text-right": props.textPosition === "right",
         })}
       >
         {props.overlayTitle && (

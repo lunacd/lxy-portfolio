@@ -22,7 +22,7 @@ const SmallGallery: React.FC<SmallGalleryProps> = (propsIn) => {
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className={`single paragraph mx-spacing-lg mb-spacing-3lg grid grid-cols-2 md:grid-cols-3 gap-y-spacing gap-x-8 ${props.textColor}`}
+      className={`single paragraph mx-spacing-lg mb-spacing-3lg grid grid-cols-2 gap-x-8 gap-y-spacing md:grid-cols-3 ${props.textColor}`}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}

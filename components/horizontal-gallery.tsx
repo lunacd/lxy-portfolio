@@ -43,7 +43,7 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
     >
       {props.items.map((item, index) => (
         <div className={styles.itemContainer} key={index}>
-          <div className="mb-2 xl:mb-6 w-two-thirds md:w-full flex-shrink-0">
+          <div className="mb-2 w-two-thirds flex-shrink-0 md:w-full xl:mb-6">
             <Image
               src={item.image}
               alt={item.title}

@@ -10,7 +10,7 @@ const Home: NextPage<PageProps> = (props) => {
       <Head>
         <title>Shirley Lyu Portfolio</title>
       </Head>
-      <div className="flex-grow h-screen overflow-hidden relative">
+      <div className="relative h-screen flex-grow overflow-hidden">
         Something
       </div>
     </>

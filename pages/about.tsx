@@ -82,7 +82,7 @@ const About: NextPage = () => {
         <div className="pt-16"></div>
 
         {/* Profile */}
-        <div className="single grid lg:grid-cols-2 gap-spacing my-spacing-lg">
+        <div className="single my-spacing-lg grid gap-spacing lg:grid-cols-2">
           <div className={styles.rounded}>
             <Image
               src={Profile}
@@ -107,7 +107,7 @@ const About: NextPage = () => {
         <Title title="Who I am" />
 
         {/* Desktop first row */}
-        <div className="mb-4 hidden lg:grid grid-cols-12 gap-4 single">
+        <div className="single mb-4 hidden grid-cols-12 gap-4 lg:grid">
           {/* Social innovator */}
           <div
             className={`relative col-span-6 col-start-2 cursor-pointer ${styles.rounded}`}
@@ -129,7 +129,7 @@ const About: NextPage = () => {
 
           {/* Traveller */}
           <div
-            className={`relative self-end col-span-4 col-start-8 ${styles.rounded}`}
+            className={`relative col-span-4 col-start-8 self-end ${styles.rounded}`}
           >
             <div className={`w-full ${styles.darken}`}>
               <Animatable
@@ -158,9 +158,9 @@ const About: NextPage = () => {
         </div>
 
         {/* Desktop second row */}
-        <div className="hidden lg:grid grid-cols-12 mb-spacing-3lg single gap-4">
+        <div className="single mb-spacing-3lg hidden grid-cols-12 gap-4 lg:grid">
           {/* Desktop first col of second row */}
-          <div className={`space-y-4 col-span-3`}>
+          <div className={`col-span-3 space-y-4`}>
             {/* Craftsperson */}
             <div className={`relative ${styles.rounded}`}>
               <div className={`w-full ${styles.darken}`}>
@@ -203,7 +203,7 @@ const About: NextPage = () => {
           </div>
 
           {/* Desktop second col second row */}
-          <div className="col-start-4 col-span-9 space-y-4">
+          <div className="col-span-9 col-start-4 space-y-4">
             {/* Desktop second col second row, inner first row */}
             <div className="flex flex-row gap-4">
               {/* Nature observer */}
@@ -244,7 +244,7 @@ const About: NextPage = () => {
             {/* Desktop second col second row, inner second row */}
             <div className="grid grid-cols-9 gap-4">
               {/* Thinker */}
-              <div className={`col-span-3 relative ${styles.rounded}`}>
+              <div className={`relative col-span-3 ${styles.rounded}`}>
                 <div className={`w-full ${styles.darken}`}>
                   <Animatable
                     source={
@@ -260,7 +260,7 @@ const About: NextPage = () => {
               </div>
               {/* Sports lover */}
               <div
-                className={`col-span-4 relative ${styles.rounded} self-start`}
+                className={`relative col-span-4 ${styles.rounded} self-start`}
               >
                 <Image
                   className={styles.darken}
@@ -279,7 +279,7 @@ const About: NextPage = () => {
 
         {/* Mobile */}
         {/* First row: Thinker / Social innovator */}
-        <div className="flex flex-row single space-x-4 mb-4 lg:hidden">
+        <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
           <div
             className={`relative ${styles.rounded}`}
             style={{ flex: 640 / 933 }}
@@ -314,7 +314,7 @@ const About: NextPage = () => {
         </div>
 
         {/* Second row: Nature observer / Dog lover */}
-        <div className="flex flex-row single space-x-4 mb-4 lg:hidden">
+        <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
           <div
             className={`relative ${styles.rounded}`}
             style={{ flex: 960 / 606 }}
@@ -349,7 +349,7 @@ const About: NextPage = () => {
         </div>
 
         {/* Third row: Craftsperson / Traveller */}
-        <div className="flex flex-row single space-x-4 mb-4 lg:hidden">
+        <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
           <div
             className={`relative ${styles.rounded}`}
             style={{ flex: 640 / 652 }}
@@ -402,7 +402,7 @@ const About: NextPage = () => {
         </div>
 
         {/* Fourth row: Sports lover / photographer */}
-        <div className="flex flex-row single space-x-4 mb-spacing-3lg lg:hidden">
+        <div className="single mb-spacing-3lg flex flex-row space-x-4 lg:hidden">
           <div
             className={`relative ${styles.rounded}`}
             style={{
@@ -445,7 +445,7 @@ const About: NextPage = () => {
 
         <Title title="Tools I use" />
         <div
-          className="flex gap-4 flex-row flex-wrap single justify-center lg:justify-between mb-spacing-3lg"
+          className="single mb-spacing-3lg flex flex-row flex-wrap justify-center gap-4 lg:justify-between"
           ref={ref}
         >
           {Tools.map((Tool, index) => (
@@ -481,7 +481,7 @@ const About: NextPage = () => {
           >
             <div className={styles.overlayInner}>
               {/* Close button */}
-              <div className="absolute top-4 right-4">
+              <div className="absolute right-4 top-4">
                 <button
                   onClick={() => {
                     setOverlayOpen(false);
@@ -492,15 +492,15 @@ const About: NextPage = () => {
                 </button>
               </div>
               {/* Main content */}
-              <div className="flex flex-col lg:flex-row h-full pt-16 lg:pt-0">
+              <div className="flex h-full flex-col pt-16 lg:flex-row lg:pt-0">
                 <iframe
                   src={videoLink}
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  className="border-0 w-full lg:w-2/3 lg:h-full relative z-20"
+                  className="relative z-20 w-full border-0 lg:h-full lg:w-2/3"
                 ></iframe>
-                <div className="w-full lg:w-1/3 p-4 flex flex-col justify-center mb-4">
+                <div className="mb-4 flex w-full flex-col justify-center p-4 lg:w-1/3">
                   <div className="title mb-2">Organization Mission</div>
                   <div className="paragraph">
                     Wanyi is a city-based organization that designs and

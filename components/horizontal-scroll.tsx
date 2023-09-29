@@ -24,7 +24,7 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className="w-full flex flex-col items-center"
+      className="flex w-full flex-col items-center"
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}
@@ -33,7 +33,7 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
       <div className={`paragraph single mb-8 ${props.textColor}`}>
         {props.prompt}
       </div>
-      <div className="w-full overflow-x-scroll mb-spacing-3lg">
+      <div className="mb-spacing-3lg w-full overflow-x-scroll">
         <div
           className={classNames({
             "w-[200%]": props.xSzie === "2x",

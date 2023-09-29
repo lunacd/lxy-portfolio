@@ -19,9 +19,9 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
     <>
       <div
         className={classNames(
-          `mb-spacing-2lg flex h-full min-h-screen flex-col w-full ${props.project.bgColor}`,
+          `mb-spacing-2lg flex h-full min-h-screen w-full flex-col ${props.project.bgColor}`,
           {
-            "absolute top-0 left-0": props.absolute,
+            "absolute left-0 top-0": props.absolute,
           },
         )}
         ref={ref}
@@ -32,13 +32,13 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
             src={props.project.displayImage}
             alt={props.project.name}
             fill
-            className="object-center object-cover hidden md:block"
+            className="hidden object-cover object-center md:block"
           />
           <Image
             src={props.project.displayImageMobile}
             alt={props.project.name}
             fill
-            className="object-center object-cover md:hidden"
+            className="object-cover object-center md:hidden"
           />
           <div className="absolute left-0 top-0 flex h-full w-full justify-center">
             {/* Project name */}
@@ -52,7 +52,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
             {props.link &&
               (props.project.link.startsWith("https") ? (
                 <a
-                  className="absolute w-full h-full top-0 left-0 block"
+                  className="absolute left-0 top-0 block h-full w-full"
                   href={props.project.link}
                   target="_blank"
                   rel="noreferrer"
@@ -62,7 +62,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                   onClick={() => {
                     props.onLink!(props.project.link);
                   }}
-                  className="absolute w-full h-full top-0 left-0 block cursor-pointer"
+                  className="absolute left-0 top-0 block h-full w-full cursor-pointer"
                 ></a>
               ))}
           </div>
@@ -97,7 +97,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                   "",
                 )}
               </div>
-              <div className="absolute left-0 top-0 w-full h-full !mt-0 flex flex-col justify-start space-y-1">
+              <div className="absolute left-0 top-0 !mt-0 flex h-full w-full flex-col justify-start space-y-1">
                 <div className={styles.detailSection}>
                   <span className={styles.heading}>Duration: </span>
                   {props.project.duration}
@@ -129,7 +129,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                   "",
                 )}
               </div>
-              <div className="half flex-col absolute left-0 top-0 w-full h-full justify-start">
+              <div className="half absolute left-0 top-0 h-full w-full flex-col justify-start">
                 <div className={styles.detailSection}>
                   <span className={styles.heading}>Project Brief: </span>
                   {props.project.brief}
@@ -140,7 +140,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
         </div>
       </div>
       {props.displayDescriptionOnMobile && (
-        <div className={`${styles.detailSection} md:hidden opacity-0`}>
+        <div className={`${styles.detailSection} opacity-0 md:hidden`}>
           <span className={styles.heading}>Project Brief: </span>
           {props.project.brief}
         </div>

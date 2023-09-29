@@ -1,4 +1,8 @@
-module.exports = {
+export default {
+  plugins: [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss",
+  ],
   semi: true,
   trailingComma: "all",
   singleQuote: false,

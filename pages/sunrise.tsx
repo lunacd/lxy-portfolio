@@ -122,7 +122,7 @@ const Sunrise: React.FC<PageProps> = (props) => {
           titleClass="paragraph"
         />
 
-        <div className="bg-[#212121] flex flex-col items-center w-full">
+        <div className="flex w-full flex-col items-center bg-[#212121]">
           <Spacing size="medium" />
           {/* Ideation */}
           <Title title="Ideation" textColor="text-white" />

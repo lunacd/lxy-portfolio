@@ -32,12 +32,12 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
       ref={ref}
     >
       <div
-        className={`w-single flex flex-row items-center md:space-x-4 ${props.textColor}`}
+        className={`flex w-single flex-row items-center md:space-x-4 ${props.textColor}`}
       >
-        <div className="relative w-0 md:w-auto h-full">
+        <div className="relative h-full w-0 md:w-auto">
           <i
             className={classNames(
-              `left-0 top-0 fa-solid fa-angle-left ${styles.angle}`,
+              `fa-solid fa-angle-left left-0 top-0 ${styles.angle}`,
               {
                 "cursor-pointer": currentIndex !== 0,
                 "opacity-0": currentIndex === 0,
@@ -49,7 +49,7 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
           />
         </div>
 
-        <div className="overflow-hidden flex-grow">
+        <div className="flex-grow overflow-hidden">
           <motion.div
             className="flex w-full flex-row"
             transition={transitionFast}
@@ -72,10 +72,10 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
           </motion.div>
         </div>
 
-        <div className="relative w-0 md:w-auto h-full">
+        <div className="relative h-full w-0 md:w-auto">
           <i
             className={classNames(
-              `right-0 top-0 fa-solid fa-angle-right ${styles.angle}`,
+              `fa-solid fa-angle-right right-0 top-0 ${styles.angle}`,
               {
                 "cursor-pointer": currentIndex !== props.images.length - 1,
                 "opacity-0": currentIndex === props.images.length - 1,
@@ -88,8 +88,8 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
           />
         </div>
       </div>
-      <div className="single relative mt-4 mb-spacing-3lg h-3">
-        <div className="absolute left-1/2 top-0 bottom-0 flex -translate-x-1/2 flex-row space-x-3">
+      <div className="single relative mb-spacing-3lg mt-4 h-3">
+        <div className="absolute bottom-0 left-1/2 top-0 flex -translate-x-1/2 flex-row space-x-3">
           {props.images.map((_, index) => (
             <div
               className={`relative h-3 w-3 cursor-pointer ${props.textColor}`}
@@ -98,10 +98,10 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
               }}
               key={index}
             >
-              <i className="fa-regular fa-circle fa-xs absolute top-1.5 left-0" />
+              <i className="fa-regular fa-circle fa-xs absolute left-0 top-1.5" />
               <i
                 className={classNames(
-                  "fa-solid fa-circle fa-xs absolute top-1.5 left-0 transition-opacity duration-150",
+                  "fa-solid fa-circle fa-xs absolute left-0 top-1.5 transition-opacity duration-150",
                   {
                     "opacity-0": index !== currentIndex,
                   },
