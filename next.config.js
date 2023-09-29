@@ -21,4 +21,12 @@ module.exports = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/breathe",
+        destination: "/breathe.pdf",
+      },
+    ];
+  },
 };
