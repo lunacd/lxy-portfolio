@@ -38,3 +38,12 @@ yarn-error.log*
 .env/
 
 .idea/
+
+# Images and assets
+*.png
+*.webp
+*.jpg
+*.gif
+*.svg
+*.mp4
+*.pdf

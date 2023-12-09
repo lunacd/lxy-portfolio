@@ -1,14 +1,13 @@
 image: rockylinux/9
 secrets:
   - 2a951cc8-a728-4dfc-947f-63fdb66e8fee
-packages:
-  - nodejs
 triggers:
   - action: email
     condition: failure
     to: Haowen Liu <lhw@lunacd.com>
 tasks:
   - setup: |
+      sudo dnf module install -y nodejs:20
       sudo npm i -g corepack
   - deploy: |
       cd lxy-portfolio

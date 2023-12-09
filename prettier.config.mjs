@@ -1,4 +1,4 @@
-export default {
+const config = {
   plugins: [
     "@trivago/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss",
@@ -14,3 +14,5 @@ export default {
   importOrderSortSpecifiers: true,
   importOrder: ["^../(?!images).*", "^../images/.*"],
 };
+
+export default config;
