@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import type { AppProps } from "next/app";
+import { Catamaran } from "next/font/google";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useState } from "react";
@@ -33,6 +34,9 @@ const hamburgerColors = [
   "text-white", // m-tron
   "text-black", // lyu
 ];
+
+// Google fonts
+const catamaran = Catamaran({ subsets: ["latin"] });
 
 function MyApp({ Component, pageProps }: AppProps<PageProps>) {
   // Google Analytics
@@ -108,6 +112,11 @@ function MyApp({ Component, pageProps }: AppProps<PageProps>) {
 
   return (
     <>
+      <style jsx global>{`
+        :root {
+          --base-font: ${catamaran.style.fontFamily};
+        }
+      `}</style>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-26S1RW6P14"
         strategy="afterInteractive"

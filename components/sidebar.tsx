@@ -39,12 +39,12 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
         }}
         transition={transitionDefault}
         className="absolute z-10 h-screen w-[16rem]
-          flex-shrink-0 bg-white shadow-lg lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
+        flex-shrink-0 bg-white shadow-lg lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
       >
         {/* Content container */}
         <div
           className="absolute right-14 top-0 flex h-full w-36 flex-col
-          justify-between py-16 xl:right-24"
+        justify-between py-16 xl:right-24"
         >
           {/* Logo */}
           <Link
@@ -168,7 +168,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
         {/* Open-close button: desktop */}
         <div
           className="absolute -right-16 top-20 z-20 hidden h-24 w-16
-          overflow-hidden lg:block xl:-right-20 xl:w-20"
+            overflow-hidden lg:block xl:-right-20 xl:w-20"
         >
           <div
             className="absolute -left-8 top-0 flex h-16 w-16 cursor-pointer
