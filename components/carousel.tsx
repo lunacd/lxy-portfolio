@@ -3,7 +3,6 @@ import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef, useState } from "react";
 
-import styles from "../styles/Carousel.module.css";
 import { transitionFast, transitionSlow } from "../utils/transition";
 
 interface CarouselProps {
@@ -37,7 +36,7 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
         <div className="relative h-full w-0 md:w-auto">
           <i
             className={classNames(
-              `fa-solid fa-angle-left left-0 top-0 ${styles.angle}`,
+              "fa-solid fa-angle-left carousel_angle left-0 top-0",
               {
                 "cursor-pointer": currentIndex !== 0,
                 "opacity-0": currentIndex === 0,
@@ -75,7 +74,7 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
         <div className="relative h-full w-0 md:w-auto">
           <i
             className={classNames(
-              `fa-solid fa-angle-right right-0 top-0 ${styles.angle}`,
+              "fa-solid fa-angle-right carousel_angle right-0 top-0",
               {
                 "cursor-pointer": currentIndex !== props.images.length - 1,
                 "opacity-0": currentIndex === props.images.length - 1,

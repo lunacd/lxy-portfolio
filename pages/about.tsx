@@ -10,7 +10,6 @@ import Button from "../components/button";
 import Scroller from "../components/scroller";
 import Spacing from "../components/spacing";
 import Title from "../components/title";
-import styles from "../styles/About.module.css";
 import Animation from "../utils/animation";
 import { transitionFast } from "../utils/transition";
 import useFrameIndex from "../utils/use-frame-index";
@@ -83,7 +82,7 @@ const About: NextPage = () => {
 
         {/* Profile */}
         <div className="single my-spacing-lg grid gap-spacing lg:grid-cols-2">
-          <div className={styles.rounded}>
+          <div className="about_rounded">
             <Image
               src={Profile}
               width={960}
@@ -110,7 +109,7 @@ const About: NextPage = () => {
         <div className="single mb-4 hidden grid-cols-12 gap-4 lg:grid">
           {/* Social innovator */}
           <div
-            className={`relative col-span-6 col-start-2 cursor-pointer ${styles.rounded}`}
+            className="about_rounded relative col-span-6 col-start-2 cursor-pointer"
             onClick={() => {
               setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
               setOverlayOpen(true);
@@ -120,18 +119,16 @@ const About: NextPage = () => {
               src="/social-innovator.mp4"
               autoPlay
               loop
-              className={styles.darken}
+              className="about_darken"
             />
-            <div className={styles.textOverlay}>
+            <div className="about_textOverlay">
               <div>Social Innovator</div>
             </div>
           </div>
 
           {/* Traveller */}
-          <div
-            className={`relative col-span-4 col-start-8 self-end ${styles.rounded}`}
-          >
-            <div className={`w-full ${styles.darken}`}>
+          <div className="about_rounded relative col-span-4 col-start-8 self-end">
+            <div className="about_darken w-full">
               <Animatable
                 source={
                   new Animation(
@@ -151,7 +148,7 @@ const About: NextPage = () => {
                 alt="Traveller"
               />
             </div>
-            <div className={styles.textOverlay}>
+            <div className="about_textOverlay">
               <div>Traveller</div>
             </div>
           </div>
@@ -160,10 +157,10 @@ const About: NextPage = () => {
         {/* Desktop second row */}
         <div className="single mb-spacing-3lg hidden grid-cols-12 gap-4 lg:grid">
           {/* Desktop first col of second row */}
-          <div className={`col-span-3 space-y-4`}>
+          <div className="col-span-3 space-y-4">
             {/* Craftsperson */}
-            <div className={`relative ${styles.rounded}`}>
-              <div className={`w-full ${styles.darken}`}>
+            <div className="about_rounded relative">
+              <div className="about_darken w-full">
                 <Animatable
                   source={
                     new Animation(
@@ -176,14 +173,14 @@ const About: NextPage = () => {
                   alt="Craftsperson"
                 />
               </div>
-              <div className={styles.textOverlay}>
+              <div className="about_textOverlay">
                 <div>Craftsperson</div>
               </div>
             </div>
 
             {/* Photographer */}
-            <div className={`relative ${styles.rounded}`}>
-              <div className={`w-full ${styles.darken}`}>
+            <div className="about_rounded relative">
+              <div className="about_darken w-full">
                 <Animatable
                   source={
                     new Animation(
@@ -196,7 +193,7 @@ const About: NextPage = () => {
                   alt="Photographer"
                 />
               </div>
-              <div className={styles.textOverlay}>
+              <div className="about_textOverlay">
                 <div>Photographer</div>
               </div>
             </div>
@@ -208,34 +205,34 @@ const About: NextPage = () => {
             <div className="flex flex-row gap-4">
               {/* Nature observer */}
               <div
-                className={`relative ${styles.rounded}`}
+                className="about_rounded relative"
                 style={{ flex: 960 / 606 }}
               >
                 <video
                   src="/nature-observer.mp4"
                   autoPlay
                   loop
-                  className={styles.darken}
+                  className="about_darken"
                 />
-                <div className={styles.textOverlay}>
+                <div className="about_textOverlay">
                   <div>Nature Observer</div>
                 </div>
               </div>
               {/* Dog lover */}
               <div
-                className={`relative ${styles.rounded}`}
+                className="about_rounded relative"
                 style={{
                   flex: 640 / 838,
                 }}
               >
-                <div className={`w-full ${styles.darken}`}>
+                <div className="about_darken w-full">
                   <Animatable
                     source={new Animation([Dog1, Dog2, Dog3, Dog4], 640, 838)}
                     frame={frame}
                     alt="Dog lover"
                   />
                 </div>
-                <div className={styles.textOverlay}>
+                <div className="about_textOverlay">
                   <div>Dog Lover</div>
                 </div>
               </div>
@@ -244,8 +241,8 @@ const About: NextPage = () => {
             {/* Desktop second col second row, inner second row */}
             <div className="grid grid-cols-9 gap-4">
               {/* Thinker */}
-              <div className={`relative col-span-3 ${styles.rounded}`}>
-                <div className={`w-full ${styles.darken}`}>
+              <div className="about_rounded relative col-span-3">
+                <div className="about_darken w-full">
                   <Animatable
                     source={
                       new Animation([Thinker1, Thinker2, Thinker3], 640, 933)
@@ -254,22 +251,20 @@ const About: NextPage = () => {
                     alt="Thinker"
                   />
                 </div>
-                <div className={styles.textOverlay}>
+                <div className="about_textOverlay">
                   <div>Thinker</div>
                 </div>
               </div>
               {/* Sports lover */}
-              <div
-                className={`relative col-span-4 ${styles.rounded} self-start`}
-              >
+              <div className="about_rounded relative col-span-4 self-start">
                 <Image
-                  className={styles.darken}
+                  className="about_darken"
                   src={Sports}
                   alt="Sports Lover"
                   width={480}
                   height={360}
                 />
-                <div className={styles.textOverlay}>
+                <div className="about_textOverlay">
                   <div>Sports Lover</div>
                 </div>
               </div>
@@ -280,21 +275,18 @@ const About: NextPage = () => {
         {/* Mobile */}
         {/* First row: Thinker / Social innovator */}
         <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
-          <div
-            className={`relative ${styles.rounded}`}
-            style={{ flex: 640 / 933 }}
-          >
+          <div className="about_rounded relative" style={{ flex: 640 / 933 }}>
             <Animatable
               source={new Animation([Thinker1, Thinker2, Thinker3], 640, 933)}
               frame={frame}
               alt="Thinker"
             />
-            <div className={styles.textOverlay}>
+            <div className="about_textOverlay">
               <div>Thinker</div>
             </div>
           </div>
           <div
-            className={`relative cursor-pointer ${styles.rounded}`}
+            className="about_rounded relative cursor-pointer"
             onClick={() => {
               setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
               setOverlayOpen(true);
@@ -305,9 +297,9 @@ const About: NextPage = () => {
               src="/social-innovator.mp4"
               autoPlay
               loop
-              className={styles.darken}
+              className="about_darken"
             />
-            <div className={styles.textOverlay}>
+            <div className="about_textOverlay">
               <div>Social Innovator</div>
             </div>
           </div>
@@ -315,34 +307,31 @@ const About: NextPage = () => {
 
         {/* Second row: Nature observer / Dog lover */}
         <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
-          <div
-            className={`relative ${styles.rounded}`}
-            style={{ flex: 960 / 606 }}
-          >
+          <div className="about_rounded relative" style={{ flex: 960 / 606 }}>
             <video
               src="/nature-observer.mp4"
               autoPlay
               loop
-              className={styles.darken}
+              className="about_darken"
             />
-            <div className={styles.textOverlay}>
+            <div className="about_textOverlay">
               <div>Nature Observer</div>
             </div>
           </div>
           <div
-            className={`relative ${styles.rounded}`}
+            className="about_rounded relative"
             style={{
               flex: 640 / 838,
             }}
           >
-            <div className={`w-full ${styles.darken}`}>
+            <div className="about_darken w-full">
               <Animatable
                 source={new Animation([Dog1, Dog2, Dog3, Dog4], 640, 838)}
                 frame={frame}
                 alt="Dog lover"
               />
             </div>
-            <div className={styles.textOverlay}>
+            <div className="about_textOverlay">
               <div>Dog Lover</div>
             </div>
           </div>
@@ -350,11 +339,8 @@ const About: NextPage = () => {
 
         {/* Third row: Craftsperson / Traveller */}
         <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
-          <div
-            className={`relative ${styles.rounded}`}
-            style={{ flex: 640 / 652 }}
-          >
-            <div className={`w-full ${styles.darken}`}>
+          <div className="about_rounded relative" style={{ flex: 640 / 652 }}>
+            <div className="about_darken w-full">
               <Animatable
                 source={
                   new Animation(
@@ -367,15 +353,12 @@ const About: NextPage = () => {
                 alt="Craftsperson"
               />
             </div>
-            <div className={styles.textOverlay}>
+            <div className="about_textOverlay">
               <div>Craftsperson</div>
             </div>
           </div>
-          <div
-            className={`relative ${styles.rounded}`}
-            style={{ flex: 640 / 440 }}
-          >
-            <div className={`w-full ${styles.darken}`}>
+          <div className="about_rounded relative" style={{ flex: 640 / 440 }}>
+            <div className="about_darken w-full">
               <Animatable
                 source={
                   new Animation(
@@ -395,7 +378,7 @@ const About: NextPage = () => {
                 alt="Traveller"
               />
             </div>
-            <div className={styles.textOverlay}>
+            <div className="about_textOverlay">
               <div>Traveller</div>
             </div>
           </div>
@@ -404,27 +387,24 @@ const About: NextPage = () => {
         {/* Fourth row: Sports lover / photographer */}
         <div className="single mb-spacing-3lg flex flex-row space-x-4 lg:hidden">
           <div
-            className={`relative ${styles.rounded}`}
+            className="about_rounded relative"
             style={{
               flex: 480 / 360,
             }}
           >
             <Image
-              className={styles.darken}
+              className="about_darken"
               src={Sports}
               alt="Sports Lover"
               width={480}
               height={360}
             />
-            <div className={styles.textOverlay}>
+            <div className="about_textOverlay">
               <div>Sports Lover</div>
             </div>
           </div>
-          <div
-            className={`relative ${styles.rounded}`}
-            style={{ flex: 640 / 669 }}
-          >
-            <div className={`w-full ${styles.darken}`}>
+          <div className="about_rounded relative" style={{ flex: 640 / 669 }}>
+            <div className="about_darken w-full">
               <Animatable
                 source={
                   new Animation(
@@ -437,7 +417,7 @@ const About: NextPage = () => {
                 alt="Photographer"
               />
             </div>
-            <div className={styles.textOverlay}>
+            <div className="about_textOverlay">
               <div>Photographer</div>
             </div>
           </div>
@@ -473,13 +453,13 @@ const About: NextPage = () => {
       <AnimatePresence>
         {overlayOpen && (
           <motion.div
-            className={styles.overlayWindow}
+            className="about_overlayWindow"
             style={{ y: "3rem" }}
             animate={{ y: "0rem" }}
             exit={{ y: "3rem", opacity: 0 }}
             transition={transitionFast}
           >
-            <div className={styles.overlayInner}>
+            <div className="about_overlayInner">
               {/* Close button */}
               <div className="absolute right-4 top-4">
                 <button

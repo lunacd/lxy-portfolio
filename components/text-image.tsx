@@ -2,7 +2,6 @@ import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef } from "react";
 
-import styles from "../styles/TextImage.module.css";
 import { transitionSlow } from "../utils/transition";
 
 interface TextImageProps {
@@ -26,7 +25,9 @@ const TextImage: React.FC<TextImageProps> = (propsIn) => {
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className={`${styles.container} ${props.textColor}`}
+      className={`mx-spacing-lg mb-spacing-3lg flex w-single flex-col
+        space-y-spacing md:flex-row md:space-x-spacing md:space-y-0
+        ${props.textColor}`}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}

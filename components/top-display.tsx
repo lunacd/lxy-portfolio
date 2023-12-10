@@ -2,7 +2,6 @@ import classNames from "classnames";
 import Image from "next/image";
 import React, { forwardRef } from "react";
 
-import styles from "../styles/TopDisplay.module.css";
 import { ProjectData, projectData } from "../utils/project-data";
 
 export interface TopDisplayProps {
@@ -43,7 +42,8 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
           <div className="absolute left-0 top-0 flex h-full w-full justify-center">
             {/* Project name */}
             <div
-              className={`single ${styles.projectName} ${props.project.titleColor}`}
+              className={`single mt-8 text-3xl lg:mt-12 xl:mt-24
+                ${props.project.titleColor}`}
             >
               {props.project.name}
             </div>
@@ -72,25 +72,25 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
         <div className="flex flex-col items-center">
           <div className="single mx-spacing-lg flex flex-row space-x-spacing py-8">
             {/* Left column */}
-            <div className={`${styles.detailColumn} flex`}>
-              <div className={`${styles.detailSection} opacity-0`}>
-                <span className={styles.heading}>Duration: </span>
+            <div className="topDisplay_detailColumn flex">
+              <div className="topDisplay_detailSection opacity-0">
+                <span>Duration: </span>
                 {projectData.reduce(
                   (prev, curr) =>
                     prev.length > curr.duration.length ? prev : curr.duration,
                   "",
                 )}
               </div>
-              <div className={`${styles.detailSection} opacity-0`}>
-                <span className={styles.heading}>Category: </span>
+              <div className="topDisplay_detailSection opacity-0">
+                <span>Category: </span>
                 {projectData.reduce(
                   (prev, curr) =>
                     prev.length > curr.category.length ? prev : curr.category,
                   "",
                 )}
               </div>
-              <div className={`${styles.detailSection} opacity-0`}>
-                <span className={styles.heading}>Project Focus: </span>
+              <div className="topDisplay_detailSection opacity-0">
+                <span>Project Focus: </span>
                 {projectData.reduce(
                   (prev, curr) =>
                     prev.length > curr.focus.length ? prev : curr.focus,
@@ -98,21 +98,21 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                 )}
               </div>
               <div className="absolute left-0 top-0 !mt-0 flex h-full w-full flex-col justify-start space-y-1">
-                <div className={styles.detailSection}>
-                  <span className={styles.heading}>Duration: </span>
+                <div className="topDisplay_detailSection">
+                  <span>Duration: </span>
                   {props.project.duration}
                 </div>
-                <div className={styles.detailSection}>
-                  <span className={styles.heading}>Category: </span>
+                <div className="topDisplay_detailSection">
+                  <span>Category: </span>
                   {props.project.category}
                 </div>
-                <div className={styles.detailSection}>
-                  <span className={styles.heading}>Project Focus: </span>
+                <div className="topDisplay_detailSection">
+                  <span>Project Focus: </span>
                   {props.project.focus}
                 </div>
                 {props.displayDescriptionOnMobile && (
-                  <div className={`${styles.detailSection} md:hidden`}>
-                    <span className={styles.heading}>Project Brief: </span>
+                  <div className="topDisplay_detailSection md:hidden">
+                    <span>Project Brief: </span>
                     {props.project.brief}
                   </div>
                 )}
@@ -120,9 +120,9 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
             </div>
 
             {/* Right column */}
-            <div className={`${styles.detailColumn} hidden md:flex`}>
-              <div className={`${styles.detailSection} opacity-0`}>
-                <span className={styles.heading}>Project Brief: </span>
+            <div className="topDisplay_detailColumn hidden md:flex">
+              <div className="topDisplay_detailSection opacity-0">
+                <span>Project Brief: </span>
                 {projectData.reduce(
                   (prev, curr) =>
                     prev.length > curr.brief.length ? prev : curr.brief,
@@ -130,8 +130,8 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                 )}
               </div>
               <div className="half absolute left-0 top-0 h-full w-full flex-col justify-start">
-                <div className={styles.detailSection}>
-                  <span className={styles.heading}>Project Brief: </span>
+                <div className="topDisplay_detailSection">
+                  <span>Project Brief: </span>
                   {props.project.brief}
                 </div>
               </div>
@@ -140,8 +140,8 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
         </div>
       </div>
       {props.displayDescriptionOnMobile && (
-        <div className={`${styles.detailSection} opacity-0 md:hidden`}>
-          <span className={styles.heading}>Project Brief: </span>
+        <div className="topDisplay_detailSection opacity-0 md:hidden">
+          <span>Project Brief: </span>
           {props.project.brief}
         </div>
       )}

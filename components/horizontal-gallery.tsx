@@ -3,7 +3,6 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
 
-import styles from "../styles/HorizontalGallery.module.css";
 import GalleryItem from "../utils/gallery-item";
 import { transitionSlow } from "../utils/transition";
 
@@ -30,7 +29,7 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
   const props = { ...defaultProps, ...propsIn };
   return (
     <motion.div
-      className={classNames(`${styles.container} ${props.textColor}`, {
+      className={classNames(`horizontalGallery_container ${props.textColor}`, {
         "mb-spacing-3lg": props.botSpacing,
         "mb-spacing": !props.botSpacing,
         "gap-spacing-lg": props.sparse,
@@ -42,7 +41,7 @@ const HorizontalGallery: React.FC<HorizontalGalleryProps> = (propsIn) => {
       ref={ref}
     >
       {props.items.map((item, index) => (
-        <div className={styles.itemContainer} key={index}>
+        <div className="horizontalGallery_itemContainer" key={index}>
           <div className="mb-2 w-two-thirds flex-shrink-0 md:w-full xl:mb-6">
             <Image
               src={item.image}

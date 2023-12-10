@@ -2,7 +2,6 @@ import Animatable from "./animatable";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 
-import styles from "../styles/ImageText.module.css";
 import Animation from "../utils/animation";
 import ImageData from "../utils/image-data";
 import { transitionSlow } from "../utils/transition";
@@ -26,7 +25,8 @@ const ImageText: React.FC<ImageTextProps> = (propsIn) => {
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className={styles.container}
+      className="mx-spacing-lg mb-spacing-3lg flex w-single flex-col-reverse
+        gap-spacing md:flex-row"
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}

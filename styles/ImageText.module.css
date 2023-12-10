@@ -1,8 +1,0 @@
-.container {
-  /* Sizing */
-  @apply mx-spacing-lg mb-spacing-3lg w-single;
-
-  /* Layout */
-  @apply flex flex-col-reverse gap-spacing;
-  @apply md:flex-row;
-}

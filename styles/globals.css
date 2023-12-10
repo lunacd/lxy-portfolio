@@ -81,3 +81,82 @@ body {
 .one-third {
   width: var(--one-third);
 }
+
+/* About page */
+.about_darken {
+  filter: brightness(0.7);
+}
+
+.about_textOverlay {
+  @apply absolute left-0 top-0 flex h-full w-full items-center justify-center;
+
+  & div {
+    @apply text-lg font-bold text-white;
+  }
+}
+
+.about_rounded {
+  @apply overflow-hidden rounded-lg;
+}
+
+.about_overlayWindow {
+  /* Position */
+  @apply absolute bottom-spacing-lg left-spacing-lg right-spacing-lg top-spacing-lg z-20;
+
+  /* Layout */
+  @apply flex flex-row items-center;
+}
+
+.about_overlayInner {
+  /* Position */
+  @apply relative w-full;
+  @apply lg:h-full;
+
+  /* Styling */
+  @apply rounded-xl bg-white shadow-lg;
+
+  /* Display */
+  @apply overflow-hidden;
+}
+
+/* Carousel */
+.carousel_angle {
+  /* Position */
+  @apply absolute z-10 -translate-y-1/2;
+  @apply md:relative md:translate-y-0;
+
+  /* Styling */
+  @apply text-[2rem] opacity-60 transition-opacity duration-150;
+  @apply md:text-[3rem] md:opacity-100;
+}
+
+/* Horizontal Gallery */
+.horizontalGallery_container {
+  /* Sizing */
+  @apply w-single;
+
+  /* Layout */
+  @apply grid auto-cols-fr grid-flow-row auto-rows-fr;
+  @apply md:grid-flow-col;
+}
+
+.horizontalGallery_itemContainer {
+  /* Sizing */
+  @apply w-full;
+
+  /* Layout */
+  @apply flex flex-row items-end space-x-4;
+  @apply md:flex-col md:items-center md:space-x-0;
+}
+
+.topDisplay_detailSection {
+  @apply font-extralight;
+  & span {
+    @apply font-semibold;
+  }
+}
+
+.topDisplay_detailColumn {
+  @apply relative w-[var(--single)] flex-col space-y-1;
+  @apply lg:w-[var(--half)];
+}

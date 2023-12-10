@@ -5,7 +5,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
-import styles from "../styles/Sidebar.module.css";
 import { projects } from "../utils/project-data";
 import { sidebarRoutes } from "../utils/project-data";
 import { transitionFast as transitionDefault } from "../utils/transition";
@@ -39,10 +38,14 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
           x: open ? "0%" : "-100%",
         }}
         transition={transitionDefault}
-        className={styles.mainContainer}
+        className="absolute z-10 h-screen w-[16rem]
+          flex-shrink-0 bg-white shadow-lg lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
       >
         {/* Content container */}
-        <div className={styles.contentContainer}>
+        <div
+          className="absolute right-14 top-0 flex h-full w-36 flex-col
+          justify-between py-16 xl:right-24"
+        >
           {/* Logo */}
           <Link
             href="/"
@@ -64,7 +67,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
           </Link>
 
           {/* Routes */}
-          <div className={styles.routeContainer}>
+          <div className="flex flex-col space-y-1 pb-6 pt-4">
             {sidebarRoutes.map((route) => (
               <div key={route.uri} className="flex flex-row">
                 <div
@@ -163,9 +166,14 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
         </div>
 
         {/* Open-close button: desktop */}
-        <div className={styles.angleIconContainer}>
+        <div
+          className="absolute -right-16 top-20 z-20 hidden h-24 w-16
+          overflow-hidden lg:block xl:-right-20 xl:w-20"
+        >
           <div
-            className={styles.angleIconBackground}
+            className="absolute -left-8 top-0 flex h-16 w-16 cursor-pointer
+              items-center rounded-full bg-white shadow-lg xl:-left-10 xl:h-20
+              xl:w-20"
             onClick={() => {
               setOpen((orig) => !orig);
             }}
@@ -174,9 +182,9 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
               animate={{
                 rotateY: open ? "0" : "180deg",
               }}
-              className={classNames(
-                `fa-solid fa-angle-left ${styles.angleIcon}`,
-              )}
+              className="fa-solid fa-angle-left relative left-9
+                align-[-0.075rem] align-[-0.125rem] text-xl
+                leading-[0.05rem] xl:left-12 xl:text-2xl xl:leading-[0.04167rem]"
               transition={{
                 duration: 0.2,
               }}
@@ -199,12 +207,12 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
       ></motion.div>
 
       {/* Open-close button: mobile */}
-      <div className={styles.hamburgerContainer}>
+      <div className="absolute right-2 top-4 z-10 cursor-pointer p-4 lg:hidden">
         <motion.img
           animate={{
             rotate: open ? "90deg" : "0",
           }}
-          className={styles.hamburgerIcon}
+          className="w-6 transition-colors duration-200"
           src={
             props.hamburgerColor === "text-black"
               ? HamburgerBlack.src
