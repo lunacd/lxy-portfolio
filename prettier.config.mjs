@@ -12,7 +12,7 @@ const config = {
   bracketSpacing: true,
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
-  importOrder: ["^../(?!images).*", "^../images/.*"],
+  importOrder: ["<THIRD_PARTY_MODULES>", "^\\.{1,2}\\/.*"],
 };
 
 export default config;

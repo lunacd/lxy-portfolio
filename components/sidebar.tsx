@@ -1,30 +1,58 @@
-import classNames from "classnames";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import { useMediaQuery } from "usehooks-ts";
+import React, { useContext, useEffect, useState } from "react";
+import { useInterval, useMediaQuery } from "usehooks-ts";
 
+import { StateContext, StateDispatchContext } from "../app/stateProvider";
+import { useNavigate } from "../app/useNavigate";
+import HamburgerBlack from "../images/hamburger-black.svg";
+import HamburgerWhite from "../images/hamburger-white.svg";
 import { projects } from "../utils/project-data";
 import { sidebarRoutes } from "../utils/project-data";
 import { transitionFast as transitionDefault } from "../utils/transition";
 
-import HamburgerBlack from "../images/hamburger-black.svg";
-import HamburgerWhite from "../images/hamburger-white.svg";
+const hamburgerColors = [
+  "text-white", // soul
+  "text-black", // skates
+  "text-black", // overlap
+  "text-black", // sunrise
+  "text-white", // m-tron
+  "text-black", // lyu
+];
 
-interface SidebarProps {
-  route: string;
-  hamburgerColor: string;
-  hoverEnter: (project: string) => void;
-  hoverLeave: () => void;
-  onLink: (link: string) => void;
-}
-
-export const Sidebar: React.FC<SidebarProps> = (props) => {
+export const Sidebar: React.FC = () => {
+  const globalState = useContext(StateContext);
+  const dispatcher = useContext(StateDispatchContext);
   const isXL = useMediaQuery("(min-width: 1280px)");
   const isLG = useMediaQuery("(min-width: 1024px)");
   const [open, setOpen] = useState(isLG);
   const [hovered, setHovered] = useState("");
+  const [swipeAnimation, setSwipeAnimation] = useState(false);
+  const navigate = useNavigate();
+
+  const [hamburgerColor, setHamburgerColor] = useState("text-black");
+  const [counter, setCounter] = useState(0);
+  const [interval, setInterval] = useState<number | null>(3000);
+  useEffect(() => {
+    setHamburgerColor(hamburgerColors[counter % hamburgerColors.length]);
+  }, [counter]);
+  const hoverEnter = (route: string) => {
+    setInterval(null);
+    setCounter(projects.indexOf(route));
+  };
+  const hoverLeave = () => {
+    setInterval(3000);
+    setCounter((orig) => (orig + 1) % projects.length);
+  };
+  useInterval(() => {
+    setCounter((orig) => (orig + 1) % projects.length);
+  }, interval);
+
+  useEffect(() => {
+    console.log(counter);
+    dispatcher({ type: "setProject", project: projects[counter] });
+  }, [counter, dispatcher]);
 
   return (
     <>
@@ -38,6 +66,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
           x: open ? "0%" : "-100%",
         }}
         transition={transitionDefault}
+        exit={{ x: swipeAnimation ? "-100%" : "0%" }}
         className="absolute z-10 h-screen w-[16rem]
         flex-shrink-0 bg-white shadow-lg lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
       >
@@ -47,24 +76,22 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
         justify-between py-16 xl:right-24"
         >
           {/* Logo */}
-          <Link
-            href="/"
+          <div
             onClick={() => {
               if (!isLG) {
                 setOpen(false);
               }
+              navigate("/");
             }}
           >
-            <div className="w-full">
-              <Image
-                src="/logo.svg"
-                alt="Shirley Lyu Logo"
-                className="cursor-pointer"
-                height={75}
-                width={167}
-              />
-            </div>
-          </Link>
+            <Image
+              src="/logo.svg"
+              alt="Shirley Lyu Logo"
+              className="cursor-pointer"
+              height={75}
+              width={167}
+            />
+          </div>
 
           {/* Routes */}
           <div className="flex flex-col space-y-1 pb-6 pt-4">
@@ -76,7 +103,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                     projects.includes(route.uri)
                       ? () => {
                           setHovered(route.uri);
-                          props.hoverEnter(route.uri);
+                          hoverEnter(route.uri);
                         }
                       : () => {}
                   }
@@ -84,7 +111,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                     projects.includes(route.uri)
                       ? () => {
                           setHovered("");
-                          props.hoverLeave();
+                          hoverLeave();
                         }
                       : () => {}
                   }
@@ -97,7 +124,8 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                     }}
                     animate={{
                       opacity:
-                        hovered === route.uri || props.route === route.uri
+                        hovered === route.uri ||
+                        globalState.project === route.uri
                           ? 1
                           : 0,
                     }}
@@ -112,7 +140,8 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                     }}
                     animate={{
                       x:
-                        hovered === route.uri || props.route === route.uri
+                        hovered === route.uri ||
+                        globalState.project === route.uri
                           ? "0.75rem"
                           : "0rem",
                     }}
@@ -124,7 +153,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                     ) : (
                       <div
                         onClick={() => {
-                          props.onLink(route.link);
+                          navigate(route.link);
                           if (!isLG) {
                             setOpen(false);
                           }
@@ -214,7 +243,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
           }}
           className="w-6 transition-colors duration-200"
           src={
-            props.hamburgerColor === "text-black"
+            hamburgerColor[counter] === "text-black"
               ? HamburgerBlack.src
               : HamburgerWhite.src
           }

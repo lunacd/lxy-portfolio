@@ -1,3 +1,9 @@
+import PageRoot from "../components/page-root";
+import { Sidebar } from "../components/sidebar";
+import "../styles/globals.css";
+import * as gtag from "../utils/gtag";
+import { PageProps } from "../utils/page-props";
+import { projects } from "../utils/project-data";
 import { AnimatePresence, motion } from "framer-motion";
 import type { AppProps } from "next/app";
 import { Catamaran } from "next/font/google";
@@ -5,13 +11,6 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { useInterval } from "usehooks-ts";
-
-import PageRoot from "../components/page-root";
-import { Sidebar } from "../components/sidebar";
-import "../styles/globals.css";
-import * as gtag from "../utils/gtag";
-import { PageProps } from "../utils/page-props";
-import { projects } from "../utils/project-data";
 
 const isProject = (link: string) => {
   if (!link.startsWith("/")) {
@@ -128,7 +127,7 @@ function MyApp({ Component, pageProps }: AppProps<PageProps>) {
                 gtag('config', 'G-26S1RW6P14');`}
       </Script>
       <PageRoot>
-        <Sidebar
+        {/* <Sidebar
           route={
             useCounter ? projects[counter % projects.length] : currentRoute
           }
@@ -136,7 +135,7 @@ function MyApp({ Component, pageProps }: AppProps<PageProps>) {
           hoverLeave={hoverLeave}
           onLink={onLink}
           hamburgerColor={useCounter ? hamburgerColor : "text-black"}
-        />
+        /> */}
         <div className="relative min-h-screen flex-grow overflow-x-hidden">
           <AnimatePresence initial={false}>
             <motion.div

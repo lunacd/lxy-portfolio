@@ -1,4 +1,3 @@
-import Route from "./route";
 import { StaticImageData } from "next/image";
 
 import LyuDisplay from "../images/lyu/display-full.webp";
@@ -28,6 +27,7 @@ import SoulDisplay from "../images/soul/display-full.webp";
 import SoulDisplayM from "../images/soul/display-mobile-half.webp";
 import SunriseDisplay from "../images/sunrise/display-full.webp";
 import SunriseDisplayM from "../images/sunrise/display-mobile-half.webp";
+import Route from "./route";
 
 export class ProjectDataLean {
   uri: string;
@@ -94,7 +94,7 @@ export const projects: string[] = [
   "lyu",
 ];
 
-export const projectData = [
+const projectArr = [
   new ProjectData(
     "soul",
     "Soul",
@@ -180,6 +180,13 @@ export const projectData = [
     "/lyu",
   ),
 ];
+
+export const projectData: { [key: string]: ProjectData } = projectArr.reduce(
+  (projects, project) => {
+    return { ...projects, [project.uri]: project };
+  },
+  {},
+);
 
 export const otherProjectsData = [
   new ProjectDataLean(

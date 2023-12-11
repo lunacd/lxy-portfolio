@@ -1,19 +1,18 @@
 import classNames from "classnames";
 import Image from "next/image";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect } from "react";
 
+import { useNavigate } from "../app/useNavigate";
 import { ProjectData, projectData } from "../utils/project-data";
 
 export interface TopDisplayProps {
   project: ProjectData;
-  animation: boolean;
-  onLink?: (link: string) => void;
   absolute?: boolean;
   link?: boolean;
-  displayDescriptionOnMobile?: boolean;
 }
 
 const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
+  const navigate = useNavigate();
   return (
     <>
       <div
@@ -60,7 +59,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               ) : (
                 <a
                   onClick={() => {
-                    props.onLink!(props.project.link);
+                    navigate(props.project.link);
                   }}
                   className="absolute left-0 top-0 block h-full w-full cursor-pointer"
                 ></a>
@@ -75,7 +74,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
             <div className="topDisplay_detailColumn flex">
               <div className="topDisplay_detailSection opacity-0">
                 <span>Duration: </span>
-                {projectData.reduce(
+                {Object.values(projectData).reduce(
                   (prev, curr) =>
                     prev.length > curr.duration.length ? prev : curr.duration,
                   "",
@@ -83,7 +82,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               </div>
               <div className="topDisplay_detailSection opacity-0">
                 <span>Category: </span>
-                {projectData.reduce(
+                {Object.values(projectData).reduce(
                   (prev, curr) =>
                     prev.length > curr.category.length ? prev : curr.category,
                   "",
@@ -91,7 +90,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               </div>
               <div className="topDisplay_detailSection opacity-0">
                 <span>Project Focus: </span>
-                {projectData.reduce(
+                {Object.values(projectData).reduce(
                   (prev, curr) =>
                     prev.length > curr.focus.length ? prev : curr.focus,
                   "",
@@ -110,12 +109,6 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                   <span>Project Focus: </span>
                   {props.project.focus}
                 </div>
-                {props.displayDescriptionOnMobile && (
-                  <div className="topDisplay_detailSection md:hidden">
-                    <span>Project Brief: </span>
-                    {props.project.brief}
-                  </div>
-                )}
               </div>
             </div>
 
@@ -123,7 +116,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
             <div className="topDisplay_detailColumn hidden md:flex">
               <div className="topDisplay_detailSection opacity-0">
                 <span>Project Brief: </span>
-                {projectData.reduce(
+                {Object.values(projectData).reduce(
                   (prev, curr) =>
                     prev.length > curr.brief.length ? prev : curr.brief,
                   "",
@@ -139,12 +132,6 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
           </div>
         </div>
       </div>
-      {props.displayDescriptionOnMobile && (
-        <div className="topDisplay_detailSection opacity-0 md:hidden">
-          <span>Project Brief: </span>
-          {props.project.brief}
-        </div>
-      )}
     </>
   );
 });
