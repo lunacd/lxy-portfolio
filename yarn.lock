@@ -3403,12 +3403,12 @@ __metadata:
     framer-motion: "npm:^10.16.16"
     next: "npm:14.0.4"
     postcss: "npm:^8.4.32"
-    prettier: "npm:^3.1.0"
+    prettier: "npm:^3.1.1"
     prettier-plugin-tailwindcss: "npm:^0.5.9"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     sharp: "npm:^0.33.0"
-    stylelint: "npm:^16.0.1"
+    stylelint: "npm:^16.0.2"
     stylelint-config-recommended: "npm:^14.0.0"
     tailwindcss: "npm:^3.3.6"
     typescript: "npm:5.3.3"
@@ -4237,12 +4237,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "prettier@npm:3.1.0"
+"prettier@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "prettier@npm:3.1.1"
   bin:
     prettier: bin/prettier.cjs
-  checksum: a45ea70aa97fde162ea4c4aba3dfc7859aa6a732a1db34458d9535dc3c2c16d3bc3fb5689e6cd76aa835562555303b02d9449fd2e15af3b73c8053557e25c5b6
+  checksum: facc944ba20e194ff4db765e830ffbcb642803381f0d2033ed397e79904fa4ccc877dc25ad68f42d36985c01d051c990ca1b905fb83d2d7d65fe69e4386fa1a3
   languageName: node
   linkType: hard
 
@@ -4909,9 +4909,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^16.0.1":
-  version: 16.0.1
-  resolution: "stylelint@npm:16.0.1"
+"stylelint@npm:^16.0.2":
+  version: 16.0.2
+  resolution: "stylelint@npm:16.0.2"
   dependencies:
     "@csstools/css-parser-algorithms": "npm:^2.3.2"
     "@csstools/css-tokenizer": "npm:^2.2.1"
@@ -4953,7 +4953,7 @@ __metadata:
     write-file-atomic: "npm:^5.0.1"
   bin:
     stylelint: bin/stylelint.mjs
-  checksum: 957bc845dfe76216c571567f10bdf209e93592146024a3e726d860c7dcc42b84ed2a5ef4a722784e07aa371709d49f0d21dc9abd66a3a36fdbbaafb1b9cee2de
+  checksum: 5ec755e209beb1877ff40d50f18c1ebb05bf251925da1f98f28fb3911e4031195eb86adaf641ac5cdb01ba973f4c999bc0c6b0270d08c1d5c070adbdd9e734cf
   languageName: node
   linkType: hard
 

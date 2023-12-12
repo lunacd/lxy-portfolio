@@ -6,6 +6,10 @@ triggers:
     condition: failure
     to: Haowen Liu <lhw@lunacd.com>
 tasks:
+  - check_branch: |
+      if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD)" ]; then \
+        complete-build; \
+      fi
   - mirror: |
       cd lxy-portfolio
       git remote add mirror git@github.com:andyliuhaowen/lxy-portfolio-next.git

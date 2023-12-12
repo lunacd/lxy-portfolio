@@ -6,6 +6,10 @@ triggers:
     condition: failure
     to: Haowen Liu <lhw@lunacd.com>
 tasks:
+  - check_branch: |
+      if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD)" ]; then \
+        complete-build; \
+      fi
   - setup: |
       sudo dnf module install -y nodejs:20
       sudo npm i -g corepack
