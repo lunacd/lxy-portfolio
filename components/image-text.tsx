@@ -1,10 +1,9 @@
 import Animatable from "./animatable";
+import Animation from "@/utils/animation";
+import ImageData from "@/utils/image-data";
+import { transitionSlow } from "@/utils/transition";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
-
-import Animation from "../utils/animation";
-import ImageData from "../utils/image-data";
-import { transitionSlow } from "../utils/transition";
 
 interface ImageTextProps {
   content: string[];

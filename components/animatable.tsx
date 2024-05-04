@@ -1,9 +1,8 @@
+import Animation from "@/utils/animation";
+import ImageData from "@/utils/image-data";
 import classNames from "classnames";
 import Image from "next/image";
 import React from "react";
-
-import Animation from "../utils/animation";
-import ImageData from "../utils/image-data";
 
 interface AnimatableProps {
   source: Animation | ImageData;

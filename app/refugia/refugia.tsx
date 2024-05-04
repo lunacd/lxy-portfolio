@@ -1,15 +1,14 @@
+import Button from "@/components/button";
+import ProjectNavigation from "@/components/project-navigation";
+import Scroller from "@/components/scroller";
+import Spacing from "@/components/spacing";
+import TextImage from "@/components/text-image";
+import TopDisplay from "@/components/top-display";
+import { PageProps } from "@/utils/page-props";
+import { ProjectData, projects } from "@/utils/project-data";
+import useScroll from "@/utils/use-scroll";
 import Head from "next/head";
 import React from "react";
-
-import Button from "../components/button";
-import ProjectNavigation from "../components/project-navigation";
-import Scroller from "../components/scroller";
-import Spacing from "../components/spacing";
-import TextImage from "../components/text-image";
-import TopDisplay from "../components/top-display";
-import { PageProps } from "../utils/page-props";
-import { ProjectData, projects } from "../utils/project-data";
-import useScroll from "../utils/use-scroll";
 
 import RefugiaSmall from "../images/projects/refugia-half.webp";
 import RefugiaDisplay from "../images/refugia/display-full.webp";

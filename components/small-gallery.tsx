@@ -1,9 +1,8 @@
+import GalleryItem from "@/utils/gallery-item";
+import { transitionSlow } from "@/utils/transition";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
-
-import GalleryItem from "../utils/gallery-item";
-import { transitionSlow } from "../utils/transition";
 
 interface SmallGalleryProps {
   items: GalleryItem[];

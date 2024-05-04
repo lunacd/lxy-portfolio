@@ -1,18 +1,17 @@
+import Animatable from "@/components/animatable";
+import Button from "@/components/button";
+import Scroller from "@/components/scroller";
+import Spacing from "@/components/spacing";
+import Title from "@/components/title";
+import Animation from "@/utils/animation";
+import { transitionFast } from "@/utils/transition";
+import useFrameIndex from "@/utils/use-frame-index";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-
-import Animatable from "../components/animatable";
-import Button from "../components/button";
-import Scroller from "../components/scroller";
-import Spacing from "../components/spacing";
-import Title from "../components/title";
-import Animation from "../utils/animation";
-import { transitionFast } from "../utils/transition";
-import useFrameIndex from "../utils/use-frame-index";
 
 import CraftsPerson1 from "../images/about/craftsperson-1-small.webp";
 import CraftsPerson2 from "../images/about/craftsperson-2-small.webp";

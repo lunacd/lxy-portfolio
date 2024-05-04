@@ -1,17 +1,14 @@
+import PageRoot from "@/components/page-root";
+import { Sidebar } from "@/components/sidebar";
+import { PageProps } from "@/utils/page-props";
+import { projects } from "@/utils/project-data";
 import { AnimatePresence, motion } from "framer-motion";
 import type { AppProps } from "next/app";
-import { Catamaran } from "next/font/google";
 import { useRouter } from "next/router";
-import Script from "next/script";
 import { useEffect, useState } from "react";
 import { useInterval } from "usehooks-ts";
 
-import PageRoot from "../components/page-root";
-import { Sidebar } from "../components/sidebar";
 import "../styles/globals.css";
-import * as gtag from "../utils/gtag";
-import { PageProps } from "../utils/page-props";
-import { projects } from "../utils/project-data";
 
 const isProject = (link: string) => {
   if (!link.startsWith("/")) {
@@ -35,25 +32,9 @@ const hamburgerColors = [
   "text-black", // lyu
 ];
 
-// Google fonts
-const catamaran = Catamaran({ subsets: ["latin"] });
-
 function MyApp({ Component, pageProps }: AppProps<PageProps>) {
-  // Google Analytics
-  const router = useRouter();
-  useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      gtag.pageView(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    router.events.on("hashChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-      router.events.off("hashChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
-
   // Routing
+  const router = useRouter();
   const [displayAnimation, setDisplayAnimation] = useState(true);
   const [swipeAnimation, setSwipeAnimation] = useState(true);
   const onLink = (link: string) => {
@@ -112,21 +93,6 @@ function MyApp({ Component, pageProps }: AppProps<PageProps>) {
 
   return (
     <>
-      <style jsx global>{`
-        :root {
-          --base-font: ${catamaran.style.fontFamily};
-        }
-      `}</style>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-26S1RW6P14"
-        strategy="afterInteractive"
-      ></Script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-26S1RW6P14');`}
-      </Script>
       <PageRoot>
         <Sidebar
           route={

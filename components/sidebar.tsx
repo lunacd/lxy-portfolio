@@ -1,30 +1,35 @@
-import classNames from "classnames";
+"use client";
+
+import { useGlobalStateContext } from "@/utils/globalStateContext";
+import { projects } from "@/utils/project-data";
+import { sidebarRoutes } from "@/utils/project-data";
+import { transitionFast as transitionDefault } from "@/utils/transition";
+import {
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconChevronLeft,
+  IconFileText,
+  IconMail,
+} from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
-import { projects } from "../utils/project-data";
-import { sidebarRoutes } from "../utils/project-data";
-import { transitionFast as transitionDefault } from "../utils/transition";
-
 import HamburgerBlack from "../images/hamburger-black.svg";
 import HamburgerWhite from "../images/hamburger-white.svg";
 
-interface SidebarProps {
-  route: string;
-  hamburgerColor: string;
-  hoverEnter: (project: string) => void;
-  hoverLeave: () => void;
-  onLink: (link: string) => void;
-}
+const MotionImage = motion(Image);
+const MotionIconChevronLeft = motion(IconChevronLeft);
 
-export const Sidebar: React.FC<SidebarProps> = (props) => {
+export const Sidebar = () => {
   const isXL = useMediaQuery("(min-width: 1280px)");
   const isLG = useMediaQuery("(min-width: 1024px)");
   const [open, setOpen] = useState(isLG);
   const [hovered, setHovered] = useState("");
+
+  const { globalState, dispatch } = useGlobalStateContext();
 
   return (
     <>
@@ -43,8 +48,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
       >
         {/* Content container */}
         <div
-          className="absolute right-14 top-0 flex h-full w-36 flex-col
-        justify-between py-16 xl:right-24"
+          className="absolute right-14 top-0 flex h-full w-36 flex-col justify-between py-16 xl:right-24"
         >
           {/* Logo */}
           <Link
@@ -75,18 +79,20 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                   onMouseEnter={
                     projects.includes(route.uri)
                       ? () => {
-                          setHovered(route.uri);
-                          props.hoverEnter(route.uri);
-                        }
-                      : () => {}
+                        setHovered(route.uri);
+                        dispatch({ type: "setProjectRoll", rolling: false });
+                        dispatch({ type: "setProject", project: route.uri });
+                      }
+                      : () => { }
                   }
                   onMouseLeave={
                     projects.includes(route.uri)
                       ? () => {
-                          setHovered("");
-                          props.hoverLeave();
-                        }
-                      : () => {}
+                        setHovered("");
+                        dispatch({ type: "nextProject" });
+                        dispatch({ type: "setProjectRoll", rolling: true });
+                      }
+                      : () => { }
                   }
                 >
                   <motion.div
@@ -97,7 +103,8 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                     }}
                     animate={{
                       opacity:
-                        hovered === route.uri || props.route === route.uri
+                        hovered === route.uri ||
+                          globalState.currentProject === route.uri
                           ? 1
                           : 0,
                     }}
@@ -112,7 +119,8 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                     }}
                     animate={{
                       x:
-                        hovered === route.uri || props.route === route.uri
+                        hovered === route.uri ||
+                          globalState.currentProject === route.uri
                           ? "0.75rem"
                           : "0rem",
                     }}
@@ -124,7 +132,6 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                     ) : (
                       <div
                         onClick={() => {
-                          props.onLink(route.link);
                           if (!isLG) {
                             setOpen(false);
                           }
@@ -147,20 +154,20 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa-brands fa-instagram" />
+              <IconBrandInstagram size={isLG ? 20 : 18} />
             </a>
             <a href="mailto:shirley.lyu.xiaoya@gmail.com">
-              <i className="fa-regular fa-envelope" />
+              <IconMail size={isLG ? 20 : 18} />
             </a>
             <a
               href="https://www.linkedin.com/in/xiaoya-lyu-11b68419b/"
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa-brands fa-linkedin-in" />
+              <IconBrandLinkedin size={isLG ? 20 : 18} />
             </a>
             <a href="/resume.pdf" target="_blank" rel="noreferrer">
-              <i className="fa-regular fa-file"></i>
+              <IconFileText size={isLG ? 20 : 18} />
             </a>
           </div>
         </div>
@@ -178,16 +185,15 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
               setOpen((orig) => !orig);
             }}
           >
-            <motion.i
+            <MotionIconChevronLeft
               animate={{
                 rotateY: open ? "0" : "180deg",
               }}
-              className="fa-solid fa-angle-left relative left-9
-                align-[-0.075rem] align-[-0.125rem] text-xl
-                leading-[0.05rem] xl:left-12 xl:text-2xl xl:leading-[0.04167rem]"
+              className="relative left-9 text-xl xl:left-12 xl:text-2xl"
               transition={{
                 duration: 0.2,
               }}
+              size={36}
             />
           </div>
         </div>
@@ -208,16 +214,12 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
 
       {/* Open-close button: mobile */}
       <div className="absolute right-2 top-4 z-10 cursor-pointer p-4 lg:hidden">
-        <motion.img
+        <MotionImage
           animate={{
             rotate: open ? "90deg" : "0",
           }}
           className="w-6 transition-colors duration-200"
-          src={
-            props.hamburgerColor === "text-black"
-              ? HamburgerBlack.src
-              : HamburgerWhite.src
-          }
+          src={HamburgerBlack}
           alt="Menu"
           onClick={() => {
             setOpen((orig) => !orig);

@@ -1,10 +1,9 @@
+import ProjectsGallery from "@/components/projects-gallery";
+import Scroller from "@/components/scroller";
+import { PageProps } from "@/utils/page-props";
+import { otherProjectsData } from "@/utils/project-data";
 import { NextPage } from "next";
 import Head from "next/head";
-
-import ProjectsGallery from "../components/projects-gallery";
-import Scroller from "../components/scroller";
-import { PageProps } from "../utils/page-props";
-import { otherProjectsData } from "../utils/project-data";
 
 const Others: NextPage<PageProps> = () => {
   return (

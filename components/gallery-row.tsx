@@ -1,10 +1,9 @@
 import Animatable from "./animatable";
+import { GalleryRowConfig, GalleryRowData } from "@/utils/gallery-row-data";
+import { transitionSlow } from "@/utils/transition";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
-
-import { GalleryRowConfig, GalleryRowData } from "../utils/gallery-row-data";
-import { transitionSlow } from "../utils/transition";
 
 interface GalleryRowProps {
   row: GalleryRowData;

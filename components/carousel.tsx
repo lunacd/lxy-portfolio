@@ -1,9 +1,8 @@
+import { transitionFast, transitionSlow } from "@/utils/transition";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef, useState } from "react";
-
-import { transitionFast, transitionSlow } from "../utils/transition";
 
 interface CarouselProps {
   images: (string | StaticImageData)[];

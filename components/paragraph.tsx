@@ -1,7 +1,6 @@
+import { transitionSlow } from "@/utils/transition";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
-
-import { transitionSlow } from "../utils/transition";
 
 interface ParagraphProps {
   paragraph: string;

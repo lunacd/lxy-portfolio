@@ -1,10 +1,9 @@
+import ImageData from "@/utils/image-data";
+import { transitionSlow } from "@/utils/transition";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
-
-import ImageData from "../utils/image-data";
-import { transitionSlow } from "../utils/transition";
 
 interface HorizontalScrollProps {
   source: ImageData;

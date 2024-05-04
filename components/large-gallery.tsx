@@ -1,9 +1,8 @@
 import GalleryRow from "./gallery-row";
+import { GalleryRowData } from "@/utils/gallery-row-data";
 import classNames from "classnames";
 import React, { useState } from "react";
 import { useInterval } from "usehooks-ts";
-
-import { GalleryRowData } from "../utils/gallery-row-data";
 
 interface LargeGalleryProps {
   rows: GalleryRowData[];
