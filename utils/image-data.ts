@@ -1,15 +1,8 @@
 import { StaticImageData } from "next/image";
 
-class ImageData {
+export default interface ImageData {
   src: string | StaticImageData;
   width: number;
   height: number;
-
-  constructor(src: string | StaticImageData, width: number, height: number) {
-    this.src = src;
-    this.width = width;
-    this.height = height;
-  }
+  unoptimized?: boolean;
 }
-
-export default ImageData;

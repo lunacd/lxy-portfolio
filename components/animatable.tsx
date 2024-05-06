@@ -1,11 +1,20 @@
-import Animation from "@/utils/animation";
-import ImageData from "@/utils/image-data";
 import classNames from "classnames";
 import Image from "next/image";
+import { StaticImageData } from "next/image";
 import React from "react";
 
+interface FrameData {
+  src: string | StaticImageData;
+  unoptimized?: boolean;
+}
+interface AnimationData {
+  frames: FrameData[];
+  width: number;
+  height: number;
+}
+
 interface AnimatableProps {
-  source: Animation | ImageData;
+  source: AnimationData;
   alt: string;
   frame?: number;
 }
@@ -16,10 +25,6 @@ const defaultProps = {
 
 const Animatable: React.FC<AnimatableProps> = (propsIn) => {
   const props = { ...defaultProps, ...propsIn };
-  const images =
-    props.source instanceof Animation
-      ? props.source.frames
-      : [props.source.src];
 
   return (
     <div
@@ -30,34 +35,39 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
     >
       <div
         className={classNames("transition-opacity duration-700 ease-linear", {
-          "opacity-0": props.frame ? props.frame % images.length !== 0 : false,
+          "opacity-0": props.frame
+            ? props.frame % props.source.frames.length !== 0
+            : false,
         })}
       >
         <Image
-          src={images[0]}
+          src={props.source.frames[0].src}
           alt={props.alt}
           width={props.source.width}
           height={props.source.height}
+          unoptimized={props.source.frames[0].unoptimized}
           placeholder="blur"
         />
       </div>
-      {images.map((image, index) => {
+      {props.source.frames.map((image, index) => {
         if (index !== 0) {
           return (
             <div
               className={classNames(
                 "absolute left-0 top-0 w-full transition-opacity duration-700 ease-linear",
                 {
-                  "opacity-0": props.frame % images.length !== index,
+                  "opacity-0":
+                    props.frame % props.source.frames.length !== index,
                 },
               )}
               key={index}
             >
               <Image
-                src={image}
+                src={image.src}
                 alt={props.alt}
                 width={props.source.width}
                 height={props.source.height}
+                unoptimized={image.unoptimized}
                 placeholder="blur"
               />
             </div>

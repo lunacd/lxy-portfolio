@@ -58,6 +58,7 @@ export class ProjectData extends ProjectDataLean {
   displayImage: StaticImageData;
   displayImageMobile: StaticImageData;
   titleColor: string;
+  hamburgerColorLight: boolean;
   bgColor: string;
 
   constructor(
@@ -71,6 +72,7 @@ export class ProjectData extends ProjectDataLean {
     displayImageMobile: StaticImageData,
     smallImage: StaticImageData,
     titleColor: string,
+    hamburgerColorLight: boolean,
     bgColor: string,
     link: string,
   ) {
@@ -81,6 +83,7 @@ export class ProjectData extends ProjectDataLean {
     this.displayImage = displayImage;
     this.displayImageMobile = displayImageMobile;
     this.titleColor = titleColor;
+    this.hamburgerColorLight = hamburgerColorLight;
     this.bgColor = bgColor;
   }
 }
@@ -94,8 +97,8 @@ export const projects: string[] = [
   "lyu",
 ];
 
-export const projectData = [
-  new ProjectData(
+export const projectsData: {[name: string]: ProjectData} = {
+  soul: new ProjectData(
     "soul",
     "Soul",
     "14 Weeks, 2022 Spring",
@@ -106,10 +109,11 @@ export const projectData = [
     SoulDisplayM,
     SoulSmall,
     "text-gray-100",
+    true,
     "bg-[#EEEAE2]",
     "/soul",
   ),
-  new ProjectData(
+  skates: new ProjectData(
     "skates",
     "Skates",
     "14 Weeks, 2022 Fall",
@@ -120,10 +124,11 @@ export const projectData = [
     SkatesDisplayM,
     SkatesSmall,
     "text-gray-900",
+    false,
     "bg-[#F0EBE6]",
     "/skates",
   ),
-  new ProjectData(
+  overlap: new ProjectData(
     "overlap",
     "Overlap",
     "14 Weeks, 2022 Spring",
@@ -134,10 +139,11 @@ export const projectData = [
     OverlapDisplayM,
     OverlapSmall,
     "text-gray-900",
+    false,
     "bg-[#FDF9F1]",
     "/overlap",
   ),
-  new ProjectData(
+  sunrise: new ProjectData(
     "sunrise",
     "Sunrise Speaker",
     "14 Weeks , 2021 Fall",
@@ -148,10 +154,11 @@ export const projectData = [
     SunriseDisplayM,
     SunriseSmall,
     "text-gray-900",
+    false,
     "bg-[#D8D6D4]",
     "/sunrise",
   ),
-  new ProjectData(
+  "m-tron": new ProjectData(
     "m-tron",
     "M-Tron",
     "5 Weeks , 2021 Spring",
@@ -162,10 +169,11 @@ export const projectData = [
     TronDisplayM,
     TronSmall,
     "text-gray-100",
+    true,
     "bg-[#E4F2F5]",
     "/m-tron",
   ),
-  new ProjectData(
+  lyu: new ProjectData(
     "lyu",
     "Lyu",
     "2 Weeks Daily, 2022 Spring",
@@ -176,10 +184,11 @@ export const projectData = [
     LyuDisplayM,
     LyuSmall,
     "text-gray-100",
+    true,
     "bg-[#EFF2F3]",
     "/lyu",
   ),
-];
+};
 
 export const otherProjectsData = [
   new ProjectDataLean(

@@ -24,8 +24,8 @@ const ImageText: React.FC<ImageTextProps> = (propsIn) => {
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className="mx-spacing-lg mb-spacing-3lg flex w-single flex-col-reverse
-        gap-spacing md:flex-row"
+      className="mx-spacing-lg mb-spacing-3lg flex w-single flex-col-reverse gap-spacing
+        md:flex-row"
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}

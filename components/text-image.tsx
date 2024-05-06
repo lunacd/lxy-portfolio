@@ -24,9 +24,8 @@ const TextImage: React.FC<TextImageProps> = (propsIn) => {
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className={`mx-spacing-lg mb-spacing-3lg flex w-single flex-col
-        space-y-spacing md:flex-row md:space-x-spacing md:space-y-0
-        ${props.textColor}`}
+      className={`mx-spacing-lg mb-spacing-3lg flex w-single flex-col space-y-spacing md:flex-row
+      md:space-x-spacing md:space-y-0 ${props.textColor}`}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}

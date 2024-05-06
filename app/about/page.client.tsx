@@ -1,58 +1,52 @@
+"use client";
+
 import Animatable from "@/components/animatable";
 import Button from "@/components/button";
 import Scroller from "@/components/scroller";
 import Spacing from "@/components/spacing";
 import Title from "@/components/title";
-import Animation from "@/utils/animation";
+import CraftsPerson1 from "@/images/about/craftsperson-1-small.webp";
+import CraftsPerson2 from "@/images/about/craftsperson-2-small.webp";
+import CraftsPerson3 from "@/images/about/craftsperson-3-small.webp";
+import Dog1 from "@/images/about/dog-1-small.webp";
+import Dog2 from "@/images/about/dog-2-small.webp";
+import Dog3 from "@/images/about/dog-3-small.webp";
+import Dog4 from "@/images/about/dog-4-small.webp";
+import Photo1 from "@/images/about/photo-1-small.webp";
+import Photo2 from "@/images/about/photo-2-small.webp";
+import Photo3 from "@/images/about/photo-3-small.webp";
+import Photo4 from "@/images/about/photo-4-small.webp";
+import Photo5 from "@/images/about/photo-5-small.webp";
+import Profile from "@/images/about/profile-half.webp";
+import Sports from "@/images/about/sports.gif";
+import Thinker1 from "@/images/about/thinker-1-small.webp";
+import Thinker2 from "@/images/about/thinker-2-small.webp";
+import Thinker3 from "@/images/about/thinker-3-small.webp";
+import Tool1 from "@/images/about/tools-1-icon.webp";
+import Tool2 from "@/images/about/tools-2-icon.webp";
+import Tool3 from "@/images/about/tools-3-icon.webp";
+import Tool4 from "@/images/about/tools-4-icon.webp";
+import Tool5 from "@/images/about/tools-5-icon.webp";
+import Tool6 from "@/images/about/tools-6-icon.webp";
+import Tool7 from "@/images/about/tools-7-icon.webp";
+import Tool8 from "@/images/about/tools-8-icon.webp";
+import Tool9 from "@/images/about/tools-9-icon.webp";
+import Traveller1 from "@/images/about/traveller-1-small.webp";
+import Traveller2 from "@/images/about/traveller-2-small.webp";
+import Traveller3 from "@/images/about/traveller-3-small.webp";
+import Traveller4 from "@/images/about/traveller-4-small.webp";
+import Traveller5 from "@/images/about/traveller-5-small.webp";
+import Traveller6 from "@/images/about/traveller-6-small.webp";
 import { transitionFast } from "@/utils/transition";
 import useFrameIndex from "@/utils/use-frame-index";
 import { AnimatePresence, motion, useInView } from "framer-motion";
-import { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-
-import CraftsPerson1 from "../images/about/craftsperson-1-small.webp";
-import CraftsPerson2 from "../images/about/craftsperson-2-small.webp";
-import CraftsPerson3 from "../images/about/craftsperson-3-small.webp";
-import Dog1 from "../images/about/dog-1-small.webp";
-import Dog2 from "../images/about/dog-2-small.webp";
-import Dog3 from "../images/about/dog-3-small.webp";
-import Dog4 from "../images/about/dog-4-small.webp";
-import Photo1 from "../images/about/photo-1-small.webp";
-import Photo2 from "../images/about/photo-2-small.webp";
-import Photo3 from "../images/about/photo-3-small.webp";
-import Photo4 from "../images/about/photo-4-small.webp";
-import Photo5 from "../images/about/photo-5-small.webp";
-import Profile from "../images/about/profile-half.webp";
-import Sports from "../images/about/sports.gif";
-import Thinker1 from "../images/about/thinker-1-small.webp";
-import Thinker2 from "../images/about/thinker-2-small.webp";
-import Thinker3 from "../images/about/thinker-3-small.webp";
-import Tool1 from "../images/about/tools-1-icon.webp";
-import Tool2 from "../images/about/tools-2-icon.webp";
-import Tool3 from "../images/about/tools-3-icon.webp";
-import Tool4 from "../images/about/tools-4-icon.webp";
-import Tool5 from "../images/about/tools-5-icon.webp";
-import Tool6 from "../images/about/tools-6-icon.webp";
-import Tool7 from "../images/about/tools-7-icon.webp";
-import Tool8 from "../images/about/tools-8-icon.webp";
-import Tool9 from "../images/about/tools-9-icon.webp";
-import Traveller1 from "../images/about/traveller-1-small.webp";
-import Traveller2 from "../images/about/traveller-2-small.webp";
-import Traveller3 from "../images/about/traveller-3-small.webp";
-import Traveller4 from "../images/about/traveller-4-small.webp";
-import Traveller5 from "../images/about/traveller-5-small.webp";
-import Traveller6 from "../images/about/traveller-6-small.webp";
 
 const Tools = [Tool1, Tool2, Tool3, Tool4, Tool5, Tool6, Tool7, Tool8, Tool9];
 
-// Sum of width / height
-// Thinker / Social innovator
-const rowFactor1 = 640 / 933 + 960 / 580;
-
-const About: NextPage = () => {
+export default function AboutClient() {
   const frame = useFrameIndex(3000);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -60,21 +54,16 @@ const About: NextPage = () => {
   const [videoLink, setVideoLink] = useState(
     "https://www.youtube.com/embed/cH5WShEmoR8",
   );
-  const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (router.query.v === "kidmania") {
+    if (searchParams.get("v") === "kidmania") {
       setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
       setOverlayOpen(true);
     }
-  }, [router]);
-
+  }, [searchParams]);
   return (
     <>
-      <Head>
-        <title>About | Shirley Lyu Portfolio</title>
-      </Head>
-
       <Scroller bgColor="bg-[#FDF9F1]">
         {/* Extra spacing on mobile */}
         <div className="pt-16"></div>
@@ -129,20 +118,18 @@ const About: NextPage = () => {
           <div className="about_rounded relative col-span-4 col-start-8 self-end">
             <div className="about_darken w-full">
               <Animatable
-                source={
-                  new Animation(
-                    [
-                      Traveller1,
-                      Traveller2,
-                      Traveller3,
-                      Traveller4,
-                      Traveller5,
-                      Traveller6,
-                    ],
-                    640,
-                    440,
-                  )
-                }
+                source={{
+                  frames: [
+                    { src: Traveller1 },
+                    { src: Traveller2 },
+                    { src: Traveller3 },
+                    { src: Traveller4 },
+                    { src: Traveller5 },
+                    { src: Traveller6 },
+                  ],
+                  width: 640,
+                  height: 440,
+                }}
                 frame={frame}
                 alt="Traveller"
               />
@@ -161,13 +148,15 @@ const About: NextPage = () => {
             <div className="about_rounded relative">
               <div className="about_darken w-full">
                 <Animatable
-                  source={
-                    new Animation(
-                      [CraftsPerson1, CraftsPerson2, CraftsPerson3],
-                      640,
-                      652,
-                    )
-                  }
+                  source={{
+                    frames: [
+                      { src: CraftsPerson1 },
+                      { src: CraftsPerson2 },
+                      { src: CraftsPerson3 },
+                    ],
+                    width: 640,
+                    height: 652,
+                  }}
                   frame={frame}
                   alt="Craftsperson"
                 />
@@ -181,13 +170,17 @@ const About: NextPage = () => {
             <div className="about_rounded relative">
               <div className="about_darken w-full">
                 <Animatable
-                  source={
-                    new Animation(
-                      [Photo1, Photo2, Photo3, Photo4, Photo5],
-                      640,
-                      669,
-                    )
-                  }
+                  source={{
+                    frames: [
+                      { src: Photo1 },
+                      { src: Photo2 },
+                      { src: Photo3 },
+                      { src: Photo4 },
+                      { src: Photo5 },
+                    ],
+                    width: 640,
+                    height: 669,
+                  }}
                   frame={frame}
                   alt="Photographer"
                 />
@@ -226,7 +219,16 @@ const About: NextPage = () => {
               >
                 <div className="about_darken w-full">
                   <Animatable
-                    source={new Animation([Dog1, Dog2, Dog3, Dog4], 640, 838)}
+                    source={{
+                      frames: [
+                        { src: Dog1 },
+                        { src: Dog2 },
+                        { src: Dog3 },
+                        { src: Dog4 },
+                      ],
+                      width: 640,
+                      height: 838,
+                    }}
                     frame={frame}
                     alt="Dog lover"
                   />
@@ -243,9 +245,15 @@ const About: NextPage = () => {
               <div className="about_rounded relative col-span-3">
                 <div className="about_darken w-full">
                   <Animatable
-                    source={
-                      new Animation([Thinker1, Thinker2, Thinker3], 640, 933)
-                    }
+                    source={{
+                      frames: [
+                        { src: Thinker1 },
+                        { src: Thinker2 },
+                        { src: Thinker3 },
+                      ],
+                      width: 640,
+                      height: 933,
+                    }}
                     frame={frame}
                     alt="Thinker"
                   />
@@ -276,7 +284,15 @@ const About: NextPage = () => {
         <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
           <div className="about_rounded relative" style={{ flex: 640 / 933 }}>
             <Animatable
-              source={new Animation([Thinker1, Thinker2, Thinker3], 640, 933)}
+              source={{
+                frames: [
+                  { src: Thinker1 },
+                  { src: Thinker2 },
+                  { src: Thinker3 },
+                ],
+                width: 640,
+                height: 933,
+              }}
               frame={frame}
               alt="Thinker"
             />
@@ -325,7 +341,16 @@ const About: NextPage = () => {
           >
             <div className="about_darken w-full">
               <Animatable
-                source={new Animation([Dog1, Dog2, Dog3, Dog4], 640, 838)}
+                source={{
+                  frames: [
+                    { src: Dog1 },
+                    { src: Dog2 },
+                    { src: Dog3 },
+                    { src: Dog4 },
+                  ],
+                  width: 640,
+                  height: 838,
+                }}
                 frame={frame}
                 alt="Dog lover"
               />
@@ -341,13 +366,15 @@ const About: NextPage = () => {
           <div className="about_rounded relative" style={{ flex: 640 / 652 }}>
             <div className="about_darken w-full">
               <Animatable
-                source={
-                  new Animation(
-                    [CraftsPerson1, CraftsPerson2, CraftsPerson3],
-                    640,
-                    652,
-                  )
-                }
+                source={{
+                  frames: [
+                    { src: CraftsPerson1 },
+                    { src: CraftsPerson2 },
+                    { src: CraftsPerson3 },
+                  ],
+                  width: 640,
+                  height: 652,
+                }}
                 frame={frame}
                 alt="Craftsperson"
               />
@@ -359,20 +386,18 @@ const About: NextPage = () => {
           <div className="about_rounded relative" style={{ flex: 640 / 440 }}>
             <div className="about_darken w-full">
               <Animatable
-                source={
-                  new Animation(
-                    [
-                      Traveller1,
-                      Traveller2,
-                      Traveller3,
-                      Traveller4,
-                      Traveller5,
-                      Traveller6,
-                    ],
-                    640,
-                    440,
-                  )
-                }
+                source={{
+                  frames: [
+                    { src: Traveller1 },
+                    { src: Traveller2 },
+                    { src: Traveller3 },
+                    { src: Traveller4 },
+                    { src: Traveller5 },
+                    { src: Traveller6 },
+                  ],
+                  width: 640,
+                  height: 440,
+                }}
                 frame={frame}
                 alt="Traveller"
               />
@@ -405,13 +430,17 @@ const About: NextPage = () => {
           <div className="about_rounded relative" style={{ flex: 640 / 669 }}>
             <div className="about_darken w-full">
               <Animatable
-                source={
-                  new Animation(
-                    [Photo1, Photo2, Photo3, Photo4, Photo5],
-                    640,
-                    669,
-                  )
-                }
+                source={{
+                  frames: [
+                    { src: Photo1 },
+                    { src: Photo2 },
+                    { src: Photo3 },
+                    { src: Photo4 },
+                    { src: Photo5 },
+                  ],
+                  width: 640,
+                  height: 669,
+                }}
                 frame={frame}
                 alt="Photographer"
               />
@@ -424,7 +453,8 @@ const About: NextPage = () => {
 
         <Title title="Tools I use" />
         <div
-          className="single mb-spacing-3lg flex flex-row flex-wrap justify-center gap-4 lg:justify-between"
+          className="single mb-spacing-3lg flex flex-row flex-wrap justify-center gap-4
+            lg:justify-between"
           ref={ref}
         >
           {Tools.map((Tool, index) => (
@@ -505,6 +535,4 @@ const About: NextPage = () => {
       </AnimatePresence>
     </>
   );
-};
-
-export default About;
+}

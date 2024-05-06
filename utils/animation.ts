@@ -1,19 +1,12 @@
 import { StaticImageData } from "next/image";
 
-class Animation {
-  frames: (string | StaticImageData)[];
-  width: number;
-  height: number;
-
-  constructor(
-    frames: (string | StaticImageData)[],
-    width: number,
-    height: number,
-  ) {
-    this.frames = frames;
-    this.width = width;
-    this.height = height;
-  }
+interface FrameData {
+  src: string | StaticImageData;
+  unoptimized?: boolean;
 }
 
-export default Animation;
+export default interface Animation {
+  frames: FrameData[];
+  width: number;
+  height: number;
+}

@@ -1,4 +1,4 @@
-import { ProjectData, projectData } from "@/utils/project-data";
+import { ProjectData, projectsData } from "@/utils/project-data";
 import classNames from "classnames";
 import Image from "next/image";
 import React, { forwardRef } from "react";
@@ -41,8 +41,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
           <div className="absolute left-0 top-0 flex h-full w-full justify-center">
             {/* Project name */}
             <div
-              className={`single mt-8 text-3xl lg:mt-12 xl:mt-24
-                ${props.project.titleColor}`}
+              className={`single mt-8 text-3xl lg:mt-12 xl:mt-24 ${props.project.titleColor}`}
             >
               {props.project.name}
             </div>
@@ -74,7 +73,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
             <div className="topDisplay_detailColumn flex">
               <div className="topDisplay_detailSection opacity-0">
                 <span>Duration: </span>
-                {projectData.reduce(
+                {Object.values(projectsData).reduce(
                   (prev, curr) =>
                     prev.length > curr.duration.length ? prev : curr.duration,
                   "",
@@ -82,7 +81,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               </div>
               <div className="topDisplay_detailSection opacity-0">
                 <span>Category: </span>
-                {projectData.reduce(
+                {Object.values(projectsData).reduce(
                   (prev, curr) =>
                     prev.length > curr.category.length ? prev : curr.category,
                   "",
@@ -90,7 +89,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               </div>
               <div className="topDisplay_detailSection opacity-0">
                 <span>Project Focus: </span>
-                {projectData.reduce(
+                {Object.values(projectsData).reduce(
                   (prev, curr) =>
                     prev.length > curr.focus.length ? prev : curr.focus,
                   "",
@@ -122,7 +121,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
             <div className="topDisplay_detailColumn hidden md:flex">
               <div className="topDisplay_detailSection opacity-0">
                 <span>Project Brief: </span>
-                {projectData.reduce(
+                {Object.values(projectsData).reduce(
                   (prev, curr) =>
                     prev.length > curr.brief.length ? prev : curr.brief,
                   "",

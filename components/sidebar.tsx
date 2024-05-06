@@ -1,9 +1,10 @@
 "use client";
 
 import { useGlobalStateContext } from "@/utils/globalStateContext";
-import { projects } from "@/utils/project-data";
+import { projectsData } from "@/utils/project-data";
 import { sidebarRoutes } from "@/utils/project-data";
 import { transitionFast as transitionDefault } from "@/utils/transition";
+import { useMediaQuery } from "@chakra-ui/react";
 import {
   IconBrandInstagram,
   IconBrandLinkedin,
@@ -13,9 +14,7 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import { useMediaQuery } from "usehooks-ts";
+import React, { useEffect, useState } from "react";
 
 import HamburgerBlack from "../images/hamburger-black.svg";
 import HamburgerWhite from "../images/hamburger-white.svg";
@@ -24,10 +23,16 @@ const MotionImage = motion(Image);
 const MotionIconChevronLeft = motion(IconChevronLeft);
 
 export const Sidebar = () => {
-  const isXL = useMediaQuery("(min-width: 1280px)");
-  const isLG = useMediaQuery("(min-width: 1024px)");
-  const [open, setOpen] = useState(isLG);
   const [hovered, setHovered] = useState("");
+
+  const [isLG, isXL] = useMediaQuery([
+    "(min-width: 1024px)",
+    "(min-width: 1280px)",
+  ]);
+  const [open, setOpen] = useState(isLG);
+  useEffect(() => {
+    setOpen(isLG);
+  }, [isLG]);
 
   const { globalState, dispatch } = useGlobalStateContext();
 
@@ -35,7 +40,6 @@ export const Sidebar = () => {
     <>
       {/* Main container */}
       <motion.div
-        suppressHydrationWarning={true}
         initial={{
           x: "-100%",
         }}
@@ -43,20 +47,25 @@ export const Sidebar = () => {
           x: open ? "0%" : "-100%",
         }}
         transition={transitionDefault}
-        className="absolute z-10 h-screen w-[16rem]
-        flex-shrink-0 bg-white shadow-lg lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
+        className="absolute z-10 h-screen w-[16rem] flex-shrink-0 bg-white shadow-lg
+          lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
       >
         {/* Content container */}
         <div
-          className="absolute right-14 top-0 flex h-full w-36 flex-col justify-between py-16 xl:right-24"
+          className="absolute right-14 top-0 flex h-full w-36 flex-col justify-between py-16
+            xl:right-24"
         >
           {/* Logo */}
-          <Link
-            href="/"
+          <div
+            className="cursor-pointer"
             onClick={() => {
               if (!isLG) {
                 setOpen(false);
               }
+              dispatch({
+                type: "changeRoute",
+                newRoute: "/",
+              });
             }}
           >
             <div className="w-full">
@@ -68,7 +77,7 @@ export const Sidebar = () => {
                 width={167}
               />
             </div>
-          </Link>
+          </div>
 
           {/* Routes */}
           <div className="flex flex-col space-y-1 pb-6 pt-4">
@@ -77,22 +86,22 @@ export const Sidebar = () => {
                 <div
                   className="flex flex-row items-center"
                   onMouseEnter={
-                    projects.includes(route.uri)
+                    route.uri in projectsData
                       ? () => {
-                        setHovered(route.uri);
-                        dispatch({ type: "setProjectRoll", rolling: false });
-                        dispatch({ type: "setProject", project: route.uri });
-                      }
-                      : () => { }
+                          setHovered(route.uri);
+                          dispatch({ type: "setProjectRoll", rolling: false });
+                          dispatch({ type: "setProject", project: route.uri });
+                        }
+                      : undefined
                   }
                   onMouseLeave={
-                    projects.includes(route.uri)
+                    route.uri in projectsData
                       ? () => {
-                        setHovered("");
-                        dispatch({ type: "nextProject" });
-                        dispatch({ type: "setProjectRoll", rolling: true });
-                      }
-                      : () => { }
+                          setHovered("");
+                          dispatch({ type: "nextProject" });
+                          dispatch({ type: "setProjectRoll", rolling: true });
+                        }
+                      : undefined
                   }
                 >
                   <motion.div
@@ -104,7 +113,7 @@ export const Sidebar = () => {
                     animate={{
                       opacity:
                         hovered === route.uri ||
-                          globalState.currentProject === route.uri
+                        globalState.currentProject === route.uri
                           ? 1
                           : 0,
                     }}
@@ -120,7 +129,7 @@ export const Sidebar = () => {
                     animate={{
                       x:
                         hovered === route.uri ||
-                          globalState.currentProject === route.uri
+                        globalState.currentProject === route.uri
                           ? "0.75rem"
                           : "0rem",
                     }}
@@ -135,6 +144,10 @@ export const Sidebar = () => {
                           if (!isLG) {
                             setOpen(false);
                           }
+                          dispatch({
+                            type: "changeRoute",
+                            newRoute: `/${route.uri}`,
+                          });
                         }}
                         className="cursor-pointer"
                       >
@@ -174,27 +187,28 @@ export const Sidebar = () => {
 
         {/* Open-close button: desktop */}
         <div
-          className="absolute -right-16 top-20 z-20 hidden h-24 w-16
-            overflow-hidden lg:block xl:-right-20 xl:w-20"
+          className="absolute -right-16 top-20 z-20 hidden h-24 w-16 overflow-hidden lg:block
+            xl:-right-20 xl:w-20"
         >
           <div
-            className="absolute -left-8 top-0 flex h-16 w-16 cursor-pointer
-              items-center rounded-full bg-white shadow-lg xl:-left-10 xl:h-20
-              xl:w-20"
+            className="absolute -left-8 top-0 h-16 w-16 cursor-pointer rounded-full bg-white shadow-lg
+              xl:-left-10 xl:h-20 xl:w-20"
             onClick={() => {
               setOpen((orig) => !orig);
             }}
           >
-            <MotionIconChevronLeft
-              animate={{
-                rotateY: open ? "0" : "180deg",
-              }}
-              className="relative left-9 text-xl xl:left-12 xl:text-2xl"
-              transition={{
-                duration: 0.2,
-              }}
-              size={36}
-            />
+            <div className="absolute bottom-0 right-0 top-0 flex w-1/2 items-center">
+              <MotionIconChevronLeft
+                animate={{
+                  rotateY: open ? "0" : "180deg",
+                }}
+                className=""
+                transition={{
+                  duration: 0.2,
+                }}
+                size={isXL ? 36 : 24}
+              />
+            </div>
           </div>
         </div>
       </motion.div>
@@ -219,7 +233,11 @@ export const Sidebar = () => {
             rotate: open ? "90deg" : "0",
           }}
           className="w-6 transition-colors duration-200"
-          src={HamburgerBlack}
+          src={
+            projectsData[globalState.currentProject].hamburgerColorLight
+              ? HamburgerWhite
+              : HamburgerBlack
+          }
           alt="Menu"
           onClick={() => {
             setOpen((orig) => !orig);

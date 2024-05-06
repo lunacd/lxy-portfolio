@@ -10,27 +10,54 @@ import {
   stateReducer,
 } from "@/utils/globalState";
 import GlobalStateContext from "@/utils/globalStateContext";
-import { projects } from "@/utils/project-data";
+import { projectsData } from "@/utils/project-data";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { AnimatePresence, motion } from "framer-motion";
+import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { Catamaran } from "next/font/google";
-import { usePathname } from "next/navigation";
-import { useEffect, useReducer, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import {
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
 import { useInterval } from "usehooks-ts";
 
 const catamaran = Catamaran({ subsets: ["latin"] });
+
+function FrozenRouter(props: PropsWithChildren<{}>) {
+  const context = useContext(LayoutRouterContext);
+  const frozen = useRef(context).current;
+
+  return (
+    <LayoutRouterContext.Provider value={frozen}>
+      {props.children}
+    </LayoutRouterContext.Provider>
+  );
+}
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [globalState, dispatch] = useReducer(stateReducer, initialState);
+  const router = useRouter();
   const pathname = usePathname();
+  const [globalState, dispatch] = useReducer(stateReducer, {
+    ...initialState,
+    route: pathname,
+  });
   const providerValue = {
     globalState,
     dispatch,
   };
+  const { route } = globalState;
+  useEffect(() => {
+    router.push(route);
+  }, [router, route]);
 
   return (
     <html lang="en">
@@ -47,8 +74,9 @@ export default function RootLayout({
                   exit={{ x: globalState.swipeAnimation ? "-100%" : "0%" }}
                   transition={{ ease: "easeInOut", duration: 0.5 }}
                   key={pathname}
+                  layoutId={pathname}
                 >
-                  {children}
+                  <FrozenRouter>{children}</FrozenRouter>
                 </motion.div>
               </AnimatePresence>
             </div>
