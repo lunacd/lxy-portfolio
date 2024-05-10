@@ -29,29 +29,15 @@ import SoulDisplayM from "../images/soul/display-mobile-half.webp";
 import SunriseDisplay from "../images/sunrise/display-full.webp";
 import SunriseDisplayM from "../images/sunrise/display-mobile-half.webp";
 
-export class ProjectDataLean {
+export interface ProjectDataLean {
   uri: string;
   name: string;
   category: string;
   smallImage: string | StaticImageData;
   link: string;
-
-  constructor(
-    uri: string,
-    name: string,
-    category: string,
-    smallImage: string | StaticImageData,
-    link: string,
-  ) {
-    this.uri = uri;
-    this.name = name;
-    this.category = category;
-    this.smallImage = smallImage;
-    this.link = link;
-  }
 }
 
-export class ProjectData extends ProjectDataLean {
+export interface ProjectData extends ProjectDataLean {
   duration: string;
   focus: string;
   brief: string;
@@ -60,32 +46,6 @@ export class ProjectData extends ProjectDataLean {
   titleColor: string;
   hamburgerColorLight: boolean;
   bgColor: string;
-
-  constructor(
-    uri: string,
-    name: string,
-    duration: string,
-    category: string,
-    focus: string,
-    brief: string,
-    displayImage: StaticImageData,
-    displayImageMobile: StaticImageData,
-    smallImage: StaticImageData,
-    titleColor: string,
-    hamburgerColorLight: boolean,
-    bgColor: string,
-    link: string,
-  ) {
-    super(uri, name, category, smallImage, link);
-    this.duration = duration;
-    this.focus = focus;
-    this.brief = brief;
-    this.displayImage = displayImage;
-    this.displayImageMobile = displayImageMobile;
-    this.titleColor = titleColor;
-    this.hamburgerColorLight = hamburgerColorLight;
-    this.bgColor = bgColor;
-  }
 }
 
 export const projects: string[] = [
@@ -97,163 +57,169 @@ export const projects: string[] = [
   "lyu",
 ];
 
-export const projectsData: {[name: string]: ProjectData} = {
-  soul: new ProjectData(
-    "soul",
-    "Soul",
-    "14 Weeks, 2022 Spring",
-    "Lux lifestyle Product Set",
-    "Brand Research, Form Study, 3D Modeling",
-    "To propose a new product category for Rolls-Royce by designing a unified collection of objects.",
-    SoulDisplay,
-    SoulDisplayM,
-    SoulSmall,
-    "text-gray-100",
-    true,
-    "bg-[#EEEAE2]",
-    "/soul",
-  ),
-  skates: new ProjectData(
-    "skates",
-    "Skates",
-    "14 Weeks, 2022 Fall",
-    "Furniture Design",
-    "Form Study, Prototyping, Manufacturing",
-    "Designing and making furniture that reconfigures the spatial experience for Bernhardt. The design is engendered to meet Bernhardt's  brand identity and manufacturing requirements, as well their use of materials.",
-    SkatesDisplay,
-    SkatesDisplayM,
-    SkatesSmall,
-    "text-gray-900",
-    false,
-    "bg-[#F0EBE6]",
-    "/skates",
-  ),
-  overlap: new ProjectData(
-    "overlap",
-    "Overlap",
-    "14 Weeks, 2022 Spring",
-    "Lifestyle Product Design",
-    "Prototyping, Tech Drawing, Model Making, Manufacturing",
-    "A range of small and functional objects for Hay, focusing on brand identity, manufacturing techniques, and use of materials.",
-    OverlapDisplay,
-    OverlapDisplayM,
-    OverlapSmall,
-    "text-gray-900",
-    false,
-    "bg-[#FDF9F1]",
-    "/overlap",
-  ),
-  sunrise: new ProjectData(
-    "sunrise",
-    "Sunrise Speaker",
-    "14 Weeks , 2021 Fall",
-    "Consumer Electronics",
-    "Form Study, Prototyping, Model Making, Manufacturing",
-    "Reverse-engineered a speaker and put all parts back together in personal designed product for Yamaha.",
-    SunriseDisplay,
-    SunriseDisplayM,
-    SunriseSmall,
-    "text-gray-900",
-    false,
-    "bg-[#D8D6D4]",
-    "/sunrise",
-  ),
-  "m-tron": new ProjectData(
-    "m-tron",
-    "M-Tron",
-    "5 Weeks , 2021 Spring",
-    "Transportation",
-    "3D Modeling, Rendering",
-    "A shared semi-automatic scooter inside Walt Disney World for both kids and adult to transport between different rides.",
-    TronDisplay,
-    TronDisplayM,
-    TronSmall,
-    "text-gray-100",
-    true,
-    "bg-[#E4F2F5]",
-    "/m-tron",
-  ),
-  lyu: new ProjectData(
-    "lyu",
-    "Lyu",
-    "2 Weeks Daily, 2022 Spring",
-    "Soft Goods",
-    "Craft, Tech Drawing, Manufacturing",
-    "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
-    LyuDisplay,
-    LyuDisplayM,
-    LyuSmall,
-    "text-gray-100",
-    true,
-    "bg-[#EFF2F3]",
-    "/lyu",
-  ),
+export const projectsData: { [name: string]: ProjectData } = {
+  soul: {
+    uri: "soul",
+    name: "Soul",
+    duration: "14 Weeks, 2022 Spring",
+    category: "Lux lifestyle Product Set",
+    focus: "Brand Research, Form Study, 3D Modeling",
+    brief:
+      "To propose a new product category for Rolls-Royce by designing a unified collection of objects.",
+    displayImage: SoulDisplay,
+    displayImageMobile: SoulDisplayM,
+    smallImage: SoulSmall,
+    titleColor: "text-gray-100",
+    hamburgerColorLight: true,
+    bgColor: "bg-[#EEEAE2]",
+    link: "/soul",
+  },
+  skates: {
+    uri: "skates",
+    name: "Skates",
+    duration: "14 Weeks, 2022 Fall",
+    category: "Furniture Design",
+    focus: "Form Study, Prototyping, Manufacturing",
+    brief:
+      "Designing and making furniture that reconfigures the spatial experience for Bernhardt. The design is engendered to meet Bernhardt's  brand identity and manufacturing requirements, as well their use of materials.",
+    displayImage: SkatesDisplay,
+    displayImageMobile: SkatesDisplayM,
+    smallImage: SkatesSmall,
+    titleColor: "text-gray-900",
+    hamburgerColorLight: false,
+    bgColor: "bg-[#F0EBE6]",
+    link: "/skates",
+  },
+  overlap: {
+    uri: "overlap",
+    name: "Overlap",
+    duration: "14 Weeks, 2022 Spring",
+    category: "Lifestyle Product Design",
+    focus: "Prototyping, Tech Drawing, Model Making, Manufacturing",
+    brief:
+      "A range of small and functional objects for Hay, focusing on brand identity, manufacturing techniques, and use of materials.",
+    displayImage: OverlapDisplay,
+    displayImageMobile: OverlapDisplayM,
+    smallImage: OverlapSmall,
+    titleColor: "text-gray-900",
+    hamburgerColorLight: false,
+    bgColor: "bg-[#FDF9F1]",
+    link: "/overlap",
+  },
+  sunrise: {
+    uri: "sunrise",
+    name: "Sunrise Speaker",
+    duration: "14 Weeks , 2021 Fall",
+    category: "Consumer Electronics",
+    focus: "Form Study, Prototyping, Model Making, Manufacturing",
+    brief:
+      "Reverse-engineered a speaker and put all parts back together in personal designed product for Yamaha.",
+    displayImage: SunriseDisplay,
+    displayImageMobile: SunriseDisplayM,
+    smallImage: SunriseSmall,
+    titleColor: "text-gray-900",
+    hamburgerColorLight: false,
+    bgColor: "bg-[#D8D6D4]",
+    link: "/sunrise",
+  },
+  "m-tron": {
+    uri: "m-tron",
+    name: "M-Tron",
+    duration: "5 Weeks , 2021 Spring",
+    category: "Transportation",
+    focus: "3D Modeling, Rendering",
+    brief:
+      "A shared semi-automatic scooter inside Walt Disney World for both kids and adult to transport between different rides.",
+    displayImage: TronDisplay,
+    displayImageMobile: TronDisplayM,
+    smallImage: TronSmall,
+    titleColor: "text-gray-100",
+    hamburgerColorLight: true,
+    bgColor: "bg-[#E4F2F5]",
+    link: "/m-tron",
+  },
+  lyu: {
+    uri: "lyu",
+    name: "Lyu",
+    duration: "2 Weeks Daily, 2022 Spring",
+    category: "Soft Goods",
+    focus: "Craft, Tech Drawing, Manufacturing",
+    brief:
+      "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
+    displayImage: LyuDisplay,
+    displayImageMobile: LyuDisplayM,
+    smallImage: LyuSmall,
+    titleColor: "text-gray-100",
+    hamburgerColorLight: true,
+    bgColor: "bg-[#EFF2F3]",
+    link: "/lyu",
+  },
 };
 
 export const otherProjectsData = [
-  new ProjectDataLean(
-    "refugia",
-    "Refugia",
-    "Spatial Experience Design",
-    RefugiaSmall,
-    "https://www.shirleylyu.com/refugia",
-  ),
-  new ProjectDataLean(
-    "mode",
-    "Mode Bag",
-    "Soft Goods",
-    ModeSmall,
-    "https://shirleylyu.wixsite.com/shirley-portfolio/mode",
-  ),
-  new ProjectDataLean(
-    "liss",
-    "Liss",
-    "Hard Goods",
-    LissSmall,
-    "https://shirleylyu.wixsite.com/shirley-portfolio/liss",
-  ),
-  new ProjectDataLean(
-    "saturn",
-    "Saturn",
-    "Pet Furniture",
-    SaturnSmall,
-    "https://shirleylyu.wixsite.com/shirley-portfolio/saturn",
-  ),
-  new ProjectDataLean(
-    "ergo",
-    "Ergo Care",
-    "Consumer Electronics",
-    ErgoSmall,
-    "https://shirleylyu.wixsite.com/shirley-portfolio/ergo-care",
-  ),
-  new ProjectDataLean(
-    "ito",
-    "Ito Suitcase",
-    "Hard Goods",
-    ItoSmall,
-    "https://shirleylyu.wixsite.com/shirley-portfolio/ito",
-  ),
-  new ProjectDataLean(
-    "tura",
-    "Tura",
-    "UI/UX Design",
-    TuraSmall,
-    "https://shirleylyu.wixsite.com/shirley-portfolio/tura",
-  ),
-  new ProjectDataLean(
-    "plant",
-    "Plant Phone",
-    "Consumer Electronics",
-    PlantSmall,
-    "https://shirleylyu.wixsite.com/shirley-portfolio/plantphone",
-  ),
-  new ProjectDataLean(
-    "mum",
-    "Mum",
-    "Soft Goods",
-    MumSmall,
-    "https://shirleylyu.wixsite.com/shirley-portfolio/mum",
-  ),
+  {
+    uri: "refugia",
+    name: "Refugia",
+    category: "Spatial Experience Design",
+    smallImage: RefugiaSmall,
+    link: "https://www.shirleylyu.com/refugia",
+  },
+  {
+    uri: "mode",
+    name: "Mode Bag",
+    category: "Soft Goods",
+    smallImage: ModeSmall,
+    link: "https://shirleylyu.wixsite.com/shirley-portfolio/mode",
+  },
+  {
+    uri: "liss",
+    name: "Liss",
+    category: "Hard Goods",
+    smallImage: LissSmall,
+    link: "https://shirleylyu.wixsite.com/shirley-portfolio/liss",
+  },
+  {
+    uri: "saturn",
+    name: "Saturn",
+    category: "Pet Furniture",
+    smallImage: SaturnSmall,
+    link: "https://shirleylyu.wixsite.com/shirley-portfolio/saturn",
+  },
+  {
+    uri: "ergo",
+    name: "Ergo Care",
+    category: "Consumer Electronics",
+    smallImage: ErgoSmall,
+    link: "https://shirleylyu.wixsite.com/shirley-portfolio/ergo-care",
+  },
+  {
+    uri: "ito",
+    name: "Ito Suitcase",
+    category: "Hard Goods",
+    smallImage: ItoSmall,
+    link: "https://shirleylyu.wixsite.com/shirley-portfolio/ito",
+  },
+  {
+    uri: "tura",
+    name: "Tura",
+    category: "UI/UX Design",
+    smallImage: TuraSmall,
+    link: "https://shirleylyu.wixsite.com/shirley-portfolio/tura",
+  },
+  {
+    uri: "plant",
+    name: "Plant Phone",
+    category: "Consumer Electronics",
+    smallImage: PlantSmall,
+    link: "https://shirleylyu.wixsite.com/shirley-portfolio/plantphone",
+  },
+  {
+    uri: "mum",
+    name: "Mum",
+    category: "Soft Goods",
+    smallImage: MumSmall,
+    link: "https://shirleylyu.wixsite.com/shirley-portfolio/mum",
+  },
 ];
 
 export const sidebarRoutes = [

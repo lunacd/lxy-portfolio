@@ -146,7 +146,7 @@ export const Sidebar = () => {
                           }
                           dispatch({
                             type: "changeRoute",
-                            newRoute: `/${route.uri}`,
+                            newRoute: route.link,
                           });
                         }}
                         className="cursor-pointer"

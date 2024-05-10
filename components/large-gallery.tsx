@@ -1,8 +1,13 @@
-import GalleryRow from "./gallery-row";
-import { GalleryRowData } from "@/utils/gallery-row-data";
+import { AnimationData } from "./animatable";
+import GalleryRow, { GalleryRowLayout } from "./gallery-row";
 import classNames from "classnames";
 import React, { useState } from "react";
 import { useInterval } from "usehooks-ts";
+
+interface GalleryRowData {
+  layout?: GalleryRowLayout;
+  images: AnimationData[];
+}
 
 interface LargeGalleryProps {
   rows: GalleryRowData[];
@@ -36,7 +41,8 @@ const LargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
       <div className="w-full space-y-spacing">
         {props.rows.map((row, index) => (
           <GalleryRow
-            row={row}
+            layout={row.layout}
+            images={row.images}
             description={props.description}
             currentFrame={currentFrame}
             key={index}

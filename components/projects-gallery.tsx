@@ -1,3 +1,5 @@
+"use client";
+
 import { ProjectDataLean } from "@/utils/project-data";
 import { transitionFast } from "@/utils/transition";
 import { motion } from "framer-motion";

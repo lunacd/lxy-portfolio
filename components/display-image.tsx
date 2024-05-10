@@ -1,13 +1,11 @@
-import Animatable from "./animatable";
-import Animation from "@/utils/animation";
-import ImageData from "@/utils/image-data";
+import Animatable, { AnimationData } from "./animatable";
 import { transitionSlow } from "@/utils/transition";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 
 interface DisplayImageProps {
-  source: ImageData | Animation;
+  source: AnimationData;
   alt: string;
   xSpacing?: boolean;
   botSpacing?: boolean;

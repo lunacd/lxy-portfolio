@@ -7,7 +7,8 @@ interface FrameData {
   src: string | StaticImageData;
   unoptimized?: boolean;
 }
-interface AnimationData {
+
+export interface AnimationData {
   frames: FrameData[];
   width: number;
   height: number;

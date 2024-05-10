@@ -1,20 +1,27 @@
-import Animatable from "./animatable";
-import { GalleryRowConfig, GalleryRowData } from "@/utils/gallery-row-data";
+import Animatable, { AnimationData } from "./animatable";
 import { transitionSlow } from "@/utils/transition";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 
+export enum GalleryRowLayout {
+  FixedHeight,
+  EqualWidthStart,
+  EqualWidthEnd,
+}
+
 interface GalleryRowProps {
-  row: GalleryRowData;
+  layout?: GalleryRowLayout;
+  images: AnimationData[];
   description: string;
   currentFrame: number;
 }
 
-const GalleryRow: React.FC<GalleryRowProps> = (props) => {
+export default function GalleryRow(props: GalleryRowProps) {
+  const layout = props.layout || GalleryRowLayout.FixedHeight;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  if (props.row.config === GalleryRowConfig.FixedHeight) {
+  if (layout === GalleryRowLayout.FixedHeight) {
     return (
       <motion.div
         className="flex flex-row space-x-spacing"
@@ -23,8 +30,8 @@ const GalleryRow: React.FC<GalleryRowProps> = (props) => {
         transition={transitionSlow}
         ref={ref}
       >
-        {props.row.images.map((image, innerIndex) => {
-          if (props.row.images.length === 1) {
+        {props.images.map((image, innerIndex) => {
+          if (props.images.length === 1) {
             return (
               <Animatable
                 source={image}
@@ -52,9 +59,8 @@ const GalleryRow: React.FC<GalleryRowProps> = (props) => {
         className={classNames(
           "grid auto-cols-fr grid-flow-col space-x-spacing",
           {
-            "items-start":
-              props.row.config === GalleryRowConfig.EqualWidthStart,
-            "items-end": props.row.config === GalleryRowConfig.EqualWidthEnd,
+            "items-start": layout === GalleryRowLayout.EqualWidthStart,
+            "items-end": layout === GalleryRowLayout.EqualWidthEnd,
           },
         )}
         style={{ y: "3rem" }}
@@ -62,7 +68,7 @@ const GalleryRow: React.FC<GalleryRowProps> = (props) => {
         transition={transitionSlow}
         ref={ref}
       >
-        {props.row.images.map((image, innerIndex) => (
+        {props.images.map((image, innerIndex) => (
           <Animatable
             source={image}
             alt={`${props.description} gallery image`}
@@ -73,6 +79,4 @@ const GalleryRow: React.FC<GalleryRowProps> = (props) => {
       </motion.div>
     );
   }
-};
-
-export default GalleryRow;
+}
