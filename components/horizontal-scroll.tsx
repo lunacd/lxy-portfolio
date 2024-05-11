@@ -1,12 +1,13 @@
-import ImageData from "@/utils/image-data";
 import { transitionSlow } from "@/utils/transition";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { useRef } from "react";
 
 interface HorizontalScrollProps {
-  source: ImageData;
+  src: string | StaticImageData;
+  width: number;
+  height: number;
   alt: string;
   prompt: string;
   xSzie: "2x" | "3.5x";
@@ -40,10 +41,10 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
           })}
         >
           <Image
-            src={props.source.src}
+            src={props.src}
             alt={props.alt}
-            width={props.source.width}
-            height={props.source.height}
+            width={props.width}
+            height={props.height}
             placeholder="blur"
             unoptimized
           />
