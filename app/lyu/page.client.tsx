@@ -1,17 +1,17 @@
 "use client";
 
-import Carousel from "@/components/carousel";
-import DisplayImage from "@/components/display-image";
-import { GalleryRowLayout } from "@/components/gallery-row";
-import HorizontalGallery from "@/components/horizontal-gallery";
-import LargeGallery from "@/components/large-gallery";
-import ProjectNavigation from "@/components/project-navigation";
-import Scroller from "@/components/scroller";
-import SmallGallery from "@/components/small-gallery";
-import Subtitle from "@/components/subtitle";
-import TextImage from "@/components/text-image";
-import Title from "@/components/title";
-import TopDisplay from "@/components/top-display";
+import Carousel from "@/components/Carousel";
+import DisplayImage from "@/components/DisplayImage";
+import { GalleryRowLayout } from "@/components/GalleryRow";
+import HorizontalGallery from "@/components/HorizontalGallery";
+import LargeGallery from "@/components/LargeGallery";
+import ProjectNavigation from "@/components/ProjectNavigation";
+import Scroller from "@/components/Scroller";
+import SmallGallery from "@/components/SmallGallery";
+import Subtitle from "@/components/Subtitle";
+import TextImage from "@/components/TextImage";
+import Title from "@/components/Title";
+import TopDisplay from "@/components/TopDisplay";
 import BagMaking1 from "@/images/lyu/bag-making/bag-making-1-small.webp";
 import BagMaking2 from "@/images/lyu/bag-making/bag-making-2-small.webp";
 import BagMaking3 from "@/images/lyu/bag-making/bag-making-3-small.webp";
@@ -75,9 +75,8 @@ import TechPack4 from "@/images/lyu/tech-pack/tech-pack-4-full.webp";
 import TechPack5 from "@/images/lyu/tech-pack/tech-pack-5-full.webp";
 import TechPack6 from "@/images/lyu/tech-pack/tech-pack-6-full.webp";
 import TechPack7 from "@/images/lyu/tech-pack/tech-pack-7-full.webp";
-import GalleryItem from "@/utils/gallery-item";
-import { projectsData } from "@/utils/project-data";
-import useScroll from "@/utils/use-scroll";
+import { projectsData } from "@/utils/projectData";
+import useScroll from "@/utils/useScroll";
 
 export default function LyuClient() {
   const scrollDiv = useScroll();
@@ -106,9 +105,9 @@ export default function LyuClient() {
       <Subtitle subtitle="Ease" />
       <HorizontalGallery
         items={[
-          new GalleryItem(Ease1, "Style: Ease"),
-          new GalleryItem(Ease2, "Style: Ease"),
-          new GalleryItem(Ease3, "Style: Ease"),
+          { image: Ease1, title: "Style: Ease" },
+          { image: Ease2, title: "Style: Ease" },
+          { image: Ease3, title: "Style: Ease" },
         ]}
         sparse={false}
         botSpacing={false}
@@ -118,9 +117,9 @@ export default function LyuClient() {
       <Subtitle subtitle="Joyful" />
       <HorizontalGallery
         items={[
-          new GalleryItem(Joyful1, "Style: Joyful"),
-          new GalleryItem(Joyful2, "Style: Joyful"),
-          new GalleryItem(Joyful3, "Style: Joyful"),
+          { image: Joyful1, title: "Style: Joyful" },
+          { image: Joyful2, title: "Style: Joyful" },
+          { image: Joyful3, title: "Style: Joyful" },
         ]}
         width={960}
         height={1174}
@@ -146,15 +145,15 @@ export default function LyuClient() {
       <Title title="Tote Bag Making Process" />
       <SmallGallery
         items={[
-          new GalleryItem(BagMaking1, "Cutting Template"),
-          new GalleryItem(BagMaking2, "Material Cutting"),
-          new GalleryItem(BagMaking3, "Buckle Selection"),
-          new GalleryItem(BagMaking4, "Thinning Leather"),
-          new GalleryItem(BagMaking5, "Glue Spray"),
-          new GalleryItem(BagMaking6, "Taping Pieces"),
-          new GalleryItem(BagMaking7, "Stitch Positioning"),
-          new GalleryItem(BagMaking8, "Flat Stitching"),
-          new GalleryItem(BagMaking9, "Cylinder Sewing"),
+          { image: BagMaking1, title: "Cutting Template" },
+          { image: BagMaking2, title: "Material Cutting" },
+          { image: BagMaking3, title: "Buckle Selection" },
+          { image: BagMaking4, title: "Thinning Leather" },
+          { image: BagMaking5, title: "Glue Spray" },
+          { image: BagMaking6, title: "Taping Pieces" },
+          { image: BagMaking7, title: "Stitch Positioning" },
+          { image: BagMaking8, title: "Flat Stitching" },
+          { image: BagMaking9, title: "Cylinder Sewing" },
         ]}
         width={1534}
         height={1125}
@@ -164,21 +163,21 @@ export default function LyuClient() {
       <Title title="Slippers Making Process" />
       <SmallGallery
         items={[
-          new GalleryItem(SlipperMaking1, "Taping Design"),
-          new GalleryItem(SlipperMaking2, "Cutting Material"),
-          new GalleryItem(SlipperMaking3, "Sticking Pieces Together"),
-          new GalleryItem(SlipperMaking4, "Heating up Lining"),
-          new GalleryItem(SlipperMaking5, "Stitching"),
-          new GalleryItem(SlipperMaking6, "Making Insole"),
-          new GalleryItem(SlipperMaking7, "Closing the Back"),
-          new GalleryItem(SlipperMaking8, "Gluing"),
-          new GalleryItem(SlipperMaking9, "Hammering and Nailing"),
-          new GalleryItem(SlipperMaking10, "Putting on Shoelaces"),
-          new GalleryItem(SlipperMaking11, "Sanding the Bottom"),
-          new GalleryItem(SlipperMaking12, "Applying Glue to Sole"),
-          new GalleryItem(SlipperMaking13, "Heating up the Glue"),
-          new GalleryItem(SlipperMaking14, "Pressing Sole"),
-          new GalleryItem(SlipperMaking15, "Removing Shoe Lasts"),
+          { image: SlipperMaking1, title: "Taping Design" },
+          { image: SlipperMaking2, title: "Cutting Material" },
+          { image: SlipperMaking3, title: "Sticking Pieces Together" },
+          { image: SlipperMaking4, title: "Heating up Lining" },
+          { image: SlipperMaking5, title: "Stitching" },
+          { image: SlipperMaking6, title: "Making Insole" },
+          { image: SlipperMaking7, title: "Closing the Back" },
+          { image: SlipperMaking8, title: "Gluing" },
+          { image: SlipperMaking9, title: "Hammering and Nailing" },
+          { image: SlipperMaking10, title: "Putting on Shoelaces" },
+          { image: SlipperMaking11, title: "Sanding the Bottom" },
+          { image: SlipperMaking12, title: "Applying Glue to Sole" },
+          { image: SlipperMaking13, title: "Heating up the Glue" },
+          { image: SlipperMaking14, title: "Pressing Sole" },
+          { image: SlipperMaking15, title: "Removing Shoe Lasts" },
         ]}
         width={1534}
         height={1125}

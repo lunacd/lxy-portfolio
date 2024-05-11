@@ -1,25 +1,25 @@
-import { transitionSlow } from "@/utils/transition";
+import { transitionSlow } from "@/utils/transitions";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 
-interface ParagraphProps {
-  paragraph: string;
+interface SubtitleProps {
+  subtitle: string;
 }
 
-const Paragraph: React.FC<ParagraphProps> = (props) => {
+const Subtitle: React.FC<SubtitleProps> = (props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
     <motion.div
-      className="paragraph single mx-spacing-lg mb-8"
+      className="subtitle single mx-spacing-lg mb-8"
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}
       ref={ref}
     >
-      {props.paragraph}
+      {props.subtitle}
     </motion.div>
   );
 };
 
-export default Paragraph;
+export default Subtitle;

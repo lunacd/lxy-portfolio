@@ -1,16 +1,16 @@
 "use client";
 
-import Button from "@/components/button";
-import ProjectNavigation from "@/components/project-navigation";
-import Scroller from "@/components/scroller";
-import Spacing from "@/components/spacing";
-import TextImage from "@/components/text-image";
-import TopDisplay from "@/components/top-display";
+import Button from "@/components/Button";
+import ProjectNavigation from "@/components/ProjectNavigation";
+import Scroller from "@/components/Scroller";
+import Spacing from "@/components/Spacing";
+import TextImage from "@/components/TextImage";
+import TopDisplay from "@/components/TopDisplay";
 import RefugiaSmall from "@/images/projects/refugia-half.webp";
 import RefugiaDisplay from "@/images/refugia/display-full.webp";
 import RefugiaDisplayM from "@/images/refugia/display-mobile-half.webp";
 import Manifesto from "@/images/refugia/manifesto-half.webp";
-import useScroll from "@/utils/use-scroll";
+import useScroll from "@/utils/useScroll";
 
 const projectData = {
   uri: "refugia",

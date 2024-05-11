@@ -1,17 +1,17 @@
 "use client";
 
-import Carousel from "@/components/carousel";
-import DisplayImage from "@/components/display-image";
-import HorizontalGallery from "@/components/horizontal-gallery";
-import LargeGallery from "@/components/large-gallery";
-import ProjectNavigation from "@/components/project-navigation";
-import Scroller from "@/components/scroller";
-import SmallGallery from "@/components/small-gallery";
-import Spacing from "@/components/spacing";
-import Subtitle from "@/components/subtitle";
-import TextImage from "@/components/text-image";
-import Title from "@/components/title";
-import TopDisplay from "@/components/top-display";
+import Carousel from "@/components/Carousel";
+import DisplayImage from "@/components/DisplayImage";
+import HorizontalGallery from "@/components/HorizontalGallery";
+import LargeGallery from "@/components/LargeGallery";
+import ProjectNavigation from "@/components/ProjectNavigation";
+import Scroller from "@/components/Scroller";
+import SmallGallery from "@/components/SmallGallery";
+import Spacing from "@/components/Spacing";
+import Subtitle from "@/components/Subtitle";
+import TextImage from "@/components/TextImage";
+import Title from "@/components/Title";
+import TopDisplay from "@/components/TopDisplay";
 import Evo1 from "@/images/sunrise/evolution/evolution-1-small.webp";
 import Evo2 from "@/images/sunrise/evolution/evolution-2-small.webp";
 import Evo3 from "@/images/sunrise/evolution/evolution-3-small.webp";
@@ -53,9 +53,8 @@ import Ortho3 from "@/images/sunrise/ortho/ortho-3-full.webp";
 import Ortho4 from "@/images/sunrise/ortho/ortho-4-full.webp";
 import Ortho5 from "@/images/sunrise/ortho/ortho-5-full.webp";
 import UsageScenario from "@/images/sunrise/usage-scenario-full.webp";
-import GalleryItem from "@/utils/gallery-item";
-import { projectsData } from "@/utils/project-data";
-import useScroll from "@/utils/use-scroll";
+import { projectsData } from "@/utils/projectData";
+import useScroll from "@/utils/useScroll";
 
 export default function SunriseClient() {
   const scrollDiv = useScroll();
@@ -88,9 +87,9 @@ export default function SunriseClient() {
       <Subtitle subtitle="Balcony Speaker Form Inspiration " />
       <HorizontalGallery
         items={[
-          new GalleryItem(Form1, "Slope"),
-          new GalleryItem(Form2, "Segmented"),
-          new GalleryItem(Form3, "Round"),
+          { image: Form1, title: "Slope" },
+          { image: Form2, title: "Segmented" },
+          { image: Form3, title: "Round" },
         ]}
         width={640}
         height={866}
@@ -100,9 +99,9 @@ export default function SunriseClient() {
       <Subtitle subtitle="Balcony Speaker Details Inspiration " />
       <HorizontalGallery
         items={[
-          new GalleryItem(Detail1, "Chamfer"),
-          new GalleryItem(Detail2, "Rope Wrapping"),
-          new GalleryItem(Detail3, "Transparent"),
+          { image: Detail1, title: "Chamfer" },
+          { image: Detail2, title: "Rope Wrapping" },
+          { image: Detail3, title: "Transparent" },
         ]}
         width={640}
         height={560}
@@ -123,10 +122,10 @@ export default function SunriseClient() {
         <Title title="Model Evolution" textColor="text-white" />
         <HorizontalGallery
           items={[
-            new GalleryItem(Evo1, "Model Evolution"),
-            new GalleryItem(Evo2, "Model Evolution"),
-            new GalleryItem(Evo3, "Model Evolution"),
-            new GalleryItem(Evo4, "Model Evolution"),
+            { image: Evo1, title: "Model Evolution" },
+            { image: Evo2, title: "Model Evolution" },
+            { image: Evo3, title: "Model Evolution" },
+            { image: Evo4, title: "Model Evolution" },
           ]}
           width={640}
           height={543}
@@ -157,21 +156,21 @@ export default function SunriseClient() {
         <Title title="Final model making Process" textColor="text-white" />
         <SmallGallery
           items={[
-            new GalleryItem(Making1, "20lb Foam Route Template"),
-            new GalleryItem(Making2, "Foam Frame and Stander Making"),
-            new GalleryItem(Making3, "Bondo"),
-            new GalleryItem(Making4, "Spraying Primer"),
-            new GalleryItem(Making5, "Broken Repair & Bondo Sanding"),
-            new GalleryItem(Making6, "Color Paint and Clear Coat"),
-            new GalleryItem(Making7, "Sanding - 800 Grid"),
-            new GalleryItem(Making8, "Matte Paint"),
-            new GalleryItem(Making9, "Wire Soldering"),
-            new GalleryItem(Making10, "Inside Structure Making"),
-            new GalleryItem(Making11, "Chamfer Making"),
-            new GalleryItem(Making12, "Acrylic Spray Paint"),
-            new GalleryItem(Making13, "Foam Taping for Sealing"),
-            new GalleryItem(Making14, "Buttons Making"),
-            new GalleryItem(Making15, "Mounting up All Parts"),
+            { image: Making1, title: "20lb Foam Route Template" },
+            { image: Making2, title: "Foam Frame and Stander Making" },
+            { image: Making3, title: "Bondo" },
+            { image: Making4, title: "Spraying Primer" },
+            { image: Making5, title: "Broken Repair & Bondo Sanding" },
+            { image: Making6, title: "Color Paint and Clear Coat" },
+            { image: Making7, title: "Sanding - 800 Grid" },
+            { image: Making8, title: "Matte Paint" },
+            { image: Making9, title: "Wire Soldering" },
+            { image: Making10, title: "Inside Structure Making" },
+            { image: Making11, title: "Chamfer Making" },
+            { image: Making12, title: "Acrylic Spray Paint" },
+            { image: Making13, title: "Foam Taping for Sealing" },
+            { image: Making14, title: "Buttons Making" },
+            { image: Making15, title: "Mounting up All Parts" },
           ]}
           width={640}
           height={470}

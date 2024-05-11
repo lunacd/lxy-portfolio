@@ -1,4 +1,4 @@
-import Spacing from "./spacing";
+import Spacing from "@/components/Spacing";
 import React, { PropsWithChildren, RefObject } from "react";
 
 interface ScrollerProps {

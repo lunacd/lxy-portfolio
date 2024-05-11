@@ -1,9 +1,8 @@
 "use client";
 
-import { useGlobalStateContext } from "@/utils/globalStateContext";
-import { projectsData } from "@/utils/project-data";
-import { sidebarRoutes } from "@/utils/project-data";
-import { transitionFast as transitionDefault } from "@/utils/transition";
+import { useGlobalStateContext } from "@/utils/GlobalStateContext";
+import { projectsData, sidebarRoutes } from "@/utils/projectData";
+import { transitionFast as transitionDefault } from "@/utils/transitions";
 import { useMediaQuery } from "@chakra-ui/react";
 import {
   IconBrandInstagram,

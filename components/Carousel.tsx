@@ -1,4 +1,4 @@
-import { transitionFast, transitionSlow } from "@/utils/transition";
+import { transitionFast, transitionSlow } from "@/utils/transitions";
 import { useMediaQuery } from "@chakra-ui/react";
 import {
   IconChevronLeft,

@@ -1,5 +1,5 @@
-import { projects } from "./project-data";
-import { GlobalState, GlobalStateAction } from "@/utils/globalState";
+import { projects } from "./projectData";
+import { GlobalState, GlobalStateAction } from "@/utils/GlobalState";
 import { Dispatch, createContext, useContext } from "react";
 
 const defaultState = {

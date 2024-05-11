@@ -1,15 +1,15 @@
 "use client";
 
-import DisplayImage from "@/components/display-image";
-import HorizontalGallery from "@/components/horizontal-gallery";
-import HorizontalScroll from "@/components/horizontal-scroll";
-import LargeGallery from "@/components/large-gallery";
-import ProjectNavigation from "@/components/project-navigation";
-import Scroller from "@/components/scroller";
-import Spacing from "@/components/spacing";
-import TextImage from "@/components/text-image";
-import Title from "@/components/title";
-import TopDisplay from "@/components/top-display";
+import DisplayImage from "@/components/DisplayImage";
+import HorizontalGallery from "@/components/HorizontalGallery";
+import HorizontalScroll from "@/components/HorizontalScroll";
+import LargeGallery from "@/components/LargeGallery";
+import ProjectNavigation from "@/components/ProjectNavigation";
+import Scroller from "@/components/Scroller";
+import Spacing from "@/components/Spacing";
+import TextImage from "@/components/TextImage";
+import Title from "@/components/Title";
+import TopDisplay from "@/components/TopDisplay";
 import Brake1 from "@/images/m-tron/brake-1-full.webp";
 import Brake2 from "@/images/m-tron/brake-2-full.webp";
 import Charger1 from "@/images/m-tron/charger-1-full.webp";
@@ -31,10 +31,9 @@ import Moodboard2 from "@/images/m-tron/moodboard/light-and-curve-small.webp";
 import Moodboard3 from "@/images/m-tron/moodboard/surface-change-small.webp";
 import UserScenario from "@/images/m-tron/scenario-6x.webp";
 import SpeedController from "@/images/m-tron/speed-controller-full.webp";
-import GalleryItem from "@/utils/gallery-item";
-import { projectsData } from "@/utils/project-data";
-import useFrameIndex from "@/utils/use-frame-index";
-import useScroll from "@/utils/use-scroll";
+import { projectsData } from "@/utils/projectData";
+import useFrameIndex from "@/utils/useFrameIndex";
+import useScroll from "@/utils/useScroll";
 
 export default function MTronClient() {
   const scrollDiv = useScroll();
@@ -75,9 +74,9 @@ export default function MTronClient() {
       <Title title="Moodboard" textColor="text-white" />
       <HorizontalGallery
         items={[
-          new GalleryItem(Moodboard1, "Futuristic"),
-          new GalleryItem(Moodboard2, "Light and Curve Line"),
-          new GalleryItem(Moodboard3, "Surface Change"),
+          { image: Moodboard1, title: "Futuristic" },
+          { image: Moodboard2, title: "Light and Curve Line" },
+          { image: Moodboard3, title: "Surface Change" },
         ]}
         width={640}
         height={431}

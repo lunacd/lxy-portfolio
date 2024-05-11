@@ -1,4 +1,4 @@
-import { projects } from "./project-data";
+import { projects } from "@/utils/projectData";
 
 export function getInitialState(pathname: string): GlobalState {
   let currentProjectIndex: number;

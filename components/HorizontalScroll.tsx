@@ -1,4 +1,4 @@
-import { transitionSlow } from "@/utils/transition";
+import { transitionSlow } from "@/utils/transitions";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";

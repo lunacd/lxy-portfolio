@@ -1,5 +1,5 @@
-import { AnimationData } from "./animatable";
-import GalleryRow, { GalleryRowLayout } from "./gallery-row";
+import { AnimationData } from "@/components/Animatable";
+import GalleryRow, { GalleryRowLayout } from "@/components/GalleryRow";
 import classNames from "classnames";
 import React, { useState } from "react";
 import { useInterval } from "usehooks-ts";

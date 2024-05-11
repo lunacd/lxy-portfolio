@@ -1,9 +1,9 @@
 "use client";
 
-import TopDisplay from "@/components/top-display";
-import { useGlobalStateContext } from "@/utils/globalStateContext";
-import { projectsData } from "@/utils/project-data";
-import { transitionSlow } from "@/utils/transition";
+import TopDisplay from "@/components/TopDisplay";
+import { useGlobalStateContext } from "@/utils/GlobalStateContext";
+import { projectsData } from "@/utils/projectData";
+import { transitionSlow } from "@/utils/transitions";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import { useInterval } from "usehooks-ts";

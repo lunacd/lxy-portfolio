@@ -1,4 +1,4 @@
-import { useGlobalStateContext } from "./globalStateContext";
+import { useGlobalStateContext } from "./GlobalStateContext";
 import { useEffect, useRef, useState } from "react";
 
 export default function useScroll() {

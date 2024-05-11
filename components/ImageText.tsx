@@ -1,5 +1,5 @@
-import Animatable, { AnimationData } from "./animatable";
-import { transitionSlow } from "@/utils/transition";
+import Animatable, { AnimationData } from "@/components/Animatable";
+import { transitionSlow } from "@/utils/transitions";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 

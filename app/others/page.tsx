@@ -1,6 +1,6 @@
-import ProjectsGallery from "@/components/projects-gallery";
-import Scroller from "@/components/scroller";
-import { otherProjectsData } from "@/utils/project-data";
+import ProjectsGallery from "@/components/ProjectsGallery";
+import Scroller from "@/components/Scroller";
+import { otherProjectsData } from "@/utils/projectData";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,18 +1,18 @@
 "use client";
 
-import Carousel from "@/components/carousel";
-import DisplayImage from "@/components/display-image";
-import HorizontalGallery from "@/components/horizontal-gallery";
-import ImageText from "@/components/image-text";
-import LargeGallery from "@/components/large-gallery";
-import ProjectNavigation from "@/components/project-navigation";
-import Scroller from "@/components/scroller";
-import SmallGallery from "@/components/small-gallery";
-import Spacing from "@/components/spacing";
-import Subtitle from "@/components/subtitle";
-import TextImage from "@/components/text-image";
-import Title from "@/components/title";
-import TopDisplay from "@/components/top-display";
+import Carousel from "@/components/Carousel";
+import DisplayImage from "@/components/DisplayImage";
+import HorizontalGallery from "@/components/HorizontalGallery";
+import ImageText from "@/components/ImageText";
+import LargeGallery from "@/components/LargeGallery";
+import ProjectNavigation from "@/components/ProjectNavigation";
+import Scroller from "@/components/Scroller";
+import SmallGallery from "@/components/SmallGallery";
+import Spacing from "@/components/Spacing";
+import Subtitle from "@/components/Subtitle";
+import TextImage from "@/components/TextImage";
+import Title from "@/components/Title";
+import TopDisplay from "@/components/TopDisplay";
 import Benchmark from "@/images/overlap/benchmark-full.webp";
 import CMF1 from "@/images/overlap/cmf/cmf-1-full.webp";
 import CMF2 from "@/images/overlap/cmf/cmf-2-full.webp";
@@ -74,10 +74,9 @@ import TimerUseImage from "@/images/overlap/timer-use-big.webp";
 import TrayImage from "@/images/overlap/tray-half.webp";
 import TrayUseImage1 from "@/images/overlap/tray-use-1-big.webp";
 import TrayUseImage2 from "@/images/overlap/tray-use-2-big.webp";
-import GalleryItem from "@/utils/gallery-item";
-import { projectsData } from "@/utils/project-data";
-import useFrameIndex from "@/utils/use-frame-index";
-import useScroll from "@/utils/use-scroll";
+import { projectsData } from "@/utils/projectData";
+import useFrameIndex from "@/utils/useFrameIndex";
+import useScroll from "@/utils/useScroll";
 
 export default function OverlapClient() {
   const scrollDiv = useScroll();
@@ -106,11 +105,17 @@ export default function OverlapClient() {
       <Title title="Overlap Set" />
       <HorizontalGallery
         items={[
-          new GalleryItem(Set1, "Timer", ["Section Time"]),
-          new GalleryItem(Set2, "File Sorter", [
-            "Categorize files, books, etc.",
-          ]),
-          new GalleryItem(Set3, "Tray", ["Store pens, pins, etc."]),
+          { image: Set1, title: "Timer", content: ["Section Time"] },
+          {
+            image: Set2,
+            title: "File Sorter",
+            content: ["Categorize files, books, etc."],
+          },
+          {
+            image: Set3,
+            title: "Tray",
+            content: ["Store pens, pins, etc."],
+          },
         ]}
         sparse={true}
         width={1084}
@@ -238,11 +243,11 @@ export default function OverlapClient() {
       <Subtitle subtitle="HAY's Brand DNA Analysis" />
       <HorizontalGallery
         items={[
-          new GalleryItem(DNA1, "Playful"),
-          new GalleryItem(DNA2, "Accessible"),
-          new GalleryItem(DNA3, "Adaptive"),
-          new GalleryItem(DNA4, "Contemporary"),
-          new GalleryItem(DNA5, "Vibrant"),
+          { image: DNA1, title: "Playful" },
+          { image: DNA2, title: "Accessible" },
+          { image: DNA3, title: "Adaptive" },
+          { image: DNA4, title: "Contemporary" },
+          { image: DNA5, title: "Vibrant" },
         ]}
         sparse={false}
         width={926}
@@ -285,18 +290,18 @@ export default function OverlapClient() {
       <Title title="Final Model Making Process" />
       <SmallGallery
         items={[
-          new GalleryItem(Process1, "Wood Cut"),
-          new GalleryItem(Process2, "Wood Flatten"),
-          new GalleryItem(Process3, "CNC"),
-          new GalleryItem(Process4, "Laser Cut"),
-          new GalleryItem(Process5, "Band Saw Cut"),
-          new GalleryItem(Process6, "Machine Sanding"),
-          new GalleryItem(Process7, "Hand Sanding"),
-          new GalleryItem(Process8, "Router Chamfer"),
-          new GalleryItem(Process9, "Wood Stain"),
-          new GalleryItem(Process10, "Acrylic Gluing"),
-          new GalleryItem(Process11, "Clear Matte Finish Spray"),
-          new GalleryItem(Process12, "Assembly"),
+          { image: Process1, title: "Wood Cut" },
+          { image: Process2, title: "Wood Flatten" },
+          { image: Process3, title: "CNC" },
+          { image: Process4, title: "Laser Cut" },
+          { image: Process5, title: "Band Saw Cut" },
+          { image: Process6, title: "Machine Sanding" },
+          { image: Process7, title: "Hand Sanding" },
+          { image: Process8, title: "Router Chamfer" },
+          { image: Process9, title: "Wood Stain" },
+          { image: Process10, title: "Acrylic Gluing" },
+          { image: Process11, title: "Clear Matte Finish Spray" },
+          { image: Process12, title: "Assembly" },
         ]}
         width={3063}
         height={2248}

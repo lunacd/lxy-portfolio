@@ -1,4 +1,3 @@
-import Route from "./route";
 import { StaticImageData } from "next/image";
 
 import LyuDisplay from "../images/lyu/display-full.webp";
@@ -222,14 +221,32 @@ export const otherProjectsData = [
   },
 ];
 
+interface Route {
+  uri: string;
+  name: string;
+  link: string;
+  typeClass: string;
+}
+
+export default Route;
 export const sidebarRoutes = [
-  new Route("about", "About", "/about", "subtitle"),
-  new Route("projects", "Projects", "/projects", "subtitle"),
-  new Route("soul", "Soul", "/soul", "paragraph"),
-  new Route("skates", "Skates", "/skates", "paragraph"),
-  new Route("overlap", "Overlap", "/overlap", "paragraph"),
-  new Route("sunrise", "Sunrise Speaker", "/sunrise", "paragraph"),
-  new Route("m-tron", "M-Tron", "/m-tron", "paragraph"),
-  new Route("lyu", "Lyu", "/lyu", "paragraph"),
-  new Route("others", "More Work", "/others", "subtitle"),
+  { uri: "about", name: "About", link: "/about", typeClass: "subtitle" },
+  {
+    uri: "projects",
+    name: "Projects",
+    link: "/projects",
+    typeClass: "subtitle",
+  },
+  { uri: "soul", name: "Soul", link: "/soul", typeClass: "paragraph" },
+  { uri: "skates", name: "Skates", link: "/skates", typeClass: "paragraph" },
+  { uri: "overlap", name: "Overlap", link: "/overlap", typeClass: "paragraph" },
+  {
+    uri: "sunrise",
+    name: "Sunrise Speaker",
+    link: "/sunrise",
+    typeClass: "paragraph",
+  },
+  { uri: "m-tron", name: "M-Tron", link: "/m-tron", typeClass: "paragraph" },
+  { uri: "lyu", name: "Lyu", link: "/lyu", typeClass: "paragraph" },
+  { uri: "others", name: "More Work", link: "/others", typeClass: "subtitle" },
 ];

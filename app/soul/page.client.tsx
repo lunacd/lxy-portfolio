@@ -1,18 +1,18 @@
 "use client";
 
-import Button from "@/components/button";
-import DisplayImage from "@/components/display-image";
-import HorizontalGallery from "@/components/horizontal-gallery";
-import ImageText from "@/components/image-text";
-import LargeGallery from "@/components/large-gallery";
-import Paragraph from "@/components/paragraph";
-import ProjectNavigation from "@/components/project-navigation";
-import Scroller from "@/components/scroller";
-import Spacing from "@/components/spacing";
-import Subtitle from "@/components/subtitle";
-import TextImage from "@/components/text-image";
-import Title from "@/components/title";
-import TopDisplay from "@/components/top-display";
+import Button from "@/components/Button";
+import DisplayImage from "@/components/DisplayImage";
+import HorizontalGallery from "@/components/HorizontalGallery";
+import ImageText from "@/components/ImageText";
+import LargeGallery from "@/components/LargeGallery";
+import Paragraph from "@/components/Paragraph";
+import ProjectNavigation from "@/components/ProjectNavigation";
+import Scroller from "@/components/Scroller";
+import Spacing from "@/components/Spacing";
+import Subtitle from "@/components/Subtitle";
+import TextImage from "@/components/TextImage";
+import Title from "@/components/Title";
+import TopDisplay from "@/components/TopDisplay";
 import BrandResearch from "@/images/soul/brand-research-full.webp";
 import BrandValue from "@/images/soul/brand-value-half.webp";
 import ChargerTech from "@/images/soul/charger-tech-full.webp";
@@ -54,10 +54,9 @@ import Target1 from "@/images/soul/target-01-small.webp";
 import Target2 from "@/images/soul/target-02-small.webp";
 import Target3 from "@/images/soul/target-03-small.webp";
 import UserNeed from "@/images/soul/user-half.webp";
-import GalleryItem from "@/utils/gallery-item";
-import { projectsData } from "@/utils/project-data";
-import useFrameIndex from "@/utils/use-frame-index";
-import useScroll from "@/utils/use-scroll";
+import { projectsData } from "@/utils/projectData";
+import useFrameIndex from "@/utils/useFrameIndex";
+import useScroll from "@/utils/useScroll";
 
 export default function SoulClient() {
   const scrollDiv = useScroll();
@@ -139,18 +138,27 @@ export default function SoulClient() {
       <Title title="What does Rolls-Royce Meditation provide?" />
       <HorizontalGallery
         items={[
-          new GalleryItem(Target1, "Seamless Interaction", [
-            "- High quality light, scent, and sound",
-            "- Comfortable interaction",
-          ]),
-          new GalleryItem(Target2, "Customizable", [
-            "- Different soothing sounds options",
-            "- Customizable light, fragrance, and mist density",
-          ]),
-          new GalleryItem(Target3, "Simplicity", [
-            "- Automatic startup",
-            "- No disruption",
-          ]),
+          {
+            image: Target1,
+            title: "Seamless Interaction",
+            content: [
+              "- High quality light, scent, and sound",
+              "- Comfortable interaction",
+            ],
+          },
+          {
+            image: Target2,
+            title: "Customizable",
+            content: [
+              "- Different soothing sounds options",
+              "- Customizable light, fragrance, and mist density",
+            ],
+          },
+          {
+            image: Target3,
+            title: "Simplicity",
+            content: ["- Automatic startup", "- No disruption"],
+          },
         ]}
         width={640}
         height={431}
@@ -206,12 +214,16 @@ export default function SoulClient() {
       <Title title="Rolls-Royce Meditation Proposal" />
       <HorizontalGallery
         items={[
-          new GalleryItem(Instrument1, "Soul Instrument", [
-            "Self-perfection through sound and touch",
-          ]),
-          new GalleryItem(Light1, "Ambient Lighting Lamp", [
-            "Self-perfection through sight",
-          ]),
+          {
+            image: Instrument1,
+            title: "Soul Instrument",
+            content: ["Self-perfection through sound and touch"],
+          },
+          {
+            image: Light1,
+            title: "Ambient Lighting Lamp",
+            content: ["Self-perfection through sight"],
+          },
         ]}
         width={960}
         height={645}
@@ -370,9 +382,9 @@ export default function SoulClient() {
       <Title title="Different Color Ways" />
       <HorizontalGallery
         items={[
-          new GalleryItem(ColorWay1, "Nature Explorer"),
-          new GalleryItem(ColorWay2, "Pure Spirit"),
-          new GalleryItem(ColorWay3, "Wise Contemplative"),
+          { image: ColorWay1, title: "Nature Explorer" },
+          { image: ColorWay2, title: "Pure Spirit" },
+          { image: ColorWay3, title: "Wise Contemplative" },
         ]}
         width={960}
         height={832}

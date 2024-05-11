@@ -1,18 +1,18 @@
 "use client";
 
-import DisplayImage from "@/components/display-image";
-import { GalleryRowLayout } from "@/components/gallery-row";
-import HorizontalGallery from "@/components/horizontal-gallery";
-import HorizontalScroll from "@/components/horizontal-scroll";
-import LargeGallery from "@/components/large-gallery";
-import ProjectNavigation from "@/components/project-navigation";
-import Scroller from "@/components/scroller";
-import SmallGallery from "@/components/small-gallery";
-import Spacing from "@/components/spacing";
-import Subtitle from "@/components/subtitle";
-import TextImage from "@/components/text-image";
-import Title from "@/components/title";
-import TopDisplay from "@/components/top-display";
+import DisplayImage from "@/components/DisplayImage";
+import { GalleryRowLayout } from "@/components/GalleryRow";
+import HorizontalGallery from "@/components/HorizontalGallery";
+import HorizontalScroll from "@/components/HorizontalScroll";
+import LargeGallery from "@/components/LargeGallery";
+import ProjectNavigation from "@/components/ProjectNavigation";
+import Scroller from "@/components/Scroller";
+import SmallGallery from "@/components/SmallGallery";
+import Spacing from "@/components/Spacing";
+import Subtitle from "@/components/Subtitle";
+import TextImage from "@/components/TextImage";
+import Title from "@/components/Title";
+import TopDisplay from "@/components/TopDisplay";
 import Belonging1 from "@/images/skates/belonging-1-small.webp";
 import Belonging2 from "@/images/skates/belonging-2-small.webp";
 import Belonging3 from "@/images/skates/belonging-3-small.webp";
@@ -51,9 +51,8 @@ import TechDrawing from "@/images/skates/tech-drawing-full.webp";
 import Usage from "@/images/skates/usage-desktop-full.webp";
 import UsageM1 from "@/images/skates/usage-mobile-1-half.webp";
 import UsageM2 from "@/images/skates/usage-mobile-2-half.webp";
-import GalleryItem from "@/utils/gallery-item";
-import { projectsData } from "@/utils/project-data";
-import useScroll from "@/utils/use-scroll";
+import { projectsData } from "@/utils/projectData";
+import useScroll from "@/utils/useScroll";
 
 export default function SoulClient() {
   const scrollDiv = useScroll();
@@ -148,10 +147,10 @@ export default function SoulClient() {
       <Subtitle subtitle="Create a Sense of Belonging" />
       <HorizontalGallery
         items={[
-          new GalleryItem(Belonging1, "Interactive"),
-          new GalleryItem(Belonging2, "Comfortable"),
-          new GalleryItem(Belonging3, "Welcoming"),
-          new GalleryItem(Belonging4, "Enjoyable"),
+          { image: Belonging1, title: "Interactive" },
+          { image: Belonging2, title: "Comfortable" },
+          { image: Belonging3, title: "Welcoming" },
+          { image: Belonging4, title: "Enjoyable" },
         ]}
         width={640}
         height={529}
@@ -185,21 +184,21 @@ export default function SoulClient() {
       <Title title="Model Making" />
       <SmallGallery
         items={[
-          new GalleryItem(Making1, "Water Jet Cutting"),
-          new GalleryItem(Making2, "Steel Tube Bending and Welding"),
-          new GalleryItem(Making3, "Steel Sanding"),
-          new GalleryItem(Making4, "Holes and Chamfer Making"),
-          new GalleryItem(Making5, "Preparing J-Panel"),
-          new GalleryItem(Making6, "J-Panel Cutting"),
-          new GalleryItem(Making7, "Plywood Gluing"),
-          new GalleryItem(Making8, "Screwing on Steel Support Sheets"),
-          new GalleryItem(Making9, "Lining up Screw Holes"),
-          new GalleryItem(Making10, "Installing T-nuts"),
-          new GalleryItem(Making11, "Selecting Foams"),
-          new GalleryItem(Making12, "Stitching Upholstery"),
-          new GalleryItem(Making13, "Powder Coating"),
-          new GalleryItem(Making14, "Installing Glides under Tubes"),
-          new GalleryItem(Making15, "Assembly"),
+          { image: Making1, title: "Water Jet Cutting" },
+          { image: Making2, title: "Steel Tube Bending and Welding" },
+          { image: Making3, title: "Steel Sanding" },
+          { image: Making4, title: "Holes and Chamfer Making" },
+          { image: Making5, title: "Preparing J-Panel" },
+          { image: Making6, title: "J-Panel Cutting" },
+          { image: Making7, title: "Plywood Gluing" },
+          { image: Making8, title: "Screwing on Steel Support Sheets" },
+          { image: Making9, title: "Lining up Screw Holes" },
+          { image: Making10, title: "Installing T-nuts" },
+          { image: Making11, title: "Selecting Foams" },
+          { image: Making12, title: "Stitching Upholstery" },
+          { image: Making13, title: "Powder Coating" },
+          { image: Making14, title: "Installing Glides under Tubes" },
+          { image: Making15, title: "Assembly" },
         ]}
         width={640}
         height={470}

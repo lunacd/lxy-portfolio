@@ -1,5 +1,5 @@
-import GalleryItem from "@/utils/gallery-item";
-import { transitionSlow } from "@/utils/transition";
+import GalleryItem from "@/utils/GalleryItem";
+import { transitionSlow } from "@/utils/transitions";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
