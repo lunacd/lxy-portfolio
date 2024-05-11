@@ -39,17 +39,16 @@ import Traveller5 from "@/images/about/traveller-5-small.webp";
 import Traveller6 from "@/images/about/traveller-6-small.webp";
 import { transitionFast } from "@/utils/transition";
 import useFrameIndex from "@/utils/use-frame-index";
+import { IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
 const Tools = [Tool1, Tool2, Tool3, Tool4, Tool5, Tool6, Tool7, Tool8, Tool9];
 
-export default function AboutClient() {
+function VideoGallery() {
   const frame = useFrameIndex(3000);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   const [overlayOpen, setOverlayOpen] = useState(false);
   const [videoLink, setVideoLink] = useState(
     "https://www.youtube.com/embed/cH5WShEmoR8",
@@ -64,306 +63,59 @@ export default function AboutClient() {
   }, [searchParams]);
   return (
     <>
-      <Scroller bgColor="bg-[#FDF9F1]">
-        {/* Extra spacing on mobile */}
-        <div className="pt-16"></div>
-
-        {/* Profile */}
-        <div className="single my-spacing-lg grid gap-spacing lg:grid-cols-2">
-          <div className="about_rounded">
-            <Image
-              src={Profile}
-              width={960}
-              height={900}
-              alt="Shirley Lyu profile photo"
-              placeholder="blur"
-            />
-          </div>
-          <div className="lg:self-end">
-            Hello! This is Shirley Lyu. I am a product designer with an infinite
-            range of ideas. I am interested in lifestyle products, spatial
-            experience, sustainability, social innovation, soft goods, and
-            consumer electronics.
+      {/* Desktop first row */}
+      <div className="single mb-4 hidden grid-cols-12 gap-4 lg:grid">
+        {/* Social innovator */}
+        <div
+          className="about_rounded relative col-span-6 col-start-2 cursor-pointer"
+          onClick={() => {
+            setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
+            setOverlayOpen(true);
+          }}
+        >
+          <video
+            src="/social-innovator.mp4"
+            autoPlay
+            loop
+            className="about_darken"
+          />
+          <div className="about_textOverlay">
+            <div>Social Innovator</div>
           </div>
         </div>
 
-        {/* Resume */}
-        <Button text="Resume" href="/resume.pdf" />
-        <Spacing size="large" />
-
-        <Title title="Who I am" />
-
-        {/* Desktop first row */}
-        <div className="single mb-4 hidden grid-cols-12 gap-4 lg:grid">
-          {/* Social innovator */}
-          <div
-            className="about_rounded relative col-span-6 col-start-2 cursor-pointer"
-            onClick={() => {
-              setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
-              setOverlayOpen(true);
-            }}
-          >
-            <video
-              src="/social-innovator.mp4"
-              autoPlay
-              loop
-              className="about_darken"
-            />
-            <div className="about_textOverlay">
-              <div>Social Innovator</div>
-            </div>
-          </div>
-
-          {/* Traveller */}
-          <div className="about_rounded relative col-span-4 col-start-8 self-end">
-            <div className="about_darken w-full">
-              <Animatable
-                source={{
-                  frames: [
-                    { src: Traveller1 },
-                    { src: Traveller2 },
-                    { src: Traveller3 },
-                    { src: Traveller4 },
-                    { src: Traveller5 },
-                    { src: Traveller6 },
-                  ],
-                  width: 640,
-                  height: 440,
-                }}
-                frame={frame}
-                alt="Traveller"
-              />
-            </div>
-            <div className="about_textOverlay">
-              <div>Traveller</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Desktop second row */}
-        <div className="single mb-spacing-3lg hidden grid-cols-12 gap-4 lg:grid">
-          {/* Desktop first col of second row */}
-          <div className="col-span-3 space-y-4">
-            {/* Craftsperson */}
-            <div className="about_rounded relative">
-              <div className="about_darken w-full">
-                <Animatable
-                  source={{
-                    frames: [
-                      { src: CraftsPerson1 },
-                      { src: CraftsPerson2 },
-                      { src: CraftsPerson3 },
-                    ],
-                    width: 640,
-                    height: 652,
-                  }}
-                  frame={frame}
-                  alt="Craftsperson"
-                />
-              </div>
-              <div className="about_textOverlay">
-                <div>Craftsperson</div>
-              </div>
-            </div>
-
-            {/* Photographer */}
-            <div className="about_rounded relative">
-              <div className="about_darken w-full">
-                <Animatable
-                  source={{
-                    frames: [
-                      { src: Photo1 },
-                      { src: Photo2 },
-                      { src: Photo3 },
-                      { src: Photo4 },
-                      { src: Photo5 },
-                    ],
-                    width: 640,
-                    height: 669,
-                  }}
-                  frame={frame}
-                  alt="Photographer"
-                />
-              </div>
-              <div className="about_textOverlay">
-                <div>Photographer</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop second col second row */}
-          <div className="col-span-9 col-start-4 space-y-4">
-            {/* Desktop second col second row, inner first row */}
-            <div className="flex flex-row gap-4">
-              {/* Nature observer */}
-              <div
-                className="about_rounded relative"
-                style={{ flex: 960 / 606 }}
-              >
-                <video
-                  src="/nature-observer.mp4"
-                  autoPlay
-                  loop
-                  className="about_darken"
-                />
-                <div className="about_textOverlay">
-                  <div>Nature Observer</div>
-                </div>
-              </div>
-              {/* Dog lover */}
-              <div
-                className="about_rounded relative"
-                style={{
-                  flex: 640 / 838,
-                }}
-              >
-                <div className="about_darken w-full">
-                  <Animatable
-                    source={{
-                      frames: [
-                        { src: Dog1 },
-                        { src: Dog2 },
-                        { src: Dog3 },
-                        { src: Dog4 },
-                      ],
-                      width: 640,
-                      height: 838,
-                    }}
-                    frame={frame}
-                    alt="Dog lover"
-                  />
-                </div>
-                <div className="about_textOverlay">
-                  <div>Dog Lover</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Desktop second col second row, inner second row */}
-            <div className="grid grid-cols-9 gap-4">
-              {/* Thinker */}
-              <div className="about_rounded relative col-span-3">
-                <div className="about_darken w-full">
-                  <Animatable
-                    source={{
-                      frames: [
-                        { src: Thinker1 },
-                        { src: Thinker2 },
-                        { src: Thinker3 },
-                      ],
-                      width: 640,
-                      height: 933,
-                    }}
-                    frame={frame}
-                    alt="Thinker"
-                  />
-                </div>
-                <div className="about_textOverlay">
-                  <div>Thinker</div>
-                </div>
-              </div>
-              {/* Sports lover */}
-              <div className="about_rounded relative col-span-4 self-start">
-                <Image
-                  className="about_darken"
-                  src={Sports}
-                  alt="Sports Lover"
-                  width={480}
-                  height={360}
-                />
-                <div className="about_textOverlay">
-                  <div>Sports Lover</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile */}
-        {/* First row: Thinker / Social innovator */}
-        <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
-          <div className="about_rounded relative" style={{ flex: 640 / 933 }}>
+        {/* Traveller */}
+        <div className="about_rounded relative col-span-4 col-start-8 self-end">
+          <div className="about_darken w-full">
             <Animatable
               source={{
                 frames: [
-                  { src: Thinker1 },
-                  { src: Thinker2 },
-                  { src: Thinker3 },
+                  { src: Traveller1 },
+                  { src: Traveller2 },
+                  { src: Traveller3 },
+                  { src: Traveller4 },
+                  { src: Traveller5 },
+                  { src: Traveller6 },
                 ],
                 width: 640,
-                height: 933,
+                height: 440,
               }}
               frame={frame}
-              alt="Thinker"
+              alt="Traveller"
             />
-            <div className="about_textOverlay">
-              <div>Thinker</div>
-            </div>
           </div>
-          <div
-            className="about_rounded relative cursor-pointer"
-            onClick={() => {
-              setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
-              setOverlayOpen(true);
-            }}
-            style={{ flex: 960 / 580 }}
-          >
-            <video
-              src="/social-innovator.mp4"
-              autoPlay
-              loop
-              className="about_darken"
-            />
-            <div className="about_textOverlay">
-              <div>Social Innovator</div>
-            </div>
+          <div className="about_textOverlay">
+            <div>Traveller</div>
           </div>
         </div>
+      </div>
 
-        {/* Second row: Nature observer / Dog lover */}
-        <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
-          <div className="about_rounded relative" style={{ flex: 960 / 606 }}>
-            <video
-              src="/nature-observer.mp4"
-              autoPlay
-              loop
-              className="about_darken"
-            />
-            <div className="about_textOverlay">
-              <div>Nature Observer</div>
-            </div>
-          </div>
-          <div
-            className="about_rounded relative"
-            style={{
-              flex: 640 / 838,
-            }}
-          >
-            <div className="about_darken w-full">
-              <Animatable
-                source={{
-                  frames: [
-                    { src: Dog1 },
-                    { src: Dog2 },
-                    { src: Dog3 },
-                    { src: Dog4 },
-                  ],
-                  width: 640,
-                  height: 838,
-                }}
-                frame={frame}
-                alt="Dog lover"
-              />
-            </div>
-            <div className="about_textOverlay">
-              <div>Dog Lover</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Third row: Craftsperson / Traveller */}
-        <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
-          <div className="about_rounded relative" style={{ flex: 640 / 652 }}>
+      {/* Desktop second row */}
+      <div className="single mb-spacing-3lg hidden grid-cols-12 gap-4 lg:grid">
+        {/* Desktop first col of second row */}
+        <div className="col-span-3 space-y-4">
+          {/* Craftsperson */}
+          <div className="about_rounded relative">
             <div className="about_darken w-full">
               <Animatable
                 source={{
@@ -383,51 +135,9 @@ export default function AboutClient() {
               <div>Craftsperson</div>
             </div>
           </div>
-          <div className="about_rounded relative" style={{ flex: 640 / 440 }}>
-            <div className="about_darken w-full">
-              <Animatable
-                source={{
-                  frames: [
-                    { src: Traveller1 },
-                    { src: Traveller2 },
-                    { src: Traveller3 },
-                    { src: Traveller4 },
-                    { src: Traveller5 },
-                    { src: Traveller6 },
-                  ],
-                  width: 640,
-                  height: 440,
-                }}
-                frame={frame}
-                alt="Traveller"
-              />
-            </div>
-            <div className="about_textOverlay">
-              <div>Traveller</div>
-            </div>
-          </div>
-        </div>
 
-        {/* Fourth row: Sports lover / photographer */}
-        <div className="single mb-spacing-3lg flex flex-row space-x-4 lg:hidden">
-          <div
-            className="about_rounded relative"
-            style={{
-              flex: 480 / 360,
-            }}
-          >
-            <Image
-              className="about_darken"
-              src={Sports}
-              alt="Sports Lover"
-              width={480}
-              height={360}
-            />
-            <div className="about_textOverlay">
-              <div>Sports Lover</div>
-            </div>
-          </div>
-          <div className="about_rounded relative" style={{ flex: 640 / 669 }}>
+          {/* Photographer */}
+          <div className="about_rounded relative">
             <div className="about_darken w-full">
               <Animatable
                 source={{
@@ -451,34 +161,258 @@ export default function AboutClient() {
           </div>
         </div>
 
-        <Title title="Tools I use" />
-        <div
-          className="single mb-spacing-3lg flex flex-row flex-wrap justify-center gap-4
-            lg:justify-between"
-          ref={ref}
-        >
-          {Tools.map((Tool, index) => (
-            <motion.div
-              className="w-12 lg:w-16"
-              key={index}
-              style={{ y: "3rem" }}
-              animate={{ y: isInView ? "0rem" : "3rem" }}
-              transition={{
-                ...transitionFast,
-                delay: index * 0.03,
+        {/* Desktop second col second row */}
+        <div className="col-span-9 col-start-4 space-y-4">
+          {/* Desktop second col second row, inner first row */}
+          <div className="flex flex-row gap-4">
+            {/* Nature observer */}
+            <div className="about_rounded relative" style={{ flex: 960 / 606 }}>
+              <video
+                src="/nature-observer.mp4"
+                autoPlay
+                loop
+                className="about_darken"
+              />
+              <div className="about_textOverlay">
+                <div>Nature Observer</div>
+              </div>
+            </div>
+            {/* Dog lover */}
+            <div
+              className="about_rounded relative"
+              style={{
+                flex: 640 / 838,
               }}
             >
+              <div className="about_darken w-full">
+                <Animatable
+                  source={{
+                    frames: [
+                      { src: Dog1 },
+                      { src: Dog2 },
+                      { src: Dog3 },
+                      { src: Dog4 },
+                    ],
+                    width: 640,
+                    height: 838,
+                  }}
+                  frame={frame}
+                  alt="Dog lover"
+                />
+              </div>
+              <div className="about_textOverlay">
+                <div>Dog Lover</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop second col second row, inner second row */}
+          <div className="grid grid-cols-9 gap-4">
+            {/* Thinker */}
+            <div className="about_rounded relative col-span-3">
+              <div className="about_darken w-full">
+                <Animatable
+                  source={{
+                    frames: [
+                      { src: Thinker1 },
+                      { src: Thinker2 },
+                      { src: Thinker3 },
+                    ],
+                    width: 640,
+                    height: 933,
+                  }}
+                  frame={frame}
+                  alt="Thinker"
+                />
+              </div>
+              <div className="about_textOverlay">
+                <div>Thinker</div>
+              </div>
+            </div>
+            {/* Sports lover */}
+            <div className="about_rounded relative col-span-4 self-start">
               <Image
-                src={Tool}
-                alt=""
-                width={128}
-                height={128}
-                placeholder="blur"
+                className="about_darken"
+                src={Sports}
+                alt="Sports Lover"
+                width={480}
+                height={360}
               />
-            </motion.div>
-          ))}
+              <div className="about_textOverlay">
+                <div>Sports Lover</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </Scroller>
+      </div>
+
+      {/* Mobile */}
+      {/* First row: Thinker / Social innovator */}
+      <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
+        <div className="about_rounded relative" style={{ flex: 640 / 933 }}>
+          <Animatable
+            source={{
+              frames: [{ src: Thinker1 }, { src: Thinker2 }, { src: Thinker3 }],
+              width: 640,
+              height: 933,
+            }}
+            frame={frame}
+            alt="Thinker"
+          />
+          <div className="about_textOverlay">
+            <div>Thinker</div>
+          </div>
+        </div>
+        <div
+          className="about_rounded relative cursor-pointer"
+          onClick={() => {
+            setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
+            setOverlayOpen(true);
+          }}
+          style={{ flex: 960 / 580 }}
+        >
+          <video
+            src="/social-innovator.mp4"
+            autoPlay
+            loop
+            className="about_darken"
+          />
+          <div className="about_textOverlay">
+            <div>Social Innovator</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Second row: Nature observer / Dog lover */}
+      <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
+        <div className="about_rounded relative" style={{ flex: 960 / 606 }}>
+          <video
+            src="/nature-observer.mp4"
+            autoPlay
+            loop
+            className="about_darken"
+          />
+          <div className="about_textOverlay">
+            <div>Nature Observer</div>
+          </div>
+        </div>
+        <div
+          className="about_rounded relative"
+          style={{
+            flex: 640 / 838,
+          }}
+        >
+          <div className="about_darken w-full">
+            <Animatable
+              source={{
+                frames: [
+                  { src: Dog1 },
+                  { src: Dog2 },
+                  { src: Dog3 },
+                  { src: Dog4 },
+                ],
+                width: 640,
+                height: 838,
+              }}
+              frame={frame}
+              alt="Dog lover"
+            />
+          </div>
+          <div className="about_textOverlay">
+            <div>Dog Lover</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Third row: Craftsperson / Traveller */}
+      <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
+        <div className="about_rounded relative" style={{ flex: 640 / 652 }}>
+          <div className="about_darken w-full">
+            <Animatable
+              source={{
+                frames: [
+                  { src: CraftsPerson1 },
+                  { src: CraftsPerson2 },
+                  { src: CraftsPerson3 },
+                ],
+                width: 640,
+                height: 652,
+              }}
+              frame={frame}
+              alt="Craftsperson"
+            />
+          </div>
+          <div className="about_textOverlay">
+            <div>Craftsperson</div>
+          </div>
+        </div>
+        <div className="about_rounded relative" style={{ flex: 640 / 440 }}>
+          <div className="about_darken w-full">
+            <Animatable
+              source={{
+                frames: [
+                  { src: Traveller1 },
+                  { src: Traveller2 },
+                  { src: Traveller3 },
+                  { src: Traveller4 },
+                  { src: Traveller5 },
+                  { src: Traveller6 },
+                ],
+                width: 640,
+                height: 440,
+              }}
+              frame={frame}
+              alt="Traveller"
+            />
+          </div>
+          <div className="about_textOverlay">
+            <div>Traveller</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Fourth row: Sports lover / photographer */}
+      <div className="single mb-spacing-3lg flex flex-row space-x-4 lg:hidden">
+        <div
+          className="about_rounded relative"
+          style={{
+            flex: 480 / 360,
+          }}
+        >
+          <Image
+            className="about_darken"
+            src={Sports}
+            alt="Sports Lover"
+            width={480}
+            height={360}
+          />
+          <div className="about_textOverlay">
+            <div>Sports Lover</div>
+          </div>
+        </div>
+        <div className="about_rounded relative" style={{ flex: 640 / 669 }}>
+          <div className="about_darken w-full">
+            <Animatable
+              source={{
+                frames: [
+                  { src: Photo1 },
+                  { src: Photo2 },
+                  { src: Photo3 },
+                  { src: Photo4 },
+                  { src: Photo5 },
+                ],
+                width: 640,
+                height: 669,
+              }}
+              frame={frame}
+              alt="Photographer"
+            />
+          </div>
+          <div className="about_textOverlay">
+            <div>Photographer</div>
+          </div>
+        </div>
+      </div>
       <AnimatePresence>
         {overlayOpen && (
           <motion.div
@@ -497,7 +431,7 @@ export default function AboutClient() {
                   }}
                   className="p-2"
                 >
-                  <i className="fa-solid fa-x"></i>
+                  <IconX />
                 </button>
               </div>
               {/* Main content */}
@@ -534,5 +468,73 @@ export default function AboutClient() {
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+export default function AboutClient() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <Scroller bgColor="bg-[#FDF9F1]">
+      {/* Extra spacing on mobile */}
+      <div className="pt-16"></div>
+
+      {/* Profile */}
+      <div className="single my-spacing-lg grid gap-spacing lg:grid-cols-2">
+        <div className="about_rounded">
+          <Image
+            src={Profile}
+            width={960}
+            height={900}
+            alt="Shirley Lyu profile photo"
+            placeholder="blur"
+          />
+        </div>
+        <div className="lg:self-end">
+          Hello! This is Shirley Lyu. I am a product designer with an infinite
+          range of ideas. I am interested in lifestyle products, spatial
+          experience, sustainability, social innovation, soft goods, and
+          consumer electronics.
+        </div>
+      </div>
+
+      {/* Resume */}
+      <Button text="Resume" href="/resume.pdf" />
+      <Spacing size="large" />
+
+      <Title title="Who I am" />
+      <Suspense>
+        <VideoGallery />
+      </Suspense>
+
+      <Title title="Tools I use" />
+      <div
+        className="single mb-spacing-3lg flex flex-row flex-wrap justify-center gap-4
+          lg:justify-between"
+        ref={ref}
+      >
+        {Tools.map((Tool, index) => (
+          <motion.div
+            className="w-12 lg:w-16"
+            key={index}
+            style={{ y: "3rem" }}
+            animate={{ y: isInView ? "0rem" : "3rem" }}
+            transition={{
+              ...transitionFast,
+              delay: index * 0.03,
+            }}
+          >
+            <Image
+              src={Tool}
+              alt=""
+              width={128}
+              height={128}
+              placeholder="blur"
+            />
+          </motion.div>
+        ))}
+      </div>
+    </Scroller>
   );
 }
