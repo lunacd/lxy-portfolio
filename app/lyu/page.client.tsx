@@ -12,6 +12,9 @@ import Subtitle from "@/components/Subtitle";
 import TextImage from "@/components/TextImage";
 import Title from "@/components/Title";
 import TopDisplay from "@/components/TopDisplay";
+import { projectsData } from "@/utils/projectData";
+import useScroll from "@/utils/useScroll";
+
 import BagMaking1 from "@/images/lyu/bag-making/bag-making-1-small.webp";
 import BagMaking2 from "@/images/lyu/bag-making/bag-making-2-small.webp";
 import BagMaking3 from "@/images/lyu/bag-making/bag-making-3-small.webp";
@@ -75,8 +78,6 @@ import TechPack4 from "@/images/lyu/tech-pack/tech-pack-4-full.webp";
 import TechPack5 from "@/images/lyu/tech-pack/tech-pack-5-full.webp";
 import TechPack6 from "@/images/lyu/tech-pack/tech-pack-6-full.webp";
 import TechPack7 from "@/images/lyu/tech-pack/tech-pack-7-full.webp";
-import { projectsData } from "@/utils/projectData";
-import useScroll from "@/utils/useScroll";
 
 export default function LyuClient() {
   const scrollDiv = useScroll();

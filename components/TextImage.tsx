@@ -1,7 +1,8 @@
-import { transitionSlow } from "@/utils/transitions";
 import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef } from "react";
+
+import { transitionSlow } from "@/utils/transitions";
 
 interface TextImageProps {
   title: string;

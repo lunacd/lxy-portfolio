@@ -1,7 +1,8 @@
+import { Metadata } from "next";
+
 import ProjectsGallery from "@/components/ProjectsGallery";
 import Scroller from "@/components/Scroller";
 import { otherProjectsData } from "@/utils/projectData";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Other Projects | Shirley Lyu",

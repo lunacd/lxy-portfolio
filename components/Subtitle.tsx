@@ -1,6 +1,7 @@
-import { transitionSlow } from "@/utils/transitions";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
+
+import { transitionSlow } from "@/utils/transitions";
 
 interface SubtitleProps {
   subtitle: string;

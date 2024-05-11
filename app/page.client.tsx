@@ -1,12 +1,13 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
+import { useInterval } from "usehooks-ts";
+
 import TopDisplay from "@/components/TopDisplay";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 import { projectsData } from "@/utils/projectData";
 import { transitionSlow } from "@/utils/transitions";
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect } from "react";
-import { useInterval } from "usehooks-ts";
 
 const MotionTopDisplay = motion(TopDisplay);
 

@@ -1,4 +1,3 @@
-import { transitionFast, transitionSlow } from "@/utils/transitions";
 import { useMediaQuery } from "@chakra-ui/react";
 import {
   IconChevronLeft,
@@ -10,6 +9,8 @@ import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef, useState } from "react";
+
+import { transitionFast, transitionSlow } from "@/utils/transitions";
 
 interface CarouselProps {
   images: (string | StaticImageData)[];

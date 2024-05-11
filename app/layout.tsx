@@ -1,10 +1,6 @@
 "use client";
 
 import "./global.css";
-import PageRoot from "@/components/PageRoot";
-import { Sidebar } from "@/components/Sidebar";
-import { getInitialState, stateReducer } from "@/utils/GlobalState";
-import GlobalStateContext from "@/utils/GlobalStateContext";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
@@ -17,6 +13,11 @@ import {
   useReducer,
   useRef,
 } from "react";
+
+import PageRoot from "@/components/PageRoot";
+import { Sidebar } from "@/components/Sidebar";
+import { getInitialState, stateReducer } from "@/utils/GlobalState";
+import GlobalStateContext from "@/utils/GlobalStateContext";
 
 const catamaran = Catamaran({ subsets: ["latin"] });
 

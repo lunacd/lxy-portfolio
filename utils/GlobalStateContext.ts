@@ -1,6 +1,7 @@
 import { projects } from "./projectData";
-import { GlobalState, GlobalStateAction } from "@/utils/GlobalState";
 import { Dispatch, createContext, useContext } from "react";
+
+import { GlobalState, GlobalStateAction } from "@/utils/GlobalState";
 
 const defaultState = {
   currentProjectIndex: 0,

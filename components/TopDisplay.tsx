@@ -1,7 +1,8 @@
-import { ProjectData, projectsData } from "@/utils/projectData";
 import classNames from "classnames";
 import Image from "next/image";
 import React, { forwardRef } from "react";
+
+import { ProjectData, projectsData } from "@/utils/projectData";
 
 export interface TopDisplayProps {
   project: ProjectData;

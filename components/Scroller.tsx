@@ -1,5 +1,6 @@
-import Spacing from "@/components/Spacing";
 import React, { PropsWithChildren, RefObject } from "react";
+
+import Spacing from "@/components/Spacing";
 
 interface ScrollerProps {
   bgColor: string;

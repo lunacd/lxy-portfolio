@@ -1,10 +1,19 @@
 "use client";
 
+import { IconX } from "@tabler/icons-react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useRef, useState } from "react";
+
 import Animatable from "@/components/Animatable";
 import Button from "@/components/Button";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import Title from "@/components/Title";
+import { transitionFast } from "@/utils/transitions";
+import useFrameIndex from "@/utils/useFrameIndex";
+
 import CraftsPerson1 from "@/images/about/craftsperson-1-small.webp";
 import CraftsPerson2 from "@/images/about/craftsperson-2-small.webp";
 import CraftsPerson3 from "@/images/about/craftsperson-3-small.webp";
@@ -37,13 +46,6 @@ import Traveller3 from "@/images/about/traveller-3-small.webp";
 import Traveller4 from "@/images/about/traveller-4-small.webp";
 import Traveller5 from "@/images/about/traveller-5-small.webp";
 import Traveller6 from "@/images/about/traveller-6-small.webp";
-import { transitionFast } from "@/utils/transitions";
-import useFrameIndex from "@/utils/useFrameIndex";
-import { IconX } from "@tabler/icons-react";
-import { AnimatePresence, motion, useInView } from "framer-motion";
-import Image from "next/image";
-import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useRef, useState } from "react";
 
 const Tools = [Tool1, Tool2, Tool3, Tool4, Tool5, Tool6, Tool7, Tool8, Tool9];
 

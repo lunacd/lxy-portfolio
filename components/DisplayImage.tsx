@@ -1,8 +1,9 @@
-import Animatable, { AnimationData } from "@/components/Animatable";
-import { transitionSlow } from "@/utils/transitions";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
+
+import Animatable, { AnimationData } from "@/components/Animatable";
+import { transitionSlow } from "@/utils/transitions";
 
 interface DisplayImageProps {
   source: AnimationData;

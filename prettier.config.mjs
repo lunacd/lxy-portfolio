@@ -14,7 +14,7 @@ const config = {
   bracketSpacing: true,
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
-  importOrder: ["^../(?!images).*", "^../images/.*"],
+  importOrder: ["^(?!@/).*", "^@/(?!images).*/.*", "^@/images/.*"],
 };
 
 export default config;

@@ -13,6 +13,10 @@ import Subtitle from "@/components/Subtitle";
 import TextImage from "@/components/TextImage";
 import Title from "@/components/Title";
 import TopDisplay from "@/components/TopDisplay";
+import { projectsData } from "@/utils/projectData";
+import useFrameIndex from "@/utils/useFrameIndex";
+import useScroll from "@/utils/useScroll";
+
 import Benchmark from "@/images/overlap/benchmark-full.webp";
 import CMF1 from "@/images/overlap/cmf/cmf-1-full.webp";
 import CMF2 from "@/images/overlap/cmf/cmf-2-full.webp";
@@ -74,9 +78,6 @@ import TimerUseImage from "@/images/overlap/timer-use-big.webp";
 import TrayImage from "@/images/overlap/tray-half.webp";
 import TrayUseImage1 from "@/images/overlap/tray-use-1-big.webp";
 import TrayUseImage2 from "@/images/overlap/tray-use-2-big.webp";
-import { projectsData } from "@/utils/projectData";
-import useFrameIndex from "@/utils/useFrameIndex";
-import useScroll from "@/utils/useScroll";
 
 export default function OverlapClient() {
   const scrollDiv = useScroll();

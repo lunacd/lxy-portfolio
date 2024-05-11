@@ -1,11 +1,12 @@
 "use client";
 
-import { ProjectDataLean } from "@/utils/projectData";
-import { transitionFast } from "@/utils/transitions";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+import { ProjectDataLean } from "@/utils/projectData";
+import { transitionFast } from "@/utils/transitions";
 
 interface ProjectsGalleryProps {
   data: ProjectDataLean[];

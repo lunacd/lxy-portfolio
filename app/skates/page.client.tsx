@@ -13,6 +13,9 @@ import Subtitle from "@/components/Subtitle";
 import TextImage from "@/components/TextImage";
 import Title from "@/components/Title";
 import TopDisplay from "@/components/TopDisplay";
+import { projectsData } from "@/utils/projectData";
+import useScroll from "@/utils/useScroll";
+
 import Belonging1 from "@/images/skates/belonging-1-small.webp";
 import Belonging2 from "@/images/skates/belonging-2-small.webp";
 import Belonging3 from "@/images/skates/belonging-3-small.webp";
@@ -51,8 +54,6 @@ import TechDrawing from "@/images/skates/tech-drawing-full.webp";
 import Usage from "@/images/skates/usage-desktop-full.webp";
 import UsageM1 from "@/images/skates/usage-mobile-1-half.webp";
 import UsageM2 from "@/images/skates/usage-mobile-2-half.webp";
-import { projectsData } from "@/utils/projectData";
-import useScroll from "@/utils/useScroll";
 
 export default function SoulClient() {
   const scrollDiv = useScroll();

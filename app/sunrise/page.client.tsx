@@ -12,6 +12,9 @@ import Subtitle from "@/components/Subtitle";
 import TextImage from "@/components/TextImage";
 import Title from "@/components/Title";
 import TopDisplay from "@/components/TopDisplay";
+import { projectsData } from "@/utils/projectData";
+import useScroll from "@/utils/useScroll";
+
 import Evo1 from "@/images/sunrise/evolution/evolution-1-small.webp";
 import Evo2 from "@/images/sunrise/evolution/evolution-2-small.webp";
 import Evo3 from "@/images/sunrise/evolution/evolution-3-small.webp";
@@ -53,8 +56,6 @@ import Ortho3 from "@/images/sunrise/ortho/ortho-3-full.webp";
 import Ortho4 from "@/images/sunrise/ortho/ortho-4-full.webp";
 import Ortho5 from "@/images/sunrise/ortho/ortho-5-full.webp";
 import UsageScenario from "@/images/sunrise/usage-scenario-full.webp";
-import { projectsData } from "@/utils/projectData";
-import useScroll from "@/utils/useScroll";
 
 export default function SunriseClient() {
   const scrollDiv = useScroll();

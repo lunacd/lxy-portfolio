@@ -6,11 +6,12 @@ import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextImage from "@/components/TextImage";
 import TopDisplay from "@/components/TopDisplay";
+import useScroll from "@/utils/useScroll";
+
 import RefugiaSmall from "@/images/projects/refugia-half.webp";
 import RefugiaDisplay from "@/images/refugia/display-full.webp";
 import RefugiaDisplayM from "@/images/refugia/display-mobile-half.webp";
 import Manifesto from "@/images/refugia/manifesto-half.webp";
-import useScroll from "@/utils/useScroll";
 
 const projectData = {
   uri: "refugia",

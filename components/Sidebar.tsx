@@ -1,8 +1,5 @@
 "use client";
 
-import { useGlobalStateContext } from "@/utils/GlobalStateContext";
-import { projectsData, sidebarRoutes } from "@/utils/projectData";
-import { transitionFast as transitionDefault } from "@/utils/transitions";
 import { useMediaQuery } from "@chakra-ui/react";
 import {
   IconBrandInstagram,
@@ -16,8 +13,12 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-import HamburgerBlack from "../images/hamburger-black.svg";
-import HamburgerWhite from "../images/hamburger-white.svg";
+import { useGlobalStateContext } from "@/utils/GlobalStateContext";
+import { projectsData, sidebarRoutes } from "@/utils/projectData";
+import { transitionFast as transitionDefault } from "@/utils/transitions";
+
+import HamburgerBlack from "@/images/hamburger-black.svg";
+import HamburgerWhite from "@/images/hamburger-white.svg";
 
 const MotionImage = motion(Image);
 const MotionIconChevronLeft = motion(IconChevronLeft);

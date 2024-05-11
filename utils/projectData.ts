@@ -1,5 +1,3 @@
-import { StaticImageData } from "next/image";
-
 import LyuDisplay from "../images/lyu/display-full.webp";
 import LyuDisplayM from "../images/lyu/display-mobile-half.webp";
 import TronDisplay from "../images/m-tron/display-full.webp";
@@ -27,6 +25,7 @@ import SoulDisplay from "../images/soul/display-full.webp";
 import SoulDisplayM from "../images/soul/display-mobile-half.webp";
 import SunriseDisplay from "../images/sunrise/display-full.webp";
 import SunriseDisplayM from "../images/sunrise/display-mobile-half.webp";
+import { StaticImageData } from "next/image";
 
 export interface ProjectDataLean {
   uri: string;

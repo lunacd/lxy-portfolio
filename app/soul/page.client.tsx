@@ -13,6 +13,10 @@ import Subtitle from "@/components/Subtitle";
 import TextImage from "@/components/TextImage";
 import Title from "@/components/Title";
 import TopDisplay from "@/components/TopDisplay";
+import { projectsData } from "@/utils/projectData";
+import useFrameIndex from "@/utils/useFrameIndex";
+import useScroll from "@/utils/useScroll";
+
 import BrandResearch from "@/images/soul/brand-research-full.webp";
 import BrandValue from "@/images/soul/brand-value-half.webp";
 import ChargerTech from "@/images/soul/charger-tech-full.webp";
@@ -54,9 +58,6 @@ import Target1 from "@/images/soul/target-01-small.webp";
 import Target2 from "@/images/soul/target-02-small.webp";
 import Target3 from "@/images/soul/target-03-small.webp";
 import UserNeed from "@/images/soul/user-half.webp";
-import { projectsData } from "@/utils/projectData";
-import useFrameIndex from "@/utils/useFrameIndex";
-import useScroll from "@/utils/useScroll";
 
 export default function SoulClient() {
   const scrollDiv = useScroll();

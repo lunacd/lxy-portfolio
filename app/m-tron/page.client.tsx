@@ -10,6 +10,10 @@ import Spacing from "@/components/Spacing";
 import TextImage from "@/components/TextImage";
 import Title from "@/components/Title";
 import TopDisplay from "@/components/TopDisplay";
+import { projectsData } from "@/utils/projectData";
+import useFrameIndex from "@/utils/useFrameIndex";
+import useScroll from "@/utils/useScroll";
+
 import Brake1 from "@/images/m-tron/brake-1-full.webp";
 import Brake2 from "@/images/m-tron/brake-2-full.webp";
 import Charger1 from "@/images/m-tron/charger-1-full.webp";
@@ -31,9 +35,6 @@ import Moodboard2 from "@/images/m-tron/moodboard/light-and-curve-small.webp";
 import Moodboard3 from "@/images/m-tron/moodboard/surface-change-small.webp";
 import UserScenario from "@/images/m-tron/scenario-6x.webp";
 import SpeedController from "@/images/m-tron/speed-controller-full.webp";
-import { projectsData } from "@/utils/projectData";
-import useFrameIndex from "@/utils/useFrameIndex";
-import useScroll from "@/utils/useScroll";
 
 export default function MTronClient() {
   const scrollDiv = useScroll();
