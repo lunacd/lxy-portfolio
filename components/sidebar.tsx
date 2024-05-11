@@ -14,6 +14,7 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 import HamburgerBlack from "../images/hamburger-black.svg";
@@ -24,6 +25,7 @@ const MotionIconChevronLeft = motion(IconChevronLeft);
 
 export const Sidebar = () => {
   const [hovered, setHovered] = useState("");
+  const pathname = usePathname();
 
   const [isLG, isXL] = useMediaQuery([
     "(min-width: 1024px)",
@@ -89,8 +91,16 @@ export const Sidebar = () => {
                     route.uri in projectsData
                       ? () => {
                           setHovered(route.uri);
-                          dispatch({ type: "setProjectRoll", rolling: false });
-                          dispatch({ type: "setProject", project: route.uri });
+                          if (pathname === "/") {
+                            dispatch({
+                              type: "setProjectRoll",
+                              rolling: false,
+                            });
+                            dispatch({
+                              type: "setProject",
+                              project: route.uri,
+                            });
+                          }
                         }
                       : undefined
                   }
@@ -98,8 +108,10 @@ export const Sidebar = () => {
                     route.uri in projectsData
                       ? () => {
                           setHovered("");
-                          dispatch({ type: "nextProject" });
-                          dispatch({ type: "setProjectRoll", rolling: true });
+                          if (pathname === "/") {
+                            dispatch({ type: "nextProject" });
+                            dispatch({ type: "setProjectRoll", rolling: true });
+                          }
                         }
                       : undefined
                   }

@@ -3,14 +3,8 @@
 import "./global.css";
 import PageRoot from "@/components/page-root";
 import { Sidebar } from "@/components/sidebar";
-import {
-  GlobalState,
-  GlobalStateAction,
-  initialState,
-  stateReducer,
-} from "@/utils/globalState";
+import { getInitialState, stateReducer } from "@/utils/globalState";
 import GlobalStateContext from "@/utils/globalStateContext";
-import { projectsData } from "@/utils/project-data";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
@@ -22,9 +16,7 @@ import {
   useEffect,
   useReducer,
   useRef,
-  useState,
 } from "react";
-import { useInterval } from "usehooks-ts";
 
 const catamaran = Catamaran({ subsets: ["latin"] });
 
@@ -46,10 +38,11 @@ export default function RootLayout({
 }) {
   const router = useRouter();
   const pathname = usePathname();
-  const [globalState, dispatch] = useReducer(stateReducer, {
-    ...initialState,
-    route: pathname,
-  });
+  const [globalState, dispatch] = useReducer(
+    stateReducer,
+    pathname,
+    getInitialState,
+  );
   const providerValue = {
     globalState,
     dispatch,

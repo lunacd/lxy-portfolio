@@ -1,13 +1,24 @@
-import { projects, projectsData } from "./project-data";
+import { projects } from "./project-data";
 
-export const initialState: GlobalState = {
-  currentProjectIndex: 0,
-  currentProject: projects[0],
-  projectRolling: false,
-  displayAnimation: false,
-  swipeAnimation: false,
-  route: "",
-};
+export function getInitialState(pathname: string): GlobalState {
+  let currentProjectIndex: number;
+  let currentProject: string;
+  if (isProject(pathname)) {
+    currentProject = getProjectNameFromPathname(pathname);
+    currentProjectIndex = projects.indexOf(currentProject);
+  } else {
+    currentProject = projects[0];
+    currentProjectIndex = 0;
+  }
+  return {
+    currentProjectIndex: currentProjectIndex,
+    currentProject: currentProject,
+    projectRolling: false,
+    displayAnimation: false,
+    swipeAnimation: false,
+    route: pathname,
+  };
+}
 
 export type GlobalStateAction =
   | {
@@ -39,18 +50,17 @@ export interface GlobalState {
   route: string;
 }
 
-const isProject = (link: string) => {
+function getProjectNameFromPathname(pathname: string) {
+  return pathname.replaceAll("/", "");
+}
+
+function isProject(link: string): boolean {
   if (!link.startsWith("/")) {
     return false;
   }
-  const linkName = link.slice(1);
-  for (const project of projects) {
-    if (linkName.startsWith(project)) {
-      return true;
-    }
-  }
-  return false;
-};
+  const projectName = getProjectNameFromPathname(link);
+  return projects.includes(projectName);
+}
 
 export function stateReducer(state: GlobalState, action: GlobalStateAction) {
   const newState = { ...state };
