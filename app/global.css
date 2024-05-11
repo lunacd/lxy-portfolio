@@ -122,8 +122,8 @@ body {
   @apply md:relative md:translate-y-0;
 
   /* Styling */
-  @apply text-[2rem] opacity-60 transition-opacity duration-150;
-  @apply md:text-[3rem] md:opacity-100;
+  @apply opacity-60 transition-opacity duration-150;
+  @apply md:opacity-100;
 }
 
 /* Horizontal Gallery */

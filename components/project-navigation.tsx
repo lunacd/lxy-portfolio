@@ -1,3 +1,4 @@
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
 
@@ -17,14 +18,14 @@ const ProjectNavigation: React.FC<ProjectNavigationProps> = (propsIn) => {
     <div className={`single flex flex-row font-semibold ${props.textColor}`}>
       {props.prev !== undefined && (
         <div className="mr-auto flex flex-row items-center space-x-4">
-          <i className="fa-solid fa-angle-left" />
+          <IconChevronLeft size={24} />
           <Link href={props.prev}>Previous Project</Link>
         </div>
       )}
       {props.next !== undefined && (
         <div className="ml-auto flex flex-row items-center space-x-4">
           <Link href={props.next}>Next Project</Link>
-          <i className="fa-solid fa-angle-right" />
+          <IconChevronRight size={24} />
         </div>
       )}
     </div>

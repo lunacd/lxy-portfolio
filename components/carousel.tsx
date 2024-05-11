@@ -1,4 +1,11 @@
 import { transitionFast, transitionSlow } from "@/utils/transition";
+import { useMediaQuery } from "@chakra-ui/react";
+import {
+  IconChevronLeft,
+  IconChevronRight,
+  IconCircle,
+  IconCircleFilled,
+} from "@tabler/icons-react";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
@@ -21,6 +28,7 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMd] = useMediaQuery("(min-width: 768px)");
 
   return (
     <motion.div
@@ -33,14 +41,12 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
         className={`flex w-single flex-row items-center md:space-x-4 ${props.textColor}`}
       >
         <div className="relative h-full w-0 md:w-auto">
-          <i
-            className={classNames(
-              "fa-solid fa-angle-left carousel_angle left-0 top-0",
-              {
-                "cursor-pointer": currentIndex !== 0,
-                "opacity-0": currentIndex === 0,
-              },
-            )}
+          <IconChevronLeft
+            size={isMd ? 48 : 32}
+            className={classNames("carousel_angle left-0 top-0", {
+              "!opacity-0": currentIndex === 0,
+              "cursor-pointer": currentIndex !== 0,
+            })}
             onClick={() => {
               if (currentIndex > 0) setCurrentIndex((orig) => orig - 1);
             }}
@@ -57,7 +63,10 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
             animate={{ transform: `translateX(-${currentIndex}00%)` }}
           >
             {props.images.map((image, index) => (
-              <div className="relative w-full flex-shrink-0" key={index}>
+              <div
+                className="relative w-full flex-shrink-0 select-none"
+                key={index}
+              >
                 <Image
                   src={image}
                   alt={`${props.description} ${index}`}
@@ -71,14 +80,12 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
         </div>
 
         <div className="relative h-full w-0 md:w-auto">
-          <i
-            className={classNames(
-              "fa-solid fa-angle-right carousel_angle right-0 top-0",
-              {
-                "cursor-pointer": currentIndex !== props.images.length - 1,
-                "opacity-0": currentIndex === props.images.length - 1,
-              },
-            )}
+          <IconChevronRight
+            size={isMd ? 48 : 32}
+            className={classNames("carousel_angle right-0 top-0", {
+              "cursor-pointer": currentIndex !== props.images.length - 1,
+              "!opacity-0": currentIndex === props.images.length - 1,
+            })}
             onClick={() => {
               if (currentIndex < props.images.length - 1)
                 setCurrentIndex((orig) => orig + 1);
@@ -96,15 +103,11 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
               }}
               key={index}
             >
-              <i className="fa-regular fa-circle fa-xs absolute left-0 top-1.5" />
-              <i
-                className={classNames(
-                  "fa-solid fa-circle fa-xs absolute left-0 top-1.5 transition-opacity duration-150",
-                  {
-                    "opacity-0": index !== currentIndex,
-                  },
-                )}
-              />
+              {currentIndex === index ? (
+                <IconCircle size={16} />
+              ) : (
+                <IconCircleFilled size={16} />
+              )}
             </div>
           ))}
         </div>
