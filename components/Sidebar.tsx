@@ -246,6 +246,7 @@ export const Sidebar = () => {
           }}
           className="w-6 transition-colors duration-200"
           src={
+            globalState.currentProject in projectsData &&
             projectsData[globalState.currentProject].hamburgerColorLight
               ? HamburgerWhite
               : HamburgerBlack

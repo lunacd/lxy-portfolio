@@ -95,6 +95,11 @@ export function stateReducer(state: GlobalState, action: GlobalStateAction) {
       newState.swipeAnimation = true;
     }
     newState.route = action.newRoute;
+    if (targetPageIsProject) {
+      newState.currentProject = getProjectNameFromPathname(action.newRoute);
+    } else {
+      newState.currentProject = "";
+    }
   }
   return newState;
 }
