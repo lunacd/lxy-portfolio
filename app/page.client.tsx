@@ -6,7 +6,7 @@ import { useInterval } from "usehooks-ts";
 
 import TopDisplay from "@/components/TopDisplay";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
-import { projectsData } from "@/utils/projectData";
+import { projects, projectsData } from "@/utils/projectData";
 import { transitionSlow } from "@/utils/transitions";
 
 const MotionTopDisplay = motion(TopDisplay);
@@ -30,7 +30,7 @@ export default function HomeClient() {
   return (
     <AnimatePresence initial={false}>
       <MotionTopDisplay
-        project={projectsData[globalState.currentProject]}
+        project={projectsData[projects[globalState.currentProjectIndex]]}
         link
         animation={globalState.displayAnimation}
         absolute={true}

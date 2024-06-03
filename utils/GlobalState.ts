@@ -7,7 +7,7 @@ export function getInitialState(pathname: string): GlobalState {
     currentProject = getProjectNameFromPathname(pathname);
     currentProjectIndex = projects.indexOf(currentProject);
   } else {
-    currentProject = projects[0];
+    currentProject = "";
     currentProjectIndex = 0;
   }
   return {
