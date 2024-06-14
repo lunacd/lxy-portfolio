@@ -39,9 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# python
-.env/
-
+# Editors
 .idea/
-
 .vscode/
+
+# Payload local media store
+/media/
+
+# Local environment
+/.env
