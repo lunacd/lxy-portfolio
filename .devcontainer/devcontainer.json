@@ -1,0 +1,5 @@
+{
+    "name": "lxy-portfolio",
+    "image": "node:lts",
+    "forwardPorts": [3000]
+}
