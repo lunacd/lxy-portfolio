@@ -19,6 +19,7 @@ import SkatesSmall from "../images/projects/skates-half.webp";
 import SoulSmall from "../images/projects/soul-half.webp";
 import SunriseSmall from "../images/projects/sunrise-half.webp";
 import TuraSmall from "../images/projects/tura-half.webp";
+import SitAwardImage from "../images/sit.webp";
 import SkatesDisplay from "../images/skates/display-full.webp";
 import SkatesDisplayM from "../images/skates/display-mobile-half.webp";
 import SoulDisplay from "../images/soul/display-full.webp";
@@ -44,6 +45,7 @@ export interface ProjectData extends ProjectDataLean {
   titleColor: string;
   hamburgerColorLight: boolean;
   bgColor: string;
+  awardImage?: StaticImageData;
 }
 
 export const projects: string[] = [
@@ -87,6 +89,7 @@ export const projectsData: { [name: string]: ProjectData } = {
     hamburgerColorLight: false,
     bgColor: "bg-[#F0EBE6]",
     link: "/skates",
+    awardImage: SitAwardImage,
   },
   overlap: {
     uri: "overlap",

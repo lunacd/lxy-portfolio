@@ -42,9 +42,18 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
           <div className="absolute left-0 top-0 flex h-full w-full justify-center">
             {/* Project name */}
             <div
-              className={`single mt-8 text-3xl lg:mt-12 xl:mt-24 ${props.project.titleColor}`}
+              className={`single relative mt-8 text-3xl lg:mt-12 xl:mt-24 ${props.project.titleColor}`}
             >
               {props.project.name}
+
+              {/* Aware image */}
+              {props.project.awardImage && (
+                <Image
+                  src={props.project.awardImage}
+                  alt="Award"
+                  className="absolute bottom-8 w-40"
+                />
+              )}
             </div>
 
             {/* Link to page */}
