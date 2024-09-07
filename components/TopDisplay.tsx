@@ -2,18 +2,19 @@ import classNames from "classnames";
 import Image from "next/image";
 import React, { forwardRef } from "react";
 
+import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 import { ProjectData, projectsData } from "@/utils/projectData";
 
 export interface TopDisplayProps {
   project: ProjectData;
   animation: boolean;
-  onLink?: (link: string) => void;
   absolute?: boolean;
   link?: boolean;
   displayDescriptionOnMobile?: boolean;
 }
 
 const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
+  const { dispatch } = useGlobalStateContext();
   return (
     <>
       <div
@@ -68,7 +69,10 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               ) : (
                 <a
                   onClick={() => {
-                    props.onLink!(props.project.link);
+                    dispatch({
+                      type: "changeRoute",
+                      newRoute: props.project.link,
+                    });
                   }}
                   className="absolute left-0 top-0 block h-full w-full cursor-pointer"
                 ></a>
