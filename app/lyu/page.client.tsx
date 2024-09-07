@@ -12,7 +12,6 @@ import Subtitle from "@/components/Subtitle";
 import TextImage from "@/components/TextImage";
 import Title from "@/components/Title";
 import TopDisplay from "@/components/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 import useScroll from "@/utils/useScroll";
 
 import BagMaking1 from "@/images/lyu/bag-making/bag-making-1-small.webp";
@@ -24,6 +23,8 @@ import BagMaking6 from "@/images/lyu/bag-making/bag-making-6-small.webp";
 import BagMaking7 from "@/images/lyu/bag-making/bag-making-7-small.webp";
 import BagMaking8 from "@/images/lyu/bag-making/bag-making-8-small.webp";
 import BagMaking9 from "@/images/lyu/bag-making/bag-making-9-small.webp";
+import LyuDisplay from "@/images/lyu/display-full.webp";
+import LyuDisplayM from "@/images/lyu/display-mobile-half.webp";
 import Ease1 from "@/images/lyu/ease-1-half.webp";
 import Ease2 from "@/images/lyu/ease-2-half.webp";
 import Ease3 from "@/images/lyu/ease-3-half.webp";
@@ -78,6 +79,24 @@ import TechPack4 from "@/images/lyu/tech-pack/tech-pack-4-full.webp";
 import TechPack5 from "@/images/lyu/tech-pack/tech-pack-5-full.webp";
 import TechPack6 from "@/images/lyu/tech-pack/tech-pack-6-full.webp";
 import TechPack7 from "@/images/lyu/tech-pack/tech-pack-7-full.webp";
+import LyuSmall from "@/images/projects/lyu-half.webp";
+
+const lyuProjectData = {
+  uri: "lyu",
+  name: "Lyu",
+  duration: "2 Weeks Daily, 2022 Spring",
+  category: "Soft Goods",
+  focus: "Craft, Tech Drawing, Manufacturing",
+  brief:
+    "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
+  displayImage: LyuDisplay,
+  displayImageMobile: LyuDisplayM,
+  smallImage: LyuSmall,
+  titleColor: "text-gray-100",
+  hamburgerColorLight: true,
+  bgColor: "bg-[#EFF2F3]",
+  link: "/lyu",
+};
 
 export default function LyuClient() {
   const scrollDiv = useScroll();
@@ -85,7 +104,7 @@ export default function LyuClient() {
   return (
     <Scroller bgColor="bg-[#EFF2F3]" divRef={scrollDiv}>
       <TopDisplay
-        project={projectsData["lyu"]}
+        project={lyuProjectData}
         animation={false}
         displayDescriptionOnMobile={true}
       />

@@ -5,6 +5,7 @@ import OverlapDisplayM from "../images/overlap/display-mobile-half.webp";
 import ErgoSmall from "../images/projects/ergo-half.webp";
 import ItoSmall from "../images/projects/ito-half.webp";
 import LissSmall from "../images/projects/liss-half.webp";
+import LyuSmall from "../images/projects/lyu-half.webp";
 import TronSmall from "../images/projects/m-tron-half.webp";
 import ModeSmall from "../images/projects/mode-half.webp";
 import MumSmall from "../images/projects/mum-half.webp";
@@ -132,6 +133,13 @@ export const projectsData: { [name: string]: ProjectData } = {
 export const projects: string[] = Object.keys(projectsData);
 
 export const otherProjectsData = [
+  {
+    uri: "lyu",
+    name: "Lyu",
+    category: "Soft Goods",
+    smallImage: LyuSmall,
+    link: "https://www.shirleylyu.com/lyu",
+  },
   {
     uri: "refugia",
     name: "Refugia",
