@@ -32,6 +32,7 @@ export interface ProjectDataLean {
   category: string;
   smallImage: string | StaticImageData;
   link: string;
+  focus?: string[];
 }
 
 export interface ProjectData extends ProjectDataLean {
