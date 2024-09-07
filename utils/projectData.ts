@@ -36,7 +36,7 @@ export interface ProjectDataLean {
 
 export interface ProjectData extends ProjectDataLean {
   duration: string;
-  focus: string;
+  focus: string[];
   brief: string;
   displayImage: StaticImageData;
   displayImageMobile: StaticImageData;
@@ -52,9 +52,9 @@ export const projectsData: { [name: string]: ProjectData } = {
     name: "Soul",
     duration: "14 Weeks, 2022 Spring",
     category: "Lux lifestyle Product Set",
-    focus: "Brand Research, Form Study, 3D Modeling",
+    focus: ["Brand Research", "Form Study", "3D Modeling"],
     brief:
-      "Regularly meditating with Rolls-Royce Meditation sets you up forever to better yourself every day. Accompanying the Rolls-Royce meditation set, you could easily fall into peace and clarity through your senses: sight, smell, and sound.",
+      "A meditation set designed to help regular meditators achieve peace and clarity easily through sight and sound.",
     displayImage: SoulDisplay,
     displayImageMobile: SoulDisplayM,
     smallImage: SoulSmall,
@@ -68,7 +68,7 @@ export const projectsData: { [name: string]: ProjectData } = {
     name: "Skates",
     duration: "14 Weeks, 2022 Fall",
     category: "Furniture Design",
-    focus: "Form Study, Prototyping, Manufacturing",
+    focus: ["Form Study", "Prototyping", "Manufacturing"],
     brief:
       "A versatile chair designed for shared open spaces. “Skates” refers to its special affordances to dance around different needs and environments. It has two elegant “skating blades” and a multipurpose surface. It is designed to be casually shared, easily moved, and artfully arranged into any ad-hoc working space.",
     displayImage: SkatesDisplay,
@@ -85,9 +85,9 @@ export const projectsData: { [name: string]: ProjectData } = {
     name: "Overlap",
     duration: "14 Weeks, 2022 Spring",
     category: "Lifestyle Product Design",
-    focus: "Prototyping, Tech Drawing, Model Making, Manufacturing",
+    focus: ["Prototyping", "Tech Drawing", "Model Making", "Manufacturing"],
     brief:
-      "A collection of office accessories that provides an intuitive concept of category to help users better organize their time, space, and objects.",
+      "A set of table organizers that brings joyful interaction while organizing time, space, and belongings.",
     displayImage: OverlapDisplay,
     displayImageMobile: OverlapDisplayM,
     smallImage: OverlapSmall,
@@ -101,7 +101,7 @@ export const projectsData: { [name: string]: ProjectData } = {
     name: "Sunrise Speaker",
     duration: "14 Weeks , 2021 Fall",
     category: "Consumer Electronics",
-    focus: "Form Study, Prototyping, Model Making, Manufacturing",
+    focus: ["Form Study", "Prototyping", "Model Making", "Manufacturing"],
     brief:
       "Reverse-engineered a speaker and put all parts back together in personal designed product for Yamaha.",
     displayImage: SunriseDisplay,
@@ -117,7 +117,7 @@ export const projectsData: { [name: string]: ProjectData } = {
     name: "M-Tron",
     duration: "5 Weeks , 2021 Spring",
     category: "Transportation",
-    focus: "3D Modeling, Rendering",
+    focus: ["3D Modeling", "Rendering"],
     brief:
       "A shared semi-automatic scooter inside Walt Disney World for both kids and adult to transport between different rides.",
     displayImage: TronDisplay,
