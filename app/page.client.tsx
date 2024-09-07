@@ -9,7 +9,7 @@ import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 import { projects, projectsData } from "@/utils/projectData";
 import { transitionSlow } from "@/utils/transitions";
 
-const MotionTopDisplay = motion(TopDisplay);
+const MotionTopDisplay = motion.create(TopDisplay);
 
 export default function HomeClient() {
   const { globalState, dispatch } = useGlobalStateContext();
