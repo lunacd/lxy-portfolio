@@ -97,7 +97,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                 <span>Category: </span>
                 {props.project.category}
               </div>
-              <div className="col-span-2 flex flex-row space-x-2">
+              <div className="col-span-2 flex flex-row flex-wrap space-x-2">
                 {props.project.focus.map((focus, index) => {
                   return <CategoryTag key={index} category={focus} />;
                 })}
