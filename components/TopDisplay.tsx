@@ -3,8 +3,9 @@ import classNames from "classnames";
 import Image from "next/image";
 import React, { forwardRef } from "react";
 
+import CategoryTag from "@/components/CategoryTag";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
-import { ProjectData, projectsData } from "@/utils/projectData";
+import { ProjectData } from "@/utils/projectData";
 
 export interface TopDisplayProps {
   project: ProjectData;
@@ -47,7 +48,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               className={`single relative mt-8 lg:mt-12 xl:mt-24 ${props.project.titleColor}`}
             >
               <div className="text-3xl">{props.project.name}</div>
-              <div className="textShadow mt-2 text-base lg:max-w-[25%]">
+              <div className="topDisplay_textShadow mt-2 text-base lg:max-w-[25%]">
                 {props.project.brief}
               </div>
 
@@ -87,45 +88,19 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
         {/* Project details */}
         <div className="flex flex-col items-center">
           <div className="single mx-spacing-lg flex flex-row space-x-spacing py-8">
-            {/* Left column */}
-            <div className="topDisplay_detailColumn flex">
-              <div className="topDisplay_detailSection opacity-0">
+            <div className="grid w-full grid-cols-2 gap-2">
+              <div className="topDisplay_detailSection">
                 <span>Duration: </span>
-                {Object.values(projectsData).reduce(
-                  (prev, curr) =>
-                    prev.length > curr.duration.length ? prev : curr.duration,
-                  "",
-                )}
+                {props.project.duration}
               </div>
-              <div className="topDisplay_detailSection opacity-0">
+              <div className="topDisplay_detailSection">
                 <span>Category: </span>
-                {Object.values(projectsData).reduce(
-                  (prev, curr) =>
-                    prev.length > curr.category.length ? prev : curr.category,
-                  "",
-                )}
+                {props.project.category}
               </div>
-              <div className="topDisplay_detailSection opacity-0">
-                <span>Project Focus: </span>
-                {Object.values(projectsData).reduce(
-                  (prev, curr) =>
-                    prev.length > curr.focus.length ? prev : curr.focus,
-                  "",
-                )}
-              </div>
-              <div className="absolute left-0 top-0 !mt-0 flex h-full w-full flex-col justify-start space-y-1">
-                <div className="topDisplay_detailSection">
-                  <span>Duration: </span>
-                  {props.project.duration}
-                </div>
-                <div className="topDisplay_detailSection">
-                  <span>Category: </span>
-                  {props.project.category}
-                </div>
-                <div className="topDisplay_detailSection">
-                  <span>Project Focus: </span>
-                  {props.project.focus}
-                </div>
+              <div className="col-span-2 flex flex-row space-x-2">
+                {props.project.focus.map((focus, index) => {
+                  return <CategoryTag key={index} category={focus} />;
+                })}
               </div>
             </div>
           </div>

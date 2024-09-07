@@ -143,15 +143,3 @@ body {
   @apply flex flex-row items-end space-x-4;
   @apply md:flex-col md:items-center md:space-x-0;
 }
-
-.topDisplay_detailSection {
-  @apply font-extralight;
-  & span {
-    @apply font-semibold;
-  }
-}
-
-.topDisplay_detailColumn {
-  @apply relative w-[var(--single)] flex-col space-y-1;
-  @apply lg:w-[var(--half)];
-}

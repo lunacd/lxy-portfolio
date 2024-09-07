@@ -18,7 +18,7 @@ const projectData = {
   name: "Refugia",
   duration: "14 Weeks, 2022 Summer",
   category: "Spatial Experience Design",
-  focus: "Sustainability, Model making",
+  focus: ["Sustainability", "Model making"],
   brief:
     "See through their eyes; hear through their ears; sense through their senses. Learn and feel animals' adaptation to the urban environment.",
   displayImage: RefugiaDisplay,

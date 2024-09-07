@@ -86,7 +86,7 @@ const lyuProjectData = {
   name: "Lyu",
   duration: "2 Weeks Daily, 2022 Spring",
   category: "Soft Goods",
-  focus: "Craft, Tech Drawing, Manufacturing",
+  focus: ["Craft", "Tech Drawing", "Manufacturing"],
   brief:
     "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
   displayImage: LyuDisplay,
