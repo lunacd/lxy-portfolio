@@ -1,3 +1,4 @@
+import "./TopDisplay.css";
 import classNames from "classnames";
 import Image from "next/image";
 import React, { forwardRef } from "react";
@@ -43,11 +44,14 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
           <div className="absolute left-0 top-0 flex h-full w-full justify-center">
             {/* Project name */}
             <div
-              className={`single relative mt-8 text-3xl lg:mt-12 xl:mt-24 ${props.project.titleColor}`}
+              className={`single relative mt-8 lg:mt-12 xl:mt-24 ${props.project.titleColor}`}
             >
-              {props.project.name}
+              <div className="text-3xl">{props.project.name}</div>
+              <div className="textShadow mt-2 text-base lg:max-w-[25%]">
+                {props.project.brief}
+              </div>
 
-              {/* Aware image */}
+              {/* Award image */}
               {props.project.awardImage && (
                 <Image
                   src={props.project.awardImage}
@@ -121,30 +125,6 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
                 <div className="topDisplay_detailSection">
                   <span>Project Focus: </span>
                   {props.project.focus}
-                </div>
-                {props.displayDescriptionOnMobile && (
-                  <div className="topDisplay_detailSection md:hidden">
-                    <span>Project Brief: </span>
-                    {props.project.brief}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Right column */}
-            <div className="topDisplay_detailColumn hidden md:flex">
-              <div className="topDisplay_detailSection opacity-0">
-                <span>Project Brief: </span>
-                {Object.values(projectsData).reduce(
-                  (prev, curr) =>
-                    prev.length > curr.brief.length ? prev : curr.brief,
-                  "",
-                )}
-              </div>
-              <div className="half absolute left-0 top-0 h-full w-full flex-col justify-start">
-                <div className="topDisplay_detailSection">
-                  <span>Project Brief: </span>
-                  {props.project.brief}
                 </div>
               </div>
             </div>

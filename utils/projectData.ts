@@ -1,5 +1,3 @@
-import LyuDisplay from "../images/lyu/display-full.webp";
-import LyuDisplayM from "../images/lyu/display-mobile-half.webp";
 import TronDisplay from "../images/m-tron/display-full.webp";
 import TronDisplayM from "../images/m-tron/display-mobile-half.webp";
 import OverlapDisplay from "../images/overlap/display-full.webp";
@@ -7,7 +5,6 @@ import OverlapDisplayM from "../images/overlap/display-mobile-half.webp";
 import ErgoSmall from "../images/projects/ergo-half.webp";
 import ItoSmall from "../images/projects/ito-half.webp";
 import LissSmall from "../images/projects/liss-half.webp";
-import LyuSmall from "../images/projects/lyu-half.webp";
 import TronSmall from "../images/projects/m-tron-half.webp";
 import ModeSmall from "../images/projects/mode-half.webp";
 import MumSmall from "../images/projects/mum-half.webp";
@@ -48,15 +45,6 @@ export interface ProjectData extends ProjectDataLean {
   awardImage?: StaticImageData;
 }
 
-export const projects: string[] = [
-  "soul",
-  "skates",
-  "overlap",
-  "sunrise",
-  "m-tron",
-  "lyu",
-];
-
 export const projectsData: { [name: string]: ProjectData } = {
   soul: {
     uri: "soul",
@@ -65,7 +53,7 @@ export const projectsData: { [name: string]: ProjectData } = {
     category: "Lux lifestyle Product Set",
     focus: "Brand Research, Form Study, 3D Modeling",
     brief:
-      "To propose a new product category for Rolls-Royce by designing a unified collection of objects.",
+      "Regularly meditating with Rolls-Royce Meditation sets you up forever to better yourself every day. Accompanying the Rolls-Royce meditation set, you could easily fall into peace and clarity through your senses: sight, smell, and sound.",
     displayImage: SoulDisplay,
     displayImageMobile: SoulDisplayM,
     smallImage: SoulSmall,
@@ -81,7 +69,7 @@ export const projectsData: { [name: string]: ProjectData } = {
     category: "Furniture Design",
     focus: "Form Study, Prototyping, Manufacturing",
     brief:
-      "Designing and making furniture that reconfigures the spatial experience for Bernhardt. The design is engendered to meet Bernhardt's  brand identity and manufacturing requirements, as well their use of materials.",
+      "A versatile chair designed for shared open spaces. “Skates” refers to its special affordances to dance around different needs and environments. It has two elegant “skating blades” and a multipurpose surface. It is designed to be casually shared, easily moved, and artfully arranged into any ad-hoc working space.",
     displayImage: SkatesDisplay,
     displayImageMobile: SkatesDisplayM,
     smallImage: SkatesSmall,
@@ -98,7 +86,7 @@ export const projectsData: { [name: string]: ProjectData } = {
     category: "Lifestyle Product Design",
     focus: "Prototyping, Tech Drawing, Model Making, Manufacturing",
     brief:
-      "A range of small and functional objects for Hay, focusing on brand identity, manufacturing techniques, and use of materials.",
+      "A collection of office accessories that provides an intuitive concept of category to help users better organize their time, space, and objects.",
     displayImage: OverlapDisplay,
     displayImageMobile: OverlapDisplayM,
     smallImage: OverlapSmall,
@@ -139,23 +127,9 @@ export const projectsData: { [name: string]: ProjectData } = {
     bgColor: "bg-[#E4F2F5]",
     link: "/m-tron",
   },
-  lyu: {
-    uri: "lyu",
-    name: "Lyu",
-    duration: "2 Weeks Daily, 2022 Spring",
-    category: "Soft Goods",
-    focus: "Craft, Tech Drawing, Manufacturing",
-    brief:
-      "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
-    displayImage: LyuDisplay,
-    displayImageMobile: LyuDisplayM,
-    smallImage: LyuSmall,
-    titleColor: "text-gray-100",
-    hamburgerColorLight: true,
-    bgColor: "bg-[#EFF2F3]",
-    link: "/lyu",
-  },
 };
+
+export const projects: string[] = Object.keys(projectsData);
 
 export const otherProjectsData = [
   {
@@ -249,6 +223,5 @@ export const sidebarRoutes = [
     typeClass: "paragraph",
   },
   { uri: "m-tron", name: "M-Tron", link: "/m-tron", typeClass: "paragraph" },
-  { uri: "lyu", name: "Lyu", link: "/lyu", typeClass: "paragraph" },
   { uri: "others", name: "More Work", link: "/others", typeClass: "subtitle" },
 ];

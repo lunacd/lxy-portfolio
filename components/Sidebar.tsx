@@ -20,8 +20,8 @@ import { transitionFast as transitionDefault } from "@/utils/transitions";
 import HamburgerBlack from "@/images/hamburger-black.svg";
 import HamburgerWhite from "@/images/hamburger-white.svg";
 
-const MotionImage = motion(Image);
-const MotionIconChevronLeft = motion(IconChevronLeft);
+const MotionImage = motion.create(Image);
+const MotionIconChevronLeft = motion.create(IconChevronLeft);
 
 export const Sidebar = () => {
   const [hovered, setHovered] = useState("");
