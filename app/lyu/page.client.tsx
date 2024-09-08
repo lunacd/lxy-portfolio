@@ -4,7 +4,7 @@ import Carousel from "@/components/Carousel";
 import ConnectPrompt from "@/components/ConnectPrompt";
 import DisplayImage from "@/components/DisplayImage";
 import { GalleryRowLayout } from "@/components/GalleryRow";
-import HorizontalGallery from "@/components/HorizontalGallery";
+import HorizontalGallery from "@/sections/HorizontalGallery";
 import LargeGallery from "@/components/LargeGallery";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";

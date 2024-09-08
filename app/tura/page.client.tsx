@@ -2,21 +2,22 @@
 
 import EqualSplit from "@/components/EqualSplit";
 import Scroller from "@/components/Scroller";
-import TextSection, { createPlainContent } from "@/components/TextSection";
-import Title from "@/sections/Title";
+import TextSection, {createPlainContent} from "@/components/TextSection";
+import Title, {Subtitle} from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
+import {projectsData} from "@/utils/projectData";
 import useScroll from "@/utils/useScroll";
+import Spacing from "@/components/Spacing";
 
 export default function TuraClient() {
   const turaProjectData = projectsData["tura"];
   const scrollDiv = useScroll();
   return (
     <Scroller bgColor={turaProjectData.bgColor} divRef={scrollDiv}>
-      <TopDisplay project={turaProjectData} animation={false} />
+      <TopDisplay project={turaProjectData} animation={false}/>
 
       {/* Overview */}
-      <Title title="Overview" />
+      <Title title="Overview"/>
       <EqualSplit>
         <TextSection
           title="The Problem"
@@ -33,9 +34,12 @@ export default function TuraClient() {
           titleClass="subtitle"
         />
       </EqualSplit>
+      <Spacing size="large"/>
 
       {/* Project Ideation */}
-      <Title title="Project Ideation" />
+      <Title title="Project Ideation"/>
+      <Subtitle title="Competitive Research"/>
+      
     </Scroller>
   );
 }

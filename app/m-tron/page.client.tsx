@@ -1,7 +1,7 @@
 "use client";
 
 import DisplayImage from "@/components/DisplayImage";
-import HorizontalGallery from "@/components/HorizontalGallery";
+import HorizontalGallery from "@/sections/HorizontalGallery";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
 import ProjectNavigation from "@/components/ProjectNavigation";

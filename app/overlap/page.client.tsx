@@ -2,7 +2,7 @@
 
 import Carousel from "@/components/Carousel";
 import DisplayImage from "@/components/DisplayImage";
-import HorizontalGallery from "@/components/HorizontalGallery";
+import HorizontalGallery from "@/sections/HorizontalGallery";
 import LargeGallery from "@/components/LargeGallery";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
