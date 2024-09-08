@@ -1,11 +1,14 @@
 import { StaticImageData } from "next/image";
 
+import LamboozledDisplay from "@/images/lamboozled/display-full.webp";
+import LamboozledDisplayM from "@/images/lamboozled/display-mobile-half.webp";
 import TronDisplay from "@/images/m-tron/display-full.webp";
 import TronDisplayM from "@/images/m-tron/display-mobile-half.webp";
 import OverlapDisplay from "@/images/overlap/display-full.webp";
 import OverlapDisplayM from "@/images/overlap/display-mobile-half.webp";
 import ErgoSmall from "@/images/projects/ergo-half.webp";
 import ItoSmall from "@/images/projects/ito-half.webp";
+import LamboozledSmall from "@/images/projects/lamboozled-half.webp";
 import LissSmall from "@/images/projects/liss-half.webp";
 import LyuSmall from "@/images/projects/lyu-half.webp";
 import TronSmall from "@/images/projects/m-tron-half.webp";
@@ -114,6 +117,27 @@ export const projectsData: { [name: string]: ProjectData } = {
     hamburgerColorLight: false,
     bgColor: "bg-[#EFF0ED]",
     link: "/tura",
+  },
+  lamboozled: {
+    uri: "lamboozled",
+    name: "Lamboozled!",
+    duration: "14 Week, 2023 Fall & 2024 Spring",
+    category: "Game Design, Media & Social Change Lab (MASCLab) Project",
+    focus: [
+      "Interaction Design",
+      "Wireframing",
+      "Prototyping",
+      "Usability Studies",
+    ],
+    brief:
+      "A game designed to help young people sharpen their critical media literacy skills while avoiding partisan politics.",
+    displayImage: LamboozledDisplay,
+    displayImageMobile: LamboozledDisplayM,
+    smallImage: LamboozledSmall,
+    titleColor: "text-gray-900",
+    hamburgerColorLight: false,
+    bgColor: "bg-[#E9E9E9]",
+    link: "/lamboozled",
   },
   sunrise: {
     uri: "sunrise",
@@ -236,6 +260,12 @@ export const sidebarRoutes = [
   { uri: "skates", name: "Skates", link: "/skates", typeClass: "paragraph" },
   { uri: "overlap", name: "Overlap", link: "/overlap", typeClass: "paragraph" },
   { uri: "tura", name: "Tura", link: "/tura", typeClass: "paragraph" },
+  {
+    uri: "lamboozled",
+    name: "Lamboozled!",
+    link: "/lamboozled",
+    typeClass: "paragraph",
+  },
   {
     uri: "sunrise",
     name: "Sunrise Speaker",

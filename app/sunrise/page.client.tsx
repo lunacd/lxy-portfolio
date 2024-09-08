@@ -227,7 +227,7 @@ export default function SunriseClient() {
         description="Indoor gallery"
       />
 
-      <ProjectNavigation prev="/tura" next="/m-tron" />
+      <ProjectNavigation prev="/lamboozled" next="/m-tron" />
     </Scroller>
   );
 }
