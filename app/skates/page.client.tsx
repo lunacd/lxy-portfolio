@@ -9,9 +9,8 @@ import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
-import Subtitle from "@/components/Subtitle";
 import TextImage from "@/sections/TextImage";
-import Title from "@/sections/Title";
+import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 import useScroll from "@/utils/useScroll";
@@ -95,7 +94,7 @@ export default function SoulClient() {
       />
 
       <Title title="Different Usages" />
-      <Subtitle subtitle="Normal chair, arm chair, chair with desktop, stool" />
+      <Subtitle title="Normal chair, arm chair, chair with desktop, stool" />
       <div className="hidden md:block">
         <DisplayImage
           source={{ frames: [{ src: Usage }], width: 1920, height: 622 }}
@@ -115,12 +114,12 @@ export default function SoulClient() {
       </div>
 
       <Title title="Usage Environment" />
-      <Subtitle subtitle="Open Offices" />
+      <Subtitle title="Open Offices" />
       <DisplayImage
         source={{ frames: [{ src: Environment1 }], width: 1920, height: 1079 }}
         alt="Open offices"
       />
-      <Subtitle subtitle="Lobby" />
+      <Subtitle title="Lobby" />
       <DisplayImage
         source={{ frames: [{ src: Environment2 }], width: 1920, height: 1079 }}
         alt="Lobby"
@@ -145,7 +144,7 @@ export default function SoulClient() {
         ]}
         titleClass="subtitle"
       />
-      <Subtitle subtitle="Create a Sense of Belonging" />
+      <Subtitle title="Create a Sense of Belonging" />
       <HorizontalGallery
         items={[
           { image: Belonging1, title: "Interactive" },

@@ -198,13 +198,6 @@ export const otherProjectsData = [
     link: "https://shirleylyu.wixsite.com/shirley-portfolio/ito",
   },
   {
-    uri: "tura",
-    name: "Tura",
-    category: "UI/UX Design",
-    smallImage: TuraSmall,
-    link: "https://shirleylyu.wixsite.com/shirley-portfolio/tura",
-  },
-  {
     uri: "plant",
     name: "Plant Phone",
     category: "Consumer Electronics",

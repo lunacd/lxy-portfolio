@@ -25,9 +25,14 @@ interface TextSectionProps {
   content: TextContent[];
 }
 
-export default function TextSection(props: TextSectionProps) {
+const defaultProps = {
+  titleClass: "title",
+};
+
+export default function TextSection(propsIn: TextSectionProps) {
+  const props = { ...defaultProps, ...propsIn };
   return (
-    <>
+    <div>
       {props.title && (
         <div className={`${props.titleClass} mb-spacing-lg`}>{props.title}</div>
       )}
@@ -45,6 +50,6 @@ export default function TextSection(props: TextSectionProps) {
           }
         })}
       </div>
-    </>
+    </div>
   );
 }

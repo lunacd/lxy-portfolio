@@ -3,15 +3,14 @@
 import Button from "@/components/Button";
 import DisplayImage from "@/components/DisplayImage";
 import HorizontalGallery from "@/components/HorizontalGallery";
-import ImageText from "@/sections/ImageText";
 import LargeGallery from "@/components/LargeGallery";
 import Paragraph from "@/components/Paragraph";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
-import Subtitle from "@/components/Subtitle";
+import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
-import Title from "@/sections/Title";
+import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 import useFrameIndex from "@/utils/useFrameIndex";
@@ -84,7 +83,7 @@ export default function SoulClient() {
 
       {/* Brand Research */}
       <Title title="Rolls-Royce Brand Research" />
-      <Subtitle subtitle="Brand Research Book" />
+      <Subtitle title="Brand Research Book" />
       <DisplayImage
         source={{ frames: [{ src: BrandResearch }], width: 1920, height: 1080 }}
         alt="Brand research"
@@ -232,7 +231,7 @@ export default function SoulClient() {
 
       {/* Form Ideation */}
       <Title title="Form Ideation" />
-      <Subtitle subtitle="2D Sketch, Shaping Foam, 3D Modeling" />
+      <Subtitle title="2D Sketch, Shaping Foam, 3D Modeling" />
       <DisplayImage
         source={{ frames: [{ src: Ideation }], width: 1920, height: 711 }}
         alt="Ideation"
@@ -250,7 +249,7 @@ export default function SoulClient() {
       />
 
       {/* Tech Drawing */}
-      <Subtitle subtitle="Tech Drawing" />
+      <Subtitle title="Tech Drawing" />
       <Paragraph paragraph="Soul Instrument Body" />
       <DisplayImage
         source={{ frames: [{ src: InstrumentTech }], width: 1920, height: 990 }}
@@ -327,7 +326,7 @@ export default function SoulClient() {
         height={845}
       />
 
-      <Subtitle subtitle="Tech Drawing" />
+      <Subtitle title="Tech Drawing" />
       <Paragraph paragraph="Lamp" />
       <DisplayImage
         source={{ frames: [{ src: LightTech }], width: 1920, height: 990 }}

@@ -3,15 +3,14 @@
 import Carousel from "@/components/Carousel";
 import DisplayImage from "@/components/DisplayImage";
 import HorizontalGallery from "@/components/HorizontalGallery";
-import ImageText from "@/sections/ImageText";
 import LargeGallery from "@/components/LargeGallery";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
-import Subtitle from "@/components/Subtitle";
+import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
-import Title from "@/sections/Title";
+import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 import useFrameIndex from "@/utils/useFrameIndex";
@@ -241,7 +240,7 @@ export default function OverlapClient() {
 
       {/* Design Process */}
       <Title title="Design Process" />
-      <Subtitle subtitle="HAY's Brand DNA Analysis" />
+      <Subtitle title="HAY's Brand DNA Analysis" />
       <HorizontalGallery
         items={[
           { image: DNA1, title: "Playful" },
@@ -257,7 +256,7 @@ export default function OverlapClient() {
       />
 
       {/* Brand Benchmark */}
-      <Subtitle subtitle="HAY's Brand Benchmarks" />
+      <Subtitle title="HAY's Brand Benchmarks" />
       <DisplayImage
         source={{ frames: [{ src: Benchmark }], width: 4784, height: 2735 }}
         alt="Brand benchmark"
@@ -265,14 +264,14 @@ export default function OverlapClient() {
       />
 
       {/* Ideation */}
-      <Subtitle subtitle="Overlap Ideation" />
+      <Subtitle title="Overlap Ideation" />
       <DisplayImage
         source={{ frames: [{ src: Ideation }], width: 8000, height: 4500 }}
         alt="Ideation for Overlap"
       />
 
       {/* Prototype */}
-      <Subtitle subtitle="Prototype &amp; Form Perfection" />
+      <Subtitle title="Prototype &amp; Form Perfection" />
       <DisplayImage
         source={{ frames: [{ src: Prototype }], width: 7677, height: 4163 }}
         alt="Prototype for Overlap"

@@ -8,9 +8,8 @@ import HorizontalGallery from "@/components/HorizontalGallery";
 import LargeGallery from "@/components/LargeGallery";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
-import Subtitle from "@/components/Subtitle";
 import TextImage from "@/sections/TextImage";
-import Title from "@/sections/Title";
+import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import useScroll from "@/utils/useScroll";
 
@@ -122,7 +121,7 @@ export default function LyuClient() {
 
       {/* Personal Style */}
       <Title title="What is My Personal Style?" />
-      <Subtitle subtitle="Ease" />
+      <Subtitle title="Ease" />
       <HorizontalGallery
         items={[
           { image: Ease1, title: "Style: Ease" },
@@ -134,7 +133,7 @@ export default function LyuClient() {
         width={960}
         height={1174}
       />
-      <Subtitle subtitle="Joyful" />
+      <Subtitle title="Joyful" />
       <HorizontalGallery
         items={[
           { image: Joyful1, title: "Style: Joyful" },

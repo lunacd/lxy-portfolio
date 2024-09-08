@@ -8,9 +8,8 @@ import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
-import Subtitle from "@/components/Subtitle";
 import TextImage from "@/sections/TextImage";
-import Title from "@/sections/Title";
+import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 import useScroll from "@/utils/useScroll";
@@ -76,7 +75,7 @@ export default function SunriseClient() {
 
       {/* Usage Scenario */}
       <Title title="Usage Scenario" />
-      <Subtitle subtitle="Balcony" />
+      <Subtitle title="Balcony" />
       <DisplayImage
         source={{ frames: [{ src: UsageScenario }], width: 1920, height: 961 }}
         alt="Usage scenario setting"
@@ -85,7 +84,7 @@ export default function SunriseClient() {
 
       {/* Moodboard */}
       <Title title="Moodboard" />
-      <Subtitle subtitle="Balcony Speaker Form Inspiration " />
+      <Subtitle title="Balcony Speaker Form Inspiration " />
       <HorizontalGallery
         items={[
           { image: Form1, title: "Slope" },
@@ -97,7 +96,7 @@ export default function SunriseClient() {
         botSpacing={false}
         titleClass="paragraph"
       />
-      <Subtitle subtitle="Balcony Speaker Details Inspiration " />
+      <Subtitle title="Balcony Speaker Details Inspiration " />
       <HorizontalGallery
         items={[
           { image: Detail1, title: "Chamfer" },
@@ -183,7 +182,7 @@ export default function SunriseClient() {
       {/* Gallery */}
       <Title title="Product Gallery" />
 
-      <Subtitle subtitle="Outdoor" />
+      <Subtitle title="Outdoor" />
       <LargeGallery
         rows={[
           {
@@ -206,7 +205,7 @@ export default function SunriseClient() {
         description="Outdoor gallery"
         botSpacing={false}
       />
-      <Subtitle subtitle="Indoor" />
+      <Subtitle title="Indoor" />
       <LargeGallery
         rows={[
           {

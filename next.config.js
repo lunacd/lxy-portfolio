@@ -5,11 +5,6 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: "/tura",
-        destination: "https://shirleylyu.wixsite.com/shirley-portfolio/tura",
-        permanent: true,
-      },
-      {
         source: "/graphic.design",
         destination: "/graphic-design",
         permanent: true,
