@@ -2,7 +2,7 @@
 
 import Carousel from "@/components/Carousel";
 import ConnectPrompt from "@/components/ConnectPrompt";
-import DisplayImage from "@/components/DisplayImage";
+import DisplayImage from "@/sections/DisplayImage";
 import { GalleryRowLayout } from "@/components/GalleryRow";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import LargeGallery from "@/components/LargeGallery";

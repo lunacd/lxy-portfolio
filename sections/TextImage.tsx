@@ -2,14 +2,11 @@ import Image, { StaticImageData } from "next/image";
 
 import EqualSplit from "@/components/EqualSplit";
 import FloatUpMotion from "@/components/FloatUpMotion";
-import TextSection, {
-  TextContentType,
-  createPlainContent,
-} from "@/components/TextSection";
+import TextSection, { createPlainContent } from "@/components/TextSection";
 
 interface TextImageProps {
   title: string;
-  content: string[];
+  content?: string[];
   image: string | StaticImageData;
   width: number;
   height: number;
@@ -20,6 +17,7 @@ interface TextImageProps {
 const defaultProps = {
   titleClass: "title",
   textColor: "text-black",
+  content: [],
 };
 
 export default function TextImage(propsIn: TextImageProps) {

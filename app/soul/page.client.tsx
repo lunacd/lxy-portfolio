@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/Button";
-import DisplayImage from "@/components/DisplayImage";
+import DisplayImage from "@/sections/DisplayImage";
 import LargeGallery from "@/components/LargeGallery";
 import Paragraph from "@/components/Paragraph";
 import ProjectNavigation from "@/components/ProjectNavigation";

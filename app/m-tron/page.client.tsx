@@ -1,6 +1,6 @@
 "use client";
 
-import DisplayImage from "@/components/DisplayImage";
+import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";

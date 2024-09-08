@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import DisplayImage from "@/components/DisplayImage";
+import Carousel from "@/components/Carousel";
 import EqualSplit from "@/components/EqualSplit";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
@@ -11,6 +11,7 @@ import TextSection, {
   TextContentType,
   createPlainContent,
 } from "@/components/TextSection";
+import DisplayImage, { StaticDisplayImage } from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
@@ -22,7 +23,17 @@ import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
 import Competitive3 from "@/images/tura/competitive/competitive-3-small.webp";
 import Ideation1 from "@/images/tura/ideation/ideation-1-half.webp";
 import Ideation2 from "@/images/tura/ideation/ideation-2-half.webp";
+import Interview1 from "@/images/tura/interview/interview-1-full.webp";
+import Interview2 from "@/images/tura/interview/interview-2-full.webp";
+import Interview3 from "@/images/tura/interview/interview-3-full.webp";
+import Interview4 from "@/images/tura/interview/interview-4-full.webp";
+import Interview5 from "@/images/tura/interview/interview-5-full.webp";
+import Interview6 from "@/images/tura/interview/interview-6-full.webp";
+import JourneyMap from "@/images/tura/journey-full.webp";
 import PositioningMatrix from "@/images/tura/matrix-full.webp";
+import Moodboard from "@/images/tura/moodboard-full.webp";
+import Persona from "@/images/tura/persona-full.webp";
+import Scenario from "@/images/tura/scenario-full.webp";
 
 export default function TuraClient() {
   const turaProjectData = projectsData["tura"];
@@ -186,6 +197,125 @@ export default function TuraClient() {
         }}
         alt="Positioning matrix"
       />
+
+      {/* Mission Statement */}
+      <Title title="Mission Statement" />
+      <div className="flex w-single justify-center">
+        <div className="w-2/3">
+          <TextSection
+            content={createPlainContent([
+              "My mission is to gather people who love traveling and have similar interests by matching their information. Users can choose their comfortable ways (self-planned, other-planned, or I-planned) to meet new people and make friends during trips.",
+            ])}
+          />
+        </div>
+      </div>
+      <Spacing size="large" />
+
+      {/* User Research */}
+      <Title title="User Research" />
+
+      <Subtitle title="Interviews" />
+      <Carousel
+        images={[
+          Interview1,
+          Interview2,
+          Interview3,
+          Interview4,
+          Interview5,
+          Interview6,
+        ]}
+        description="Interviews"
+        height={959}
+        width={1920}
+      />
+
+      <Subtitle title="Persona" />
+      <DisplayImage
+        source={{ frames: [{ src: Persona }], width: 1920, height: 1187 }}
+        alt="Persona"
+        xSpacing
+      />
+
+      <Subtitle title="Moodboard" />
+      <DisplayImage
+        source={{ frames: [{ src: Moodboard }], height: 827, width: 1920 }}
+        alt="Moodboard"
+      />
+
+      <Subtitle title="Text Scenario" />
+      <EqualSplit>
+        <div>
+          <div>
+            - Kiki loves traveling and listening to different people’s stories.
+          </div>
+          <div>
+            - There is a 4-day holiday for her 2 days later. She is planning to
+            have a short trip to relax and make new friends with similar
+            interests.
+          </div>
+          <div>
+            - She opens <strong>Tura</strong>. At first, Kiki selects her
+            interests among the different provided options. Then, she inputs her
+            budget time into the app.
+          </div>
+          <div>
+            - <strong>Tura</strong> provides her with several travel groups’
+            information as suggestions according to Kiki’s input. By looking at
+            the detailed suggestion pages, Kiki can know not only the schedule
+            and budget of the trip but also the information of other travel
+            companions.
+          </div>
+          <div>
+            Kiki likes the apps first suggestion. Therefore, she enters the trip
+            group chat to talk about the schedule details like tickets and
+            hotel.
+          </div>
+        </div>
+        <div>
+          <div>
+            - She travels with the group. She writes a travel blog and posts it
+            on the app every day.
+          </div>
+          <div>
+            - After the trip, Kiki makes many “travel friends”. They follow each
+            others’ Tura account to keep on connecting.
+          </div>
+          <div>
+            - Next week, there is another holiday, Kiki and her “new-made travel
+            friends”, Susie, are planning to travel together and schedule a trip
+            themselves.
+          </div>
+          <div>
+            - Kiki uses the schedule function of the app to create a new trip
+            schedule and share that with Susie to work together.
+          </div>
+          <div>
+            - After finish the whole schedule and name it, Kiki publishes the
+            schedule to find more travel buddies.
+          </div>
+        </div>
+      </EqualSplit>
+      <Spacing size="large" />
+
+      <Subtitle title="Journey Map" />
+      <DisplayImage
+        source={{ frames: [{ src: JourneyMap }], height: 603, width: 1920 }}
+        alt="Journey Map"
+        xSpacing
+      />
+
+      <Subtitle title="Blob Scenario" />
+      <StaticDisplayImage
+        src={Scenario}
+        width={1920}
+        height={914}
+        alt="Blob Scenario"
+        xSpacing
+      />
+
+      {/* Wireframe */}
+      <Title title="Wireframe" />
+      <Subtitle title="3 Purposes to open the app" />
     </Scroller>
   );
 }
