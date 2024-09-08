@@ -27,6 +27,7 @@ import SoulDisplayM from "@/images/soul/display-mobile-half.webp";
 import SunriseDisplay from "@/images/sunrise/display-full.webp";
 import SunriseDisplayM from "@/images/sunrise/display-mobile-half.webp";
 import TuraDisplay from "@/images/tura/display-full.webp";
+import TuraDisplayM from "@/images/tura/display-mobile-half.webp";
 
 export interface ProjectDataLean {
   uri: string;
@@ -107,7 +108,7 @@ export const projectsData: { [name: string]: ProjectData } = {
     brief:
       "A phone app designed to help users meet new travel buddies and plan trips together.",
     displayImage: TuraDisplay,
-    displayImageMobile: TronDisplayM,
+    displayImageMobile: TuraDisplayM,
     smallImage: TuraSmall,
     titleColor: "text-gray-900",
     hamburgerColorLight: false,
