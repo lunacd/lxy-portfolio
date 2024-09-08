@@ -337,7 +337,7 @@ export default function TuraClient() {
       {/* Wireframe */}
       <Title title="Wireframe" />
       <Subtitle title="3 Purposes to open the app" />
-      <div className="grid grid-cols-1 md:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-3 w-single gap-spacing">
         <div>
           <TextSection
             content={[
