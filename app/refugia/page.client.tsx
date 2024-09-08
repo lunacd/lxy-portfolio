@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/Button";
-import ProjectNavigation from "@/components/ProjectNavigation";
+import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextImage from "@/components/TextImage";
@@ -53,7 +53,7 @@ export default function RefugiaClient() {
       <Button text="View the Project" href="/refugia.pdf" />
       <Spacing size="large" />
 
-      <ProjectNavigation prev="/lyu" />
+      <ConnectPrompt />
     </Scroller>
   );
 }

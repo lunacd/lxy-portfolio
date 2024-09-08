@@ -1,11 +1,11 @@
 "use client";
 
 import Carousel from "@/components/Carousel";
+import ConnectPrompt from "@/components/ConnectPrompt";
 import DisplayImage from "@/components/DisplayImage";
 import { GalleryRowLayout } from "@/components/GalleryRow";
 import HorizontalGallery from "@/components/HorizontalGallery";
 import LargeGallery from "@/components/LargeGallery";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Subtitle from "@/components/Subtitle";
@@ -313,8 +313,7 @@ export default function LyuClient() {
         ]}
         description="Lyu"
       />
-
-      <ProjectNavigation prev="/m-tron" />
+      <ConnectPrompt />
     </Scroller>
   );
 }
