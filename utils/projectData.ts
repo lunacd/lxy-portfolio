@@ -1,30 +1,32 @@
-import TronDisplay from "../images/m-tron/display-full.webp";
-import TronDisplayM from "../images/m-tron/display-mobile-half.webp";
-import OverlapDisplay from "../images/overlap/display-full.webp";
-import OverlapDisplayM from "../images/overlap/display-mobile-half.webp";
-import ErgoSmall from "../images/projects/ergo-half.webp";
-import ItoSmall from "../images/projects/ito-half.webp";
-import LissSmall from "../images/projects/liss-half.webp";
-import LyuSmall from "../images/projects/lyu-half.webp";
-import TronSmall from "../images/projects/m-tron-half.webp";
-import ModeSmall from "../images/projects/mode-half.webp";
-import MumSmall from "../images/projects/mum-half.webp";
-import OverlapSmall from "../images/projects/overlap-half.webp";
-import PlantSmall from "../images/projects/plant-half.webp";
-import RefugiaSmall from "../images/projects/refugia-half.webp";
-import SaturnSmall from "../images/projects/saturn-half.webp";
-import SkatesSmall from "../images/projects/skates-half.webp";
-import SoulSmall from "../images/projects/soul-half.webp";
-import SunriseSmall from "../images/projects/sunrise-half.webp";
-import TuraSmall from "../images/projects/tura-half.webp";
-import SitAwardImage from "../images/sit.webp";
-import SkatesDisplay from "../images/skates/display-full.webp";
-import SkatesDisplayM from "../images/skates/display-mobile-half.webp";
-import SoulDisplay from "../images/soul/display-full.webp";
-import SoulDisplayM from "../images/soul/display-mobile-half.webp";
-import SunriseDisplay from "../images/sunrise/display-full.webp";
-import SunriseDisplayM from "../images/sunrise/display-mobile-half.webp";
 import { StaticImageData } from "next/image";
+
+import TronDisplay from "@/images/m-tron/display-full.webp";
+import TronDisplayM from "@/images/m-tron/display-mobile-half.webp";
+import OverlapDisplay from "@/images/overlap/display-full.webp";
+import OverlapDisplayM from "@/images/overlap/display-mobile-half.webp";
+import ErgoSmall from "@/images/projects/ergo-half.webp";
+import ItoSmall from "@/images/projects/ito-half.webp";
+import LissSmall from "@/images/projects/liss-half.webp";
+import LyuSmall from "@/images/projects/lyu-half.webp";
+import TronSmall from "@/images/projects/m-tron-half.webp";
+import ModeSmall from "@/images/projects/mode-half.webp";
+import MumSmall from "@/images/projects/mum-half.webp";
+import OverlapSmall from "@/images/projects/overlap-half.webp";
+import PlantSmall from "@/images/projects/plant-half.webp";
+import RefugiaSmall from "@/images/projects/refugia-half.webp";
+import SaturnSmall from "@/images/projects/saturn-half.webp";
+import SkatesSmall from "@/images/projects/skates-half.webp";
+import SoulSmall from "@/images/projects/soul-half.webp";
+import SunriseSmall from "@/images/projects/sunrise-half.webp";
+import TuraSmall from "@/images/projects/tura-half.webp";
+import SitAwardImage from "@/images/sit.webp";
+import SkatesDisplay from "@/images/skates/display-full.webp";
+import SkatesDisplayM from "@/images/skates/display-mobile-half.webp";
+import SoulDisplay from "@/images/soul/display-full.webp";
+import SoulDisplayM from "@/images/soul/display-mobile-half.webp";
+import SunriseDisplay from "@/images/sunrise/display-full.webp";
+import SunriseDisplayM from "@/images/sunrise/display-mobile-half.webp";
+import TuraDisplay from "@/images/tura/display-full.webp";
 
 export interface ProjectDataLean {
   uri: string;
@@ -135,9 +137,9 @@ export const projectsData: { [name: string]: ProjectData } = {
     focus: ["User Research", "UI Design", "Wireframing", "Prototyping"],
     brief:
       "A phone app designed to help users meet new travel buddies and plan trips together.",
-    displayImage: TronDisplay,
+    displayImage: TuraDisplay,
     displayImageMobile: TronDisplayM,
-    smallImage: TronSmall,
+    smallImage: TuraSmall,
     titleColor: "text-gray-900",
     hamburgerColorLight: false,
     bgColor: "bg-[#EFF0ED]",
