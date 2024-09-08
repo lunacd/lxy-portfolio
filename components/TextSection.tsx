@@ -32,7 +32,7 @@ const defaultProps = {
 export default function TextSection(propsIn: TextSectionProps) {
   const props = { ...defaultProps, ...propsIn };
   return (
-    <div>
+    <>
       {props.title && (
         <div className={`${props.titleClass} mb-spacing-lg`}>{props.title}</div>
       )}
@@ -50,6 +50,6 @@ export default function TextSection(propsIn: TextSectionProps) {
           }
         })}
       </div>
-    </div>
+    </>
   );
 }
