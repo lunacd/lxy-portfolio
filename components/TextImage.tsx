@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef } from "react";
 
+import TextSection from "@/components/TextSection";
 import { transitionSlow } from "@/utils/transitions";
 
 interface TextImageProps {
@@ -26,19 +27,18 @@ const TextImage: React.FC<TextImageProps> = (propsIn) => {
   return (
     <motion.div
       className={`mx-spacing-lg mb-spacing-3lg flex w-single flex-col space-y-spacing md:flex-row
-      md:space-x-spacing md:space-y-0 ${props.textColor}`}
+        md:space-x-spacing md:space-y-0 ${props.textColor}`}
       style={{ y: "3rem" }}
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}
       ref={ref}
     >
       <div className="flex w-full flex-col justify-end md:w-half">
-        <div className={`${props.titleClass} mb-spacing-lg`}>{props.title}</div>
-        <div className="paragraph">
-          {props.content.map((line, index) => (
-            <div key={index}>{line}</div>
-          ))}
-        </div>
+        <TextSection
+          titleClass={props.titleClass}
+          title={props.title}
+          content={props.content}
+        />
       </div>
       <div className="relative w-full md:w-half">
         <Image

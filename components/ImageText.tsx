@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 
 import Animatable, { AnimationData } from "@/components/Animatable";
+import TextSection from "@/components/TextSection";
 import { transitionSlow } from "@/utils/transitions";
 
 interface ImageTextProps {
@@ -34,16 +35,11 @@ const ImageText: React.FC<ImageTextProps> = (propsIn) => {
         <Animatable source={props.source} frame={props.frame} alt={props.alt} />
       </div>
       <div className="md:w-one-third flex w-full flex-col justify-end">
-        {props.title && (
-          <div className={`${props.titleClass} mb-spacing-lg`}>
-            {props.title}
-          </div>
-        )}
-        <div className="paragraph">
-          {props.content.map((line, index) => (
-            <div key={index}>{line}</div>
-          ))}
-        </div>
+        <TextSection
+          content={props.content}
+          title={props.title}
+          titleClass={props.titleClass}
+        />
       </div>
     </motion.div>
   );
