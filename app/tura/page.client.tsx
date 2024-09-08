@@ -2,8 +2,12 @@
 
 import Image from "next/image";
 
+import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import EqualSplit from "@/components/EqualSplit";
+import HorizontalScroll from "@/components/HorizontalScroll";
+import LargeGallery from "@/components/LargeGallery";
+import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextSection, {
@@ -13,6 +17,7 @@ import TextSection, {
 } from "@/components/TextSection";
 import DisplayImage, { StaticDisplayImage } from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
+import { RichTextImage } from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
@@ -21,6 +26,18 @@ import useScroll from "@/utils/useScroll";
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
 import Competitive3 from "@/images/tura/competitive/competitive-3-small.webp";
+import Feature1 from "@/images/tura/feature/feature-1-full.webp";
+import Feature2 from "@/images/tura/feature/feature-2-full.webp";
+import Feature3 from "@/images/tura/feature/feature-3-full.webp";
+import Feature4 from "@/images/tura/feature/feature-4-full.webp";
+import Feature5 from "@/images/tura/feature/feature-5-full.webp";
+import Feature6 from "@/images/tura/feature/feature-6-full.webp";
+import Final1 from "@/images/tura/final/final-1-full.webp";
+import Final2 from "@/images/tura/final/final-2-full.webp";
+import Final3 from "@/images/tura/final/final-3-full.webp";
+import Final4 from "@/images/tura/final/final-4-full.webp";
+import Final5 from "@/images/tura/final/final-5-full.webp";
+import Final6 from "@/images/tura/final/final-6-full.webp";
 import Ideation1 from "@/images/tura/ideation/ideation-1-half.webp";
 import Ideation2 from "@/images/tura/ideation/ideation-2-half.webp";
 import Interview1 from "@/images/tura/interview/interview-1-full.webp";
@@ -30,10 +47,14 @@ import Interview4 from "@/images/tura/interview/interview-4-full.webp";
 import Interview5 from "@/images/tura/interview/interview-5-full.webp";
 import Interview6 from "@/images/tura/interview/interview-6-full.webp";
 import JourneyMap from "@/images/tura/journey-full.webp";
+import Logo from "@/images/tura/logo-half.webp";
 import PositioningMatrix from "@/images/tura/matrix-full.webp";
 import Moodboard from "@/images/tura/moodboard-full.webp";
 import Persona from "@/images/tura/persona-full.webp";
 import Scenario from "@/images/tura/scenario-full.webp";
+import Structure from "@/images/tura/structure-full.webp";
+import ColorTheme from "@/images/tura/theme-full.webp";
+import Wireframe from "@/images/tura/wireframe-4x.webp";
 
 export default function TuraClient() {
   const turaProjectData = projectsData["tura"];
@@ -316,6 +337,168 @@ export default function TuraClient() {
       {/* Wireframe */}
       <Title title="Wireframe" />
       <Subtitle title="3 Purposes to open the app" />
+      <div className="grid grid-cols-1 md:grid-cols-3">
+        <div>
+          <TextSection
+            content={[
+              {
+                type: TextContentType.Subtitle,
+                text: "First",
+              },
+            ].concat(
+              createPlainContent([
+                "1. Find people who have the same interests",
+                "2. Chat with each other to get known with each other",
+                "3. Schedule a trip",
+              ]),
+            )}
+          ></TextSection>
+        </div>
+        <div>
+          <TextSection
+            content={[
+              {
+                type: TextContentType.Subtitle,
+                text: "Second",
+              },
+            ].concat(
+              createPlainContent([
+                "1. Schedule a trip",
+                "2. Find/share with friends to trip “with me”.",
+              ]),
+            )}
+          ></TextSection>
+        </div>
+        <div>
+          <TextSection
+            content={[
+              {
+                type: TextContentType.Subtitle,
+                text: "Third",
+              },
+            ].concat(
+              createPlainContent([
+                "1. Find a trip schedule/a group of people to join",
+              ]),
+            )}
+          ></TextSection>
+        </div>
+      </div>
+      <Spacing size="large" />
+
+      <Subtitle title="Structure Map" />
+      <StaticDisplayImage
+        src={Structure}
+        width={1920}
+        height={897}
+        alt="Structure Map"
+      />
+
+      <Subtitle title="Wireframe" />
+      <HorizontalScroll
+        src={Wireframe}
+        width={7680}
+        height={745}
+        alt="Wireframe"
+        prompt="Scroll horizontally to see the whole wireframe!"
+        xSzie="3.5x"
+      />
+
+      <Subtitle title="Color Theme Ideation" />
+      <StaticDisplayImage
+        src={ColorTheme}
+        width={1920}
+        height={722}
+        alt="Color theme"
+      />
+
+      <RichTextImage
+        title=""
+        image={Logo}
+        width={960}
+        height={960}
+        content={[{ type: TextContentType.Subtitle, text: "Logo Refinement" }]}
+      />
+
+      {/* Final Solution */}
+      <Title title="Final Solution" />
+      <Subtitle title="Function and Scenario" />
+      <LargeGallery
+        rows={[
+          { images: [{ frames: [{ src: Final1 }], height: 621, width: 1920 }] },
+          { images: [{ frames: [{ src: Final2 }], height: 621, width: 1920 }] },
+          { images: [{ frames: [{ src: Final3 }], height: 621, width: 1920 }] },
+          { images: [{ frames: [{ src: Final4 }], height: 621, width: 1920 }] },
+          { images: [{ frames: [{ src: Final5 }], height: 621, width: 1920 }] },
+          { images: [{ frames: [{ src: Final6 }], height: 621, width: 1920 }] },
+        ]}
+        description="Function and Scenario"
+      />
+
+      <Button
+        text="View hi-fi prototype on Figma"
+        href="https://www.figma.com/design/cwBHzgGCND3lmJJZHzEDrb/Internship-Portfolio---UX?node-id=30-100&m=dev"
+      />
+      <Spacing size="large" />
+
+      {/* Main Features */}
+      <Title title="Main Features" />
+
+      <Subtitle title="Instruction" />
+      <StaticDisplayImage
+        src={Feature1}
+        width={1920}
+        height={899}
+        alt="Instruction"
+        xSpacing
+      />
+
+      <Subtitle title="Log In" />
+      <StaticDisplayImage
+        src={Feature2}
+        width={1920}
+        height={899}
+        alt="Log In"
+        xSpacing
+      />
+
+      <Subtitle title="Travel Schedule" />
+      <StaticDisplayImage
+        src={Feature3}
+        width={1920}
+        height={899}
+        alt="Travel Schedule"
+        xSpacing
+      />
+
+      <Subtitle title="Create Community" />
+      <StaticDisplayImage
+        src={Feature4}
+        width={1920}
+        height={899}
+        alt="Create Community"
+        xSpacing
+      />
+
+      <Subtitle title="Self-scheduled Plan" />
+      <StaticDisplayImage
+        src={Feature5}
+        width={1920}
+        height={899}
+        alt="Self-scheduled Plan"
+        xSpacing
+      />
+
+      <Subtitle title="Homepage" />
+      <StaticDisplayImage
+        src={Feature6}
+        width={1920}
+        height={899}
+        alt="Homepage"
+        xSpacing
+      />
+
+      <ProjectNavigation prev="/overlap" next="/sunrise" />
     </Scroller>
   );
 }

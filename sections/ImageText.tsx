@@ -1,7 +1,7 @@
 import Animatable, { AnimationData } from "@/components/Animatable";
 import FloatUpMotion from "@/components/FloatUpMotion";
 import TextSection, {
-  TextContentType,
+  TextContent,
   createPlainContent,
 } from "@/components/TextSection";
 
@@ -14,13 +14,21 @@ interface ImageTextProps {
   titleClass?: "title" | "subtitle" | "paragraph";
 }
 
+interface RichImageTextProps {
+  content: TextContent[];
+  source: AnimationData;
+  alt: string;
+  frame?: number;
+  title?: string;
+  titleClass?: "title" | "subtitle" | "paragraph";
+}
+
 const defaultProps = {
   titleClass: "title",
 };
 
-export default function ImageText(propsIn: ImageTextProps) {
+export function RichImageText(propsIn: RichImageTextProps) {
   const props = { ...defaultProps, ...propsIn };
-  const content = createPlainContent(props.content);
   return (
     <FloatUpMotion>
       <div
@@ -36,12 +44,18 @@ export default function ImageText(propsIn: ImageTextProps) {
         </div>
         <div className="flex flex-col justify-end">
           <TextSection
-            content={content}
+            content={props.content}
             title={props.title}
             titleClass={props.titleClass}
           />
         </div>
       </div>
     </FloatUpMotion>
+  );
+}
+
+export default function ImageText(props: ImageTextProps) {
+  return (
+    <RichImageText {...props} content={createPlainContent(props.content)} />
   );
 }

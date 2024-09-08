@@ -2,11 +2,24 @@ import Image, { StaticImageData } from "next/image";
 
 import EqualSplit from "@/components/EqualSplit";
 import FloatUpMotion from "@/components/FloatUpMotion";
-import TextSection, { createPlainContent } from "@/components/TextSection";
+import TextSection, {
+  TextContent,
+  createPlainContent,
+} from "@/components/TextSection";
 
 interface TextImageProps {
   title: string;
   content?: string[];
+  image: string | StaticImageData;
+  width: number;
+  height: number;
+  titleClass?: "title" | "subtitle" | "paragraph";
+  textColor?: string;
+}
+
+interface RichTextImageProps {
+  title: string;
+  content?: TextContent[];
   image: string | StaticImageData;
   width: number;
   height: number;
@@ -20,9 +33,8 @@ const defaultProps = {
   content: [],
 };
 
-export default function TextImage(propsIn: TextImageProps) {
+export function RichTextImage(propsIn: RichTextImageProps) {
   const props = { ...defaultProps, ...propsIn };
-  const content = createPlainContent(props.content);
   return (
     <div className={`mx-spacing-lg mb-spacing-3lg ${props.textColor}`}>
       <FloatUpMotion>
@@ -31,7 +43,7 @@ export default function TextImage(propsIn: TextImageProps) {
             <TextSection
               titleClass={props.titleClass}
               title={props.title}
-              content={content}
+              content={props.content}
             />
           </div>
           <div className="relative">
@@ -46,5 +58,14 @@ export default function TextImage(propsIn: TextImageProps) {
         </EqualSplit>
       </FloatUpMotion>
     </div>
+  );
+}
+
+export default function TextImage(props: TextImageProps) {
+  return (
+    <RichTextImage
+      {...props}
+      content={props.content ? createPlainContent(props.content) : undefined}
+    />
   );
 }

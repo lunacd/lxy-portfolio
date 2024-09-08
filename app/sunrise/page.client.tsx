@@ -1,13 +1,13 @@
 "use client";
 
 import Carousel from "@/components/Carousel";
-import DisplayImage from "@/sections/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
 import LargeGallery from "@/components/LargeGallery";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
+import DisplayImage from "@/sections/DisplayImage";
+import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
@@ -227,7 +227,7 @@ export default function SunriseClient() {
         description="Indoor gallery"
       />
 
-      <ProjectNavigation prev="/overlap" next="/m-tron" />
+      <ProjectNavigation prev="/tura" next="/m-tron" />
     </Scroller>
   );
 }

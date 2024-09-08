@@ -1,13 +1,13 @@
 "use client";
 
 import Carousel from "@/components/Carousel";
-import DisplayImage from "@/sections/DisplayImage";
 import LargeGallery from "@/components/LargeGallery";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
 import { createPlainContent } from "@/components/TextSection";
+import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
