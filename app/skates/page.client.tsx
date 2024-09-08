@@ -10,7 +10,7 @@ import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
 import Subtitle from "@/components/Subtitle";
-import TextImage from "@/components/TextImage";
+import TextImage from "@/sections/TextImage";
 import Title from "@/sections/Title";
 import TopDisplay from "@/components/TopDisplay";
 import { projectsData } from "@/utils/projectData";

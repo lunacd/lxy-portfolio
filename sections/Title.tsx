@@ -1,5 +1,3 @@
-import React from "react";
-
 import FloatUpMotion from "@/components/FloatUpMotion";
 
 interface TitleProps {
@@ -11,7 +9,7 @@ const defaultProps = {
   textColor: "text-black",
 };
 
-const Title: React.FC<TitleProps> = (propsIn) => {
+export default function Title(propsIn: TitleProps) {
   const props = { ...defaultProps, ...propsIn };
   return (
     <FloatUpMotion>
@@ -22,6 +20,4 @@ const Title: React.FC<TitleProps> = (propsIn) => {
       </div>
     </FloatUpMotion>
   );
-};
-
-export default Title;
+}

@@ -9,7 +9,7 @@ import LargeGallery from "@/components/LargeGallery";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Subtitle from "@/components/Subtitle";
-import TextImage from "@/components/TextImage";
+import TextImage from "@/sections/TextImage";
 import Title from "@/sections/Title";
 import TopDisplay from "@/components/TopDisplay";
 import useScroll from "@/utils/useScroll";

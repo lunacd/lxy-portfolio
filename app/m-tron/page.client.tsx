@@ -7,7 +7,7 @@ import LargeGallery from "@/components/LargeGallery";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
-import TextImage from "@/components/TextImage";
+import TextImage from "@/sections/TextImage";
 import Title from "@/sections/Title";
 import TopDisplay from "@/components/TopDisplay";
 import { projectsData } from "@/utils/projectData";

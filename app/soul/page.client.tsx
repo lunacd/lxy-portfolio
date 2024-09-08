@@ -3,14 +3,14 @@
 import Button from "@/components/Button";
 import DisplayImage from "@/components/DisplayImage";
 import HorizontalGallery from "@/components/HorizontalGallery";
-import ImageText from "@/components/ImageText";
+import ImageText from "@/sections/ImageText";
 import LargeGallery from "@/components/LargeGallery";
 import Paragraph from "@/components/Paragraph";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import Subtitle from "@/components/Subtitle";
-import TextImage from "@/components/TextImage";
+import TextImage from "@/sections/TextImage";
 import Title from "@/sections/Title";
 import TopDisplay from "@/components/TopDisplay";
 import { projectsData } from "@/utils/projectData";

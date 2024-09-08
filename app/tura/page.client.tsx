@@ -1,3 +1,5 @@
+"use client";
+
 import Scroller from "@/components/Scroller";
 import { projectsData } from "@/utils/projectData";
 import useScroll from "@/utils/useScroll";

@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
-import TextImage from "@/components/TextImage";
+import TextImage from "@/sections/TextImage";
 import TopDisplay from "@/components/TopDisplay";
 import useScroll from "@/utils/useScroll";
 
