@@ -1,5 +1,14 @@
 import React from "react";
 
+export function createPlainContent(content: string[]) {
+  return content.map((text) => {
+    return {
+      type: TextContentType.Normal,
+      text: text,
+    };
+  });
+}
+
 export enum TextContentType {
   Normal,
   Subtitle,

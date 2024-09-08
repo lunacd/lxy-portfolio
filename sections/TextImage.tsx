@@ -1,7 +1,11 @@
 import Image, { StaticImageData } from "next/image";
 
+import EqualSplit from "@/components/EqualSplit";
 import FloatUpMotion from "@/components/FloatUpMotion";
-import TextSection, { TextContentType } from "@/components/TextSection";
+import TextSection, {
+  TextContentType,
+  createPlainContent,
+} from "@/components/TextSection";
 
 interface TextImageProps {
   title: string;
@@ -20,35 +24,29 @@ const defaultProps = {
 
 export default function TextImage(propsIn: TextImageProps) {
   const props = { ...defaultProps, ...propsIn };
-  const content = props.content.map((text) => {
-    return {
-      type: TextContentType.Normal,
-      text: text,
-    };
-  });
+  const content = createPlainContent(props.content);
   return (
-    <FloatUpMotion>
-      <div
-        className={`mx-spacing-lg mb-spacing-3lg grid w-single grid-cols-1 gap-spacing
-          md:grid-cols-2 ${props.textColor}`}
-      >
-        <div className="flex flex-col justify-end">
-          <TextSection
-            titleClass={props.titleClass}
-            title={props.title}
-            content={content}
-          />
-        </div>
-        <div className="relative">
-          <Image
-            src={props.image}
-            alt={props.title}
-            width={props.width}
-            height={props.height}
-            placeholder="blur"
-          />
-        </div>
-      </div>
-    </FloatUpMotion>
+    <div className={`mx-spacing-lg mb-spacing-3lg ${props.textColor}`}>
+      <FloatUpMotion>
+        <EqualSplit>
+          <div className="flex flex-col justify-end">
+            <TextSection
+              titleClass={props.titleClass}
+              title={props.title}
+              content={content}
+            />
+          </div>
+          <div className="relative">
+            <Image
+              src={props.image}
+              alt={props.title}
+              width={props.width}
+              height={props.height}
+              placeholder="blur"
+            />
+          </div>
+        </EqualSplit>
+      </FloatUpMotion>
+    </div>
   );
 }

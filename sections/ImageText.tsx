@@ -1,6 +1,9 @@
 import Animatable, { AnimationData } from "@/components/Animatable";
 import FloatUpMotion from "@/components/FloatUpMotion";
-import TextSection, { TextContentType } from "@/components/TextSection";
+import TextSection, {
+  TextContentType,
+  createPlainContent,
+} from "@/components/TextSection";
 
 interface ImageTextProps {
   content: string[];
@@ -17,12 +20,7 @@ const defaultProps = {
 
 export default function ImageText(propsIn: ImageTextProps) {
   const props = { ...defaultProps, ...propsIn };
-  const content = props.content.map((text) => {
-    return {
-      type: TextContentType.Normal,
-      text: text,
-    };
-  });
+  const content = createPlainContent(props.content);
   return (
     <FloatUpMotion>
       <div
