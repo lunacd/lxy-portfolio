@@ -2,12 +2,13 @@
 
 import Carousel from "@/components/Carousel";
 import DisplayImage from "@/components/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
 import LargeGallery from "@/components/LargeGallery";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
+import { createPlainContent } from "@/components/TextSection";
+import HorizontalGallery from "@/sections/HorizontalGallery";
 import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
@@ -105,16 +106,20 @@ export default function OverlapClient() {
       <Title title="Overlap Set" />
       <HorizontalGallery
         items={[
-          { image: Set1, title: "Timer", content: ["Section Time"] },
+          {
+            image: Set1,
+            title: "Timer",
+            content: createPlainContent(["Section Time"]),
+          },
           {
             image: Set2,
             title: "File Sorter",
-            content: ["Categorize files, books, etc."],
+            content: createPlainContent(["Categorize files, books, etc."]),
           },
           {
             image: Set3,
             title: "Tray",
-            content: ["Store pens, pins, etc."],
+            content: createPlainContent(["Store pens, pins, etc."]),
           },
         ]}
         sparse={true}

@@ -2,12 +2,13 @@
 
 import Button from "@/components/Button";
 import DisplayImage from "@/components/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
 import LargeGallery from "@/components/LargeGallery";
 import Paragraph from "@/components/Paragraph";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
+import { createPlainContent } from "@/components/TextSection";
+import HorizontalGallery from "@/sections/HorizontalGallery";
 import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
@@ -141,23 +142,26 @@ export default function SoulClient() {
           {
             image: Target1,
             title: "Seamless Interaction",
-            content: [
+            content: createPlainContent([
               "- High quality light, scent, and sound",
               "- Comfortable interaction",
-            ],
+            ]),
           },
           {
             image: Target2,
             title: "Customizable",
-            content: [
+            content: createPlainContent([
               "- Different soothing sounds options",
               "- Customizable light, fragrance, and mist density",
-            ],
+            ]),
           },
           {
             image: Target3,
             title: "Simplicity",
-            content: ["- Automatic startup", "- No disruption"],
+            content: createPlainContent([
+              "- Automatic startup",
+              "- No disruption",
+            ]),
           },
         ]}
         width={640}
@@ -217,12 +221,14 @@ export default function SoulClient() {
           {
             image: Instrument1,
             title: "Soul Instrument",
-            content: ["Self-perfection through sound and touch"],
+            content: createPlainContent([
+              "Self-perfection through sound and touch",
+            ]),
           },
           {
             image: Light1,
             title: "Ambient Lighting Lamp",
-            content: ["Self-perfection through sight"],
+            content: createPlainContent(["Self-perfection through sight"]),
           },
         ]}
         width={960}

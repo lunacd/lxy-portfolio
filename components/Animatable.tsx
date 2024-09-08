@@ -4,7 +4,7 @@ import { StaticImageData } from "next/image";
 import React from "react";
 
 interface FrameData {
-  src: string | StaticImageData;
+  src: StaticImageData;
   unoptimized?: boolean;
 }
 

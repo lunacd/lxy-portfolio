@@ -2,6 +2,10 @@ import classNames from "classnames";
 import Image from "next/image";
 
 import FloatUpMotion from "@/components/FloatUpMotion";
+import TextSection, {
+  TextAlignment,
+  TextContentType,
+} from "@/components/TextSection";
 import GalleryItem from "@/utils/GalleryItem";
 
 interface HorizontalGalleryProps {
@@ -12,6 +16,7 @@ interface HorizontalGalleryProps {
   botSpacing?: boolean;
   textColor?: string;
   titleClass?: "title" | "subtitle" | "paragraph";
+  alignment?: TextAlignment;
 }
 
 const defaultProps = {
@@ -47,16 +52,17 @@ export default function HorizontalGallery(propsIn: HorizontalGalleryProps) {
                 placeholder="blur"
               />
             </div>
-            <div className="text-left md:text-center">
-              {item.title !== undefined && (
-                <div className={`${props.titleClass} mt-2`}>{item.title}</div>
-              )}
-              {item.content !== undefined &&
-                item.content.map((line, index) => (
-                  <div className="paragraph hidden md:block" key={index}>
-                    {line}
-                  </div>
-                ))}
+            <div className="text-left md:text-center w-full">
+              <TextSection
+                content={
+                  item.content
+                    ? [
+                        { type: TextContentType.Subtitle, text: item.title },
+                      ].concat(item.content)
+                    : [{ type: TextContentType.Subtitle, text: item.title }]
+                }
+                alignment={props.alignment}
+              />
             </div>
           </div>
         ))}
