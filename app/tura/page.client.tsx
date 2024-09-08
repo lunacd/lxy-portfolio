@@ -412,7 +412,6 @@ export default function TuraClient() {
         height={722}
         alt="Color theme"
       />
-      <Spacing size="large" />
 
       <RichTextImage
         title=""

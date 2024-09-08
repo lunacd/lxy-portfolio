@@ -86,18 +86,12 @@ interface StaticDisplayImageProps {
 export function StaticDisplayImage(props: StaticDisplayImageProps) {
   return (
     <DisplayImage
+      {...props}
       source={{
         frames: [{ src: props.src }],
         height: props.height,
         width: props.width,
       }}
-      alt={props.alt}
-      xSpacing={props.xSpacing}
-      botSpacing={props.botSpacing}
-      overlayTitle={props.overlayTitle}
-      overlayText={props.overlayText}
-      textPosition={props.textPosition}
-      textColor={props.textColor}
     />
   );
 }
