@@ -26,17 +26,17 @@ export default function ImageText(propsIn: ImageTextProps) {
   return (
     <FloatUpMotion>
       <div
-        className="mx-spacing-lg mb-spacing-3lg flex w-single flex-col-reverse gap-spacing
-          md:flex-row"
+        className="mx-spacing-lg mb-spacing-3lg grid w-single grid-cols-1 gap-spacing
+          md:grid-cols-3"
       >
-        <div className="w-full md:w-two-thirds">
+        <div className="md:col-span-2">
           <Animatable
             source={props.source}
             frame={props.frame}
             alt={props.alt}
           />
         </div>
-        <div className="md:w-one-third flex w-full flex-col justify-end">
+        <div className="flex flex-col justify-end">
           <TextSection
             content={content}
             title={props.title}

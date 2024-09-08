@@ -29,17 +29,17 @@ export default function TextImage(propsIn: TextImageProps) {
   return (
     <FloatUpMotion>
       <div
-        className={`mx-spacing-lg mb-spacing-3lg flex w-single flex-col space-y-spacing md:flex-row
-          md:space-x-spacing md:space-y-0 ${props.textColor}`}
+        className={`mx-spacing-lg mb-spacing-3lg grid w-single grid-cols-1 gap-spacing
+          md:grid-cols-2 ${props.textColor}`}
       >
-        <div className="flex w-full flex-col justify-end md:w-half">
+        <div className="flex flex-col justify-end">
           <TextSection
             titleClass={props.titleClass}
             title={props.title}
             content={content}
           />
         </div>
-        <div className="relative w-full md:w-half">
+        <div className="relative">
           <Image
             src={props.image}
             alt={props.title}
