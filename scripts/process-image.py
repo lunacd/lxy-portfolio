@@ -31,6 +31,8 @@ for dirPath, dirNames, filenames in os.walk("./images"):
 
         if basename.endswith("6x"):
             target_width = 1920 * 6
+        elif basename.endswith("4x"):
+            target_width = 1920 * 4
         elif basename.endswith("2x"):
             target_width = 1920 * 2
         elif basename.endswith("full"):
