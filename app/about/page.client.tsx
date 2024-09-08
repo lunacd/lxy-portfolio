@@ -10,7 +10,7 @@ import Animatable from "@/components/Animatable";
 import Button from "@/components/Button";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
-import Title from "@/components/Title";
+import Title from "@/sections/Title";
 import { transitionFast } from "@/utils/transitions";
 import useFrameIndex from "@/utils/useFrameIndex";
 

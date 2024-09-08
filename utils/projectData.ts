@@ -127,6 +127,22 @@ export const projectsData: { [name: string]: ProjectData } = {
     bgColor: "bg-[#E4F2F5]",
     link: "/m-tron",
   },
+  tura: {
+    uri: "tura",
+    name: "Tura",
+    duration: "14 Week, 2021 Spring",
+    category: "End-to-end Mobile App Design, Solo Project",
+    focus: ["User Research", "UI Design", "Wireframing", "Prototyping"],
+    brief:
+      "A phone app designed to help users meet new travel buddies and plan trips together.",
+    displayImage: TronDisplay,
+    displayImageMobile: TronDisplayM,
+    smallImage: TronSmall,
+    titleColor: "text-gray-900",
+    hamburgerColorLight: false,
+    bgColor: "bg-[#EFF0ED]",
+    link: "/tura",
+  },
 };
 
 export const projects: string[] = Object.keys(projectsData);
@@ -230,5 +246,6 @@ export const sidebarRoutes = [
     typeClass: "paragraph",
   },
   { uri: "m-tron", name: "M-Tron", link: "/m-tron", typeClass: "paragraph" },
+  { uri: "tura", name: "Tura", link: "/tura", typeClass: "paragraph" },
   { uri: "others", name: "More Work", link: "/others", typeClass: "subtitle" },
 ];

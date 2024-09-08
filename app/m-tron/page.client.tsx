@@ -8,7 +8,7 @@ import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextImage from "@/components/TextImage";
-import Title from "@/components/Title";
+import Title from "@/sections/Title";
 import TopDisplay from "@/components/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 import useFrameIndex from "@/utils/useFrameIndex";
