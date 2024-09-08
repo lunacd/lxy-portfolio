@@ -2,12 +2,12 @@
 
 import Carousel from "@/components/Carousel";
 import ConnectPrompt from "@/components/ConnectPrompt";
-import DisplayImage from "@/sections/DisplayImage";
 import { GalleryRowLayout } from "@/components/GalleryRow";
-import HorizontalGallery from "@/sections/HorizontalGallery";
 import LargeGallery from "@/components/LargeGallery";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
+import DisplayImage from "@/sections/DisplayImage";
+import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";

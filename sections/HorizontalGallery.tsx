@@ -52,7 +52,7 @@ export default function HorizontalGallery(propsIn: HorizontalGalleryProps) {
                 placeholder="blur"
               />
             </div>
-            <div className="text-left md:text-center w-full">
+            <div className="w-full text-left md:text-center">
               <TextSection
                 content={
                   item.content

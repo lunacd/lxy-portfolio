@@ -1,15 +1,15 @@
 .topDisplay_textShadow {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .topDisplay_detailSection {
-    @apply font-extralight;
-    & span {
-        @apply font-semibold;
-    }
+  @apply font-extralight;
+  & span {
+    @apply font-semibold;
+  }
 }
 
 .topDisplay_detailColumn {
-    @apply relative w-[var(--single)] flex-col space-y-1;
-    @apply lg:w-[var(--half)];
+  @apply relative w-[var(--single)] flex-col space-y-1;
+  @apply lg:w-[var(--half)];
 }

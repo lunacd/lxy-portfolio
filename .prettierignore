@@ -47,3 +47,5 @@ yarn-error.log*
 *.svg
 *.mp4
 *.pdf
+
+pnpm-lock.yaml
