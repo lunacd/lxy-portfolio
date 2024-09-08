@@ -39,7 +39,7 @@ export function RichTextImage(propsIn: RichTextImageProps) {
     <div className={`mx-spacing-lg mb-spacing-3lg ${props.textColor}`}>
       <FloatUpMotion>
         <EqualSplit>
-          <div className="flex flex-col justify-end">
+          <div className="flex flex-col justify-end h-full">
             <TextSection
               titleClass={props.titleClass}
               title={props.title}
