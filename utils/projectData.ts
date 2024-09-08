@@ -137,14 +137,14 @@ export const otherProjectsData = [
     name: "Lyu",
     category: "Soft Goods",
     smallImage: LyuSmall,
-    link: "https://www.shirleylyu.com/lyu",
+    link: "/lyu",
   },
   {
     uri: "refugia",
     name: "Refugia",
     category: "Spatial Experience Design",
     smallImage: RefugiaSmall,
-    link: "https://www.shirleylyu.com/refugia",
+    link: "/refugia",
   },
   {
     uri: "mode",
