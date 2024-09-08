@@ -12,7 +12,7 @@ import Spacing from "@/components/Spacing";
 import Subtitle from "@/components/Subtitle";
 import TextImage from "@/sections/TextImage";
 import Title from "@/sections/Title";
-import TopDisplay from "@/components/TopDisplay";
+import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 import useScroll from "@/utils/useScroll";
 

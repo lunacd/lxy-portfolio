@@ -11,7 +11,7 @@ import SmallGallery from "@/components/SmallGallery";
 import Subtitle from "@/components/Subtitle";
 import TextImage from "@/sections/TextImage";
 import Title from "@/sections/Title";
-import TopDisplay from "@/components/TopDisplay";
+import TopDisplay from "@/sections/TopDisplay";
 import useScroll from "@/utils/useScroll";
 
 import BagMaking1 from "@/images/lyu/bag-making/bag-making-1-small.webp";

@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import { useInterval } from "usehooks-ts";
 
-import TopDisplay from "@/components/TopDisplay";
+import TopDisplay from "@/sections/TopDisplay";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 import { projects, projectsData } from "@/utils/projectData";
 import { transitionSlow } from "@/utils/transitions";

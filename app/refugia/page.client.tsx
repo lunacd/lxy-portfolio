@@ -5,7 +5,7 @@ import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextImage from "@/sections/TextImage";
-import TopDisplay from "@/components/TopDisplay";
+import TopDisplay from "@/sections/TopDisplay";
 import useScroll from "@/utils/useScroll";
 
 import RefugiaSmall from "@/images/projects/refugia-half.webp";

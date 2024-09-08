@@ -15,7 +15,7 @@ import {
 } from "react";
 
 import PageRoot from "@/components/PageRoot";
-import { Sidebar } from "@/components/Sidebar";
+import { Sidebar } from "@/sections/Sidebar";
 import { getInitialState, stateReducer } from "@/utils/GlobalState";
 import GlobalStateContext from "@/utils/GlobalStateContext";
 

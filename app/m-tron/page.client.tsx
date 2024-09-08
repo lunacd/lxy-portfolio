@@ -9,7 +9,7 @@ import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextImage from "@/sections/TextImage";
 import Title from "@/sections/Title";
-import TopDisplay from "@/components/TopDisplay";
+import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 import useFrameIndex from "@/utils/useFrameIndex";
 import useScroll from "@/utils/useScroll";
