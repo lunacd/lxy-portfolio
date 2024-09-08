@@ -337,7 +337,7 @@ export default function TuraClient() {
       {/* Wireframe */}
       <Title title="Wireframe" />
       <Subtitle title="3 Purposes to open the app" />
-      <div className="grid grid-cols-1 md:grid-cols-3 w-single gap-spacing">
+      <div className="grid w-single grid-cols-1 gap-spacing md:grid-cols-3">
         <div>
           <TextSection
             content={[
@@ -402,6 +402,7 @@ export default function TuraClient() {
         alt="Wireframe"
         prompt="Scroll horizontally to see the whole wireframe!"
         xSzie="3.5x"
+        xSpacing
       />
 
       <Subtitle title="Color Theme Ideation" />
@@ -411,6 +412,7 @@ export default function TuraClient() {
         height={722}
         alt="Color theme"
       />
+      <Spacing size="large" />
 
       <RichTextImage
         title=""

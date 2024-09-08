@@ -13,10 +13,12 @@ interface HorizontalScrollProps {
   prompt: string;
   xSzie: "2x" | "3.5x";
   textColor?: string;
+  xSpacing?: boolean;
 }
 
 const defaultProps = {
   textColor: "text-black",
+  xSpacing: false,
 };
 
 const HorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
@@ -34,7 +36,12 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
       <div className={`paragraph single mb-8 ${props.textColor}`}>
         {props.prompt}
       </div>
-      <div className="mb-spacing-3lg w-full overflow-x-scroll">
+      <div
+        className={classNames("mb-spacing-3lg overflow-x-scroll", {
+          "w-full": !props.xSpacing,
+          "w-single": props.xSpacing,
+        })}
+      >
         <div
           className={classNames({
             "w-[200%]": props.xSzie === "2x",
