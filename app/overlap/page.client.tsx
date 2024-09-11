@@ -344,7 +344,7 @@ export default function OverlapClient() {
       </div>
       <Spacing size="medium" />
 
-      <ProjectNavigation prev="/skates" next="/sunrise" />
+      <ProjectNavigation prev="/skates" next="/tura" />
     </Scroller>
   );
 }
