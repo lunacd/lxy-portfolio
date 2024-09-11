@@ -6,6 +6,7 @@ import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextSection, {
+  TextAlignment,
   TextContentType,
   createPlainContent,
 } from "@/components/TextSection";
@@ -88,6 +89,7 @@ export default function AgainFromScratchClient() {
         ]}
         width={640}
         height={302}
+        alignment={TextAlignment.Left}
       />
 
       <Title title="Demo Video" />
