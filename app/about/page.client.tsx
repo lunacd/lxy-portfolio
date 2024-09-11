@@ -495,10 +495,12 @@ export default function AboutClient() {
           />
         </div>
         <div className="lg:self-end">
-          Hello! This is Shirley Lyu. I am a product designer with an infinite
-          range of ideas. I am interested in lifestyle products, spatial
-          experience, sustainability, social innovation, soft goods, and
-          consumer electronics.
+          I am a multidisciplinary product designer with a passion for creating
+          intuitive and impactful user experiences. My industrial design skills
+          and instructional design insights enable me to craft solutions that
+          are both engaging and inclusive. With a strong foundation in UI/UX,
+          lifestyle product design, and EdTech, I create products that enhance
+          both digital and physical interactions.
         </div>
       </div>
 
