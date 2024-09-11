@@ -98,9 +98,10 @@ export default function AgainFromScratchClient() {
         allowFullScreen
         className="aspect-video w-single"
       ></iframe>
+      <Spacing size="large" />
 
       <Title title="Research Paper" />
-      <Button text="Read th Paper" href="/againfromscratch.pdf" />
+      <Button text="Read the Paper" href="/againfromscratch.pdf" />
       <Spacing size="large" />
 
       <Title title="Design Details" />
