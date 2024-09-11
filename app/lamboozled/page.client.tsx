@@ -76,7 +76,7 @@ export default function LamboozledClient() {
       </div>
       <Spacing size="large" />
 
-      <ProjectNavigation prev="/tura" next="/sunrise" />
+      <ProjectNavigation prev="/tura" next="/again-from-scratch" />
     </Scroller>
   );
 }

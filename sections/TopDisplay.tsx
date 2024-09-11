@@ -1,7 +1,7 @@
 import "./TopDisplay.css";
 import classNames from "classnames";
 import Image from "next/image";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useRef } from "react";
 
 import CategoryTag from "@/components/CategoryTag";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
@@ -17,6 +17,7 @@ export interface TopDisplayProps {
 
 const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
   const { dispatch } = useGlobalStateContext();
+  const textSection = useRef<HTMLDivElement>(null);
   return (
     <>
       <div
@@ -43,13 +44,27 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
             className="object-cover object-center md:hidden"
           />
           <div className="absolute left-0 top-0 flex h-full w-full justify-center">
+            {/* Optional cover color for background */}
+            {props.project.coverColor && (
+              <div
+                style={{
+                  height: textSection.current
+                    ? textSection.current.clientHeight * 2 + 48
+                    : 0,
+                  background: `linear-gradient(180deg, ${props.project.coverColor} 0%, rgba(0, 0, 0, 0) 100%)`,
+                }}
+                className="absolute left-0 right-0 top-0"
+              ></div>
+            )}
             {/* Project name */}
             <div
               className={`single relative mt-8 lg:mt-12 xl:mt-24 ${props.project.titleColor}`}
             >
-              <div className="text-3xl">{props.project.name}</div>
-              <div className="topDisplay_textShadow mt-2 text-base lg:max-w-[25%]">
-                {props.project.brief}
+              <div ref={textSection}>
+                <div className="text-3xl">{props.project.name}</div>
+                <div className="topDisplay_textShadow mt-2 text-base lg:max-w-[25%]">
+                  {props.project.brief}
+                </div>
               </div>
 
               {/* Award image */}

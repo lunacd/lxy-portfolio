@@ -5,6 +5,6 @@ export const metadata: Metadata = {
   title: "Lamboozled | Shirley Lyu",
 };
 
-export default function Sunrise() {
+export default function Lamboozled() {
   return <LamboozledClient />;
 }

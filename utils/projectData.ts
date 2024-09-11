@@ -1,11 +1,14 @@
 import { StaticImageData } from "next/image";
 
+import AgainFromScratchDisplay from "@/images/againfromscratch/display-full.webp";
+import AgainFromScratchDisplayM from "@/images/againfromscratch/display-mobile-half.webp";
 import LamboozledDisplay from "@/images/lamboozled/display-full.webp";
 import LamboozledDisplayM from "@/images/lamboozled/display-mobile-half.webp";
 import TronDisplay from "@/images/m-tron/display-full.webp";
 import TronDisplayM from "@/images/m-tron/display-mobile-half.webp";
 import OverlapDisplay from "@/images/overlap/display-full.webp";
 import OverlapDisplayM from "@/images/overlap/display-mobile-half.webp";
+import AgainFromScratchSmall from "@/images/projects/againfromscratch-half.webp";
 import ErgoSmall from "@/images/projects/ergo-half.webp";
 import ItoSmall from "@/images/projects/ito-half.webp";
 import LamboozledSmall from "@/images/projects/lamboozled-half.webp";
@@ -51,6 +54,7 @@ export interface ProjectData extends ProjectDataLean {
   hamburgerColorLight: boolean;
   bgColor: string;
   awardImage?: StaticImageData;
+  coverColor?: string;
 }
 
 export const projectsData: { [name: string]: ProjectData } = {
@@ -170,6 +174,23 @@ export const projectsData: { [name: string]: ProjectData } = {
     bgColor: "bg-[#E4F2F5]",
     link: "/m-tron",
   },
+  "again-from-scratch": {
+    uri: "again-from-scratch",
+    name: "Again From Scratch",
+    duration: "7 Week, 2024 Spring",
+    category: "Educational Tool Design, Solo project",
+    focus: ["Instructional Design", "Curriculum Development"],
+    brief:
+      "A material exploration toolkit that empowers learners to craft, experiment with, and eventually understand diverse materials and basic forms.",
+    displayImage: AgainFromScratchDisplay,
+    displayImageMobile: AgainFromScratchDisplayM,
+    smallImage: AgainFromScratchSmall,
+    titleColor: "text-gray-900",
+    hamburgerColorLight: false,
+    bgColor: "bg-[#EEECEA]",
+    link: "/again-from-scratch",
+    coverColor: "rgba(255, 255, 255, 1)"
+  },
 };
 
 export const projects: string[] = Object.keys(projectsData);
@@ -264,6 +285,12 @@ export const sidebarRoutes = [
     uri: "lamboozled",
     name: "Lamboozled!",
     link: "/lamboozled",
+    typeClass: "paragraph",
+  },
+  {
+    uri: "again-from-scratch",
+    name: "Again From Scratch",
+    link: "/again-from-scratch",
     typeClass: "paragraph",
   },
   {
