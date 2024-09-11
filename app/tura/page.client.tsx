@@ -175,11 +175,17 @@ export default function TuraClient() {
 
       <EqualSplit>
         <div>
-          <TextSection title="Journal Ideation" />
+          <TextSection
+            content={[
+              { type: TextContentType.Subtitle, text: "Journal Ideation" },
+            ]}
+          />
           <Image src={Ideation1} alt="Journal Ideation" />
         </div>
         <div>
-          <TextSection title="Scenarios" />
+          <TextSection
+            content={[{ type: TextContentType.Subtitle, text: "Scenarios" }]}
+          />
           <Image src={Ideation2} alt="Scenarios" />
           <EqualSplit fill>
             <TextSection
@@ -209,7 +215,7 @@ export default function TuraClient() {
       <Spacing size="large" />
 
       {/* Positioning Matrix */}
-      <Title title="Positioning Matrix" />
+      <Subtitle title="Positioning Matrix" />
       <DisplayImage
         source={{
           frames: [{ src: PositioningMatrix }],
@@ -220,7 +226,7 @@ export default function TuraClient() {
       />
 
       {/* Mission Statement */}
-      <Title title="Mission Statement" />
+      <Subtitle title="Mission Statement" />
       <div className="flex w-single justify-center">
         <div className="w-2/3">
           <TextSection

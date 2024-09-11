@@ -63,7 +63,7 @@ export default function LamboozledClient() {
 
       <div>
         <div className="title text-center">Want to know more?</div>
-        <div className="w-single">
+        <div className="w-single text-center">
           You can keep an eye on the{" "}
           <a
             href="https://www.masclab.org/lamboozled-goes-digital"
