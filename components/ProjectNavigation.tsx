@@ -1,8 +1,8 @@
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
-import Link from "next/link";
 import React from "react";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
+import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 
 interface ProjectNavigationProps {
   prev?: string;
@@ -16,18 +16,33 @@ const defaultProps = {
 
 const ProjectNavigation: React.FC<ProjectNavigationProps> = (propsIn) => {
   const props = { ...defaultProps, ...propsIn };
+  const { dispatch } = useGlobalStateContext();
   return (
     <>
       <div className={`single flex flex-row font-semibold ${props.textColor}`}>
-        {props.prev !== undefined && (
+        {props.prev && (
           <div className="mr-auto flex flex-row items-center space-x-4">
             <IconChevronLeft size={24} />
-            <Link href={props.prev}>Previous Project</Link>
+            <a
+              onClick={() => {
+                dispatch({ type: "changeRoute", newRoute: props.prev! });
+              }}
+              className="cursor-pointer"
+            >
+              Previous Project
+            </a>
           </div>
         )}
-        {props.next !== undefined && (
+        {props.next && (
           <div className="ml-auto flex flex-row items-center space-x-4">
-            <Link href={props.next}>Next Project</Link>
+            <a
+              onClick={() => {
+                dispatch({ type: "changeRoute", newRoute: props.next! });
+              }}
+              className="cursor-pointer"
+            >
+              Next Project
+            </a>
             <IconChevronRight size={24} />
           </div>
         )}
