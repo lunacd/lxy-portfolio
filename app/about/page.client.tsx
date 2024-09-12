@@ -21,12 +21,14 @@ import Dog1 from "@/images/about/dog-1-small.webp";
 import Dog2 from "@/images/about/dog-2-small.webp";
 import Dog3 from "@/images/about/dog-3-small.webp";
 import Dog4 from "@/images/about/dog-4-small.webp";
+import NatureObserver from "@/images/about/nature-observer.gif";
 import Photo1 from "@/images/about/photo-1-small.webp";
 import Photo2 from "@/images/about/photo-2-small.webp";
 import Photo3 from "@/images/about/photo-3-small.webp";
 import Photo4 from "@/images/about/photo-4-small.webp";
 import Photo5 from "@/images/about/photo-5-small.webp";
 import Profile from "@/images/about/profile-half.webp";
+import SocialInnovator from "@/images/about/social-innovator.gif";
 import Sports from "@/images/about/sports.gif";
 import Thinker1 from "@/images/about/thinker-1-small.webp";
 import Thinker2 from "@/images/about/thinker-2-small.webp";
@@ -75,11 +77,14 @@ function VideoGallery() {
             setOverlayOpen(true);
           }}
         >
-          <video
-            src="/social-innovator.mp4"
-            autoPlay
-            loop
-            className="about_darken"
+          <Animatable
+            source={{
+              frames: [{ src: SocialInnovator, unoptimized: true }],
+              width: 960,
+              height: 580,
+            }}
+            frame={frame}
+            alt="Nature Observer"
           />
           <div className="about_textOverlay">
             <div>Social Innovator</div>
@@ -168,12 +173,18 @@ function VideoGallery() {
           {/* Desktop second col second row, inner first row */}
           <div className="flex flex-row gap-4">
             {/* Nature observer */}
-            <div className="about_rounded relative" style={{ flex: 960 / 606 }}>
-              <video
-                src="/nature-observer.mp4"
-                autoPlay
-                loop
-                className="about_darken"
+            <div
+              className="about_rounded about_darken relative"
+              style={{ flex: 960 / 606 }}
+            >
+              <Animatable
+                source={{
+                  frames: [{ src: NatureObserver, unoptimized: true }],
+                  width: 960,
+                  height: 606,
+                }}
+                frame={frame}
+                alt="Nature Observer"
               />
               <div className="about_textOverlay">
                 <div>Nature Observer</div>
@@ -267,18 +278,20 @@ function VideoGallery() {
           </div>
         </div>
         <div
-          className="about_rounded relative cursor-pointer"
+          className="about_rounded about_darken relative cursor-pointer"
           onClick={() => {
             setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
             setOverlayOpen(true);
           }}
-          style={{ flex: 960 / 580 }}
         >
-          <video
-            src="/social-innovator.mp4"
-            autoPlay
-            loop
-            className="about_darken"
+          <Animatable
+            source={{
+              frames: [{ src: SocialInnovator, unoptimized: true }],
+              width: 960,
+              height: 580,
+            }}
+            frame={frame}
+            alt="Social Innovator"
           />
           <div className="about_textOverlay">
             <div>Social Innovator</div>
@@ -288,12 +301,15 @@ function VideoGallery() {
 
       {/* Second row: Nature observer / Dog lover */}
       <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
-        <div className="about_rounded relative" style={{ flex: 960 / 606 }}>
-          <video
-            src="/nature-observer.mp4"
-            autoPlay
-            loop
-            className="about_darken"
+        <div className="about_rounded about_darken relative">
+          <Animatable
+            source={{
+              frames: [{ src: NatureObserver, unoptimized: true }],
+              width: 960,
+              height: 606,
+            }}
+            frame={frame}
+            alt="Nature Observer"
           />
           <div className="about_textOverlay">
             <div>Nature Observer</div>
@@ -484,7 +500,7 @@ export default function AboutClient() {
       <div className="pt-16"></div>
 
       {/* Profile */}
-      <div className="single my-spacing-lg grid gap-spacing lg:grid-cols-2">
+      <div className="single my-spacing-lg grid grid-cols-1 gap-spacing lg:grid-cols-3">
         <div className="about_rounded">
           <Image
             src={Profile}
@@ -494,7 +510,7 @@ export default function AboutClient() {
             placeholder="blur"
           />
         </div>
-        <div className="lg:self-end">
+        <div className="lg:col-span-2 lg:self-end">
           I am a multidisciplinary product designer with a passion for creating
           intuitive and impactful user experiences. My industrial design skills
           and instructional design insights enable me to craft solutions that

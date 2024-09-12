@@ -6,6 +6,7 @@ import React from "react";
 interface FrameData {
   src: StaticImageData;
   unoptimized?: boolean;
+  unblurred?: boolean;
 }
 
 export interface AnimationData {
@@ -47,7 +48,7 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
           width={props.source.width}
           height={props.source.height}
           unoptimized={props.source.frames[0].unoptimized}
-          placeholder="blur"
+          placeholder={props.source.frames[0].unblurred ? "blur" : undefined}
         />
       </div>
       {props.source.frames.map((image, index) => {
