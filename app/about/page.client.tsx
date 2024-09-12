@@ -496,9 +496,6 @@ export default function AboutClient() {
 
   return (
     <Scroller bgColor="bg-[#FDF9F1]">
-      {/* Extra spacing on mobile */}
-      <div className="pt-16"></div>
-
       {/* Profile */}
       <div className="single my-spacing-lg grid grid-cols-1 gap-spacing lg:grid-cols-3">
         <div className="about_rounded">

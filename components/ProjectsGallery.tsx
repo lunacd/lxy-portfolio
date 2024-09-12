@@ -18,7 +18,7 @@ interface ProjectsGalleryProps {
 const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
   const { dispatch } = useGlobalStateContext();
   return (
-    <div className="single my-spacing-3lg grid grid-cols-2 gap-spacing lg:grid-cols-3">
+    <div className="single mt-spacing-lg mb-spacing-3lg grid grid-cols-2 gap-spacing lg:grid-cols-3">
       {props.data.map((data, index) => {
         return (
           <motion.div
