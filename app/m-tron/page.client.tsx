@@ -209,7 +209,7 @@ export default function MTronClient() {
         used for demonstration purposes only as part of a student work.
       </div>
       <Spacing size="medium" />
-      <ProjectNavigation prev="/sunrise" next="/lyu" textColor="text-white" />
+      <ProjectNavigation prev="/sunrise" textColor="text-white" />
     </Scroller>
   );
 }
