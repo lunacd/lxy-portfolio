@@ -111,6 +111,9 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
               <div className="topDisplay_detailSection">
                 <span>Category: </span>
                 {props.project.category}
+                {props.project.categoryTail && (
+                  <span>, {props.project.categoryTail}</span>
+                )}
               </div>
               <div className="col-span-2 flex flex-row flex-wrap space-x-2">
                 {props.project.focus.map((focus, index) => {

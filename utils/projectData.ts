@@ -55,6 +55,7 @@ export interface ProjectData extends ProjectDataLean {
   bgColor: string;
   awardImage?: StaticImageData;
   coverColor?: string;
+  categoryTail?: string;
 }
 
 export const projectsData: { [name: string]: ProjectData } = {
@@ -62,7 +63,8 @@ export const projectsData: { [name: string]: ProjectData } = {
     uri: "soul",
     name: "Soul",
     duration: "14 Weeks, 2022 Spring",
-    category: "Lux lifestyle Product Set, Solo Project",
+    category: "Lux lifestyle Product Set",
+    categoryTail: "Solo Project",
     focus: ["Brand Research", "Form Study", "3D Modeling"],
     brief:
       "A meditation set designed to help regular meditators achieve peace and clarity easily through sight and sound.",
@@ -78,7 +80,8 @@ export const projectsData: { [name: string]: ProjectData } = {
     uri: "skates",
     name: "Skates",
     duration: "14 Weeks, 2022 Fall",
-    category: "Furniture Design, Solo Project",
+    category: "Furniture Design",
+    categoryTail: "Solo Project",
     focus: ["Form Study", "Interaction Design", "Prototyping", "Manufacturing"],
     brief: "A versatile chair designed for shared open spaces.",
     displayImage: SkatesDisplay,
@@ -94,7 +97,8 @@ export const projectsData: { [name: string]: ProjectData } = {
     uri: "overlap",
     name: "Overlap",
     duration: "14 Weeks, 2022 Spring",
-    category: "Lifestyle Product Design, Solo Project",
+    category: "Lifestyle Product Design",
+    categoryTail: "Solo Project",
     focus: ["Prototyping", "Model Making", "Manufacturing", "Tech Drawing"],
     brief:
       "A set of table organizers that brings joyful interaction while organizing time, space, and belongings.",
@@ -110,7 +114,8 @@ export const projectsData: { [name: string]: ProjectData } = {
     uri: "tura",
     name: "Tura",
     duration: "14 Week, 2021 Spring",
-    category: "End-to-end Mobile App Design, Solo Project",
+    category: "End-to-end Mobile App Design",
+    categoryTail: "Solo Project",
     focus: ["User Research", "UI Design", "Wireframing", "Prototyping"],
     brief:
       "A phone app designed to help users meet new travel buddies and plan trips together.",
@@ -126,7 +131,8 @@ export const projectsData: { [name: string]: ProjectData } = {
     uri: "lamboozled",
     name: "Lamboozled!",
     duration: "14 Week, 2023 Fall & 2024 Spring",
-    category: "Game Design, Media & Social Change Lab (MASCLab) Project",
+    category: "Game Design",
+    categoryTail: "Media & Social Change Lab (MASCLab) Project",
     focus: [
       "Interaction Design",
       "Wireframing",
@@ -147,7 +153,8 @@ export const projectsData: { [name: string]: ProjectData } = {
     uri: "sunrise",
     name: "Sunrise Speaker",
     duration: "14 Weeks , 2021 Fall",
-    category: "Consumer Electronics, Solo Project",
+    category: "Consumer Electronics",
+    categoryTail: "Solo Project",
     focus: ["Prototyping", "Model Making", "Manufacturing"],
     brief: "A hand-crafted speaker.",
     displayImage: SunriseDisplay,
@@ -162,7 +169,8 @@ export const projectsData: { [name: string]: ProjectData } = {
     uri: "m-tron",
     name: "M-Tron",
     duration: "5 Weeks , 2021 Spring",
-    category: "Transportation, Solo Project",
+    category: "Transportation",
+    categoryTail: "Solo Project",
     focus: ["3D Modeling", "Rendering", "Brand-Centric Design"],
     brief:
       "A shared semi-automatic scooter designed for Disneyland, for kids and adults to travel between rides.",
@@ -178,7 +186,8 @@ export const projectsData: { [name: string]: ProjectData } = {
     uri: "again-from-scratch",
     name: "Again From Scratch",
     duration: "7 Week, 2024 Spring",
-    category: "Educational Tool Design, Solo project",
+    category: "Educational Tool Design",
+    categoryTail: "Solo Project",
     focus: ["Instructional Design", "Curriculum Development"],
     brief:
       "A material exploration toolkit that empowers learners to craft, experiment with, and eventually understand diverse materials and basic forms.",
