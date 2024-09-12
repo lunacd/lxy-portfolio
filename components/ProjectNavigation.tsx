@@ -47,7 +47,7 @@ const ProjectNavigation: React.FC<ProjectNavigationProps> = (propsIn) => {
           </div>
         )}
       </div>
-      <ConnectPrompt />
+      <ConnectPrompt textColor={props.textColor} />
     </>
   );
 };
