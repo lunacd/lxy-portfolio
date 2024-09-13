@@ -195,7 +195,7 @@ export default function AgainFromScratchClient() {
         xSpacing
       />
 
-      <ProjectNavigation prev="/lamboozled" next="/sunrise" />
+      <ProjectNavigation prev="/overlap" next="/sunrise" />
     </Scroller>
   );
 }

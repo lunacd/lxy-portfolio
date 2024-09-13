@@ -237,7 +237,7 @@ export default function SoulClient() {
       </div>
       <Spacing size="medium" />
 
-      <ProjectNavigation prev="/soul" next="/overlap" />
+      <ProjectNavigation next="/tura" />
     </Scroller>
   );
 }

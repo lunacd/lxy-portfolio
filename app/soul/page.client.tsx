@@ -421,7 +421,7 @@ export default function SoulClient() {
       </div>
       <Spacing size="medium" />
 
-      <ProjectNavigation next="/skates" />
+      <ProjectNavigation prev="/lamboozled" next="/overlap" />
     </Scroller>
   );
 }

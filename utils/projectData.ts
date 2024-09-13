@@ -59,23 +59,6 @@ export interface ProjectData extends ProjectDataLean {
 }
 
 export const projectsData: { [name: string]: ProjectData } = {
-  soul: {
-    uri: "soul",
-    name: "Soul",
-    duration: "14 Weeks, 2022 Spring",
-    category: "Lux lifestyle Product Set",
-    categoryTail: "Solo Project",
-    focus: ["Brand Research", "Form Study", "3D Modeling"],
-    brief:
-      "A meditation set designed to help regular meditators achieve peace and clarity easily through sight and sound.",
-    displayImage: SoulDisplay,
-    displayImageMobile: SoulDisplayM,
-    smallImage: SoulSmall,
-    titleColor: "text-gray-100",
-    hamburgerColorLight: true,
-    bgColor: "bg-[#EEEAE2]",
-    link: "/soul",
-  },
   skates: {
     uri: "skates",
     name: "Skates",
@@ -92,23 +75,6 @@ export const projectsData: { [name: string]: ProjectData } = {
     bgColor: "bg-[#F0EBE6]",
     link: "/skates",
     awardImage: SitAwardImage,
-  },
-  overlap: {
-    uri: "overlap",
-    name: "Overlap",
-    duration: "14 Weeks, 2022 Spring",
-    category: "Lifestyle Product Design",
-    categoryTail: "Solo Project",
-    focus: ["Prototyping", "Model Making", "Manufacturing", "Tech Drawing"],
-    brief:
-      "A set of table organizers that brings joyful interaction while organizing time, space, and belongings.",
-    displayImage: OverlapDisplay,
-    displayImageMobile: OverlapDisplayM,
-    smallImage: OverlapSmall,
-    titleColor: "text-gray-900",
-    hamburgerColorLight: false,
-    bgColor: "bg-[#FDF9F1]",
-    link: "/overlap",
   },
   tura: {
     uri: "tura",
@@ -148,6 +114,40 @@ export const projectsData: { [name: string]: ProjectData } = {
     hamburgerColorLight: false,
     bgColor: "bg-[#E9E9E9]",
     link: "/lamboozled",
+  },
+  soul: {
+    uri: "soul",
+    name: "Soul",
+    duration: "14 Weeks, 2022 Spring",
+    category: "Lux lifestyle Product Set",
+    categoryTail: "Solo Project",
+    focus: ["Brand Research", "Form Study", "3D Modeling"],
+    brief:
+      "A meditation set designed to help regular meditators achieve peace and clarity easily through sight and sound.",
+    displayImage: SoulDisplay,
+    displayImageMobile: SoulDisplayM,
+    smallImage: SoulSmall,
+    titleColor: "text-gray-100",
+    hamburgerColorLight: true,
+    bgColor: "bg-[#EEEAE2]",
+    link: "/soul",
+  },
+  overlap: {
+    uri: "overlap",
+    name: "Overlap",
+    duration: "14 Weeks, 2022 Spring",
+    category: "Lifestyle Product Design",
+    categoryTail: "Solo Project",
+    focus: ["Prototyping", "Model Making", "Manufacturing", "Tech Drawing"],
+    brief:
+      "A set of table organizers that brings joyful interaction while organizing time, space, and belongings.",
+    displayImage: OverlapDisplay,
+    displayImageMobile: OverlapDisplayM,
+    smallImage: OverlapSmall,
+    titleColor: "text-gray-900",
+    hamburgerColorLight: false,
+    bgColor: "bg-[#FDF9F1]",
+    link: "/overlap",
   },
   sunrise: {
     uri: "sunrise",
@@ -286,9 +286,7 @@ export const sidebarRoutes = [
     link: "/projects",
     typeClass: "subtitle",
   },
-  { uri: "soul", name: "Soul", link: "/soul", typeClass: "paragraph" },
   { uri: "skates", name: "Skates", link: "/skates", typeClass: "paragraph" },
-  { uri: "overlap", name: "Overlap", link: "/overlap", typeClass: "paragraph" },
   { uri: "tura", name: "Tura", link: "/tura", typeClass: "paragraph" },
   {
     uri: "lamboozled",
@@ -296,6 +294,8 @@ export const sidebarRoutes = [
     link: "/lamboozled",
     typeClass: "paragraph",
   },
+  { uri: "soul", name: "Soul", link: "/soul", typeClass: "paragraph" },
+  { uri: "overlap", name: "Overlap", link: "/overlap", typeClass: "paragraph" },
   {
     uri: "again-from-scratch",
     name: "Again From Scratch",

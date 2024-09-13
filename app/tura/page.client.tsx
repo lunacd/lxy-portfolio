@@ -505,7 +505,7 @@ export default function TuraClient() {
         xSpacing
       />
 
-      <ProjectNavigation prev="/overlap" next="/sunrise" />
+      <ProjectNavigation prev="/overlap" next="/soul" />
     </Scroller>
   );
 }
