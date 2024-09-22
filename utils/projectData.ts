@@ -279,7 +279,6 @@ interface Route {
 
 export default Route;
 export const sidebarRoutes = [
-  { uri: "about", name: "About", link: "/about", typeClass: "subtitle" },
   {
     uri: "projects",
     name: "Projects",
@@ -309,5 +308,6 @@ export const sidebarRoutes = [
     typeClass: "paragraph",
   },
   { uri: "m-tron", name: "M-Tron", link: "/m-tron", typeClass: "paragraph" },
+  { uri: "about", name: "About", link: "/about", typeClass: "subtitle" },
   { uri: "others", name: "More Work", link: "/others", typeClass: "subtitle" },
 ];
