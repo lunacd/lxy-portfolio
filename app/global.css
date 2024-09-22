@@ -38,8 +38,8 @@ body {
 
 @media (min-width: 1280px) {
   :root {
-    --spacing: 4rem;
-    --spacing-lg: 6rem;
+    --spacing: 3rem;
+    --spacing-lg: 4rem;
     --sidebar: 21rem;
     @apply text-lg;
   }
