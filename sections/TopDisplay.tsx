@@ -1,4 +1,4 @@
-import "./TopDisplay.css";
+import styles from "./TopDisplay.module.css";
 import classNames from "classnames";
 import Image from "next/image";
 import React, { forwardRef, useRef } from "react";
@@ -62,7 +62,9 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
             >
               <div ref={textSection}>
                 <div className="text-3xl">{props.project.name}</div>
-                <div className="topDisplay_textShadow mt-2 text-base lg:max-w-[25%]">
+                <div
+                  className={`${styles.textShadow} mt-2 text-base lg:max-w-[25%]`}
+                >
                   {props.project.brief}
                 </div>
               </div>
@@ -104,11 +106,11 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
         <div className="flex flex-col items-center">
           <div className="single mx-spacing-lg flex flex-row space-x-spacing py-8">
             <div className="grid w-full grid-cols-2 gap-2">
-              <div className="topDisplay_detailSection">
+              <div className={styles.detailSection}>
                 <span>Duration: </span>
                 {props.project.duration}
               </div>
-              <div className="topDisplay_detailSection">
+              <div className={styles.detailSection}>
                 <span>Category: </span>
                 {props.project.category}
                 {props.project.categoryTail && (
@@ -125,7 +127,7 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
         </div>
       </div>
       {props.displayDescriptionOnMobile && (
-        <div className="topDisplay_detailSection opacity-0 md:hidden">
+        <div className={`${styles.detailSection} opacity-0 md:hidden`}>
           <span>Project Brief: </span>
           {props.project.brief}
         </div>

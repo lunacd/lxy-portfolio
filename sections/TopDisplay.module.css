@@ -1,0 +1,10 @@
+.textShadow {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.detailSection {
+  @apply font-extralight;
+  & span:first-of-type {
+    @apply font-semibold;
+  }
+}
