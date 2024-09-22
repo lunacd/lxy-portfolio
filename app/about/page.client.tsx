@@ -462,7 +462,7 @@ function VideoGallery() {
                   allowFullScreen
                   className="relative z-20 w-full border-0 lg:h-full lg:w-2/3"
                 ></iframe>
-                <div className="mb-4 flex w-full flex-col justify-center p-4 lg:w-1/3">
+                <div className="mx-4 my-10 mb-4 flex w-full flex-col justify-center overflow-y-auto lg:w-1/3">
                   <div className="title mb-2">Organization Mission</div>
                   <div className="paragraph">
                     Wanyi is a city-based organization that designs and
