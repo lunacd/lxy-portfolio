@@ -13,6 +13,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
+import Tooltip from "@/components/Tooltip";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 import { projectsData, sidebarRoutes } from "@/utils/projectData";
 import { transitionFast as transitionDefault } from "@/utils/transitions";
@@ -174,26 +175,34 @@ export const Sidebar = () => {
 
           {/* Social links */}
           <div className="flex flex-row justify-between">
-            <a
-              href="https://www.instagram.com/lyu.shirley/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconBrandInstagram size={isLG ? 20 : 18} />
-            </a>
-            <a href="mailto:shirley.lyu.xiaoya@gmail.com">
-              <IconMail size={isLG ? 20 : 18} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/xiaoya-lyu-11b68419b/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconBrandLinkedin size={isLG ? 20 : 18} />
-            </a>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer">
-              <IconFileText size={isLG ? 20 : 18} />
-            </a>
+            <Tooltip tip="Instagram">
+              <a
+                href="https://www.instagram.com/lyu.shirley/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <IconBrandInstagram size={isLG ? 20 : 18} />
+              </a>
+            </Tooltip>
+            <Tooltip tip="Email">
+              <a href="mailto:shirley.lyu.xiaoya@gmail.com">
+                <IconMail size={isLG ? 20 : 18} />
+              </a>
+            </Tooltip>
+            <Tooltip tip="LinkedIn">
+              <a
+                href="https://www.linkedin.com/in/xiaoya-lyu-11b68419b/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <IconBrandLinkedin size={isLG ? 20 : 18} />
+              </a>
+            </Tooltip>
+            <Tooltip tip="Resume">
+              <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                <IconFileText size={isLG ? 20 : 18} />
+              </a>
+            </Tooltip>
           </div>
         </div>
 
