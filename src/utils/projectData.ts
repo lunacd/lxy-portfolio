@@ -149,6 +149,24 @@ export const projectsData: { [name: string]: ProjectData } = {
     bgColor: "bg-[#FDF9F1]",
     link: "/overlap",
   },
+  "again-from-scratch": {
+    uri: "again-from-scratch",
+    name: "Again From Scratch",
+    duration: "7 Week, 2024 Spring",
+    category: "Educational Tool Design",
+    categoryTail: "Solo Project",
+    focus: ["Instructional Design", "Curriculum Development"],
+    brief:
+      "A material exploration toolkit that empowers learners to craft, experiment with, and eventually understand diverse materials and basic forms.",
+    displayImage: AgainFromScratchDisplay,
+    displayImageMobile: AgainFromScratchDisplayM,
+    smallImage: AgainFromScratchSmall,
+    titleColor: "text-gray-900",
+    hamburgerColorLight: false,
+    bgColor: "bg-[#EEECEA]",
+    link: "/again-from-scratch",
+    coverColor: "rgba(255, 255, 255, 1)",
+  },
   sunrise: {
     uri: "sunrise",
     name: "Sunrise Speaker",
@@ -181,24 +199,6 @@ export const projectsData: { [name: string]: ProjectData } = {
     hamburgerColorLight: true,
     bgColor: "bg-[#E4F2F5]",
     link: "/m-tron",
-  },
-  "again-from-scratch": {
-    uri: "again-from-scratch",
-    name: "Again From Scratch",
-    duration: "7 Week, 2024 Spring",
-    category: "Educational Tool Design",
-    categoryTail: "Solo Project",
-    focus: ["Instructional Design", "Curriculum Development"],
-    brief:
-      "A material exploration toolkit that empowers learners to craft, experiment with, and eventually understand diverse materials and basic forms.",
-    displayImage: AgainFromScratchDisplay,
-    displayImageMobile: AgainFromScratchDisplayM,
-    smallImage: AgainFromScratchSmall,
-    titleColor: "text-gray-900",
-    hamburgerColorLight: false,
-    bgColor: "bg-[#EEECEA]",
-    link: "/again-from-scratch",
-    coverColor: "rgba(255, 255, 255, 1)"
   },
 };
 

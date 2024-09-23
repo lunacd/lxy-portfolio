@@ -61,7 +61,7 @@ export default function TuraClient() {
   const scrollDiv = useScroll();
   return (
     <Scroller bgColor={turaProjectData.bgColor} divRef={scrollDiv}>
-      <TopDisplay project={turaProjectData} animation={false} />
+      <TopDisplay project={turaProjectData} />
 
       {/* Overview */}
       <Title title="Overview" />

@@ -6,10 +6,10 @@ import { GlobalState, GlobalStateAction } from "@/utils/GlobalState";
 const defaultState = {
   currentProjectIndex: 0,
   currentProject: projects[0],
-  projectRolling: false,
   displayAnimation: false,
   swipeAnimation: false,
   route: "",
+  projectsInView: new Array(projects.length).fill(false),
 };
 
 const GlobalStateContext = createContext<{

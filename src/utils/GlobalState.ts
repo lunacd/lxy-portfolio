@@ -13,10 +13,10 @@ export function getInitialState(pathname: string): GlobalState {
   return {
     currentProjectIndex: currentProjectIndex,
     currentProject: currentProject,
-    projectRolling: false,
     displayAnimation: false,
     swipeAnimation: false,
     route: pathname,
+    projectsInView: new Array(projects.length).fill(false),
   };
 }
 
@@ -26,28 +26,22 @@ export type GlobalStateAction =
       newRoute: string;
     }
   | {
-      type: "nextProject";
-    }
-  | {
-      type: "setProjectRoll";
-      rolling: boolean;
-    }
-  | {
-      type: "setProject";
-      project: string;
-    }
-  | {
       type: "setDisplayAnimation";
       displayAnimation: boolean;
+    }
+  | {
+      type: "setInView";
+      isInView: boolean;
+      project: string;
     };
 
 export interface GlobalState {
   currentProjectIndex: number;
   currentProject: string;
-  projectRolling: boolean;
   displayAnimation: boolean;
   swipeAnimation: boolean;
   route: string;
+  projectsInView: boolean[];
 }
 
 function getProjectNameFromPathname(pathname: string) {
@@ -64,24 +58,6 @@ function isProject(link: string): boolean {
 
 export function stateReducer(state: GlobalState, action: GlobalStateAction) {
   const newState = { ...state };
-  if (action.type === "nextProject") {
-    newState.currentProjectIndex =
-      (newState.currentProjectIndex + 1) % projects.length;
-    newState.currentProject = projects[newState.currentProjectIndex];
-    return newState;
-  }
-  if (action.type === "setProjectRoll") {
-    newState.projectRolling = action.rolling;
-    return newState;
-  }
-  if (action.type === "setProject") {
-    const index = projects.indexOf(action.project);
-    if (index >= 0) {
-      newState.currentProject = action.project;
-      newState.currentProjectIndex = index;
-    }
-    return newState;
-  }
   if (action.type === "setDisplayAnimation") {
     newState.displayAnimation = action.displayAnimation;
     return newState;
@@ -89,16 +65,32 @@ export function stateReducer(state: GlobalState, action: GlobalStateAction) {
   if (action.type === "changeRoute") {
     const currentPageIsProject = isProject(state.route);
     const targetPageIsProject = isProject(action.newRoute);
-    if ((state.route === "/" || currentPageIsProject) && targetPageIsProject) {
-      newState.swipeAnimation = false;
-    } else {
-      newState.swipeAnimation = true;
-    }
+    newState.swipeAnimation = !(
+      (state.route === "/" || currentPageIsProject) &&
+      targetPageIsProject
+    );
     newState.route = action.newRoute;
     if (targetPageIsProject) {
       newState.currentProject = getProjectNameFromPathname(action.newRoute);
     } else {
       newState.currentProject = "";
+    }
+    return newState;
+  }
+  if (action.type === "setInView") {
+    const projectIndex = projects.indexOf(action.project);
+    newState.projectsInView[projectIndex] = action.isInView;
+    let currentProject = "";
+    let currentProjectIndex = 0;
+    for (let i = 0; i < projects.length; i++) {
+      if (newState.projectsInView[i]) {
+        currentProject = projects[i];
+        currentProjectIndex = i;
+      }
+    }
+    if (currentProject.length > 0) {
+      newState.currentProject = currentProject;
+      newState.currentProjectIndex = currentProjectIndex;
     }
   }
   return newState;

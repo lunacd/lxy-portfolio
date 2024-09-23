@@ -60,7 +60,6 @@ export default function SoulClient() {
     <Scroller bgColor="bg-[#F0EBE6]" divRef={scrollDiv}>
       <TopDisplay
         project={projectsData["skates"]}
-        animation={false}
         displayDescriptionOnMobile={true}
       />
 

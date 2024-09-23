@@ -87,7 +87,6 @@ export default function OverlapClient() {
     <Scroller bgColor="bg-[#FDF9F1]" divRef={scrollDiv}>
       <TopDisplay
         project={projectsData["overlap"]}
-        animation={false}
         displayDescriptionOnMobile={true}
       />
 

@@ -1,7 +1,8 @@
 import styles from "./TopDisplay.module.css";
 import classNames from "classnames";
+import { useInView } from "framer-motion";
 import Image from "next/image";
-import React, { forwardRef, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import CategoryTag from "@/components/CategoryTag";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
@@ -9,26 +10,47 @@ import { ProjectData } from "@/utils/projectData";
 
 export interface TopDisplayProps {
   project: ProjectData;
-  animation: boolean;
   absolute?: boolean;
   link?: boolean;
   displayDescriptionOnMobile?: boolean;
+  bottomSpacing?: boolean;
 }
 
-const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
+const defaultProps = {
+  bottomSpacing: true,
+};
+
+export default function TopDisplay(propsIn: TopDisplayProps) {
+  const props = { ...defaultProps, ...propsIn };
   const { dispatch } = useGlobalStateContext();
   const textSection = useRef<HTMLDivElement>(null);
+  const centerRef = useRef(null);
+  const inView = useInView(centerRef);
+  useEffect(() => {
+    dispatch({
+      type: "setInView",
+      project: props.project.uri,
+      isInView: inView,
+    });
+  }, [dispatch, inView, props.project.uri]);
   return (
     <>
       <div
         className={classNames(
-          `mb-spacing-2lg flex h-full min-h-screen w-full flex-col ${props.project.bgColor}`,
+          `flex h-full min-h-screen w-full flex-col ${props.project.bgColor}`,
           {
             "absolute left-0 top-0": props.absolute,
+            relative: !props.absolute,
+            "mb-spacing-2lg": props.bottomSpacing,
           },
         )}
-        ref={ref}
+        id={props.project.uri}
       >
+        {/* A div in the center used to detect whether TopDisplay is in view or not. */}
+        <div
+          className="absolute left-1/2 top-1/2 h-1 w-1"
+          ref={centerRef}
+        ></div>
         {/* Project image */}
         <div className="relative min-h-0 w-full flex-shrink flex-grow overflow-hidden">
           <Image
@@ -134,8 +156,4 @@ const TopDisplay = forwardRef<HTMLDivElement, TopDisplayProps>((props, ref) => {
       )}
     </>
   );
-});
-
-TopDisplay.displayName = "Top Display";
-
-export default TopDisplay;
+}

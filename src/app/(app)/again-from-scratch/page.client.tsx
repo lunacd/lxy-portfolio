@@ -37,7 +37,7 @@ export default function AgainFromScratchClient() {
   const scrollDiv = useScroll();
   return (
     <Scroller bgColor={againFromScratchProjectData.bgColor} divRef={scrollDiv}>
-      <TopDisplay project={againFromScratchProjectData} animation={false} />
+      <TopDisplay project={againFromScratchProjectData} />
 
       <Title title="Overview" />
       <EqualSplit>

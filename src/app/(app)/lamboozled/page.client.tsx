@@ -15,7 +15,7 @@ export default function LamboozledClient() {
   const scrollDiv = useScroll();
   return (
     <Scroller bgColor={lamboozledProjectData.bgColor} divRef={scrollDiv}>
-      <TopDisplay project={lamboozledProjectData} animation={false} />
+      <TopDisplay project={lamboozledProjectData} />
 
       <Title title="Overview" />
       <EqualSplit>

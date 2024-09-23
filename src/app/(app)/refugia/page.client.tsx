@@ -36,7 +36,6 @@ export default function RefugiaClient() {
     <Scroller bgColor="bg-[#EEEAE2]" divRef={scrollDiv}>
       <TopDisplay
         project={projectData}
-        animation={false}
         displayDescriptionOnMobile={true}
       />
 

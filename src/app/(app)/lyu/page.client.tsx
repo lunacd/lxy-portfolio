@@ -104,7 +104,6 @@ export default function LyuClient() {
     <Scroller bgColor="bg-[#EFF2F3]" divRef={scrollDiv}>
       <TopDisplay
         project={lyuProjectData}
-        animation={false}
         displayDescriptionOnMobile={true}
       />
 

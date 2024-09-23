@@ -60,7 +60,7 @@ export default function SunriseClient() {
   const scrollDiv = useScroll();
   return (
     <Scroller bgColor="bg-[#D8D6D4]" divRef={scrollDiv}>
-      <TopDisplay project={projectsData["sunrise"]} animation={false} />
+      <TopDisplay project={projectsData["sunrise"]} />
 
       {/* Manifesto */}
       <TextImage

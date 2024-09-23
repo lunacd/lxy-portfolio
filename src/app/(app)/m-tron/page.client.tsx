@@ -43,7 +43,6 @@ export default function MTronClient() {
     <Scroller bgColor="bg-[#353535]" divRef={scrollDiv}>
       <TopDisplay
         project={projectsData["m-tron"]}
-        animation={false}
         displayDescriptionOnMobile={true}
       />
 
