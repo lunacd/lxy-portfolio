@@ -404,6 +404,7 @@ function VideoGallery() {
             alt="Sports Lover"
             width={480}
             height={360}
+            unoptimized
           />
           <div className="about_textOverlay">
             <div>Sports Lover</div>
