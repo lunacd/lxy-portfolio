@@ -1,13 +1,26 @@
+import classNames from "classnames";
+
 interface CategoryTagProps {
-  className?: string;
   category: string;
+  titleColor?: string;
 }
 
-export default function CategoryTag(props: CategoryTagProps) {
+const defaultProps = {
+  titleColor: "text-gray-950",
+};
+
+export default function CategoryTag(propsIn: CategoryTagProps) {
+  const props = { ...defaultProps, ...propsIn };
   return (
     <div
-      className={`rounded-full border border-black px-2 py-1 text-xs text-black md:text-sm
-        ${props.className}`}
+      className={classNames(
+        "rounded-full border px-2 py-1 text-xs text-black md:text-sm",
+        {
+          [props.titleColor]: true,
+          "border-gray-100": props.titleColor === "text-gray-100",
+          "border-gray-950": props.titleColor !== "text-gray-100",
+        },
+      )}
     >
       {props.category}
     </div>
