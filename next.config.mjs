@@ -1,6 +1,6 @@
-module.exports = {
+import { withPayload } from "@payloadcms/next/withPayload";
+const nextConfig = withPayload({
   reactStrictMode: true,
-  swcMinify: true,
   trailingSlash: true,
   async redirects() {
     return [
@@ -19,4 +19,6 @@ module.exports = {
       },
     ];
   },
-};
+});
+
+export default nextConfig;
