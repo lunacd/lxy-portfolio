@@ -12,7 +12,6 @@ import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
-import useScroll from "@/utils/useScroll";
 
 import Evo1 from "@/images/sunrise/evolution/evolution-1-small.webp";
 import Evo2 from "@/images/sunrise/evolution/evolution-2-small.webp";
@@ -57,9 +56,8 @@ import Ortho5 from "@/images/sunrise/ortho/ortho-5-full.webp";
 import UsageScenario from "@/images/sunrise/usage-scenario-full.webp";
 
 export default function SunriseClient() {
-  const scrollDiv = useScroll();
   return (
-    <Scroller bgColor="bg-[#D8D6D4]" divRef={scrollDiv}>
+    <Scroller bgColor="bg-[#D8D6D4]">
       <TopDisplay project={projectsData["sunrise"]} />
 
       {/* Manifesto */}

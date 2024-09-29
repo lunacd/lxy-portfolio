@@ -15,7 +15,6 @@ import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 import useFrameIndex from "@/utils/useFrameIndex";
-import useScroll from "@/utils/useScroll";
 
 import BrandResearch from "@/images/soul/brand-research-full.webp";
 import BrandValue from "@/images/soul/brand-value-half.webp";
@@ -60,11 +59,10 @@ import Target3 from "@/images/soul/target-03-small.webp";
 import UserNeed from "@/images/soul/user-half.webp";
 
 export default function SoulClient() {
-  const scrollDiv = useScroll();
   const frame = useFrameIndex(2000);
 
   return (
-    <Scroller bgColor="bg-[#EEEAE2]" divRef={scrollDiv}>
+    <Scroller bgColor="bg-[#EEEAE2]">
       <TopDisplay
         project={projectsData["soul"]}
         displayDescriptionOnMobile={true}

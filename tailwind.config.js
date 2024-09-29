@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       spacing: {
@@ -26,6 +24,9 @@ module.exports = {
       },
       inset: {
         18: "4.5rem",
+      },
+      gridTemplateRows: {
+        13: "repeat(13, minmax(0, 1fr))",
       },
     },
   },

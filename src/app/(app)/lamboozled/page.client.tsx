@@ -8,13 +8,11 @@ import TextSection, { TextContentType } from "@/components/TextSection";
 import Title from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
-import useScroll from "@/utils/useScroll";
 
 export default function LamboozledClient() {
   const lamboozledProjectData = projectsData["lamboozled"];
-  const scrollDiv = useScroll();
   return (
-    <Scroller bgColor={lamboozledProjectData.bgColor} divRef={scrollDiv}>
+    <Scroller bgColor={lamboozledProjectData.bgColor}>
       <TopDisplay project={lamboozledProjectData} />
 
       <Title title="Overview" />

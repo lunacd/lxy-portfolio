@@ -15,7 +15,6 @@ import HorizontalGallery from "@/sections/HorizontalGallery";
 import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
-import useScroll from "@/utils/useScroll";
 
 import Challenge from "@/images/againfromscratch/challenge-full.webp";
 import Design from "@/images/againfromscratch/design-full.webp";
@@ -34,9 +33,8 @@ import Target3 from "@/images/againfromscratch/target/target-3-small.webp";
 
 export default function AgainFromScratchClient() {
   const againFromScratchProjectData = projectsData["again-from-scratch"];
-  const scrollDiv = useScroll();
   return (
-    <Scroller bgColor={againFromScratchProjectData.bgColor} divRef={scrollDiv}>
+    <Scroller bgColor={againFromScratchProjectData.bgColor}>
       <TopDisplay project={againFromScratchProjectData} />
 
       <Title title="Overview" />

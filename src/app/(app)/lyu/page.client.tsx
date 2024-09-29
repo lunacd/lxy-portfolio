@@ -11,7 +11,6 @@ import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
-import useScroll from "@/utils/useScroll";
 
 import BagMaking1 from "@/images/lyu/bag-making/bag-making-1-small.webp";
 import BagMaking2 from "@/images/lyu/bag-making/bag-making-2-small.webp";
@@ -98,10 +97,8 @@ const lyuProjectData = {
 };
 
 export default function LyuClient() {
-  const scrollDiv = useScroll();
-
   return (
-    <Scroller bgColor="bg-[#EFF2F3]" divRef={scrollDiv}>
+    <Scroller bgColor="bg-[#EFF2F3]">
       <TopDisplay
         project={lyuProjectData}
         displayDescriptionOnMobile={true}

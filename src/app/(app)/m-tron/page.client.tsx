@@ -12,7 +12,6 @@ import Title from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 import useFrameIndex from "@/utils/useFrameIndex";
-import useScroll from "@/utils/useScroll";
 
 import Brake1 from "@/images/m-tron/brake-1-full.webp";
 import Brake2 from "@/images/m-tron/brake-2-full.webp";
@@ -37,10 +36,9 @@ import UserScenario from "@/images/m-tron/scenario-6x.webp";
 import SpeedController from "@/images/m-tron/speed-controller-full.webp";
 
 export default function MTronClient() {
-  const scrollDiv = useScroll();
   const currentIndex = useFrameIndex(1500);
   return (
-    <Scroller bgColor="bg-[#353535]" divRef={scrollDiv}>
+    <Scroller bgColor="bg-[#353535]">
       <TopDisplay
         project={projectsData["m-tron"]}
         displayDescriptionOnMobile={true}

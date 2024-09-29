@@ -6,7 +6,6 @@ import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextImage from "@/sections/TextImage";
 import TopDisplay from "@/sections/TopDisplay";
-import useScroll from "@/utils/useScroll";
 
 import RefugiaSmall from "@/images/projects/refugia-half.webp";
 import RefugiaDisplay from "@/images/refugia/display-full.webp";
@@ -31,13 +30,9 @@ const projectData = {
 };
 
 export default function RefugiaClient() {
-  const scrollDiv = useScroll();
   return (
-    <Scroller bgColor="bg-[#EEEAE2]" divRef={scrollDiv}>
-      <TopDisplay
-        project={projectData}
-        displayDescriptionOnMobile={true}
-      />
+    <Scroller bgColor="bg-[#EEEAE2]">
+      <TopDisplay project={projectData} displayDescriptionOnMobile={true} />
 
       <TextImage
         title="Project Manifesto"

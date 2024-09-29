@@ -21,7 +21,6 @@ import { RichTextImage } from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
-import useScroll from "@/utils/useScroll";
 
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
@@ -58,9 +57,8 @@ import Wireframe from "@/images/tura/wireframe-4x.webp";
 
 export default function TuraClient() {
   const turaProjectData = projectsData["tura"];
-  const scrollDiv = useScroll();
   return (
-    <Scroller bgColor={turaProjectData.bgColor} divRef={scrollDiv}>
+    <Scroller bgColor={turaProjectData.bgColor}>
       <TopDisplay project={turaProjectData} />
 
       {/* Overview */}

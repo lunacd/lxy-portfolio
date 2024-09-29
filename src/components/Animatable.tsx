@@ -19,10 +19,12 @@ interface AnimatableProps {
   source: AnimationData;
   alt: string;
   frame?: number;
+  fill?: boolean;
 }
 
 const defaultProps = {
   frame: 0,
+  fill: false,
 };
 
 const Animatable: React.FC<AnimatableProps> = (propsIn) => {
@@ -30,7 +32,7 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
 
   return (
     <div
-      className="relative w-full"
+      className="relative h-full w-full"
       style={{
         flex: props.source.width / props.source.height,
       }}
@@ -45,10 +47,12 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
         <Image
           src={props.source.frames[0].src}
           alt={props.alt}
-          width={props.source.width}
-          height={props.source.height}
+          width={props.fill ? undefined : props.source.width}
+          height={props.fill ? undefined : props.source.height}
           unoptimized={props.source.frames[0].unoptimized}
           placeholder={props.source.frames[0].unblurred ? "blur" : undefined}
+          fill={props.fill}
+          objectFit={props.fill ? "cover" : undefined}
         />
       </div>
       {props.source.frames.map((image, index) => {
@@ -56,7 +60,7 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
           return (
             <div
               className={classNames(
-                "absolute left-0 top-0 w-full transition-opacity duration-700 ease-linear",
+                "absolute left-0 top-0 h-full w-full transition-opacity duration-700 ease-linear",
                 {
                   "opacity-0":
                     props.frame % props.source.frames.length !== index,
@@ -67,10 +71,12 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
               <Image
                 src={image.src}
                 alt={props.alt}
-                width={props.source.width}
-                height={props.source.height}
+                width={props.fill ? undefined : props.source.width}
+                height={props.fill ? undefined : props.source.height}
                 unoptimized={image.unoptimized}
                 placeholder="blur"
+                fill={props.fill}
+                objectFit={props.fill ? "cover" : undefined}
               />
             </div>
           );

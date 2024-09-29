@@ -68,10 +68,13 @@ function VideoGallery() {
   return (
     <>
       {/* Desktop first row */}
-      <div className="single mb-4 hidden grid-cols-12 gap-4 lg:grid">
+      <div className="single grid-rows-13 mb-4 grid grid-cols-5 gap-4 lg:grid-cols-12 lg:grid-rows-12">
         {/* Social innovator */}
+        {/* Setting aspect ratio on this one to use as a guideline for grid cell heights */}
         <div
-          className="about_rounded relative col-span-6 col-start-2 cursor-pointer"
+          className="about_rounded relative col-span-5 col-start-1 row-span-4 row-start-1
+            cursor-pointer lg:col-span-6 lg:col-start-2"
+          style={{ aspectRatio: "1.65517241" }}
           onClick={() => {
             setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
             setOverlayOpen(true);
@@ -85,6 +88,7 @@ function VideoGallery() {
             }}
             frame={frame}
             alt="Nature Observer"
+            fill
           />
           <div className="about_textOverlay">
             <div>Social Innovator</div>
@@ -92,8 +96,11 @@ function VideoGallery() {
         </div>
 
         {/* Traveller */}
-        <div className="about_rounded relative col-span-4 col-start-8 self-end">
-          <div className="about_darken w-full">
+        <div
+          className="about_rounded relative col-span-3 col-start-3 row-span-3 row-start-9
+            lg:col-span-4 lg:col-start-8 lg:row-start-2"
+        >
+          <div className="about_darken h-full w-full">
             <Animatable
               source={{
                 frames: [
@@ -109,244 +116,20 @@ function VideoGallery() {
               }}
               frame={frame}
               alt="Traveller"
+              fill
             />
           </div>
           <div className="about_textOverlay">
             <div>Traveller</div>
           </div>
         </div>
-      </div>
 
-      {/* Desktop second row */}
-      <div className="single mb-spacing-3lg hidden grid-cols-12 gap-4 lg:grid">
-        {/* Desktop first col of second row */}
-        <div className="col-span-3 space-y-4">
-          {/* Craftsperson */}
-          <div className="about_rounded relative">
-            <div className="about_darken w-full">
-              <Animatable
-                source={{
-                  frames: [
-                    { src: CraftsPerson1 },
-                    { src: CraftsPerson2 },
-                    { src: CraftsPerson3 },
-                  ],
-                  width: 640,
-                  height: 652,
-                }}
-                frame={frame}
-                alt="Craftsperson"
-              />
-            </div>
-            <div className="about_textOverlay">
-              <div>Craftsperson</div>
-            </div>
-          </div>
-
-          {/* Photographer */}
-          <div className="about_rounded relative">
-            <div className="about_darken w-full">
-              <Animatable
-                source={{
-                  frames: [
-                    { src: Photo1 },
-                    { src: Photo2 },
-                    { src: Photo3 },
-                    { src: Photo4 },
-                    { src: Photo5 },
-                  ],
-                  width: 640,
-                  height: 669,
-                }}
-                frame={frame}
-                alt="Photographer"
-              />
-            </div>
-            <div className="about_textOverlay">
-              <div>Photographer</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Desktop second col second row */}
-        <div className="col-span-9 col-start-4 space-y-4">
-          {/* Desktop second col second row, inner first row */}
-          <div className="flex flex-row gap-4">
-            {/* Nature observer */}
-            <div
-              className="about_rounded about_darken relative"
-              style={{ flex: 960 / 606 }}
-            >
-              <Animatable
-                source={{
-                  frames: [{ src: NatureObserver, unoptimized: true }],
-                  width: 960,
-                  height: 606,
-                }}
-                frame={frame}
-                alt="Nature Observer"
-              />
-              <div className="about_textOverlay">
-                <div>Nature Observer</div>
-              </div>
-            </div>
-            {/* Dog lover */}
-            <div
-              className="about_rounded relative"
-              style={{
-                flex: 640 / 838,
-              }}
-            >
-              <div className="about_darken w-full">
-                <Animatable
-                  source={{
-                    frames: [
-                      { src: Dog1 },
-                      { src: Dog2 },
-                      { src: Dog3 },
-                      { src: Dog4 },
-                    ],
-                    width: 640,
-                    height: 838,
-                  }}
-                  frame={frame}
-                  alt="Dog lover"
-                />
-              </div>
-              <div className="about_textOverlay">
-                <div>Dog Lover</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop second col second row, inner second row */}
-          <div className="grid grid-cols-9 gap-4">
-            {/* Thinker */}
-            <div className="about_rounded relative col-span-3">
-              <div className="about_darken w-full">
-                <Animatable
-                  source={{
-                    frames: [
-                      { src: Thinker1 },
-                      { src: Thinker2 },
-                      { src: Thinker3 },
-                    ],
-                    width: 640,
-                    height: 933,
-                  }}
-                  frame={frame}
-                  alt="Thinker"
-                />
-              </div>
-              <div className="about_textOverlay">
-                <div>Thinker</div>
-              </div>
-            </div>
-            {/* Sports lover */}
-            <div className="about_rounded relative col-span-4 self-start">
-              <Image
-                className="about_darken"
-                src={Sports}
-                alt="Sports Lover"
-                width={480}
-                height={360}
-                unoptimized
-              />
-              <div className="about_textOverlay">
-                <div>Sports Lover</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile */}
-      {/* First row: Thinker / Social innovator */}
-      <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
-        <div className="about_rounded relative" style={{ flex: 640 / 933 }}>
-          <Animatable
-            source={{
-              frames: [{ src: Thinker1 }, { src: Thinker2 }, { src: Thinker3 }],
-              width: 640,
-              height: 933,
-            }}
-            frame={frame}
-            alt="Thinker"
-          />
-          <div className="about_textOverlay">
-            <div>Thinker</div>
-          </div>
-        </div>
+        {/* Craftsperson */}
         <div
-          className="about_rounded about_darken relative cursor-pointer"
-          onClick={() => {
-            setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
-            setOverlayOpen(true);
-          }}
+          className="about_rounded relative col-span-2 col-start-1 row-span-3 row-start-9
+            lg:col-span-3 lg:row-start-5"
         >
-          <Animatable
-            source={{
-              frames: [{ src: SocialInnovator, unoptimized: true }],
-              width: 960,
-              height: 580,
-            }}
-            frame={frame}
-            alt="Social Innovator"
-          />
-          <div className="about_textOverlay">
-            <div>Social Innovator</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Second row: Nature observer / Dog lover */}
-      <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
-        <div className="about_rounded about_darken relative">
-          <Animatable
-            source={{
-              frames: [{ src: NatureObserver, unoptimized: true }],
-              width: 960,
-              height: 606,
-            }}
-            frame={frame}
-            alt="Nature Observer"
-          />
-          <div className="about_textOverlay">
-            <div>Nature Observer</div>
-          </div>
-        </div>
-        <div
-          className="about_rounded relative"
-          style={{
-            flex: 640 / 838,
-          }}
-        >
-          <div className="about_darken w-full">
-            <Animatable
-              source={{
-                frames: [
-                  { src: Dog1 },
-                  { src: Dog2 },
-                  { src: Dog3 },
-                  { src: Dog4 },
-                ],
-                width: 640,
-                height: 838,
-              }}
-              frame={frame}
-              alt="Dog lover"
-            />
-          </div>
-          <div className="about_textOverlay">
-            <div>Dog Lover</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Third row: Craftsperson / Traveller */}
-      <div className="single mb-4 flex flex-row space-x-4 lg:hidden">
-        <div className="about_rounded relative" style={{ flex: 640 / 652 }}>
-          <div className="about_darken w-full">
+          <div className="about_darken h-full w-full">
             <Animatable
               source={{
                 frames: [
@@ -359,59 +142,20 @@ function VideoGallery() {
               }}
               frame={frame}
               alt="Craftsperson"
+              fill
             />
           </div>
           <div className="about_textOverlay">
             <div>Craftsperson</div>
           </div>
         </div>
-        <div className="about_rounded relative" style={{ flex: 640 / 440 }}>
-          <div className="about_darken w-full">
-            <Animatable
-              source={{
-                frames: [
-                  { src: Traveller1 },
-                  { src: Traveller2 },
-                  { src: Traveller3 },
-                  { src: Traveller4 },
-                  { src: Traveller5 },
-                  { src: Traveller6 },
-                ],
-                width: 640,
-                height: 440,
-              }}
-              frame={frame}
-              alt="Traveller"
-            />
-          </div>
-          <div className="about_textOverlay">
-            <div>Traveller</div>
-          </div>
-        </div>
-      </div>
 
-      {/* Fourth row: Sports lover / photographer */}
-      <div className="single mb-spacing-3lg flex flex-row space-x-4 lg:hidden">
+        {/* Photographer */}
         <div
-          className="about_rounded relative"
-          style={{
-            flex: 480 / 360,
-          }}
+          className="about_rounded relative col-span-2 col-start-4 row-span-3 row-start-12
+            lg:col-span-3 lg:col-start-1 lg:row-start-8"
         >
-          <Image
-            className="about_darken"
-            src={Sports}
-            alt="Sports Lover"
-            width={480}
-            height={360}
-            unoptimized
-          />
-          <div className="about_textOverlay">
-            <div>Sports Lover</div>
-          </div>
-        </div>
-        <div className="about_rounded relative" style={{ flex: 640 / 669 }}>
-          <div className="about_darken w-full">
+          <div className="about_darken h-full w-full">
             <Animatable
               source={{
                 frames: [
@@ -426,13 +170,113 @@ function VideoGallery() {
               }}
               frame={frame}
               alt="Photographer"
+              fill
             />
           </div>
           <div className="about_textOverlay">
             <div>Photographer</div>
           </div>
         </div>
+
+        {/* Nature observer */}
+        <div
+          className="about_rounded about_darken relative col-span-5 col-start-1 row-span-4
+            row-start-5 lg:col-span-6 lg:col-start-4 lg:row-start-5"
+          style={{ flex: 960 / 606 }}
+        >
+          <Animatable
+            source={{
+              frames: [{ src: NatureObserver, unoptimized: true }],
+              width: 960,
+              height: 606,
+            }}
+            frame={frame}
+            alt="Nature Observer"
+            fill
+          />
+          <div className="about_textOverlay">
+            <div>Nature Observer</div>
+          </div>
+        </div>
+
+        {/* Dog lover */}
+        <div
+          className="about_rounded relative col-span-3 col-start-10 row-span-4 row-start-5 hidden
+            lg:block"
+          style={{
+            flex: 640 / 838,
+          }}
+        >
+          <div className="about_darken h-full w-full">
+            <Animatable
+              source={{
+                frames: [
+                  { src: Dog1 },
+                  { src: Dog2 },
+                  { src: Dog3 },
+                  { src: Dog4 },
+                ],
+                width: 640,
+                height: 838,
+              }}
+              frame={frame}
+              alt="Dog lover"
+              fill
+            />
+          </div>
+          <div className="about_textOverlay">
+            <div>Dog Lover</div>
+          </div>
+        </div>
+
+        {/* Thinker */}
+        <div
+          className="about_rounded relative col-span-3 col-start-4 row-span-4 row-start-9 hidden
+            lg:block"
+        >
+          <div className="about_darken h-full w-full">
+            <Animatable
+              source={{
+                frames: [
+                  { src: Thinker1 },
+                  { src: Thinker2 },
+                  { src: Thinker3 },
+                ],
+                width: 640,
+                height: 933,
+              }}
+              frame={frame}
+              alt="Thinker"
+              fill
+            />
+          </div>
+          <div className="about_textOverlay">
+            <div>Thinker</div>
+          </div>
+        </div>
+        {/* Sports lover */}
+        <div
+          className="about_rounded relative col-span-3 col-start-1 row-span-3 row-start-12
+            lg:col-span-4 lg:col-start-7 lg:row-start-9"
+        >
+          <Animatable
+            source={{
+              frames: [{ src: Sports, unoptimized: true }],
+              width: 480,
+              height: 360,
+            }}
+            frame={frame}
+            alt="Sports Lover"
+            fill
+          />
+          <div className="about_textOverlay">
+            <div>Sports Lover</div>
+          </div>
+        </div>
       </div>
+
+      <Spacing size="large" />
+
       <AnimatePresence>
         {overlayOpen && (
           <motion.div

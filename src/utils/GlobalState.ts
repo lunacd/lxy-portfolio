@@ -13,8 +13,6 @@ export function getInitialState(pathname: string): GlobalState {
   return {
     currentProjectIndex: currentProjectIndex,
     currentProject: currentProject,
-    displayAnimation: false,
-    swipeAnimation: false,
     route: pathname,
     projectsInView: new Array(projects.length).fill(false),
   };
@@ -38,8 +36,6 @@ export type GlobalStateAction =
 export interface GlobalState {
   currentProjectIndex: number;
   currentProject: string;
-  displayAnimation: boolean;
-  swipeAnimation: boolean;
   route: string;
   projectsInView: boolean[];
 }
@@ -58,17 +54,8 @@ function isProject(link: string): boolean {
 
 export function stateReducer(state: GlobalState, action: GlobalStateAction) {
   const newState = { ...state };
-  if (action.type === "setDisplayAnimation") {
-    newState.displayAnimation = action.displayAnimation;
-    return newState;
-  }
   if (action.type === "changeRoute") {
-    const currentPageIsProject = isProject(state.route);
     const targetPageIsProject = isProject(action.newRoute);
-    newState.swipeAnimation = !(
-      (state.route === "/" || currentPageIsProject) &&
-      targetPageIsProject
-    );
     newState.route = action.newRoute;
     if (targetPageIsProject) {
       newState.currentProject = getProjectNameFromPathname(action.newRoute);

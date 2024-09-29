@@ -13,7 +13,6 @@ import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
-import useScroll from "@/utils/useScroll";
 
 import Belonging1 from "@/images/skates/belonging-1-small.webp";
 import Belonging2 from "@/images/skates/belonging-2-small.webp";
@@ -55,9 +54,8 @@ import UsageM1 from "@/images/skates/usage-mobile-1-half.webp";
 import UsageM2 from "@/images/skates/usage-mobile-2-half.webp";
 
 export default function SoulClient() {
-  const scrollDiv = useScroll();
   return (
-    <Scroller bgColor="bg-[#F0EBE6]" divRef={scrollDiv}>
+    <Scroller bgColor="bg-[#F0EBE6]">
       <TopDisplay
         project={projectsData["skates"]}
         displayDescriptionOnMobile={true}

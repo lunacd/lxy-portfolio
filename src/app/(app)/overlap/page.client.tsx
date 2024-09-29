@@ -15,7 +15,6 @@ import Title, { Subtitle } from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 import useFrameIndex from "@/utils/useFrameIndex";
-import useScroll from "@/utils/useScroll";
 
 import Benchmark from "@/images/overlap/benchmark-full.webp";
 import CMF1 from "@/images/overlap/cmf/cmf-1-full.webp";
@@ -80,11 +79,10 @@ import TrayUseImage1 from "@/images/overlap/tray-use-1-big.webp";
 import TrayUseImage2 from "@/images/overlap/tray-use-2-big.webp";
 
 export default function OverlapClient() {
-  const scrollDiv = useScroll();
   const currentIndex = useFrameIndex(2000);
 
   return (
-    <Scroller bgColor="bg-[#FDF9F1]" divRef={scrollDiv}>
+    <Scroller bgColor="bg-[#FDF9F1]">
       <TopDisplay
         project={projectsData["overlap"]}
         displayDescriptionOnMobile={true}

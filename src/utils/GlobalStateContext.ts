@@ -6,8 +6,6 @@ import { GlobalState, GlobalStateAction } from "@/utils/GlobalState";
 const defaultState = {
   currentProjectIndex: 0,
   currentProject: projects[0],
-  displayAnimation: false,
-  swipeAnimation: false,
   route: "",
   projectsInView: new Array(projects.length).fill(false),
 };
