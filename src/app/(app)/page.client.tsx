@@ -106,7 +106,7 @@ function HomeSection(props: HomeSectionProps) {
                 <Image
                   src={props.project.awardImage}
                   alt="Award"
-                  className="absolute bottom-8 right-0 w-40"
+                  className="absolute bottom-8 w-40"
                 />
               )}
             </div>
