@@ -1,7 +1,8 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+
 import Carousel from "@/components/Carousel";
-import ConnectPrompt from "@/components/ConnectPrompt";
 import { GalleryRowLayout } from "@/components/GalleryRow";
 import LargeGallery from "@/components/LargeGallery";
 import Scroller from "@/components/Scroller";
@@ -96,13 +97,10 @@ const lyuProjectData = {
   link: "/lyu",
 };
 
-export default function LyuClient() {
+export default function LyuClient(props: PropsWithChildren<{}>) {
   return (
     <Scroller bgColor="bg-[#EFF2F3]">
-      <TopDisplay
-        project={lyuProjectData}
-        displayDescriptionOnMobile={true}
-      />
+      <TopDisplay project={lyuProjectData} displayDescriptionOnMobile={true} />
 
       {/* Manifesto */}
       <TextImage
@@ -308,7 +306,8 @@ export default function LyuClient() {
         ]}
         description="Lyu"
       />
-      <ConnectPrompt />
+
+      {props.children}
     </Scroller>
   );
 }

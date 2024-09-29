@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link"
 
 import CategoryTag from "@/components/CategoryTag";
-import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 import { ProjectDataLean } from "@/utils/projectData";
 import { transitionFast } from "@/utils/transitions";
 
@@ -16,7 +16,6 @@ interface ProjectsGalleryProps {
 }
 
 const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
-  const { dispatch } = useGlobalStateContext();
   return (
     <div className="single mt-spacing-lg mb-spacing-3lg grid grid-cols-2 gap-spacing lg:grid-cols-3">
       {props.data.map((data, index) => {
@@ -27,10 +26,8 @@ const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
             whileHover={{ y: "-1rem" }}
             transition={transitionFast}
           >
-            <a
-              onClick={() => {
-                dispatch({ type: "changeRoute", newRoute: data.link });
-              }}
+            <Link
+              href={data.link}
               className="cursor-pointer"
             >
               <Image
@@ -39,7 +36,7 @@ const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
                 width={props.width}
                 height={props.height}
               />
-            </a>
+            </Link>
             <div className="mt-2">
               <span className="subtitle">{data.name}</span>
               <span className="paragraph hidden lg:inline">

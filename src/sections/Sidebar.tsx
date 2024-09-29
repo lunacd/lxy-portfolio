@@ -11,6 +11,7 @@ import {
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import Link from "next/link"
 
 import Tooltip from "@/components/Tooltip";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
@@ -35,7 +36,7 @@ export const Sidebar = () => {
     setOpen(isLG);
   }, [isLG]);
 
-  const { globalState, dispatch } = useGlobalStateContext();
+  const { globalState } = useGlobalStateContext();
 
   return (
     <>
@@ -57,17 +58,14 @@ export const Sidebar = () => {
             xl:right-24"
         >
           {/* Logo */}
-          <div
+          <Link
             className="cursor-pointer"
             onClick={() => {
               if (!isLG) {
                 setOpen(false);
               }
-              dispatch({
-                type: "changeRoute",
-                newRoute: "/",
-              });
             }}
+            href="/"
           >
             <div className="w-full">
               <Image
@@ -78,7 +76,7 @@ export const Sidebar = () => {
                 width={167}
               />
             </div>
-          </div>
+          </Link>
 
           {/* Routes */}
           <div className="flex flex-col space-y-1 pb-6 pt-4">
@@ -136,20 +134,17 @@ export const Sidebar = () => {
                         {route.name}
                       </a>
                     ) : (
-                      <div
+                      <Link
                         onClick={() => {
                           if (!isLG) {
                             setOpen(false);
                           }
-                          dispatch({
-                            type: "changeRoute",
-                            newRoute: route.link,
-                          });
                         }}
+                        href={route.link}
                         className="cursor-pointer"
                       >
                         {route.name}
-                      </div>
+                      </Link>
                     )}
                   </motion.div>
                 </div>

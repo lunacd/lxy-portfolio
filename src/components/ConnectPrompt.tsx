@@ -1,4 +1,5 @@
 import React from "react";
+import "server-only";
 
 interface ConnectPromptProps {
   textColor?: string;

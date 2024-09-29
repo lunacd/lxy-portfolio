@@ -5,11 +5,10 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { Catamaran } from "next/font/google";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React, {
   PropsWithChildren,
   useContext,
-  useEffect,
   useReducer,
   useRef,
 } from "react";
@@ -37,7 +36,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const router = useRouter();
   const pathname = usePathname();
   const [globalState, dispatch] = useReducer(
     stateReducer,
@@ -48,10 +46,6 @@ export default function RootLayout({
     globalState,
     dispatch,
   };
-  const { route } = globalState;
-  useEffect(() => {
-    router.push(route);
-  }, [router, route]);
 
   return (
     <html lang="en">

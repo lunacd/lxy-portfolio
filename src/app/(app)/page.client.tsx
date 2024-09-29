@@ -3,10 +3,10 @@
 import classNames from "classnames";
 import { AnimatePresence, useInView } from "framer-motion";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import Link from "next/link";
+import React, { PropsWithChildren, useEffect, useRef } from "react";
 
 import CategoryTag from "@/components/CategoryTag";
-import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
 import styles from "@/sections/TopDisplay.module.css";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
@@ -111,15 +111,10 @@ function HomeSection(props: HomeSectionProps) {
               )}
             </div>
             {/* Link to page */}
-            <a
-              onClick={() => {
-                dispatch({
-                  type: "changeRoute",
-                  newRoute: props.project.link,
-                });
-              }}
+            <Link
+              href={props.project.link}
               className="absolute left-0 top-0 block h-full w-full cursor-pointer"
-            ></a>
+            ></Link>
           </div>
         </div>
       </div>
@@ -127,7 +122,7 @@ function HomeSection(props: HomeSectionProps) {
   );
 }
 
-export default function HomeClient() {
+export default function HomeClient(props: PropsWithChildren<{}>) {
   const { dispatch } = useGlobalStateContext();
 
   // Start rolling on page load
@@ -142,7 +137,7 @@ export default function HomeClient() {
           return <HomeSection project={project} key={project.uri} />;
         })}
       </AnimatePresence>
-      <ConnectPrompt />
+      {props.children}
     </Scroller>
   );
 }

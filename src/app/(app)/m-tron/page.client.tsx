@@ -1,8 +1,9 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+
 import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
@@ -35,7 +36,7 @@ import Moodboard3 from "@/images/m-tron/moodboard/surface-change-small.webp";
 import UserScenario from "@/images/m-tron/scenario-6x.webp";
 import SpeedController from "@/images/m-tron/speed-controller-full.webp";
 
-export default function MTronClient() {
+export default function MTronClient(props: PropsWithChildren<{}>) {
   const currentIndex = useFrameIndex(1500);
   return (
     <Scroller bgColor="bg-[#353535]">
@@ -206,7 +207,8 @@ export default function MTronClient() {
         used for demonstration purposes only as part of a student work.
       </div>
       <Spacing size="medium" />
-      <ProjectNavigation prev="/sunrise" textColor="text-white" />
+
+      {props.children}
     </Scroller>
   );
 }

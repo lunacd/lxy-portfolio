@@ -1,7 +1,8 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+
 import EqualSplit from "@/components/EqualSplit";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextSection, { TextContentType } from "@/components/TextSection";
@@ -9,7 +10,7 @@ import Title from "@/sections/Title";
 import TopDisplay from "@/sections/TopDisplay";
 import { projectsData } from "@/utils/projectData";
 
-export default function LamboozledClient() {
+export default function LamboozledClient(props: PropsWithChildren<{}>) {
   const lamboozledProjectData = projectsData["lamboozled"];
   return (
     <Scroller bgColor={lamboozledProjectData.bgColor}>
@@ -74,7 +75,7 @@ export default function LamboozledClient() {
       </div>
       <Spacing size="large" />
 
-      <ProjectNavigation prev="/tura" next="/again-from-scratch" />
+      {props.children}
     </Scroller>
   );
 }

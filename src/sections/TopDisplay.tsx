@@ -2,6 +2,7 @@ import styles from "./TopDisplay.module.css";
 import classNames from "classnames";
 import { useInView } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 import CategoryTag from "@/components/CategoryTag";
@@ -111,15 +112,10 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
                   rel="noreferrer"
                 ></a>
               ) : (
-                <a
-                  onClick={() => {
-                    dispatch({
-                      type: "changeRoute",
-                      newRoute: props.project.link,
-                    });
-                  }}
+                <Link
+                  href={props.project.link}
                   className="absolute left-0 top-0 block h-full w-full cursor-pointer"
-                ></a>
+                ></Link>
               ))}
           </div>
         </div>

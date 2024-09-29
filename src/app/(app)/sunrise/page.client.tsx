@@ -1,8 +1,9 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+
 import Carousel from "@/components/Carousel";
 import LargeGallery from "@/components/LargeGallery";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
@@ -55,7 +56,7 @@ import Ortho4 from "@/images/sunrise/ortho/ortho-4-full.webp";
 import Ortho5 from "@/images/sunrise/ortho/ortho-5-full.webp";
 import UsageScenario from "@/images/sunrise/usage-scenario-full.webp";
 
-export default function SunriseClient() {
+export default function SunriseClient(props: PropsWithChildren<{}>) {
   return (
     <Scroller bgColor="bg-[#D8D6D4]">
       <TopDisplay project={projectsData["sunrise"]} />
@@ -225,7 +226,7 @@ export default function SunriseClient() {
         description="Indoor gallery"
       />
 
-      <ProjectNavigation prev="/again-from-scratch" next="/m-tron" />
+      {props.children}
     </Scroller>
   );
 }

@@ -1,8 +1,9 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+
 import Carousel from "@/components/Carousel";
 import LargeGallery from "@/components/LargeGallery";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
@@ -78,7 +79,7 @@ import TrayImage from "@/images/overlap/tray-half.webp";
 import TrayUseImage1 from "@/images/overlap/tray-use-1-big.webp";
 import TrayUseImage2 from "@/images/overlap/tray-use-2-big.webp";
 
-export default function OverlapClient() {
+export default function OverlapClient(props: PropsWithChildren<{}>) {
   const currentIndex = useFrameIndex(2000);
 
   return (
@@ -341,7 +342,7 @@ export default function OverlapClient() {
       </div>
       <Spacing size="medium" />
 
-      <ProjectNavigation prev="/soul" next="/again-from-scratch" />
+      {props.children}
     </Scroller>
   );
 }

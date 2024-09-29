@@ -1,8 +1,9 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+
 import Button from "@/components/Button";
 import EqualSplit from "@/components/EqualSplit";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextSection, {
@@ -31,7 +32,7 @@ import Target1 from "@/images/againfromscratch/target/target-1-small.webp";
 import Target2 from "@/images/againfromscratch/target/target-2-small.webp";
 import Target3 from "@/images/againfromscratch/target/target-3-small.webp";
 
-export default function AgainFromScratchClient() {
+export default function AgainFromScratchClient(props: PropsWithChildren<{}>) {
   const againFromScratchProjectData = projectsData["again-from-scratch"];
   return (
     <Scroller bgColor={againFromScratchProjectData.bgColor}>
@@ -193,7 +194,7 @@ export default function AgainFromScratchClient() {
         xSpacing
       />
 
-      <ProjectNavigation prev="/overlap" next="/sunrise" />
+      {props.children}
     </Scroller>
   );
 }

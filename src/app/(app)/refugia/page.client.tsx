@@ -1,7 +1,8 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+
 import Button from "@/components/Button";
-import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextImage from "@/sections/TextImage";
@@ -29,7 +30,7 @@ const projectData = {
   hamburgerColorLight: false,
 };
 
-export default function RefugiaClient() {
+export default function RefugiaClient(props: PropsWithChildren<{}>) {
   return (
     <Scroller bgColor="bg-[#EEEAE2]">
       <TopDisplay project={projectData} displayDescriptionOnMobile={true} />
@@ -47,7 +48,7 @@ export default function RefugiaClient() {
       <Button text="View the Project" href="/refugia.pdf" />
       <Spacing size="large" />
 
-      <ConnectPrompt />
+      {props.children}
     </Scroller>
   );
 }

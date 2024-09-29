@@ -1,9 +1,10 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+
 import Button from "@/components/Button";
 import LargeGallery from "@/components/LargeGallery";
 import Paragraph from "@/components/Paragraph";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import { createPlainContent } from "@/components/TextSection";
@@ -58,7 +59,7 @@ import Target2 from "@/images/soul/target-02-small.webp";
 import Target3 from "@/images/soul/target-03-small.webp";
 import UserNeed from "@/images/soul/user-half.webp";
 
-export default function SoulClient() {
+export default function SoulClient(props: PropsWithChildren<{}>) {
   const frame = useFrameIndex(2000);
 
   return (
@@ -418,7 +419,7 @@ export default function SoulClient() {
       </div>
       <Spacing size="medium" />
 
-      <ProjectNavigation prev="/lamboozled" next="/overlap" />
+      {props.children}
     </Scroller>
   );
 }

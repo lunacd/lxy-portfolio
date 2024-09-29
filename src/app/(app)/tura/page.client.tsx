@@ -7,7 +7,6 @@ import Carousel from "@/components/Carousel";
 import EqualSplit from "@/components/EqualSplit";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextSection, {
@@ -54,8 +53,9 @@ import Scenario from "@/images/tura/scenario-full.webp";
 import Structure from "@/images/tura/structure-full.webp";
 import ColorTheme from "@/images/tura/theme-full.webp";
 import Wireframe from "@/images/tura/wireframe-4x.webp";
+import {PropsWithChildren} from "react";
 
-export default function TuraClient() {
+export default function TuraClient(props: PropsWithChildren<{}>) {
   const turaProjectData = projectsData["tura"];
   return (
     <Scroller bgColor={turaProjectData.bgColor}>
@@ -502,8 +502,7 @@ export default function TuraClient() {
         alt="Homepage"
         xSpacing
       />
-
-      <ProjectNavigation prev="/overlap" next="/soul" />
+      {props.children}
     </Scroller>
   );
 }

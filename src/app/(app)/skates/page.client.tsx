@@ -1,9 +1,10 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+
 import { GalleryRowLayout } from "@/components/GalleryRow";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
@@ -53,7 +54,7 @@ import Usage from "@/images/skates/usage-desktop-full.webp";
 import UsageM1 from "@/images/skates/usage-mobile-1-half.webp";
 import UsageM2 from "@/images/skates/usage-mobile-2-half.webp";
 
-export default function SoulClient() {
+export default function SoulClient(props: PropsWithChildren<{}>) {
   return (
     <Scroller bgColor="bg-[#F0EBE6]">
       <TopDisplay
@@ -233,8 +234,7 @@ export default function SoulClient() {
         * This project is sponsored by Bernhardt Design.
       </div>
       <Spacing size="medium" />
-
-      <ProjectNavigation next="/tura" />
+      {props.children}
     </Scroller>
   );
 }
