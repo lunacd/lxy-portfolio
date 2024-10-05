@@ -18,6 +18,7 @@ export default async function ConnectPrompt(propsIn: ConnectPromptProps) {
   });
   const data = await payload.findGlobal({
     slug: "global",
+    depth: 0,
   });
   return (
     <>

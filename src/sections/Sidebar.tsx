@@ -178,7 +178,7 @@ export const Sidebar = () => {
               </a>
             </Tooltip>
             <Tooltip tip="Resume">
-              <a href="/resume.pdf" target="_blank" rel="noreferrer">
+              <a href="/documents/resume" target="_blank" rel="noreferrer">
                 <IconFileText size={isLG ? 20 : 18} />
               </a>
             </Tooltip>

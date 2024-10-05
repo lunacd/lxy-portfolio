@@ -1,4 +1,5 @@
 import { withPayload } from "@payloadcms/next/withPayload";
+
 const nextConfig = withPayload({
   reactStrictMode: true,
   trailingSlash: true,
@@ -16,6 +17,10 @@ const nextConfig = withPayload({
       {
         source: "/breathe",
         destination: "/breathe.pdf",
+      },
+      {
+        source: "/resume.pdf",
+        destination: "/documents/resume",
       },
     ];
   },

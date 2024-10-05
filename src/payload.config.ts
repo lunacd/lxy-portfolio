@@ -1,9 +1,11 @@
 // storage-adapter-import-placeholder
+import { Documents } from "./collections/Documents";
 import { Global } from "./collections/Global";
 import { Media } from "./collections/Media";
 import { Users } from "./collections/Users";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { s3Storage } from "@payloadcms/storage-s3";
 import path from "path";
 import { buildConfig } from "payload";
 import sharp from "sharp";
@@ -19,7 +21,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Documents],
   globals: [Global],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
@@ -34,5 +36,24 @@ export default buildConfig({
   sharp,
   plugins: [
     // storage-adapter-placeholder
+    s3Storage({
+      collections: {
+        media: {
+          prefix: "media",
+        },
+        document: {
+          prefix: "document",
+        },
+      },
+      bucket: process.env.S3_BUCKET!,
+      config: {
+        credentials: {
+          accessKeyId: process.env.S3_ACCESS_KEY_ID!,
+          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!,
+        },
+        endpoint: process.env.S3_ENDPOINT,
+        region: process.env.S3_REGION,
+      },
+    }),
   ],
 });

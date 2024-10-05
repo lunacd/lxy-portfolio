@@ -1,13 +1,13 @@
 import type { CollectionConfig } from "payload";
 
-export const Media: CollectionConfig = {
-  slug: "media",
+export const Documents: CollectionConfig = {
+  slug: "document",
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: "alt",
+      name: "name",
       type: "text",
       required: true,
     },

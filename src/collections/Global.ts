@@ -8,12 +8,17 @@ export const Global: GlobalConfig = {
   fields: [
     {
       name: "connectionPrompt",
-      label: "Connection Prompt",
       admin: {
         description:
           "The prompt to connect displayed at the bottom of the page",
       },
       type: "text",
+      required: true,
+    },
+    {
+      name: "resume",
+      type: "relationship",
+      relationTo: "document",
       required: true,
     },
   ],
