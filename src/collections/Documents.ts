@@ -12,6 +12,9 @@ export const Documents: CollectionConfig = {
       required: true,
     },
   ],
+  admin: {
+    useAsTitle: "name",
+  },
   upload: {
     disableLocalStorage: true,
   },
