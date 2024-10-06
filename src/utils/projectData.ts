@@ -282,7 +282,7 @@ export const sidebarRoutes = [
   {
     uri: "projects",
     name: "Projects",
-    link: "/projects",
+    link: "/",
     typeClass: "subtitle",
   },
   { uri: "skates", name: "Skates", link: "/skates", typeClass: "paragraph" },
