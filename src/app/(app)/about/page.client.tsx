@@ -363,7 +363,7 @@ export default function AboutClient() {
       </div>
 
       {/* Resume */}
-      <Button text="Resume" href="/resume.pdf" />
+      <Button text="Resume" href="/documents/resume" />
       <Spacing size="large" />
 
       <Title title="Who I am" />
