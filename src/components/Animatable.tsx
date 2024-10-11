@@ -52,7 +52,7 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
           unoptimized={props.source.frames[0].unoptimized}
           placeholder={props.source.frames[0].unblurred ? "blur" : undefined}
           fill={props.fill}
-          objectFit={props.fill ? "cover" : undefined}
+          className={classNames({ "object-cover": props.fill })}
         />
       </div>
       {props.source.frames.map((image, index) => {
@@ -76,7 +76,7 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
                 unoptimized={image.unoptimized}
                 placeholder="blur"
                 fill={props.fill}
-                objectFit={props.fill ? "cover" : undefined}
+                className={classNames({ "object-cover": props.fill })}
               />
             </div>
           );
