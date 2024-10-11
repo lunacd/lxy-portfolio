@@ -173,6 +173,8 @@ export interface Global {
   id: number;
   connectionPrompt: string;
   resume: number | Document;
+  profile: string;
+  profilePicture: number | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
 }

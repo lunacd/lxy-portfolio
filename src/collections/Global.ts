@@ -17,8 +17,20 @@ export const Global: GlobalConfig = {
     },
     {
       name: "resume",
-      type: "relationship",
+      type: "upload",
       relationTo: "document",
+      required: true,
+    },
+    {
+      name: "profile",
+      type: "textarea",
+      required: true,
+      defaultValue: "",
+    },
+    {
+      name: "profilePicture",
+      type: "upload",
+      relationTo: "media",
       required: true,
     },
   ],

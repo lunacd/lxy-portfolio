@@ -1,10 +1,17 @@
 "use client";
 
+import Profile from "./Profile";
 import { IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useRef, useState } from "react";
+import {
+  PropsWithChildren,
+  Suspense,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import Animatable from "@/components/Animatable";
 import Button from "@/components/Button";
@@ -27,7 +34,6 @@ import Photo2 from "@/images/about/photo-2-small.webp";
 import Photo3 from "@/images/about/photo-3-small.webp";
 import Photo4 from "@/images/about/photo-4-small.webp";
 import Photo5 from "@/images/about/photo-5-small.webp";
-import Profile from "@/images/about/profile-half.webp";
 import SocialInnovator from "@/images/about/social-innovator.gif";
 import Sports from "@/images/about/sports.gif";
 import Thinker1 from "@/images/about/thinker-1-small.webp";
@@ -68,7 +74,7 @@ function VideoGallery() {
   return (
     <>
       {/* Desktop first row */}
-      <div className="single grid-rows-13 mb-4 grid grid-cols-5 gap-4 lg:grid-cols-12 lg:grid-rows-12">
+      <div className="single mb-4 grid grid-cols-5 grid-rows-13 gap-4 lg:grid-cols-12 lg:grid-rows-12">
         {/* Social innovator */}
         {/* Setting aspect ratio on this one to use as a guideline for grid cell heights */}
         <div
@@ -335,32 +341,13 @@ function VideoGallery() {
   );
 }
 
-export default function AboutClient() {
+export default function AboutClient(props: PropsWithChildren<{}>) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   return (
     <Scroller bgColor="bg-[#FDF9F1]">
-      {/* Profile */}
-      <div className="single my-spacing-lg grid grid-cols-1 gap-spacing lg:grid-cols-3">
-        <div className="about_rounded">
-          <Image
-            src={Profile}
-            width={960}
-            height={900}
-            alt="Shirley Lyu profile photo"
-            placeholder="blur"
-          />
-        </div>
-        <div className="lg:col-span-2 lg:self-end">
-          I am a multidisciplinary product designer with a passion for creating
-          intuitive and impactful user experiences. My industrial design skills
-          and instructional design insights enable me to craft solutions that
-          are both engaging and inclusive. With a strong foundation in UI/UX,
-          lifestyle product design, and EdTech, I create products that enhance
-          both digital and physical interactions.
-        </div>
-      </div>
+      {props.children}
 
       {/* Resume */}
       <Button text="Resume" href="/documents/resume" />
