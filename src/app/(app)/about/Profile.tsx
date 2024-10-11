@@ -19,8 +19,8 @@ export default async function Profile() {
       <div className="about_rounded">
         <Image
           src={profilePicture.url!}
-          width={960}
-          height={900}
+          width={profilePicture.width!}
+          height={profilePicture.height!}
           alt={profilePicture.alt}
         />
       </div>
