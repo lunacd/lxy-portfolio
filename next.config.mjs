@@ -3,6 +3,17 @@ import { withPayload } from "@payloadcms/next/withPayload";
 const nextConfig = withPayload({
   reactStrictMode: true,
   trailingSlash: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "r2.lunacd.com",
+        port: "",
+        pathname: "/**",
+        search: "",
+      },
+    ],
+  },
   async redirects() {
     return [
       {
