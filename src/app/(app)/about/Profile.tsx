@@ -22,6 +22,7 @@ export default async function Profile() {
           width={profilePicture.width!}
           height={profilePicture.height!}
           alt={profilePicture.alt}
+          unoptimized
         />
       </div>
       <div className="lg:col-span-2 lg:self-end">{data.profile}</div>

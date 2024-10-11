@@ -7,12 +7,25 @@ import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { s3Storage } from "@payloadcms/storage-s3";
 import path from "path";
-import { buildConfig } from "payload";
+import { CollectionConfig, ImageSize, buildConfig } from "payload";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
+const cdnDomain = process.env.S3_CDN_DOMAIN;
+
+function generateFileURL({
+  prefix,
+  filename,
+}: {
+  collection: CollectionConfig;
+  filename: string;
+  prefix?: string;
+  size?: ImageSize;
+}) {
+  return `${cdnDomain}/${prefix}/${filename}`;
+}
 
 export default buildConfig({
   admin: {
@@ -40,9 +53,11 @@ export default buildConfig({
       collections: {
         media: {
           prefix: "media",
+          generateFileURL: generateFileURL,
         },
         document: {
           prefix: "document",
+          generateFileURL: generateFileURL,
         },
       },
       bucket: process.env.S3_BUCKET!,
