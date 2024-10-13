@@ -17,16 +17,11 @@ export function getInitialState(pathname: string): GlobalState {
   };
 }
 
-export type GlobalStateAction =
-  | {
-      type: "setDisplayAnimation";
-      displayAnimation: boolean;
-    }
-  | {
-      type: "setInView";
-      isInView: boolean;
-      project: string;
-    };
+export type GlobalStateAction = {
+  type: "setInView";
+  isInView: boolean;
+  project: string;
+};
 
 export interface GlobalState {
   currentProjectIndex: number;
