@@ -1,10 +1,9 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import Carousel from "@/components/Carousel";
 import LargeGallery from "@/components/LargeGallery";
-import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
 import { createPlainContent } from "@/components/TextSection";
@@ -13,8 +12,6 @@ import HorizontalGallery from "@/sections/HorizontalGallery";
 import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
-import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import Benchmark from "@/images/overlap/benchmark-full.webp";
@@ -79,15 +76,16 @@ import TrayImage from "@/images/overlap/tray-half.webp";
 import TrayUseImage1 from "@/images/overlap/tray-use-1-big.webp";
 import TrayUseImage2 from "@/images/overlap/tray-use-2-big.webp";
 
-export default function OverlapClient(props: PropsWithChildren<{}>) {
+interface OverlapProps {
+  topChildren: ReactNode;
+}
+
+export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
   const currentIndex = useFrameIndex(2000);
 
   return (
-    <Scroller bgColor="bg-[#FDF9F1]">
-      <TopDisplay
-        project={projectsData["overlap"]}
-        displayDescriptionOnMobile={true}
-      />
+    <>
+      {props.topChildren}
 
       {/* Manifesto */}
       <TextImage
@@ -343,6 +341,6 @@ export default function OverlapClient(props: PropsWithChildren<{}>) {
       <Spacing size="medium" />
 
       {props.children}
-    </Scroller>
+    </>
   );
 }

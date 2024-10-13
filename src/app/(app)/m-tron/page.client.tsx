@@ -1,17 +1,14 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
-import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import Title from "@/sections/Title";
-import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import Brake1 from "@/images/m-tron/brake-1-full.webp";
@@ -36,14 +33,15 @@ import Moodboard3 from "@/images/m-tron/moodboard/surface-change-small.webp";
 import UserScenario from "@/images/m-tron/scenario-6x.webp";
 import SpeedController from "@/images/m-tron/speed-controller-full.webp";
 
-export default function MTronClient(props: PropsWithChildren<{}>) {
+interface MTronProps {
+  topChildren: ReactNode;
+}
+
+export default function MTronClient(props: PropsWithChildren<MTronProps>) {
   const currentIndex = useFrameIndex(1500);
   return (
-    <Scroller bgColor="bg-[#353535]">
-      <TopDisplay
-        project={projectsData["m-tron"]}
-        displayDescriptionOnMobile={true}
-      />
+    <>
+      {props.topChildren}
 
       {/* Project Manifesto */}
       <TextImage
@@ -209,6 +207,6 @@ export default function MTronClient(props: PropsWithChildren<{}>) {
       <Spacing size="medium" />
 
       {props.children}
-    </Scroller>
+    </>
   );
 }

@@ -1,18 +1,15 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import Carousel from "@/components/Carousel";
 import LargeGallery from "@/components/LargeGallery";
-import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
-import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 
 import Evo1 from "@/images/sunrise/evolution/evolution-1-small.webp";
 import Evo2 from "@/images/sunrise/evolution/evolution-2-small.webp";
@@ -56,10 +53,14 @@ import Ortho4 from "@/images/sunrise/ortho/ortho-4-full.webp";
 import Ortho5 from "@/images/sunrise/ortho/ortho-5-full.webp";
 import UsageScenario from "@/images/sunrise/usage-scenario-full.webp";
 
-export default function SunriseClient(props: PropsWithChildren<{}>) {
+interface SunriseProps {
+  topChildren: ReactNode;
+}
+
+export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
   return (
-    <Scroller bgColor="bg-[#D8D6D4]">
-      <TopDisplay project={projectsData["sunrise"]} />
+    <>
+      {props.topChildren}
 
       {/* Manifesto */}
       <TextImage
@@ -227,6 +228,6 @@ export default function SunriseClient(props: PropsWithChildren<{}>) {
       />
 
       {props.children}
-    </Scroller>
+    </>
   );
 }

@@ -43,7 +43,7 @@ export default function HomeSection(props: HomeSectionProps) {
                     height: "calc(200% + 48px)",
                     background: `linear-gradient(180deg, ${props.project.coverColor} 0%, rgba(0, 0, 0, 0) 100%)`,
                   }}
-                  className="absolute -left-spacing-lg -right-spacing-lg -top-8 xl:-top-24"
+                  className="absolute -left-spacing-lg -right-spacing-lg -top-8 lg:-top-12 xl:-top-24"
                 ></div>
               )}
               <div className="relative lg:max-w-[50%] 2xl:max-w-[30%]">

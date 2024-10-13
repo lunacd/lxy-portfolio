@@ -1,11 +1,10 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import Button from "@/components/Button";
 import LargeGallery from "@/components/LargeGallery";
 import Paragraph from "@/components/Paragraph";
-import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import { createPlainContent } from "@/components/TextSection";
 import DisplayImage from "@/sections/DisplayImage";
@@ -13,8 +12,6 @@ import HorizontalGallery from "@/sections/HorizontalGallery";
 import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
-import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import BrandResearch from "@/images/soul/brand-research-full.webp";
@@ -59,15 +56,16 @@ import Target2 from "@/images/soul/target-02-small.webp";
 import Target3 from "@/images/soul/target-03-small.webp";
 import UserNeed from "@/images/soul/user-half.webp";
 
-export default function SoulClient(props: PropsWithChildren<{}>) {
+interface SoulProps {
+  topChildren: ReactNode;
+}
+
+export default function SoulClient(props: PropsWithChildren<SoulProps>) {
   const frame = useFrameIndex(2000);
 
   return (
-    <Scroller bgColor="bg-[#EEEAE2]">
-      <TopDisplay
-        project={projectsData["soul"]}
-        displayDescriptionOnMobile={true}
-      />
+    <>
+      {props.topChildren}
 
       {/* Manifesto */}
       <TextImage
@@ -420,6 +418,6 @@ export default function SoulClient(props: PropsWithChildren<{}>) {
       <Spacing size="medium" />
 
       {props.children}
-    </Scroller>
+    </>
   );
 }

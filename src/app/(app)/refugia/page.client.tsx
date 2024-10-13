@@ -1,39 +1,21 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import Button from "@/components/Button";
-import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextImage from "@/sections/TextImage";
-import TopDisplay from "@/sections/TopDisplay";
 
-import RefugiaSmall from "@/images/projects/refugia-half.webp";
-import RefugiaDisplay from "@/images/refugia/display-full.webp";
-import RefugiaDisplayM from "@/images/refugia/display-mobile-half.webp";
 import Manifesto from "@/images/refugia/manifesto-half.webp";
 
-const projectData = {
-  uri: "refugia",
-  name: "Refugia",
-  duration: "14 Weeks, 2022 Summer",
-  category: "Spatial Experience Design",
-  focus: ["Sustainability", "Model making"],
-  brief:
-    "See through their eyes; hear through their ears; sense through their senses. Learn and feel animals' adaptation to the urban environment.",
-  displayImage: RefugiaDisplay,
-  displayImageMobile: RefugiaDisplayM,
-  smallImage: RefugiaSmall,
-  titleColor: "text-gray-100",
-  bgColor: "bg-[#E0E4E0]",
-  link: "/refugia",
-  hamburgerColorLight: false,
-};
+interface RefugiaProps {
+  topChildren: ReactNode;
+}
 
-export default function RefugiaClient(props: PropsWithChildren<{}>) {
+export default function RefugiaClient(props: PropsWithChildren<RefugiaProps>) {
   return (
-    <Scroller bgColor="bg-[#EEEAE2]">
-      <TopDisplay project={projectData} displayDescriptionOnMobile={true} />
+    <>
+      {props.topChildren}
 
       <TextImage
         title="Project Manifesto"
@@ -49,6 +31,6 @@ export default function RefugiaClient(props: PropsWithChildren<{}>) {
       <Spacing size="large" />
 
       {props.children}
-    </Scroller>
+    </>
   );
 }

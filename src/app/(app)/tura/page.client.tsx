@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { PropsWithChildren, ReactNode } from "react";
 
 import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import EqualSplit from "@/components/EqualSplit";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
-import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextSection, {
   TextAlignment,
@@ -18,8 +18,6 @@ import DisplayImage, { StaticDisplayImage } from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import { RichTextImage } from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
-import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
@@ -53,13 +51,15 @@ import Scenario from "@/images/tura/scenario-full.webp";
 import Structure from "@/images/tura/structure-full.webp";
 import ColorTheme from "@/images/tura/theme-full.webp";
 import Wireframe from "@/images/tura/wireframe-4x.webp";
-import {PropsWithChildren} from "react";
 
-export default function TuraClient(props: PropsWithChildren<{}>) {
-  const turaProjectData = projectsData["tura"];
+interface TuraProps {
+  topChildren: ReactNode;
+}
+
+export default function TuraClient(props: PropsWithChildren<TuraProps>) {
   return (
-    <Scroller bgColor={turaProjectData.bgColor}>
-      <TopDisplay project={turaProjectData} />
+    <>
+      {props.topChildren}
 
       {/* Overview */}
       <Title title="Overview" />
@@ -503,6 +503,6 @@ export default function TuraClient(props: PropsWithChildren<{}>) {
         xSpacing
       />
       {props.children}
-    </Scroller>
+    </>
   );
 }

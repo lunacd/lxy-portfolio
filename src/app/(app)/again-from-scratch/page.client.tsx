@@ -1,10 +1,9 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import Button from "@/components/Button";
 import EqualSplit from "@/components/EqualSplit";
-import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextSection, {
   TextAlignment,
@@ -14,8 +13,6 @@ import TextSection, {
 import { StaticDisplayImage } from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import Title, { Subtitle } from "@/sections/Title";
-import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 
 import Challenge from "@/images/againfromscratch/challenge-full.webp";
 import Design from "@/images/againfromscratch/design-full.webp";
@@ -32,11 +29,16 @@ import Target1 from "@/images/againfromscratch/target/target-1-small.webp";
 import Target2 from "@/images/againfromscratch/target/target-2-small.webp";
 import Target3 from "@/images/againfromscratch/target/target-3-small.webp";
 
-export default function AgainFromScratchClient(props: PropsWithChildren<{}>) {
-  const againFromScratchProjectData = projectsData["again-from-scratch"];
+interface AgainFromScratchProps {
+  topChildren: ReactNode;
+}
+
+export default function AgainFromScratchClient(
+  props: PropsWithChildren<AgainFromScratchProps>,
+) {
   return (
-    <Scroller bgColor={againFromScratchProjectData.bgColor}>
-      <TopDisplay project={againFromScratchProjectData} />
+    <>
+      {props.topChildren}
 
       <Title title="Overview" />
       <EqualSplit>
@@ -195,6 +197,6 @@ export default function AgainFromScratchClient(props: PropsWithChildren<{}>) {
       />
 
       {props.children}
-    </Scroller>
+    </>
   );
 }

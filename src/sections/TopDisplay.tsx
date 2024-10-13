@@ -1,12 +1,11 @@
 import styles from "./TopDisplay.module.css";
 import classNames from "classnames";
-import { useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import "server-only";
 
 import CategoryTag from "@/components/CategoryTag";
-import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 import { ProjectData } from "@/utils/projectData";
 
 export interface TopDisplayProps {
@@ -23,17 +22,6 @@ const defaultProps = {
 
 export default function TopDisplay(propsIn: TopDisplayProps) {
   const props = { ...defaultProps, ...propsIn };
-  const { dispatch } = useGlobalStateContext();
-  const textSection = useRef<HTMLDivElement>(null);
-  const centerRef = useRef(null);
-  const inView = useInView(centerRef);
-  useEffect(() => {
-    dispatch({
-      type: "setInView",
-      project: props.project.uri,
-      isInView: inView,
-    });
-  }, [dispatch, inView, props.project.uri]);
   return (
     <>
       <div
@@ -47,11 +35,6 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
         )}
         id={props.project.uri}
       >
-        {/* A div in the center used to detect whether TopDisplay is in view or not. */}
-        <div
-          className="absolute left-1/2 top-1/2 h-1 w-1"
-          ref={centerRef}
-        ></div>
         {/* Project image */}
         <div className="relative min-h-0 w-full flex-shrink flex-grow overflow-hidden">
           <Image
@@ -67,28 +50,29 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             className="object-cover object-center md:hidden"
           />
           <div className="absolute left-0 top-0 flex h-full w-full justify-center">
-            {/* Optional cover color for background */}
-            {props.project.coverColor && (
-              <div
-                style={{
-                  height: textSection.current
-                    ? textSection.current.clientHeight * 2 + 48
-                    : 0,
-                  background: `linear-gradient(180deg, ${props.project.coverColor} 0%, rgba(0, 0, 0, 0) 100%)`,
-                }}
-                className="absolute left-0 right-0 top-0"
-              ></div>
-            )}
             {/* Project name */}
             <div
-              className={`single relative mt-8 lg:mt-12 xl:mt-24 ${props.project.titleColor}`}
+              className={`relative mx-spacing-lg mt-8 flex-grow self-stretch lg:mt-12 xl:mt-24
+                ${props.project.titleColor}`}
             >
-              <div ref={textSection}>
-                <div className="text-3xl">{props.project.name}</div>
-                <div
-                  className={`${styles.textShadow} mt-2 text-base lg:max-w-[25%]`}
-                >
-                  {props.project.brief}
+              <div className="relative">
+                {/* Optional cover color for background */}
+                {props.project.coverColor && (
+                  <div
+                    style={{
+                      height: "calc(200% + 48px)",
+                      background: `linear-gradient(180deg, ${props.project.coverColor} 0%, rgba(0, 0, 0, 0) 100%)`,
+                    }}
+                    className="absolute -left-spacing-lg -right-spacing-lg -top-8 lg:-top-12 xl:-top-24"
+                  ></div>
+                )}
+                <div className="relative">
+                  <div className="text-3xl">{props.project.name}</div>
+                  <div
+                    className={`${styles.textShadow} mt-2 text-base lg:max-w-[25%]`}
+                  >
+                    {props.project.brief}
+                  </div>
                 </div>
               </div>
 

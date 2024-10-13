@@ -1,19 +1,16 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import { GalleryRowLayout } from "@/components/GalleryRow";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
-import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
-import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 
 import Belonging1 from "@/images/skates/belonging-1-small.webp";
 import Belonging2 from "@/images/skates/belonging-2-small.webp";
@@ -54,13 +51,14 @@ import Usage from "@/images/skates/usage-desktop-full.webp";
 import UsageM1 from "@/images/skates/usage-mobile-1-half.webp";
 import UsageM2 from "@/images/skates/usage-mobile-2-half.webp";
 
-export default function SoulClient(props: PropsWithChildren<{}>) {
+interface SkatesProps {
+  topChildren: ReactNode;
+}
+
+export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
   return (
-    <Scroller bgColor="bg-[#F0EBE6]">
-      <TopDisplay
-        project={projectsData["skates"]}
-        displayDescriptionOnMobile={true}
-      />
+    <>
+      {props.topChildren}
 
       <TextImage
         title="Project Manifesto"
@@ -235,6 +233,6 @@ export default function SoulClient(props: PropsWithChildren<{}>) {
       </div>
       <Spacing size="medium" />
       {props.children}
-    </Scroller>
+    </>
   );
 }

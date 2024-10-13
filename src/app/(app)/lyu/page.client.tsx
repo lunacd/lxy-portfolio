@@ -1,17 +1,15 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import Carousel from "@/components/Carousel";
 import { GalleryRowLayout } from "@/components/GalleryRow";
 import LargeGallery from "@/components/LargeGallery";
-import Scroller from "@/components/Scroller";
 import SmallGallery from "@/components/SmallGallery";
 import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import Title, { Subtitle } from "@/sections/Title";
-import TopDisplay from "@/sections/TopDisplay";
 
 import BagMaking1 from "@/images/lyu/bag-making/bag-making-1-small.webp";
 import BagMaking2 from "@/images/lyu/bag-making/bag-making-2-small.webp";
@@ -22,8 +20,6 @@ import BagMaking6 from "@/images/lyu/bag-making/bag-making-6-small.webp";
 import BagMaking7 from "@/images/lyu/bag-making/bag-making-7-small.webp";
 import BagMaking8 from "@/images/lyu/bag-making/bag-making-8-small.webp";
 import BagMaking9 from "@/images/lyu/bag-making/bag-making-9-small.webp";
-import LyuDisplay from "@/images/lyu/display-full.webp";
-import LyuDisplayM from "@/images/lyu/display-mobile-half.webp";
 import Ease1 from "@/images/lyu/ease-1-half.webp";
 import Ease2 from "@/images/lyu/ease-2-half.webp";
 import Ease3 from "@/images/lyu/ease-3-half.webp";
@@ -78,29 +74,15 @@ import TechPack4 from "@/images/lyu/tech-pack/tech-pack-4-full.webp";
 import TechPack5 from "@/images/lyu/tech-pack/tech-pack-5-full.webp";
 import TechPack6 from "@/images/lyu/tech-pack/tech-pack-6-full.webp";
 import TechPack7 from "@/images/lyu/tech-pack/tech-pack-7-full.webp";
-import LyuSmall from "@/images/projects/lyu-half.webp";
 
-const lyuProjectData = {
-  uri: "lyu",
-  name: "Lyu",
-  duration: "2 Weeks Daily, 2022 Spring",
-  category: "Soft Goods",
-  focus: ["Craft", "Tech Drawing", "Manufacturing"],
-  brief:
-    "2-week daily course provided practical knowledge of leather footwear and leather bag making in a factory setting.",
-  displayImage: LyuDisplay,
-  displayImageMobile: LyuDisplayM,
-  smallImage: LyuSmall,
-  titleColor: "text-gray-100",
-  hamburgerColorLight: true,
-  bgColor: "bg-[#EFF2F3]",
-  link: "/lyu",
-};
+interface LyuProps {
+  topChildren: ReactNode;
+}
 
-export default function LyuClient(props: PropsWithChildren<{}>) {
+export default function LyuClient(props: PropsWithChildren<LyuProps>) {
   return (
-    <Scroller bgColor="bg-[#EFF2F3]">
-      <TopDisplay project={lyuProjectData} displayDescriptionOnMobile={true} />
+    <>
+      {props.topChildren}
 
       {/* Manifesto */}
       <TextImage
@@ -308,6 +290,6 @@ export default function LyuClient(props: PropsWithChildren<{}>) {
       />
 
       {props.children}
-    </Scroller>
+    </>
   );
 }

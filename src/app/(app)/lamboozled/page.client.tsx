@@ -1,20 +1,22 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import EqualSplit from "@/components/EqualSplit";
-import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import TextSection, { TextContentType } from "@/components/TextSection";
 import Title from "@/sections/Title";
-import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 
-export default function LamboozledClient(props: PropsWithChildren<{}>) {
-  const lamboozledProjectData = projectsData["lamboozled"];
+interface LamboozledProps {
+  topChildren: ReactNode;
+}
+
+export default function LamboozledClient(
+  props: PropsWithChildren<LamboozledProps>,
+) {
   return (
-    <Scroller bgColor={lamboozledProjectData.bgColor}>
-      <TopDisplay project={lamboozledProjectData} />
+    <>
+      {props.topChildren}
 
       <Title title="Overview" />
       <EqualSplit>
@@ -76,6 +78,6 @@ export default function LamboozledClient(props: PropsWithChildren<{}>) {
       <Spacing size="large" />
 
       {props.children}
-    </Scroller>
+    </>
   );
 }
