@@ -18,9 +18,9 @@ export default async function Profile() {
     <div className="single my-spacing-lg grid grid-cols-1 gap-spacing lg:grid-cols-3">
       <div className="about_rounded">
         <Image
-          src={profilePicture.url!}
-          width={profilePicture.width!}
-          height={profilePicture.height!}
+          src={profilePicture.url}
+          width={profilePicture.width}
+          height={profilePicture.height}
           alt={profilePicture.alt}
           sizes="33vw"
         />

@@ -1,19 +1,21 @@
 import styles from "./TopDisplay.module.css";
+import { Project } from "@payload-types";
 import classNames from "classnames";
-import Image from "next/image";
 import Link from "next/link";
+import { Payload } from "payload";
 import React from "react";
 import "server-only";
 
 import CategoryTag from "@/components/CategoryTag";
-import { ProjectData } from "@/utils/projectData";
+import PayloadImage from "@/components/PayloadImage";
 
 export interface TopDisplayProps {
-  project: ProjectData;
+  project: Project;
   absolute?: boolean;
   link?: boolean;
   displayDescriptionOnMobile?: boolean;
   bottomSpacing?: boolean;
+  payload: Payload;
 }
 
 const defaultProps = {
@@ -22,30 +24,31 @@ const defaultProps = {
 
 export default function TopDisplay(propsIn: TopDisplayProps) {
   const props = { ...defaultProps, ...propsIn };
+  const titleColor = props.project.lightTitle
+    ? "text-gray-100"
+    : "text-gray-950";
   return (
     <>
       <div
-        className={classNames(
-          `flex h-full min-h-screen w-full flex-col ${props.project.bgColor}`,
-          {
-            "absolute left-0 top-0": props.absolute,
-            relative: !props.absolute,
-            "mb-spacing-2lg": props.bottomSpacing,
-          },
-        )}
+        style={{ backgroundColor: props.project.backgroundColor }}
+        className={classNames("flex h-full min-h-screen w-full flex-col", {
+          "absolute left-0 top-0": props.absolute,
+          relative: !props.absolute,
+          "mb-spacing-2lg": props.bottomSpacing,
+        })}
         id={props.project.uri}
       >
         {/* Project image */}
         <div className="relative min-h-0 w-full flex-shrink flex-grow overflow-hidden">
-          <Image
-            src={props.project.displayImage}
-            alt={props.project.name}
+          <PayloadImage
+            media={props.project.projectImage}
+            payload={props.payload}
             fill
             className="hidden object-cover object-center md:block"
           />
-          <Image
-            src={props.project.displayImageMobile}
-            alt={props.project.name}
+          <PayloadImage
+            media={props.project.mobileProjectImage}
+            payload={props.payload}
             fill
             className="object-cover object-center md:hidden"
           />
@@ -53,15 +56,15 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             {/* Project name */}
             <div
               className={`relative mx-spacing-lg mt-8 flex-grow self-stretch lg:mt-12 xl:mt-24
-                ${props.project.titleColor}`}
+                ${titleColor}`}
             >
               <div className="relative">
                 {/* Optional cover color for background */}
-                {props.project.coverColor && (
+                {props.project.imageCover && (
                   <div
                     style={{
                       height: "calc(200% + 48px)",
-                      background: `linear-gradient(180deg, ${props.project.coverColor} 0%, rgba(0, 0, 0, 0) 100%)`,
+                      background: `linear-gradient(180deg, white 0%, transparent 100%)`,
                     }}
                     className="absolute -left-spacing-lg -right-spacing-lg -top-8 lg:-top-12 xl:-top-24"
                   ></div>
@@ -78,29 +81,19 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
 
               {/* Award image */}
               {props.project.awardImage && (
-                <Image
-                  src={props.project.awardImage}
-                  alt="Award"
+                <PayloadImage
+                  media={props.project.awardImage}
+                  payload={props.payload}
                   className="absolute bottom-8 w-40"
                 />
               )}
             </div>
 
             {/* Link to page */}
-            {props.link &&
-              (props.project.link.startsWith("https") ? (
-                <a
-                  className="absolute left-0 top-0 block h-full w-full"
-                  href={props.project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                ></a>
-              ) : (
-                <Link
-                  href={props.project.link}
-                  className="absolute left-0 top-0 block h-full w-full cursor-pointer"
-                ></Link>
-              ))}
+            <Link
+              href={props.project.uri}
+              className="absolute left-0 top-0 block h-full w-full cursor-pointer"
+            ></Link>
           </div>
         </div>
 
@@ -115,13 +108,10 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
               <div className={styles.detailSection}>
                 <span>Category: </span>
                 {props.project.category}
-                {props.project.categoryTail && (
-                  <span>, {props.project.categoryTail}</span>
-                )}
               </div>
               <div className="col-span-2 flex flex-row flex-wrap space-x-2">
-                {props.project.focus.map((focus, index) => {
-                  return <CategoryTag key={index} category={focus} />;
+                {props.project.focuses.map((focus, index) => {
+                  return <CategoryTag key={index} category={focus.focus} />;
                 })}
               </div>
             </div>

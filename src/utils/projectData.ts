@@ -170,7 +170,7 @@ export const projectsData: { [name: string]: ProjectData } = {
   sunrise: {
     uri: "sunrise",
     name: "Sunrise Speaker",
-    duration: "14 Weeks , 2021 Fall",
+    duration: "14 Weeks, 2021 Fall",
     category: "Consumer Electronics",
     categoryTail: "Solo Project",
     focus: ["Prototyping", "Model Making", "Manufacturing"],
@@ -186,7 +186,7 @@ export const projectsData: { [name: string]: ProjectData } = {
   "m-tron": {
     uri: "m-tron",
     name: "M-Tron",
-    duration: "5 Weeks , 2021 Spring",
+    duration: "5 Weeks, 2021 Spring",
     category: "Transportation",
     categoryTail: "Solo Project",
     focus: ["3D Modeling", "Rendering", "Brand-Centric Design"],

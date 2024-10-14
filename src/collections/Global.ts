@@ -2,9 +2,6 @@ import type { GlobalConfig } from "payload";
 
 export const Global: GlobalConfig = {
   slug: "global",
-  access: {
-    read: () => true,
-  },
   fields: [
     {
       name: "connectionPrompt",

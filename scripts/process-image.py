@@ -2,78 +2,69 @@ import os
 import subprocess
 import colorama
 import shutil
+import sys
 from PIL import Image
-Image.MAX_IMAGE_PIXELS = 1000000000 
+
+Image.MAX_IMAGE_PIXELS = 1000000000
 
 err_count = 0
 
-def cmd_exists(cmd):
-    return shutil.which(cmd) is not None
+
+def cmd_exists(command):
+    return shutil.which(command) is not None
+
 
 if cmd_exists("magick"):
     cmd = "magick"
 else:
     cmd = "convert"
 
-for dirPath, dirNames, filenames in os.walk("./images"):
-    for name in filenames:
-        print(colorama.Fore.RESET + "Processing " + os.path.join(dirPath, name))
-        basename, ext = os.path.splitext(name)
+if len(sys.argv) < 3:
+    print("./process-image [images...] [target width]")
 
-        # Check extension
-        if ext.lower() in [".gif"]:
-            continue
-        if ext.lower() not in [".png", ".jpg", ".webp"]:
-            print(colorama.Fore.RED + "Image of type " +
-                  ext + " is not supported")
-            err_count += 1
-            continue
+files = sys.argv[1:-1]
+target_width = int(sys.argv[-1])
 
-        if basename.endswith("6x"):
-            target_width = 1920 * 6
-        elif basename.endswith("4x"):
-            target_width = 1920 * 4
-        elif basename.endswith("2x"):
-            target_width = 1920 * 2
-        elif basename.endswith("full"):
-            target_width = 1920
-        elif basename.endswith("big"):
-            target_width = 1280
-        elif basename.endswith("half"):
-            target_width = 960
-        elif basename.endswith("small"):
-            target_width = 640
-        elif basename.endswith("icon"):
-            target_width = 128
-        else:
-            print(colorama.Fore.RED + "Unknown width: " + name)
-            err_count += 1
-            continue
+for file in files:
+    print(colorama.Fore.RESET + "Processing " + file)
+    basename, ext = os.path.splitext(os.path.basename(file))
 
-        src = os.path.join(dirPath, name)
-        dest = os.path.join(dirPath, basename + ".webp")
+    # Check extension
+    if ext.lower() in [".gif"]:
+        continue
+    if ext.lower() not in [".png", ".jpg", ".webp"]:
+        print(colorama.Fore.RED + "Image of type " + ext + " is not supported")
+        err_count += 1
+        continue
 
-        im = Image.open(src)
-        w, h = im.size
-        if w <= target_width and ext in [".webp"]:
-            continue
+    dir_path = os.path.dirname(file)
+    dest = os.path.join(dir_path, basename + ".webp")
 
-        subprocess.call([
-            cmd,
-            src,
-            "-strip",
-            "-interlace",
-            "Plane",
-            "-quality",
-            "95",
-            "-resize",
-            str(target_width),
-            "-define",
-            "webp:lossless=true",
-            dest
-        ])
-        print(colorama.Fore.GREEN + "===>" +
-              colorama.Fore.RESET + " Successfully generated " + dest)
+    im = Image.open(file)
+    w, h = im.size
+    if w <= target_width and ext in [".webp"]:
+        continue
+
+    if w <= target_width:
+        resize = False
+    else:
+        resize = True
+
+    full_command = (
+        [cmd, file, "-strip", "-interlace", "Plane", "-quality", "95"]
+        + (["-resize", str(target_width)] if resize else [])
+        + ["-define", "webp:lossless=true", dest]
+    )
+    print(full_command)
+
+    subprocess.call(full_command)
+    print(
+        colorama.Fore.GREEN
+        + "===>"
+        + colorama.Fore.RESET
+        + " Successfully generated "
+        + dest
+    )
 
 if err_count == 0:
     print("Completed successfully.")

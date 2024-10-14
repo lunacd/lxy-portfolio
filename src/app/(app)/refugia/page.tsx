@@ -1,41 +1,32 @@
 import RefugiaClient from "./page.client";
+import config from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/sections/TopDisplay";
 
-import RefugiaSmall from "@/images/projects/refugia-half.webp";
-import RefugiaDisplay from "@/images/refugia/display-full.webp";
-import RefugiaDisplayM from "@/images/refugia/display-mobile-half.webp";
-
 export const metadata: Metadata = {
   title: "Refugia | Shirley Lyu",
 };
-const refugiaData = {
-  uri: "refugia",
-  name: "Refugia",
-  duration: "14 Weeks, 2022 Summer",
-  category: "Spatial Experience Design",
-  focus: ["Sustainability", "Model making"],
-  brief:
-    "See through their eyes; hear through their ears; sense through their senses. Learn and feel animals' adaptation to the urban environment.",
-  displayImage: RefugiaDisplay,
-  displayImageMobile: RefugiaDisplayM,
-  smallImage: RefugiaSmall,
-  titleColor: "text-gray-100",
-  bgColor: "bg-[#E0E4E0]",
-  link: "/refugia",
-  hamburgerColorLight: false,
-};
 
-export default function Refugia() {
+export default async function Refugia() {
+  const payload = await getPayloadHMR({
+    config,
+  });
+  const refugiaData = (
+    await payload.find({
+      collection: "project",
+      where: {
+        uri: { equals: "refugia" },
+      },
+    })
+  ).docs[0];
   return (
-    <Scroller bgColor={refugiaData.bgColor}>
+    <Scroller bgColor={refugiaData.backgroundColor}>
       <RefugiaClient
-        topChildren={
-          <TopDisplay project={refugiaData} displayDescriptionOnMobile={true} />
-        }
+        topChildren={<TopDisplay project={refugiaData} payload={payload} />}
       >
         <ConnectPrompt />
       </RefugiaClient>

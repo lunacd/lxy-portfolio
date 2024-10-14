@@ -1,31 +1,35 @@
-import Image from "next/image";
+import { Project } from "@payload-types";
 import Link from "next/link";
+import { Payload } from "payload";
 import React from "react";
 import "server-only";
 
 import CategoryTag from "@/components/CategoryTag";
+import PayloadImage from "@/components/PayloadImage";
 import styles from "@/sections/TopDisplay.module.css";
-import { ProjectData } from "@/utils/projectData";
 
 interface HomeSectionProps {
-  project: ProjectData;
-  displayDescriptionOnMobile?: boolean;
+  project: Project;
+  payload: Payload;
 }
 
-export default function HomeSection(props: HomeSectionProps) {
+export default async function HomeSection(props: HomeSectionProps) {
+  const titleColor = props.project.lightTitle
+    ? "text-gray-100"
+    : "text-gray-950";
   return (
     <>
       {/* Project image */}
       <div className="relative min-h-0 w-full flex-shrink flex-grow overflow-hidden">
-        <Image
-          src={props.project.displayImage}
-          alt={props.project.name}
+        <PayloadImage
+          media={props.project.projectImage}
+          payload={props.payload}
           fill
           className="hidden object-cover object-center md:block"
         />
-        <Image
-          src={props.project.displayImageMobile}
-          alt={props.project.name}
+        <PayloadImage
+          media={props.project.mobileProjectImage}
+          payload={props.payload}
           fill
           className="object-cover object-center md:hidden"
         />
@@ -33,15 +37,15 @@ export default function HomeSection(props: HomeSectionProps) {
           {/* Project name */}
           <div
             className={`relative mx-spacing-lg mt-8 flex-grow self-stretch lg:mt-12 xl:mt-24
-              ${props.project.titleColor}`}
+              ${titleColor}`}
           >
             <div className="relative">
               {/* Optional cover color for background */}
-              {props.project.coverColor && (
+              {props.project.imageCover && (
                 <div
                   style={{
                     height: "calc(200% + 48px)",
-                    background: `linear-gradient(180deg, ${props.project.coverColor} 0%, rgba(0, 0, 0, 0) 100%)`,
+                    background: `linear-gradient(180deg, white 0%, transparent 100%)`,
                   }}
                   className="absolute -left-spacing-lg -right-spacing-lg -top-8 lg:-top-12 xl:-top-24"
                 ></div>
@@ -57,17 +61,14 @@ export default function HomeSection(props: HomeSectionProps) {
                 <div className={styles.detailSection}>
                   <span>Category: </span>
                   {props.project.category}
-                  {props.project.categoryTail && (
-                    <span>, {props.project.categoryTail}</span>
-                  )}
                 </div>
                 <div className="col-span-2 mt-2 flex flex-row flex-wrap gap-2">
-                  {props.project.focus.map((focus, index) => {
+                  {props.project.focuses.map((focus, index) => {
                     return (
                       <CategoryTag
                         key={index}
-                        category={focus}
-                        titleColor={props.project.titleColor}
+                        category={focus.focus}
+                        titleColor={titleColor}
                       />
                     );
                   })}
@@ -77,16 +78,16 @@ export default function HomeSection(props: HomeSectionProps) {
 
             {/* Award image */}
             {props.project.awardImage && (
-              <Image
-                src={props.project.awardImage}
-                alt="Award"
+              <PayloadImage
+                media={props.project.awardImage}
+                payload={props.payload}
                 className="absolute bottom-8 w-40"
               />
             )}
           </div>
           {/* Link to page */}
           <Link
-            href={props.project.link}
+            href={`/${props.project.uri}`}
             className="absolute left-0 top-0 block h-full w-full cursor-pointer"
           ></Link>
         </div>

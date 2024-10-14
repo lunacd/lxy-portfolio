@@ -2,6 +2,8 @@
 import { Documents } from "./collections/Documents";
 import { Global } from "./collections/Global";
 import { Media } from "./collections/Media";
+import { ProjectOrder } from "./collections/ProjectOrder";
+import { Projects } from "./collections/Projects";
 import { Users } from "./collections/Users";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
@@ -34,8 +36,8 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Documents],
-  globals: [Global],
+  collections: [Users, Media, Documents, Projects],
+  globals: [Global, ProjectOrder],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

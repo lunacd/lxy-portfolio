@@ -1,23 +1,32 @@
 import SkatesClient from "./page.client";
+import config from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 
 export const metadata: Metadata = {
   title: "Skates | Shirley Lyu",
 };
 
-export default function Skates() {
-  const skatesData = projectsData["skates"];
+export default async function Skates() {
+  const payload = await getPayloadHMR({
+    config,
+  });
+  const skatesData = (
+    await payload.find({
+      collection: "project",
+      where: {
+        uri: { equals: "skates" },
+      },
+    })
+  ).docs[0];
   return (
-    <Scroller bgColor={skatesData.bgColor}>
+    <Scroller bgColor={skatesData.backgroundColor}>
       <SkatesClient
-        topChildren={
-          <TopDisplay project={skatesData} displayDescriptionOnMobile={true} />
-        }
+        topChildren={<TopDisplay project={skatesData} payload={payload} />}
       >
         <ProjectNavigation next="/tura" />
       </SkatesClient>

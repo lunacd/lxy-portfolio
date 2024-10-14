@@ -1,21 +1,34 @@
 import AgainFromScratchClient from "./page.client";
+import config from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/sections/TopDisplay";
-import { projectsData } from "@/utils/projectData";
 
 export const metadata: Metadata = {
   title: "Again From Scratch | Shirley Lyu",
 };
 
-export default function AgainFromScratch() {
-  const againFromScratchProjectData = projectsData["again-from-scratch"];
+export default async function AgainFromScratch() {
+  const payload = await getPayloadHMR({
+    config,
+  });
+  const againFromScratchProjectData = (
+    await payload.find({
+      collection: "project",
+      where: {
+        uri: { equals: "again-from-scratch" },
+      },
+    })
+  ).docs[0];
   return (
-    <Scroller bgColor={againFromScratchProjectData.bgColor}>
+    <Scroller bgColor={againFromScratchProjectData.backgroundColor}>
       <AgainFromScratchClient
-        topChildren={<TopDisplay project={againFromScratchProjectData} />}
+        topChildren={
+          <TopDisplay project={againFromScratchProjectData} payload={payload} />
+        }
       >
         <ProjectNavigation prev="/overlap" next="/sunrise" />
       </AgainFromScratchClient>

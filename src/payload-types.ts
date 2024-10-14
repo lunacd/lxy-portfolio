@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     media: Media;
     document: Document;
+    project: Project;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -23,6 +24,7 @@ export interface Config {
   };
   globals: {
     global: Global;
+    projectOrder: ProjectOrder;
   };
   locale: null;
   user: User & {
@@ -106,6 +108,31 @@ export interface Document {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "project".
+ */
+export interface Project {
+  id: number;
+  name: string;
+  uri: string;
+  duration: string;
+  category: string;
+  focuses: {
+    focus: string;
+    id?: string | null;
+  }[];
+  brief: string;
+  projectImage: number | Media;
+  mobileProjectImage: number | Media;
+  backgroundColor: string;
+  lightTitle: boolean;
+  lightHamburgerMenu: boolean;
+  imageCover: boolean;
+  awardImage?: (number | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -122,6 +149,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'document';
         value: number | Document;
+      } | null)
+    | ({
+        relationTo: 'project';
+        value: number | Project;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -175,6 +206,19 @@ export interface Global {
   resume: number | Document;
   profile: string;
   profilePicture: number | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projectOrder".
+ */
+export interface ProjectOrder {
+  id: number;
+  projects: {
+    project: number | Project;
+    id?: string | null;
+  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }
