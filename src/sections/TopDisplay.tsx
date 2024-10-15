@@ -1,7 +1,6 @@
 import styles from "./TopDisplay.module.css";
 import { Project } from "@payload-types";
 import classNames from "classnames";
-import Link from "next/link";
 import { Payload } from "payload";
 import React from "react";
 import "server-only";
@@ -14,7 +13,6 @@ export interface TopDisplayProps {
   project: Project;
   absolute?: boolean;
   link?: boolean;
-  displayDescriptionOnMobile?: boolean;
   bottomSpacing?: boolean;
   payload: Payload;
 }
@@ -88,12 +86,6 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
               )}
             </div>
 
-            {/* Link to page */}
-            <Link
-              href={props.project.uri}
-              className="absolute left-0 top-0 block h-full w-full cursor-pointer"
-            ></Link>
-
             {/* Scroll Indicator */}
             <div className="absolute bottom-4 right-4">
               <ScrollIndicator light={true} />
@@ -122,12 +114,6 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
           </div>
         </div>
       </div>
-      {props.displayDescriptionOnMobile && (
-        <div className={`${styles.detailSection} opacity-0 md:hidden`}>
-          <span>Project Brief: </span>
-          {props.project.brief}
-        </div>
-      )}
     </>
   );
 }
