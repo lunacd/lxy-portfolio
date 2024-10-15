@@ -8,6 +8,7 @@ import "server-only";
 
 import CategoryTag from "@/components/CategoryTag";
 import PayloadImage from "@/components/PayloadImage";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 export interface TopDisplayProps {
   project: Project;
@@ -94,6 +95,11 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
               href={props.project.uri}
               className="absolute left-0 top-0 block h-full w-full cursor-pointer"
             ></Link>
+
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-4 right-4">
+              <ScrollIndicator light={true} />
+            </div>
           </div>
         </div>
 

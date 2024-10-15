@@ -36,7 +36,7 @@ export default async function Home() {
             <InViewDetector
               key={project.uri}
               detectorKey={project.uri}
-              className="flex h-full min-h-screen w-full flex-col"
+              className="flex h-[90vh] w-full flex-col"
             >
               <HomeSection project={project} payload={payload} />
             </InViewDetector>

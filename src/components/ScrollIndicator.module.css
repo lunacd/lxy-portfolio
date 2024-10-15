@@ -1,0 +1,109 @@
+.container {
+    --circle-size: 50px;
+    --circle-bezier: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    --circle-timing: 3s;
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    overflow: hidden;
+}
+
+.circleLight {
+    --circle-background-color: #FFF;
+    --circle-foreground-color: #55544F;
+}
+
+.circleDark {
+    --circle-background-color: #55544F;
+    --circle-foreground-color: #FFF;
+}
+
+.circle {
+    background: var(--circle-background-color);
+    border-radius: 50%;
+    display: inline-block;
+    height: var(--circle-size);
+    width: var(--circle-size);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transform-origin: 0;
+
+    &.circleTop, &.circleBottom {
+        height: calc(var(--circle-size) / 3);
+        width: calc(var(--circle-size) / 2.4);
+    }
+
+    &.circleTop {
+        animation: blob-1-anim var(--circle-timing) var(--circle-bezier) infinite;
+        top: 0;
+    }
+
+    &.circleBottom {
+        animation: blob-2-anim var(--circle-timing) var(--circle-bezier) infinite;
+        bottom: 0;
+    }
+
+}
+
+.svg {
+    position: relative;
+    color: var(--circle-foreground-color) !important;
+    animation: arrow var(--circle-timing) var(--circle-bezier) forwards infinite;
+    perspective: 9000px;
+    transform: translateZ(0);
+    transform-origin: bottom;
+}
+
+@keyframes blob-1-anim {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    14% {
+        transform: translateX(-50%) translateY(-4px);
+    }
+    24% {
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes blob-2-anim {
+    0% {
+        transform: scale(1) translate(-50%, 5px);
+    }
+    30% {
+        transform: scale(1) translate(-50%, 5px);
+    }
+    70% {
+        transform: scale(1) translate(-50%, 5px);
+    }
+    95% {
+        transform: scale(1) translate(-50%, 13px);
+    }
+    100% {
+        transform: scale(1) translate(-50%, 5px);
+    }
+}
+
+@keyframes arrow {
+    0% {
+        transform: translate3d(0, -150%, 0) rotateX(90deg) scale(0.5) skewX(3deg);
+    }
+    30% {
+        transform: translate3d(0, 0, 0) rotateX(0deg) scale(1) skewX(0deg);
+    }
+    70% {
+        transform: translate3d(0, 0, 0) rotateX(0deg) scale(1) skewX(0deg);
+    }
+    95% {
+        transform: translate3d(0, 50%, 0) rotateX(-90deg) scale(0.5) skewX(-3deg);
+    }
+    100% {
+        transform: translate3d(0, 50%, 0) rotateX(-90deg) scale(0.5) skewX(-3deg);
+    }
+}
