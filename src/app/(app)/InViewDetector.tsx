@@ -18,11 +18,12 @@ export default function InViewDetector(
   const centerRef = useRef(null);
   const inView = useInView(centerRef);
   useEffect(() => {
-    dispatch({
-      type: "setInView",
-      project: props.detectorKey,
-      isInView: inView,
-    });
+    if (inView) {
+      dispatch({
+        type: "setInView",
+        project: props.detectorKey,
+      });
+    }
   }, [dispatch, inView, props.detectorKey]);
   return (
     <div className={classNames("relative", props.className)}>

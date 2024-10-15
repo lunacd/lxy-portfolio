@@ -10,8 +10,9 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import Link from "next/link"
 
 import Tooltip from "@/components/Tooltip";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
@@ -23,6 +24,17 @@ import HamburgerWhite from "@/images/hamburger-white.svg";
 
 const MotionImage = motion.create(Image);
 const MotionIconChevronLeft = motion.create(IconChevronLeft);
+
+const sidebarProjects = [
+  "skates",
+  "tura",
+  "lamboozled",
+  "soul",
+  "overlap",
+  "again-from-scratch",
+  "sunrise",
+  "m-tron",
+];
 
 export const Sidebar = () => {
   const [hovered, setHovered] = useState("");
@@ -36,7 +48,14 @@ export const Sidebar = () => {
     setOpen(isLG);
   }, [isLG]);
 
-  const { globalState } = useGlobalStateContext();
+  const { dispatch, globalState } = useGlobalStateContext();
+  const pathname = usePathname();
+  useEffect(() => {
+    const projectName = pathname.slice(1, pathname.length - 1);
+    if (sidebarProjects.includes(projectName)) {
+      dispatch({ type: "setInView", project: projectName });
+    }
+  }, [pathname, dispatch]);
 
   return (
     <>
