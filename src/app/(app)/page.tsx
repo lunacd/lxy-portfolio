@@ -1,5 +1,6 @@
 import HomeSection from "./HomeSection";
 import InViewDetector from "./InViewDetector";
+import LandingScrollIndicator from "./LandingScrollIndicator";
 import config from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { AnimatePresence } from "framer-motion";
@@ -7,7 +8,6 @@ import { Metadata } from "next";
 import React from "react";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
-import Scroller from "@/components/Scroller";
 import { getProject } from "@/utils/payloadHelpers";
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default async function Home() {
   );
   return (
     <div className="relative h-full flex-grow overflow-hidden">
-      <Scroller bgColor="bg-white">
+      <LandingScrollIndicator>
         <AnimatePresence initial={false}>
           {projects.map((project) => (
             <InViewDetector
@@ -43,7 +43,7 @@ export default async function Home() {
           ))}
         </AnimatePresence>
         <ConnectPrompt />
-      </Scroller>
+      </LandingScrollIndicator>
     </div>
   );
 }
