@@ -17,7 +17,7 @@ export default async function Lyu() {
   });
   const lyuData = (
     await payload.find({
-      collection: "project",
+      collection: "projects",
       where: {
         uri: { equals: "lyu" },
       },

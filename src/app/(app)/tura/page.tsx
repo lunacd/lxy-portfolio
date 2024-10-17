@@ -17,7 +17,7 @@ export default async function Tura() {
   });
   const turaData = (
     await payload.find({
-      collection: "project",
+      collection: "projects",
       where: {
         uri: { equals: "tura" },
       },

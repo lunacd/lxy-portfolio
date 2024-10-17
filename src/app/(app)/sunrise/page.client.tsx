@@ -9,7 +9,7 @@ import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
-import Title, { Subtitle } from "@/sections/Title";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import Evo1 from "@/images/sunrise/evolution/evolution-1-small.webp";
 import Evo2 from "@/images/sunrise/evolution/evolution-2-small.webp";
@@ -74,8 +74,8 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
       />
 
       {/* Usage Scenario */}
-      <Title title="Usage Scenario" />
-      <Subtitle title="Balcony" />
+      <LegacyTitle title="Usage Scenario" />
+      <LegacySubtitle title="Balcony" />
       <DisplayImage
         source={{ frames: [{ src: UsageScenario }], width: 1920, height: 961 }}
         alt="Usage scenario setting"
@@ -83,8 +83,8 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
       />
 
       {/* Moodboard */}
-      <Title title="Moodboard" />
-      <Subtitle title="Balcony Speaker Form Inspiration " />
+      <LegacyTitle title="Moodboard" />
+      <LegacySubtitle title="Balcony Speaker Form Inspiration " />
       <HorizontalGallery
         items={[
           { image: Form1, title: "Slope" },
@@ -96,7 +96,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         botSpacing={false}
         titleClass="paragraph"
       />
-      <Subtitle title="Balcony Speaker Details Inspiration " />
+      <LegacySubtitle title="Balcony Speaker Details Inspiration " />
       <HorizontalGallery
         items={[
           { image: Detail1, title: "Chamfer" },
@@ -111,7 +111,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
       <div className="flex w-full flex-col items-center bg-[#212121]">
         <Spacing size="medium" />
         {/* Ideation */}
-        <Title title="Ideation" textColor="text-white" />
+        <LegacyTitle title="Ideation" textColor="text-white" />
         <DisplayImage
           source={{ frames: [{ src: Ideation }], width: 1920, height: 961 }}
           alt="Ideation"
@@ -119,7 +119,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         />
 
         {/* Model Evolution*/}
-        <Title title="Model Evolution" textColor="text-white" />
+        <LegacyTitle title="Model Evolution" textColor="text-white" />
         <HorizontalGallery
           items={[
             { image: Evo1, title: "Model Evolution" },
@@ -133,7 +133,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         />
 
         {/* Ortho Drawing */}
-        <Title title="Final Product Ortho Drawing" textColor="text-white" />
+        <LegacyTitle title="Final Product Ortho Drawing" textColor="text-white" />
         <Carousel
           images={[Ortho1, Ortho2, Ortho3, Ortho4, Ortho5]}
           description="Ortho drawing"
@@ -143,7 +143,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         />
 
         {/* Explode */}
-        <Title title="Exploded View" textColor="text-white" />
+        <LegacyTitle title="Exploded View" textColor="text-white" />
         <div className="single px-32">
           <DisplayImage
             source={{ frames: [{ src: Explode }], width: 1920, height: 2149 }}
@@ -153,7 +153,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         </div>
 
         {/* Making */}
-        <Title title="Final model making Process" textColor="text-white" />
+        <LegacyTitle title="Final model making Process" textColor="text-white" />
         <SmallGallery
           items={[
             { image: Making1, title: "20lb Foam Route Template" },
@@ -180,9 +180,9 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
 
       <Spacing size="medium" />
       {/* Gallery */}
-      <Title title="Product Gallery" />
+      <LegacyTitle title="Product Gallery" />
 
-      <Subtitle title="Outdoor" />
+      <LegacySubtitle title="Outdoor" />
       <LargeGallery
         rows={[
           {
@@ -205,7 +205,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         description="Outdoor gallery"
         botSpacing={false}
       />
-      <Subtitle title="Indoor" />
+      <LegacySubtitle title="Indoor" />
       <LargeGallery
         rows={[
           {

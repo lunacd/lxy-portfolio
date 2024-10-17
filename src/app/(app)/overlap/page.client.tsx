@@ -11,7 +11,7 @@ import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
-import Title, { Subtitle } from "@/sections/Title";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import Benchmark from "@/images/overlap/benchmark-full.webp";
@@ -99,7 +99,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       />
 
       {/* Overlap */}
-      <Title title="Overlap Set" />
+      <LegacyTitle title="Overlap Set" />
       <HorizontalGallery
         items={[
           {
@@ -122,7 +122,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
         width={1084}
         height={1084}
       />
-      <Title title="Moodboard: Time, Space, Organizing" />
+      <LegacyTitle title="Moodboard: Time, Space, Organizing" />
       <DisplayImage
         source={{ frames: [{ src: Overlay1 }], width: 9534, height: 3742 }}
         alt="Overlapped moodboard"
@@ -219,7 +219,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       />
 
       {/* Tech Drawing */}
-      <Title title="Tech Drawing" />
+      <LegacyTitle title="Tech Drawing" />
       <Carousel
         images={[
           TechDrawing1,
@@ -240,8 +240,8 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       />
 
       {/* Design Process */}
-      <Title title="Design Process" />
-      <Subtitle title="HAY's Brand DNA Analysis" />
+      <LegacyTitle title="Design Process" />
+      <LegacySubtitle title="HAY's Brand DNA Analysis" />
       <HorizontalGallery
         items={[
           { image: DNA1, title: "Playful" },
@@ -257,7 +257,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       />
 
       {/* Brand Benchmark */}
-      <Subtitle title="HAY's Brand Benchmarks" />
+      <LegacySubtitle title="HAY's Brand Benchmarks" />
       <DisplayImage
         source={{ frames: [{ src: Benchmark }], width: 4784, height: 2735 }}
         alt="Brand benchmark"
@@ -265,21 +265,21 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       />
 
       {/* Ideation */}
-      <Subtitle title="Overlap Ideation" />
+      <LegacySubtitle title="Overlap Ideation" />
       <DisplayImage
         source={{ frames: [{ src: Ideation }], width: 8000, height: 4500 }}
         alt="Ideation for Overlap"
       />
 
       {/* Prototype */}
-      <Subtitle title="Prototype &amp; Form Perfection" />
+      <LegacySubtitle title="Prototype &amp; Form Perfection" />
       <DisplayImage
         source={{ frames: [{ src: Prototype }], width: 7677, height: 4163 }}
         alt="Prototype for Overlap"
       />
 
       {/* CMF & Manufacturing */}
-      <Title title="CMF &amp; Manufacturing" />
+      <LegacyTitle title="CMF &amp; Manufacturing" />
       <Carousel
         images={[CMF1, CMF2, CMF3, CMF4, CMF5, CMF6, CMF7, CMF8]}
         description="CMF"
@@ -288,7 +288,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       />
 
       {/* Making Process */}
-      <Title title="Final Model Making Process" />
+      <LegacyTitle title="Final Model Making Process" />
       <SmallGallery
         items={[
           { image: Process1, title: "Wood Cut" },
@@ -309,7 +309,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       />
 
       {/* Gallery */}
-      <Title title="Product Gallery" />
+      <LegacyTitle title="Product Gallery" />
       <LargeGallery
         rows={[
           {

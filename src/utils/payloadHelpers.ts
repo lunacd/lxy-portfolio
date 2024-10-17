@@ -34,7 +34,7 @@ export async function getProject(
   payload: Payload,
 ) {
   if (typeof rawProject === "number") {
-    return await payload.findByID({ collection: "project", id: rawProject });
+    return await payload.findByID({ collection: "projects", id: rawProject });
   }
   return rawProject;
 }

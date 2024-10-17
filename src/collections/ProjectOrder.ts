@@ -11,7 +11,7 @@ export const ProjectOrder: GlobalConfig = {
         {
           name: "project",
           type: "relationship",
-          relationTo: "project",
+          relationTo: "projects",
           required: true,
         },
       ],

@@ -17,7 +17,7 @@ export default async function Soul() {
   });
   const soulData = (
     await payload.find({
-      collection: "project",
+      collection: "projects",
       where: {
         uri: { equals: "soul" },
       },

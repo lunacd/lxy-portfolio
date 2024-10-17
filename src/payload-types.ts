@@ -14,7 +14,8 @@ export interface Config {
     users: User;
     media: Media;
     document: Document;
-    project: Project;
+    projects: Project;
+    projectPages: ProjectPage;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -108,7 +109,7 @@ export interface Document {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "project".
+ * via the `definition` "projects".
  */
 export interface Project {
   id: number;
@@ -133,6 +134,24 @@ export interface Project {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projectPages".
+ */
+export interface ProjectPage {
+  id: number;
+  projectName: string;
+  blocks: {
+    text: string;
+    type: 'title' | 'subtitle';
+    color: 'dark' | 'light';
+    id?: string | null;
+    blockName?: string | null;
+    blockType: 'title';
+  }[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -151,8 +170,12 @@ export interface PayloadLockedDocument {
         value: number | Document;
       } | null)
     | ({
-        relationTo: 'project';
+        relationTo: 'projects';
         value: number | Project;
+      } | null)
+    | ({
+        relationTo: 'projectPages';
+        value: number | ProjectPage;
       } | null);
   globalSlug?: string | null;
   user: {

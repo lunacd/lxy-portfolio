@@ -10,7 +10,7 @@ import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
-import Title, { Subtitle } from "@/sections/Title";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import Belonging1 from "@/images/skates/belonging-1-small.webp";
 import Belonging2 from "@/images/skates/belonging-2-small.webp";
@@ -70,7 +70,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
         height={620}
       />
 
-      <Title title="Overview" />
+      <LegacyTitle title="Overview" />
       <DisplayImage
         source={{ frames: [{ src: Overview }], width: 1920, height: 1163 }}
         alt="Overview"
@@ -89,8 +89,8 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
         height={1062}
       />
 
-      <Title title="Different Usages" />
-      <Subtitle title="Normal chair, arm chair, chair with desktop, stool" />
+      <LegacyTitle title="Different Usages" />
+      <LegacySubtitle title="Normal chair, arm chair, chair with desktop, stool" />
       <div className="hidden md:block">
         <DisplayImage
           source={{ frames: [{ src: Usage }], width: 1920, height: 622 }}
@@ -109,25 +109,25 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
         />
       </div>
 
-      <Title title="Usage Environment" />
-      <Subtitle title="Open Offices" />
+      <LegacyTitle title="Usage Environment" />
+      <LegacySubtitle title="Open Offices" />
       <DisplayImage
         source={{ frames: [{ src: Environment1 }], width: 1920, height: 1079 }}
         alt="Open offices"
       />
-      <Subtitle title="Lobby" />
+      <LegacySubtitle title="Lobby" />
       <DisplayImage
         source={{ frames: [{ src: Environment2 }], width: 1920, height: 1079 }}
         alt="Lobby"
       />
 
-      <Title title="Colorways" />
+      <LegacyTitle title="Colorways" />
       <DisplayImage
         source={{ frames: [{ src: Colorways }], width: 1920, height: 1078 }}
         alt="Colorways"
       />
 
-      <Title title="Design Process" />
+      <LegacyTitle title="Design Process" />
       <TextImage
         image={FlexibleWork}
         width={960}
@@ -140,7 +140,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
         ]}
         titleClass="subtitle"
       />
-      <Subtitle title="Create a Sense of Belonging" />
+      <LegacySubtitle title="Create a Sense of Belonging" />
       <HorizontalGallery
         items={[
           { image: Belonging1, title: "Interactive" },
@@ -153,7 +153,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
         titleClass="paragraph"
       />
 
-      <Title title="Concept Development" />
+      <LegacyTitle title="Concept Development" />
       <HorizontalScroll
         src={ConceptDevelopment}
         width={3840}
@@ -163,21 +163,21 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
         prompt="Scroll horizontally to see the full process!"
       />
 
-      <Title title="Final Tech Drawing" />
+      <LegacyTitle title="Final Tech Drawing" />
       <DisplayImage
         source={{ frames: [{ src: TechDrawing }], width: 1920, height: 750 }}
         alt="Tech drawing"
         xSpacing
       />
 
-      <Title title="Final Structure" />
+      <LegacyTitle title="Final Structure" />
       <DisplayImage
         source={{ frames: [{ src: Structure }], width: 1920, height: 1490 }}
         alt="Structure"
         xSpacing
       />
 
-      <Title title="Model Making" />
+      <LegacyTitle title="Model Making" />
       <SmallGallery
         items={[
           { image: Making1, title: "Water Jet Cutting" },
@@ -200,7 +200,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
         height={470}
       />
 
-      <Title title="Gallery" />
+      <LegacyTitle title="Gallery" />
       <LargeGallery
         description="Skates Gallery"
         rows={[

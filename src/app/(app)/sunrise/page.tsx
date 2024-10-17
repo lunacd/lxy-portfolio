@@ -17,7 +17,7 @@ export default async function Sunrise() {
   });
   const sunriseData = (
     await payload.find({
-      collection: "project",
+      collection: "projects",
       where: {
         uri: { equals: "sunrise" },
       },

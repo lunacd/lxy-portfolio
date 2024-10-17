@@ -11,7 +11,7 @@ const defaultProps = {
   textColor: "text-black",
 };
 
-export default function Title(propsIn: TitleProps) {
+export default function LegacyTitle(propsIn: TitleProps) {
   const props = { ...defaultProps, ...propsIn };
   return (
     <FloatUpMotion>
@@ -24,6 +24,6 @@ export default function Title(propsIn: TitleProps) {
   );
 }
 
-export function Subtitle(props: TitleProps) {
-  return Title({ ...props, titleClass: "subtitle" });
+export function LegacySubtitle(props: TitleProps) {
+  return LegacyTitle({ ...props, titleClass: "subtitle" });
 }

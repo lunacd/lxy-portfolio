@@ -9,7 +9,7 @@ import SmallGallery from "@/components/SmallGallery";
 import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
-import Title, { Subtitle } from "@/sections/Title";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import BagMaking1 from "@/images/lyu/bag-making/bag-making-1-small.webp";
 import BagMaking2 from "@/images/lyu/bag-making/bag-making-2-small.webp";
@@ -96,8 +96,8 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
       />
 
       {/* Personal Style */}
-      <Title title="What is My Personal Style?" />
-      <Subtitle title="Ease" />
+      <LegacyTitle title="What is My Personal Style?" />
+      <LegacySubtitle title="Ease" />
       <HorizontalGallery
         items={[
           { image: Ease1, title: "Style: Ease" },
@@ -109,7 +109,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
         width={960}
         height={1174}
       />
-      <Subtitle title="Joyful" />
+      <LegacySubtitle title="Joyful" />
       <HorizontalGallery
         items={[
           { image: Joyful1, title: "Style: Joyful" },
@@ -121,12 +121,12 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
       />
 
       {/* Ideation */}
-      <Title title="Ideation - Tote" />
+      <LegacyTitle title="Ideation - Tote" />
       <DisplayImage
         source={{ frames: [{ src: IdeationTote }], width: 2400, height: 1053 }}
         alt="Ideation for the tote"
       />
-      <Title title="Ideation - Slippers" />
+      <LegacyTitle title="Ideation - Slippers" />
       <DisplayImage
         source={{
           frames: [{ src: IdeationSlipper }],
@@ -137,7 +137,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
       />
 
       {/* Tote bag making process */}
-      <Title title="Tote Bag Making Process" />
+      <LegacyTitle title="Tote Bag Making Process" />
       <SmallGallery
         items={[
           { image: BagMaking1, title: "Cutting Template" },
@@ -155,7 +155,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
       />
 
       {/* Slipper making process */}
-      <Title title="Slippers Making Process" />
+      <LegacyTitle title="Slippers Making Process" />
       <SmallGallery
         items={[
           { image: SlipperMaking1, title: "Taping Design" },
@@ -179,7 +179,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
       />
 
       {/* Tech Pack */}
-      <Title title="Tech Pack" />
+      <LegacyTitle title="Tech Pack" />
       <Carousel
         images={[
           TechPack1,
@@ -196,7 +196,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
       />
 
       {/* Gallery */}
-      <Title title="Project Gallery" />
+      <LegacyTitle title="Project Gallery" />
       <LargeGallery
         rows={[
           {

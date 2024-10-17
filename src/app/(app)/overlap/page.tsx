@@ -17,7 +17,7 @@ export default async function Overlap() {
   });
   const overlapData = (
     await payload.find({
-      collection: "project",
+      collection: "projects",
       where: {
         uri: { equals: "overlap" },
       },

@@ -12,7 +12,7 @@ import TextSection, {
 } from "@/components/TextSection";
 import { StaticDisplayImage } from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
-import Title, { Subtitle } from "@/sections/Title";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import Challenge from "@/images/againfromscratch/challenge-full.webp";
 import Design from "@/images/againfromscratch/design-full.webp";
@@ -40,7 +40,6 @@ export default function AgainFromScratchClient(
     <>
       {props.topChildren}
 
-      <Title title="Overview" />
       <EqualSplit>
         <TextSection
           content={[
@@ -63,7 +62,7 @@ export default function AgainFromScratchClient(
       </EqualSplit>
       <Spacing size="large" />
 
-      <Subtitle title="Target Audience & Using Environment" />
+      <LegacySubtitle title="Target Audience & Using Environment" />
       <HorizontalGallery
         items={[
           { title: "High School Students", image: Target1 },
@@ -93,7 +92,7 @@ export default function AgainFromScratchClient(
         alignment={TextAlignment.Left}
       />
 
-      <Title title="Demo Video" />
+      <LegacyTitle title="Demo Video" />
       <iframe
         src="https://www.youtube.com/embed/BAmrcNcXZ_s?si=V7DR5vdgS3Juudky"
         title="YouTube video player"
@@ -103,11 +102,11 @@ export default function AgainFromScratchClient(
       ></iframe>
       <Spacing size="large" />
 
-      <Title title="Research Paper" />
+      <LegacyTitle title="Research Paper" />
       <Button text="Read the Paper" href="/againfromscratch.pdf" />
       <Spacing size="large" />
 
-      <Title title="Design Details" />
+      <LegacyTitle title="Design Details" />
       <StaticDisplayImage
         src={Design}
         width={1920}

@@ -17,7 +17,7 @@ export default async function Refugia() {
   });
   const refugiaData = (
     await payload.find({
-      collection: "project",
+      collection: "projects",
       where: {
         uri: { equals: "refugia" },
       },

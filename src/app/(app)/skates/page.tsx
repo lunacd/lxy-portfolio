@@ -17,7 +17,7 @@ export default async function Skates() {
   });
   const skatesData = (
     await payload.find({
-      collection: "project",
+      collection: "projects",
       where: {
         uri: { equals: "skates" },
       },

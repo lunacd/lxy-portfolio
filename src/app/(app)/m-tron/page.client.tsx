@@ -8,7 +8,7 @@ import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import TextImage from "@/sections/TextImage";
-import Title from "@/sections/Title";
+import LegacyTitle from "@/sections/LegacyTitle";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import Brake1 from "@/images/m-tron/brake-1-full.webp";
@@ -68,7 +68,7 @@ export default function MTronClient(props: PropsWithChildren<MTronProps>) {
       />
 
       {/* Moodboard */}
-      <Title title="Moodboard" textColor="text-white" />
+      <LegacyTitle title="Moodboard" textColor="text-white" />
       <HorizontalGallery
         items={[
           { image: Moodboard1, title: "Futuristic" },
@@ -81,14 +81,14 @@ export default function MTronClient(props: PropsWithChildren<MTronProps>) {
       />
 
       {/* Ideation */}
-      <Title title="Ideation" textColor="text-white" />
+      <LegacyTitle title="Ideation" textColor="text-white" />
       <DisplayImage
         source={{ frames: [{ src: Ideation }], width: 1920, height: 961 }}
         alt="Ideation"
       />
 
       {/* User Scenario */}
-      <Title title="User Scenario" textColor="text-white" />
+      <LegacyTitle title="User Scenario" textColor="text-white" />
       <HorizontalScroll
         prompt="Scroll horizontally to see the whole scenario!"
         src={UserScenario}
@@ -100,7 +100,7 @@ export default function MTronClient(props: PropsWithChildren<MTronProps>) {
       />
 
       {/* Features */}
-      <Title title="Features" textColor="text-white" />
+      <LegacyTitle title="Features" textColor="text-white" />
       <DisplayImage
         source={{
           frames: [{ src: SpeedController }],
@@ -155,7 +155,7 @@ export default function MTronClient(props: PropsWithChildren<MTronProps>) {
 
       <div className="flex w-full flex-col items-center bg-[#E4F2F5]">
         <Spacing size="medium" />
-        <Title title="Details Showcase" />
+        <LegacyTitle title="Details Showcase" />
         <LargeGallery
           rows={[
             {

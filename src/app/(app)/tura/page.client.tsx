@@ -17,7 +17,7 @@ import TextSection, {
 import DisplayImage, { StaticDisplayImage } from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import { RichTextImage } from "@/sections/TextImage";
-import Title, { Subtitle } from "@/sections/Title";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
@@ -62,7 +62,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       {props.topChildren}
 
       {/* Overview */}
-      <Title title="Overview" />
+      <LegacyTitle title="Overview" />
       <EqualSplit>
         <TextSection
           title="The Problem"
@@ -82,8 +82,8 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       <Spacing size="large" />
 
       {/* Project Ideation */}
-      <Title title="Project Ideation" />
-      <Subtitle title="Competitive Research" />
+      <LegacyTitle title="Project Ideation" />
+      <LegacySubtitle title="Competitive Research" />
       <HorizontalGallery
         items={[
           {
@@ -213,7 +213,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       <Spacing size="large" />
 
       {/* Positioning Matrix */}
-      <Subtitle title="Positioning Matrix" />
+      <LegacySubtitle title="Positioning Matrix" />
       <DisplayImage
         source={{
           frames: [{ src: PositioningMatrix }],
@@ -224,7 +224,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       {/* Mission Statement */}
-      <Subtitle title="Mission Statement" />
+      <LegacySubtitle title="Mission Statement" />
       <div className="flex w-single justify-center">
         <div className="w-2/3">
           <TextSection
@@ -237,9 +237,9 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       <Spacing size="large" />
 
       {/* User Research */}
-      <Title title="User Research" />
+      <LegacyTitle title="User Research" />
 
-      <Subtitle title="Interviews" />
+      <LegacySubtitle title="Interviews" />
       <Carousel
         images={[
           Interview1,
@@ -254,20 +254,20 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         width={1920}
       />
 
-      <Subtitle title="Persona" />
+      <LegacySubtitle title="Persona" />
       <DisplayImage
         source={{ frames: [{ src: Persona }], width: 1920, height: 1187 }}
         alt="Persona"
         xSpacing
       />
 
-      <Subtitle title="Moodboard" />
+      <LegacySubtitle title="Moodboard" />
       <DisplayImage
         source={{ frames: [{ src: Moodboard }], height: 827, width: 1920 }}
         alt="Moodboard"
       />
 
-      <Subtitle title="Text Scenario" />
+      <LegacySubtitle title="Text Scenario" />
       <EqualSplit>
         <div>
           <div>
@@ -322,14 +322,14 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       </EqualSplit>
       <Spacing size="large" />
 
-      <Subtitle title="Journey Map" />
+      <LegacySubtitle title="Journey Map" />
       <DisplayImage
         source={{ frames: [{ src: JourneyMap }], height: 603, width: 1920 }}
         alt="Journey Map"
         xSpacing
       />
 
-      <Subtitle title="Blob Scenario" />
+      <LegacySubtitle title="Blob Scenario" />
       <StaticDisplayImage
         src={Scenario}
         width={1920}
@@ -339,8 +339,8 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       {/* Wireframe */}
-      <Title title="Wireframe" />
-      <Subtitle title="3 Purposes to open the app" />
+      <LegacyTitle title="Wireframe" />
+      <LegacySubtitle title="3 Purposes to open the app" />
       <div className="grid w-single grid-cols-1 gap-spacing md:grid-cols-3">
         <div>
           <TextSection
@@ -390,7 +390,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       </div>
       <Spacing size="large" />
 
-      <Subtitle title="Structure Map" />
+      <LegacySubtitle title="Structure Map" />
       <StaticDisplayImage
         src={Structure}
         width={1920}
@@ -398,7 +398,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         alt="Structure Map"
       />
 
-      <Subtitle title="Wireframe" />
+      <LegacySubtitle title="Wireframe" />
       <HorizontalScroll
         src={Wireframe}
         width={7680}
@@ -409,7 +409,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         xSpacing
       />
 
-      <Subtitle title="Color Theme Ideation" />
+      <LegacySubtitle title="Color Theme Ideation" />
       <StaticDisplayImage
         src={ColorTheme}
         width={1920}
@@ -426,8 +426,8 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       {/* Final Solution */}
-      <Title title="Final Solution" />
-      <Subtitle title="Function and Scenario" />
+      <LegacyTitle title="Final Solution" />
+      <LegacySubtitle title="Function and Scenario" />
       <LargeGallery
         rows={[
           { images: [{ frames: [{ src: Final1 }], height: 621, width: 1920 }] },
@@ -447,9 +447,9 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       <Spacing size="large" />
 
       {/* Main Features */}
-      <Title title="Main Features" />
+      <LegacyTitle title="Main Features" />
 
-      <Subtitle title="Instruction" />
+      <LegacySubtitle title="Instruction" />
       <StaticDisplayImage
         src={Feature1}
         width={1920}
@@ -458,7 +458,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         xSpacing
       />
 
-      <Subtitle title="Log In" />
+      <LegacySubtitle title="Log In" />
       <StaticDisplayImage
         src={Feature2}
         width={1920}
@@ -467,7 +467,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         xSpacing
       />
 
-      <Subtitle title="Travel Schedule" />
+      <LegacySubtitle title="Travel Schedule" />
       <StaticDisplayImage
         src={Feature3}
         width={1920}
@@ -476,7 +476,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         xSpacing
       />
 
-      <Subtitle title="Create Community" />
+      <LegacySubtitle title="Create Community" />
       <StaticDisplayImage
         src={Feature4}
         width={1920}
@@ -485,7 +485,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         xSpacing
       />
 
-      <Subtitle title="Self-scheduled Plan" />
+      <LegacySubtitle title="Self-scheduled Plan" />
       <StaticDisplayImage
         src={Feature5}
         width={1920}
@@ -494,7 +494,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         xSpacing
       />
 
-      <Subtitle title="Homepage" />
+      <LegacySubtitle title="Homepage" />
       <StaticDisplayImage
         src={Feature6}
         width={1920}

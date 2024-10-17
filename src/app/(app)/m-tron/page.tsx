@@ -17,7 +17,7 @@ export default async function MTron() {
   });
   const mTronData = (
     await payload.find({
-      collection: "project",
+      collection: "projects",
       where: {
         uri: { equals: "m-tron" },
       },

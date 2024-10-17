@@ -5,7 +5,7 @@ import { PropsWithChildren, ReactNode } from "react";
 import EqualSplit from "@/components/EqualSplit";
 import Spacing from "@/components/Spacing";
 import TextSection, { TextContentType } from "@/components/TextSection";
-import Title from "@/sections/Title";
+import LegacyTitle from "@/sections/LegacyTitle";
 
 interface LamboozledProps {
   topChildren: ReactNode;
@@ -18,7 +18,7 @@ export default function LamboozledClient(
     <>
       {props.topChildren}
 
-      <Title title="Overview" />
+      <LegacyTitle title="Overview" />
       <EqualSplit>
         <TextSection
           content={[

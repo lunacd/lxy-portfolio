@@ -1,6 +1,5 @@
 "use client";
 
-import Profile from "./Profile";
 import { IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
@@ -17,7 +16,7 @@ import Animatable from "@/components/Animatable";
 import Button from "@/components/Button";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
-import Title from "@/sections/Title";
+import LegacyTitle from "@/sections/LegacyTitle";
 import { transitionFast } from "@/utils/transitions";
 import useFrameIndex from "@/utils/useFrameIndex";
 
@@ -353,12 +352,12 @@ export default function AboutClient(props: PropsWithChildren<{}>) {
       <Button text="Resume" href="/documents/resume" />
       <Spacing size="large" />
 
-      <Title title="Who I am" />
+      <LegacyTitle title="Who I am" />
       <Suspense>
         <VideoGallery />
       </Suspense>
 
-      <Title title="Tools I use" />
+      <LegacyTitle title="Tools I use" />
       <div
         className="single mb-spacing-3lg flex flex-row flex-wrap justify-center gap-4
           lg:justify-between"

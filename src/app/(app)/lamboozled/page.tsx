@@ -17,7 +17,7 @@ export default async function Lamboozled() {
   });
   const lamboozledProjectData = (
     await payload.find({
-      collection: "project",
+      collection: "projects",
       where: {
         uri: { equals: "lamboozled" },
       },

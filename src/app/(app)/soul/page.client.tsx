@@ -11,7 +11,7 @@ import DisplayImage from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
 import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
-import Title, { Subtitle } from "@/sections/Title";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import BrandResearch from "@/images/soul/brand-research-full.webp";
@@ -79,8 +79,8 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* Brand Research */}
-      <Title title="Rolls-Royce Brand Research" />
-      <Subtitle title="Brand Research Book" />
+      <LegacyTitle title="Rolls-Royce Brand Research" />
+      <LegacySubtitle title="Brand Research Book" />
       <DisplayImage
         source={{ frames: [{ src: BrandResearch }], width: 1920, height: 1080 }}
         alt="Brand research"
@@ -104,7 +104,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* User Research */}
-      <Title title="User Research" />
+      <LegacyTitle title="User Research" />
 
       <TextImage
         title="Regular Meditators"
@@ -132,7 +132,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         height={878}
       />
 
-      <Title title="What does Rolls-Royce Meditation provide?" />
+      <LegacyTitle title="What does Rolls-Royce Meditation provide?" />
       <HorizontalGallery
         items={[
           {
@@ -165,7 +165,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* Design Direction */}
-      <Title title="Design Direction" />
+      <LegacyTitle title="Design Direction" />
       <DisplayImage
         source={{ frames: [{ src: Direction1 }], width: 1920, height: 961 }}
         alt="Soothing Curves"
@@ -191,7 +191,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* CMF Board */}
-      <Title title="CMF Moodboard" />
+      <LegacyTitle title="CMF Moodboard" />
       <DisplayImage
         source={{ frames: [{ src: CMF }], width: 1920, height: 961 }}
         alt="CMF Color"
@@ -211,7 +211,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* Proposal */}
-      <Title title="Rolls-Royce Meditation Proposal" />
+      <LegacyTitle title="Rolls-Royce Meditation Proposal" />
       <HorizontalGallery
         items={[
           {
@@ -232,8 +232,8 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* Form Ideation */}
-      <Title title="Form Ideation" />
-      <Subtitle title="2D Sketch, Shaping Foam, 3D Modeling" />
+      <LegacyTitle title="Form Ideation" />
+      <LegacySubtitle title="2D Sketch, Shaping Foam, 3D Modeling" />
       <DisplayImage
         source={{ frames: [{ src: Ideation }], width: 1920, height: 711 }}
         alt="Ideation"
@@ -251,7 +251,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* Tech Drawing */}
-      <Subtitle title="Tech Drawing" />
+      <LegacySubtitle title="Tech Drawing" />
       <Paragraph paragraph="Soul Instrument Body" />
       <DisplayImage
         source={{ frames: [{ src: InstrumentTech }], width: 1920, height: 990 }}
@@ -328,7 +328,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         height={845}
       />
 
-      <Subtitle title="Tech Drawing" />
+      <LegacySubtitle title="Tech Drawing" />
       <Paragraph paragraph="Lamp" />
       <DisplayImage
         source={{ frames: [{ src: LightTech }], width: 1920, height: 990 }}
@@ -381,7 +381,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* Color Ways */}
-      <Title title="Different Color Ways" />
+      <LegacyTitle title="Different Color Ways" />
       <HorizontalGallery
         items={[
           { image: ColorWay1, title: "Nature Explorer" },
@@ -392,7 +392,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         height={832}
       />
 
-      <Title title="Project Gallery" />
+      <LegacyTitle title="Project Gallery" />
       <LargeGallery
         rows={[
           {
