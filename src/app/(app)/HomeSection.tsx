@@ -36,8 +36,7 @@ export default async function HomeSection(props: HomeSectionProps) {
         <div className="absolute left-0 top-0 flex h-full w-full flex-col">
           {/* Project name */}
           <div
-            className={`relative mx-spacing-lg mt-8 flex-grow self-stretch lg:mt-12 xl:mt-24
-              ${titleColor}`}
+            className={`relative mx-spacing-lg mt-spacing-lg flex-grow self-stretch ${titleColor}`}
           >
             <div className="relative">
               {/* Optional cover color for background */}

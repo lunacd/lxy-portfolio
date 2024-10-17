@@ -54,8 +54,7 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
           <div className="absolute left-0 top-0 flex h-full w-full justify-center">
             {/* Project name */}
             <div
-              className={`relative mx-spacing-lg mt-8 flex-grow self-stretch lg:mt-12 xl:mt-24
-                ${titleColor}`}
+              className={`relative mx-spacing-lg mt-spacing-lg flex-grow self-stretch ${titleColor}`}
             >
               <div className="relative">
                 {/* Optional cover color for background */}
