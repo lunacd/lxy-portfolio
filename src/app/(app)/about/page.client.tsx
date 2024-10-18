@@ -1,7 +1,13 @@
 "use client";
 
 import { IconX } from "@tabler/icons-react";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useInView,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import {
@@ -14,6 +20,7 @@ import {
 
 import Animatable from "@/components/Animatable";
 import Button from "@/components/Button";
+import ScrollIndicator from "@/components/ScrollIndicator";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import LegacyTitle from "@/sections/LegacyTitle";
@@ -341,49 +348,64 @@ function VideoGallery() {
 }
 
 export default function AboutClient(props: PropsWithChildren<{}>) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const toolsRef = useRef(null);
+  const toolsIsInView = useInView(toolsRef, { once: true });
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({ container: containerRef });
+  const [showIndicator, setShowIndicator] = useState(true);
+  useMotionValueEvent(scrollYProgress, "change", (progress) => {
+    if (progress < 0.4) {
+      setShowIndicator(true);
+    } else {
+      setShowIndicator(false);
+    }
+  });
 
   return (
-    <Scroller bgColor="bg-[#FDF9F1]">
-      {props.children}
+    <>
+      <Scroller bgColor="bg-[#FDF9F1]" ref={containerRef}>
+        {props.children}
 
-      {/* Resume */}
-      <Button text="Resume" href="/documents/resume" />
-      <Spacing size="large" />
+        {/* Resume */}
+        <Button text="Resume" href="/documents/resume" />
+        <Spacing size="large" />
 
-      <LegacyTitle title="Who I am" />
-      <Suspense>
-        <VideoGallery />
-      </Suspense>
+        <LegacyTitle title="Who I am" />
+        <Suspense>
+          <VideoGallery />
+        </Suspense>
 
-      <LegacyTitle title="Tools I use" />
-      <div
-        className="single mb-spacing-3lg flex flex-row flex-wrap justify-center gap-4
-          lg:justify-between"
-        ref={ref}
-      >
-        {Tools.map((Tool, index) => (
-          <motion.div
-            className="w-12 lg:w-16"
-            key={index}
-            style={{ y: "3rem" }}
-            animate={{ y: isInView ? "0rem" : "3rem" }}
-            transition={{
-              ...transitionFast,
-              delay: index * 0.03,
-            }}
-          >
-            <Image
-              src={Tool}
-              alt=""
-              width={128}
-              height={128}
-              placeholder="blur"
-            />
-          </motion.div>
-        ))}
+        <LegacyTitle title="Tools I use" />
+        <div
+          className="single mb-spacing-3lg flex flex-row flex-wrap justify-center gap-4
+            lg:justify-between"
+          ref={toolsRef}
+        >
+          {Tools.map((Tool, index) => (
+            <motion.div
+              className="w-12 lg:w-16"
+              key={index}
+              style={{ y: "3rem" }}
+              animate={{ y: toolsIsInView ? "0rem" : "3rem" }}
+              transition={{
+                ...transitionFast,
+                delay: index * 0.03,
+              }}
+            >
+              <Image
+                src={Tool}
+                alt=""
+                width={128}
+                height={128}
+                placeholder="blur"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </Scroller>
+      <div className="fixed bottom-4 right-8 z-10">
+        {showIndicator && <ScrollIndicator light={true} />}
       </div>
-    </Scroller>
+    </>
   );
 }
