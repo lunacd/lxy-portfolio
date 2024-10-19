@@ -8,7 +8,7 @@ import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
 import { createPlainContent } from "@/components/TextSection";
 import DisplayImage from "@/sections/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
+import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
@@ -100,7 +100,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
 
       {/* Overlap */}
       <LegacyTitle title="Overlap Set" />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           {
             image: Set1,
@@ -242,7 +242,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       {/* Design Process */}
       <LegacyTitle title="Design Process" />
       <LegacySubtitle title="HAY's Brand DNA Analysis" />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           { image: DNA1, title: "Playful" },
           { image: DNA2, title: "Accessible" },

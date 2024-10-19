@@ -26,7 +26,7 @@ const defaultProps = {
   titleClass: "subtitle",
 };
 
-export default function HorizontalGallery(propsIn: HorizontalGalleryProps) {
+export default function LegacyHorizontalGallery(propsIn: HorizontalGalleryProps) {
   const props = { ...defaultProps, ...propsIn };
   return (
     <FloatUpMotion>

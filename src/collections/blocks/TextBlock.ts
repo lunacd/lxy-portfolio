@@ -1,10 +1,4 @@
-import {
-  BoldFeature,
-  FixedToolbarFeature,
-  HeadingFeature,
-  AlignFeature,
-  lexicalEditor,
-} from "@payloadcms/richtext-lexical";
+import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
 const TextBlock: Block = {
@@ -14,16 +8,7 @@ const TextBlock: Block = {
       name: "text",
       type: "richText",
       required: true,
-      editor: lexicalEditor({
-        features: [
-          FixedToolbarFeature(),
-          BoldFeature(),
-          HeadingFeature({
-            enabledHeadingSizes: ["h1", "h2"],
-          }),
-          AlignFeature(),
-        ],
-      }),
+      editor: editor,
     },
   ],
 };

@@ -15,7 +15,7 @@ import TextSection, {
   createPlainContent,
 } from "@/components/TextSection";
 import DisplayImage, { StaticDisplayImage } from "@/sections/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
+import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import { RichTextImage } from "@/sections/TextImage";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
@@ -84,7 +84,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       {/* Project Ideation */}
       <LegacyTitle title="Project Ideation" />
       <LegacySubtitle title="Competitive Research" />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           {
             image: Competitive1,

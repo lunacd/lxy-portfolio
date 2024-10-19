@@ -7,7 +7,7 @@ import { GalleryRowLayout } from "@/components/GalleryRow";
 import LargeGallery from "@/components/LargeGallery";
 import SmallGallery from "@/components/SmallGallery";
 import DisplayImage from "@/sections/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
+import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
@@ -98,7 +98,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
       {/* Personal Style */}
       <LegacyTitle title="What is My Personal Style?" />
       <LegacySubtitle title="Ease" />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           { image: Ease1, title: "Style: Ease" },
           { image: Ease2, title: "Style: Ease" },
@@ -110,7 +110,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
         height={1174}
       />
       <LegacySubtitle title="Joyful" />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           { image: Joyful1, title: "Style: Joyful" },
           { image: Joyful2, title: "Style: Joyful" },

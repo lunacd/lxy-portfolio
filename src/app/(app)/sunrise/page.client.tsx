@@ -7,7 +7,7 @@ import LargeGallery from "@/components/LargeGallery";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
+import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
@@ -85,7 +85,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
       {/* Moodboard */}
       <LegacyTitle title="Moodboard" />
       <LegacySubtitle title="Balcony Speaker Form Inspiration " />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           { image: Form1, title: "Slope" },
           { image: Form2, title: "Segmented" },
@@ -97,7 +97,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         titleClass="paragraph"
       />
       <LegacySubtitle title="Balcony Speaker Details Inspiration " />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           { image: Detail1, title: "Chamfer" },
           { image: Detail2, title: "Rope Wrapping" },
@@ -120,7 +120,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
 
         {/* Model Evolution*/}
         <LegacyTitle title="Model Evolution" textColor="text-white" />
-        <HorizontalGallery
+        <LegacyHorizontalGallery
           items={[
             { image: Evo1, title: "Model Evolution" },
             { image: Evo2, title: "Model Evolution" },

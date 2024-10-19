@@ -178,8 +178,103 @@ export interface ProjectPage {
               blockName?: string | null;
               blockType: 'title';
             }
+          | {
+              image: number | Media;
+              imageSize: number;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'image';
+            }
+          | {
+              blocks: (
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    text: string;
+                    type: 'title' | 'subtitle';
+                    color: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    image: number | Media;
+                    imageSize: number;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+              )[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'column';
+            }
+          | {
+              blocks: (
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    text: string;
+                    type: 'title' | 'subtitle';
+                    color: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    image: number | Media;
+                    imageSize: number;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+              )[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'row';
+            }
         )[];
-        spacing: 'regular' | 'large' | 'xl' | 'xxl';
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -204,6 +299,171 @@ export interface ProjectPage {
         id?: string | null;
         blockName?: string | null;
         blockType: 'text';
+      }
+    | {
+        blocks: (
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'text';
+            }
+          | {
+              text: string;
+              type: 'title' | 'subtitle';
+              color: 'dark' | 'light';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'title';
+            }
+          | {
+              image: number | Media;
+              imageSize: number;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'image';
+            }
+          | {
+              blocks: (
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    text: string;
+                    type: 'title' | 'subtitle';
+                    color: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    image: number | Media;
+                    imageSize: number;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+              )[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'column';
+            }
+          | {
+              blocks: (
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    text: string;
+                    type: 'title' | 'subtitle';
+                    color: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    image: number | Media;
+                    imageSize: number;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+              )[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'row';
+            }
+        )[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'column';
+      }
+    | {
+        items: {
+          image: number | Media;
+          text: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          id?: string | null;
+        }[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'horizontalGallery';
+      }
+    | {
+        image: number | Media;
+        imageSize: number;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'image';
       }
   )[];
   updatedAt: string;

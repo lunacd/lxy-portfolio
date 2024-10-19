@@ -6,7 +6,7 @@ import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
+import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import LegacyTitle from "@/sections/LegacyTitle";
 import useFrameIndex from "@/utils/useFrameIndex";
@@ -69,7 +69,7 @@ export default function MTronClient(props: PropsWithChildren<MTronProps>) {
 
       {/* Moodboard */}
       <LegacyTitle title="Moodboard" textColor="text-white" />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           { image: Moodboard1, title: "Futuristic" },
           { image: Moodboard2, title: "Light and Curve Line" },

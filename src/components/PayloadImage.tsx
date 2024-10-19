@@ -8,8 +8,9 @@ import { getMedia } from "@/utils/payloadHelpers";
 interface PayloadImageProps {
   media: Media | number;
   payload: Payload;
-  className: string;
+  className?: string;
   fill?: boolean;
+  sizes: string;
 }
 
 export default async function PayloadImage(props: PayloadImageProps) {
@@ -22,6 +23,7 @@ export default async function PayloadImage(props: PayloadImageProps) {
       height={props.fill ? undefined : media.height}
       className={props.className}
       fill={props.fill}
+      sizes={props.sizes}
     ></Image>
   );
 }

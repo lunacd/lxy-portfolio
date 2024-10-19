@@ -1,7 +1,11 @@
 export function getSpacing(
-  spacing: "regular" | "large" | "xl" | "xxl",
+  spacing: "small" | "medium" | "regular" | "large" | "xl" | "xxl",
 ): string {
   switch (spacing) {
+    case "small":
+      return "0.5rem";
+    case "medium":
+      return "1rem";
     case "regular":
       return "var(--spacing)";
     case "large":

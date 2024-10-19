@@ -8,7 +8,7 @@ import Paragraph from "@/components/Paragraph";
 import Spacing from "@/components/Spacing";
 import { createPlainContent } from "@/components/TextSection";
 import DisplayImage from "@/sections/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
+import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import ImageText from "@/sections/ImageText";
 import TextImage from "@/sections/TextImage";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
@@ -133,7 +133,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       <LegacyTitle title="What does Rolls-Royce Meditation provide?" />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           {
             image: Target1,
@@ -212,7 +212,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
 
       {/* Proposal */}
       <LegacyTitle title="Rolls-Royce Meditation Proposal" />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           {
             image: Instrument1,
@@ -382,7 +382,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
 
       {/* Color Ways */}
       <LegacyTitle title="Different Color Ways" />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           { image: ColorWay1, title: "Nature Explorer" },
           { image: ColorWay2, title: "Pure Spirit" },

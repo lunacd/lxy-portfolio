@@ -43,8 +43,8 @@ export default async function AgainFromScratch() {
               payload={payload}
             />
             {againFromScratchPageData.blocks.map((block, index) => (
-              <FloatUpMotion className="mx-spacing-lg self-stretch" key={index}>
-                <Block block={block} />
+              <FloatUpMotion className="single" key={index}>
+                <Block block={block} payload={payload} />
               </FloatUpMotion>
             ))}
           </>

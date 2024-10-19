@@ -4,9 +4,7 @@ import { PropsWithChildren, ReactNode } from "react";
 
 import Button from "@/components/Button";
 import Spacing from "@/components/Spacing";
-import { TextAlignment, createPlainContent } from "@/components/TextSection";
 import { StaticDisplayImage } from "@/sections/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
 import LegacyTitle from "@/sections/LegacyTitle";
 
 import Challenge from "@/images/againfromscratch/challenge-full.webp";
@@ -20,9 +18,6 @@ import VirtualDesignMock from "@/images/againfromscratch/mock-full.webp";
 import MoreChallenges from "@/images/againfromscratch/more-challenges-full.webp";
 import PhysicalConstruction from "@/images/againfromscratch/physical-construction-full.webp";
 import Reflection from "@/images/againfromscratch/reflection-full.webp";
-import Target1 from "@/images/againfromscratch/target/target-1-small.webp";
-import Target2 from "@/images/againfromscratch/target/target-2-small.webp";
-import Target3 from "@/images/againfromscratch/target/target-3-small.webp";
 
 interface AgainFromScratchProps {
   topChildren: ReactNode;
@@ -35,36 +30,6 @@ export default function AgainFromScratchClient(
     <>
       {props.topChildren}
 
-      <HorizontalGallery
-        items={[
-          { title: "High School Students", image: Target1 },
-          {
-            title: "Schools",
-            image: Target2,
-            content: createPlainContent([
-              "- For classes about making, design, engineering, and science",
-              "- Instructor guided",
-              "- Project-based and design-based",
-              "- Problem-solving & creativity",
-            ]),
-          },
-          {
-            title: "Makerspace",
-            content: createPlainContent([
-              "- For workshops related to recycling, design, engineering and geometry",
-              "- Instructor guided",
-              "- Project-based and design-based",
-              "- Problem-solving & creativity",
-            ]),
-            image: Target3,
-          },
-        ]}
-        width={640}
-        height={302}
-        alignment={TextAlignment.Left}
-      />
-
-      <LegacyTitle title="Demo Video" />
       <iframe
         src="https://www.youtube.com/embed/BAmrcNcXZ_s?si=V7DR5vdgS3Juudky"
         title="YouTube video player"

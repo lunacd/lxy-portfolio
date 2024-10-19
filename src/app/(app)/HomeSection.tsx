@@ -27,12 +27,14 @@ export default async function HomeSection(props: HomeSectionProps) {
           payload={props.payload}
           fill
           className="hidden object-cover object-center md:block"
+          sizes="100vw"
         />
         <PayloadImage
           media={props.project.mobileProjectImage}
           payload={props.payload}
           fill
           className="object-cover object-center md:hidden"
+          sizes="100vw"
         />
         <div className="absolute left-0 top-0 h-full w-full">
           <FloatUpMotion className="flex h-full flex-col">
@@ -83,6 +85,7 @@ export default async function HomeSection(props: HomeSectionProps) {
                   media={props.project.awardImage}
                   payload={props.payload}
                   className="absolute bottom-8 w-40"
+                  sizes="20vw"
                 />
               )}
             </div>

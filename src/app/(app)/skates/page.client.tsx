@@ -8,7 +8,7 @@ import LargeGallery from "@/components/LargeGallery";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
-import HorizontalGallery from "@/sections/HorizontalGallery";
+import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import TextImage from "@/sections/TextImage";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
@@ -141,7 +141,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
         titleClass="subtitle"
       />
       <LegacySubtitle title="Create a Sense of Belonging" />
-      <HorizontalGallery
+      <LegacyHorizontalGallery
         items={[
           { image: Belonging1, title: "Interactive" },
           { image: Belonging2, title: "Comfortable" },
