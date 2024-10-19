@@ -5,6 +5,7 @@ import React from "react";
 import "server-only";
 
 import CategoryTag from "@/components/CategoryTag";
+import FloatUpMotion from "@/components/FloatUpMotion";
 import PayloadImage from "@/components/PayloadImage";
 import styles from "@/sections/TopDisplay.module.css";
 
@@ -33,57 +34,60 @@ export default async function HomeSection(props: HomeSectionProps) {
           fill
           className="object-cover object-center md:hidden"
         />
-        <div className="absolute left-0 top-0 flex h-full w-full flex-col">
-          {/* Project name */}
-          <div
-            className={`relative mx-spacing-lg mt-spacing-lg flex-grow self-stretch ${titleColor}`}
-          >
-            <div className="relative">
-              {/* Optional cover color for background */}
-              {props.project.imageCover && (
-                <div
-                  style={{
-                    height: "calc(200% + 48px)",
-                    background: `linear-gradient(180deg, white 0%, transparent 100%)`,
-                  }}
-                  className="absolute -left-spacing-lg -right-spacing-lg -top-8 lg:-top-12 xl:-top-24"
-                ></div>
-              )}
-              <div className="relative lg:max-w-[50%] 2xl:max-w-[30%]">
-                <div className="text-3xl">{props.project.name}</div>
-                <div className={"mt-2 text-base"}>{props.project.brief}</div>
+        <div className="absolute left-0 top-0 h-full w-full">
+          <FloatUpMotion className="flex h-full flex-col">
+            {/* Project name */}
+            <div
+              className={`relative mx-spacing-lg mt-spacing-lg flex-grow self-stretch ${titleColor}`}
+            >
+              <div className="relative">
+                {/* Optional cover color for background */}
+                {props.project.imageCover && (
+                  <div
+                    style={{
+                      height: "calc(200% + 48px)",
+                      background: `linear-gradient(180deg, white 0%, transparent 100%)`,
+                    }}
+                    className="absolute -left-spacing-lg -right-spacing-lg -top-8 lg:-top-12 xl:-top-24"
+                  ></div>
+                )}
+                <div className="relative lg:max-w-[50%] 2xl:max-w-[30%]">
+                  <div className="text-3xl">{props.project.name}</div>
+                  <div className={"mt-2 text-base"}>{props.project.brief}</div>
 
-                <div className={`${styles.detailSection} mt-8`}>
-                  <span>Duration: </span>
-                  {props.project.duration}
-                </div>
-                <div className={styles.detailSection}>
-                  <span>Category: </span>
-                  {props.project.category}
-                </div>
-                <div className="col-span-2 mt-2 flex flex-row flex-wrap gap-2">
-                  {props.project.focuses.map((focus, index) => {
-                    return (
-                      <CategoryTag
-                        key={index}
-                        category={focus.focus}
-                        titleColor={titleColor}
-                      />
-                    );
-                  })}
+                  <div className={`${styles.detailSection} mt-8`}>
+                    <span>Duration: </span>
+                    {props.project.duration}
+                  </div>
+                  <div className={styles.detailSection}>
+                    <span>Category: </span>
+                    {props.project.category}
+                  </div>
+                  <div className="col-span-2 mt-2 flex flex-row flex-wrap gap-2">
+                    {props.project.focuses.map((focus, index) => {
+                      return (
+                        <CategoryTag
+                          key={index}
+                          category={focus.focus}
+                          titleColor={titleColor}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Award image */}
-            {props.project.awardImage && (
-              <PayloadImage
-                media={props.project.awardImage}
-                payload={props.payload}
-                className="absolute bottom-8 w-40"
-              />
-            )}
-          </div>
+              {/* Award image */}
+              {props.project.awardImage && (
+                <PayloadImage
+                  media={props.project.awardImage}
+                  payload={props.payload}
+                  className="absolute bottom-8 w-40"
+                />
+              )}
+            </div>
+          </FloatUpMotion>
+
           {/* Link to page */}
           <Link
             href={`/${props.project.uri}`}
