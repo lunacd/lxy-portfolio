@@ -1,3 +1,5 @@
+import RowBlock from "./blocks/RowBlock";
+import TextBlock from "./blocks/TextBlock";
 import TitleBlock from "./blocks/TitleBlock";
 import type { CollectionConfig } from "payload";
 
@@ -15,7 +17,7 @@ export const ProjectPages: CollectionConfig = {
     {
       name: "blocks",
       type: "blocks",
-      blocks: [TitleBlock],
+      blocks: [TitleBlock, RowBlock, TextBlock],
       required: true,
     },
   ],

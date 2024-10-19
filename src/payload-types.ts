@@ -139,14 +139,73 @@ export interface Project {
 export interface ProjectPage {
   id: number;
   projectName: string;
-  blocks: {
-    text: string;
-    type: 'title' | 'subtitle';
-    color: 'dark' | 'light';
-    id?: string | null;
-    blockName?: string | null;
-    blockType: 'title';
-  }[];
+  blocks: (
+    | {
+        text: string;
+        type: 'title' | 'subtitle';
+        color: 'dark' | 'light';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'title';
+      }
+    | {
+        blocks: (
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'text';
+            }
+          | {
+              text: string;
+              type: 'title' | 'subtitle';
+              color: 'dark' | 'light';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'title';
+            }
+        )[];
+        spacing: 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'row';
+      }
+    | {
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'text';
+      }
+  )[];
   updatedAt: string;
   createdAt: string;
 }

@@ -3,6 +3,7 @@ import config from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
+import FloatUpMotion from "@/components/FloatUpMotion";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Block from "@/sections/Block";
@@ -42,7 +43,9 @@ export default async function AgainFromScratch() {
               payload={payload}
             />
             {againFromScratchPageData.blocks.map((block, index) => (
-              <Block block={block} key={index} />
+              <FloatUpMotion className="mx-spacing-lg self-stretch" key={index}>
+                <Block block={block} />
+              </FloatUpMotion>
             ))}
           </>
         }

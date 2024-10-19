@@ -5,7 +5,13 @@ import { PropsWithChildren, useRef } from "react";
 
 import { transitionSlow } from "@/utils/transitions";
 
-export default function FloatUpMotion(props: PropsWithChildren<{}>) {
+interface FloatUpMotionProps {
+  className?: string;
+}
+
+export default function FloatUpMotion(
+  props: PropsWithChildren<FloatUpMotionProps>,
+) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -14,6 +20,7 @@ export default function FloatUpMotion(props: PropsWithChildren<{}>) {
       animate={{ y: isInView ? "0rem" : "3rem" }}
       transition={transitionSlow}
       ref={ref}
+      className={props.className}
     >
       {props.children}
     </motion.div>

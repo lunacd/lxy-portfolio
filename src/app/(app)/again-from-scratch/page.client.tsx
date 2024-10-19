@@ -3,16 +3,11 @@
 import { PropsWithChildren, ReactNode } from "react";
 
 import Button from "@/components/Button";
-import EqualSplit from "@/components/EqualSplit";
 import Spacing from "@/components/Spacing";
-import TextSection, {
-  TextAlignment,
-  TextContentType,
-  createPlainContent,
-} from "@/components/TextSection";
+import { TextAlignment, createPlainContent } from "@/components/TextSection";
 import { StaticDisplayImage } from "@/sections/DisplayImage";
 import HorizontalGallery from "@/sections/HorizontalGallery";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
+import LegacyTitle from "@/sections/LegacyTitle";
 
 import Challenge from "@/images/againfromscratch/challenge-full.webp";
 import Design from "@/images/againfromscratch/design-full.webp";
@@ -40,29 +35,6 @@ export default function AgainFromScratchClient(
     <>
       {props.topChildren}
 
-      <EqualSplit>
-        <TextSection
-          content={[
-            { type: TextContentType.Subtitle, text: "The Problem" },
-            {
-              type: TextContentType.Normal,
-              text: "A lack of understanding of material properties and potential limits material choices, restricting creativity in making.",
-            },
-          ]}
-        />
-        <TextSection
-          content={[
-            { type: TextContentType.Subtitle, text: "Learning Goal" },
-            {
-              type: TextContentType.Normal,
-              text: "Help learners understand diverse material properties and their applications to foster creativity and enhance design and engineering skills.",
-            },
-          ]}
-        />
-      </EqualSplit>
-      <Spacing size="large" />
-
-      <LegacySubtitle title="Target Audience & Using Environment" />
       <HorizontalGallery
         items={[
           { title: "High School Students", image: Target1 },

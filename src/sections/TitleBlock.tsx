@@ -1,18 +1,15 @@
 import { ProjectPage } from "@payload-types";
 
-import FloatUpMotion from "@/components/FloatUpMotion";
+type TitleBlockProps = Extract<
+  ProjectPage["blocks"][0],
+  { blockType: "title" }
+>;
 
-type TitleBlock = Extract<ProjectPage["blocks"][0], { blockType: "title" }>;
-
-export default function LegacyTitle(props: TitleBlock) {
+export default function TitleBlock(props: TitleBlockProps) {
   const colorClass = props.color === "light" ? "text-white" : "text-black";
   return (
-    <FloatUpMotion>
-      <div
-        className={`${props.type} ${colorClass} single mx-spacing-lg mb-spacing-lg`}
-      >
-        {props.text}
-      </div>
-    </FloatUpMotion>
+    <div className={`${props.type} ${colorClass} mb-spacing-lg`}>
+      {props.text}
+    </div>
   );
 }
