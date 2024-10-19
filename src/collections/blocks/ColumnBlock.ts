@@ -1,3 +1,4 @@
+import { bottomMargin } from "../CommonFields";
 import ImageBlock from "./ImageBlock";
 import RowBlock from "./RowBlock";
 import TextBlock from "./TextBlock";
@@ -23,15 +24,7 @@ export default function ColumnBlock(depth: number): Block {
         required: true,
         defaultValue: "regular",
       },
-      {
-        name: "bottomMargin",
-        type: "checkbox",
-        required: true,
-        defaultValue: true,
-        admin: {
-          description: "Check this to include a margin at the bottom",
-        },
-      },
+      bottomMargin,
     ],
   };
 }

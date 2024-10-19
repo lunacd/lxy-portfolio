@@ -4,6 +4,7 @@ import ImageBlock from "./blocks/ImageBlock";
 import RowBlock from "./blocks/RowBlock";
 import TextBlock from "./blocks/TextBlock";
 import TitleBlock from "./blocks/TitleBlock";
+import YouTubeBlock from "./blocks/YouTubeBlock";
 import type { CollectionConfig } from "payload";
 
 export const ProjectPages: CollectionConfig = {
@@ -22,11 +23,12 @@ export const ProjectPages: CollectionConfig = {
       type: "blocks",
       blocks: [
         TitleBlock,
-        RowBlock(1),
         TextBlock,
-        ColumnBlock(1),
         HorizontalGalleryBlock,
         ImageBlock,
+        YouTubeBlock,
+        RowBlock(1),
+        ColumnBlock(1),
       ],
       required: true,
     },

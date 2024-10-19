@@ -30,16 +30,6 @@ export default function AgainFromScratchClient(
     <>
       {props.topChildren}
 
-      <iframe
-        src="https://www.youtube.com/embed/BAmrcNcXZ_s?si=V7DR5vdgS3Juudky"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        className="aspect-video w-single"
-      ></iframe>
-      <Spacing size="large" />
-
-      <LegacyTitle title="Research Paper" />
       <Button text="Read the Paper" href="/againfromscratch.pdf" />
       <Spacing size="large" />
 

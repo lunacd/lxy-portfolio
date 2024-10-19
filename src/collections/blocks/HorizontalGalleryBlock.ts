@@ -1,3 +1,4 @@
+import { bottomMargin } from "../CommonFields";
 import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
@@ -34,15 +35,7 @@ const HorizontalGalleryBlock: Block = {
       required: true,
       defaultValue: "regular",
     },
-    {
-      name: "bottomMargin",
-      type: "checkbox",
-      required: true,
-      defaultValue: true,
-      admin: {
-        description: "Check this to include a margin at the bottom",
-      },
-    },
+    bottomMargin,
   ],
 };
 

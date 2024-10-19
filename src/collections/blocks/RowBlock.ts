@@ -3,6 +3,7 @@ import ImageBlock from "./ImageBlock";
 import TextBlock from "./TextBlock";
 import TitleBlock from "./TitleBlock";
 import { Block } from "payload";
+import {bottomMargin} from "../CommonFields";
 
 export default function RowBlock(depth: number): Block {
   const nested =
@@ -23,15 +24,7 @@ export default function RowBlock(depth: number): Block {
         required: true,
         defaultValue: "regular",
       },
-      {
-        name: "bottomMargin",
-        type: "checkbox",
-        required: true,
-        defaultValue: true,
-        admin: {
-          description: "Check this to include a margin at the bottom",
-        },
-      },
+      bottomMargin,
     ],
   };
 }

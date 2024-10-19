@@ -149,6 +149,68 @@ export interface ProjectPage {
         blockType: 'title';
       }
     | {
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'text';
+      }
+    | {
+        items: {
+          image: number | Media;
+          text: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          id?: string | null;
+        }[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'horizontalGallery';
+      }
+    | {
+        image: number | Media;
+        imageSize: number;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'image';
+      }
+    | {
+        embedLink: string;
+        width: number;
+        height: number;
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'youtube';
+      }
+    | {
         blocks: (
           | {
               text: {
@@ -281,26 +343,6 @@ export interface ProjectPage {
         blockType: 'row';
       }
     | {
-        text: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        };
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'text';
-      }
-    | {
         blocks: (
           | {
               text: {
@@ -431,39 +473,6 @@ export interface ProjectPage {
         id?: string | null;
         blockName?: string | null;
         blockType: 'column';
-      }
-    | {
-        items: {
-          image: number | Media;
-          text: {
-            root: {
-              type: string;
-              children: {
-                type: string;
-                version: number;
-                [k: string]: unknown;
-              }[];
-              direction: ('ltr' | 'rtl') | null;
-              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-              indent: number;
-              version: number;
-            };
-            [k: string]: unknown;
-          };
-          id?: string | null;
-        }[];
-        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-        bottomMargin: boolean;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'horizontalGallery';
-      }
-    | {
-        image: number | Media;
-        imageSize: number;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'image';
       }
   )[];
   updatedAt: string;

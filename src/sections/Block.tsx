@@ -7,6 +7,7 @@ import ImageBlock from "@/sections/ImageBlock";
 import RowBlock from "@/sections/RowBlock";
 import TextBlock from "@/sections/TextBlock";
 import TitleBlock from "@/sections/TitleBlock";
+import YouTubeBlock from "@/sections/YouTubeBlock";
 
 type BlockType = ProjectPage["blocks"][number];
 
@@ -31,5 +32,7 @@ export default function Block(props: BlockProps) {
       return (
         <HorizontalGalleryBlock {...props.block} payload={props.payload} />
       );
+    case "youtube":
+      return <YouTubeBlock {...props.block} />;
   }
 }
