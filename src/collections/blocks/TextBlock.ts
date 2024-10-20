@@ -1,3 +1,4 @@
+import { bottomMargin } from "../CommonFields";
 import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
@@ -10,6 +11,7 @@ const TextBlock: Block = {
       required: true,
       editor: editor,
     },
+    bottomMargin,
   ],
 };
 

@@ -165,6 +165,7 @@ export interface ProjectPage {
           };
           [k: string]: unknown;
         };
+        bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
         blockType: 'text';
@@ -238,6 +239,7 @@ export interface ProjectPage {
                 };
                 [k: string]: unknown;
               };
+              bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
               blockType: 'text';
@@ -276,6 +278,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -321,6 +324,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -373,6 +377,7 @@ export interface ProjectPage {
                 };
                 [k: string]: unknown;
               };
+              bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
               blockType: 'text';
@@ -411,6 +416,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -456,6 +462,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';

@@ -3,6 +3,7 @@ import {
   BoldFeature,
   FixedToolbarFeature,
   HeadingFeature,
+  LinkFeature,
   OrderedListFeature,
   ParagraphFeature,
   UnorderedListFeature,
@@ -20,5 +21,6 @@ export const editor = lexicalEditor({
     UnorderedListFeature(),
     OrderedListFeature(),
     ParagraphFeature(),
+    LinkFeature(),
   ],
 });

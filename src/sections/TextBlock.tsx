@@ -1,6 +1,6 @@
 import { ProjectPage } from "@payload-types";
 import classNames from "classnames";
-import { Fragment } from "react";
+import { Fragment, ReactNode } from "react";
 
 type TextChildProps = Extract<
   ProjectPage["blocks"][0],
@@ -8,36 +8,45 @@ type TextChildProps = Extract<
 >["text"]["root"]["children"][number];
 
 function TextChild(props: TextChildProps) {
-  const children = props.children as any[];
+  const children = props.children
+    ? (props.children as any[]).map((child: any): ReactNode => TextChild(child))
+    : [];
   switch (props.type) {
     case "list":
-      const listItems = (
-        <>
-          {children.map((item, index) => (
-            <>
-              {(item.children as any[]).map((innerItem, innerIndex) => (
-                <li key={`${index}.${innerIndex}`}>{innerItem.text}</li>
-              ))}
-            </>
-          ))}
-        </>
-      );
       if (props.tag === "ul") {
-        return <ul>{listItems}</ul>;
+        return <ul>{children}</ul>;
       } else if (props.tag === "ol") {
-        return <ol>{listItems}</ol>;
+        return <ol>{children}</ol>;
       }
       return <>ERROR</>;
+    case "text":
+      return <>{props.text}</>;
+    case "listitem":
+      return <li>{children}</li>;
+    case "link":
+      return (
+        <a
+          href={(props.fields as { url: string }).url}
+          className="text-blue-500 underline"
+        >
+          {children}
+        </a>
+      );
     default:
-      return <>{children.map((textNode) => textNode.text)}</>;
+      return <>{children}</>;
   }
 }
 
 type TitleBlockProps = Extract<ProjectPage["blocks"][0], { blockType: "text" }>;
 
 export default function TextBlock(props: TitleBlockProps) {
+  console.log(props);
   return (
-    <div>
+    <div
+      className={classNames({
+        "mb-spacing-3lg": props.bottomMargin,
+      })}
+    >
       {props.text.root.children.map((child, index) => (
         <Fragment key={index}>
           <div

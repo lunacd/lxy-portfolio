@@ -23,7 +23,7 @@ export default function HorizontalGalleryBlock(
               imageSize: 100 / props.items.length,
               bottomMargin: false,
             },
-            { blockType: "text", text: item.text },
+            { blockType: "text", text: item.text, bottomMargin: false },
           ],
           spacing: "small",
           bottomMargin: false,
