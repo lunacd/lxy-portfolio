@@ -197,6 +197,7 @@ export interface ProjectPage {
     | {
         image: number | Media;
         imageSize: number;
+        bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
         blockType: 'image';
@@ -209,6 +210,14 @@ export interface ProjectPage {
         id?: string | null;
         blockName?: string | null;
         blockType: 'youtube';
+      }
+    | {
+        label: string;
+        document: number | Document;
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'document';
       }
     | {
         blocks: (
@@ -243,6 +252,7 @@ export interface ProjectPage {
           | {
               image: number | Media;
               imageSize: number;
+              bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
               blockType: 'image';
@@ -280,6 +290,7 @@ export interface ProjectPage {
                 | {
                     image: number | Media;
                     imageSize: number;
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -324,6 +335,7 @@ export interface ProjectPage {
                 | {
                     image: number | Media;
                     imageSize: number;
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -375,6 +387,7 @@ export interface ProjectPage {
           | {
               image: number | Media;
               imageSize: number;
+              bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
               blockType: 'image';
@@ -412,6 +425,7 @@ export interface ProjectPage {
                 | {
                     image: number | Media;
                     imageSize: number;
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -456,6 +470,7 @@ export interface ProjectPage {
                 | {
                     image: number | Media;
                     imageSize: number;
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';

@@ -2,6 +2,7 @@ import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 
 import ColumnBlock from "@/sections/ColumnBlock";
+import DocumentBlock from "@/sections/DocumentBlock";
 import HorizontalGalleryBlock from "@/sections/HorizontalGalleryBlock";
 import ImageBlock from "@/sections/ImageBlock";
 import RowBlock from "@/sections/RowBlock";
@@ -34,5 +35,7 @@ export default function Block(props: BlockProps) {
       );
     case "youtube":
       return <YouTubeBlock {...props.block} />;
+    case "document":
+      return <DocumentBlock {...props.block} payload={props.payload} />;
   }
 }

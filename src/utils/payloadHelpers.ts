@@ -1,4 +1,4 @@
-import { Media, Project } from "@payload-types";
+import { Document, Media, Project } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
 
@@ -37,4 +37,17 @@ export async function getProject(
     return await payload.findByID({ collection: "projects", id: rawProject });
   }
   return rawProject;
+}
+
+export async function getDocument(
+  rawDocument: Document | number,
+  payload: Payload,
+): Promise<Document> {
+  if (typeof rawDocument === "number") {
+    return await payload.findByID({
+      collection: "document",
+      id: rawDocument,
+    });
+  }
+  return rawDocument;
 }

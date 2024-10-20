@@ -1,4 +1,5 @@
 import { ProjectPage } from "@payload-types";
+import classNames from "classnames";
 import { Payload } from "payload";
 
 import PayloadImage from "@/components/PayloadImage";
@@ -14,6 +15,9 @@ export default function ImageBlock(props: ImageBlockProps) {
       media={props.image}
       payload={props.payload}
       sizes={`${props.imageSize}vw`}
+      className={classNames({
+        "mb-spacing-3lg": props.bottomMargin,
+      })}
     />
   );
 }

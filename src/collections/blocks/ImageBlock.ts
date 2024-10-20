@@ -1,3 +1,4 @@
+import { bottomMargin } from "../CommonFields";
 import { Block } from "payload";
 
 const ImageBlock: Block = {
@@ -19,6 +20,7 @@ const ImageBlock: Block = {
           "Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.",
       },
     },
+    bottomMargin,
   ],
 };
 

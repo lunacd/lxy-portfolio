@@ -2,6 +2,8 @@ import config from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { redirect } from "next/navigation";
 
+import { getDocument } from "@/utils/payloadHelpers";
+
 const validDocuments = ["resume"] as const;
 type ValidDocument = (typeof validDocuments)[number];
 
@@ -12,7 +14,11 @@ function checkDocumentValidity(document: string): ValidDocument {
   throw new Error(`Requested document ${document} not found`);
 }
 
-async function getDocumentUrl(name: ValidDocument): Promise<string> {
+export default async function DocumentRedirect({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const payload = await getPayloadHMR({
     config,
   });
@@ -20,22 +26,7 @@ async function getDocumentUrl(name: ValidDocument): Promise<string> {
     slug: "global",
     depth: 1,
   });
-  if (typeof data[name] === "number") {
-    const resume = await payload.findByID({
-      collection: "document",
-      id: data[name],
-    });
-    return resume.url!;
-  } else {
-    return data[name]!.url!;
-  }
-}
-
-export default async function DocumentRedirect({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const document = checkDocumentValidity((await params).slug);
-  redirect(await getDocumentUrl(document));
+  const documentName = checkDocumentValidity((await params).slug);
+  const document = await getDocument(data[documentName], payload);
+  redirect(document.url!);
 }

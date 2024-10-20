@@ -1,21 +1,20 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
 interface ButtonProps {
-  text: string;
   href: string;
+  className?: string;
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
+export default function Button(props: PropsWithChildren<ButtonProps>) {
   return (
     <a
-      className="subtitle rounded-full bg-black px-6 py-2 text-white lg:px-10 lg:py-4"
+      className={`subtitle rounded-full bg-black px-6 py-2 text-white lg:px-10 lg:py-4
+        ${props.className}`}
       href={props.href}
       target="_blank"
       rel="noreferrer"
     >
-      {props.text}
+      {props.children}
     </a>
   );
-};
-
-export default Button;
+}

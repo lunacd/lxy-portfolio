@@ -16,8 +16,8 @@ import TextSection, {
 } from "@/components/TextSection";
 import DisplayImage, { StaticDisplayImage } from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import { RichTextImage } from "@/sections/TextImage";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
+import { RichTextImage } from "@/sections/TextImage";
 
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
@@ -440,10 +440,9 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         description="Function and Scenario"
       />
 
-      <Button
-        text="View hi-fi prototype on Figma"
-        href="https://www.figma.com/design/cwBHzgGCND3lmJJZHzEDrb/Internship-Portfolio---UX?node-id=30-100&m=dev"
-      />
+      <Button href="https://www.figma.com/design/cwBHzgGCND3lmJJZHzEDrb/Internship-Portfolio---UX?node-id=30-100&m=dev">
+        View hi-fi prototype on Figma
+      </Button>
       <Spacing size="large" />
 
       {/* Main Features */}

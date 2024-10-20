@@ -1,4 +1,3 @@
-import AgainFromScratchClient from "./page.client";
 import config from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
@@ -35,23 +34,13 @@ export default async function AgainFromScratch() {
   ).docs[0];
   return (
     <Scroller bgColor={againFromScratchProjectData.backgroundColor}>
-      <AgainFromScratchClient
-        topChildren={
-          <>
-            <TopDisplay
-              project={againFromScratchProjectData}
-              payload={payload}
-            />
-            {againFromScratchPageData.blocks.map((block, index) => (
-              <FloatUpMotion className="single" key={index}>
-                <Block block={block} payload={payload} />
-              </FloatUpMotion>
-            ))}
-          </>
-        }
-      >
-        <ProjectNavigation prev="/overlap" next="/sunrise" />
-      </AgainFromScratchClient>
+      <TopDisplay project={againFromScratchProjectData} payload={payload} />
+      {againFromScratchPageData.blocks.map((block, index) => (
+        <FloatUpMotion className="single" key={index}>
+          <Block block={block} payload={payload} />
+        </FloatUpMotion>
+      ))}
+      <ProjectNavigation prev="/overlap" next="/sunrise" />
     </Scroller>
   );
 }

@@ -1,4 +1,5 @@
 import ColumnBlock from "./blocks/ColumnBlock";
+import DocumentBlock from "./blocks/DocumentBlock";
 import HorizontalGalleryBlock from "./blocks/HorizontalGalleryBlock";
 import ImageBlock from "./blocks/ImageBlock";
 import RowBlock from "./blocks/RowBlock";
@@ -27,6 +28,7 @@ export const ProjectPages: CollectionConfig = {
         HorizontalGalleryBlock,
         ImageBlock,
         YouTubeBlock,
+        DocumentBlock,
         RowBlock(1),
         ColumnBlock(1),
       ],

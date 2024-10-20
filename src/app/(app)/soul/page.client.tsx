@@ -8,10 +8,10 @@ import Paragraph from "@/components/Paragraph";
 import Spacing from "@/components/Spacing";
 import { createPlainContent } from "@/components/TextSection";
 import DisplayImage from "@/sections/DisplayImage";
-import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import ImageText from "@/sections/ImageText";
-import TextImage from "@/sections/TextImage";
+import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
+import TextImage from "@/sections/TextImage";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import BrandResearch from "@/images/soul/brand-research-full.webp";
@@ -86,10 +86,9 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         alt="Brand research"
         botSpacing={false}
       />
-      <Button
-        text="Full Book"
-        href="https://drive.google.com/file/d/170AtY9rEoj9Msp1hRsGn0R4lRbDeCad0/view"
-      />
+      <Button href="https://drive.google.com/file/d/170AtY9rEoj9Msp1hRsGn0R4lRbDeCad0/view">
+        Full Book
+      </Button>
       <div className="pt-spacing-3lg" />
 
       <TextImage

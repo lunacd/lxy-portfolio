@@ -367,7 +367,7 @@ export default function AboutClient(props: PropsWithChildren<{}>) {
         {props.children}
 
         {/* Resume */}
-        <Button text="Resume" href="/documents/resume" />
+        <Button href="/documents/resume">Resume</Button>
         <Spacing size="large" />
 
         <LegacyTitle title="Who I am" />

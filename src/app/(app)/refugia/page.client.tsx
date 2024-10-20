@@ -27,7 +27,7 @@ export default function RefugiaClient(props: PropsWithChildren<RefugiaProps>) {
         height={620}
       />
 
-      <Button text="View the Project" href="/refugia.pdf" />
+      <Button href="/refugia.pdf">View the Project</Button>
       <Spacing size="large" />
 
       {props.children}
