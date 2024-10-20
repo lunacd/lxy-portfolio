@@ -79,6 +79,15 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: "pageBackgroundColor",
+      type: "text",
+      required: false,
+      admin: {
+        description:
+          "Background for the main project page. If unspecified, will use the background color entered above.",
+      },
+    },
+    {
       name: "lightTitle",
       type: "checkbox",
       required: true,

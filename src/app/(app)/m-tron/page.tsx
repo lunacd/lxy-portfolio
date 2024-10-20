@@ -24,7 +24,9 @@ export default async function MTron() {
     })
   ).docs[0];
   return (
-    <Scroller bgColor="#353535">
+    <Scroller
+      bgColor={mTronData.pageBackgroundColor ?? mTronData.backgroundColor}
+    >
       <MTronClient
         topChildren={<TopDisplay project={mTronData} payload={payload} />}
       >

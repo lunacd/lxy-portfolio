@@ -125,6 +125,7 @@ export interface Project {
   projectImage: number | Media;
   mobileProjectImage: number | Media;
   backgroundColor: string;
+  pageBackgroundColor?: string | null;
   lightTitle: boolean;
   lightHamburgerMenu: boolean;
   imageCover: boolean;
