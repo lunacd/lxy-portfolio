@@ -22,6 +22,7 @@ export default async function Projects() {
           equals: true,
         },
       },
+      sort: "order",
     })
   ).docs;
   return (

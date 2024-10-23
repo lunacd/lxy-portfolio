@@ -51,6 +51,16 @@ export const Projects: CollectionConfig = {
       index: true,
     },
     {
+      name: "order",
+      type: "number",
+      required: true,
+      defaultValue: 0,
+      admin: {
+        description:
+          "Customizes the order of projects. Projects with a smaller value are displayed first.",
+      },
+    },
+    {
       name: "isMainProject",
       type: "checkbox",
       required: true,

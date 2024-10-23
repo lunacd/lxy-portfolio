@@ -8,7 +8,6 @@ import { Metadata } from "next";
 import React from "react";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
-import { getProject } from "@/utils/payloadHelpers";
 
 export const metadata: Metadata = {
   title: "Shirley Lyu Portfolio",
@@ -18,16 +17,18 @@ export default async function Home() {
   const payload = await getPayloadHMR({
     config,
   });
-  const projects = await Promise.all(
-    (
-      await payload.findGlobal({
-        slug: "projectOrder",
-        depth: 1,
-      })
-    ).projects.map(
-      async (rawProject) => await getProject(rawProject.project, payload),
-    ),
-  );
+  const projects = (
+    await payload.find({
+      collection: "projects",
+      pagination: false,
+      where: {
+        isMainProject: {
+          equals: true,
+        },
+      },
+      sort: "order",
+    })
+  ).docs;
   return (
     <div className="relative h-full flex-grow overflow-hidden">
       <LandingScrollIndicator>
