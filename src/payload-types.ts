@@ -118,6 +118,7 @@ export interface Project {
   isMainProject: boolean;
   duration?: string | null;
   category: string;
+  projectSize?: string | null;
   focuses?:
     | {
         focus: string;

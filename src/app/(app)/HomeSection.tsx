@@ -64,6 +64,9 @@ export default async function HomeSection(props: HomeSectionProps) {
                   <div className={styles.detailSection}>
                     <span>Category: </span>
                     {props.project.category}
+                    {props.project.projectSize && (
+                      <>, {props.project.projectSize}</>
+                    )}
                   </div>
                   <div className="col-span-2 mt-2 flex flex-row flex-wrap gap-2">
                     {props.project.focuses &&

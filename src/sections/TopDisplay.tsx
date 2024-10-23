@@ -109,6 +109,9 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
               <div className={styles.detailSection}>
                 <span>Category: </span>
                 {props.project.category}
+                {props.project.projectSize && (
+                  <>, {props.project.projectSize}</>
+                )}
               </div>
               {props.project.focuses && (
                 <div className="col-span-2 flex flex-row flex-wrap space-x-2">

@@ -71,6 +71,14 @@ export const Projects: CollectionConfig = {
       required: true,
     },
     {
+      name: "projectSize",
+      type: "text",
+      admin: {
+        description:
+          "This will be displayed after category on landing page and project page， but will not show in project galleries.",
+      },
+    },
+    {
       name: "focuses",
       type: "array",
       fields: [
