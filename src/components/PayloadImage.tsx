@@ -6,7 +6,7 @@ import "server-only";
 import { getMedia } from "@/utils/payloadHelpers";
 
 interface PayloadImageProps {
-  media: Media | number;
+  media?: Media | number | null;
   payload: Payload;
   className?: string;
   fill?: boolean;
@@ -14,7 +14,7 @@ interface PayloadImageProps {
 }
 
 export default async function PayloadImage(props: PayloadImageProps) {
-  const media = await getMedia(props.media, props.payload);
+  const media = await getMedia(props.media!, props.payload);
   return (
     <Image
       src={media.url}

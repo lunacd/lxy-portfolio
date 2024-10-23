@@ -1,69 +1,58 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { Project } from "@payload-types";
+import Link from "next/link";
+import { Payload } from "payload";
 import React from "react";
-import Link from "next/link"
+import "server-only";
 
 import CategoryTag from "@/components/CategoryTag";
-import { ProjectDataLean } from "@/utils/projectData";
-import { transitionFast } from "@/utils/transitions";
+import PayloadImage from "@/components/PayloadImage";
 
 interface ProjectsGalleryProps {
-  data: ProjectDataLean[];
-  width: number;
-  height: number;
+  projects: Project[];
+  payload: Payload;
 }
 
-const ProjectsGallery: React.FC<ProjectsGalleryProps> = (props) => {
+export default async function ProjectsGallery(props: ProjectsGalleryProps) {
   return (
-    <div className="single mt-spacing-lg mb-spacing-3lg grid grid-cols-2 gap-spacing lg:grid-cols-3">
-      {props.data.map((data, index) => {
+    <div className="single mb-spacing-3lg mt-spacing-lg grid grid-cols-2 gap-spacing lg:grid-cols-3">
+      {props.projects.map((project, index) => {
         return (
-          <motion.div
+          <div
             key={index}
-            style={{ y: "0rem" }}
-            whileHover={{ y: "-1rem" }}
-            transition={transitionFast}
+            className="transition-transform duration-200 ease-out hover:-translate-y-4"
           >
-            <Link
-              href={data.link}
-              className="cursor-pointer"
-            >
-              <Image
-                src={data.smallImage}
-                alt={data.name}
-                width={props.width}
-                height={props.height}
+            <Link href={`/${project.uri}`} className="cursor-pointer">
+              <PayloadImage
+                media={project.projectGalleryImage}
+                payload={props.payload}
+                sizes="33vw"
               />
             </Link>
             <div className="mt-2">
-              <span className="subtitle">{data.name}</span>
+              <span className="subtitle">{project.name}</span>
               <span className="paragraph hidden lg:inline">
                 {" "}
-                - {data.category}
+                - {project.category}
               </span>
               <span className="paragraph relative -top-1 lg:hidden">
                 <br />
-                {data.category}
+                {project.category}
               </span>
             </div>
-            {data.focus && (
-              <div className="mt-2 flex flex-row flex-wrap space-x-1">
-                {data.focus.map((focus, index) => {
+            {project.focuses && project.isMainProject && (
+              <div className="mt-2 flex flex-row flex-wrap gap-1">
+                {project.focuses.map((focus, index) => {
                   return (
                     <div className="mb-2" key={index}>
-                      <CategoryTag category={focus} />
+                      <CategoryTag category={focus.focus} />
                     </div>
                   );
                 })}
               </div>
             )}
-          </motion.div>
+          </div>
         );
       })}
     </div>
   );
-};
-
-export default ProjectsGallery;
+}

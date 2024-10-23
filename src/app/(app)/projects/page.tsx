@@ -1,21 +1,32 @@
+import config from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
 import ProjectsGallery from "@/components/ProjectsGallery";
 import Scroller from "@/components/Scroller";
-import { projectsData } from "@/utils/projectData";
 
 export const metadata: Metadata = {
   title: "Projects | Shirley Lyu",
 };
 
-export default function Projects() {
+export default async function Projects() {
+  const payload = await getPayloadHMR({
+    config,
+  });
+  const projects = (
+    await payload.find({
+      collection: "projects",
+      pagination: false,
+      where: {
+        isMainProject: {
+          equals: true,
+        },
+      },
+    })
+  ).docs;
   return (
     <Scroller bgColor="bg-[#FDF9F1]">
-      <ProjectsGallery
-        data={Object.values(projectsData)}
-        width={3217}
-        height={2659}
-      />
+      <ProjectsGallery projects={projects} payload={payload} />
     </Scroller>
   );
 }

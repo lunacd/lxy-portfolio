@@ -115,21 +115,27 @@ export interface Project {
   id: number;
   name: string;
   uri: string;
-  duration: string;
+  isMainProject: boolean;
+  duration?: string | null;
   category: string;
-  focuses: {
-    focus: string;
-    id?: string | null;
-  }[];
-  brief: string;
-  projectImage: number | Media;
-  mobileProjectImage: number | Media;
-  backgroundColor: string;
+  focuses?:
+    | {
+        focus: string;
+        focusId: string;
+        id?: string | null;
+      }[]
+    | null;
+  brief?: string | null;
+  projectImage?: (number | null) | Media;
+  mobileProjectImage?: (number | null) | Media;
+  projectGalleryImage: number | Media;
+  backgroundColor?: string | null;
   pageBackgroundColor?: string | null;
-  lightTitle: boolean;
-  lightHamburgerMenu: boolean;
-  imageCover: boolean;
+  lightTitle?: boolean | null;
+  lightHamburgerMenu?: boolean | null;
+  imageCover?: boolean | null;
   awardImage?: (number | null) | Media;
+  externalLink?: string | null;
   updatedAt: string;
   createdAt: string;
 }

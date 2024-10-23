@@ -3,14 +3,14 @@ import React, { PropsWithChildren, forwardRef } from "react";
 import Spacing from "@/components/Spacing";
 
 interface ScrollerProps {
-  bgColor: string;
+  bgColor?: string | null;
 }
 
 const Scroller = forwardRef<HTMLDivElement, PropsWithChildren<ScrollerProps>>(
   function Scroller(props, ref) {
     return (
       <div
-        style={{ backgroundColor: props.bgColor }}
+        style={{ backgroundColor: props.bgColor ? props.bgColor : undefined }}
         className="h-screen min-h-[30rem] flex-grow overflow-x-hidden overflow-y-scroll
           xl:min-h-[34rem]"
         ref={ref}

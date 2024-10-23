@@ -51,3 +51,13 @@ export async function getDocument(
   }
   return rawDocument;
 }
+
+export function getProjectLink(
+  uri: string,
+  externalLink: string | undefined | null,
+): string {
+  if (externalLink && externalLink.length > 0) {
+    return externalLink;
+  }
+  return `/${uri}`;
+}

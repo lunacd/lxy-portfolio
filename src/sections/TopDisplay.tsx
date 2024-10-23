@@ -29,7 +29,11 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
   return (
     <>
       <div
-        style={{ backgroundColor: props.project.backgroundColor }}
+        style={{
+          backgroundColor: props.project.backgroundColor
+            ? props.project.backgroundColor
+            : undefined,
+        }}
         className={classNames("flex h-full min-h-screen w-full flex-col", {
           "absolute left-0 top-0": props.absolute,
           relative: !props.absolute,
@@ -107,11 +111,13 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
                 <span>Category: </span>
                 {props.project.category}
               </div>
-              <div className="col-span-2 flex flex-row flex-wrap space-x-2">
-                {props.project.focuses.map((focus, index) => {
-                  return <CategoryTag key={index} category={focus.focus} />;
-                })}
-              </div>
+              {props.project.focuses && (
+                <div className="col-span-2 flex flex-row flex-wrap space-x-2">
+                  {props.project.focuses.map((focus, index) => {
+                    return <CategoryTag key={index} category={focus.focus} />;
+                  })}
+                </div>
+              )}
             </div>
           </div>
         </div>

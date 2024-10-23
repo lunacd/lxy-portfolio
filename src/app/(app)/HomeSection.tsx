@@ -66,15 +66,16 @@ export default async function HomeSection(props: HomeSectionProps) {
                     {props.project.category}
                   </div>
                   <div className="col-span-2 mt-2 flex flex-row flex-wrap gap-2">
-                    {props.project.focuses.map((focus, index) => {
-                      return (
-                        <CategoryTag
-                          key={index}
-                          category={focus.focus}
-                          titleColor={titleColor}
-                        />
-                      );
-                    })}
+                    {props.project.focuses &&
+                      props.project.focuses.map((focus, index) => {
+                        return (
+                          <CategoryTag
+                            key={index}
+                            category={focus.focus}
+                            titleColor={titleColor}
+                          />
+                        );
+                      })}
                   </div>
                 </div>
               </div>
