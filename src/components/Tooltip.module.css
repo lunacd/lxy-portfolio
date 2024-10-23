@@ -1,18 +1,18 @@
 .content {
-    @apply relative;
+  @apply relative;
 }
 
 .tooltip {
-    /* Positioning */
-    @apply -top-2 absolute text-xs text-nowrap left-1/2 -translate-x-1/2;
-    /* Styling */
-    @apply bg-gray-200 rounded-md shadow py-1 px-2;
-    /* Transition */
-    @apply -translate-y-1 transition ease-in-out duration-200 opacity-0;
-    --tw-translate-y: calc(-100% + 0.25rem);
+  /* Positioning */
+  @apply absolute -top-2 left-1/2 -translate-x-1/2 text-nowrap text-xs;
+  /* Styling */
+  @apply rounded-md bg-gray-200 px-2 py-1 shadow;
+  /* Transition */
+  @apply -translate-y-1 opacity-0 transition duration-200 ease-in-out;
+  --tw-translate-y: calc(-100% + 0.25rem);
 }
 
 .content:hover .tooltip {
-    @apply block opacity-100;
-    --tw-translate-y: calc(-100%);
+  @apply block opacity-100;
+  --tw-translate-y: calc(-100%);
 }

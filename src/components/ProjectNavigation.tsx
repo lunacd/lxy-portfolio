@@ -1,7 +1,7 @@
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
-import "server-only"
+import "server-only";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
 
@@ -30,10 +30,7 @@ const ProjectNavigation: React.FC<ProjectNavigationProps> = (propsIn) => {
         )}
         {props.next && (
           <div className="ml-auto flex flex-row items-center space-x-4">
-            <Link
-              href={props.next!}
-              className="cursor-pointer"
-            >
+            <Link href={props.next!} className="cursor-pointer">
               Next Project
             </Link>
             <IconChevronRight size={24} />

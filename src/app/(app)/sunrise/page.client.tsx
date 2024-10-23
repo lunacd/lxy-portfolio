@@ -8,8 +8,8 @@ import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import TextImage from "@/sections/TextImage";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
+import TextImage from "@/sections/TextImage";
 
 import Evo1 from "@/images/sunrise/evolution/evolution-1-small.webp";
 import Evo2 from "@/images/sunrise/evolution/evolution-2-small.webp";
@@ -133,7 +133,10 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         />
 
         {/* Ortho Drawing */}
-        <LegacyTitle title="Final Product Ortho Drawing" textColor="text-white" />
+        <LegacyTitle
+          title="Final Product Ortho Drawing"
+          textColor="text-white"
+        />
         <Carousel
           images={[Ortho1, Ortho2, Ortho3, Ortho4, Ortho5]}
           description="Ortho drawing"
@@ -153,7 +156,10 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         </div>
 
         {/* Making */}
-        <LegacyTitle title="Final model making Process" textColor="text-white" />
+        <LegacyTitle
+          title="Final model making Process"
+          textColor="text-white"
+        />
         <SmallGallery
           items={[
             { image: Making1, title: "20lb Foam Route Template" },

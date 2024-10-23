@@ -1,5 +1,5 @@
+import styles from "./Tooltip.module.css";
 import React from "react";
-import styles from "./Tooltip.module.css"
 
 interface TopTipProps {
   tip: string;

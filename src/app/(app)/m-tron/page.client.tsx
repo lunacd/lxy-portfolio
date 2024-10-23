@@ -7,8 +7,8 @@ import LargeGallery from "@/components/LargeGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import TextImage from "@/sections/TextImage";
 import LegacyTitle from "@/sections/LegacyTitle";
+import TextImage from "@/sections/TextImage";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import Brake1 from "@/images/m-tron/brake-1-full.webp";
