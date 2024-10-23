@@ -2,7 +2,6 @@
 import { Documents } from "./collections/Documents";
 import { Global } from "./collections/Global";
 import { Media } from "./collections/Media";
-import { ProjectOrder } from "./collections/ProjectOrder";
 import { ProjectPages } from "./collections/ProjectPages";
 import { Projects } from "./collections/Projects";
 import { Users } from "./collections/Users";
@@ -38,7 +37,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Documents, Projects, ProjectPages],
-  globals: [Global, ProjectOrder],
+  globals: [Global],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

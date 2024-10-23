@@ -25,7 +25,6 @@ export interface Config {
   };
   globals: {
     global: Global;
-    projectOrder: ProjectOrder;
   };
   locale: null;
   user: User & {
@@ -587,19 +586,6 @@ export interface Global {
   resume: number | Document;
   profile: string;
   profilePicture: number | Media;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projectOrder".
- */
-export interface ProjectOrder {
-  id: number;
-  projects: {
-    project: number | Project;
-    id?: string | null;
-  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }
