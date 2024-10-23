@@ -39,10 +39,13 @@ const sidebarProjects = [
 export const Sidebar = () => {
   const [hovered, setHovered] = useState("");
 
-  const [isLG, isXL] = useMediaQuery([
-    "(min-width: 1024px)",
-    "(min-width: 1280px)",
-  ]);
+  const [isLG, isXL] = useMediaQuery(
+    ["(min-width: 1024px)", "(min-width: 1280px)"],
+    {
+      ssr: true,
+      fallback: [false, false],
+    },
+  );
   const [open, setOpen] = useState(isLG);
   useEffect(() => {
     setOpen(isLG);

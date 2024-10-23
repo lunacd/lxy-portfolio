@@ -29,7 +29,10 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMd] = useMediaQuery("(min-width: 768px)");
+  const [isMd] = useMediaQuery(["(min-width: 768px)"], {
+    ssr: true,
+    fallback: [false],
+  });
 
   return (
     <motion.div
