@@ -20,7 +20,6 @@ import { projectsData, sidebarRoutes } from "@/utils/projectData";
 import { transitionFast as transitionDefault } from "@/utils/transitions";
 
 import HamburgerBlack from "@/images/hamburger-black.svg";
-import HamburgerWhite from "@/images/hamburger-white.svg";
 
 const MotionImage = motion.create(Image);
 const MotionIconChevronLeft = motion.create(IconChevronLeft);
@@ -255,12 +254,7 @@ export const Sidebar = () => {
             rotate: open ? "90deg" : "0",
           }}
           className="w-6 transition-colors duration-200"
-          src={
-            globalState.currentProject in projectsData &&
-            projectsData[globalState.currentProject].hamburgerColorLight
-              ? HamburgerWhite
-              : HamburgerBlack
-          }
+          src={HamburgerBlack}
           alt="Menu"
           onClick={() => {
             setOpen((orig) => !orig);

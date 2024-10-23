@@ -50,3 +50,6 @@ venv/
 *.pdf
 
 pnpm-lock.yaml
+
+# Generated files
+src/payload-types.ts

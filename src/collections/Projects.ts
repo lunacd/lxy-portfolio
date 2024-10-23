@@ -146,20 +146,11 @@ export const Projects: CollectionConfig = {
       },
     },
     {
-      name: "lightTitle",
-      type: "checkbox",
-      admin: {
-        description:
-          "Check this if the landing page should use white text instead of black text. Text are located at the top-left of the page.",
-      },
-    },
-    {
-      name: "lightHamburgerMenu",
-      type: "checkbox",
-      admin: {
-        description:
-          "Check this if the hamburger menu button should be white instead of black. Hamburger button is located at the top-right of the page on mobile.",
-      },
+      name: "textColor",
+      type: "radio",
+      options: ["light", "dark"],
+      required: true,
+      defaultValue: "dark",
     },
     {
       name: "imageCover",

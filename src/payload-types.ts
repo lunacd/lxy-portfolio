@@ -16,9 +16,9 @@ export interface Config {
     document: Document;
     projects: Project;
     projectPages: ProjectPage;
-    "payload-locked-documents": PayloadLockedDocument;
-    "payload-preferences": PayloadPreference;
-    "payload-migrations": PayloadMigration;
+    'payload-locked-documents': PayloadLockedDocument;
+    'payload-preferences': PayloadPreference;
+    'payload-migrations': PayloadMigration;
   };
   db: {
     defaultIDType: number;
@@ -29,7 +29,7 @@ export interface Config {
   };
   locale: null;
   user: User & {
-    collection: "users";
+    collection: 'users';
   };
 }
 export interface UserAuthOperations {
@@ -131,8 +131,7 @@ export interface Project {
   projectGalleryImage: number | Media;
   backgroundColor?: string | null;
   pageBackgroundColor?: string | null;
-  lightTitle?: boolean | null;
-  lightHamburgerMenu?: boolean | null;
+  textColor: 'light' | 'dark';
   imageCover?: boolean | null;
   awardImage?: (number | null) | Media;
   externalLink?: string | null;
@@ -149,11 +148,11 @@ export interface ProjectPage {
   blocks: (
     | {
         text: string;
-        type: "title" | "subtitle";
-        color: "dark" | "light";
+        type: 'title' | 'subtitle';
+        color: 'dark' | 'light';
         id?: string | null;
         blockName?: string | null;
-        blockType: "title";
+        blockType: 'title';
       }
     | {
         text: {
@@ -164,15 +163,8 @@ export interface ProjectPage {
               version: number;
               [k: string]: unknown;
             }[];
-            direction: ("ltr" | "rtl") | null;
-            format:
-              | "left"
-              | "start"
-              | "center"
-              | "right"
-              | "end"
-              | "justify"
-              | "";
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
             indent: number;
             version: number;
           };
@@ -181,7 +173,7 @@ export interface ProjectPage {
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
-        blockType: "text";
+        blockType: 'text';
       }
     | {
         items: {
@@ -194,15 +186,8 @@ export interface ProjectPage {
                 version: number;
                 [k: string]: unknown;
               }[];
-              direction: ("ltr" | "rtl") | null;
-              format:
-                | "left"
-                | "start"
-                | "center"
-                | "right"
-                | "end"
-                | "justify"
-                | "";
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
               indent: number;
               version: number;
             };
@@ -210,11 +195,11 @@ export interface ProjectPage {
           };
           id?: string | null;
         }[];
-        spacing: "small" | "medium" | "regular" | "large" | "xl" | "xxl";
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
-        blockType: "horizontalGallery";
+        blockType: 'horizontalGallery';
       }
     | {
         image: number | Media;
@@ -222,7 +207,7 @@ export interface ProjectPage {
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
-        blockType: "image";
+        blockType: 'image';
       }
     | {
         embedLink: string;
@@ -231,7 +216,7 @@ export interface ProjectPage {
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
-        blockType: "youtube";
+        blockType: 'youtube';
       }
     | {
         label: string;
@@ -239,7 +224,7 @@ export interface ProjectPage {
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
-        blockType: "document";
+        blockType: 'document';
       }
     | {
         blocks: (
@@ -252,15 +237,8 @@ export interface ProjectPage {
                     version: number;
                     [k: string]: unknown;
                   }[];
-                  direction: ("ltr" | "rtl") | null;
-                  format:
-                    | "left"
-                    | "start"
-                    | "center"
-                    | "right"
-                    | "end"
-                    | "justify"
-                    | "";
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
                   indent: number;
                   version: number;
                 };
@@ -269,15 +247,15 @@ export interface ProjectPage {
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
-              blockType: "text";
+              blockType: 'text';
             }
           | {
               text: string;
-              type: "title" | "subtitle";
-              color: "dark" | "light";
+              type: 'title' | 'subtitle';
+              color: 'dark' | 'light';
               id?: string | null;
               blockName?: string | null;
-              blockType: "title";
+              blockType: 'title';
             }
           | {
               image: number | Media;
@@ -285,7 +263,7 @@ export interface ProjectPage {
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
-              blockType: "image";
+              blockType: 'image';
             }
           | {
               blocks: (
@@ -298,15 +276,8 @@ export interface ProjectPage {
                           version: number;
                           [k: string]: unknown;
                         }[];
-                        direction: ("ltr" | "rtl") | null;
-                        format:
-                          | "left"
-                          | "start"
-                          | "center"
-                          | "right"
-                          | "end"
-                          | "justify"
-                          | "";
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
                         indent: number;
                         version: number;
                       };
@@ -315,15 +286,15 @@ export interface ProjectPage {
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "text";
+                    blockType: 'text';
                   }
                 | {
                     text: string;
-                    type: "title" | "subtitle";
-                    color: "dark" | "light";
+                    type: 'title' | 'subtitle';
+                    color: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "title";
+                    blockType: 'title';
                   }
                 | {
                     image: number | Media;
@@ -331,14 +302,14 @@ export interface ProjectPage {
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "image";
+                    blockType: 'image';
                   }
               )[];
-              spacing: "small" | "medium" | "regular" | "large" | "xl" | "xxl";
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
-              blockType: "column";
+              blockType: 'column';
             }
           | {
               blocks: (
@@ -351,15 +322,8 @@ export interface ProjectPage {
                           version: number;
                           [k: string]: unknown;
                         }[];
-                        direction: ("ltr" | "rtl") | null;
-                        format:
-                          | "left"
-                          | "start"
-                          | "center"
-                          | "right"
-                          | "end"
-                          | "justify"
-                          | "";
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
                         indent: number;
                         version: number;
                       };
@@ -368,15 +332,15 @@ export interface ProjectPage {
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "text";
+                    blockType: 'text';
                   }
                 | {
                     text: string;
-                    type: "title" | "subtitle";
-                    color: "dark" | "light";
+                    type: 'title' | 'subtitle';
+                    color: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "title";
+                    blockType: 'title';
                   }
                 | {
                     image: number | Media;
@@ -384,21 +348,21 @@ export interface ProjectPage {
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "image";
+                    blockType: 'image';
                   }
               )[];
-              spacing: "small" | "medium" | "regular" | "large" | "xl" | "xxl";
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
-              blockType: "row";
+              blockType: 'row';
             }
         )[];
-        spacing: "small" | "medium" | "regular" | "large" | "xl" | "xxl";
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
-        blockType: "row";
+        blockType: 'row';
       }
     | {
         blocks: (
@@ -411,15 +375,8 @@ export interface ProjectPage {
                     version: number;
                     [k: string]: unknown;
                   }[];
-                  direction: ("ltr" | "rtl") | null;
-                  format:
-                    | "left"
-                    | "start"
-                    | "center"
-                    | "right"
-                    | "end"
-                    | "justify"
-                    | "";
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
                   indent: number;
                   version: number;
                 };
@@ -428,15 +385,15 @@ export interface ProjectPage {
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
-              blockType: "text";
+              blockType: 'text';
             }
           | {
               text: string;
-              type: "title" | "subtitle";
-              color: "dark" | "light";
+              type: 'title' | 'subtitle';
+              color: 'dark' | 'light';
               id?: string | null;
               blockName?: string | null;
-              blockType: "title";
+              blockType: 'title';
             }
           | {
               image: number | Media;
@@ -444,7 +401,7 @@ export interface ProjectPage {
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
-              blockType: "image";
+              blockType: 'image';
             }
           | {
               blocks: (
@@ -457,15 +414,8 @@ export interface ProjectPage {
                           version: number;
                           [k: string]: unknown;
                         }[];
-                        direction: ("ltr" | "rtl") | null;
-                        format:
-                          | "left"
-                          | "start"
-                          | "center"
-                          | "right"
-                          | "end"
-                          | "justify"
-                          | "";
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
                         indent: number;
                         version: number;
                       };
@@ -474,15 +424,15 @@ export interface ProjectPage {
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "text";
+                    blockType: 'text';
                   }
                 | {
                     text: string;
-                    type: "title" | "subtitle";
-                    color: "dark" | "light";
+                    type: 'title' | 'subtitle';
+                    color: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "title";
+                    blockType: 'title';
                   }
                 | {
                     image: number | Media;
@@ -490,14 +440,14 @@ export interface ProjectPage {
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "image";
+                    blockType: 'image';
                   }
               )[];
-              spacing: "small" | "medium" | "regular" | "large" | "xl" | "xxl";
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
-              blockType: "column";
+              blockType: 'column';
             }
           | {
               blocks: (
@@ -510,15 +460,8 @@ export interface ProjectPage {
                           version: number;
                           [k: string]: unknown;
                         }[];
-                        direction: ("ltr" | "rtl") | null;
-                        format:
-                          | "left"
-                          | "start"
-                          | "center"
-                          | "right"
-                          | "end"
-                          | "justify"
-                          | "";
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
                         indent: number;
                         version: number;
                       };
@@ -527,15 +470,15 @@ export interface ProjectPage {
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "text";
+                    blockType: 'text';
                   }
                 | {
                     text: string;
-                    type: "title" | "subtitle";
-                    color: "dark" | "light";
+                    type: 'title' | 'subtitle';
+                    color: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "title";
+                    blockType: 'title';
                   }
                 | {
                     image: number | Media;
@@ -543,21 +486,21 @@ export interface ProjectPage {
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: "image";
+                    blockType: 'image';
                   }
               )[];
-              spacing: "small" | "medium" | "regular" | "large" | "xl" | "xxl";
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
-              blockType: "row";
+              blockType: 'row';
             }
         )[];
-        spacing: "small" | "medium" | "regular" | "large" | "xl" | "xxl";
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
-        blockType: "column";
+        blockType: 'column';
       }
   )[];
   updatedAt: string;
@@ -571,28 +514,28 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: "users";
+        relationTo: 'users';
         value: number | User;
       } | null)
     | ({
-        relationTo: "media";
+        relationTo: 'media';
         value: number | Media;
       } | null)
     | ({
-        relationTo: "document";
+        relationTo: 'document';
         value: number | Document;
       } | null)
     | ({
-        relationTo: "projects";
+        relationTo: 'projects';
         value: number | Project;
       } | null)
     | ({
-        relationTo: "projectPages";
+        relationTo: 'projectPages';
         value: number | ProjectPage;
       } | null);
   globalSlug?: string | null;
   user: {
-    relationTo: "users";
+    relationTo: 'users';
     value: number | User;
   };
   updatedAt: string;
@@ -605,7 +548,7 @@ export interface PayloadLockedDocument {
 export interface PayloadPreference {
   id: number;
   user: {
-    relationTo: "users";
+    relationTo: 'users';
     value: number | User;
   };
   key?: string | null;
@@ -666,6 +609,7 @@ export interface Auth {
   [k: string]: unknown;
 }
 
-declare module "payload" {
+
+declare module 'payload' {
   export interface GeneratedTypes extends Config {}
 }
