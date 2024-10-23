@@ -9,18 +9,9 @@ import TronDisplayM from "@/images/m-tron/display-mobile-half.webp";
 import OverlapDisplay from "@/images/overlap/display-full.webp";
 import OverlapDisplayM from "@/images/overlap/display-mobile-half.webp";
 import AgainFromScratchSmall from "@/images/projects/againfromscratch-half.webp";
-import ErgoSmall from "@/images/projects/ergo-half.webp";
-import ItoSmall from "@/images/projects/ito-half.webp";
 import LamboozledSmall from "@/images/projects/lamboozled-half.webp";
-import LissSmall from "@/images/projects/liss-half.webp";
-import LyuSmall from "@/images/projects/lyu-half.webp";
 import TronSmall from "@/images/projects/m-tron-half.webp";
-import ModeSmall from "@/images/projects/mode-half.webp";
-import MumSmall from "@/images/projects/mum-half.webp";
 import OverlapSmall from "@/images/projects/overlap-half.webp";
-import PlantSmall from "@/images/projects/plant-half.webp";
-import RefugiaSmall from "@/images/projects/refugia-half.webp";
-import SaturnSmall from "@/images/projects/saturn-half.webp";
 import SkatesSmall from "@/images/projects/skates-half.webp";
 import SoulSmall from "@/images/projects/soul-half.webp";
 import SunriseSmall from "@/images/projects/sunrise-half.webp";
@@ -203,72 +194,6 @@ export const projectsData: { [name: string]: ProjectData } = {
 };
 
 export const projects: string[] = Object.keys(projectsData);
-
-export const otherProjectsData = [
-  {
-    uri: "lyu",
-    name: "Lyu",
-    category: "Soft Goods",
-    smallImage: LyuSmall,
-    link: "/lyu",
-  },
-  {
-    uri: "refugia",
-    name: "Refugia",
-    category: "Spatial Experience Design",
-    smallImage: RefugiaSmall,
-    link: "/refugia",
-  },
-  {
-    uri: "mode",
-    name: "Mode Bag",
-    category: "Soft Goods",
-    smallImage: ModeSmall,
-    link: "https://shirleylyu.wixsite.com/shirley-portfolio/mode",
-  },
-  {
-    uri: "liss",
-    name: "Liss",
-    category: "Hard Goods",
-    smallImage: LissSmall,
-    link: "https://shirleylyu.wixsite.com/shirley-portfolio/liss",
-  },
-  {
-    uri: "saturn",
-    name: "Saturn",
-    category: "Pet Furniture",
-    smallImage: SaturnSmall,
-    link: "https://shirleylyu.wixsite.com/shirley-portfolio/saturn",
-  },
-  {
-    uri: "ergo",
-    name: "Ergo Care",
-    category: "Consumer Electronics",
-    smallImage: ErgoSmall,
-    link: "https://shirleylyu.wixsite.com/shirley-portfolio/ergo-care",
-  },
-  {
-    uri: "ito",
-    name: "Ito Suitcase",
-    category: "Hard Goods",
-    smallImage: ItoSmall,
-    link: "https://shirleylyu.wixsite.com/shirley-portfolio/ito",
-  },
-  {
-    uri: "plant",
-    name: "Plant Phone",
-    category: "Consumer Electronics",
-    smallImage: PlantSmall,
-    link: "https://shirleylyu.wixsite.com/shirley-portfolio/plantphone",
-  },
-  {
-    uri: "mum",
-    name: "Mum",
-    category: "Soft Goods",
-    smallImage: MumSmall,
-    link: "https://shirleylyu.wixsite.com/shirley-portfolio/mum",
-  },
-];
 
 interface Route {
   uri: string;

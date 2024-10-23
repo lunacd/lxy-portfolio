@@ -6,7 +6,7 @@ import { PropsWithChildren, useRef, useState } from "react";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Scroller from "@/components/Scroller";
 
-export default function LandingScrollIndicator(props: PropsWithChildren<{}>) {
+export default function LandingScrollIndicator(props: PropsWithChildren) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
   const [showIndicator, setShowIndicator] = useState(true);

@@ -9,7 +9,9 @@ type TextChildProps = Extract<
 
 function TextChild(props: TextChildProps) {
   const children = props.children
-    ? (props.children as any[]).map((child: any): ReactNode => TextChild(child))
+    ? (props.children as TextChildProps[]).map(
+        (child: TextChildProps): ReactNode => TextChild(child),
+      )
     : [];
   switch (props.type) {
     case "list":

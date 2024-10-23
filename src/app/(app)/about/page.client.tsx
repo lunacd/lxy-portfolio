@@ -347,7 +347,7 @@ function VideoGallery() {
   );
 }
 
-export default function AboutClient(props: PropsWithChildren<{}>) {
+export default function AboutClient(props: PropsWithChildren) {
   const toolsRef = useRef(null);
   const toolsIsInView = useInView(toolsRef, { once: true });
   const containerRef = useRef<HTMLDivElement | null>(null);

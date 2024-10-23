@@ -20,7 +20,7 @@ import GlobalStateContext from "@/utils/GlobalStateContext";
 
 const catamaran = Catamaran({ subsets: ["latin"] });
 
-function FrozenRouter(props: PropsWithChildren<{}>) {
+function FrozenRouter(props: PropsWithChildren) {
   const context = useContext(LayoutRouterContext);
   const frozen = useRef(context).current;
 
