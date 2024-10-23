@@ -8,6 +8,7 @@ import CategoryTag from "@/components/CategoryTag";
 import FloatUpMotion from "@/components/FloatUpMotion";
 import PayloadImage from "@/components/PayloadImage";
 import styles from "@/sections/TopDisplay.module.css";
+import { getProjectLink } from "@/utils/payloadHelpers";
 
 interface HomeSectionProps {
   project: Project;
@@ -94,7 +95,7 @@ export default async function HomeSection(props: HomeSectionProps) {
 
           {/* Link to page */}
           <Link
-            href={`/${props.project.uri}`}
+            href={getProjectLink(props.project.uri, props.project.externalLink)}
             className="absolute left-0 top-0 block h-full w-full cursor-pointer"
           ></Link>
         </div>

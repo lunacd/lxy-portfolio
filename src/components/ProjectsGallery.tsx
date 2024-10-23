@@ -6,6 +6,7 @@ import "server-only";
 
 import CategoryTag from "@/components/CategoryTag";
 import PayloadImage from "@/components/PayloadImage";
+import { getProjectLink } from "@/utils/payloadHelpers";
 
 interface ProjectsGalleryProps {
   projects: Project[];
@@ -21,7 +22,10 @@ export default async function ProjectsGallery(props: ProjectsGalleryProps) {
             key={index}
             className="transition-transform duration-200 ease-out hover:-translate-y-4"
           >
-            <Link href={`/${project.uri}`} className="cursor-pointer">
+            <Link
+              href={getProjectLink(project.uri, project.externalLink)}
+              className="cursor-pointer"
+            >
               <PayloadImage
                 media={project.projectGalleryImage}
                 payload={props.payload}
