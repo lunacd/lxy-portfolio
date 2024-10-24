@@ -1,4 +1,5 @@
 import { ProjectPage } from "@payload-types";
+import "server-only";
 
 type TitleBlockProps = Extract<
   ProjectPage["blocks"][0],

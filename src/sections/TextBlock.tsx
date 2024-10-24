@@ -42,7 +42,6 @@ function TextChild(props: TextChildProps) {
 type TitleBlockProps = Extract<ProjectPage["blocks"][0], { blockType: "text" }>;
 
 export default function TextBlock(props: TitleBlockProps) {
-  console.log(props);
   return (
     <div
       className={classNames({

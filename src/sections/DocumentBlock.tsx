@@ -1,6 +1,7 @@
 import { ProjectPage } from "@payload-types";
 import classNames from "classnames";
 import { Payload } from "payload";
+import "server-only";
 
 import Button from "@/components/Button";
 import { getDocument } from "@/utils/payloadHelpers";

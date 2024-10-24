@@ -1,5 +1,6 @@
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
+import "server-only";
 
 import ColumnBlock from "@/sections/ColumnBlock";
 import DocumentBlock from "@/sections/DocumentBlock";

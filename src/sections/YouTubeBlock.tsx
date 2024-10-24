@@ -1,5 +1,6 @@
 import { ProjectPage } from "@payload-types";
 import classNames from "classnames";
+import "server-only";
 
 type YouTubeBlockProps = Extract<
   ProjectPage["blocks"][0],
