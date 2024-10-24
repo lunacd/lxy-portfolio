@@ -22,7 +22,7 @@ export default async function Others() {
           equals: false,
         },
       },
-      sort: "order"
+      sort: "order",
     })
   ).docs;
   return (
