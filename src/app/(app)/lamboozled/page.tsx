@@ -28,7 +28,7 @@ export default async function Lamboozled() {
     await payload.find({
       collection: "projectPages",
       where: {
-        projectName: { equals: "Lamboozled!" },
+        projectName: { equals: "Lamboozled" },
       },
     })
   ).docs[0];
