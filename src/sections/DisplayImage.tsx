@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { StaticImageData } from "next/image";
 
-import Animatable, { AnimationData } from "@/components/Animatable";
+import LegacyAnimatable, { AnimationData } from "@/components/LegacyAnimatable";
 import FloatUpMotion from "@/components/FloatUpMotion";
 
 interface DisplayImageProps {
@@ -35,11 +35,11 @@ export default function DisplayImage(propsIn: DisplayImageProps) {
           single: props.xSpacing,
         })}
       >
-        <Animatable
+        <LegacyAnimatable
           source={props.source}
           alt={props.alt}
           frame={props.frame}
-        ></Animatable>
+        ></LegacyAnimatable>
         <div
           className={classNames("absolute bottom-2/3", {
             "top-0": props.xSpacing,

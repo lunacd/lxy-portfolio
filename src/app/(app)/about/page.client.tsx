@@ -18,7 +18,7 @@ import {
   useState,
 } from "react";
 
-import Animatable from "@/components/Animatable";
+import LegacyAnimatable from "@/components/LegacyAnimatable";
 import Button from "@/components/Button";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Scroller from "@/components/Scroller";
@@ -92,7 +92,7 @@ function VideoGallery() {
             setOverlayOpen(true);
           }}
         >
-          <Animatable
+          <LegacyAnimatable
             source={{
               frames: [{ src: SocialInnovator, unoptimized: true }],
               width: 960,
@@ -113,7 +113,7 @@ function VideoGallery() {
             lg:col-span-4 lg:col-start-8 lg:row-start-2"
         >
           <div className="about_darken h-full w-full">
-            <Animatable
+            <LegacyAnimatable
               source={{
                 frames: [
                   { src: Traveller1 },
@@ -142,7 +142,7 @@ function VideoGallery() {
             lg:col-span-3 lg:row-start-5"
         >
           <div className="about_darken h-full w-full">
-            <Animatable
+            <LegacyAnimatable
               source={{
                 frames: [
                   { src: CraftsPerson1 },
@@ -168,7 +168,7 @@ function VideoGallery() {
             lg:col-span-3 lg:col-start-1 lg:row-start-8"
         >
           <div className="about_darken h-full w-full">
-            <Animatable
+            <LegacyAnimatable
               source={{
                 frames: [
                   { src: Photo1 },
@@ -196,7 +196,7 @@ function VideoGallery() {
             row-start-5 lg:col-span-6 lg:col-start-4 lg:row-start-5"
           style={{ flex: 960 / 606 }}
         >
-          <Animatable
+          <LegacyAnimatable
             source={{
               frames: [{ src: NatureObserver, unoptimized: true }],
               width: 960,
@@ -220,7 +220,7 @@ function VideoGallery() {
           }}
         >
           <div className="about_darken h-full w-full">
-            <Animatable
+            <LegacyAnimatable
               source={{
                 frames: [
                   { src: Dog1 },
@@ -247,7 +247,7 @@ function VideoGallery() {
             lg:block"
         >
           <div className="about_darken h-full w-full">
-            <Animatable
+            <LegacyAnimatable
               source={{
                 frames: [
                   { src: Thinker1 },
@@ -271,7 +271,7 @@ function VideoGallery() {
           className="about_rounded relative col-span-3 col-start-1 row-span-3 row-start-12
             lg:col-span-4 lg:col-start-7 lg:row-start-9"
         >
-          <Animatable
+          <LegacyAnimatable
             source={{
               frames: [{ src: Sports, unoptimized: true }],
               width: 480,

@@ -27,7 +27,7 @@ const defaultProps = {
   fill: false,
 };
 
-const Animatable: React.FC<AnimatableProps> = (propsIn) => {
+const LegacyAnimatable: React.FC<AnimatableProps> = (propsIn) => {
   const props = { ...defaultProps, ...propsIn };
 
   return (
@@ -86,4 +86,4 @@ const Animatable: React.FC<AnimatableProps> = (propsIn) => {
   );
 };
 
-export default Animatable;
+export default LegacyAnimatable;

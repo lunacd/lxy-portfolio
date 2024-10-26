@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 
-import Animatable, { AnimationData } from "@/components/Animatable";
+import LegacyAnimatable, { AnimationData } from "@/components/LegacyAnimatable";
 import { transitionSlow } from "@/utils/transitions";
 
 export enum GalleryRowLayout {
@@ -34,7 +34,7 @@ export default function GalleryRow(props: GalleryRowProps) {
         {props.images.map((image, innerIndex) => {
           if (props.images.length === 1) {
             return (
-              <Animatable
+              <LegacyAnimatable
                 source={image}
                 alt={`${props.description} gallery image`}
                 frame={props.currentFrame}
@@ -43,7 +43,7 @@ export default function GalleryRow(props: GalleryRowProps) {
             );
           } else {
             return (
-              <Animatable
+              <LegacyAnimatable
                 source={image}
                 alt={`${props.description} gallery image`}
                 frame={props.currentFrame}
@@ -70,7 +70,7 @@ export default function GalleryRow(props: GalleryRowProps) {
         ref={ref}
       >
         {props.images.map((image, innerIndex) => (
-          <Animatable
+          <LegacyAnimatable
             source={image}
             alt={`${props.description} gallery image`}
             frame={props.currentFrame}

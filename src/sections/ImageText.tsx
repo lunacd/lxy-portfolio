@@ -1,4 +1,4 @@
-import Animatable, { AnimationData } from "@/components/Animatable";
+import LegacyAnimatable, { AnimationData } from "@/components/LegacyAnimatable";
 import FloatUpMotion from "@/components/FloatUpMotion";
 import TextSection, {
   TextContent,
@@ -36,7 +36,7 @@ export function RichImageText(propsIn: RichImageTextProps) {
           md:grid-cols-3"
       >
         <div className="md:col-span-2">
-          <Animatable
+          <LegacyAnimatable
             source={props.source}
             frame={props.frame}
             alt={props.alt}
