@@ -30,6 +30,8 @@ function generateFileURL({
   return `${cdnDomain}/${prefix}/${filename}`;
 }
 
+const push = process.env.PAYLOAD_PUSH === "true";
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -48,8 +50,8 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || "",
     },
-    prodMigrations: migrations,
-    push: process.env.PAYLOAD_PUSH === "true",
+    prodMigrations: push ? undefined : migrations,
+    push: push,
   }),
   sharp,
   plugins: [
