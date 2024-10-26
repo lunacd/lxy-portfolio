@@ -6,7 +6,7 @@ import { PropsWithChildren, ReactNode } from "react";
 import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import EqualSplit from "@/components/EqualSplit";
-import HorizontalScroll from "@/components/HorizontalScroll";
+import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
 import Spacing from "@/components/Spacing";
 import TextSection, {
@@ -399,7 +399,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       <LegacySubtitle title="Wireframe" />
-      <HorizontalScroll
+      <LegacyHorizontalScroll
         src={Wireframe}
         width={7680}
         height={745}

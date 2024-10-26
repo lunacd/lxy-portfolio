@@ -16,7 +16,7 @@ const TitleBlock: Block = {
       defaultValue: "title",
       required: true,
     },
-    colorField,
+    colorField(),
     bottomMargin,
   ],
 };

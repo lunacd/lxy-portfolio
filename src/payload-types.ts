@@ -150,7 +150,7 @@ export interface ProjectPage {
     | {
         text: string;
         type: 'title' | 'subtitle';
-        color: 'dark' | 'light';
+        textColor: 'dark' | 'light';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -172,7 +172,7 @@ export interface ProjectPage {
           };
           [k: string]: unknown;
         };
-        color: 'dark' | 'light';
+        textColor: 'dark' | 'light';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -199,7 +199,7 @@ export interface ProjectPage {
           id?: string | null;
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-        color: 'dark' | 'light';
+        textColor: 'dark' | 'light';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -248,11 +248,21 @@ export interface ProjectPage {
           [k: string]: unknown;
         };
         image: number | Media;
-        color: 'dark' | 'light';
+        textColor: 'dark' | 'light';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
         blockType: 'textImage';
+      }
+    | {
+        image: number | Media;
+        scrollPrompt: string;
+        width: number;
+        textColor: 'dark' | 'light';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'horizontalScroll';
       }
     | {
         blocks: (
@@ -272,7 +282,7 @@ export interface ProjectPage {
                 };
                 [k: string]: unknown;
               };
-              color: 'dark' | 'light';
+              textColor: 'dark' | 'light';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -281,7 +291,7 @@ export interface ProjectPage {
           | {
               text: string;
               type: 'title' | 'subtitle';
-              color: 'dark' | 'light';
+              textColor: 'dark' | 'light';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -313,7 +323,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    color: 'dark' | 'light';
+                    textColor: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -322,7 +332,7 @@ export interface ProjectPage {
                 | {
                     text: string;
                     type: 'title' | 'subtitle';
-                    color: 'dark' | 'light';
+                    textColor: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -362,7 +372,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    color: 'dark' | 'light';
+                    textColor: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -371,7 +381,7 @@ export interface ProjectPage {
                 | {
                     text: string;
                     type: 'title' | 'subtitle';
-                    color: 'dark' | 'light';
+                    textColor: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -417,7 +427,7 @@ export interface ProjectPage {
                 };
                 [k: string]: unknown;
               };
-              color: 'dark' | 'light';
+              textColor: 'dark' | 'light';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -426,7 +436,7 @@ export interface ProjectPage {
           | {
               text: string;
               type: 'title' | 'subtitle';
-              color: 'dark' | 'light';
+              textColor: 'dark' | 'light';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -458,7 +468,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    color: 'dark' | 'light';
+                    textColor: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -467,7 +477,7 @@ export interface ProjectPage {
                 | {
                     text: string;
                     type: 'title' | 'subtitle';
-                    color: 'dark' | 'light';
+                    textColor: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -507,7 +517,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    color: 'dark' | 'light';
+                    textColor: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -516,7 +526,7 @@ export interface ProjectPage {
                 | {
                     text: string;
                     type: 'title' | 'subtitle';
-                    color: 'dark' | 'light';
+                    textColor: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;

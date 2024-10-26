@@ -1,4 +1,4 @@
-import {bottomMargin, colorField} from "../CommonFields";
+import { bottomMargin, colorField } from "../CommonFields";
 import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
@@ -35,7 +35,7 @@ const HorizontalGalleryBlock: Block = {
       required: true,
       defaultValue: "regular",
     },
-    colorField,
+    colorField(),
     bottomMargin,
   ],
 };

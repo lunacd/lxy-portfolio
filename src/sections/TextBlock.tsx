@@ -10,7 +10,9 @@ type TextChildProps = Extract<
 function TextChild(props: TextChildProps) {
   const children = props.children
     ? (props.children as TextChildProps[]).map(
-        (child: TextChildProps): ReactNode => TextChild(child),
+        (child: TextChildProps, index): ReactNode => (
+          <TextChild {...child} key={index}></TextChild>
+        ),
       )
     : [];
   switch (props.type) {
@@ -46,8 +48,8 @@ export default function TextBlock(props: TitleBlockProps) {
     <div
       className={classNames({
         "mb-spacing-3lg": props.bottomMargin,
-        "text-white": props.color === "light",
-        "text-black": props.color === "dark",
+        "text-white": props.textColor === "light",
+        "text-black": props.textColor === "dark",
       })}
     >
       {props.text.root.children.map((child, index) => (

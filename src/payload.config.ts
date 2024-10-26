@@ -5,6 +5,7 @@ import { Media } from "./collections/Media";
 import { ProjectPages } from "./collections/ProjectPages";
 import { Projects } from "./collections/Projects";
 import { Users } from "./collections/Users";
+import { migrations } from "./migrations";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { s3Storage } from "@payloadcms/storage-s3";
@@ -47,6 +48,8 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || "",
     },
+    prodMigrations: migrations,
+    push: process.env.PAYLOAD_PUSH === "true",
   }),
   sharp,
   plugins: [
@@ -55,11 +58,11 @@ export default buildConfig({
       collections: {
         media: {
           prefix: "media",
-          generateFileURL: generateFileURL,
+          generateFileURL: cdnDomain ? generateFileURL : undefined,
         },
         document: {
           prefix: "document",
-          generateFileURL: generateFileURL,
+          generateFileURL: cdnDomain ? generateFileURL : undefined,
         },
       },
       bucket: process.env.S3_BUCKET!,

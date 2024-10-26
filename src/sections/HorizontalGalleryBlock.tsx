@@ -28,7 +28,7 @@ export default function HorizontalGalleryBlock(
               blockType: "text",
               text: item.text,
               bottomMargin: false,
-              color: props.color,
+              textColor: props.textColor,
             },
           ],
           spacing: "small",

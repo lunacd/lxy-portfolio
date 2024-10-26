@@ -22,7 +22,7 @@ const TextBlock: Block = {
       relationTo: "media",
       required: true,
     },
-    colorField,
+    colorField(),
     bottomMargin,
   ],
 };

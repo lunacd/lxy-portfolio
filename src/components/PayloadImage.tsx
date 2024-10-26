@@ -11,6 +11,7 @@ interface PayloadImageProps {
   className?: string;
   fill?: boolean;
   sizes: string;
+  unoptimized?: boolean;
 }
 
 export default async function PayloadImage(props: PayloadImageProps) {
@@ -24,6 +25,7 @@ export default async function PayloadImage(props: PayloadImageProps) {
       className={props.className}
       fill={props.fill}
       sizes={props.sizes}
+      unoptimized={props.unoptimized}
     ></Image>
   );
 }

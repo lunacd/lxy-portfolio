@@ -2,7 +2,6 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
@@ -22,8 +21,6 @@ import Gallery2 from "@/images/m-tron/gallery/gallery-2-full.webp";
 import Gallery3 from "@/images/m-tron/gallery/gallery-3-full.webp";
 import Height1 from "@/images/m-tron/height-1-full.webp";
 import Height2 from "@/images/m-tron/height-2-full.webp";
-import Ideation from "@/images/m-tron/ideation-full.webp";
-import UserScenario from "@/images/m-tron/scenario-6x.webp";
 import SpeedController from "@/images/m-tron/speed-controller-full.webp";
 
 interface MTronProps {
@@ -35,25 +32,6 @@ export default function MTronClient(props: PropsWithChildren<MTronProps>) {
   return (
     <>
       {props.topChildren}
-
-      {/* Ideation */}
-      <LegacyTitle title="Ideation" textColor="text-white" />
-      <DisplayImage
-        source={{ frames: [{ src: Ideation }], width: 1920, height: 961 }}
-        alt="Ideation"
-      />
-
-      {/* User Scenario */}
-      <LegacyTitle title="User Scenario" textColor="text-white" />
-      <HorizontalScroll
-        prompt="Scroll horizontally to see the whole scenario!"
-        src={UserScenario}
-        width={11520}
-        height={1489}
-        alt="User scenario"
-        xSzie="3.5x"
-        textColor="text-white"
-      />
 
       {/* Features */}
       <LegacyTitle title="Features" textColor="text-white" />

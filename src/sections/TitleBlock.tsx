@@ -12,8 +12,8 @@ export default function TitleBlock(props: TitleBlockProps) {
     <div
       className={classNames(`${props.type}`, {
         "mb-spacing-lg": props.bottomMargin,
-        "text-white": props.color === "light",
-        "text-black": props.color === "dark",
+        "text-white": props.textColor === "light",
+        "text-black": props.textColor === "dark",
       })}
     >
       {props.text}

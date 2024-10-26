@@ -11,7 +11,7 @@ const TextBlock: Block = {
       required: true,
       editor: editor,
     },
-    colorField,
+    colorField(),
     bottomMargin,
   ],
 };

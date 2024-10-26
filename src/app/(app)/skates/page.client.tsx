@@ -3,7 +3,7 @@
 import { PropsWithChildren, ReactNode } from "react";
 
 import { GalleryRowLayout } from "@/components/GalleryRow";
-import HorizontalScroll from "@/components/HorizontalScroll";
+import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
 import SmallGallery from "@/components/SmallGallery";
 import Spacing from "@/components/Spacing";
@@ -154,7 +154,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
       />
 
       <LegacyTitle title="Concept Development" />
-      <HorizontalScroll
+      <LegacyHorizontalScroll
         src={ConceptDevelopment}
         width={3840}
         height={836}

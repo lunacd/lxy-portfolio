@@ -10,13 +10,15 @@ export const bottomMargin: Field = {
   },
 };
 
-export const colorField: Field = {
-  name: "color",
-  type: "radio",
-  options: ["dark", "light"],
-  defaultValue: "dark",
-  required: true,
-};
+export function colorField(fieldName: string = "textColor"): Field {
+  return {
+    name: fieldName,
+    type: "radio",
+    options: ["dark", "light"],
+    defaultValue: "dark",
+    required: true,
+  };
+}
 
 export const justifyField: Field = {
   name: "justify",

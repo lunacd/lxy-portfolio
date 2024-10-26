@@ -21,7 +21,7 @@ const defaultProps = {
   xSpacing: false,
 };
 
-const HorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
+const LegacyHorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
   const props = { ...defaultProps, ...propsIn };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -62,4 +62,4 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
   );
 };
 
-export default HorizontalScroll;
+export default LegacyHorizontalScroll;

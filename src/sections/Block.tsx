@@ -5,6 +5,7 @@ import "server-only";
 import ColumnBlock from "@/sections/ColumnBlock";
 import DocumentBlock from "@/sections/DocumentBlock";
 import HorizontalGalleryBlock from "@/sections/HorizontalGalleryBlock";
+import HorizontalScrollBlock from "@/sections/HorizontalScrollBlock";
 import ImageBlock from "@/sections/ImageBlock";
 import RowBlock from "@/sections/RowBlock";
 import TextBlock from "@/sections/TextBlock";
@@ -41,5 +42,7 @@ export default function Block(props: BlockProps) {
       return <DocumentBlock {...props.block} payload={props.payload} />;
     case "textImage":
       return <TextImageBlock {...props.block} payload={props.payload} />;
+    case "horizontalScroll":
+      return <HorizontalScrollBlock {...props.block} payload={props.payload} />;
   }
 }
