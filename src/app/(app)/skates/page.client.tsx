@@ -10,7 +10,7 @@ import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
-import TextImage from "@/sections/TextImage";
+import LegacyTextImage from "@/sections/LegacyTextImage";
 
 import Belonging1 from "@/images/skates/belonging-1-small.webp";
 import Belonging2 from "@/images/skates/belonging-2-small.webp";
@@ -60,7 +60,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
     <>
       {props.topChildren}
 
-      <TextImage
+      <LegacyTextImage
         title="Project Manifesto"
         content={[
           "A versatile chair designed for shared open spaces. “Skates” refers to its special affordances to dance around different needs and environments. It has two elegant “skating blades” and a multipurpose surface. It is designed to be casually shared, easily moved, and artfully arranged into any ad-hoc working space.",
@@ -77,7 +77,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
         xSpacing
       />
 
-      <TextImage
+      <LegacyTextImage
         title="Design Details"
         content={[
           "- Light color for casual vibe",
@@ -128,7 +128,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
       />
 
       <LegacyTitle title="Design Process" />
-      <TextImage
+      <LegacyTextImage
         image={FlexibleWork}
         width={960}
         height={1022}

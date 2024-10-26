@@ -9,7 +9,7 @@ import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
-import TextImage from "@/sections/TextImage";
+import LegacyTextImage from "@/sections/LegacyTextImage";
 
 import Evo1 from "@/images/sunrise/evolution/evolution-1-small.webp";
 import Evo2 from "@/images/sunrise/evolution/evolution-2-small.webp";
@@ -63,7 +63,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
       {props.topChildren}
 
       {/* Manifesto */}
-      <TextImage
+      <LegacyTextImage
         title="Project Manifesto"
         content={[
           "Sunrise speaker is a professional-grade speaker ideal for both indoor and outdoor use. The speaker, shining against the rising sun, complements the peaceful and reflective lifestyle of its users.",

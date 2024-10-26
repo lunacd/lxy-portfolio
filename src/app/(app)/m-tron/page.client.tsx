@@ -6,9 +6,7 @@ import HorizontalScroll from "@/components/HorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
-import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import LegacyTitle from "@/sections/LegacyTitle";
-import TextImage from "@/sections/TextImage";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import Brake1 from "@/images/m-tron/brake-1-full.webp";
@@ -25,11 +23,6 @@ import Gallery3 from "@/images/m-tron/gallery/gallery-3-full.webp";
 import Height1 from "@/images/m-tron/height-1-full.webp";
 import Height2 from "@/images/m-tron/height-2-full.webp";
 import Ideation from "@/images/m-tron/ideation-full.webp";
-import Inspiration from "@/images/m-tron/inspiration-half.webp";
-import Manifesto from "@/images/m-tron/manifesto-half.webp";
-import Moodboard1 from "@/images/m-tron/moodboard/futuristic-small.webp";
-import Moodboard2 from "@/images/m-tron/moodboard/light-and-curve-small.webp";
-import Moodboard3 from "@/images/m-tron/moodboard/surface-change-small.webp";
 import UserScenario from "@/images/m-tron/scenario-6x.webp";
 import SpeedController from "@/images/m-tron/speed-controller-full.webp";
 
@@ -42,43 +35,6 @@ export default function MTronClient(props: PropsWithChildren<MTronProps>) {
   return (
     <>
       {props.topChildren}
-
-      {/* Project Manifesto */}
-      <TextImage
-        title="Project Manifesto"
-        content={[
-          "A shared semi-automatic scooter inside Walt Disney World for both kids and adult to transport between different rides.",
-        ]}
-        image={Manifesto}
-        width={960}
-        height={921}
-        textColor="text-white"
-      />
-
-      {/* Inspiration */}
-      <TextImage
-        title="Inspiration: Shared Mobility"
-        content={[
-          "The target user of today's shared mobility is mainly adults. There is an exclusiveness of kids. Therefore, I design this shared semi-automatic scooter inside Walt Disney World for both kids and adult. ",
-        ]}
-        image={Inspiration}
-        width={960}
-        height={692}
-        textColor="text-white"
-      />
-
-      {/* Moodboard */}
-      <LegacyTitle title="Moodboard" textColor="text-white" />
-      <LegacyHorizontalGallery
-        items={[
-          { image: Moodboard1, title: "Futuristic" },
-          { image: Moodboard2, title: "Light and Curve Line" },
-          { image: Moodboard3, title: "Surface Change" },
-        ]}
-        width={640}
-        height={431}
-        textColor="text-white"
-      />
 
       {/* Ideation */}
       <LegacyTitle title="Ideation" textColor="text-white" />

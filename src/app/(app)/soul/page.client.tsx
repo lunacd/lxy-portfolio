@@ -11,7 +11,7 @@ import DisplayImage from "@/sections/DisplayImage";
 import ImageText from "@/sections/ImageText";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
-import TextImage from "@/sections/TextImage";
+import LegacyTextImage from "@/sections/LegacyTextImage";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import BrandResearch from "@/images/soul/brand-research-full.webp";
@@ -68,7 +68,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       {props.topChildren}
 
       {/* Manifesto */}
-      <TextImage
+      <LegacyTextImage
         title="A lifestyle of self-perfection"
         content={[
           "Regularly meditating with Rolls-Royce Meditation sets you up forever to better yourself every day. Accompanying the Rolls-Royce meditation set, you could easily fall into peace and clarity through your senses: sight, smell, and sound.",
@@ -91,7 +91,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       </Button>
       <div className="pt-spacing-3lg" />
 
-      <TextImage
+      <LegacyTextImage
         title="Rolls-Royce Brand Value: Inspiring Greatness"
         content={[
           "“Our strive for perfection guides us. Rolls-Royce is an everlasting expression of the exceptional, where everything we do reflects our persistence and commitment towards the remarkable.”",
@@ -105,7 +105,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       {/* User Research */}
       <LegacyTitle title="User Research" />
 
-      <TextImage
+      <LegacyTextImage
         title="Regular Meditators"
         content={[
           "- Meditate regularly",
@@ -117,7 +117,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         width={960}
         height={1029}
       />
-      <TextImage
+      <LegacyTextImage
         title="User Need: Simple, Personal, Soothing"
         image={UserNeed}
         content={[
@@ -239,7 +239,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* Instrument */}
-      <TextImage
+      <LegacyTextImage
         title="Soul Instrument"
         content={[
           "Plays healing and soothing sounds by using repeated action to help users fall into peace and clarity.",
@@ -317,7 +317,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* Light */}
-      <TextImage
+      <LegacyTextImage
         title="Ambient Lighting Lamp"
         content={[
           "Gracefully changing lights create a good vibe for customers to feel tranquil and peaceful.",
@@ -368,7 +368,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       {/* Controlling System */}
-      <TextImage
+      <LegacyTextImage
         title="Controlling System"
         content={[
           "Customizable",

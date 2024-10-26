@@ -8,6 +8,7 @@ import HorizontalGalleryBlock from "@/sections/HorizontalGalleryBlock";
 import ImageBlock from "@/sections/ImageBlock";
 import RowBlock from "@/sections/RowBlock";
 import TextBlock from "@/sections/TextBlock";
+import TextImageBlock from "@/sections/TextImageBlock";
 import TitleBlock from "@/sections/TitleBlock";
 import YouTubeBlock from "@/sections/YouTubeBlock";
 
@@ -38,5 +39,7 @@ export default function Block(props: BlockProps) {
       return <YouTubeBlock {...props.block} />;
     case "document":
       return <DocumentBlock {...props.block} payload={props.payload} />;
+    case "textImage":
+      return <TextImageBlock {...props.block} payload={props.payload} />;
   }
 }

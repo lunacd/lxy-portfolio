@@ -1,4 +1,4 @@
-import { bottomMargin } from "../CommonFields";
+import { bottomMargin, justifyField } from "../CommonFields";
 import ImageBlock from "./ImageBlock";
 import RowBlock from "./RowBlock";
 import TextBlock from "./TextBlock";
@@ -24,6 +24,7 @@ export default function ColumnBlock(depth: number): Block {
         required: true,
         defaultValue: "regular",
       },
+      justifyField,
       bottomMargin,
     ],
   };

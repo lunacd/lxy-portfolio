@@ -61,7 +61,7 @@ export function RichTextImage(propsIn: RichTextImageProps) {
   );
 }
 
-export default function TextImage(props: TextImageProps) {
+export default function LegacyTextImage(props: TextImageProps) {
   return (
     <RichTextImage
       {...props}

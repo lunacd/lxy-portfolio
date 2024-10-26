@@ -9,7 +9,7 @@ import SmallGallery from "@/components/SmallGallery";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
-import TextImage from "@/sections/TextImage";
+import LegacyTextImage from "@/sections/LegacyTextImage";
 
 import BagMaking1 from "@/images/lyu/bag-making/bag-making-1-small.webp";
 import BagMaking2 from "@/images/lyu/bag-making/bag-making-2-small.webp";
@@ -85,7 +85,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
       {props.topChildren}
 
       {/* Manifesto */}
-      <TextImage
+      <LegacyTextImage
         title="Project Manifesto"
         content={[
           "Design and make a leather, eccentric tote bag and shoes, to go with my artistic style.",

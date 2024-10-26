@@ -24,10 +24,16 @@ export default function HorizontalGalleryBlock(
               imageSize: 100 / props.items.length,
               bottomMargin: false,
             },
-            { blockType: "text", text: item.text, bottomMargin: false },
+            {
+              blockType: "text",
+              text: item.text,
+              bottomMargin: false,
+              color: props.color,
+            },
           ],
           spacing: "small",
           bottomMargin: false,
+          justify: "start",
         };
       })}
       spacing={props.spacing}

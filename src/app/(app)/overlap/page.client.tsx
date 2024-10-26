@@ -11,7 +11,7 @@ import DisplayImage from "@/sections/DisplayImage";
 import ImageText from "@/sections/ImageText";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
-import TextImage from "@/sections/TextImage";
+import LegacyTextImage from "@/sections/LegacyTextImage";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import Benchmark from "@/images/overlap/benchmark-full.webp";
@@ -88,7 +88,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       {props.topChildren}
 
       {/* Manifesto */}
-      <TextImage
+      <LegacyTextImage
         title="Project Manifesto"
         content={[
           "A collection of office accessories that provides an intuitive concept of category to help users better organize their time, space, and objects.",
@@ -146,7 +146,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       />
 
       {/* Timer */}
-      <TextImage
+      <LegacyTextImage
         title="Timer"
         content={[
           "Overlapped part = Set up time",
@@ -164,7 +164,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       />
 
       {/* File Sorter */}
-      <TextImage
+      <LegacyTextImage
         title="File Sorter"
         content={[
           "Four different translucent colored blockers categorize files with height and color.",
@@ -198,7 +198,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
       />
 
       {/* Tray */}
-      <TextImage
+      <LegacyTextImage
         title="Tray"
         content={[
           "Four different colors, size, and depth trays to categorize office accessories",

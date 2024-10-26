@@ -46,6 +46,8 @@ export default function TextBlock(props: TitleBlockProps) {
     <div
       className={classNames({
         "mb-spacing-3lg": props.bottomMargin,
+        "text-white": props.color === "light",
+        "text-black": props.color === "dark",
       })}
     >
       {props.text.root.children.map((child, index) => (

@@ -151,6 +151,7 @@ export interface ProjectPage {
         text: string;
         type: 'title' | 'subtitle';
         color: 'dark' | 'light';
+        bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
         blockType: 'title';
@@ -171,6 +172,7 @@ export interface ProjectPage {
           };
           [k: string]: unknown;
         };
+        color: 'dark' | 'light';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -197,6 +199,7 @@ export interface ProjectPage {
           id?: string | null;
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        color: 'dark' | 'light';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -228,6 +231,30 @@ export interface ProjectPage {
         blockType: 'document';
       }
     | {
+        title: string;
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        image: number | Media;
+        color: 'dark' | 'light';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'textImage';
+      }
+    | {
         blocks: (
           | {
               text: {
@@ -245,6 +272,7 @@ export interface ProjectPage {
                 };
                 [k: string]: unknown;
               };
+              color: 'dark' | 'light';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -254,6 +282,7 @@ export interface ProjectPage {
               text: string;
               type: 'title' | 'subtitle';
               color: 'dark' | 'light';
+              bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
               blockType: 'title';
@@ -284,6 +313,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
+                    color: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -293,6 +323,7 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     color: 'dark' | 'light';
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -307,6 +338,7 @@ export interface ProjectPage {
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              justify: 'start' | 'center' | 'end';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -330,6 +362,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
+                    color: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -339,6 +372,7 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     color: 'dark' | 'light';
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -383,6 +417,7 @@ export interface ProjectPage {
                 };
                 [k: string]: unknown;
               };
+              color: 'dark' | 'light';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -392,6 +427,7 @@ export interface ProjectPage {
               text: string;
               type: 'title' | 'subtitle';
               color: 'dark' | 'light';
+              bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
               blockType: 'title';
@@ -422,6 +458,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
+                    color: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -431,6 +468,7 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     color: 'dark' | 'light';
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -445,6 +483,7 @@ export interface ProjectPage {
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              justify: 'start' | 'center' | 'end';
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -468,6 +507,7 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
+                    color: 'dark' | 'light';
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -477,6 +517,7 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     color: 'dark' | 'light';
+                    bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -498,6 +539,7 @@ export interface ProjectPage {
             }
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        justify: 'start' | 'center' | 'end';
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;

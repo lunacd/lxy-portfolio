@@ -17,7 +17,7 @@ import TextSection, {
 import DisplayImage, { StaticDisplayImage } from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
-import { RichTextImage } from "@/sections/TextImage";
+import { RichTextImage } from "@/sections/LegacyTextImage";
 
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";

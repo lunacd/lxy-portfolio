@@ -3,13 +3,24 @@ import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
 const TextBlock: Block = {
-  slug: "text",
+  slug: "textImage",
   fields: [
+    {
+      name: "title",
+      type: "text",
+      required: true,
+    },
     {
       name: "text",
       type: "richText",
       required: true,
       editor: editor,
+    },
+    {
+      name: "image",
+      type: "upload",
+      relationTo: "media",
+      required: true,
     },
     colorField,
     bottomMargin,
