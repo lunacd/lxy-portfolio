@@ -73,20 +73,35 @@ export const getProjectsWithFocus = React.cache(
         equals: true,
       },
     };
-    const projects = (
+    return (
       await payload.find({
         collection: "projects",
         pagination: false,
         where: query,
+        sort: "order",
       })
     ).docs;
-
-    let focusName = undefined;
-    if (projects.length > 0) {
-      focusName = projects[0].focuses!.find(
-        (focus) => focus.focusId === focusId,
-      )?.focus;
-    }
-    return { projects: projects, focusName: focusName };
   },
 );
+
+export function inferFocusName(projects: Project[], focusId: string) {
+  let focusName = undefined;
+  if (projects.length > 0) {
+    focusName = projects[0].focuses!.find(
+      (focus) => focus.focusId === focusId,
+    )?.focus;
+  }
+  return focusName;
+}
+
+export async function getMainProjects(payload: Payload) {
+  return (
+    await payload.find({
+      collection: "projects",
+      where: {
+        isMainProject: { equals: true },
+      },
+      sort: "order",
+    })
+  ).docs;
+}

@@ -236,3 +236,18 @@ export const sidebarRoutes = [
   { uri: "about", name: "About", link: "/about", typeClass: "subtitle" },
   { uri: "others", name: "More Work", link: "/others", typeClass: "subtitle" },
 ];
+
+export const mainFocuses = {
+  "product-design": {
+    uri: "product-design",
+    name: "Product Design",
+  },
+  "user-experience-design": {
+    uri: "user-experience-design",
+    name: "UX Design",
+  },
+  edtech: {
+    uri: "edtech",
+    name: "EdTech Design",
+  },
+};

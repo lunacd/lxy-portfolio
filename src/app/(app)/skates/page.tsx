@@ -3,6 +3,7 @@ import config from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
+import PageScaffold from "@/components/PageScaffold";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/sections/TopDisplay";
@@ -24,12 +25,14 @@ export default async function Skates() {
     })
   ).docs[0];
   return (
-    <Scroller bgColor={skatesData.backgroundColor}>
-      <SkatesClient
-        topChildren={<TopDisplay project={skatesData} payload={payload} />}
-      >
-        <ProjectNavigation next="/tura" />
-      </SkatesClient>
-    </Scroller>
+    <PageScaffold>
+      <Scroller bgColor={skatesData.backgroundColor}>
+        <SkatesClient
+          topChildren={<TopDisplay project={skatesData} payload={payload} />}
+        >
+          <ProjectNavigation next="/tura" />
+        </SkatesClient>
+      </Scroller>
+    </PageScaffold>
   );
 }

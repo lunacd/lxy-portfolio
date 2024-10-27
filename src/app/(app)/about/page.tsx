@@ -2,6 +2,8 @@ import Profile from "./Profile";
 import AboutClient from "./page.client";
 import { Metadata } from "next";
 
+import PageScaffold from "@/components/PageScaffold";
+
 export const metadata: Metadata = {
   title: "About | Shirley Lyu",
 };
@@ -9,9 +11,11 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
-      <AboutClient>
-        <Profile />
-      </AboutClient>
+      <PageScaffold>
+        <AboutClient>
+          <Profile />
+        </AboutClient>
+      </PageScaffold>
     </>
   );
 }

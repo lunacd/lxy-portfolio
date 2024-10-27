@@ -12,6 +12,13 @@ const nextConfig = withPayload({
         pathname: "/**",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "r2-dev.lunacd.com",
+        port: "",
+        pathname: "/**",
+        search: "",
+      },
     ],
   },
   async redirects() {

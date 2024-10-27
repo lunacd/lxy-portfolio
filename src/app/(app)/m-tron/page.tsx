@@ -5,6 +5,7 @@ import { Metadata } from "next";
 
 import AnimationCoordinator from "@/components/AnimationCoordinator";
 import FloatUpMotion from "@/components/FloatUpMotion";
+import PageScaffold from "@/components/PageScaffold";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Block from "@/sections/Block";
@@ -36,25 +37,27 @@ export default async function MTron() {
   ).docs[0];
 
   return (
-    <AnimationCoordinator>
-      <Scroller
-        bgColor={mTronData.pageBackgroundColor ?? mTronData.backgroundColor}
-      >
-        <MTronClient
-          topChildren={
-            <>
-              <TopDisplay project={mTronData} payload={payload} />
-              {mTronPageData.blocks.map((block, index) => (
-                <FloatUpMotion className="single" key={index}>
-                  <Block block={block} payload={payload} />
-                </FloatUpMotion>
-              ))}
-            </>
-          }
+    <PageScaffold>
+      <AnimationCoordinator>
+        <Scroller
+          bgColor={mTronData.pageBackgroundColor ?? mTronData.backgroundColor}
         >
-          <ProjectNavigation prev="/sunrise" textColor="text-white" />
-        </MTronClient>
-      </Scroller>
-    </AnimationCoordinator>
+          <MTronClient
+            topChildren={
+              <>
+                <TopDisplay project={mTronData} payload={payload} />
+                {mTronPageData.blocks.map((block, index) => (
+                  <FloatUpMotion className="single" key={index}>
+                    <Block block={block} payload={payload} />
+                  </FloatUpMotion>
+                ))}
+              </>
+            }
+          >
+            <ProjectNavigation prev="/sunrise" textColor="text-white" />
+          </MTronClient>
+        </Scroller>
+      </AnimationCoordinator>
+    </PageScaffold>
   );
 }

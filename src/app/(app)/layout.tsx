@@ -1,77 +1,17 @@
-"use client";
-
 import "./global.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { AnimatePresence, motion } from "framer-motion";
-import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Catamaran } from "next/font/google";
-import { usePathname } from "next/navigation";
-import React, {
-  PropsWithChildren,
-  useContext,
-  useReducer,
-  useRef,
-} from "react";
-
-import PageRoot from "@/components/PageRoot";
-import { Sidebar } from "@/sections/Sidebar";
-import { getInitialState, stateReducer } from "@/utils/GlobalState";
-import GlobalStateContext from "@/utils/GlobalStateContext";
+import { PropsWithChildren } from "react";
 
 const catamaran = Catamaran({ subsets: ["latin"] });
 
-function FrozenRouter(props: PropsWithChildren) {
-  const context = useContext(LayoutRouterContext);
-  const frozen = useRef(context).current;
-
-  return (
-    <LayoutRouterContext.Provider value={frozen}>
-      {props.children}
-    </LayoutRouterContext.Provider>
-  );
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const pathname = usePathname();
-  const [globalState, dispatch] = useReducer(
-    stateReducer,
-    pathname,
-    getInitialState,
-  );
-  const providerValue = {
-    globalState,
-    dispatch,
-  };
-
+export default function RootLayout(props: PropsWithChildren) {
   return (
     <html lang="en">
-      <body className={catamaran.className}>
-        <PageRoot>
-          <GlobalStateContext.Provider value={providerValue}>
-            <Sidebar />
-            <div className="relative min-h-screen flex-grow overflow-x-hidden">
-              <AnimatePresence initial={false}>
-                <motion.div
-                  className="absolute left-0 top-0 z-0 h-full w-full"
-                  initial={{ x: "100%" }}
-                  animate={{ x: "0%" }}
-                  exit={{ x: "-100%" }}
-                  transition={{ ease: "easeInOut", duration: 0.5 }}
-                  key={pathname}
-                  layoutId={pathname}
-                >
-                  <FrozenRouter>{children}</FrozenRouter>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </GlobalStateContext.Provider>
-        </PageRoot>
-      </body>
+      <body className={catamaran.className}>{props.children}</body>
       <GoogleAnalytics gaId="G-26S1RW6P14" />
+      <SpeedInsights />
     </html>
   );
 }

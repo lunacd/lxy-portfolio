@@ -4,6 +4,7 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
+import PageScaffold from "@/components/PageScaffold";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/sections/TopDisplay";
 
@@ -24,12 +25,14 @@ export default async function Refugia() {
     })
   ).docs[0];
   return (
-    <Scroller bgColor={refugiaData.backgroundColor}>
-      <RefugiaClient
-        topChildren={<TopDisplay project={refugiaData} payload={payload} />}
-      >
-        <ConnectPrompt />
-      </RefugiaClient>
-    </Scroller>
+    <PageScaffold>
+      <Scroller bgColor={refugiaData.backgroundColor}>
+        <RefugiaClient
+          topChildren={<TopDisplay project={refugiaData} payload={payload} />}
+        >
+          <ConnectPrompt />
+        </RefugiaClient>
+      </Scroller>
+    </PageScaffold>
   );
 }

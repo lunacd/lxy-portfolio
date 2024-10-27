@@ -3,6 +3,7 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
 import FloatUpMotion from "@/components/FloatUpMotion";
+import PageScaffold from "@/components/PageScaffold";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import Block from "@/sections/Block";
@@ -33,14 +34,16 @@ export default async function AgainFromScratch() {
     })
   ).docs[0];
   return (
-    <Scroller bgColor={againFromScratchProjectData.backgroundColor}>
-      <TopDisplay project={againFromScratchProjectData} payload={payload} />
-      {againFromScratchPageData.blocks.map((block, index) => (
-        <FloatUpMotion className="single" key={index}>
-          <Block block={block} payload={payload} />
-        </FloatUpMotion>
-      ))}
-      <ProjectNavigation prev="/overlap" next="/sunrise" />
-    </Scroller>
+    <PageScaffold>
+      <Scroller bgColor={againFromScratchProjectData.backgroundColor}>
+        <TopDisplay project={againFromScratchProjectData} payload={payload} />
+        {againFromScratchPageData.blocks.map((block, index) => (
+          <FloatUpMotion className="single" key={index}>
+            <Block block={block} payload={payload} />
+          </FloatUpMotion>
+        ))}
+        <ProjectNavigation prev="/overlap" next="/sunrise" />
+      </Scroller>
+    </PageScaffold>
   );
 }

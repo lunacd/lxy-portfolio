@@ -5,7 +5,7 @@ import React from "react";
 
 import ProjectsGallery from "@/components/ProjectsGallery";
 import Scroller from "@/components/Scroller";
-import { getProjectsWithFocus } from "@/utils/payloadHelpers";
+import { getProjectsWithFocus, inferFocusName } from "@/utils/payloadHelpers";
 
 export async function generateMetadata({
   params,
@@ -16,7 +16,8 @@ export async function generateMetadata({
     config,
   });
   const projectFocus = (await params).focus;
-  const { focusName } = await getProjectsWithFocus(projectFocus, payload);
+  const projectsWithFocus = await getProjectsWithFocus(projectFocus, payload);
+  const focusName = await inferFocusName(projectsWithFocus, projectFocus);
   return {
     title: `${focusName} Projects | Shirley Lyu`,
   };
@@ -31,10 +32,8 @@ export default async function ProjectsCategory({
     config,
   });
   const projectFocus = (await params).focus;
-  const { projects, focusName } = await getProjectsWithFocus(
-    projectFocus,
-    payload,
-  );
+  const projects = await getProjectsWithFocus(projectFocus, payload);
+  const focusName = inferFocusName(projects, projectFocus);
   if (projects.length === 0) {
     notFound();
   }

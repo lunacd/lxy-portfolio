@@ -3,6 +3,7 @@ import config from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
+import PageScaffold from "@/components/PageScaffold";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/sections/TopDisplay";
@@ -24,12 +25,14 @@ export default async function Soul() {
     })
   ).docs[0];
   return (
-    <Scroller bgColor={soulData.backgroundColor}>
-      <SoulClient
-        topChildren={<TopDisplay project={soulData} payload={payload} />}
-      >
-        <ProjectNavigation prev="/lamboozled" next="/overlap" />
-      </SoulClient>
-    </Scroller>
+    <PageScaffold>
+      <Scroller bgColor={soulData.backgroundColor}>
+        <SoulClient
+          topChildren={<TopDisplay project={soulData} payload={payload} />}
+        >
+          <ProjectNavigation prev="/lamboozled" next="/overlap" />
+        </SoulClient>
+      </Scroller>
+    </PageScaffold>
   );
 }

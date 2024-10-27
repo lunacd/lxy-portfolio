@@ -8,9 +8,9 @@ import { notFound } from "next/navigation";
 import React from "react";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
+import PageScaffold from "@/components/PageScaffold";
 import { getProjectsWithFocus } from "@/utils/payloadHelpers";
-
-const mainFocuses = ["product-design", "user-experience-design", "edtech"];
+import { mainFocuses } from "@/utils/projectData";
 
 export default async function FocusPage({
   params,
@@ -18,16 +18,16 @@ export default async function FocusPage({
   params: Promise<{ focus: string }>;
 }) {
   const focus = (await params).focus;
-  if (!mainFocuses.includes(focus)) {
+  if (!(focus in mainFocuses)) {
     return notFound();
   }
   const payload = await getPayloadHMR({
     config,
   });
-  const { projects } = await getProjectsWithFocus(focus, payload);
+  const projects = await getProjectsWithFocus(focus, payload);
 
   return (
-    <div className="relative h-full flex-grow overflow-hidden">
+    <PageScaffold focus={focus}>
       <LandingScrollIndicator>
         <AnimatePresence initial={false}>
           {projects.map((project) => (
@@ -42,6 +42,6 @@ export default async function FocusPage({
         </AnimatePresence>
         <ConnectPrompt />
       </LandingScrollIndicator>
-    </div>
+    </PageScaffold>
   );
 }

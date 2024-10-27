@@ -3,6 +3,7 @@ import config from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
+import PageScaffold from "@/components/PageScaffold";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/sections/TopDisplay";
@@ -24,12 +25,14 @@ export default async function Sunrise() {
     })
   ).docs[0];
   return (
-    <Scroller bgColor={sunriseData.backgroundColor}>
-      <SunriseClient
-        topChildren={<TopDisplay project={sunriseData} payload={payload} />}
-      >
-        <ProjectNavigation prev="/again-from-scratch" next="/m-tron" />
-      </SunriseClient>
-    </Scroller>
+    <PageScaffold>
+      <Scroller bgColor={sunriseData.backgroundColor}>
+        <SunriseClient
+          topChildren={<TopDisplay project={sunriseData} payload={payload} />}
+        >
+          <ProjectNavigation prev="/again-from-scratch" next="/m-tron" />
+        </SunriseClient>
+      </Scroller>
+    </PageScaffold>
   );
 }
