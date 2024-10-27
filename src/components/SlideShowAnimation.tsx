@@ -4,13 +4,19 @@ import { AnimationContext } from "./AnimationCoordinator";
 import classNames from "classnames";
 import { Children, PropsWithChildren, useContext } from "react";
 
-export default function SlideShowAnimation(props: PropsWithChildren) {
+interface SlideShowAnimationProps {
+  className?: string;
+}
+
+export default function SlideShowAnimation(
+  props: PropsWithChildren<SlideShowAnimationProps>,
+) {
   const animationData = useContext(AnimationContext);
   const children = Children.toArray(props.children);
   const frame = animationData.frame % children.length;
   const count = Children.count(props.children);
   return (
-    <div className="relative">
+    <div className={`relative ${props.className ?? ""}`}>
       {Children.map(props.children, (child, index) => (
         <div
           key={index}

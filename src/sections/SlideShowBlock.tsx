@@ -14,7 +14,11 @@ type SlideShowBlockProps = Extract<
 export default function SlideShowBlock(props: SlideShowBlockProps) {
   return (
     <>
-      <SlideShowAnimation>
+      <SlideShowAnimation
+        className={classNames({
+          "mb-spacing-3lg": props.bottomMargin,
+        })}
+      >
         {props.images.map((image, index) => (
           <div
             className={classNames(
