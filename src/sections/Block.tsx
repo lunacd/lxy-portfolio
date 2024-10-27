@@ -8,6 +8,7 @@ import HorizontalGalleryBlock from "@/sections/HorizontalGalleryBlock";
 import HorizontalScrollBlock from "@/sections/HorizontalScrollBlock";
 import ImageBlock from "@/sections/ImageBlock";
 import RowBlock from "@/sections/RowBlock";
+import SlideShowBlock from "@/sections/SlideShowBlock";
 import TextBlock from "@/sections/TextBlock";
 import TextImageBlock from "@/sections/TextImageBlock";
 import TitleBlock from "@/sections/TitleBlock";
@@ -44,5 +45,7 @@ export default function Block(props: BlockProps) {
       return <TextImageBlock {...props.block} payload={props.payload} />;
     case "horizontalScroll":
       return <HorizontalScrollBlock {...props.block} payload={props.payload} />;
+    case "slideShow":
+      return <SlideShowBlock {...props.block} payload={props.payload} />;
   }
 }

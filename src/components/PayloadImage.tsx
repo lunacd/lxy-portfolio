@@ -23,6 +23,9 @@ export default async function PayloadImage(props: PayloadImageProps) {
       width={props.fill ? undefined : media.width}
       height={props.fill ? undefined : media.height}
       className={props.className}
+      style={{
+        flex: media.width / media.height,
+      }}
       fill={props.fill}
       sizes={props.sizes}
       unoptimized={props.unoptimized}

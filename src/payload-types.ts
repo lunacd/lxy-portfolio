@@ -265,6 +265,16 @@ export interface ProjectPage {
         blockType: 'horizontalScroll';
       }
     | {
+        images: {
+          image: number | Media;
+          id?: string | null;
+        }[];
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'slideShow';
+      }
+    | {
         blocks: (
           | {
               text: {
