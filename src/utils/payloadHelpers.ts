@@ -1,5 +1,6 @@
 import { Document, Media, Project } from "@payload-types";
-import { Payload } from "payload";
+import { Payload, Where } from "payload";
+import React from "react";
 import "server-only";
 
 interface NonOptionalMedia {
@@ -61,3 +62,31 @@ export function getProjectLink(
   }
   return `/${uri}`;
 }
+
+export const getProjectsWithFocus = React.cache(
+  async (focusId: string, payload: Payload) => {
+    const query: Where = {
+      "focuses.focusId": {
+        equals: focusId,
+      },
+      isMainProject: {
+        equals: true,
+      },
+    };
+    const projects = (
+      await payload.find({
+        collection: "projects",
+        pagination: false,
+        where: query,
+      })
+    ).docs;
+
+    let focusName = undefined;
+    if (projects.length > 0) {
+      focusName = projects[0].focuses!.find(
+        (focus) => focus.focusId === focusId,
+      )?.focus;
+    }
+    return { projects: projects, focusName: focusName };
+  },
+);

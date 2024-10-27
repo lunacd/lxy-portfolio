@@ -1,38 +1,11 @@
 import config from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
-import { Payload, Where } from "payload";
+import { notFound } from "next/navigation";
 import React from "react";
 
 import ProjectsGallery from "@/components/ProjectsGallery";
 import Scroller from "@/components/Scroller";
-
-const getProjectsWithFocus = React.cache(
-  async (focusId: string, payload: Payload) => {
-    const query: Where = {
-      "focuses.focusId": {
-        equals: focusId,
-      },
-      isMainProject: {
-        equals: true,
-      },
-    };
-    const projects = (
-      await payload.find({
-        collection: "projects",
-        pagination: false,
-        where: query,
-      })
-    ).docs;
-
-    let focusName = undefined;
-    if (projects.length > 0) {
-      focusName = projects[0].focuses!.find(
-        (focus) => focus.focusId === focusId,
-      )?.focus;
-    }
-    return { projects: projects, focusName: focusName };
-  },
-);
+import { getProjectsWithFocus } from "@/utils/payloadHelpers";
 
 export async function generateMetadata({
   params,
@@ -62,17 +35,13 @@ export default async function ProjectsCategory({
     projectFocus,
     payload,
   );
+  if (projects.length === 0) {
+    notFound();
+  }
   return (
     <Scroller bgColor="bg-[#FDF9F1]">
-      {projects.length === 0 && (
-        <div className="title">No projects found :(</div>
-      )}
-      {projects.length > 0 && (
-        <>
-          <div className="single title mt-spacing">{focusName} Projects</div>
-          <ProjectsGallery payload={payload} projects={projects} />
-        </>
-      )}
+      <div className="single title mt-spacing">{focusName} Projects</div>
+      <ProjectsGallery payload={payload} projects={projects} />
     </Scroller>
   );
 }
