@@ -78,7 +78,7 @@ export const getProjectsWithFocus = React.cache(
         collection: "projects",
         pagination: false,
         where: query,
-        sort: "order",
+        sort: "subsetOrder",
       })
     ).docs;
   },

@@ -115,6 +115,7 @@ export interface Project {
   name: string;
   uri: string;
   order: number;
+  subsetOrder: number;
   isMainProject: boolean;
   duration?: string | null;
   category: string;

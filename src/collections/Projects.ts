@@ -61,6 +61,16 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: "subsetOrder",
+      type: "number",
+      required: true,
+      defaultValue: 0,
+      admin: {
+        description:
+          "The order of projects used in subsets of projects, like Product Design projects.",
+      },
+    },
+    {
       name: "isMainProject",
       type: "checkbox",
       required: true,
