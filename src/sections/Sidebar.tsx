@@ -18,7 +18,7 @@ export default async function Sidebar(props: SidebarProps) {
     ? await getProjectsWithFocus(props.focus, payload)
     : await getMainProjects(payload);
   const projectUris = projects.map((project) => project.uri);
-  const projectRoutes = projects.map((project) => {
+  let projectRoutes = projects.map((project) => {
     return {
       name: project.name,
       uri: project.uri,
@@ -26,22 +26,24 @@ export default async function Sidebar(props: SidebarProps) {
     };
   });
   if (props.focus) {
-    let insertLinkAfter = false;
+    let insertRouteAfter = false;
+    const prefixRoutes = [];
     for (const mainFocus of Object.values(mainFocuses)) {
       const focusLink = {
         name: mainFocus.name,
         uri: `focus/${mainFocus.uri}`,
         className: "subtitle",
       };
-      if (insertLinkAfter) {
+      if (insertRouteAfter) {
         projectRoutes.push(focusLink);
       } else {
-        projectRoutes.unshift(focusLink);
+        prefixRoutes.push(focusLink);
       }
       if (mainFocus.uri === props.focus) {
-        insertLinkAfter = true;
+        insertRouteAfter = true;
       }
     }
+    projectRoutes = prefixRoutes.concat(projectRoutes);
   }
 
   return <SidebarInteractive projects={projectUris} routes={projectRoutes} />;

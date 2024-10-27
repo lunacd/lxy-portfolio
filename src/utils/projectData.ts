@@ -240,14 +240,14 @@ export const sidebarRoutes = [
 export const mainFocuses = {
   "product-design": {
     uri: "product-design",
-    name: "Product Design",
+    name: "Product",
   },
   "user-experience-design": {
     uri: "user-experience-design",
-    name: "UX Design",
+    name: "User Experience",
   },
   edtech: {
     uri: "edtech",
-    name: "EdTech Design",
+    name: "EdTech",
   },
 };
