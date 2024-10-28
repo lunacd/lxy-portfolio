@@ -59,6 +59,10 @@ export function stateReducer(state: GlobalState, action: GlobalStateAction) {
     newState.currentProject = action.project;
   } else if (action.type === "changeRoute") {
     newState.focus = getFocus(action.newPath);
+    newState.currentProject = action.newPath.slice(
+      1,
+      action.newPath.length - 1,
+    );
   }
   return newState;
 }

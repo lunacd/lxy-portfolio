@@ -12,7 +12,6 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import Tooltip from "@/components/Tooltip";
@@ -47,9 +46,7 @@ export default function SidebarInteractive({
   allProjects,
   projectsWithFocus,
 }: SidebarInteractiveProps) {
-  const projectUris = allProjects.map((project) => project.uri);
-
-  const { dispatch, globalState } = useGlobalStateContext();
+  const { globalState } = useGlobalStateContext();
 
   const projects = globalState.focus
     ? projectsWithFocus[globalState.focus]
@@ -92,13 +89,6 @@ export default function SidebarInteractive({
     setOpen(isLG);
   }, [isLG]);
 
-  const pathname = usePathname();
-  useEffect(() => {
-    const projectName = pathname.slice(1, pathname.length - 1);
-    if (projectUris.includes(projectName)) {
-      dispatch({ type: "setInView", project: projectName });
-    }
-  }, [pathname, dispatch, projectUris]);
   return (
     <>
       {/* Main container */}
