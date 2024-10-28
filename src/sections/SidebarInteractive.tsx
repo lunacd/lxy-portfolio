@@ -104,10 +104,7 @@ export default function SidebarInteractive({
           lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
       >
         {/* Content container */}
-        <div
-          className="absolute right-14 top-0 flex h-full w-36 flex-col justify-between py-16
-            xl:right-24"
-        >
+        <div className="absolute right-14 top-0 flex h-full w-36 flex-col py-16 xl:right-24">
           {/* Logo */}
           <Link
             className="cursor-pointer"
@@ -130,11 +127,11 @@ export default function SidebarInteractive({
           </Link>
 
           {/* Routes */}
-          <div className="flex flex-col space-y-1 pb-6 pt-4">
-            <Link className="subtitle" href="/">
-              All Projects
-            </Link>
+          <div className="mt-16 flex flex-col space-y-1 pb-6 pt-4">
             <AnimatePresence initial={false} mode="popLayout">
+              <MotionLink className="subtitle" href="/" key="allProjects">
+                All Projects
+              </MotionLink>
               {prefixRoutes.map((route) => (
                 <MotionLink
                   href={`/${route.uri}`}
@@ -147,7 +144,7 @@ export default function SidebarInteractive({
                 </MotionLink>
               ))}
               <motion.div
-                key={globalState.focus ? globalState.focus : "allProjects"}
+                key={globalState.focus ? globalState.focus : "all"}
                 transition={transitionDefault}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -202,18 +199,24 @@ export default function SidebarInteractive({
                   {route.name}
                 </MotionLink>
               ))}
-            </AnimatePresence>
 
-            <Link className="subtitle" href="/about">
-              About
-            </Link>
+              <MotionLink
+                className="subtitle"
+                href="/about"
+                transition={transitionDefault}
+                layout
+                key="about"
+              >
+                About
+              </MotionLink>
+            </AnimatePresence>
             {/*<Link className="subtitle" href="/others">*/}
             {/*  More Work*/}
             {/*</Link>*/}
           </div>
 
           {/* Social links */}
-          <div className="flex flex-row justify-between">
+          <div className="mt-auto flex flex-row justify-between">
             <Tooltip tip="Instagram">
               <a
                 href="https://www.instagram.com/lyu.shirley/"
