@@ -237,7 +237,7 @@ export const sidebarRoutes = [
   { uri: "others", name: "More Work", link: "/others", typeClass: "subtitle" },
 ];
 
-export const mainFocuses = {
+export const mainFocuses: { [uri: string]: { uri: string; name: string } } = {
   "product-design": {
     uri: "product-design",
     name: "Product",

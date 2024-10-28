@@ -1,6 +1,7 @@
 "use client";
 
 import { useMediaQuery } from "@chakra-ui/react";
+import { Project } from "@payload-types";
 import {
   IconBrandInstagram,
   IconBrandLinkedin,
@@ -8,7 +9,7 @@ import {
   IconFileText,
   IconMail,
 } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,21 +17,21 @@ import { useEffect, useState } from "react";
 
 import Tooltip from "@/components/Tooltip";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
+import { mainFocuses } from "@/utils/projectData";
 import { transitionFast as transitionDefault } from "@/utils/transitions";
 
 import HamburgerBlack from "@/images/hamburger-black.svg";
 
 interface SidebarInteractiveProps {
-  projects: string[];
-  routes: {
-    name: string;
-    uri: string;
-    className: string;
-  }[];
+  allProjects: Project[];
+  projectsWithFocus: {
+    [uri: string]: Project[];
+  };
 }
 
 const MotionImage = motion.create(Image);
 const MotionIconChevronLeft = motion.create(IconChevronLeft);
+const MotionLink = motion.create(Link);
 
 const dashVariants = {
   rest: { opacity: 0 },
@@ -43,9 +44,42 @@ const linkVariants = {
 };
 
 export default function SidebarInteractive({
-  projects,
-  routes,
+  allProjects,
+  projectsWithFocus,
 }: SidebarInteractiveProps) {
+  const projectUris = allProjects.map((project) => project.uri);
+
+  const { dispatch, globalState } = useGlobalStateContext();
+
+  const projects = globalState.focus
+    ? projectsWithFocus[globalState.focus]
+    : allProjects;
+  const routes = projects.map((project) => {
+    return {
+      name: project.name,
+      uri: project.uri,
+    };
+  });
+  const prefixRoutes = [];
+  const suffixRoutes = [];
+  if (globalState.focus) {
+    let insertRouteAfter = false;
+    for (const mainFocus of Object.values(mainFocuses)) {
+      const focusLink = {
+        name: mainFocus.name,
+        uri: `focus/${mainFocus.uri}`,
+      };
+      if (insertRouteAfter) {
+        suffixRoutes.push(focusLink);
+      } else {
+        prefixRoutes.push(focusLink);
+      }
+      if (mainFocus.uri === globalState.focus) {
+        insertRouteAfter = true;
+      }
+    }
+  }
+
   const [isLG, isXL] = useMediaQuery(
     ["(min-width: 1024px)", "(min-width: 1280px)"],
     {
@@ -58,14 +92,13 @@ export default function SidebarInteractive({
     setOpen(isLG);
   }, [isLG]);
 
-  const { dispatch, globalState } = useGlobalStateContext();
   const pathname = usePathname();
   useEffect(() => {
     const projectName = pathname.slice(1, pathname.length - 1);
-    if (projects.includes(projectName)) {
+    if (projectUris.includes(projectName)) {
       dispatch({ type: "setInView", project: projectName });
     }
-  }, [pathname, dispatch, projects]);
+  }, [pathname, dispatch, projectUris]);
   return (
     <>
       {/* Main container */}
@@ -111,45 +144,76 @@ export default function SidebarInteractive({
             <Link className="subtitle" href="/">
               All Projects
             </Link>
-            {routes.map((route) => (
-              <div key={route.uri} className="flex flex-row">
-                <motion.div
-                  className="flex flex-row items-center"
-                  animate={
-                    globalState.currentProject === route.uri
-                      ? "hovered"
-                      : "rest"
-                  }
-                  whileHover={
-                    route.className === "paragraph" ? "hovered" : "rest"
-                  }
+            <AnimatePresence initial={false} mode="popLayout">
+              {prefixRoutes.map((route) => (
+                <MotionLink
+                  href={`/${route.uri}`}
+                  className="subtitle"
+                  key={route.uri}
+                  transition={transitionDefault}
+                  layout
                 >
-                  <Link
-                    onClick={() => {
-                      if (!isLG) {
-                        setOpen(false);
+                  {route.name}
+                </MotionLink>
+              ))}
+              <motion.div
+                key={globalState.focus ? globalState.focus : "allProjects"}
+                transition={transitionDefault}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                {routes.map((route) => (
+                  <motion.div key={route.uri} className="flex flex-row">
+                    <motion.div
+                      className="flex flex-row items-center"
+                      animate={
+                        globalState.currentProject === route.uri
+                          ? "hovered"
+                          : "rest"
                       }
-                    }}
-                    href={`/${route.uri}`}
-                    className={`cursor-pointer ${route.className}`}
-                  >
-                    <motion.div
-                      className="absolute"
-                      transition={transitionDefault}
-                      variants={dashVariants}
+                      whileHover="hovered"
                     >
-                      -
+                      <Link
+                        onClick={() => {
+                          if (!isLG) {
+                            setOpen(false);
+                          }
+                        }}
+                        href={`/${route.uri}`}
+                        className={"paragraph cursor-pointer"}
+                      >
+                        <motion.div
+                          className="absolute"
+                          transition={transitionDefault}
+                          variants={dashVariants}
+                        >
+                          -
+                        </motion.div>
+                        <motion.div
+                          transition={transitionDefault}
+                          variants={linkVariants}
+                        >
+                          {route.name}
+                        </motion.div>
+                      </Link>
                     </motion.div>
-                    <motion.div
-                      transition={transitionDefault}
-                      variants={linkVariants}
-                    >
-                      {route.name}
-                    </motion.div>
-                  </Link>
-                </motion.div>
-              </div>
-            ))}
+                  </motion.div>
+                ))}
+              </motion.div>
+              {suffixRoutes.map((route) => (
+                <MotionLink
+                  href={`/${route.uri}`}
+                  className="subtitle"
+                  key={route.uri}
+                  transition={transitionDefault}
+                  layout
+                >
+                  {route.name}
+                </MotionLink>
+              ))}
+            </AnimatePresence>
+
             <Link className="subtitle" href="/about">
               About
             </Link>

@@ -12,6 +12,7 @@ interface PayloadImageProps {
   fill?: boolean;
   sizes: string;
   unoptimized?: boolean;
+  equalHeight?: boolean;
 }
 
 export default async function PayloadImage(props: PayloadImageProps) {
@@ -24,7 +25,7 @@ export default async function PayloadImage(props: PayloadImageProps) {
       height={props.fill ? undefined : media.height}
       className={props.className}
       style={{
-        flex: media.width / media.height,
+        flex: props.equalHeight ? media.width / media.height : 0,
       }}
       fill={props.fill}
       sizes={props.sizes}

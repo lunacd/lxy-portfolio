@@ -13,17 +13,24 @@ export function getInitialState(pathname: string): GlobalState {
   return {
     currentProjectIndex: currentProjectIndex,
     currentProject: currentProject,
+    focus: getFocus(pathname),
   };
 }
 
-export type GlobalStateAction = {
-  type: "setInView";
-  project: string;
-};
+export type GlobalStateAction =
+  | {
+      type: "setInView";
+      project: string;
+    }
+  | {
+      type: "changeRoute";
+      newPath: string;
+    };
 
 export interface GlobalState {
   currentProjectIndex: number;
   currentProject: string;
+  focus?: string;
 }
 
 function getProjectNameFromPathname(pathname: string) {
@@ -38,11 +45,20 @@ function isProject(link: string): boolean {
   return projects.includes(projectName);
 }
 
+export function getFocus(link: string): string | undefined {
+  if (!link.startsWith("/focus")) {
+    return undefined;
+  }
+  return link.slice(7, link.length - 1);
+}
+
 export function stateReducer(state: GlobalState, action: GlobalStateAction) {
   const newState = { ...state };
   if (action.type === "setInView") {
     newState.currentProjectIndex = projects.indexOf(action.project);
     newState.currentProject = action.project;
+  } else if (action.type === "changeRoute") {
+    newState.focus = getFocus(action.newPath);
   }
   return newState;
 }

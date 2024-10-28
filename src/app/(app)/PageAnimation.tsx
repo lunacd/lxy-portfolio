@@ -1,20 +1,9 @@
 "use client";
 
+import FrozenRouter from "./FrozenRouter";
 import { AnimatePresence, motion } from "framer-motion";
-import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { usePathname } from "next/navigation";
-import React, { PropsWithChildren, useContext, useRef } from "react";
-
-function FrozenRouter(props: PropsWithChildren) {
-  const context = useContext(LayoutRouterContext);
-  const frozen = useRef(context).current;
-
-  return (
-    <LayoutRouterContext.Provider value={frozen}>
-      {props.children}
-    </LayoutRouterContext.Provider>
-  );
-}
+import React, { PropsWithChildren } from "react";
 
 export default function PageAnimation(props: PropsWithChildren) {
   const pathname = usePathname();

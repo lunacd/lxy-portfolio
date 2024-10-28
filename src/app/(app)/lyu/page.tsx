@@ -4,7 +4,6 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
-import PageScaffold from "@/components/PageScaffold";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/sections/TopDisplay";
 
@@ -25,14 +24,12 @@ export default async function Lyu() {
     })
   ).docs[0];
   return (
-    <PageScaffold>
-      <Scroller bgColor={lyuData.backgroundColor}>
-        <LyuClient
-          topChildren={<TopDisplay project={lyuData} payload={payload} />}
-        >
-          <ConnectPrompt />
-        </LyuClient>
-      </Scroller>
-    </PageScaffold>
+    <Scroller bgColor={lyuData.backgroundColor}>
+      <LyuClient
+        topChildren={<TopDisplay project={lyuData} payload={payload} />}
+      >
+        <ConnectPrompt />
+      </LyuClient>
+    </Scroller>
   );
 }

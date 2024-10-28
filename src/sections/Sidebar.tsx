@@ -1,4 +1,5 @@
 import config from "@payload-config";
+import { Project } from "@payload-types";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import "server-only";
 
@@ -6,45 +7,30 @@ import SidebarInteractive from "@/sections/SidebarInteractive";
 import { getMainProjects, getProjectsWithFocus } from "@/utils/payloadHelpers";
 import { mainFocuses } from "@/utils/projectData";
 
-interface SidebarProps {
-  focus?: string;
-}
-
-export default async function Sidebar(props: SidebarProps) {
+export default async function Sidebar() {
   const payload = await getPayloadHMR({
     config,
   });
-  const projects = props.focus
-    ? await getProjectsWithFocus(props.focus, payload)
-    : await getMainProjects(payload);
-  const projectUris = projects.map((project) => project.uri);
-  let projectRoutes = projects.map((project) => {
-    return {
-      name: project.name,
-      uri: project.uri,
-      className: "paragraph",
-    };
-  });
-  if (props.focus) {
-    let insertRouteAfter = false;
-    const prefixRoutes = [];
-    for (const mainFocus of Object.values(mainFocuses)) {
-      const focusLink = {
-        name: mainFocus.name,
-        uri: `focus/${mainFocus.uri}`,
-        className: "subtitle",
+  const allProjects = await getMainProjects(payload);
+  const projectFocusList = await Promise.all(
+    Object.values(mainFocuses).map(async (mainFocus) => {
+      return {
+        projects: await getProjectsWithFocus(mainFocus.uri, payload),
+        uri: mainFocus.uri,
       };
-      if (insertRouteAfter) {
-        projectRoutes.push(focusLink);
-      } else {
-        prefixRoutes.push(focusLink);
-      }
-      if (mainFocus.uri === props.focus) {
-        insertRouteAfter = true;
-      }
-    }
-    projectRoutes = prefixRoutes.concat(projectRoutes);
-  }
+    }),
+  );
+  const projectsWithFocus = projectFocusList.reduce<{
+    [uri: string]: Project[];
+  }>((prev, curr) => {
+    prev[curr.uri] = curr.projects;
+    return prev;
+  }, {});
 
-  return <SidebarInteractive projects={projectUris} routes={projectRoutes} />;
+  return (
+    <SidebarInteractive
+      allProjects={allProjects}
+      projectsWithFocus={projectsWithFocus}
+    />
+  );
 }

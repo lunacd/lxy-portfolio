@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { PropsWithChildren, useReducer } from "react";
+import { PropsWithChildren, useEffect, useReducer } from "react";
 
 import { getInitialState, stateReducer } from "@/utils/GlobalState";
 import GlobalStateContext from "@/utils/GlobalStateContext";
@@ -17,6 +17,9 @@ export default function GlobalStateContextProvider(props: PropsWithChildren) {
     globalState,
     dispatch,
   };
+  useEffect(() => {
+    dispatch({ type: "changeRoute", newPath: pathname });
+  }, [pathname]);
   return (
     <GlobalStateContext.Provider value={providerValue}>
       {props.children}

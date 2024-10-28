@@ -7,7 +7,6 @@ import { Metadata } from "next";
 import React from "react";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
-import PageScaffold from "@/components/PageScaffold";
 
 export const metadata: Metadata = {
   title: "Shirley Lyu Portfolio",
@@ -30,7 +29,6 @@ export default async function Home() {
     })
   ).docs;
   return (
-    <PageScaffold>
       <LandingScrollIndicator>
         {projects.map((project) => (
           <InViewDetector
@@ -43,6 +41,5 @@ export default async function Home() {
         ))}
         <ConnectPrompt />
       </LandingScrollIndicator>
-    </PageScaffold>
   );
 }
