@@ -1,15 +1,34 @@
-import Profile from "./Profile";
 import AboutClient from "./page.client";
+import config from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+
+import PayloadImage from "@/components/PayloadImage";
 
 export const metadata: Metadata = {
   title: "About | Shirley Lyu",
 };
 
-export default function About() {
+export default async function About() {
+  const payload = await getPayloadHMR({
+    config,
+  });
+  const data = await payload.findGlobal({
+    slug: "global",
+    depth: 1,
+  });
   return (
     <AboutClient>
-      <Profile />
+      <div className="single my-spacing-lg grid grid-cols-1 gap-spacing lg:grid-cols-3">
+        <div className="about_rounded">
+          <PayloadImage
+            media={data.profilePicture}
+            payload={payload}
+            sizes="(max-width: 1023px) 100vw,(min-width: 1024px) 33vw"
+          />
+        </div>
+        <div className="lg:col-span-2 lg:self-end">{data.profile}</div>
+      </div>
     </AboutClient>
   );
 }
