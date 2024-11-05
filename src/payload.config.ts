@@ -1,4 +1,5 @@
 // storage-adapter-import-placeholder
+import { Blogs } from "./collections/Blogs";
 import { Documents } from "./collections/Documents";
 import { Global } from "./collections/Global";
 import { Media } from "./collections/Media";
@@ -39,7 +40,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Documents, Projects, ProjectPages],
+  collections: [Users, Media, Documents, Projects, ProjectPages, Blogs],
   globals: [Global],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

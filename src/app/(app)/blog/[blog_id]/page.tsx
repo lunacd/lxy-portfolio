@@ -1,0 +1,48 @@
+import config from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { notFound } from "next/navigation";
+import "server-only";
+
+import Scroller from "@/components/Scroller";
+import Blocks from "@/sections/Blocks";
+import TitleBlock from "@/sections/TitleBlock";
+
+export default async function Blog({
+  params,
+}: {
+  params: Promise<{ blog_id: string }>;
+}) {
+  const payload = await getPayloadHMR({
+    config,
+  });
+  const blog_id = (await params).blog_id;
+  const blog = await payload.findByID({
+    collection: "blogs",
+    id: blog_id,
+    disableErrors: true,
+  });
+  if (!blog) {
+    notFound();
+  }
+  return (
+    <Scroller>
+      <div className="mt-spacing-lg w-single">
+        <TitleBlock
+          text={blog.title}
+          blockType="title"
+          type="title"
+          textColor="dark"
+          bottomMargin={false}
+        />
+        <TitleBlock
+          text={new Date(blog.date).toLocaleDateString()}
+          type="subtitle"
+          textColor="dark"
+          bottomMargin={true}
+          blockType="title"
+        />
+        <Blocks payload={payload} blocks={blog.blocks} />
+      </div>
+    </Scroller>
+  );
+}

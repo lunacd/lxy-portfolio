@@ -209,6 +209,15 @@ export default function SidebarInteractive({
               >
                 About
               </MotionLink>
+              <MotionLink
+                className="subtitle"
+                href="/blog"
+                transition={transitionDefault}
+                layout
+                key="blog"
+              >
+                Blogs
+              </MotionLink>
             </AnimatePresence>
             {/*<Link className="subtitle" href="/others">*/}
             {/*  More Work*/}

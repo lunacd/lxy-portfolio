@@ -16,6 +16,7 @@ export interface Config {
     document: Document;
     projects: Project;
     projectPages: ProjectPage;
+    blogs: Blog;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -572,6 +573,437 @@ export interface ProjectPage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blogs".
+ */
+export interface Blog {
+  id: number;
+  title: string;
+  date: string;
+  blocks: (
+    | {
+        text: string;
+        type: 'title' | 'subtitle';
+        textColor: 'dark' | 'light';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'title';
+      }
+    | {
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        textColor: 'dark' | 'light';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'text';
+      }
+    | {
+        items: {
+          image: number | Media;
+          text: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          id?: string | null;
+        }[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        textColor: 'dark' | 'light';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'horizontalGallery';
+      }
+    | {
+        image: number | Media;
+        imageSize: number;
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'image';
+      }
+    | {
+        embedLink: string;
+        width: number;
+        height: number;
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'youtube';
+      }
+    | {
+        label: string;
+        document: number | Document;
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'document';
+      }
+    | {
+        title: string;
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        image: number | Media;
+        textColor: 'dark' | 'light';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'textImage';
+      }
+    | {
+        image: number | Media;
+        scrollPrompt: string;
+        width: number;
+        textColor: 'dark' | 'light';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'horizontalScroll';
+      }
+    | {
+        images: {
+          image: number | Media;
+          id?: string | null;
+        }[];
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'slideShow';
+      }
+    | {
+        blocks: (
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'text';
+            }
+          | {
+              text: string;
+              type: 'title' | 'subtitle';
+              textColor: 'dark' | 'light';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'title';
+            }
+          | {
+              image: number | Media;
+              imageSize: number;
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'image';
+            }
+          | {
+              blocks: (
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    text: string;
+                    type: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    image: number | Media;
+                    imageSize: number;
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+              )[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              justify: 'start' | 'center' | 'end';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'column';
+            }
+          | {
+              blocks: (
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    text: string;
+                    type: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    image: number | Media;
+                    imageSize: number;
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+              )[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'row';
+            }
+        )[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'row';
+      }
+    | {
+        blocks: (
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'text';
+            }
+          | {
+              text: string;
+              type: 'title' | 'subtitle';
+              textColor: 'dark' | 'light';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'title';
+            }
+          | {
+              image: number | Media;
+              imageSize: number;
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'image';
+            }
+          | {
+              blocks: (
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    text: string;
+                    type: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    image: number | Media;
+                    imageSize: number;
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+              )[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              justify: 'start' | 'center' | 'end';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'column';
+            }
+          | {
+              blocks: (
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    text: string;
+                    type: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    image: number | Media;
+                    imageSize: number;
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+              )[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'row';
+            }
+        )[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        justify: 'start' | 'center' | 'end';
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'column';
+      }
+  )[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -596,6 +1028,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'projectPages';
         value: number | ProjectPage;
+      } | null)
+    | ({
+        relationTo: 'blogs';
+        value: number | Blog;
       } | null);
   globalSlug?: string | null;
   user: {
