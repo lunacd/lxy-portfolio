@@ -15,7 +15,6 @@ export default async function About() {
   });
   const data = await payload.findGlobal({
     slug: "global",
-    depth: 1,
   });
   return (
     <AboutClient>
