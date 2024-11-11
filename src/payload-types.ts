@@ -21,15 +21,34 @@ export interface Config {
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
+  collectionsJoins: {};
+  collectionsSelect: {
+    users: UsersSelect<false> | UsersSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
+    document: DocumentSelect<false> | DocumentSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
+    projectPages: ProjectPagesSelect<false> | ProjectPagesSelect<true>;
+    blogs: BlogsSelect<false> | BlogsSelect<true>;
+    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
+    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
+    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
+  };
   db: {
     defaultIDType: number;
   };
   globals: {
     global: Global;
   };
+  globalsSelect: {
+    global: GlobalSelect<false> | GlobalSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
+  };
+  jobs?: {
+    tasks: unknown;
+    workflows?: unknown;
   };
 }
 export interface UserAuthOperations {
@@ -1077,6 +1096,833 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users_select".
+ */
+export interface UsersSelect<T extends boolean = true> {
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media_select".
+ */
+export interface MediaSelect<T extends boolean = true> {
+  alt?: T;
+  prefix?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "document_select".
+ */
+export interface DocumentSelect<T extends boolean = true> {
+  name?: T;
+  prefix?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  name?: T;
+  uri?: T;
+  order?: T;
+  subsetOrder?: T;
+  isMainProject?: T;
+  duration?: T;
+  category?: T;
+  projectSize?: T;
+  focuses?:
+    | T
+    | {
+        focus?: T;
+        focusId?: T;
+        id?: T;
+      };
+  brief?: T;
+  projectImage?: T;
+  mobileProjectImage?: T;
+  projectGalleryImage?: T;
+  backgroundColor?: T;
+  pageBackgroundColor?: T;
+  textColor?: T;
+  imageCover?: T;
+  awardImage?: T;
+  externalLink?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projectPages_select".
+ */
+export interface ProjectPagesSelect<T extends boolean = true> {
+  projectName?: T;
+  blocks?:
+    | T
+    | {
+        title?:
+          | T
+          | {
+              text?: T;
+              type?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        text?:
+          | T
+          | {
+              text?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        horizontalGallery?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    text?: T;
+                    id?: T;
+                  };
+              spacing?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        image?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        youtube?:
+          | T
+          | {
+              embedLink?: T;
+              width?: T;
+              height?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        document?:
+          | T
+          | {
+              label?: T;
+              document?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        textImage?:
+          | T
+          | {
+              title?: T;
+              text?: T;
+              image?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        horizontalScroll?:
+          | T
+          | {
+              image?: T;
+              scrollPrompt?: T;
+              width?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        slideShow?:
+          | T
+          | {
+              images?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        row?:
+          | T
+          | {
+              blocks?:
+                | T
+                | {
+                    text?:
+                      | T
+                      | {
+                          text?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    title?:
+                      | T
+                      | {
+                          text?: T;
+                          type?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    image?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    column?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      type?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          justify?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    row?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      type?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                  };
+              spacing?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        column?:
+          | T
+          | {
+              blocks?:
+                | T
+                | {
+                    text?:
+                      | T
+                      | {
+                          text?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    title?:
+                      | T
+                      | {
+                          text?: T;
+                          type?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    image?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    column?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      type?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          justify?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    row?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      type?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                  };
+              spacing?: T;
+              justify?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blogs_select".
+ */
+export interface BlogsSelect<T extends boolean = true> {
+  title?: T;
+  date?: T;
+  blocks?:
+    | T
+    | {
+        title?:
+          | T
+          | {
+              text?: T;
+              type?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        text?:
+          | T
+          | {
+              text?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        horizontalGallery?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    text?: T;
+                    id?: T;
+                  };
+              spacing?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        image?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        youtube?:
+          | T
+          | {
+              embedLink?: T;
+              width?: T;
+              height?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        document?:
+          | T
+          | {
+              label?: T;
+              document?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        textImage?:
+          | T
+          | {
+              title?: T;
+              text?: T;
+              image?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        horizontalScroll?:
+          | T
+          | {
+              image?: T;
+              scrollPrompt?: T;
+              width?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        slideShow?:
+          | T
+          | {
+              images?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        row?:
+          | T
+          | {
+              blocks?:
+                | T
+                | {
+                    text?:
+                      | T
+                      | {
+                          text?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    title?:
+                      | T
+                      | {
+                          text?: T;
+                          type?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    image?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    column?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      type?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          justify?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    row?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      type?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                  };
+              spacing?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        column?:
+          | T
+          | {
+              blocks?:
+                | T
+                | {
+                    text?:
+                      | T
+                      | {
+                          text?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    title?:
+                      | T
+                      | {
+                          text?: T;
+                          type?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    image?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    column?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      type?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          justify?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    row?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      type?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                  };
+              spacing?: T;
+              justify?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-locked-documents_select".
+ */
+export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
+  document?: T;
+  globalSlug?: T;
+  user?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-preferences_select".
+ */
+export interface PayloadPreferencesSelect<T extends boolean = true> {
+  user?: T;
+  key?: T;
+  value?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-migrations_select".
+ */
+export interface PayloadMigrationsSelect<T extends boolean = true> {
+  name?: T;
+  batch?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "global".
  */
 export interface Global {
@@ -1087,6 +1933,19 @@ export interface Global {
   profilePicture: number | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "global_select".
+ */
+export interface GlobalSelect<T extends boolean = true> {
+  connectionPrompt?: T;
+  resume?: T;
+  profile?: T;
+  profilePicture?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
