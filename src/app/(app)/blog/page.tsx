@@ -27,6 +27,13 @@ export default async function Blogs() {
           bottomMargin={true}
           blockType="title"
         />
+        <TitleBlock
+          text="Nothing yet! Come back for more!"
+          type="subtitle"
+          textColor="dark"
+          bottomMargin={true}
+          blockType="title"
+        />
         {blogs.map((blog) => (
           <Link href={`/blog/${blog.id}`} key={blog.id}>
             <div key={blog.id}>
