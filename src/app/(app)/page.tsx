@@ -1,7 +1,6 @@
 import HomeIntro from "./HomeIntro";
 import HomeSection from "./HomeSection";
 import InViewDetector from "./InViewDetector";
-import LandingScrollIndicator from "./LandingScrollIndicator";
 import config from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
