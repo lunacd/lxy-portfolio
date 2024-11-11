@@ -33,7 +33,7 @@ export default async function Home() {
     slug: "global",
   });
   return (
-    <Scroller>
+    <Scroller bgColor="#FDF9F1">
       <HomeIntro profilePicture={globalData.profilePicture} payload={payload} />
       {projects.map((project) => (
         <InViewDetector

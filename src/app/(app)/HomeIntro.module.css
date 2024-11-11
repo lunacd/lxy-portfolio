@@ -1,3 +1,4 @@
 .button {
-  @apply ring-1 ring-[#7E4001] py-2 px-4 rounded-lg;
+  @apply cursor-pointer rounded-lg px-4 py-2 text-[#7E4001] ring-2 ring-[#7E4001];
+  @apply font-bold hover:bg-[#7E4001] hover:text-white;
 }
