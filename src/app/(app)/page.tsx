@@ -1,3 +1,4 @@
+import HomeIntro from "./HomeIntro";
 import HomeSection from "./HomeSection";
 import InViewDetector from "./InViewDetector";
 import LandingScrollIndicator from "./LandingScrollIndicator";
@@ -7,6 +8,7 @@ import { Metadata } from "next";
 import React from "react";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
+import Scroller from "@/components/Scroller";
 
 export const metadata: Metadata = {
   title: "Shirley Lyu Portfolio",
@@ -28,18 +30,22 @@ export default async function Home() {
       sort: "order",
     })
   ).docs;
+  const globalData = await payload.findGlobal({
+    slug: "global",
+  });
   return (
-      <LandingScrollIndicator>
-        {projects.map((project) => (
-          <InViewDetector
-            key={project.uri}
-            detectorKey={project.uri}
-            className="flex h-[90vh] w-full flex-col"
-          >
-            <HomeSection project={project} payload={payload} />
-          </InViewDetector>
-        ))}
-        <ConnectPrompt />
-      </LandingScrollIndicator>
+    <Scroller>
+      <HomeIntro profilePicture={globalData.profilePicture} payload={payload} />
+      {projects.map((project) => (
+        <InViewDetector
+          key={project.uri}
+          detectorKey={project.uri}
+          className="flex h-[90vh] w-full flex-col"
+        >
+          <HomeSection project={project} payload={payload} />
+        </InViewDetector>
+      ))}
+      <ConnectPrompt />
+    </Scroller>
   );
 }
