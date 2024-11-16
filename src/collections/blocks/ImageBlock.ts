@@ -9,6 +9,9 @@ const ImageBlock: Block = {
       type: "upload",
       relationTo: "media",
       required: true,
+      admin: {
+        description: "For a full-width image, recommended width is 3840px.",
+      },
     },
     {
       name: "imageSize",

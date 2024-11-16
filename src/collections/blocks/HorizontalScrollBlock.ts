@@ -9,6 +9,10 @@ const HorizontalScrollBlock: Block = {
       type: "upload",
       relationTo: "media",
       required: true,
+      admin: {
+        description:
+          "Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.",
+      },
     },
     {
       name: "scrollPrompt",

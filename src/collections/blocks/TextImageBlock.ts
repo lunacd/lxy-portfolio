@@ -21,6 +21,9 @@ const TextBlock: Block = {
       type: "upload",
       relationTo: "media",
       required: true,
+      admin: {
+        description: "Recommended width 1920px.",
+      },
     },
     colorField(),
     bottomMargin,

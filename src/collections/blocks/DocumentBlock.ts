@@ -14,6 +14,9 @@ const DocumentBlock: Block = {
       type: "upload",
       relationTo: "document",
       required: true,
+      admin: {
+        description: "The document to link to.",
+      },
     },
     bottomMargin,
   ],

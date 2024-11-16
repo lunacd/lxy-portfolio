@@ -17,7 +17,7 @@ const HorizontalGalleryBlock: Block = {
           required: true,
           admin: {
             description:
-              "All images must have the same size. Recommended image width: approx. 3840 / number of items.",
+              "All images must have the same size. Recommended image width: approximately 3840 / number of items.",
           },
         },
         {
