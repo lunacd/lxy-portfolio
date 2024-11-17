@@ -16,7 +16,7 @@ const defaultProps = {
   textColor: "text-black",
 };
 
-const SmallGallery: React.FC<SmallGalleryProps> = (propsIn) => {
+const LegacySmallGallery: React.FC<SmallGalleryProps> = (propsIn) => {
   const props = { ...defaultProps, ...propsIn };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -47,4 +47,4 @@ const SmallGallery: React.FC<SmallGalleryProps> = (propsIn) => {
   );
 };
 
-export default SmallGallery;
+export default LegacySmallGallery;

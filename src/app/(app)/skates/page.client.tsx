@@ -5,7 +5,7 @@ import { PropsWithChildren, ReactNode } from "react";
 import { GalleryRowLayout } from "@/components/GalleryRow";
 import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
-import SmallGallery from "@/components/SmallGallery";
+import LegacySmallGallery from "@/components/LegacySmallGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
@@ -178,7 +178,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
       />
 
       <LegacyTitle title="Model Making" />
-      <SmallGallery
+      <LegacySmallGallery
         items={[
           { image: Making1, title: "Water Jet Cutting" },
           { image: Making2, title: "Steel Tube Bending and Welding" },

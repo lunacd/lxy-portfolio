@@ -33,6 +33,12 @@ export const Blogs: CollectionConfig = {
       },
     },
     {
+      name: "coverImage",
+      type: "upload",
+      required: true,
+      relationTo: "media",
+    },
+    {
       name: "blocks",
       type: "blocks",
       blocks: [

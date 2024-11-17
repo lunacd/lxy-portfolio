@@ -4,7 +4,7 @@ import { PropsWithChildren, ReactNode } from "react";
 
 import Carousel from "@/components/Carousel";
 import LargeGallery from "@/components/LargeGallery";
-import SmallGallery from "@/components/SmallGallery";
+import LegacySmallGallery from "@/components/LegacySmallGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
@@ -160,7 +160,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
           title="Final model making Process"
           textColor="text-white"
         />
-        <SmallGallery
+        <LegacySmallGallery
           items={[
             { image: Making1, title: "20lb Foam Route Template" },
             { image: Making2, title: "Foam Frame and Stander Making" },

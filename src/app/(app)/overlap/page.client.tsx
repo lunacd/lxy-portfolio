@@ -4,7 +4,7 @@ import { PropsWithChildren, ReactNode } from "react";
 
 import Carousel from "@/components/Carousel";
 import LargeGallery from "@/components/LargeGallery";
-import SmallGallery from "@/components/SmallGallery";
+import LegacySmallGallery from "@/components/LegacySmallGallery";
 import Spacing from "@/components/Spacing";
 import { createPlainContent } from "@/components/TextSection";
 import DisplayImage from "@/sections/DisplayImage";
@@ -289,7 +289,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
 
       {/* Making Process */}
       <LegacyTitle title="Final Model Making Process" />
-      <SmallGallery
+      <LegacySmallGallery
         items={[
           { image: Process1, title: "Wood Cut" },
           { image: Process2, title: "Wood Flatten" },

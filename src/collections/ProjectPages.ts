@@ -5,6 +5,7 @@ import HorizontalScrollBlock from "./blocks/HorizontalScrollBlock";
 import ImageBlock from "./blocks/ImageBlock";
 import RowBlock from "./blocks/RowBlock";
 import SlideShowBlock from "./blocks/SlideShowBlock";
+import SmallGalleryBlock from "./blocks/SmallGalleryBlock";
 import TextBlock from "./blocks/TextBlock";
 import TextImageBlock from "./blocks/TextImageBlock";
 import TitleBlock from "./blocks/TitleBlock";
@@ -35,6 +36,7 @@ export const ProjectPages: CollectionConfig = {
         TextImageBlock,
         HorizontalScrollBlock,
         SlideShowBlock,
+        SmallGalleryBlock,
         RowBlock(1),
         ColumnBlock(1),
       ],

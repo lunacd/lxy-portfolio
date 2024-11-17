@@ -296,6 +296,32 @@ export interface ProjectPage {
         blockType: 'slideShow';
       }
     | {
+        items: {
+          image: number | Media;
+          text: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          link?: string | null;
+          id?: string | null;
+        }[];
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'smallGallery';
+      }
+    | {
         blocks: (
           | {
               text: {
@@ -598,6 +624,7 @@ export interface Blog {
   id: number;
   title: string;
   date: string;
+  coverImage: number | Media;
   blocks: (
     | {
         text: string;
@@ -1287,6 +1314,21 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        smallGallery?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    text?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -1541,6 +1583,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
 export interface BlogsSelect<T extends boolean = true> {
   title?: T;
   date?: T;
+  coverImage?: T;
   blocks?:
     | T
     | {

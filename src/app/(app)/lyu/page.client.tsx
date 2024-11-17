@@ -5,7 +5,7 @@ import { PropsWithChildren, ReactNode } from "react";
 import Carousel from "@/components/Carousel";
 import { GalleryRowLayout } from "@/components/GalleryRow";
 import LargeGallery from "@/components/LargeGallery";
-import SmallGallery from "@/components/SmallGallery";
+import LegacySmallGallery from "@/components/LegacySmallGallery";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
 import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
@@ -138,7 +138,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
 
       {/* Tote bag making process */}
       <LegacyTitle title="Tote Bag Making Process" />
-      <SmallGallery
+      <LegacySmallGallery
         items={[
           { image: BagMaking1, title: "Cutting Template" },
           { image: BagMaking2, title: "Material Cutting" },
@@ -156,7 +156,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
 
       {/* Slipper making process */}
       <LegacyTitle title="Slippers Making Process" />
-      <SmallGallery
+      <LegacySmallGallery
         items={[
           { image: SlipperMaking1, title: "Taping Design" },
           { image: SlipperMaking2, title: "Cutting Material" },

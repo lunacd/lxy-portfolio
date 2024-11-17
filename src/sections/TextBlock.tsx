@@ -24,7 +24,15 @@ function TextChild(props: TextChildProps) {
       }
       return <>ERROR</>;
     case "text":
-      return <>{props.text}</>;
+      return (
+        <span
+          className={classNames({
+            "font-bold": props.format === "bold",
+          })}
+        >
+          {props.text as string}
+        </span>
+      );
     case "listitem":
       return <li>{children}</li>;
     case "link":

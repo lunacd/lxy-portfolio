@@ -1,3 +1,4 @@
+import SmallgallerBlock from "./SmallGalleryBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
@@ -47,5 +48,7 @@ export default function Block(props: BlockProps) {
       return <HorizontalScrollBlock {...props.block} payload={props.payload} />;
     case "slideShow":
       return <SlideShowBlock {...props.block} payload={props.payload} />;
+    case "smallGallery":
+      return <SmallgallerBlock {...props.block} payload={props.payload} />;
   }
 }
