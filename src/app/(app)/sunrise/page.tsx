@@ -1,7 +1,7 @@
 import SunriseClient from "./page.client";
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Sunrise() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const sunriseData = (
@@ -28,7 +28,11 @@ export default async function Sunrise() {
       <SunriseClient
         topChildren={<TopDisplay project={sunriseData} payload={payload} />}
       >
-        <ProjectNavigation prev="/again-from-scratch" next="/m-tron" />
+        <ProjectNavigation
+          prev="/again-from-scratch"
+          next="/m-tron"
+          payload={payload}
+        />
       </SunriseClient>
     </Scroller>
   );

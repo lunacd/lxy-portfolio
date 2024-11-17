@@ -1,7 +1,7 @@
 import OverlapClient from "./page.client";
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Overlap() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const overlapData = (
@@ -28,7 +28,11 @@ export default async function Overlap() {
       <OverlapClient
         topChildren={<TopDisplay project={overlapData} payload={payload} />}
       >
-        <ProjectNavigation prev="/soul" next="/again-from-scratch" />
+        <ProjectNavigation
+          prev="/soul"
+          next="/again-from-scratch"
+          payload={payload}
+        />
       </OverlapClient>
     </Scroller>
   );

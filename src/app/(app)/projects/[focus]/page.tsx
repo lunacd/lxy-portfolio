@@ -1,6 +1,6 @@
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { notFound } from "next/navigation";
+import { getPayload } from "payload";
 import React from "react";
 
 import ProjectsGallery from "@/components/ProjectsGallery";
@@ -12,7 +12,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ focus: string }>;
 }) {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const projectFocus = (await params).focus;
@@ -28,7 +28,7 @@ export default async function ProjectsCategory({
 }: {
   params: Promise<{ focus: string }>;
 }) {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const projectFocus = (await params).focus;

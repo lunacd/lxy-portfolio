@@ -1,7 +1,7 @@
 import SkatesClient from "./page.client";
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Skates() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const skatesData = (
@@ -28,7 +28,7 @@ export default async function Skates() {
       <SkatesClient
         topChildren={<TopDisplay project={skatesData} payload={payload} />}
       >
-        <ProjectNavigation next="/tura" />
+        <ProjectNavigation next="/tura" payload={payload} />
       </SkatesClient>
     </Scroller>
   );

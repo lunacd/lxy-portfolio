@@ -1,13 +1,13 @@
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import Link from "next/link";
+import { getPayload } from "payload";
 import "server-only";
 
 import Scroller from "@/components/Scroller";
 import TitleBlock from "@/sections/TitleBlock";
 
 export default async function Blogs() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const blogs = (

@@ -1,7 +1,7 @@
 import AboutClient from "./page.client";
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 
 import PayloadImage from "@/components/PayloadImage";
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function About() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const data = await payload.findGlobal({

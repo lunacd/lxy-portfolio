@@ -1,6 +1,6 @@
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { redirect } from "next/navigation";
+import { getPayload } from "payload";
 
 import { getDocument } from "@/utils/payloadHelpers";
 
@@ -19,7 +19,7 @@ export default async function DocumentRedirect({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const data = await payload.findGlobal({

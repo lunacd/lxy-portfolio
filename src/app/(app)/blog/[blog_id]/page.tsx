@@ -1,6 +1,6 @@
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { notFound } from "next/navigation";
+import { getPayload } from "payload";
 import "server-only";
 
 import Scroller from "@/components/Scroller";
@@ -12,7 +12,7 @@ export default async function Blog({
 }: {
   params: Promise<{ blog_id: string }>;
 }) {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const blog_id = (await params).blog_id;

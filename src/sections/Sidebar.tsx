@@ -1,6 +1,6 @@
 import config from "@payload-config";
 import { Project } from "@payload-types";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import "server-only";
 
 import SidebarInteractive from "@/sections/SidebarInteractive";
@@ -8,7 +8,7 @@ import { getMainProjects, getProjectsWithFocus } from "@/utils/payloadHelpers";
 import { mainFocuses } from "@/utils/projectData";
 
 export default async function Sidebar() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const allProjects = await getMainProjects(payload);

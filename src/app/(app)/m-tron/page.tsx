@@ -1,7 +1,7 @@
 import MTronClient from "./page.client";
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 
 import AnimationCoordinator from "@/components/AnimationCoordinator";
 import FloatUpMotion from "@/components/FloatUpMotion";
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function MTron() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const mTronData = (
@@ -52,7 +52,11 @@ export default async function MTron() {
             </>
           }
         >
-          <ProjectNavigation prev="/sunrise" textColor="text-white" />
+          <ProjectNavigation
+            prev="/sunrise"
+            textColor="text-white"
+            payload={payload}
+          />
         </MTronClient>
       </Scroller>
     </AnimationCoordinator>

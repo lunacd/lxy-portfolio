@@ -1,10 +1,11 @@
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { Payload } from "payload";
 import React from "react";
 import "server-only";
 
 interface ConnectPromptProps {
   textColor?: string;
+  payload: Payload;
 }
 
 const defaultProps = {
@@ -13,10 +14,7 @@ const defaultProps = {
 
 export default async function ConnectPrompt(propsIn: ConnectPromptProps) {
   const props = { ...defaultProps, ...propsIn };
-  const payload = await getPayloadHMR({
-    config,
-  });
-  const data = await payload.findGlobal({
+  const data = await props.payload.findGlobal({
     slug: "global",
     depth: 0,
   });

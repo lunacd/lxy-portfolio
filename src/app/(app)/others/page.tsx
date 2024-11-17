@@ -1,6 +1,6 @@
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 
 import ProjectsGallery from "@/components/ProjectsGallery";
 import Scroller from "@/components/Scroller";
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Others() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const projects = (

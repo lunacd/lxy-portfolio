@@ -1,7 +1,7 @@
 import SoulClient from "./page.client";
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Soul() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const soulData = (
@@ -28,7 +28,11 @@ export default async function Soul() {
       <SoulClient
         topChildren={<TopDisplay project={soulData} payload={payload} />}
       >
-        <ProjectNavigation prev="/lamboozled" next="/overlap" />
+        <ProjectNavigation
+          prev="/lamboozled"
+          next="/overlap"
+          payload={payload}
+        />
       </SoulClient>
     </Scroller>
   );

@@ -2,9 +2,9 @@ import HomeSection from "../../HomeSection";
 import InViewDetector from "../../InViewDetector";
 import LandingScrollIndicator from "./LandingScrollIndicator";
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { AnimatePresence } from "framer-motion";
 import { notFound } from "next/navigation";
+import { getPayload } from "payload";
 import React from "react";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
@@ -27,7 +27,7 @@ export default async function FocusPage({ params }: FocusPageProps) {
   if (!(focus in mainFocuses)) {
     return notFound();
   }
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const projects = await getProjectsWithFocus(focus, payload);
@@ -45,7 +45,7 @@ export default async function FocusPage({ params }: FocusPageProps) {
           </InViewDetector>
         ))}
       </AnimatePresence>
-      <ConnectPrompt />
+      <ConnectPrompt payload={payload} />
     </LandingScrollIndicator>
   );
 }

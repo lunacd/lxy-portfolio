@@ -2,8 +2,8 @@ import HomeIntro from "./HomeIntro";
 import HomeSection from "./HomeSection";
 import InViewDetector from "./InViewDetector";
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 import React from "react";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const projects = (
@@ -44,7 +44,7 @@ export default async function Home() {
           <HomeSection project={project} payload={payload} />
         </InViewDetector>
       ))}
-      <ConnectPrompt />
+      <ConnectPrompt payload={payload} />
     </Scroller>
   );
 }

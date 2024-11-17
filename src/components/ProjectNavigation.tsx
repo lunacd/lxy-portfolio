@@ -1,5 +1,6 @@
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import Link from "next/link";
+import { Payload } from "payload";
 import React from "react";
 import "server-only";
 
@@ -9,6 +10,7 @@ interface ProjectNavigationProps {
   prev?: string;
   next?: string;
   textColor?: string;
+  payload: Payload;
 }
 
 const defaultProps = {
@@ -37,7 +39,7 @@ const ProjectNavigation: React.FC<ProjectNavigationProps> = (propsIn) => {
           </div>
         )}
       </div>
-      <ConnectPrompt textColor={props.textColor} />
+      <ConnectPrompt textColor={props.textColor} payload={props.payload} />
     </>
   );
 };

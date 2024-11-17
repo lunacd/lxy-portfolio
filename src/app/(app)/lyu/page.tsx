@@ -1,7 +1,7 @@
 import LyuClient from "./page.client";
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Lyu() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const lyuData = (
@@ -28,7 +28,7 @@ export default async function Lyu() {
       <LyuClient
         topChildren={<TopDisplay project={lyuData} payload={payload} />}
       >
-        <ConnectPrompt />
+        <ConnectPrompt payload={payload} />
       </LyuClient>
     </Scroller>
   );

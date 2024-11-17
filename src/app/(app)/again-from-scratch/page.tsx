@@ -1,6 +1,6 @@
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 
 import FloatUpMotion from "@/components/FloatUpMotion";
 import ProjectNavigation from "@/components/ProjectNavigation";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AgainFromScratch() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const againFromScratchProjectData = (
@@ -40,7 +40,7 @@ export default async function AgainFromScratch() {
           <Block block={block} payload={payload} />
         </FloatUpMotion>
       ))}
-      <ProjectNavigation prev="/overlap" next="/sunrise" />
+      <ProjectNavigation prev="/overlap" next="/sunrise" payload={payload} />
     </Scroller>
   );
 }

@@ -1,6 +1,6 @@
 import config from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Metadata } from "next";
+import { getPayload } from "payload";
 
 import FloatUpMotion from "@/components/FloatUpMotion";
 import ProjectNavigation from "@/components/ProjectNavigation";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Lamboozled() {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   });
   const lamboozledProjectData = (
@@ -41,7 +41,11 @@ export default async function Lamboozled() {
           <Block block={block} payload={payload} />
         </FloatUpMotion>
       ))}
-      <ProjectNavigation prev="/tura" next="/again-from-scratch" />
+      <ProjectNavigation
+        prev="/tura"
+        next="/again-from-scratch"
+        payload={payload}
+      />
     </Scroller>
   );
 }
