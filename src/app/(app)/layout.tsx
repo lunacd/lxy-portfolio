@@ -22,9 +22,9 @@ export default function RootLayout(props: PropsWithChildren) {
             </div>
           </GlobalStateContextProvider>
         </div>
+        <SpeedInsights />
       </body>
       <GoogleAnalytics gaId="G-26S1RW6P14" />
-      <SpeedInsights />
     </html>
   );
 }
