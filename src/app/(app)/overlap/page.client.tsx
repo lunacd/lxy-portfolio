@@ -10,8 +10,8 @@ import { createPlainContent } from "@/components/TextSection";
 import DisplayImage from "@/sections/DisplayImage";
 import ImageText from "@/sections/ImageText";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 import LegacyTextImage from "@/sections/LegacyTextImage";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import Benchmark from "@/images/overlap/benchmark-full.webp";

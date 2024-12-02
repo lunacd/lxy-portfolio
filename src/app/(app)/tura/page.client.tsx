@@ -6,8 +6,8 @@ import { PropsWithChildren, ReactNode } from "react";
 import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import EqualSplit from "@/components/EqualSplit";
-import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
+import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import Spacing from "@/components/Spacing";
 import TextSection, {
   TextAlignment,
@@ -16,8 +16,8 @@ import TextSection, {
 } from "@/components/TextSection";
 import DisplayImage, { StaticDisplayImage } from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 import { RichTextImage } from "@/sections/LegacyTextImage";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";

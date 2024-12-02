@@ -8,8 +8,8 @@ import LargeGallery from "@/components/LargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 import LegacyTextImage from "@/sections/LegacyTextImage";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import BagMaking1 from "@/images/lyu/bag-making/bag-making-1-small.webp";
 import BagMaking2 from "@/images/lyu/bag-making/bag-making-2-small.webp";

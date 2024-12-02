@@ -18,8 +18,8 @@ import {
   useState,
 } from "react";
 
-import LegacyAnimatable from "@/components/LegacyAnimatable";
 import Button from "@/components/Button";
+import LegacyAnimatable from "@/components/LegacyAnimatable";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";

@@ -2,8 +2,8 @@ import classNames from "classnames";
 import React, { useState } from "react";
 import { useInterval } from "usehooks-ts";
 
-import { AnimationData } from "@/components/LegacyAnimatable";
 import GalleryRow, { GalleryRowLayout } from "@/components/GalleryRow";
+import { AnimationData } from "@/components/LegacyAnimatable";
 
 interface GalleryRowData {
   layout?: GalleryRowLayout;

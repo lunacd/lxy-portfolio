@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { StaticImageData } from "next/image";
 
-import LegacyAnimatable, { AnimationData } from "@/components/LegacyAnimatable";
 import FloatUpMotion from "@/components/FloatUpMotion";
+import LegacyAnimatable, { AnimationData } from "@/components/LegacyAnimatable";
 
 interface DisplayImageProps {
   source: AnimationData;

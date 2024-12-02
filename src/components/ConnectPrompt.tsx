@@ -1,4 +1,3 @@
-import config from "@payload-config";
 import { Payload } from "payload";
 import React from "react";
 import "server-only";

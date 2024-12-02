@@ -1,6 +1,6 @@
 import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
 
-export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
+export async function up({ payload }: MigrateUpArgs): Promise<void> {
   await payload.db.drizzle.execute(sql`
    CREATE TABLE IF NOT EXISTS "project_pages_blocks_small_gallery_items" (
   	"_order" integer NOT NULL,
@@ -54,7 +54,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX IF NOT EXISTS "blogs_cover_image_idx" ON "blogs" USING btree ("cover_image_id");`)
 }
 
-export async function down({ payload, req }: MigrateDownArgs): Promise<void> {
+export async function down({ payload }: MigrateDownArgs): Promise<void> {
   await payload.db.drizzle.execute(sql`
    ALTER TABLE "project_pages_blocks_small_gallery_items" DISABLE ROW LEVEL SECURITY;
   ALTER TABLE "project_pages_blocks_small_gallery" DISABLE ROW LEVEL SECURITY;

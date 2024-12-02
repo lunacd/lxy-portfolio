@@ -8,8 +8,8 @@ import LegacySmallGallery from "@/components/LegacySmallGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 import LegacyTextImage from "@/sections/LegacyTextImage";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import Evo1 from "@/images/sunrise/evolution/evolution-1-small.webp";
 import Evo2 from "@/images/sunrise/evolution/evolution-2-small.webp";

@@ -3,14 +3,14 @@
 import { PropsWithChildren, ReactNode } from "react";
 
 import { GalleryRowLayout } from "@/components/GalleryRow";
-import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LargeGallery from "@/components/LargeGallery";
+import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
 import Spacing from "@/components/Spacing";
 import DisplayImage from "@/sections/DisplayImage";
 import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 import LegacyTextImage from "@/sections/LegacyTextImage";
+import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import Belonging1 from "@/images/skates/belonging-1-small.webp";
 import Belonging2 from "@/images/skates/belonging-2-small.webp";

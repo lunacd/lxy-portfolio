@@ -1,5 +1,5 @@
-import LegacyAnimatable, { AnimationData } from "@/components/LegacyAnimatable";
 import FloatUpMotion from "@/components/FloatUpMotion";
+import LegacyAnimatable, { AnimationData } from "@/components/LegacyAnimatable";
 import TextSection, {
   TextContent,
   createPlainContent,
