@@ -7,7 +7,7 @@ import {
   useInView,
   useMotionValueEvent,
   useScroll,
-} from "framer-motion";
+} from "motion/react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import {

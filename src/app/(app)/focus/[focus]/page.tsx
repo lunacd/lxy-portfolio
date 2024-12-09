@@ -2,7 +2,7 @@ import HomeSection from "../../HomeSection";
 import InViewDetector from "../../InViewDetector";
 import LandingScrollIndicator from "./LandingScrollIndicator";
 import config from "@payload-config";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 import React from "react";

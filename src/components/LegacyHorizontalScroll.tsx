@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView } from "motion/react";
 import Image, { StaticImageData } from "next/image";
 import React, { useRef } from "react";
 

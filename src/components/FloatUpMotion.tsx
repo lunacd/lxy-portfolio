@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView } from "motion/react";
 import { PropsWithChildren, useRef } from "react";
 
 import { transitionSlow } from "@/utils/transitions";

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView } from "motion/react";
 import React, { useRef } from "react";
 
 import LegacyAnimatable, { AnimationData } from "@/components/LegacyAnimatable";

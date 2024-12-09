@@ -1,6 +1,6 @@
 "use client";
 
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { useMotionValueEvent, useScroll } from "motion/react";
 import { PropsWithChildren, useRef, useState } from "react";
 
 import ScrollIndicator from "@/components/ScrollIndicator";
