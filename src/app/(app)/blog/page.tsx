@@ -1,9 +1,9 @@
 import config from "@payload-config";
-import Link from "next/link";
 import { getPayload } from "payload";
 import "server-only";
 
 import Scroller from "@/components/Scroller";
+import SmallgallerBlock from "@/sections/SmallGalleryBlock";
 import TitleBlock from "@/sections/TitleBlock";
 
 export default async function Blogs() {
@@ -27,33 +27,48 @@ export default async function Blogs() {
           bottomMargin={true}
           blockType="title"
         />
-        <TitleBlock
-          text="Nothing yet! Come back for more!"
-          type="subtitle"
-          textColor="dark"
+        {blogs.length === 0 && (
+          <TitleBlock
+            text="Nothing yet! Come back for more!"
+            type="subtitle"
+            textColor="dark"
+            bottomMargin={true}
+            blockType="title"
+          />
+        )}
+        <SmallgallerBlock
+          items={blogs.map((blog) => {
+            return {
+              image: blog.coverImage,
+              text: {
+                root: {
+                  direction: "ltr",
+                  type: "root",
+                  version: 0,
+                  format: "",
+                  indent: 0,
+                  children: [
+                    {
+                      type: "paragraph",
+                      version: 0,
+                      children: [
+                        { type: "text", text: blog.title, format: "bold" },
+                        {
+                          type: "text",
+                          text: ` - ${new Date(blog.date).toLocaleDateString()}`,
+                        },
+                      ],
+                    },
+                  ],
+                },
+              },
+              link: `/blog/${blog.id}`,
+            };
+          })}
           bottomMargin={true}
-          blockType="title"
+          payload={payload}
+          blockType="smallGallery"
         />
-        {blogs.map((blog) => (
-          <Link href={`/blog/${blog.id}`} key={blog.id}>
-            <div key={blog.id}>
-              <TitleBlock
-                text={blog.title}
-                type="title"
-                textColor="dark"
-                bottomMargin={false}
-                blockType="title"
-              />
-              <TitleBlock
-                text={new Date(blog.date).toLocaleDateString()}
-                type="subtitle"
-                textColor="dark"
-                bottomMargin={true}
-                blockType="title"
-              />
-            </div>
-          </Link>
-        ))}
       </div>
     </Scroller>
   );

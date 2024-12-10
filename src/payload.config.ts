@@ -1,4 +1,3 @@
-// storage-adapter-import-placeholder
 import { Blogs } from "./collections/Blogs";
 import { Documents } from "./collections/Documents";
 import { Global } from "./collections/Global";
@@ -56,7 +55,6 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
-    // storage-adapter-placeholder
     s3Storage({
       collections: {
         media: {
