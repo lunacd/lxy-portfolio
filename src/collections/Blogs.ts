@@ -37,6 +37,9 @@ export const Blogs: CollectionConfig = {
       type: "upload",
       required: true,
       relationTo: "media",
+      admin: {
+        description: "Recommended width 1280px.",
+      },
     },
     {
       name: "blocks",
