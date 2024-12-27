@@ -4,7 +4,6 @@ import { getPayload } from "payload";
 import "server-only";
 
 import Scroller from "@/components/Scroller";
-import Spacing from "@/components/Spacing";
 import Blocks from "@/sections/Blocks";
 import TitleBlock from "@/sections/TitleBlock";
 
@@ -43,10 +42,9 @@ export default async function Blog({
           })}
           type="subtitle"
           textColor="dark"
-          bottomMargin={false}
+          bottomMargin={true}
           blockType="title"
         />
-        <Spacing size="large" />
         <Blocks payload={payload} blocks={blog.blocks} />
       </div>
     </Scroller>
