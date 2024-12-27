@@ -36,7 +36,11 @@ export default async function Blog({
           bottomMargin={false}
         />
         <TitleBlock
-          text={new Date(blog.date).toLocaleDateString()}
+          text={new Date(blog.date).toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
           type="subtitle"
           textColor="dark"
           bottomMargin={false}
