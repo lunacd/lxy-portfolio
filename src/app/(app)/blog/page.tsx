@@ -53,9 +53,39 @@ export default async function Blogs() {
                       version: 0,
                       children: [
                         { type: "text", text: blog.title, format: "bold" },
+                      ],
+                    },
+                    {
+                      type: "paragraph",
+                      version: 0,
+                      children: [
                         {
                           type: "text",
-                          text: ` - ${new Date(blog.date).toLocaleDateString()}`,
+                          text: ` - ${new Date(blog.date).toLocaleDateString(
+                            undefined,
+                            {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            },
+                          )}`,
+                        },
+                      ],
+                    },
+                    {
+                      type: "paragraph",
+                      version: 0,
+                      children: [
+                        {
+                          type: "text",
+                          text: ` - ${new Date(blog.date).toLocaleDateString(
+                            undefined,
+                            {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            },
+                          )}`,
                         },
                       ],
                     },
