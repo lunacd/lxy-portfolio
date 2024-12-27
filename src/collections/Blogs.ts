@@ -42,6 +42,18 @@ export const Blogs: CollectionConfig = {
       },
     },
     {
+      name: "tags",
+      type: "array",
+      fields: [
+        {
+          name: "value",
+          type: "text",
+          required: true,
+        },
+      ],
+      required: true,
+    },
+    {
       name: "blocks",
       type: "blocks",
       blocks: [

@@ -61,14 +61,14 @@ export default async function Blogs() {
                       children: [
                         {
                           type: "text",
-                          text: ` - ${new Date(blog.date).toLocaleDateString(
+                          text: new Date(blog.date).toLocaleDateString(
                             undefined,
                             {
                               year: "numeric",
                               month: "long",
                               day: "numeric",
                             },
-                          )}`,
+                          ),
                         },
                       ],
                     },
@@ -78,14 +78,7 @@ export default async function Blogs() {
                       children: [
                         {
                           type: "text",
-                          text: ` - ${new Date(blog.date).toLocaleDateString(
-                            undefined,
-                            {
-                              year: "numeric",
-                              month: "long",
-                              day: "numeric",
-                            },
-                          )}`,
+                          text: blog.tags.map((tag) => tag.value).join(" | "),
                         },
                       ],
                     },

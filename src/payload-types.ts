@@ -841,6 +841,10 @@ export interface Blog {
    * Required dimension: 1280 x 1058.
    */
   coverImage: number | Media;
+  tags: {
+    value: string;
+    id?: string | null;
+  }[];
   blocks: (
     | {
         text: string;
@@ -1965,6 +1969,12 @@ export interface BlogsSelect<T extends boolean = true> {
   title?: T;
   date?: T;
   coverImage?: T;
+  tags?:
+    | T
+    | {
+        value?: T;
+        id?: T;
+      };
   blocks?:
     | T
     | {
