@@ -134,11 +134,23 @@ export interface Project {
   id: number;
   name: string;
   uri: string;
+  /**
+   * Customizes the order of projects. Projects with a smaller value are displayed first.
+   */
   order: number;
+  /**
+   * The order of projects used in subsets of projects, like Product Design projects.
+   */
   subsetOrder: number;
+  /**
+   * When checked, this project will show on the landing page and will be included in project galleries. When un-checked, this project will be included only in More Works.
+   */
   isMainProject: boolean;
   duration?: string | null;
   category: string;
+  /**
+   * This will be displayed after category on landing page and project page， but will not show in project galleries.
+   */
   projectSize?: string | null;
   focuses?:
     | {
@@ -148,14 +160,38 @@ export interface Project {
       }[]
     | null;
   brief?: string | null;
+  /**
+   * Image displayed on the landing page for desktop users. Aspect ratio should be similar to a typical horizontal desktop display. Recommended width 3840px if 4K is supported, or 1920 if 4k support is not interesting.
+   */
   projectImage?: (number | null) | Media;
+  /**
+   * Image displayed on the landing page for mobile users. Aspect ratio should be similar to a typical vertical phone screen. Recommended width: about 1440px.
+   */
   mobileProjectImage?: (number | null) | Media;
+  /**
+   * Image displayed in project galleries. Required dimension: 1280 x 1058.
+   */
   projectGalleryImage: number | Media;
+  /**
+   * Anything CSS recognizes, e.g. white or #123456.
+   */
   backgroundColor?: string | null;
+  /**
+   * Background for the main project page. If unspecified, will use the background color entered above.
+   */
   pageBackgroundColor?: string | null;
   textColor: 'light' | 'dark';
+  /**
+   * Check this if this project needs a white cover displayed beneath the text and on top of the image.
+   */
   imageCover?: boolean | null;
+  /**
+   * A small image for the award that this project has received.
+   */
   awardImage?: (number | null) | Media;
+  /**
+   * If this is not empty, projects will link to the external link given here rather than the internal page.
+   */
   externalLink?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -172,6 +208,9 @@ export interface ProjectPage {
         text: string;
         type: 'title' | 'subtitle';
         textColor: 'dark' | 'light';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -194,6 +233,9 @@ export interface ProjectPage {
           [k: string]: unknown;
         };
         textColor: 'dark' | 'light';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -201,8 +243,11 @@ export interface ProjectPage {
       }
     | {
         items: {
+          /**
+           * All images must have the same size. Recommended image width: approximately 3840 / number of items.
+           */
           image: number | Media;
-          text: {
+          text?: {
             root: {
               type: string;
               children: {
@@ -216,28 +261,46 @@ export interface ProjectPage {
               version: number;
             };
             [k: string]: unknown;
-          };
+          } | null;
           id?: string | null;
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         textColor: 'dark' | 'light';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
         blockType: 'horizontalGallery';
       }
     | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
         image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
         imageSize: number;
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
         blockType: 'image';
       }
     | {
+        /**
+         * Get embed link by going to the YouTube video page, click share, and then choose embed.
+         */
         embedLink: string;
         width: number;
         height: number;
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -245,7 +308,13 @@ export interface ProjectPage {
       }
     | {
         label: string;
+        /**
+         * The document to link to.
+         */
         document: number | Document;
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -268,18 +337,36 @@ export interface ProjectPage {
           };
           [k: string]: unknown;
         };
+        /**
+         * Recommended width 1920px.
+         */
         image: number | Media;
         textColor: 'dark' | 'light';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
         blockType: 'textImage';
       }
     | {
+        /**
+         * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+         */
         image: number | Media;
+        /**
+         * The text displayed on top of the image to tell users to scroll.
+         */
         scrollPrompt: string;
+        /**
+         * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+         */
         width: number;
         textColor: 'dark' | 'light';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -287,9 +374,15 @@ export interface ProjectPage {
       }
     | {
         images: {
+          /**
+           * Recommended width 3840px.
+           */
           image: number | Media;
           id?: string | null;
         }[];
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -297,7 +390,13 @@ export interface ProjectPage {
       }
     | {
         items: {
+          /**
+           * Recommended width 1280px.
+           */
           image: number | Media;
+          /**
+           * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+           */
           text: {
             root: {
               type: string;
@@ -313,9 +412,15 @@ export interface ProjectPage {
             };
             [k: string]: unknown;
           };
+          /**
+           * If specified, the displayed image will be clickable and will link to the given link.
+           */
           link?: string | null;
           id?: string | null;
         }[];
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -340,6 +445,9 @@ export interface ProjectPage {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -349,14 +457,26 @@ export interface ProjectPage {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
               blockType: 'title';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
               image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
               imageSize: number;
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -381,6 +501,9 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -390,14 +513,26 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
                   }
                 | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
                     image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
                     imageSize: number;
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -406,6 +541,9 @@ export interface ProjectPage {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -430,6 +568,9 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -439,14 +580,26 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
                   }
                 | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
                     image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
                     imageSize: number;
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -454,6 +607,9 @@ export interface ProjectPage {
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -461,6 +617,9 @@ export interface ProjectPage {
             }
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -485,6 +644,9 @@ export interface ProjectPage {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -494,14 +656,26 @@ export interface ProjectPage {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
               blockType: 'title';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
               image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
               imageSize: number;
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -526,6 +700,9 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -535,14 +712,26 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
                   }
                 | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
                     image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
                     imageSize: number;
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -551,6 +740,9 @@ export interface ProjectPage {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -575,6 +767,9 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -584,14 +779,26 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
                   }
                 | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
                     image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
                     imageSize: number;
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -599,6 +806,9 @@ export interface ProjectPage {
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -607,6 +817,9 @@ export interface ProjectPage {
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         justify: 'start' | 'center' | 'end';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -624,12 +837,18 @@ export interface Blog {
   id: number;
   title: string;
   date: string;
+  /**
+   * Required dimension: 1280 x 1058.
+   */
   coverImage: number | Media;
   blocks: (
     | {
         text: string;
         type: 'title' | 'subtitle';
         textColor: 'dark' | 'light';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -652,6 +871,9 @@ export interface Blog {
           [k: string]: unknown;
         };
         textColor: 'dark' | 'light';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -659,8 +881,11 @@ export interface Blog {
       }
     | {
         items: {
+          /**
+           * All images must have the same size. Recommended image width: approximately 3840 / number of items.
+           */
           image: number | Media;
-          text: {
+          text?: {
             root: {
               type: string;
               children: {
@@ -674,28 +899,46 @@ export interface Blog {
               version: number;
             };
             [k: string]: unknown;
-          };
+          } | null;
           id?: string | null;
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         textColor: 'dark' | 'light';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
         blockType: 'horizontalGallery';
       }
     | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
         image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
         imageSize: number;
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
         blockType: 'image';
       }
     | {
+        /**
+         * Get embed link by going to the YouTube video page, click share, and then choose embed.
+         */
         embedLink: string;
         width: number;
         height: number;
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -703,7 +946,13 @@ export interface Blog {
       }
     | {
         label: string;
+        /**
+         * The document to link to.
+         */
         document: number | Document;
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -726,18 +975,36 @@ export interface Blog {
           };
           [k: string]: unknown;
         };
+        /**
+         * Recommended width 1920px.
+         */
         image: number | Media;
         textColor: 'dark' | 'light';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
         blockType: 'textImage';
       }
     | {
+        /**
+         * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+         */
         image: number | Media;
+        /**
+         * The text displayed on top of the image to tell users to scroll.
+         */
         scrollPrompt: string;
+        /**
+         * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+         */
         width: number;
         textColor: 'dark' | 'light';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -745,9 +1012,15 @@ export interface Blog {
       }
     | {
         images: {
+          /**
+           * Recommended width 3840px.
+           */
           image: number | Media;
           id?: string | null;
         }[];
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -772,6 +1045,9 @@ export interface Blog {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -781,14 +1057,26 @@ export interface Blog {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
               blockType: 'title';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
               image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
               imageSize: number;
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -813,6 +1101,9 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -822,14 +1113,26 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
                   }
                 | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
                     image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
                     imageSize: number;
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -838,6 +1141,9 @@ export interface Blog {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -862,6 +1168,9 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -871,14 +1180,26 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
                   }
                 | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
                     image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
                     imageSize: number;
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -886,6 +1207,9 @@ export interface Blog {
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -893,6 +1217,9 @@ export interface Blog {
             }
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -917,6 +1244,9 @@ export interface Blog {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -926,14 +1256,26 @@ export interface Blog {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
               blockType: 'title';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
               image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
               imageSize: number;
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -958,6 +1300,9 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -967,14 +1312,26 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
                   }
                 | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
                     image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
                     imageSize: number;
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -983,6 +1340,9 @@ export interface Blog {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -1007,6 +1367,9 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -1016,14 +1379,26 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
                   }
                 | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
                     image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
                     imageSize: number;
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
                     bottomMargin: boolean;
                     id?: string | null;
                     blockName?: string | null;
@@ -1031,6 +1406,9 @@ export interface Blog {
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              /**
+               * Check this to include a margin at the bottom
+               */
               bottomMargin: boolean;
               id?: string | null;
               blockName?: string | null;
@@ -1039,6 +1417,9 @@ export interface Blog {
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         justify: 'start' | 'center' | 'end';
+        /**
+         * Check this to include a margin at the bottom
+         */
         bottomMargin: boolean;
         id?: string | null;
         blockName?: string | null;
@@ -1970,6 +2351,9 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface Global {
   id: number;
+  /**
+   * The prompt to connect displayed at the bottom of the page
+   */
   connectionPrompt: string;
   resume: number | Document;
   profile: string;

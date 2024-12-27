@@ -8,7 +8,10 @@ import "server-only";
 import Block from "@/sections/Block";
 import { getSpacing } from "@/utils/spacingUtil";
 
-type RowBlockProps = Extract<ProjectPage["blocks"][0], { blockType: "row" }> & {
+export type RowBlockProps = Extract<
+  ProjectPage["blocks"][0],
+  { blockType: "row" }
+> & {
   payload: Payload;
 };
 

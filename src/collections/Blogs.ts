@@ -38,7 +38,7 @@ export const Blogs: CollectionConfig = {
       required: true,
       relationTo: "media",
       admin: {
-        description: "Recommended width 1280px.",
+        description: "Required dimension: 1280 x 1058.",
       },
     },
     {

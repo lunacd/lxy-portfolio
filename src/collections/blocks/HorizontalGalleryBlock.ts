@@ -23,7 +23,6 @@ const HorizontalGalleryBlock: Block = {
         {
           name: "text",
           type: "richText",
-          required: true,
           editor: editor,
         },
       ],
