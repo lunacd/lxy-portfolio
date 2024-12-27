@@ -67,6 +67,7 @@ export default function TextBlock(props: TitleBlockProps) {
               paragraph: child.type === "paragraph" || child.type === "list",
               title: child.type === "heading" && child.tag === "h1",
               subtitle: child.type === "heading" && child.tag === "h2",
+              subsubtitle: child.type === "heading" && child.tag === "h3",
               "text-left": child.format === "left",
               "text-right": child.format === "right",
               "text-center": child.format === "center",

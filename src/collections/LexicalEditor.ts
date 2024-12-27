@@ -15,7 +15,7 @@ export const editor = lexicalEditor({
     FixedToolbarFeature(),
     BoldFeature(),
     HeadingFeature({
-      enabledHeadingSizes: ["h1", "h2"],
+      enabledHeadingSizes: ["h1", "h2", "h3"],
     }),
     AlignFeature(),
     UnorderedListFeature(),
