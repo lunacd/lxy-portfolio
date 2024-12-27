@@ -28,7 +28,7 @@ export default async function Tura() {
       <TuraClient
         topChildren={<TopDisplay project={turaData} payload={payload} />}
       >
-        <ProjectNavigation prev="/overlap" next="/soul" payload={payload} />
+        <ProjectNavigation prev="/overlap" next="/curiously" payload={payload} />
       </TuraClient>
     </Scroller>
   );
