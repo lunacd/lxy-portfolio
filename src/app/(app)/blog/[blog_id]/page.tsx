@@ -4,6 +4,7 @@ import { getPayload } from "payload";
 import "server-only";
 
 import Scroller from "@/components/Scroller";
+import Spacing from "@/components/Spacing";
 import Blocks from "@/sections/Blocks";
 import TitleBlock from "@/sections/TitleBlock";
 
@@ -34,17 +35,14 @@ export default async function Blog({
           textColor="dark"
           bottomMargin={false}
         />
-        <TitleBlock
-          text={new Date(blog.date).toLocaleDateString(undefined, {
+        <div>
+          {new Date(blog.date).toLocaleDateString(undefined, {
             year: "numeric",
             month: "long",
             day: "numeric",
           })}
-          type="subtitle"
-          textColor="dark"
-          bottomMargin={true}
-          blockType="title"
-        />
+        </div>
+        <Spacing size="medium" />
         <Blocks payload={payload} blocks={blog.blocks} />
       </div>
     </Scroller>
