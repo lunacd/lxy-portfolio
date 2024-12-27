@@ -15,7 +15,7 @@ export default function Blocks(props: BlocksProps) {
   return (
     <>
       {props.blocks.map((block, index) => (
-        <FloatUpMotion className="single" key={index}>
+        <FloatUpMotion className="w-full" key={index}>
           <Block block={block} payload={props.payload} />
         </FloatUpMotion>
       ))}
