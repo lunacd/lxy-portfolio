@@ -1,10 +1,15 @@
 import config from "@payload-config";
+import { Metadata } from "next";
 import { getPayload } from "payload";
 import "server-only";
 
 import Scroller from "@/components/Scroller";
 import SmallgallerBlock from "@/sections/SmallGalleryBlock";
 import TitleBlock from "@/sections/TitleBlock";
+
+export const metadata: Metadata = {
+  title: "Blogs | Shirley Lyu",
+};
 
 export default async function Blogs() {
   const payload = await getPayload({
