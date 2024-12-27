@@ -13,7 +13,7 @@ export default async function Blogs() {
   const blogs = (
     await payload.find({
       collection: "blogs",
-      sort: "date",
+      sort: "-date",
       pagination: false,
     })
   ).docs;
