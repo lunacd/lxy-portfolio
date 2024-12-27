@@ -23,6 +23,7 @@ ul {
   --spacing-lg: 2rem;
   --sidebar: 0rem;
   --single: calc(100vw - var(--sidebar) - 2 * var(--spacing-lg));
+  --single-small: calc(100vw - var(--sidebar) - 4 * var(--spacing-lg));
   --half: calc(
     (100vw - var(--sidebar) - 2 * var(--spacing-lg) - var(--spacing)) / 2
   );
@@ -56,6 +57,10 @@ ul {
 
 .subtitle {
   @apply text-base font-semibold xl:text-lg;
+}
+
+.subsubtitle {
+  @apply text-base xl:text-lg;
 }
 
 .paragraph {

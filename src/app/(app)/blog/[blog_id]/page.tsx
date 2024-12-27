@@ -26,7 +26,7 @@ export default async function Blog({
   }
   return (
     <Scroller>
-      <div className="mt-spacing-lg w-single">
+      <div className="w-single-small mt-spacing-lg">
         <TitleBlock
           text={blog.title}
           blockType="title"

@@ -19,6 +19,7 @@ module.exports = {
       },
       width: {
         single: "var(--single)",
+        "single-small": "var(--single-small)",
         "two-thirds": "var(--two-thirds)",
         84: "21rem",
       },
