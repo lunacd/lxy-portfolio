@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 import "server-only";
 
+import { RefreshRouteOnSave } from "@/components/RefreshRouteOnSave";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import Blocks from "@/sections/Blocks";
@@ -26,25 +27,28 @@ export default async function Blog({
     notFound();
   }
   return (
-    <Scroller>
-      <div className="w-single-small mt-spacing-lg">
-        <TitleBlock
-          text={blog.title}
-          blockType="title"
-          type="title"
-          textColor="dark"
-          bottomMargin={false}
-        />
-        <div>
-          {new Date(blog.date).toLocaleDateString(undefined, {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
+    <>
+      <Scroller>
+        <div className="w-single-small mt-spacing-lg">
+          <TitleBlock
+            text={blog.title}
+            blockType="title"
+            type="title"
+            textColor="dark"
+            bottomMargin={false}
+          />
+          <div>
+            {new Date(blog.date).toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </div>
+          <Spacing size="medium" />
+          <Blocks payload={payload} blocks={blog.blocks} />
         </div>
-        <Spacing size="medium" />
-        <Blocks payload={payload} blocks={blog.blocks} />
-      </div>
-    </Scroller>
+      </Scroller>
+      <RefreshRouteOnSave />
+    </>
   );
 }

@@ -15,6 +15,11 @@ export const Blogs: CollectionConfig = {
   slug: "blogs",
   admin: {
     useAsTitle: "title",
+    livePreview: {
+      url: ({ data }) => {
+        return `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/blog/${data.id}`;
+      },
+    },
   },
   fields: [
     {
