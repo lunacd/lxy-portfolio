@@ -37,7 +37,7 @@ export default async function Blog({
             textColor="dark"
             bottomMargin={false}
           />
-          <div>
+          <div className="paragraph">
             {new Date(blog.date).toLocaleDateString(undefined, {
               year: "numeric",
               month: "long",
