@@ -2,7 +2,7 @@ import { bottomMargin, colorField } from "../CommonFields";
 import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
-const TextBlock: Block = {
+const TextImageBlock: Block = {
   slug: "textImage",
   fields: [
     {
@@ -30,4 +30,4 @@ const TextBlock: Block = {
   ],
 };
 
-export default TextBlock;
+export default TextImageBlock;
