@@ -427,6 +427,27 @@ export interface ProjectPage {
         blockType: 'smallGallery';
       }
     | {
+        items: {
+          /**
+           * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+           */
+          image: number | Media;
+          /**
+           * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+           */
+          imageSize: number;
+          id?: string | null;
+        }[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        /**
+         * Check this to include a margin at the bottom
+         */
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'equalHeightImages';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -651,6 +672,27 @@ export interface ProjectPage {
               blockType: 'smallGallery';
             }
           | {
+              items: {
+                /**
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                 */
+                image: number | Media;
+                /**
+                 * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                 */
+                imageSize: number;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              /**
+               * Check this to include a margin at the bottom
+               */
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'equalHeightImages';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -873,6 +915,27 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       */
+                      image: number | Media;
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1108,6 +1171,27 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       */
+                      image: number | Media;
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1354,6 +1438,27 @@ export interface ProjectPage {
               blockType: 'smallGallery';
             }
           | {
+              items: {
+                /**
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                 */
+                image: number | Media;
+                /**
+                 * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                 */
+                imageSize: number;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              /**
+               * Check this to include a margin at the bottom
+               */
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'equalHeightImages';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -1576,6 +1681,27 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       */
+                      image: number | Media;
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1811,6 +1937,27 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       */
+                      image: number | Media;
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2077,6 +2224,27 @@ export interface Blog {
         blockType: 'smallGallery';
       }
     | {
+        items: {
+          /**
+           * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+           */
+          image: number | Media;
+          /**
+           * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+           */
+          imageSize: number;
+          id?: string | null;
+        }[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        /**
+         * Check this to include a margin at the bottom
+         */
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'equalHeightImages';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -2301,6 +2469,27 @@ export interface Blog {
               blockType: 'smallGallery';
             }
           | {
+              items: {
+                /**
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                 */
+                image: number | Media;
+                /**
+                 * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                 */
+                imageSize: number;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              /**
+               * Check this to include a margin at the bottom
+               */
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'equalHeightImages';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -2523,6 +2712,27 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       */
+                      image: number | Media;
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2758,6 +2968,27 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       */
+                      image: number | Media;
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3004,6 +3235,27 @@ export interface Blog {
               blockType: 'smallGallery';
             }
           | {
+              items: {
+                /**
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                 */
+                image: number | Media;
+                /**
+                 * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                 */
+                imageSize: number;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              /**
+               * Check this to include a margin at the bottom
+               */
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'equalHeightImages';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -3226,6 +3478,27 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       */
+                      image: number | Media;
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3461,6 +3734,27 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       */
+                      image: number | Media;
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3768,6 +4062,21 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        equalHeightImages?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    imageSize?: T;
+                    id?: T;
+                  };
+              spacing?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -3887,6 +4196,21 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    equalHeightImages?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                imageSize?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -4002,6 +4326,21 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4128,6 +4467,21 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4263,6 +4617,21 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    equalHeightImages?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                imageSize?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -4378,6 +4747,21 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4504,6 +4888,21 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4655,6 +5054,21 @@ export interface BlogsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        equalHeightImages?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    imageSize?: T;
+                    id?: T;
+                  };
+              spacing?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -4774,6 +5188,21 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    equalHeightImages?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                imageSize?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -4889,6 +5318,21 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5015,6 +5459,21 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5150,6 +5609,21 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    equalHeightImages?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                imageSize?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -5265,6 +5739,21 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5391,6 +5880,21 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;

@@ -1,3 +1,4 @@
+import EqualHeightImagesBlock from "./EqualHeightImagesBlock";
 import SmallgallerBlock from "./SmallGalleryBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
@@ -50,5 +51,9 @@ export default function Block(props: BlockProps) {
       return <SlideShowBlock {...props.block} payload={props.payload} />;
     case "smallGallery":
       return <SmallgallerBlock {...props.block} payload={props.payload} />;
+    case "equalHeightImages":
+      return (
+        <EqualHeightImagesBlock {...props.block} payload={props.payload} />
+      );
   }
 }

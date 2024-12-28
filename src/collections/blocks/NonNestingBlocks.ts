@@ -1,4 +1,5 @@
 import DocumentBlock from "./DocumentBlock";
+import EqualHeightImagesBlock from "./EqualHeightImagesBlock";
 import HorizontalGalleryBlock from "./HorizontalGalleryBlock";
 import HorizontalScrollBlock from "./HorizontalScrollBlock";
 import ImageBlock from "./ImageBlock";
@@ -20,4 +21,5 @@ export const nonNestingBlocks = [
   HorizontalScrollBlock,
   SlideShowBlock,
   SmallGalleryBlock,
+  EqualHeightImagesBlock,
 ];

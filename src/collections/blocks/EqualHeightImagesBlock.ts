@@ -16,7 +16,17 @@ const EqualHeightImagesBlock: Block = {
           required: true,
           admin: {
             description:
-              "All images must have the same size. Recommended image width: approximately 3840 / number of items.",
+              "Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.",
+          },
+        },
+        {
+          name: "imageSize",
+          type: "number",
+          required: true,
+          defaultValue: 50,
+          admin: {
+            description:
+              "Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.",
           },
         },
       ],
