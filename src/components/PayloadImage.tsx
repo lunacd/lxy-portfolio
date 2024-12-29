@@ -26,6 +26,7 @@ export default async function PayloadImage(props: PayloadImageProps) {
       className={props.className}
       style={{
         flex: props.equalHeight ? media.width / media.height : 0,
+        minWidth: 0,
       }}
       fill={props.fill}
       sizes={props.sizes}

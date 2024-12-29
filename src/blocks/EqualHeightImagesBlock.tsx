@@ -25,6 +25,7 @@ export default function EqualHeightImagesBlock(
           payload={props.payload}
           media={item.image}
           sizes={`${item.imageSize}vw`}
+          equalHeight={true}
         ></PayloadImage>
       ))}
     </div>
