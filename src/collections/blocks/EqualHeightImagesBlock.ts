@@ -1,4 +1,4 @@
-import { bottomMarginNew } from "../CommonFields";
+import { bottomMargin } from "../CommonFields";
 import { Block } from "payload";
 
 const EqualHeightImagesBlock: Block = {
@@ -38,7 +38,7 @@ const EqualHeightImagesBlock: Block = {
       required: true,
       defaultValue: "regular",
     },
-    bottomMarginNew,
+    bottomMargin,
   ],
 };
 

@@ -17,7 +17,7 @@ export default function EqualHeightImagesBlock(
       className="flex w-full flex-row"
       style={{
         gap: getSpacing(props.spacing),
-        marginBottom: getSpacing(props.bottomMarginNew),
+        marginBottom: getSpacing(props.bottomMargin),
       }}
     >
       {props.items.map((item, index) => (

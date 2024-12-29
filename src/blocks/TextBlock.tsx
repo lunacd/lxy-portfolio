@@ -61,7 +61,7 @@ export default function TextBlock(props: TitleBlockProps) {
         "text-white": props.textColor === "light",
         "text-black": props.textColor === "dark",
       })}
-      style={{ marginBottom: getSpacing(props.bottomMarginNew) }}
+      style={{ marginBottom: getSpacing(props.bottomMargin) }}
     >
       {props.text.root.children.map((child, index) => (
         <Fragment key={index}>

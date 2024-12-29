@@ -17,7 +17,7 @@ export default function SlideShowBlock(props: SlideShowBlockProps) {
     <>
       <SlideShowAnimation
         style={{
-          marginBottom: getSpacing(props.bottomMarginNew),
+          marginBottom: getSpacing(props.bottomMargin),
         }}
       >
         {props.images.map((image, index) => (

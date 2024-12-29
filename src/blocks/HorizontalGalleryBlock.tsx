@@ -23,7 +23,7 @@ export default function HorizontalGalleryBlock(
         blockType: "image",
         image: item.image,
         imageSize: 100 / props.items.length,
-        bottomMarginNew: "none",
+        bottomMargin: "none",
       },
     ];
     if (item.text) {
@@ -31,7 +31,7 @@ export default function HorizontalGalleryBlock(
         blockType: "text",
         text: item.text,
         textColor: props.textColor,
-        bottomMarginNew: "none",
+        bottomMargin: "none",
       });
     }
     return blocks;
@@ -43,15 +43,14 @@ export default function HorizontalGalleryBlock(
           blockType: "column",
           blocks: makeItemBlocks(item),
           spacing: "small",
-          bottomMargin: false,
           justify: "start",
-          bottomMarginNew: "none",
+          bottomMargin: "none",
         };
       })}
       spacing={props.spacing}
       blockType="row"
       payload={props.payload}
-      bottomMarginNew={props.bottomMarginNew}
+      bottomMargin={props.bottomMargin}
     />
   );
 }

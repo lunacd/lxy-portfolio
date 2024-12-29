@@ -26,7 +26,7 @@ export default function HorizontalScrollBlock(
       <div
         className="mb-spacing-3lg w-full overflow-x-scroll"
         style={{
-          marginBottom: getSpacing(props.bottomMarginNew),
+          marginBottom: getSpacing(props.bottomMargin),
         }}
       >
         <div style={{ width: `${props.width}%` }}>

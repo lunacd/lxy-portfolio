@@ -1,4 +1,4 @@
-import { bottomMarginNew } from "../CommonFields";
+import { bottomMargin } from "../CommonFields";
 import { Block } from "payload";
 
 const SlideShowBlock: Block = {
@@ -20,7 +20,7 @@ const SlideShowBlock: Block = {
       ],
       required: true,
     },
-    bottomMarginNew,
+    bottomMargin,
   ],
 };
 

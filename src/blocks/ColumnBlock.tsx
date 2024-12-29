@@ -22,7 +22,7 @@ export default function ColumnBlock(props: ColumnBlockProps) {
       })}
       style={{
         gap: getSpacing(props.spacing),
-        marginBottom: getSpacing(props.bottomMarginNew),
+        marginBottom: getSpacing(props.bottomMargin),
       }}
     >
       {props.blocks.map((block, index) => (

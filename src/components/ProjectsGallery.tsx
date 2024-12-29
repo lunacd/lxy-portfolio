@@ -43,7 +43,7 @@ export default async function ProjectsGallery(props: ProjectsGalleryProps) {
         })}
         blockType="smallGallery"
         payload={props.payload}
-        bottomMarginNew="xxl"
+        bottomMargin="xxl"
       />
     </FloatUpMotion>
   );

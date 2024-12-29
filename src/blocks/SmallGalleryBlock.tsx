@@ -44,7 +44,7 @@ export default function SmallgallerBlock(props: SmallGalleryBlockProps) {
                 text={item.text}
                 textColor="dark"
                 blockType="text"
-                bottomMarginNew="none"
+                bottomMargin="none"
               />
             </div>
           </div>

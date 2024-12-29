@@ -50,7 +50,7 @@ export default async function Blog({
             blockType="title"
             type="title"
             textColor="dark"
-            bottomMarginNew="none"
+            bottomMargin="none"
           />
           <div className="paragraph">
             {new Date(blog.date).toLocaleDateString(undefined, {

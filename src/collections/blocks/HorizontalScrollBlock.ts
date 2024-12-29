@@ -1,4 +1,4 @@
-import { bottomMarginNew, colorField } from "../CommonFields";
+import { bottomMargin, colorField } from "../CommonFields";
 import { Block } from "payload";
 
 const HorizontalScrollBlock: Block = {
@@ -33,7 +33,7 @@ const HorizontalScrollBlock: Block = {
       },
     },
     colorField(),
-    bottomMarginNew,
+    bottomMargin,
   ],
 };
 

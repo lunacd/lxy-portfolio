@@ -1,4 +1,4 @@
-import { bottomMarginNew } from "../CommonFields";
+import { bottomMargin } from "../CommonFields";
 import { Block } from "payload";
 
 const YouTubeBlock: Block = {
@@ -27,7 +27,7 @@ const YouTubeBlock: Block = {
       type: "number",
       required: true,
     },
-    bottomMarginNew,
+    bottomMargin,
   ],
 };
 

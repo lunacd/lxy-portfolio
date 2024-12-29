@@ -20,30 +20,30 @@ export default function TextImageBlock(props: TextImageBlockProps) {
               text: props.title,
               textColor: props.textColor,
               type: "title",
-              bottomMarginNew: "none",
+              bottomMargin: "none",
             },
             {
               blockType: "text",
               text: props.text,
               textColor: props.textColor,
-              bottomMarginNew: "none",
+              bottomMargin: "none",
             },
           ],
           spacing: "large",
           justify: "center",
-          bottomMarginNew: "none",
+          bottomMargin: "none",
         },
         {
           blockType: "image",
           image: props.image,
           imageSize: 50,
-          bottomMarginNew: "none",
+          bottomMargin: "none",
         },
       ]}
       spacing="regular"
       blockType="row"
       payload={props.payload}
-      bottomMarginNew={props.bottomMarginNew}
+      bottomMargin={props.bottomMargin}
     />
   );
 }

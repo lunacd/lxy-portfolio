@@ -1,4 +1,4 @@
-import { bottomMarginNew } from "../CommonFields";
+import { bottomMargin } from "../CommonFields";
 import { Block } from "payload";
 
 const DocumentBlock: Block = {
@@ -18,7 +18,7 @@ const DocumentBlock: Block = {
         description: "The document to link to.",
       },
     },
-    bottomMarginNew,
+    bottomMargin,
   ],
 };
 

@@ -1,4 +1,4 @@
-import { bottomMarginNew, justifyField } from "../CommonFields";
+import { bottomMargin, justifyField } from "../CommonFields";
 import { nonNestingBlocks } from "./NonNestingBlocks";
 import RowBlock from "./RowBlock";
 import { Block } from "payload";
@@ -23,7 +23,7 @@ export default function ColumnBlock(depth: number): Block {
         defaultValue: "regular",
       },
       justifyField,
-      bottomMarginNew,
+      bottomMargin,
     ],
   };
 }

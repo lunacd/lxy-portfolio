@@ -17,7 +17,7 @@ export default function YouTubeBlock(props: YouTubeBlockProps) {
       allowFullScreen
       style={{
         aspectRatio: `${props.width} / ${props.height}`,
-        marginBottom: getSpacing(props.bottomMarginNew),
+        marginBottom: getSpacing(props.bottomMargin),
       }}
     ></iframe>
   );

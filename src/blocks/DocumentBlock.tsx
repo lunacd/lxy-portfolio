@@ -17,7 +17,7 @@ export default async function DocumentBlock(props: DocumentBlockProps) {
     <div
       className="flex w-full justify-center"
       style={{
-        marginBottom: getSpacing(props.bottomMarginNew),
+        marginBottom: getSpacing(props.bottomMargin),
       }}
     >
       <Button href={document.url!}>{props.label}</Button>

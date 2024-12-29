@@ -1,7 +1,7 @@
 import { Field } from "payload";
 
-export const bottomMarginNew: Field = {
-  name: "bottomMarginNew",
+export const bottomMargin: Field = {
+  name: "bottomMargin",
   type: "radio",
   required: true,
   defaultValue: "xxl",

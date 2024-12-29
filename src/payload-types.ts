@@ -208,7 +208,7 @@ export interface ProjectPage {
         text: string;
         type: 'title' | 'subtitle';
         textColor: 'dark' | 'light';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'title';
@@ -230,7 +230,7 @@ export interface ProjectPage {
           [k: string]: unknown;
         };
         textColor: 'dark' | 'light';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'text';
@@ -260,7 +260,7 @@ export interface ProjectPage {
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         textColor: 'dark' | 'light';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'horizontalGallery';
@@ -274,7 +274,7 @@ export interface ProjectPage {
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
         imageSize: number;
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'image';
@@ -286,7 +286,7 @@ export interface ProjectPage {
         embedLink: string;
         width: number;
         height: number;
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'youtube';
@@ -297,7 +297,7 @@ export interface ProjectPage {
          * The document to link to.
          */
         document: number | Document;
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'document';
@@ -324,7 +324,7 @@ export interface ProjectPage {
          */
         image: number | Media;
         textColor: 'dark' | 'light';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'textImage';
@@ -343,7 +343,7 @@ export interface ProjectPage {
          */
         width: number;
         textColor: 'dark' | 'light';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'horizontalScroll';
@@ -356,7 +356,7 @@ export interface ProjectPage {
           image: number | Media;
           id?: string | null;
         }[];
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'slideShow';
@@ -391,7 +391,7 @@ export interface ProjectPage {
           link?: string | null;
           id?: string | null;
         }[];
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'smallGallery';
@@ -409,7 +409,7 @@ export interface ProjectPage {
           id?: string | null;
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'equalHeightImages';
@@ -426,7 +426,7 @@ export interface ProjectPage {
           type: 'equalWidth' | 'equalHeight';
           id?: string | null;
         }[];
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'largeGallery';
@@ -437,7 +437,7 @@ export interface ProjectPage {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'title';
@@ -459,7 +459,7 @@ export interface ProjectPage {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'text';
@@ -489,7 +489,7 @@ export interface ProjectPage {
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'horizontalGallery';
@@ -503,7 +503,7 @@ export interface ProjectPage {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'image';
@@ -515,7 +515,7 @@ export interface ProjectPage {
               embedLink: string;
               width: number;
               height: number;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'youtube';
@@ -526,7 +526,7 @@ export interface ProjectPage {
                * The document to link to.
                */
               document: number | Document;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'document';
@@ -553,7 +553,7 @@ export interface ProjectPage {
                */
               image: number | Media;
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'textImage';
@@ -572,7 +572,7 @@ export interface ProjectPage {
                */
               width: number;
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'horizontalScroll';
@@ -585,7 +585,7 @@ export interface ProjectPage {
                 image: number | Media;
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'slideShow';
@@ -620,7 +620,7 @@ export interface ProjectPage {
                 link?: string | null;
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'smallGallery';
@@ -638,7 +638,7 @@ export interface ProjectPage {
                 id?: string | null;
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'equalHeightImages';
@@ -655,7 +655,7 @@ export interface ProjectPage {
                 type: 'equalWidth' | 'equalHeight';
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'largeGallery';
@@ -666,7 +666,7 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -688,7 +688,7 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -718,7 +718,7 @@ export interface ProjectPage {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalGallery';
@@ -732,7 +732,7 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -744,7 +744,7 @@ export interface ProjectPage {
                     embedLink: string;
                     width: number;
                     height: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'youtube';
@@ -755,7 +755,7 @@ export interface ProjectPage {
                      * The document to link to.
                      */
                     document: number | Document;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'document';
@@ -782,7 +782,7 @@ export interface ProjectPage {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'textImage';
@@ -801,7 +801,7 @@ export interface ProjectPage {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalScroll';
@@ -814,7 +814,7 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'slideShow';
@@ -849,7 +849,7 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
@@ -867,7 +867,7 @@ export interface ProjectPage {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
@@ -884,7 +884,7 @@ export interface ProjectPage {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
@@ -892,7 +892,7 @@ export interface ProjectPage {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'column';
@@ -903,7 +903,7 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -925,7 +925,7 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -955,7 +955,7 @@ export interface ProjectPage {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalGallery';
@@ -969,7 +969,7 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -981,7 +981,7 @@ export interface ProjectPage {
                     embedLink: string;
                     width: number;
                     height: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'youtube';
@@ -992,7 +992,7 @@ export interface ProjectPage {
                      * The document to link to.
                      */
                     document: number | Document;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'document';
@@ -1019,7 +1019,7 @@ export interface ProjectPage {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'textImage';
@@ -1038,7 +1038,7 @@ export interface ProjectPage {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalScroll';
@@ -1051,7 +1051,7 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'slideShow';
@@ -1086,7 +1086,7 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
@@ -1104,7 +1104,7 @@ export interface ProjectPage {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
@@ -1121,21 +1121,21 @@ export interface ProjectPage {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'row';
             }
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'row';
@@ -1146,7 +1146,7 @@ export interface ProjectPage {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'title';
@@ -1168,7 +1168,7 @@ export interface ProjectPage {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'text';
@@ -1198,7 +1198,7 @@ export interface ProjectPage {
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'horizontalGallery';
@@ -1212,7 +1212,7 @@ export interface ProjectPage {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'image';
@@ -1224,7 +1224,7 @@ export interface ProjectPage {
               embedLink: string;
               width: number;
               height: number;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'youtube';
@@ -1235,7 +1235,7 @@ export interface ProjectPage {
                * The document to link to.
                */
               document: number | Document;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'document';
@@ -1262,7 +1262,7 @@ export interface ProjectPage {
                */
               image: number | Media;
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'textImage';
@@ -1281,7 +1281,7 @@ export interface ProjectPage {
                */
               width: number;
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'horizontalScroll';
@@ -1294,7 +1294,7 @@ export interface ProjectPage {
                 image: number | Media;
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'slideShow';
@@ -1329,7 +1329,7 @@ export interface ProjectPage {
                 link?: string | null;
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'smallGallery';
@@ -1347,7 +1347,7 @@ export interface ProjectPage {
                 id?: string | null;
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'equalHeightImages';
@@ -1364,7 +1364,7 @@ export interface ProjectPage {
                 type: 'equalWidth' | 'equalHeight';
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'largeGallery';
@@ -1375,7 +1375,7 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -1397,7 +1397,7 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -1427,7 +1427,7 @@ export interface ProjectPage {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalGallery';
@@ -1441,7 +1441,7 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -1453,7 +1453,7 @@ export interface ProjectPage {
                     embedLink: string;
                     width: number;
                     height: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'youtube';
@@ -1464,7 +1464,7 @@ export interface ProjectPage {
                      * The document to link to.
                      */
                     document: number | Document;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'document';
@@ -1491,7 +1491,7 @@ export interface ProjectPage {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'textImage';
@@ -1510,7 +1510,7 @@ export interface ProjectPage {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalScroll';
@@ -1523,7 +1523,7 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'slideShow';
@@ -1558,7 +1558,7 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
@@ -1576,7 +1576,7 @@ export interface ProjectPage {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
@@ -1593,7 +1593,7 @@ export interface ProjectPage {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
@@ -1601,7 +1601,7 @@ export interface ProjectPage {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'column';
@@ -1612,7 +1612,7 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -1634,7 +1634,7 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -1664,7 +1664,7 @@ export interface ProjectPage {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalGallery';
@@ -1678,7 +1678,7 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -1690,7 +1690,7 @@ export interface ProjectPage {
                     embedLink: string;
                     width: number;
                     height: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'youtube';
@@ -1701,7 +1701,7 @@ export interface ProjectPage {
                      * The document to link to.
                      */
                     document: number | Document;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'document';
@@ -1728,7 +1728,7 @@ export interface ProjectPage {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'textImage';
@@ -1747,7 +1747,7 @@ export interface ProjectPage {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalScroll';
@@ -1760,7 +1760,7 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'slideShow';
@@ -1795,7 +1795,7 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
@@ -1813,7 +1813,7 @@ export interface ProjectPage {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
@@ -1830,14 +1830,14 @@ export interface ProjectPage {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'row';
@@ -1845,7 +1845,7 @@ export interface ProjectPage {
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         justify: 'start' | 'center' | 'end';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'column';
@@ -1875,7 +1875,7 @@ export interface Blog {
         text: string;
         type: 'title' | 'subtitle';
         textColor: 'dark' | 'light';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'title';
@@ -1897,7 +1897,7 @@ export interface Blog {
           [k: string]: unknown;
         };
         textColor: 'dark' | 'light';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'text';
@@ -1927,7 +1927,7 @@ export interface Blog {
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         textColor: 'dark' | 'light';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'horizontalGallery';
@@ -1941,7 +1941,7 @@ export interface Blog {
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
         imageSize: number;
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'image';
@@ -1953,7 +1953,7 @@ export interface Blog {
         embedLink: string;
         width: number;
         height: number;
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'youtube';
@@ -1964,7 +1964,7 @@ export interface Blog {
          * The document to link to.
          */
         document: number | Document;
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'document';
@@ -1991,7 +1991,7 @@ export interface Blog {
          */
         image: number | Media;
         textColor: 'dark' | 'light';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'textImage';
@@ -2010,7 +2010,7 @@ export interface Blog {
          */
         width: number;
         textColor: 'dark' | 'light';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'horizontalScroll';
@@ -2023,7 +2023,7 @@ export interface Blog {
           image: number | Media;
           id?: string | null;
         }[];
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'slideShow';
@@ -2058,7 +2058,7 @@ export interface Blog {
           link?: string | null;
           id?: string | null;
         }[];
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'smallGallery';
@@ -2076,7 +2076,7 @@ export interface Blog {
           id?: string | null;
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'equalHeightImages';
@@ -2093,7 +2093,7 @@ export interface Blog {
           type: 'equalWidth' | 'equalHeight';
           id?: string | null;
         }[];
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'largeGallery';
@@ -2104,7 +2104,7 @@ export interface Blog {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'title';
@@ -2126,7 +2126,7 @@ export interface Blog {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'text';
@@ -2156,7 +2156,7 @@ export interface Blog {
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'horizontalGallery';
@@ -2170,7 +2170,7 @@ export interface Blog {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'image';
@@ -2182,7 +2182,7 @@ export interface Blog {
               embedLink: string;
               width: number;
               height: number;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'youtube';
@@ -2193,7 +2193,7 @@ export interface Blog {
                * The document to link to.
                */
               document: number | Document;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'document';
@@ -2220,7 +2220,7 @@ export interface Blog {
                */
               image: number | Media;
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'textImage';
@@ -2239,7 +2239,7 @@ export interface Blog {
                */
               width: number;
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'horizontalScroll';
@@ -2252,7 +2252,7 @@ export interface Blog {
                 image: number | Media;
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'slideShow';
@@ -2287,7 +2287,7 @@ export interface Blog {
                 link?: string | null;
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'smallGallery';
@@ -2305,7 +2305,7 @@ export interface Blog {
                 id?: string | null;
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'equalHeightImages';
@@ -2322,7 +2322,7 @@ export interface Blog {
                 type: 'equalWidth' | 'equalHeight';
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'largeGallery';
@@ -2333,7 +2333,7 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -2355,7 +2355,7 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -2385,7 +2385,7 @@ export interface Blog {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalGallery';
@@ -2399,7 +2399,7 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -2411,7 +2411,7 @@ export interface Blog {
                     embedLink: string;
                     width: number;
                     height: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'youtube';
@@ -2422,7 +2422,7 @@ export interface Blog {
                      * The document to link to.
                      */
                     document: number | Document;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'document';
@@ -2449,7 +2449,7 @@ export interface Blog {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'textImage';
@@ -2468,7 +2468,7 @@ export interface Blog {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalScroll';
@@ -2481,7 +2481,7 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'slideShow';
@@ -2516,7 +2516,7 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
@@ -2534,7 +2534,7 @@ export interface Blog {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
@@ -2551,7 +2551,7 @@ export interface Blog {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
@@ -2559,7 +2559,7 @@ export interface Blog {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'column';
@@ -2570,7 +2570,7 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -2592,7 +2592,7 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -2622,7 +2622,7 @@ export interface Blog {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalGallery';
@@ -2636,7 +2636,7 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -2648,7 +2648,7 @@ export interface Blog {
                     embedLink: string;
                     width: number;
                     height: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'youtube';
@@ -2659,7 +2659,7 @@ export interface Blog {
                      * The document to link to.
                      */
                     document: number | Document;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'document';
@@ -2686,7 +2686,7 @@ export interface Blog {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'textImage';
@@ -2705,7 +2705,7 @@ export interface Blog {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalScroll';
@@ -2718,7 +2718,7 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'slideShow';
@@ -2753,7 +2753,7 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
@@ -2771,7 +2771,7 @@ export interface Blog {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
@@ -2788,21 +2788,21 @@ export interface Blog {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'row';
             }
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'row';
@@ -2813,7 +2813,7 @@ export interface Blog {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'title';
@@ -2835,7 +2835,7 @@ export interface Blog {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'text';
@@ -2865,7 +2865,7 @@ export interface Blog {
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'horizontalGallery';
@@ -2879,7 +2879,7 @@ export interface Blog {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'image';
@@ -2891,7 +2891,7 @@ export interface Blog {
               embedLink: string;
               width: number;
               height: number;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'youtube';
@@ -2902,7 +2902,7 @@ export interface Blog {
                * The document to link to.
                */
               document: number | Document;
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'document';
@@ -2929,7 +2929,7 @@ export interface Blog {
                */
               image: number | Media;
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'textImage';
@@ -2948,7 +2948,7 @@ export interface Blog {
                */
               width: number;
               textColor: 'dark' | 'light';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'horizontalScroll';
@@ -2961,7 +2961,7 @@ export interface Blog {
                 image: number | Media;
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'slideShow';
@@ -2996,7 +2996,7 @@ export interface Blog {
                 link?: string | null;
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'smallGallery';
@@ -3014,7 +3014,7 @@ export interface Blog {
                 id?: string | null;
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'equalHeightImages';
@@ -3031,7 +3031,7 @@ export interface Blog {
                 type: 'equalWidth' | 'equalHeight';
                 id?: string | null;
               }[];
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'largeGallery';
@@ -3042,7 +3042,7 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -3064,7 +3064,7 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -3094,7 +3094,7 @@ export interface Blog {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalGallery';
@@ -3108,7 +3108,7 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -3120,7 +3120,7 @@ export interface Blog {
                     embedLink: string;
                     width: number;
                     height: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'youtube';
@@ -3131,7 +3131,7 @@ export interface Blog {
                      * The document to link to.
                      */
                     document: number | Document;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'document';
@@ -3158,7 +3158,7 @@ export interface Blog {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'textImage';
@@ -3177,7 +3177,7 @@ export interface Blog {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalScroll';
@@ -3190,7 +3190,7 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'slideShow';
@@ -3225,7 +3225,7 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
@@ -3243,7 +3243,7 @@ export interface Blog {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
@@ -3260,7 +3260,7 @@ export interface Blog {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
@@ -3268,7 +3268,7 @@ export interface Blog {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'column';
@@ -3279,7 +3279,7 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'title';
@@ -3301,7 +3301,7 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'text';
@@ -3331,7 +3331,7 @@ export interface Blog {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalGallery';
@@ -3345,7 +3345,7 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'image';
@@ -3357,7 +3357,7 @@ export interface Blog {
                     embedLink: string;
                     width: number;
                     height: number;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'youtube';
@@ -3368,7 +3368,7 @@ export interface Blog {
                      * The document to link to.
                      */
                     document: number | Document;
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'document';
@@ -3395,7 +3395,7 @@ export interface Blog {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'textImage';
@@ -3414,7 +3414,7 @@ export interface Blog {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'horizontalScroll';
@@ -3427,7 +3427,7 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'slideShow';
@@ -3462,7 +3462,7 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'smallGallery';
@@ -3480,7 +3480,7 @@ export interface Blog {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
@@ -3497,14 +3497,14 @@ export interface Blog {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
               blockType: 'row';
@@ -3512,7 +3512,7 @@ export interface Blog {
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         justify: 'start' | 'center' | 'end';
-        bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
         blockType: 'column';
@@ -3695,7 +3695,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               text?: T;
               type?: T;
               textColor?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3704,7 +3704,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | {
               text?: T;
               textColor?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3720,7 +3720,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                   };
               spacing?: T;
               textColor?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3729,7 +3729,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | {
               image?: T;
               imageSize?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3739,7 +3739,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               embedLink?: T;
               width?: T;
               height?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3748,7 +3748,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | {
               label?: T;
               document?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3759,7 +3759,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               text?: T;
               image?: T;
               textColor?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3770,7 +3770,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               scrollPrompt?: T;
               width?: T;
               textColor?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3783,7 +3783,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                     image?: T;
                     id?: T;
                   };
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3798,7 +3798,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                     link?: T;
                     id?: T;
                   };
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3813,7 +3813,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                     id?: T;
                   };
               spacing?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3832,7 +3832,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                     type?: T;
                     id?: T;
                   };
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -3848,7 +3848,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           text?: T;
                           type?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3857,7 +3857,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           text?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3873,7 +3873,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3882,7 +3882,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3892,7 +3892,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           embedLink?: T;
                           width?: T;
                           height?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3901,7 +3901,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           label?: T;
                           document?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3912,7 +3912,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           text?: T;
                           image?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3923,7 +3923,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           scrollPrompt?: T;
                           width?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3936,7 +3936,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3951,7 +3951,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3966,7 +3966,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 id?: T;
                               };
                           spacing?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -3985,7 +3985,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 type?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4001,7 +4001,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4010,7 +4010,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4026,7 +4026,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4035,7 +4035,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4045,7 +4045,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4054,7 +4054,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4065,7 +4065,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4076,7 +4076,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4089,7 +4089,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4104,7 +4104,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4119,7 +4119,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4138,14 +4138,14 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
                           justify?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4161,7 +4161,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4170,7 +4170,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4186,7 +4186,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4195,7 +4195,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4205,7 +4205,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4214,7 +4214,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4225,7 +4225,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4236,7 +4236,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4249,7 +4249,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4264,7 +4264,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4279,7 +4279,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4298,19 +4298,19 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
                   };
               spacing?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4326,7 +4326,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           text?: T;
                           type?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4335,7 +4335,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           text?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4351,7 +4351,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4360,7 +4360,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4370,7 +4370,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           embedLink?: T;
                           width?: T;
                           height?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4379,7 +4379,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           label?: T;
                           document?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4390,7 +4390,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           text?: T;
                           image?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4401,7 +4401,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           scrollPrompt?: T;
                           width?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4414,7 +4414,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4429,7 +4429,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4444,7 +4444,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 id?: T;
                               };
                           spacing?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4463,7 +4463,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 type?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4479,7 +4479,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4488,7 +4488,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4504,7 +4504,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4513,7 +4513,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4523,7 +4523,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4532,7 +4532,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4543,7 +4543,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4554,7 +4554,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4567,7 +4567,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4582,7 +4582,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4597,7 +4597,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4616,14 +4616,14 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
                           justify?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4639,7 +4639,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4648,7 +4648,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4664,7 +4664,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4673,7 +4673,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4683,7 +4683,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4692,7 +4692,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4703,7 +4703,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4714,7 +4714,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4727,7 +4727,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4742,7 +4742,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4757,7 +4757,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -4776,20 +4776,20 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
                   };
               spacing?: T;
               justify?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4820,7 +4820,7 @@ export interface BlogsSelect<T extends boolean = true> {
               text?: T;
               type?: T;
               textColor?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4829,7 +4829,7 @@ export interface BlogsSelect<T extends boolean = true> {
           | {
               text?: T;
               textColor?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4845,7 +4845,7 @@ export interface BlogsSelect<T extends boolean = true> {
                   };
               spacing?: T;
               textColor?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4854,7 +4854,7 @@ export interface BlogsSelect<T extends boolean = true> {
           | {
               image?: T;
               imageSize?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4864,7 +4864,7 @@ export interface BlogsSelect<T extends boolean = true> {
               embedLink?: T;
               width?: T;
               height?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4873,7 +4873,7 @@ export interface BlogsSelect<T extends boolean = true> {
           | {
               label?: T;
               document?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4884,7 +4884,7 @@ export interface BlogsSelect<T extends boolean = true> {
               text?: T;
               image?: T;
               textColor?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4895,7 +4895,7 @@ export interface BlogsSelect<T extends boolean = true> {
               scrollPrompt?: T;
               width?: T;
               textColor?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4908,7 +4908,7 @@ export interface BlogsSelect<T extends boolean = true> {
                     image?: T;
                     id?: T;
                   };
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4923,7 +4923,7 @@ export interface BlogsSelect<T extends boolean = true> {
                     link?: T;
                     id?: T;
                   };
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4938,7 +4938,7 @@ export interface BlogsSelect<T extends boolean = true> {
                     id?: T;
                   };
               spacing?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4957,7 +4957,7 @@ export interface BlogsSelect<T extends boolean = true> {
                     type?: T;
                     id?: T;
                   };
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -4973,7 +4973,7 @@ export interface BlogsSelect<T extends boolean = true> {
                           text?: T;
                           type?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4982,7 +4982,7 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           text?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -4998,7 +4998,7 @@ export interface BlogsSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5007,7 +5007,7 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5017,7 +5017,7 @@ export interface BlogsSelect<T extends boolean = true> {
                           embedLink?: T;
                           width?: T;
                           height?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5026,7 +5026,7 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           label?: T;
                           document?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5037,7 +5037,7 @@ export interface BlogsSelect<T extends boolean = true> {
                           text?: T;
                           image?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5048,7 +5048,7 @@ export interface BlogsSelect<T extends boolean = true> {
                           scrollPrompt?: T;
                           width?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5061,7 +5061,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5076,7 +5076,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5091,7 +5091,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 id?: T;
                               };
                           spacing?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5110,7 +5110,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 type?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5126,7 +5126,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5135,7 +5135,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5151,7 +5151,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5160,7 +5160,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5170,7 +5170,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5179,7 +5179,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5190,7 +5190,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5201,7 +5201,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5214,7 +5214,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5229,7 +5229,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5244,7 +5244,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5263,14 +5263,14 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
                           justify?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5286,7 +5286,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5295,7 +5295,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5311,7 +5311,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5320,7 +5320,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5330,7 +5330,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5339,7 +5339,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5350,7 +5350,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5361,7 +5361,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5374,7 +5374,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5389,7 +5389,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5404,7 +5404,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5423,19 +5423,19 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
                   };
               spacing?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };
@@ -5451,7 +5451,7 @@ export interface BlogsSelect<T extends boolean = true> {
                           text?: T;
                           type?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5460,7 +5460,7 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           text?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5476,7 +5476,7 @@ export interface BlogsSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5485,7 +5485,7 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5495,7 +5495,7 @@ export interface BlogsSelect<T extends boolean = true> {
                           embedLink?: T;
                           width?: T;
                           height?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5504,7 +5504,7 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           label?: T;
                           document?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5515,7 +5515,7 @@ export interface BlogsSelect<T extends boolean = true> {
                           text?: T;
                           image?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5526,7 +5526,7 @@ export interface BlogsSelect<T extends boolean = true> {
                           scrollPrompt?: T;
                           width?: T;
                           textColor?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5539,7 +5539,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5554,7 +5554,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5569,7 +5569,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 id?: T;
                               };
                           spacing?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5588,7 +5588,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 type?: T;
                                 id?: T;
                               };
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5604,7 +5604,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5613,7 +5613,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5629,7 +5629,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5638,7 +5638,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5648,7 +5648,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5657,7 +5657,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5668,7 +5668,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5679,7 +5679,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5692,7 +5692,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5707,7 +5707,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5722,7 +5722,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5741,14 +5741,14 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
                           justify?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -5764,7 +5764,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5773,7 +5773,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5789,7 +5789,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5798,7 +5798,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5808,7 +5808,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5817,7 +5817,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5828,7 +5828,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5839,7 +5839,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5852,7 +5852,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5867,7 +5867,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5882,7 +5882,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -5901,20 +5901,20 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMarginNew?: T;
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
-                          bottomMarginNew?: T;
+                          bottomMargin?: T;
                           id?: T;
                           blockName?: T;
                         };
                   };
               spacing?: T;
               justify?: T;
-              bottomMarginNew?: T;
+              bottomMargin?: T;
               id?: T;
               blockName?: T;
             };

@@ -16,7 +16,7 @@ export default function TitleBlock(props: TitleBlockProps) {
         "text-white": props.textColor === "light",
         "text-black": props.textColor === "dark",
       })}
-      style={{ marginBottom: getSpacing(props.bottomMarginNew) }}
+      style={{ marginBottom: getSpacing(props.bottomMargin) }}
     >
       {props.text}
     </div>

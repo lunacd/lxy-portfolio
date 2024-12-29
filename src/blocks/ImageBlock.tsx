@@ -16,7 +16,7 @@ export default function ImageBlock(props: ImageBlockProps) {
       media={props.image}
       payload={props.payload}
       sizes={`${props.imageSize}vw`}
-      style={{ marginBottom: getSpacing(props.bottomMarginNew) }}
+      style={{ marginBottom: getSpacing(props.bottomMargin) }}
     />
   );
 }

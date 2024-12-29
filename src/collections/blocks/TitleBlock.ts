@@ -1,4 +1,4 @@
-import { bottomMarginNew, colorField } from "../CommonFields";
+import { bottomMargin, colorField } from "../CommonFields";
 import { Block } from "payload";
 
 const TitleBlock: Block = {
@@ -17,7 +17,7 @@ const TitleBlock: Block = {
       required: true,
     },
     colorField(),
-    bottomMarginNew,
+    bottomMargin,
   ],
 };
 
