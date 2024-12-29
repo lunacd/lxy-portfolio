@@ -28,6 +28,7 @@ function TextChild(props: TextChildProps) {
         <span
           className={classNames({
             "font-bold": props.format === "bold",
+            italic: props.format === "italic",
           })}
         >
           {props.text as string}
