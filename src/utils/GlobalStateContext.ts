@@ -1,13 +1,11 @@
-import { projects } from "./projectData";
 import { Dispatch, createContext, useContext } from "react";
 
 import { GlobalState, GlobalStateAction } from "@/utils/GlobalState";
 
-const defaultState = {
-  currentProjectIndex: 0,
-  currentProject: projects[0],
-  route: "",
-  projectsInView: new Array(projects.length).fill(false),
+const defaultState: GlobalState = {
+  currentProjectIndex: -1,
+  currentProject: "",
+  projectNames: [],
 };
 
 const GlobalStateContext = createContext<{

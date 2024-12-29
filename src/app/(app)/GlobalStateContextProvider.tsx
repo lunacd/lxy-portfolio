@@ -6,11 +6,17 @@ import { PropsWithChildren, useEffect, useReducer } from "react";
 import { getInitialState, stateReducer } from "@/utils/GlobalState";
 import GlobalStateContext from "@/utils/GlobalStateContext";
 
-export default function GlobalStateContextProvider(props: PropsWithChildren) {
+interface GlobalStateContextProviderProps {
+  projectNames: string[];
+}
+
+export default function GlobalStateContextProvider(
+  props: PropsWithChildren<GlobalStateContextProviderProps>,
+) {
   const pathname = usePathname();
   const [globalState, dispatch] = useReducer(
     stateReducer,
-    pathname,
+    { pathname: pathname, projectNames: props.projectNames },
     getInitialState,
   );
   const providerValue = {

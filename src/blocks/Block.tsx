@@ -1,4 +1,5 @@
 import EqualHeightImagesBlock from "./EqualHeightImagesBlock";
+import LargeGalleryBlock from "./LargeGalleryBlock";
 import SmallgallerBlock from "./SmallGalleryBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
@@ -14,7 +15,6 @@ import TextBlock from "src/blocks/TextBlock";
 import TextImageBlock from "src/blocks/TextImageBlock";
 import TitleBlock from "src/blocks/TitleBlock";
 import YouTubeBlock from "src/blocks/YouTubeBlock";
-import LargeGalleryBlock from "./LargeGalleryBlock";
 
 type BlockType = ProjectPage["blocks"][number];
 

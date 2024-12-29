@@ -1,11 +1,15 @@
-import { projects } from "@/utils/projectData";
-
-export function getInitialState(pathname: string): GlobalState {
+export function getInitialState({
+  pathname,
+  projectNames,
+}: {
+  pathname: string;
+  projectNames: string[];
+}): GlobalState {
   let currentProjectIndex: number;
   let currentProject: string;
-  if (isProject(pathname)) {
+  if (isProject(pathname, projectNames)) {
     currentProject = getProjectNameFromPathname(pathname);
-    currentProjectIndex = projects.indexOf(currentProject);
+    currentProjectIndex = projectNames.indexOf(currentProject);
   } else {
     currentProject = "";
     currentProjectIndex = 0;
@@ -13,6 +17,7 @@ export function getInitialState(pathname: string): GlobalState {
   return {
     currentProjectIndex: currentProjectIndex,
     currentProject: currentProject,
+    projectNames: projectNames,
     focus: getFocus(pathname),
   };
 }
@@ -30,6 +35,7 @@ export type GlobalStateAction =
 export interface GlobalState {
   currentProjectIndex: number;
   currentProject: string;
+  projectNames: string[];
   focus?: string;
 }
 
@@ -37,12 +43,12 @@ function getProjectNameFromPathname(pathname: string) {
   return pathname.replaceAll("/", "");
 }
 
-function isProject(link: string): boolean {
+function isProject(link: string, projectNames: string[]): boolean {
   if (!link.startsWith("/")) {
     return false;
   }
   const projectName = getProjectNameFromPathname(link);
-  return projects.includes(projectName);
+  return projectNames.includes(projectName);
 }
 
 export function getFocus(link: string): string | undefined {
@@ -55,7 +61,7 @@ export function getFocus(link: string): string | undefined {
 export function stateReducer(state: GlobalState, action: GlobalStateAction) {
   const newState = { ...state };
   if (action.type === "setInView") {
-    newState.currentProjectIndex = projects.indexOf(action.project);
+    newState.currentProjectIndex = state.projectNames.indexOf(action.project);
     newState.currentProject = action.project;
   } else if (action.type === "changeRoute") {
     newState.focus = getFocus(action.newPath);
