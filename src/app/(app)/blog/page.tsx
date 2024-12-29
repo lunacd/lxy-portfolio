@@ -2,10 +2,10 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 import "server-only";
+import SmallgallerBlock from "src/blocks/SmallGalleryBlock";
+import TitleBlock from "src/blocks/TitleBlock";
 
 import Scroller from "@/components/Scroller";
-import SmallgallerBlock from "@/sections/SmallGalleryBlock";
-import TitleBlock from "@/sections/TitleBlock";
 
 export const metadata: Metadata = {
   title: "Blogs | Shirley Lyu",

@@ -5,7 +5,7 @@ import { getPayload } from "payload";
 
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
-import TopDisplay from "@/sections/TopDisplay";
+import TopDisplay from "@/components/TopDisplay";
 
 export const metadata: Metadata = {
   title: "Tura | Shirley Lyu",
@@ -28,7 +28,11 @@ export default async function Tura() {
       <TuraClient
         topChildren={<TopDisplay project={turaData} payload={payload} />}
       >
-        <ProjectNavigation prev="/overlap" next="/curiously" payload={payload} />
+        <ProjectNavigation
+          prev="/overlap"
+          next="/curiously"
+          payload={payload}
+        />
       </TuraClient>
     </Scroller>
   );

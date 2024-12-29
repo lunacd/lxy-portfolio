@@ -1,6 +1,6 @@
 import { bottomMargin } from "../CommonFields";
-import { nonNestingBlocks } from "./NonNestingBlocks";
 import ColumnBlock from "./ColumnBlock";
+import { nonNestingBlocks } from "./NonNestingBlocks";
 import { Block } from "payload";
 
 export default function RowBlock(depth: number): Block {

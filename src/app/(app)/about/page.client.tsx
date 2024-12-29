@@ -20,10 +20,10 @@ import {
 
 import Button from "@/components/Button";
 import LegacyAnimatable from "@/components/LegacyAnimatable";
+import LegacyTitle from "@/components/LegacyTitle";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
-import LegacyTitle from "@/sections/LegacyTitle";
 import { transitionFast } from "@/utils/transitions";
 import useFrameIndex from "@/utils/useFrameIndex";
 

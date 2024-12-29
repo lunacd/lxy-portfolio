@@ -2,9 +2,9 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import LargeGallery from "@/components/LargeGallery";
+import LegacyLargeGallery from "@/components/LegacyLargeGallery";
+import LegacyTitle from "@/components/LegacyTitle";
 import Spacing from "@/components/Spacing";
-import LegacyTitle from "@/sections/LegacyTitle";
 
 import Details1 from "@/images/m-tron/details/details-1-half.webp";
 import Details2 from "@/images/m-tron/details/details-2-half.webp";
@@ -26,7 +26,7 @@ export default function MTronClient(props: PropsWithChildren<MTronProps>) {
       <div className="flex w-full flex-col items-center bg-[#E4F2F5]">
         <Spacing size="medium" />
         <LegacyTitle title="Details Showcase" />
-        <LargeGallery
+        <LegacyLargeGallery
           rows={[
             {
               images: [
@@ -54,7 +54,7 @@ export default function MTronClient(props: PropsWithChildren<MTronProps>) {
 
       <Spacing size="medium" />
 
-      <LargeGallery
+      <LegacyLargeGallery
         rows={[
           {
             images: [{ frames: [{ src: Gallery1 }], width: 1920, height: 961 }],

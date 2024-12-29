@@ -4,12 +4,12 @@ import { PropsWithChildren, ReactNode } from "react";
 
 import Carousel from "@/components/Carousel";
 import { GalleryRowLayout } from "@/components/GalleryRow";
-import LargeGallery from "@/components/LargeGallery";
+import DisplayImage from "@/components/LegacyDisplayImage";
+import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
+import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
-import DisplayImage from "@/sections/DisplayImage";
-import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import LegacyTextImage from "@/sections/LegacyTextImage";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
+import LegacyTextImage from "@/components/LegacyTextImage";
+import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
 
 import BagMaking1 from "@/images/lyu/bag-making/bag-making-1-small.webp";
 import BagMaking2 from "@/images/lyu/bag-making/bag-making-2-small.webp";
@@ -197,7 +197,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
 
       {/* Gallery */}
       <LegacyTitle title="Project Gallery" />
-      <LargeGallery
+      <LegacyLargeGallery
         rows={[
           {
             images: [

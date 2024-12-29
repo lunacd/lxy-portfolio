@@ -3,18 +3,17 @@ import SmallgallerBlock from "./SmallGalleryBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
-
-import ColumnBlock from "@/sections/ColumnBlock";
-import DocumentBlock from "@/sections/DocumentBlock";
-import HorizontalGalleryBlock from "@/sections/HorizontalGalleryBlock";
-import HorizontalScrollBlock from "@/sections/HorizontalScrollBlock";
-import ImageBlock from "@/sections/ImageBlock";
-import RowBlock from "@/sections/RowBlock";
-import SlideShowBlock from "@/sections/SlideShowBlock";
-import TextBlock from "@/sections/TextBlock";
-import TextImageBlock from "@/sections/TextImageBlock";
-import TitleBlock from "@/sections/TitleBlock";
-import YouTubeBlock from "@/sections/YouTubeBlock";
+import ColumnBlock from "src/blocks/ColumnBlock";
+import DocumentBlock from "src/blocks/DocumentBlock";
+import HorizontalGalleryBlock from "src/blocks/HorizontalGalleryBlock";
+import HorizontalScrollBlock from "src/blocks/HorizontalScrollBlock";
+import ImageBlock from "src/blocks/ImageBlock";
+import RowBlock from "src/blocks/RowBlock";
+import SlideShowBlock from "src/blocks/SlideShowBlock";
+import TextBlock from "src/blocks/TextBlock";
+import TextImageBlock from "src/blocks/TextImageBlock";
+import TitleBlock from "src/blocks/TitleBlock";
+import YouTubeBlock from "src/blocks/YouTubeBlock";
 
 type BlockType = ProjectPage["blocks"][number];
 

@@ -448,6 +448,26 @@ export interface ProjectPage {
         blockType: 'equalHeightImages';
       }
     | {
+        rows: {
+          images: {
+            image: number | Media;
+            id?: string | null;
+          }[];
+          /**
+           * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+           */
+          type: 'equalWidth' | 'equalHeight';
+          id?: string | null;
+        }[];
+        /**
+         * Check this to include a margin at the bottom
+         */
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'largeGallery';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -693,6 +713,26 @@ export interface ProjectPage {
               blockType: 'equalHeightImages';
             }
           | {
+              rows: {
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                /**
+                 * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                 */
+                type: 'equalWidth' | 'equalHeight';
+                id?: string | null;
+              }[];
+              /**
+               * Check this to include a margin at the bottom
+               */
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'largeGallery';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -936,6 +976,26 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
+                  }
+                | {
+                    rows: {
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                       */
+                      type: 'equalWidth' | 'equalHeight';
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1192,6 +1252,26 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
+                  }
+                | {
+                    rows: {
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                       */
+                      type: 'equalWidth' | 'equalHeight';
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1459,6 +1539,26 @@ export interface ProjectPage {
               blockType: 'equalHeightImages';
             }
           | {
+              rows: {
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                /**
+                 * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                 */
+                type: 'equalWidth' | 'equalHeight';
+                id?: string | null;
+              }[];
+              /**
+               * Check this to include a margin at the bottom
+               */
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'largeGallery';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -1702,6 +1802,26 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
+                  }
+                | {
+                    rows: {
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                       */
+                      type: 'equalWidth' | 'equalHeight';
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1958,6 +2078,26 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
+                  }
+                | {
+                    rows: {
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                       */
+                      type: 'equalWidth' | 'equalHeight';
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2245,6 +2385,26 @@ export interface Blog {
         blockType: 'equalHeightImages';
       }
     | {
+        rows: {
+          images: {
+            image: number | Media;
+            id?: string | null;
+          }[];
+          /**
+           * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+           */
+          type: 'equalWidth' | 'equalHeight';
+          id?: string | null;
+        }[];
+        /**
+         * Check this to include a margin at the bottom
+         */
+        bottomMargin: boolean;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'largeGallery';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -2490,6 +2650,26 @@ export interface Blog {
               blockType: 'equalHeightImages';
             }
           | {
+              rows: {
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                /**
+                 * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                 */
+                type: 'equalWidth' | 'equalHeight';
+                id?: string | null;
+              }[];
+              /**
+               * Check this to include a margin at the bottom
+               */
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'largeGallery';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -2733,6 +2913,26 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
+                  }
+                | {
+                    rows: {
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                       */
+                      type: 'equalWidth' | 'equalHeight';
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2989,6 +3189,26 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
+                  }
+                | {
+                    rows: {
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                       */
+                      type: 'equalWidth' | 'equalHeight';
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3256,6 +3476,26 @@ export interface Blog {
               blockType: 'equalHeightImages';
             }
           | {
+              rows: {
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                /**
+                 * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                 */
+                type: 'equalWidth' | 'equalHeight';
+                id?: string | null;
+              }[];
+              /**
+               * Check this to include a margin at the bottom
+               */
+              bottomMargin: boolean;
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'largeGallery';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -3499,6 +3739,26 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
+                  }
+                | {
+                    rows: {
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                       */
+                      type: 'equalWidth' | 'equalHeight';
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3755,6 +4015,26 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'equalHeightImages';
+                  }
+                | {
+                    rows: {
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.
+                       */
+                      type: 'equalWidth' | 'equalHeight';
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Check this to include a margin at the bottom
+                     */
+                    bottomMargin: boolean;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'largeGallery';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4077,6 +4357,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        largeGallery?:
+          | T
+          | {
+              rows?:
+                | T
+                | {
+                    images?:
+                      | T
+                      | {
+                          image?: T;
+                          id?: T;
+                        };
+                    type?: T;
+                    id?: T;
+                  };
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -4211,6 +4510,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    largeGallery?:
+                      | T
+                      | {
+                          rows?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                type?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -4341,6 +4659,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                largeGallery?:
+                                  | T
+                                  | {
+                                      rows?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            type?: T;
+                                            id?: T;
+                                          };
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4482,6 +4819,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                largeGallery?:
+                                  | T
+                                  | {
+                                      rows?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            type?: T;
+                                            id?: T;
+                                          };
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4632,6 +4988,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    largeGallery?:
+                      | T
+                      | {
+                          rows?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                type?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -4762,6 +5137,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                largeGallery?:
+                                  | T
+                                  | {
+                                      rows?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            type?: T;
+                                            id?: T;
+                                          };
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4903,6 +5297,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                largeGallery?:
+                                  | T
+                                  | {
+                                      rows?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            type?: T;
+                                            id?: T;
+                                          };
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5069,6 +5482,25 @@ export interface BlogsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        largeGallery?:
+          | T
+          | {
+              rows?:
+                | T
+                | {
+                    images?:
+                      | T
+                      | {
+                          image?: T;
+                          id?: T;
+                        };
+                    type?: T;
+                    id?: T;
+                  };
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -5203,6 +5635,25 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    largeGallery?:
+                      | T
+                      | {
+                          rows?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                type?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -5333,6 +5784,25 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                largeGallery?:
+                                  | T
+                                  | {
+                                      rows?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            type?: T;
+                                            id?: T;
+                                          };
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5474,6 +5944,25 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                largeGallery?:
+                                  | T
+                                  | {
+                                      rows?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            type?: T;
+                                            id?: T;
+                                          };
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5624,6 +6113,25 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    largeGallery?:
+                      | T
+                      | {
+                          rows?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                type?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -5754,6 +6262,25 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                largeGallery?:
+                                  | T
+                                  | {
+                                      rows?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            type?: T;
+                                            id?: T;
+                                          };
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5895,6 +6422,25 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                largeGallery?:
+                                  | T
+                                  | {
+                                      rows?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            type?: T;
+                                            id?: T;
+                                          };
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;

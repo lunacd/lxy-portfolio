@@ -2,12 +2,12 @@ import config from "@payload-config";
 import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 import "server-only";
+import Blocks from "src/blocks/Blocks";
+import TitleBlock from "src/blocks/TitleBlock";
 
 import { RefreshRouteOnSave } from "@/components/RefreshRouteOnSave";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
-import Blocks from "@/sections/Blocks";
-import TitleBlock from "@/sections/TitleBlock";
 
 export default async function Blog({
   params,
@@ -29,7 +29,7 @@ export default async function Blog({
   return (
     <>
       <Scroller>
-        <div className="w-single-small mt-spacing-lg">
+        <div className="mt-spacing-lg w-single-small">
           <TitleBlock
             text={blog.title}
             blockType="title"

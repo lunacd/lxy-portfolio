@@ -3,13 +3,13 @@
 import { PropsWithChildren, ReactNode } from "react";
 
 import Carousel from "@/components/Carousel";
-import LargeGallery from "@/components/LargeGallery";
+import DisplayImage from "@/components/LegacyDisplayImage";
+import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
+import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
+import LegacyTextImage from "@/components/LegacyTextImage";
+import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
 import Spacing from "@/components/Spacing";
-import DisplayImage from "@/sections/DisplayImage";
-import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import LegacyTextImage from "@/sections/LegacyTextImage";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import Evo1 from "@/images/sunrise/evolution/evolution-1-small.webp";
 import Evo2 from "@/images/sunrise/evolution/evolution-2-small.webp";
@@ -189,7 +189,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
       <LegacyTitle title="Product Gallery" />
 
       <LegacySubtitle title="Outdoor" />
-      <LargeGallery
+      <LegacyLargeGallery
         rows={[
           {
             images: [
@@ -212,7 +212,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         botSpacing={false}
       />
       <LegacySubtitle title="Indoor" />
-      <LargeGallery
+      <LegacyLargeGallery
         rows={[
           {
             images: [

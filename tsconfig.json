@@ -23,7 +23,7 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["src/components/*"],
-      "@/sections/*": ["src/sections/*"],
+      "@/blocks/*": ["src/blocks/*"],
       "@/utils/*": ["src/utils/*"],
       "@/images/*": ["images/*"],
       "@payload-config": ["./src/payload.config.ts"],

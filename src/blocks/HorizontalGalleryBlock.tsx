@@ -1,9 +1,8 @@
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
-
-import type { RowBlockProps } from "@/sections/RowBlock";
-import RowBlock from "@/sections/RowBlock";
+import type { RowBlockProps } from "src/blocks/RowBlock";
+import RowBlock from "src/blocks/RowBlock";
 
 type HorizontalGalleryBlockProps = Extract<
   ProjectPage["blocks"][0],

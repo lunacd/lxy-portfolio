@@ -3,7 +3,7 @@ import { Project } from "@payload-types";
 import { getPayload } from "payload";
 import "server-only";
 
-import SidebarInteractive from "@/sections/SidebarInteractive";
+import SidebarInteractive from "@/components/SidebarInteractive";
 import { getMainProjects, getProjectsWithFocus } from "@/utils/payloadHelpers";
 import { mainFocuses } from "@/utils/projectData";
 

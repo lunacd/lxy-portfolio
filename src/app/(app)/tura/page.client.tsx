@@ -6,18 +6,20 @@ import { PropsWithChildren, ReactNode } from "react";
 import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import EqualSplit from "@/components/EqualSplit";
-import LargeGallery from "@/components/LargeGallery";
+import DisplayImage, {
+  StaticDisplayImage,
+} from "@/components/LegacyDisplayImage";
+import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
+import LegacyLargeGallery from "@/components/LegacyLargeGallery";
+import { RichTextImage } from "@/components/LegacyTextImage";
+import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
 import Spacing from "@/components/Spacing";
 import TextSection, {
   TextAlignment,
   TextContentType,
   createPlainContent,
 } from "@/components/TextSection";
-import DisplayImage, { StaticDisplayImage } from "@/sections/DisplayImage";
-import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import { RichTextImage } from "@/sections/LegacyTextImage";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
@@ -428,7 +430,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       {/* Final Solution */}
       <LegacyTitle title="Final Solution" />
       <LegacySubtitle title="Function and Scenario" />
-      <LargeGallery
+      <LegacyLargeGallery
         rows={[
           { images: [{ frames: [{ src: Final1 }], height: 621, width: 1920 }] },
           { images: [{ frames: [{ src: Final2 }], height: 621, width: 1920 }] },

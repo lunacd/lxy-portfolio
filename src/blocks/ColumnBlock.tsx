@@ -3,8 +3,8 @@ import classNames from "classnames";
 import { Payload } from "payload";
 import React from "react";
 import "server-only";
+import Block from "src/blocks/Block";
 
-import Block from "@/sections/Block";
 import { getSpacing } from "@/utils/spacingUtil";
 
 export type ColumnBlockProps = Extract<

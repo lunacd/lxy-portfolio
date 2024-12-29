@@ -7,7 +7,7 @@ import "server-only";
 import CategoryTag from "@/components/CategoryTag";
 import FloatUpMotion from "@/components/FloatUpMotion";
 import PayloadImage from "@/components/PayloadImage";
-import styles from "@/sections/TopDisplay.module.css";
+import styles from "@/components/TopDisplay.module.css";
 import { getProjectLink } from "@/utils/payloadHelpers";
 
 interface HomeSectionProps {

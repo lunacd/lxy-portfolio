@@ -22,7 +22,7 @@ const defaultProps = {
   xSpacing: false,
 };
 
-const LargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
+const LegacyLargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
   const props = { ...defaultProps, ...propsIn };
 
   const [currentFrame, setCurrentFrame] = useState(0);
@@ -54,4 +54,4 @@ const LargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
   );
 };
 
-export default LargeGallery;
+export default LegacyLargeGallery;

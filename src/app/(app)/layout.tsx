@@ -6,7 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Catamaran } from "next/font/google";
 import React, { PropsWithChildren } from "react";
 
-import Sidebar from "@/sections/Sidebar";
+import Sidebar from "@/components/Sidebar";
 
 const catamaran = Catamaran({ subsets: ["latin"] });
 

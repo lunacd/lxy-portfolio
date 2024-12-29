@@ -1,17 +1,17 @@
 "use client";
 
 import { PropsWithChildren, ReactNode } from "react";
+import ImageText from "src/blocks/ImageText";
 
 import Carousel from "@/components/Carousel";
-import LargeGallery from "@/components/LargeGallery";
+import DisplayImage from "@/components/LegacyDisplayImage";
+import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
+import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
+import LegacyTextImage from "@/components/LegacyTextImage";
+import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
 import Spacing from "@/components/Spacing";
 import { createPlainContent } from "@/components/TextSection";
-import DisplayImage from "@/sections/DisplayImage";
-import ImageText from "@/sections/ImageText";
-import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import LegacyTextImage from "@/sections/LegacyTextImage";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import Benchmark from "@/images/overlap/benchmark-full.webp";
@@ -310,7 +310,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
 
       {/* Gallery */}
       <LegacyTitle title="Product Gallery" />
-      <LargeGallery
+      <LegacyLargeGallery
         rows={[
           {
             images: [

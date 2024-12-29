@@ -3,8 +3,8 @@
 import { PropsWithChildren, ReactNode } from "react";
 
 import Button from "@/components/Button";
+import LegacyTextImage from "@/components/LegacyTextImage";
 import Spacing from "@/components/Spacing";
-import LegacyTextImage from "@/sections/LegacyTextImage";
 
 import Manifesto from "@/images/refugia/manifesto-half.webp";
 

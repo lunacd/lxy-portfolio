@@ -5,7 +5,7 @@ import { getPayload } from "payload";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
-import TopDisplay from "@/sections/TopDisplay";
+import TopDisplay from "@/components/TopDisplay";
 
 export const metadata: Metadata = {
   title: "Lyu | Shirley Lyu",

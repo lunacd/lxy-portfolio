@@ -1,17 +1,17 @@
 "use client";
 
 import { PropsWithChildren, ReactNode } from "react";
+import ImageText from "src/blocks/ImageText";
 
 import Button from "@/components/Button";
-import LargeGallery from "@/components/LargeGallery";
+import DisplayImage from "@/components/LegacyDisplayImage";
+import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
+import LegacyLargeGallery from "@/components/LegacyLargeGallery";
+import LegacyTextImage from "@/components/LegacyTextImage";
+import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
 import Paragraph from "@/components/Paragraph";
 import Spacing from "@/components/Spacing";
 import { createPlainContent } from "@/components/TextSection";
-import DisplayImage from "@/sections/DisplayImage";
-import ImageText from "@/sections/ImageText";
-import LegacyHorizontalGallery from "@/sections/LegacyHorizontalGallery";
-import LegacyTextImage from "@/sections/LegacyTextImage";
-import LegacyTitle, { LegacySubtitle } from "@/sections/LegacyTitle";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import BrandResearch from "@/images/soul/brand-research-full.webp";
@@ -392,7 +392,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       <LegacyTitle title="Project Gallery" />
-      <LargeGallery
+      <LegacyLargeGallery
         rows={[
           {
             images: [{ frames: [{ src: Gallery1 }], width: 1920, height: 961 }],

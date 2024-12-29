@@ -15,7 +15,7 @@ export default function EqualHeightImagesBlock(
     <div>
       {props.items.map((item, index) => (
         <PayloadImage
-        key={index}
+          key={index}
           payload={props.payload}
           media={item.image}
           sizes={`${item.imageSize}vw`}

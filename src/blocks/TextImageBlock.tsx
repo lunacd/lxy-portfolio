@@ -1,8 +1,7 @@
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
-
-import RowBlock from "@/sections/RowBlock";
+import RowBlock from "src/blocks/RowBlock";
 
 type TextImageBlockProps = Extract<
   ProjectPage["blocks"][0],

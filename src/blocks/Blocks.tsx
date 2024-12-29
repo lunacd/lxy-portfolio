@@ -1,8 +1,8 @@
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
+import Block from "src/blocks/Block";
 
 import FloatUpMotion from "@/components/FloatUpMotion";
-import Block from "@/sections/Block";
 
 type BlockType = ProjectPage["blocks"][number];
 

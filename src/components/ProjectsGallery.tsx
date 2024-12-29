@@ -3,8 +3,8 @@ import { Project } from "@payload-types";
 import { Payload } from "payload";
 import React from "react";
 import "server-only";
+import SmallGallerBlock from "src/blocks/SmallGalleryBlock";
 
-import SmallGallerBlock from "@/sections/SmallGalleryBlock";
 import { getProjectLink } from "@/utils/payloadHelpers";
 
 interface ProjectsGalleryProps {
