@@ -1,6 +1,7 @@
 import { Media } from "@payload-types";
 import Image from "next/image";
 import { Payload } from "payload";
+import { CSSProperties } from "react";
 import "server-only";
 
 import { getMedia } from "@/utils/payloadHelpers";
@@ -13,6 +14,7 @@ interface PayloadImageProps {
   sizes: string;
   unoptimized?: boolean;
   equalHeight?: boolean;
+  style?: CSSProperties;
 }
 
 export default async function PayloadImage(props: PayloadImageProps) {
@@ -25,8 +27,11 @@ export default async function PayloadImage(props: PayloadImageProps) {
       height={props.fill ? undefined : media.height}
       className={props.className}
       style={{
-        flex: props.equalHeight ? media.width / media.height : 0,
-        minWidth: 0,
+        ...props.style,
+        ...{
+          flex: props.equalHeight ? media.width / media.height : 0,
+          minWidth: 0,
+        },
       }}
       fill={props.fill}
       sizes={props.sizes}

@@ -2,6 +2,8 @@ import { ProjectPage } from "@payload-types";
 import classNames from "classnames";
 import { Fragment, ReactNode } from "react";
 
+import { getSpacing } from "@/utils/spacingUtil";
+
 type TextChildProps = Extract<
   ProjectPage["blocks"][0],
   { blockType: "text" }
@@ -56,10 +58,10 @@ export default function TextBlock(props: TitleBlockProps) {
   return (
     <div
       className={classNames({
-        "mb-spacing-3lg": props.bottomMargin,
         "text-white": props.textColor === "light",
         "text-black": props.textColor === "dark",
       })}
+      style={{ marginBottom: getSpacing(props.bottomMarginNew) }}
     >
       {props.text.root.children.map((child, index) => (
         <Fragment key={index}>

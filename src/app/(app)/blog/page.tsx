@@ -29,7 +29,6 @@ export default async function Blogs() {
           text="Blogs"
           type="title"
           textColor="dark"
-          bottomMargin={true}
           bottomMarginNew="xxl"
           blockType="title"
         />
@@ -38,7 +37,6 @@ export default async function Blogs() {
             text="Nothing yet! Come back for more!"
             type="subtitle"
             textColor="dark"
-            bottomMargin={true}
             blockType="title"
             bottomMarginNew="xxl"
           />
@@ -95,7 +93,6 @@ export default async function Blogs() {
               link: `/blog/${blog.id}`,
             };
           })}
-          bottomMargin={true}
           payload={payload}
           blockType="smallGallery"
           bottomMarginNew="xxl"

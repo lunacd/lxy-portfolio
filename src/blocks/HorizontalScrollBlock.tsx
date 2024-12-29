@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { Payload } from "payload";
 
 import PayloadImage from "@/components/PayloadImage";
+import { getSpacing } from "@/utils/spacingUtil";
 
 type HorizontalScrollBlockProps = Extract<
   ProjectPage["blocks"][0],
@@ -23,9 +24,10 @@ export default function HorizontalScrollBlock(
         {props.scrollPrompt}
       </div>
       <div
-        className={classNames("mb-spacing-3lg w-full overflow-x-scroll", {
-          "mb-spacing-3lg": props.bottomMargin,
-        })}
+        className="mb-spacing-3lg w-full overflow-x-scroll"
+        style={{
+          marginBottom: getSpacing(props.bottomMarginNew),
+        }}
       >
         <div style={{ width: `${props.width}%` }}>
           <PayloadImage

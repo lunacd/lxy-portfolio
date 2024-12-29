@@ -50,7 +50,6 @@ export default async function Blog({
             blockType="title"
             type="title"
             textColor="dark"
-            bottomMargin={false}
             bottomMarginNew="none"
           />
           <div className="paragraph">

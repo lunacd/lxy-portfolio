@@ -1,6 +1,4 @@
-import styles from "./RowBlock.module.css";
 import { ProjectPage } from "@payload-types";
-import classNames from "classnames";
 import { Payload } from "payload";
 import React from "react";
 import "server-only";
@@ -18,12 +16,10 @@ export type RowBlockProps = Extract<
 export default function RowBlock(props: RowBlockProps) {
   return (
     <div
-      className={classNames(`grid ${styles.row}`, {
-        "mb-spacing-3lg": props.bottomMargin,
-      })}
       style={
         {
-          gap: `${getSpacing(props.spacing)}`,
+          gap: getSpacing(props.spacing),
+          marginBottom: getSpacing(props.spacing),
           "--column-count": props.blocks.length,
         } as React.CSSProperties
       }

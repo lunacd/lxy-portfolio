@@ -41,7 +41,6 @@ export default async function ProjectsGallery(props: ProjectsGalleryProps) {
             link: getProjectLink(project.uri, project.externalLink),
           };
         })}
-        bottomMargin={true}
         blockType="smallGallery"
         payload={props.payload}
         bottomMarginNew="xxl"

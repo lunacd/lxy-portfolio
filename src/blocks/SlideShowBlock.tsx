@@ -5,6 +5,7 @@ import React from "react";
 
 import PayloadImage from "@/components/PayloadImage";
 import SlideShowAnimation from "@/components/SlideShowAnimation";
+import { getSpacing } from "@/utils/spacingUtil";
 
 type SlideShowBlockProps = Extract<
   ProjectPage["blocks"][0],
@@ -15,9 +16,9 @@ export default function SlideShowBlock(props: SlideShowBlockProps) {
   return (
     <>
       <SlideShowAnimation
-        className={classNames({
-          "mb-spacing-3lg": props.bottomMargin,
-        })}
+        style={{
+          marginBottom: getSpacing(props.bottomMarginNew),
+        }}
       >
         {props.images.map((image, index) => (
           <div

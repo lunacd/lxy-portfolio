@@ -16,13 +16,13 @@ export default function ColumnBlock(props: ColumnBlockProps) {
   return (
     <div
       className={classNames("flex flex-col", {
-        "mb-spacing-3lg": props.bottomMargin,
         "justify-start": props.justify === "start",
         "justify-center": props.justify === "center",
         "justify-end": props.justify === "end",
       })}
       style={{
-        gap: `${getSpacing(props.spacing)}`,
+        gap: getSpacing(props.spacing),
+        marginBottom: getSpacing(props.bottomMarginNew),
       }}
     >
       {props.blocks.map((block, index) => (

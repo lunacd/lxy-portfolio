@@ -23,7 +23,6 @@ export default function HorizontalGalleryBlock(
         blockType: "image",
         image: item.image,
         imageSize: 100 / props.items.length,
-        bottomMargin: false,
         bottomMarginNew: "none",
       },
     ];
@@ -31,7 +30,6 @@ export default function HorizontalGalleryBlock(
       blocks.push({
         blockType: "text",
         text: item.text,
-        bottomMargin: false,
         textColor: props.textColor,
         bottomMarginNew: "none",
       });
@@ -51,10 +49,9 @@ export default function HorizontalGalleryBlock(
         };
       })}
       spacing={props.spacing}
-      bottomMargin={props.bottomMargin}
       blockType="row"
       payload={props.payload}
-      bottomMarginNew={props.bottomMargin ? "xxl" : "none"}
+      bottomMarginNew={props.bottomMarginNew}
     />
   );
 }

@@ -20,18 +20,15 @@ export default function TextImageBlock(props: TextImageBlockProps) {
               text: props.title,
               textColor: props.textColor,
               type: "title",
-              bottomMargin: false,
               bottomMarginNew: "none",
             },
             {
               blockType: "text",
               text: props.text,
               textColor: props.textColor,
-              bottomMargin: false,
               bottomMarginNew: "none",
             },
           ],
-          bottomMargin: false,
           spacing: "large",
           justify: "center",
           bottomMarginNew: "none",
@@ -40,15 +37,13 @@ export default function TextImageBlock(props: TextImageBlockProps) {
           blockType: "image",
           image: props.image,
           imageSize: 50,
-          bottomMargin: false,
           bottomMarginNew: "none",
         },
       ]}
       spacing="regular"
-      bottomMargin={props.bottomMargin}
       blockType="row"
       payload={props.payload}
-      bottomMarginNew={props.bottomMargin ? "xxl" : "none"}
+      bottomMarginNew={props.bottomMarginNew}
     />
   );
 }

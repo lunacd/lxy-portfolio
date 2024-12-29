@@ -43,7 +43,6 @@ export default function SmallgallerBlock(props: SmallGalleryBlockProps) {
               <TextBlock
                 text={item.text}
                 textColor="dark"
-                bottomMargin={false}
                 blockType="text"
                 bottomMarginNew="none"
               />

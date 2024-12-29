@@ -1,4 +1,4 @@
-import { bottomMargin, bottomMarginNew, colorField } from "../CommonFields";
+import { bottomMarginNew, colorField } from "../CommonFields";
 import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
@@ -12,7 +12,6 @@ const TextBlock: Block = {
       editor: editor,
     },
     colorField(),
-    bottomMargin,
     bottomMarginNew,
   ],
 };

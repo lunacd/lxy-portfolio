@@ -44,9 +44,8 @@ export default function LargeGalleryBlock(props: LargeGalleryBlockProps) {
       })}
       payload={props.payload}
       spacing="regular"
-      bottomMargin={props.bottomMargin}
       justify="center"
-      bottomMarginNew={props.bottomMargin ? "xxl" : "none"}
+      bottomMarginNew={props.bottomMarginNew}
     ></ColumnBlock>
   );
 }

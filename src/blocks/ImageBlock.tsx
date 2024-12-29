@@ -1,9 +1,9 @@
 import { ProjectPage } from "@payload-types";
-import classNames from "classnames";
 import { Payload } from "payload";
 import "server-only";
 
 import PayloadImage from "@/components/PayloadImage";
+import { getSpacing } from "@/utils/spacingUtil";
 
 type ImageBlockProps = Extract<
   ProjectPage["blocks"][0],
@@ -16,9 +16,7 @@ export default function ImageBlock(props: ImageBlockProps) {
       media={props.image}
       payload={props.payload}
       sizes={`${props.imageSize}vw`}
-      className={classNames({
-        "mb-spacing-3lg": props.bottomMargin,
-      })}
+      style={{ marginBottom: getSpacing(props.bottomMarginNew) }}
     />
   );
 }

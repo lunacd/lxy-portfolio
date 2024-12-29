@@ -208,10 +208,6 @@ export interface ProjectPage {
         text: string;
         type: 'title' | 'subtitle';
         textColor: 'dark' | 'light';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -234,10 +230,6 @@ export interface ProjectPage {
           [k: string]: unknown;
         };
         textColor: 'dark' | 'light';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -268,10 +260,6 @@ export interface ProjectPage {
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         textColor: 'dark' | 'light';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -286,10 +274,6 @@ export interface ProjectPage {
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
         imageSize: number;
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -302,10 +286,6 @@ export interface ProjectPage {
         embedLink: string;
         width: number;
         height: number;
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -317,10 +297,6 @@ export interface ProjectPage {
          * The document to link to.
          */
         document: number | Document;
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -348,10 +324,6 @@ export interface ProjectPage {
          */
         image: number | Media;
         textColor: 'dark' | 'light';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -371,10 +343,6 @@ export interface ProjectPage {
          */
         width: number;
         textColor: 'dark' | 'light';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -388,10 +356,6 @@ export interface ProjectPage {
           image: number | Media;
           id?: string | null;
         }[];
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -427,10 +391,6 @@ export interface ProjectPage {
           link?: string | null;
           id?: string | null;
         }[];
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -449,10 +409,6 @@ export interface ProjectPage {
           id?: string | null;
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -470,10 +426,6 @@ export interface ProjectPage {
           type: 'equalWidth' | 'equalHeight';
           id?: string | null;
         }[];
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -485,10 +437,6 @@ export interface ProjectPage {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -511,10 +459,6 @@ export interface ProjectPage {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -545,10 +489,6 @@ export interface ProjectPage {
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -563,10 +503,6 @@ export interface ProjectPage {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -579,10 +515,6 @@ export interface ProjectPage {
               embedLink: string;
               width: number;
               height: number;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -594,10 +526,6 @@ export interface ProjectPage {
                * The document to link to.
                */
               document: number | Document;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -625,10 +553,6 @@ export interface ProjectPage {
                */
               image: number | Media;
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -648,10 +572,6 @@ export interface ProjectPage {
                */
               width: number;
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -665,10 +585,6 @@ export interface ProjectPage {
                 image: number | Media;
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -704,10 +620,6 @@ export interface ProjectPage {
                 link?: string | null;
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -726,10 +638,6 @@ export interface ProjectPage {
                 id?: string | null;
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -747,10 +655,6 @@ export interface ProjectPage {
                 type: 'equalWidth' | 'equalHeight';
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -762,10 +666,6 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -788,10 +688,6 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -822,10 +718,6 @@ export interface ProjectPage {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -840,10 +732,6 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -856,10 +744,6 @@ export interface ProjectPage {
                     embedLink: string;
                     width: number;
                     height: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -871,10 +755,6 @@ export interface ProjectPage {
                      * The document to link to.
                      */
                     document: number | Document;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -902,10 +782,6 @@ export interface ProjectPage {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -925,10 +801,6 @@ export interface ProjectPage {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -942,10 +814,6 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -981,10 +849,6 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1003,10 +867,6 @@ export interface ProjectPage {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1024,10 +884,6 @@ export interface ProjectPage {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1036,10 +892,6 @@ export interface ProjectPage {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1051,10 +903,6 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1077,10 +925,6 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1111,10 +955,6 @@ export interface ProjectPage {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1129,10 +969,6 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1145,10 +981,6 @@ export interface ProjectPage {
                     embedLink: string;
                     width: number;
                     height: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1160,10 +992,6 @@ export interface ProjectPage {
                      * The document to link to.
                      */
                     document: number | Document;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1191,10 +1019,6 @@ export interface ProjectPage {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1214,10 +1038,6 @@ export interface ProjectPage {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1231,10 +1051,6 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1270,10 +1086,6 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1292,10 +1104,6 @@ export interface ProjectPage {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1313,10 +1121,6 @@ export interface ProjectPage {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1324,10 +1128,6 @@ export interface ProjectPage {
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1335,10 +1135,6 @@ export interface ProjectPage {
             }
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -1350,10 +1146,6 @@ export interface ProjectPage {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1376,10 +1168,6 @@ export interface ProjectPage {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1410,10 +1198,6 @@ export interface ProjectPage {
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1428,10 +1212,6 @@ export interface ProjectPage {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1444,10 +1224,6 @@ export interface ProjectPage {
               embedLink: string;
               width: number;
               height: number;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1459,10 +1235,6 @@ export interface ProjectPage {
                * The document to link to.
                */
               document: number | Document;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1490,10 +1262,6 @@ export interface ProjectPage {
                */
               image: number | Media;
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1513,10 +1281,6 @@ export interface ProjectPage {
                */
               width: number;
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1530,10 +1294,6 @@ export interface ProjectPage {
                 image: number | Media;
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1569,10 +1329,6 @@ export interface ProjectPage {
                 link?: string | null;
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1591,10 +1347,6 @@ export interface ProjectPage {
                 id?: string | null;
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1612,10 +1364,6 @@ export interface ProjectPage {
                 type: 'equalWidth' | 'equalHeight';
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1627,10 +1375,6 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1653,10 +1397,6 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1687,10 +1427,6 @@ export interface ProjectPage {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1705,10 +1441,6 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1721,10 +1453,6 @@ export interface ProjectPage {
                     embedLink: string;
                     width: number;
                     height: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1736,10 +1464,6 @@ export interface ProjectPage {
                      * The document to link to.
                      */
                     document: number | Document;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1767,10 +1491,6 @@ export interface ProjectPage {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1790,10 +1510,6 @@ export interface ProjectPage {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1807,10 +1523,6 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1846,10 +1558,6 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1868,10 +1576,6 @@ export interface ProjectPage {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1889,10 +1593,6 @@ export interface ProjectPage {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1901,10 +1601,6 @@ export interface ProjectPage {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1916,10 +1612,6 @@ export interface ProjectPage {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1942,10 +1634,6 @@ export interface ProjectPage {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1976,10 +1664,6 @@ export interface ProjectPage {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1994,10 +1678,6 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2010,10 +1690,6 @@ export interface ProjectPage {
                     embedLink: string;
                     width: number;
                     height: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2025,10 +1701,6 @@ export interface ProjectPage {
                      * The document to link to.
                      */
                     document: number | Document;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2056,10 +1728,6 @@ export interface ProjectPage {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2079,10 +1747,6 @@ export interface ProjectPage {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2096,10 +1760,6 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2135,10 +1795,6 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2157,10 +1813,6 @@ export interface ProjectPage {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2178,10 +1830,6 @@ export interface ProjectPage {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2189,10 +1837,6 @@ export interface ProjectPage {
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2201,10 +1845,6 @@ export interface ProjectPage {
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         justify: 'start' | 'center' | 'end';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2235,10 +1875,6 @@ export interface Blog {
         text: string;
         type: 'title' | 'subtitle';
         textColor: 'dark' | 'light';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2261,10 +1897,6 @@ export interface Blog {
           [k: string]: unknown;
         };
         textColor: 'dark' | 'light';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2295,10 +1927,6 @@ export interface Blog {
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         textColor: 'dark' | 'light';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2313,10 +1941,6 @@ export interface Blog {
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
         imageSize: number;
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2329,10 +1953,6 @@ export interface Blog {
         embedLink: string;
         width: number;
         height: number;
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2344,10 +1964,6 @@ export interface Blog {
          * The document to link to.
          */
         document: number | Document;
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2375,10 +1991,6 @@ export interface Blog {
          */
         image: number | Media;
         textColor: 'dark' | 'light';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2398,10 +2010,6 @@ export interface Blog {
          */
         width: number;
         textColor: 'dark' | 'light';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2415,10 +2023,6 @@ export interface Blog {
           image: number | Media;
           id?: string | null;
         }[];
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2454,10 +2058,6 @@ export interface Blog {
           link?: string | null;
           id?: string | null;
         }[];
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2476,10 +2076,6 @@ export interface Blog {
           id?: string | null;
         }[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2497,10 +2093,6 @@ export interface Blog {
           type: 'equalWidth' | 'equalHeight';
           id?: string | null;
         }[];
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2512,10 +2104,6 @@ export interface Blog {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2538,10 +2126,6 @@ export interface Blog {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2572,10 +2156,6 @@ export interface Blog {
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2590,10 +2170,6 @@ export interface Blog {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2606,10 +2182,6 @@ export interface Blog {
               embedLink: string;
               width: number;
               height: number;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2621,10 +2193,6 @@ export interface Blog {
                * The document to link to.
                */
               document: number | Document;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2652,10 +2220,6 @@ export interface Blog {
                */
               image: number | Media;
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2675,10 +2239,6 @@ export interface Blog {
                */
               width: number;
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2692,10 +2252,6 @@ export interface Blog {
                 image: number | Media;
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2731,10 +2287,6 @@ export interface Blog {
                 link?: string | null;
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2753,10 +2305,6 @@ export interface Blog {
                 id?: string | null;
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2774,10 +2322,6 @@ export interface Blog {
                 type: 'equalWidth' | 'equalHeight';
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -2789,10 +2333,6 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2815,10 +2355,6 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2849,10 +2385,6 @@ export interface Blog {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2867,10 +2399,6 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2883,10 +2411,6 @@ export interface Blog {
                     embedLink: string;
                     width: number;
                     height: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2898,10 +2422,6 @@ export interface Blog {
                      * The document to link to.
                      */
                     document: number | Document;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2929,10 +2449,6 @@ export interface Blog {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2952,10 +2468,6 @@ export interface Blog {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2969,10 +2481,6 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3008,10 +2516,6 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3030,10 +2534,6 @@ export interface Blog {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3051,10 +2551,6 @@ export interface Blog {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3063,10 +2559,6 @@ export interface Blog {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3078,10 +2570,6 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3104,10 +2592,6 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3138,10 +2622,6 @@ export interface Blog {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3156,10 +2636,6 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3172,10 +2648,6 @@ export interface Blog {
                     embedLink: string;
                     width: number;
                     height: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3187,10 +2659,6 @@ export interface Blog {
                      * The document to link to.
                      */
                     document: number | Document;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3218,10 +2686,6 @@ export interface Blog {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3241,10 +2705,6 @@ export interface Blog {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3258,10 +2718,6 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3297,10 +2753,6 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3319,10 +2771,6 @@ export interface Blog {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3340,10 +2788,6 @@ export interface Blog {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3351,10 +2795,6 @@ export interface Blog {
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3362,10 +2802,6 @@ export interface Blog {
             }
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -3377,10 +2813,6 @@ export interface Blog {
               text: string;
               type: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3403,10 +2835,6 @@ export interface Blog {
                 [k: string]: unknown;
               };
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3437,10 +2865,6 @@ export interface Blog {
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3455,10 +2879,6 @@ export interface Blog {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3471,10 +2891,6 @@ export interface Blog {
               embedLink: string;
               width: number;
               height: number;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3486,10 +2902,6 @@ export interface Blog {
                * The document to link to.
                */
               document: number | Document;
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3517,10 +2929,6 @@ export interface Blog {
                */
               image: number | Media;
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3540,10 +2948,6 @@ export interface Blog {
                */
               width: number;
               textColor: 'dark' | 'light';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3557,10 +2961,6 @@ export interface Blog {
                 image: number | Media;
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3596,10 +2996,6 @@ export interface Blog {
                 link?: string | null;
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3618,10 +3014,6 @@ export interface Blog {
                 id?: string | null;
               }[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3639,10 +3031,6 @@ export interface Blog {
                 type: 'equalWidth' | 'equalHeight';
                 id?: string | null;
               }[];
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3654,10 +3042,6 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3680,10 +3064,6 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3714,10 +3094,6 @@ export interface Blog {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3732,10 +3108,6 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3748,10 +3120,6 @@ export interface Blog {
                     embedLink: string;
                     width: number;
                     height: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3763,10 +3131,6 @@ export interface Blog {
                      * The document to link to.
                      */
                     document: number | Document;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3794,10 +3158,6 @@ export interface Blog {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3817,10 +3177,6 @@ export interface Blog {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3834,10 +3190,6 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3873,10 +3225,6 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3895,10 +3243,6 @@ export interface Blog {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3916,10 +3260,6 @@ export interface Blog {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3928,10 +3268,6 @@ export interface Blog {
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               justify: 'start' | 'center' | 'end';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3943,10 +3279,6 @@ export interface Blog {
                     text: string;
                     type: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3969,10 +3301,6 @@ export interface Blog {
                       [k: string]: unknown;
                     };
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4003,10 +3331,6 @@ export interface Blog {
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4021,10 +3345,6 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4037,10 +3357,6 @@ export interface Blog {
                     embedLink: string;
                     width: number;
                     height: number;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4052,10 +3368,6 @@ export interface Blog {
                      * The document to link to.
                      */
                     document: number | Document;
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4083,10 +3395,6 @@ export interface Blog {
                      */
                     image: number | Media;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4106,10 +3414,6 @@ export interface Blog {
                      */
                     width: number;
                     textColor: 'dark' | 'light';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4123,10 +3427,6 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4162,10 +3462,6 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4184,10 +3480,6 @@ export interface Blog {
                       id?: string | null;
                     }[];
                     spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4205,10 +3497,6 @@ export interface Blog {
                       type: 'equalWidth' | 'equalHeight';
                       id?: string | null;
                     }[];
-                    /**
-                     * Check this to include a margin at the bottom
-                     */
-                    bottomMargin: boolean;
                     bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4216,10 +3504,6 @@ export interface Blog {
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
-              /**
-               * Check this to include a margin at the bottom
-               */
-              bottomMargin: boolean;
               bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -4228,10 +3512,6 @@ export interface Blog {
         )[];
         spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         justify: 'start' | 'center' | 'end';
-        /**
-         * Check this to include a margin at the bottom
-         */
-        bottomMargin: boolean;
         bottomMarginNew: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -4415,7 +3695,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               text?: T;
               type?: T;
               textColor?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4425,7 +3704,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | {
               text?: T;
               textColor?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4442,7 +3720,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                   };
               spacing?: T;
               textColor?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4452,7 +3729,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | {
               image?: T;
               imageSize?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4463,7 +3739,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               embedLink?: T;
               width?: T;
               height?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4473,7 +3748,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | {
               label?: T;
               document?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4485,7 +3759,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               text?: T;
               image?: T;
               textColor?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4497,7 +3770,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               scrollPrompt?: T;
               width?: T;
               textColor?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4511,7 +3783,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                     image?: T;
                     id?: T;
                   };
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4527,7 +3798,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                     link?: T;
                     id?: T;
                   };
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4543,7 +3813,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                     id?: T;
                   };
               spacing?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4563,7 +3832,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                     type?: T;
                     id?: T;
                   };
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -4580,7 +3848,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           text?: T;
                           type?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4590,7 +3857,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           text?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4607,7 +3873,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4617,7 +3882,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4628,7 +3892,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           embedLink?: T;
                           width?: T;
                           height?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4638,7 +3901,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           label?: T;
                           document?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4650,7 +3912,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           text?: T;
                           image?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4662,7 +3923,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           scrollPrompt?: T;
                           width?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4676,7 +3936,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4692,7 +3951,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4708,7 +3966,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 id?: T;
                               };
                           spacing?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4728,7 +3985,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 type?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4745,7 +4001,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4755,7 +4010,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4772,7 +4026,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4782,7 +4035,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4793,7 +4045,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4803,7 +4054,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4815,7 +4065,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4827,7 +4076,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4841,7 +4089,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4857,7 +4104,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4873,7 +4119,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4893,7 +4138,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4901,7 +4145,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           justify?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -4918,7 +4161,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4928,7 +4170,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4945,7 +4186,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4955,7 +4195,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4966,7 +4205,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4976,7 +4214,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4988,7 +4225,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5000,7 +4236,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5014,7 +4249,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5030,7 +4264,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5046,7 +4279,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5066,21 +4298,18 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
                         };
                   };
               spacing?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5097,7 +4326,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           text?: T;
                           type?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5107,7 +4335,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           text?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5124,7 +4351,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5134,7 +4360,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5145,7 +4370,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           embedLink?: T;
                           width?: T;
                           height?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5155,7 +4379,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           label?: T;
                           document?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5167,7 +4390,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           text?: T;
                           image?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5179,7 +4401,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           scrollPrompt?: T;
                           width?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5193,7 +4414,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5209,7 +4429,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5225,7 +4444,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 id?: T;
                               };
                           spacing?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5245,7 +4463,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 type?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5262,7 +4479,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5272,7 +4488,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5289,7 +4504,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5299,7 +4513,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5310,7 +4523,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5320,7 +4532,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5332,7 +4543,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5344,7 +4554,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5358,7 +4567,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5374,7 +4582,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5390,7 +4597,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5410,7 +4616,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5418,7 +4623,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           justify?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5435,7 +4639,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5445,7 +4648,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5462,7 +4664,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5472,7 +4673,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5483,7 +4683,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5493,7 +4692,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5505,7 +4703,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5517,7 +4714,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5531,7 +4727,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5547,7 +4742,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5563,7 +4757,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5583,14 +4776,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5598,7 +4789,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                   };
               spacing?: T;
               justify?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5630,7 +4820,6 @@ export interface BlogsSelect<T extends boolean = true> {
               text?: T;
               type?: T;
               textColor?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5640,7 +4829,6 @@ export interface BlogsSelect<T extends boolean = true> {
           | {
               text?: T;
               textColor?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5657,7 +4845,6 @@ export interface BlogsSelect<T extends boolean = true> {
                   };
               spacing?: T;
               textColor?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5667,7 +4854,6 @@ export interface BlogsSelect<T extends boolean = true> {
           | {
               image?: T;
               imageSize?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5678,7 +4864,6 @@ export interface BlogsSelect<T extends boolean = true> {
               embedLink?: T;
               width?: T;
               height?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5688,7 +4873,6 @@ export interface BlogsSelect<T extends boolean = true> {
           | {
               label?: T;
               document?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5700,7 +4884,6 @@ export interface BlogsSelect<T extends boolean = true> {
               text?: T;
               image?: T;
               textColor?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5712,7 +4895,6 @@ export interface BlogsSelect<T extends boolean = true> {
               scrollPrompt?: T;
               width?: T;
               textColor?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5726,7 +4908,6 @@ export interface BlogsSelect<T extends boolean = true> {
                     image?: T;
                     id?: T;
                   };
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5742,7 +4923,6 @@ export interface BlogsSelect<T extends boolean = true> {
                     link?: T;
                     id?: T;
                   };
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5758,7 +4938,6 @@ export interface BlogsSelect<T extends boolean = true> {
                     id?: T;
                   };
               spacing?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5778,7 +4957,6 @@ export interface BlogsSelect<T extends boolean = true> {
                     type?: T;
                     id?: T;
                   };
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -5795,7 +4973,6 @@ export interface BlogsSelect<T extends boolean = true> {
                           text?: T;
                           type?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5805,7 +4982,6 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           text?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5822,7 +4998,6 @@ export interface BlogsSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5832,7 +5007,6 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5843,7 +5017,6 @@ export interface BlogsSelect<T extends boolean = true> {
                           embedLink?: T;
                           width?: T;
                           height?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5853,7 +5026,6 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           label?: T;
                           document?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5865,7 +5037,6 @@ export interface BlogsSelect<T extends boolean = true> {
                           text?: T;
                           image?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5877,7 +5048,6 @@ export interface BlogsSelect<T extends boolean = true> {
                           scrollPrompt?: T;
                           width?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5891,7 +5061,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5907,7 +5076,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5923,7 +5091,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                 id?: T;
                               };
                           spacing?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5943,7 +5110,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                 type?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -5960,7 +5126,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5970,7 +5135,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5987,7 +5151,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5997,7 +5160,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6008,7 +5170,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6018,7 +5179,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6030,7 +5190,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6042,7 +5201,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6056,7 +5214,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6072,7 +5229,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6088,7 +5244,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6108,7 +5263,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6116,7 +5270,6 @@ export interface BlogsSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           justify?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6133,7 +5286,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6143,7 +5295,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6160,7 +5311,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6170,7 +5320,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6181,7 +5330,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6191,7 +5339,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6203,7 +5350,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6215,7 +5361,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6229,7 +5374,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6245,7 +5389,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6261,7 +5404,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6281,21 +5423,18 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
                         };
                   };
               spacing?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
@@ -6312,7 +5451,6 @@ export interface BlogsSelect<T extends boolean = true> {
                           text?: T;
                           type?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6322,7 +5460,6 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           text?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6339,7 +5476,6 @@ export interface BlogsSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6349,7 +5485,6 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6360,7 +5495,6 @@ export interface BlogsSelect<T extends boolean = true> {
                           embedLink?: T;
                           width?: T;
                           height?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6370,7 +5504,6 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           label?: T;
                           document?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6382,7 +5515,6 @@ export interface BlogsSelect<T extends boolean = true> {
                           text?: T;
                           image?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6394,7 +5526,6 @@ export interface BlogsSelect<T extends boolean = true> {
                           scrollPrompt?: T;
                           width?: T;
                           textColor?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6408,7 +5539,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6424,7 +5554,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6440,7 +5569,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                 id?: T;
                               };
                           spacing?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6460,7 +5588,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                 type?: T;
                                 id?: T;
                               };
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6477,7 +5604,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6487,7 +5613,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6504,7 +5629,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6514,7 +5638,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6525,7 +5648,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6535,7 +5657,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6547,7 +5668,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6559,7 +5679,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6573,7 +5692,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6589,7 +5707,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6605,7 +5722,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6625,7 +5741,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6633,7 +5748,6 @@ export interface BlogsSelect<T extends boolean = true> {
                               };
                           spacing?: T;
                           justify?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6650,7 +5764,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       type?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6660,7 +5773,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6677,7 +5789,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                           };
                                       spacing?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6687,7 +5798,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6698,7 +5808,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6708,7 +5817,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       label?: T;
                                       document?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6720,7 +5828,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6732,7 +5839,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       scrollPrompt?: T;
                                       width?: T;
                                       textColor?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6746,7 +5852,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6762,7 +5867,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6778,7 +5882,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       spacing?: T;
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6798,14 +5901,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
-                                      bottomMargin?: T;
                                       bottomMarginNew?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
                               };
                           spacing?: T;
-                          bottomMargin?: T;
                           bottomMarginNew?: T;
                           id?: T;
                           blockName?: T;
@@ -6813,7 +5914,6 @@ export interface BlogsSelect<T extends boolean = true> {
                   };
               spacing?: T;
               justify?: T;
-              bottomMargin?: T;
               bottomMarginNew?: T;
               id?: T;
               blockName?: T;
