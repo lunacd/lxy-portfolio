@@ -26,7 +26,7 @@ function TextChild(props: TextChildProps) {
     case "text":
       return (
         <span
-          className={classNames("min-h-4", {
+          className={classNames({
             "font-bold": props.format === "bold",
           })}
         >
@@ -72,6 +72,7 @@ export default function TextBlock(props: TitleBlockProps) {
               "text-right": child.format === "right",
               "text-center": child.format === "center",
             })}
+            style={{ minHeight: "1em" }}
           >
             <TextChild {...child} />
           </div>
