@@ -1,4 +1,5 @@
 import { ProjectPage } from "@payload-types";
+import classNames from "classnames";
 import { Payload } from "payload";
 
 import PayloadImage from "@/components/PayloadImage";
@@ -14,7 +15,9 @@ export default function EqualHeightImagesBlock(
 ) {
   return (
     <div
-      className="flex w-full flex-row"
+      className={classNames("flex w-full flex-row", {
+        "mb-spacing-3lg": props.bottomMargin,
+      })}
       style={{
         gap: `${getSpacing(props.spacing)}`,
       }}
