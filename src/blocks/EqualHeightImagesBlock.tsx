@@ -14,7 +14,7 @@ export default function EqualHeightImagesBlock(
 ) {
   return (
     <div
-      className="flex flex-row"
+      className="flex w-full flex-row"
       style={{
         gap: `${getSpacing(props.spacing)}`,
       }}
