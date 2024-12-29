@@ -1,4 +1,4 @@
-import { bottomMargin } from "../CommonFields";
+import { bottomMargin, bottomMarginNew } from "../CommonFields";
 import { Block } from "payload";
 
 const LargeGalleryBlock: Block = {
@@ -36,6 +36,7 @@ const LargeGalleryBlock: Block = {
       ],
     },
     bottomMargin,
+    bottomMarginNew,
   ],
 };
 

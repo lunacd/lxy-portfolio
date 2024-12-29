@@ -10,6 +10,14 @@ export const bottomMargin: Field = {
   },
 };
 
+export const bottomMarginNew: Field = {
+  name: "bottomMarginNew",
+  type: "radio",
+  required: true,
+  defaultValue: "xxl",
+  options: ["none", "small", "medium", "regular", "large", "xl", "xxl"],
+};
+
 export function colorField(fieldName: string = "textColor"): Field {
   return {
     name: fieldName,
