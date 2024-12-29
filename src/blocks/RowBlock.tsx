@@ -1,3 +1,4 @@
+import styles from "./RowBlock.module.css";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import React from "react";
@@ -16,6 +17,7 @@ export type RowBlockProps = Extract<
 export default function RowBlock(props: RowBlockProps) {
   return (
     <div
+      className={`grid ${styles.row}`}
       style={
         {
           gap: getSpacing(props.spacing),
