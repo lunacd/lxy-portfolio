@@ -51,6 +51,7 @@ export default async function Blog({
             type="title"
             textColor="dark"
             bottomMargin={false}
+            bottomMarginNew="none"
           />
           <div className="paragraph">
             {new Date(blog.date).toLocaleDateString(undefined, {

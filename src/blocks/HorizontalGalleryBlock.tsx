@@ -24,6 +24,7 @@ export default function HorizontalGalleryBlock(
         image: item.image,
         imageSize: 100 / props.items.length,
         bottomMargin: false,
+        bottomMarginNew: "none",
       },
     ];
     if (item.text) {
@@ -32,6 +33,7 @@ export default function HorizontalGalleryBlock(
         text: item.text,
         bottomMargin: false,
         textColor: props.textColor,
+        bottomMarginNew: "none",
       });
     }
     return blocks;
@@ -45,12 +47,14 @@ export default function HorizontalGalleryBlock(
           spacing: "small",
           bottomMargin: false,
           justify: "start",
+          bottomMarginNew: "none",
         };
       })}
       spacing={props.spacing}
       bottomMargin={props.bottomMargin}
       blockType="row"
       payload={props.payload}
+      bottomMarginNew={props.bottomMargin ? "xxl" : "none"}
     />
   );
 }

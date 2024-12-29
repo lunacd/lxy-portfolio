@@ -21,29 +21,34 @@ export default function TextImageBlock(props: TextImageBlockProps) {
               textColor: props.textColor,
               type: "title",
               bottomMargin: false,
+              bottomMarginNew: "none",
             },
             {
               blockType: "text",
               text: props.text,
               textColor: props.textColor,
               bottomMargin: false,
+              bottomMarginNew: "none",
             },
           ],
           bottomMargin: false,
           spacing: "large",
           justify: "center",
+          bottomMarginNew: "none",
         },
         {
           blockType: "image",
           image: props.image,
           imageSize: 50,
           bottomMargin: false,
+          bottomMarginNew: "none",
         },
       ]}
       spacing="regular"
       bottomMargin={props.bottomMargin}
       blockType="row"
       payload={props.payload}
+      bottomMarginNew={props.bottomMargin ? "xxl" : "none"}
     />
   );
 }

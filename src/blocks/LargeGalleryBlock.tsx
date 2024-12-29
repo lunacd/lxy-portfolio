@@ -24,6 +24,7 @@ export default function LargeGalleryBlock(props: LargeGalleryBlockProps) {
             }),
             spacing: "regular",
             bottomMargin: false,
+            bottomMarginNew: "none",
           };
         } else {
           return {
@@ -31,6 +32,7 @@ export default function LargeGalleryBlock(props: LargeGalleryBlockProps) {
             spacing: "regular",
             bottomMargin: false,
             textColor: "light",
+            bottomMarginNew: "none",
             items: row.images.map((image) => {
               return {
                 image: image.image,
@@ -44,6 +46,7 @@ export default function LargeGalleryBlock(props: LargeGalleryBlockProps) {
       spacing="regular"
       bottomMargin={props.bottomMargin}
       justify="center"
+      bottomMarginNew={props.bottomMargin ? "xxl" : "none"}
     ></ColumnBlock>
   );
 }

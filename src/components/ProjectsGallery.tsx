@@ -44,6 +44,7 @@ export default async function ProjectsGallery(props: ProjectsGalleryProps) {
         bottomMargin={true}
         blockType="smallGallery"
         payload={props.payload}
+        bottomMarginNew="xxl"
       />
     </FloatUpMotion>
   );

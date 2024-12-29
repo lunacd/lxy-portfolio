@@ -30,6 +30,7 @@ export default async function Blogs() {
           type="title"
           textColor="dark"
           bottomMargin={true}
+          bottomMarginNew="xxl"
           blockType="title"
         />
         {blogs.length === 0 && (
@@ -39,6 +40,7 @@ export default async function Blogs() {
             textColor="dark"
             bottomMargin={true}
             blockType="title"
+            bottomMarginNew="xxl"
           />
         )}
         <SmallgallerBlock
@@ -96,6 +98,7 @@ export default async function Blogs() {
           bottomMargin={true}
           payload={payload}
           blockType="smallGallery"
+          bottomMarginNew="xxl"
         />
       </div>
     </Scroller>
