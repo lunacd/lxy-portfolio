@@ -9,6 +9,21 @@ import { RefreshRouteOnSave } from "@/components/RefreshRouteOnSave";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ blog_id: number }>;
+}) {
+  const payload = await getPayload({
+    config,
+  });
+  const id = (await params).blog_id;
+  const blog = await payload.findByID({ collection: "blogs", id: id });
+  return {
+    title: `${blog.title} | Shirley Lyu`,
+  };
+}
+
 export default async function Blog({
   params,
 }: {
