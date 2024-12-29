@@ -21,7 +21,7 @@ export default function RowBlock(props: RowBlockProps) {
       style={
         {
           gap: getSpacing(props.spacing),
-          marginBottom: getSpacing(props.spacing),
+          marginBottom: getSpacing(props.bottomMargin),
           "--column-count": props.blocks.length,
         } as React.CSSProperties
       }
