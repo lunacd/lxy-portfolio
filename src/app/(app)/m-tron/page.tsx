@@ -1,4 +1,3 @@
-import MTronClient from "./page.client";
 import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
@@ -40,24 +39,17 @@ export default async function MTron() {
       <Scroller
         bgColor={mTronData.pageBackgroundColor ?? mTronData.backgroundColor}
       >
-        <MTronClient
-          topChildren={
-            <>
-              <TopDisplay project={mTronData} payload={payload} />
-              {mTronPageData.blocks.map((block, index) => (
-                <FloatUpMotion className="single" key={index}>
-                  <Block block={block} payload={payload} />
-                </FloatUpMotion>
-              ))}
-            </>
-          }
-        >
-          <ProjectNavigation
-            prev="/sunrise"
-            textColor="text-white"
-            payload={payload}
-          />
-        </MTronClient>
+        <TopDisplay project={mTronData} payload={payload} />
+        {mTronPageData.blocks.map((block, index) => (
+          <FloatUpMotion className="single" key={index}>
+            <Block block={block} payload={payload} />
+          </FloatUpMotion>
+        ))}
+        <ProjectNavigation
+          prev="/sunrise"
+          textColor="text-white"
+          payload={payload}
+        />
       </Scroller>
     </AnimationCoordinator>
   );
