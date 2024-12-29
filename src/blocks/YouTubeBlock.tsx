@@ -15,6 +15,7 @@ export default function YouTubeBlock(props: YouTubeBlockProps) {
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
+      className="w-full"
       style={{
         aspectRatio: `${props.width} / ${props.height}`,
         marginBottom: getSpacing(props.bottomMargin),
