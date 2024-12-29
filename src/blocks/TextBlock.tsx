@@ -26,7 +26,7 @@ function TextChild(props: TextChildProps) {
     case "text":
       return (
         <span
-          className={classNames({
+          className={classNames("min-h-4", {
             "font-bold": props.format === "bold",
           })}
         >
