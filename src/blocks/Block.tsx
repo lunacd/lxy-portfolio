@@ -14,6 +14,7 @@ import TextBlock from "src/blocks/TextBlock";
 import TextImageBlock from "src/blocks/TextImageBlock";
 import TitleBlock from "src/blocks/TitleBlock";
 import YouTubeBlock from "src/blocks/YouTubeBlock";
+import LargeGalleryBlock from "./LargeGalleryBlock";
 
 type BlockType = ProjectPage["blocks"][number];
 
@@ -54,5 +55,7 @@ export default function Block(props: BlockProps) {
       return (
         <EqualHeightImagesBlock {...props.block} payload={props.payload} />
       );
+    case "largeGallery":
+      return <LargeGalleryBlock {...props.block} payload={props.payload} />;
   }
 }
