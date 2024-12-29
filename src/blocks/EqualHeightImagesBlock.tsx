@@ -2,6 +2,7 @@ import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 
 import PayloadImage from "@/components/PayloadImage";
+import { getSpacing } from "@/utils/spacingUtil";
 
 type EqualHeightImagesBlockProps = Extract<
   ProjectPage["blocks"][0],
@@ -12,7 +13,12 @@ export default function EqualHeightImagesBlock(
   props: EqualHeightImagesBlockProps,
 ) {
   return (
-    <div>
+    <div
+      className="flex flex-row"
+      style={{
+        gap: `${getSpacing(props.spacing)}`,
+      }}
+    >
       {props.items.map((item, index) => (
         <PayloadImage
           key={index}
