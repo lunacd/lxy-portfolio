@@ -44,7 +44,7 @@
     "eslint-config-next": "^15.1.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "prettier-plugin-classnames": "^0.7.5",
     "prettier-plugin-merge": "^0.7.2",
