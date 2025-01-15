@@ -4,3 +4,16 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      react:
+        patterns:
+        - react
+        - react-dom
+      payload:
+        patterns:
+        - payload
+        - "@payloadcms/*"
+      next:
+        patterns:
+        - next
+        - "@next/*"
