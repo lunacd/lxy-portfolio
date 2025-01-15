@@ -7,13 +7,15 @@ updates:
     groups:
       react:
         patterns:
-        - react
-        - react-dom
+          - react
+          - react-dom
       payload:
         patterns:
-        - payload
-        - "@payloadcms/*"
+          - payload
+          - "@payloadcms/*"
       next:
         patterns:
-        - next
-        - "@next/*"
+          - next
+          - "@next/*"
+      devDependencies:
+        dependency-type: "development"
