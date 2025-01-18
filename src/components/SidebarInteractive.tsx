@@ -28,10 +28,6 @@ interface SidebarInteractiveProps {
   };
 }
 
-const MotionImage = motion.create(Image);
-const MotionIconChevronLeft = motion.create(IconChevronLeft);
-const MotionLink = motion.create(Link);
-
 const dashVariants = {
   rest: { opacity: 0 },
   hovered: { opacity: 1 },
@@ -129,19 +125,21 @@ export default function SidebarInteractive({
           {/* Routes */}
           <div className="mt-16 flex flex-col space-y-1 pb-6 pt-4">
             <AnimatePresence initial={false} mode="popLayout">
-              <MotionLink className="subtitle" href="/" key="allProjects">
-                All Projects
-              </MotionLink>
+              <motion.div key="allProjects" layout>
+                <Link className="subtitle" href="/">
+                  All Projects
+                </Link>
+              </motion.div>
               {prefixRoutes.map((route) => (
-                <MotionLink
-                  href={`/${route.uri}`}
-                  className="subtitle"
-                  key={route.uri}
+                <motion.div
                   transition={transitionDefault}
                   layout
+                  key={route.uri}
                 >
-                  {route.name}
-                </MotionLink>
+                  <Link href={`/${route.uri}`} className="subtitle">
+                    {route.name}
+                  </Link>
+                </motion.div>
               ))}
               <motion.div
                 key={globalState.focus ? globalState.focus : "all"}
@@ -189,35 +187,28 @@ export default function SidebarInteractive({
                 ))}
               </motion.div>
               {suffixRoutes.map((route) => (
-                <MotionLink
-                  href={`/${route.uri}`}
-                  className="subtitle"
+                <motion.div
                   key={route.uri}
                   transition={transitionDefault}
                   layout
                 >
-                  {route.name}
-                </MotionLink>
+                  <Link href={`/${route.uri}`} className="subtitle">
+                    {route.name}
+                  </Link>
+                </motion.div>
               ))}
 
-              <MotionLink
-                className="subtitle"
-                href="/about"
-                transition={transitionDefault}
-                layout
-                key="about"
-              >
-                About
-              </MotionLink>
-              <MotionLink
-                className="subtitle"
-                href="/blog"
-                transition={transitionDefault}
-                layout
-                key="blog"
-              >
-                Blogs
-              </MotionLink>
+              <motion.div transition={transitionDefault} layout key="about">
+                <Link className="subtitle" href="/about">
+                  About
+                </Link>
+              </motion.div>
+
+              <motion.div transition={transitionDefault} layout key="blog">
+                <Link className="subtitle" href="/blog">
+                  Blogs
+                </Link>
+              </motion.div>
             </AnimatePresence>
             {/*<Link className="subtitle" href="/others">*/}
             {/*  More Work*/}
@@ -270,16 +261,16 @@ export default function SidebarInteractive({
             }}
           >
             <div className="absolute bottom-0 right-0 top-0 flex w-1/2 items-center">
-              <MotionIconChevronLeft
+              <motion.div
                 animate={{
                   rotateY: open ? "0" : "180deg",
                 }}
-                className=""
                 transition={{
                   duration: 0.2,
                 }}
-                size={isXL ? 36 : 24}
-              />
+              >
+                <IconChevronLeft size={isXL ? 36 : 24} />
+              </motion.div>
             </div>
           </div>
         </div>
@@ -300,17 +291,20 @@ export default function SidebarInteractive({
 
       {/* Open-close button: mobile */}
       <div className="absolute right-2 top-4 z-10 cursor-pointer p-4 lg:hidden">
-        <MotionImage
+        <motion.div
           animate={{
             rotate: open ? "90deg" : "0",
           }}
-          className="w-6 transition-colors duration-200"
-          src={HamburgerBlack}
-          alt="Menu"
-          onClick={() => {
-            setOpen((orig) => !orig);
-          }}
-        />
+        >
+          <Image
+            className="w-6 transition-colors duration-200"
+            src={HamburgerBlack}
+            alt="Menu"
+            onClick={() => {
+              setOpen((orig) => !orig);
+            }}
+          />
+        </motion.div>
       </div>
     </>
   );
