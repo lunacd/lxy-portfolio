@@ -272,7 +272,7 @@ export default function SidebarInteractive({
             <div className="absolute bottom-0 right-0 top-0 flex w-1/2 items-center">
               <MotionIconChevronLeft
                 animate={{
-                  rotateY: open ? "0" : "180deg",
+                  rotateY: open ? 0 : 180,
                 }}
                 className=""
                 transition={{
@@ -302,7 +302,7 @@ export default function SidebarInteractive({
       <div className="absolute right-2 top-4 z-10 cursor-pointer p-4 lg:hidden">
         <MotionImage
           animate={{
-            rotate: open ? "90deg" : "0",
+            rotate: open ? 90 : 0,
           }}
           className="w-6 transition-colors duration-200"
           src={HamburgerBlack}
