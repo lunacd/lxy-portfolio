@@ -19,3 +19,12 @@ updates:
           - "@next/*"
       devDependencies:
         dependency-type: "development"
+        exclude-patterns:
+          - tailwindcss
+          - "@tailwindcss/postcss"
+          - postcss
+      tailwind:
+        patterns:
+          - tailwindcss
+          - "@tailwindcss/postcss"
+          - postcss
