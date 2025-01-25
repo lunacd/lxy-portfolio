@@ -38,9 +38,6 @@ import Gallery4 from "@/images/overlap/gallery/gallery-4-half.webp";
 import Gallery5 from "@/images/overlap/gallery/gallery-5-full.webp";
 import Gallery6 from "@/images/overlap/gallery/gallery-6-full.webp";
 import Ideation from "@/images/overlap/ideation-full.webp";
-import Overlay1 from "@/images/overlap/overlay-1-full.webp";
-import Overlay2 from "@/images/overlap/overlay-2-full.webp";
-import Overlay3 from "@/images/overlap/overlay-3-full.webp";
 import Process1 from "@/images/overlap/process/process-01-small.webp";
 import Process2 from "@/images/overlap/process/process-02-small.webp";
 import Process3 from "@/images/overlap/process/process-03-small.webp";
@@ -81,28 +78,6 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
   return (
     <>
       {props.topChildren}
-
-      <DisplayImage
-        source={{ frames: [{ src: Overlay1 }], width: 9534, height: 3742 }}
-        alt="Overlapped moodboard"
-        overlayTitle="Overlapped"
-        overlayText="Time and space sometimes overlap."
-        xSpacing={true}
-      />
-      <DisplayImage
-        source={{ frames: [{ src: Overlay2 }], width: 9534, height: 3742 }}
-        alt="Overlapped moodboard"
-        overlayTitle="Changeable"
-        overlayText="Time changes are unnoticeable, so objects' movements and changes are used to track time passing."
-        xSpacing={true}
-      />
-      <DisplayImage
-        source={{ frames: [{ src: Overlay3 }], width: 9534, height: 3742 }}
-        alt="Overlapped moodboard"
-        overlayTitle="Joyful"
-        overlayText="Categorizing can be a joyful thing!"
-        xSpacing={true}
-      />
 
       {/* Timer */}
       <LegacyTextImage
