@@ -27,8 +27,6 @@ import DNA2 from "@/images/overlap/dna/dna-2-small.webp";
 import DNA3 from "@/images/overlap/dna/dna-3-small.webp";
 import DNA4 from "@/images/overlap/dna/dna-4-small.webp";
 import DNA5 from "@/images/overlap/dna/dna-5-small.webp";
-import FileSorterImage from "@/images/overlap/file-sorter-half.webp";
-import FileSorterUseImage1 from "@/images/overlap/file-sorter-use-1-big.webp";
 import FileSorterUseImage21 from "@/images/overlap/file-sorter-use-2-1-big.webp";
 import FileSorterUseImage22 from "@/images/overlap/file-sorter-use-2-2-big.webp";
 import FileSorterUseImage23 from "@/images/overlap/file-sorter-use-2-3-big.webp";
@@ -62,8 +60,6 @@ import TechDrawing8 from "@/images/overlap/tech-drawing/tech-drawing-08-full.web
 import TechDrawing9 from "@/images/overlap/tech-drawing/tech-drawing-09-full.webp";
 import TechDrawing10 from "@/images/overlap/tech-drawing/tech-drawing-10-full.webp";
 import TechDrawing11 from "@/images/overlap/tech-drawing/tech-drawing-11-full.webp";
-import TimerImage from "@/images/overlap/timer-half.webp";
-import TimerUseImage from "@/images/overlap/timer-use-big.webp";
 import TrayImage from "@/images/overlap/tray-half.webp";
 import TrayUseImage1 from "@/images/overlap/tray-use-1-big.webp";
 import TrayUseImage2 from "@/images/overlap/tray-use-2-big.webp";
@@ -79,43 +75,6 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
     <>
       {props.topChildren}
 
-      {/* Timer */}
-      <LegacyTextImage
-        title="Timer"
-        content={[
-          "Overlapped part = Set up time",
-          "1 Slice = 10 min",
-          "Total: 1 hour",
-        ]}
-        image={TimerImage}
-        height={4125}
-        width={4684}
-      />
-      <ImageText
-        alt="Timer usage"
-        content={["Set a Timer"]}
-        source={{ frames: [{ src: TimerUseImage }], width: 6400, height: 4517 }}
-      />
-
-      {/* File Sorter */}
-      <LegacyTextImage
-        title="File Sorter"
-        content={[
-          "Four different translucent colored blockers categorize files with height and color.",
-        ]}
-        image={FileSorterImage}
-        width={4162}
-        height={4125}
-      />
-      <ImageText
-        alt="File sorter usage 1"
-        content={["Put in file"]}
-        source={{
-          frames: [{ src: FileSorterUseImage1 }],
-          width: 6300,
-          height: 4500,
-        }}
-      />
       <ImageText
         alt="File sorter usage 2"
         content={["Different Overlapping Order"]}

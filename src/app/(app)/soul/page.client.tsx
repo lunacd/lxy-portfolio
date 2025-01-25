@@ -1,11 +1,11 @@
 "use client";
 
 import { PropsWithChildren, ReactNode } from "react";
-import ImageText from "@/components/LegacyImageText";
 
 import Button from "@/components/Button";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
+import ImageText from "@/components/LegacyImageText";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacyTextImage from "@/components/LegacyTextImage";
 import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
