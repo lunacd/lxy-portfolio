@@ -1,4 +1,5 @@
 import EqualHeightImagesBlock from "./EqualHeightImagesBlock";
+import ImageTextBlock from "./ImageTextBlock";
 import ImageWithTextOverlayBlock from "./ImageWithTextOverlayBlock";
 import LargeGalleryBlock from "./LargeGalleryBlock";
 import SmallgallerBlock from "./SmallGalleryBlock";
@@ -62,5 +63,7 @@ export default function Block(props: BlockProps) {
       return (
         <ImageWithTextOverlayBlock {...props.block} payload={props.payload} />
       );
+    case "imageText":
+      return <ImageTextBlock {...props.block} payload={props.payload} />;
   }
 }

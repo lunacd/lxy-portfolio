@@ -8,7 +8,7 @@ import { getSpacing } from "@/utils/spacingUtil";
 type ImageBlockProps = Extract<
   ProjectPage["blocks"][0],
   { blockType: "image" }
-> & { payload: Payload };
+> & { payload: Payload; className?: string };
 
 export default function ImageBlock(props: ImageBlockProps) {
   return (
@@ -17,6 +17,7 @@ export default function ImageBlock(props: ImageBlockProps) {
       payload={props.payload}
       sizes={`${props.imageSize}vw`}
       style={{ marginBottom: getSpacing(props.bottomMargin) }}
+      className={props.className}
     />
   );
 }

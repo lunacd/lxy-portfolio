@@ -1,7 +1,7 @@
 "use client";
 
 import { PropsWithChildren, ReactNode } from "react";
-import ImageText from "src/blocks/ImageText";
+import ImageText from "@/components/LegacyImageText";
 
 import Carousel from "@/components/Carousel";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
