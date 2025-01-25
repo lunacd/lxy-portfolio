@@ -432,6 +432,36 @@ export interface ProjectPage {
         blockType: 'largeGallery';
       }
     | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
+        image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        textOverlay: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'imageWithTextOverlay';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -661,6 +691,36 @@ export interface ProjectPage {
               blockType: 'largeGallery';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              textOverlay: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageWithTextOverlay';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -888,6 +948,36 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1125,6 +1215,36 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1370,6 +1490,36 @@ export interface ProjectPage {
               blockType: 'largeGallery';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              textOverlay: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageWithTextOverlay';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -1597,6 +1747,36 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1834,6 +2014,36 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2099,6 +2309,36 @@ export interface Blog {
         blockType: 'largeGallery';
       }
     | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
+        image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        textOverlay: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'imageWithTextOverlay';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -2328,6 +2568,36 @@ export interface Blog {
               blockType: 'largeGallery';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              textOverlay: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageWithTextOverlay';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -2555,6 +2825,36 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2792,6 +3092,36 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3037,6 +3367,36 @@ export interface Blog {
               blockType: 'largeGallery';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              textOverlay: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageWithTextOverlay';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -3264,6 +3624,36 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3501,6 +3891,36 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'largeGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3836,6 +4256,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        imageWithTextOverlay?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              textOverlay?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -3989,6 +4420,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    imageWithTextOverlay?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          textOverlay?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -4138,6 +4580,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4298,6 +4751,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4467,6 +4931,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    imageWithTextOverlay?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          textOverlay?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -4616,6 +5091,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4776,6 +5262,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -4961,6 +5458,17 @@ export interface BlogsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        imageWithTextOverlay?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              textOverlay?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -5114,6 +5622,17 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    imageWithTextOverlay?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          textOverlay?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -5263,6 +5782,17 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5423,6 +5953,17 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5592,6 +6133,17 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    imageWithTextOverlay?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          textOverlay?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -5741,6 +6293,17 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5901,6 +6464,17 @@ export interface BlogsSelect<T extends boolean = true> {
                                             type?: T;
                                             id?: T;
                                           };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;

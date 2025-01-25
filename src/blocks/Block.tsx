@@ -1,4 +1,5 @@
 import EqualHeightImagesBlock from "./EqualHeightImagesBlock";
+import ImageWithTextOverlayBlock from "./ImageWithTextOverlayBlock";
 import LargeGalleryBlock from "./LargeGalleryBlock";
 import SmallgallerBlock from "./SmallGalleryBlock";
 import { ProjectPage } from "@payload-types";
@@ -57,5 +58,9 @@ export default function Block(props: BlockProps) {
       );
     case "largeGallery":
       return <LargeGalleryBlock {...props.block} payload={props.payload} />;
+    case "imageWithTextOverlay":
+      return (
+        <ImageWithTextOverlayBlock {...props.block} payload={props.payload} />
+      );
   }
 }

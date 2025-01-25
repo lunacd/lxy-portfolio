@@ -52,12 +52,17 @@ function TextChild(props: TextChildProps) {
   }
 }
 
-type TitleBlockProps = Extract<ProjectPage["blocks"][0], { blockType: "text" }>;
+type TextBlockProps = Extract<
+  ProjectPage["blocks"][0],
+  { blockType: "text" }
+> & {
+  className?: string;
+};
 
-export default function TextBlock(props: TitleBlockProps) {
+export default function TextBlock(props: TextBlockProps) {
   return (
     <div
-      className={classNames({
+      className={classNames(props.className ? props.className : "", {
         "text-white": props.textColor === "light",
         "text-black": props.textColor === "dark",
       })}
