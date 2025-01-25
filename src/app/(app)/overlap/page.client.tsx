@@ -11,7 +11,6 @@ import LegacySmallGallery from "@/components/LegacySmallGallery";
 import LegacyTextImage from "@/components/LegacyTextImage";
 import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
 import Spacing from "@/components/Spacing";
-import { createPlainContent } from "@/components/TextSection";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import Benchmark from "@/images/overlap/benchmark-full.webp";
@@ -39,7 +38,6 @@ import Gallery4 from "@/images/overlap/gallery/gallery-4-half.webp";
 import Gallery5 from "@/images/overlap/gallery/gallery-5-full.webp";
 import Gallery6 from "@/images/overlap/gallery/gallery-6-full.webp";
 import Ideation from "@/images/overlap/ideation-full.webp";
-import ManifestoImage from "@/images/overlap/manifesto-half.webp";
 import Overlay1 from "@/images/overlap/overlay-1-full.webp";
 import Overlay2 from "@/images/overlap/overlay-2-full.webp";
 import Overlay3 from "@/images/overlap/overlay-3-full.webp";
@@ -56,9 +54,6 @@ import Process10 from "@/images/overlap/process/process-10-small.webp";
 import Process11 from "@/images/overlap/process/process-11-small.webp";
 import Process12 from "@/images/overlap/process/process-12-small.webp";
 import Prototype from "@/images/overlap/prototype-full.webp";
-import Set1 from "@/images/overlap/set-1-half.webp";
-import Set2 from "@/images/overlap/set-2-half.webp";
-import Set3 from "@/images/overlap/set-3-half.webp";
 import TechDrawing1 from "@/images/overlap/tech-drawing/tech-drawing-01-full.webp";
 import TechDrawing2 from "@/images/overlap/tech-drawing/tech-drawing-02-full.webp";
 import TechDrawing3 from "@/images/overlap/tech-drawing/tech-drawing-03-full.webp";
@@ -87,42 +82,6 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
     <>
       {props.topChildren}
 
-      {/* Manifesto */}
-      <LegacyTextImage
-        title="Project Manifesto"
-        content={[
-          "A collection of office accessories that provides an intuitive concept of category to help users better organize their time, space, and objects.",
-        ]}
-        image={ManifestoImage}
-        width={6240}
-        height={4160}
-      />
-
-      {/* Overlap */}
-      <LegacyTitle title="Overlap Set" />
-      <LegacyHorizontalGallery
-        items={[
-          {
-            image: Set1,
-            title: "Timer",
-            content: createPlainContent(["Section Time"]),
-          },
-          {
-            image: Set2,
-            title: "File Sorter",
-            content: createPlainContent(["Categorize files, books, etc."]),
-          },
-          {
-            image: Set3,
-            title: "Tray",
-            content: createPlainContent(["Store pens, pins, etc."]),
-          },
-        ]}
-        sparse={true}
-        width={1084}
-        height={1084}
-      />
-      <LegacyTitle title="Moodboard: Time, Space, Organizing" />
       <DisplayImage
         source={{ frames: [{ src: Overlay1 }], width: 9534, height: 3742 }}
         alt="Overlapped moodboard"
