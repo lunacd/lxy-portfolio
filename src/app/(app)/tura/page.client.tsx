@@ -227,7 +227,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
 
       {/* Mission Statement */}
       <LegacySubtitle title="Mission Statement" />
-      <div className="flex w-single justify-center">
+      <div className="w-single flex justify-center">
         <div className="w-2/3">
           <TextSection
             content={createPlainContent([
@@ -343,7 +343,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       {/* Wireframe */}
       <LegacyTitle title="Wireframe" />
       <LegacySubtitle title="3 Purposes to open the app" />
-      <div className="grid w-single grid-cols-1 gap-spacing md:grid-cols-3">
+      <div className="w-single gap-spacing grid grid-cols-1 md:grid-cols-3">
         <div>
           <TextSection
             content={[
@@ -407,7 +407,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         height={745}
         alt="Wireframe"
         prompt="Scroll horizontally to see the whole wireframe!"
-        xSzie="3.5x"
+        xSize="3.5x"
         xSpacing
       />
 

@@ -45,7 +45,7 @@ export default function LegacyHorizontalGallery(
       >
         {props.items.map((item, index) => (
           <div className="horizontalGallery_itemContainer" key={index}>
-            <div className="mb-2 w-two-thirds flex-shrink-0 md:w-full xl:mb-6">
+            <div className="w-two-thirds mb-2 shrink-0 md:w-full xl:mb-6">
               <Image
                 src={item.image}
                 alt={item.title}

@@ -159,7 +159,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
         width={3840}
         height={836}
         alt="Concept development"
-        xSzie="2x"
+        xSize="2x"
         prompt="Scroll horizontally to see the full process!"
       />
 

@@ -13,7 +13,7 @@ type SmallGalleryBlockProps = Extract<
 
 export default function SmallgallerBlock(props: SmallGalleryBlockProps) {
   return (
-    <div className="single mb-spacing-3lg mt-spacing-lg grid grid-cols-2 gap-spacing lg:grid-cols-3">
+    <div className="single mb-spacing-3lg mt-spacing-lg gap-spacing grid grid-cols-2 lg:grid-cols-3">
       {props.items.map((item, index) => {
         return (
           <div

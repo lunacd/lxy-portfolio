@@ -300,7 +300,7 @@ function VideoGallery() {
           >
             <div className="about_overlayInner">
               {/* Close button */}
-              <div className="absolute right-4 top-4">
+              <div className="absolute top-4 right-4">
                 <button
                   onClick={() => {
                     setOverlayOpen(false);
@@ -403,7 +403,7 @@ export default function AboutClient(props: PropsWithChildren) {
           ))}
         </div>
       </Scroller>
-      <div className="fixed bottom-4 right-8 z-10">
+      <div className="fixed right-8 bottom-4 z-10">
         {showIndicator && <ScrollIndicator light={true} />}
       </div>
     </>

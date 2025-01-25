@@ -10,7 +10,7 @@ export default function PageAnimation(props: PropsWithChildren) {
   return (
     <AnimatePresence initial={false}>
       <motion.div
-        className="absolute left-0 top-0 z-0 h-full w-full"
+        className="absolute top-0 left-0 z-0 h-full w-full"
         initial={{ x: "100%" }}
         animate={{ x: "0%" }}
         exit={{ x: "-100%" }}

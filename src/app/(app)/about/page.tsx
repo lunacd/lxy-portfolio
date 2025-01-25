@@ -18,7 +18,7 @@ export default async function About() {
   });
   return (
     <AboutClient>
-      <div className="single my-spacing-lg grid grid-cols-1 gap-spacing lg:grid-cols-3">
+      <div className="single my-spacing-lg gap-spacing grid grid-cols-1 lg:grid-cols-3">
         <div className="about_rounded">
           <PayloadImage
             media={data.profilePicture}

@@ -11,7 +11,7 @@ interface HorizontalScrollProps {
   height: number;
   alt: string;
   prompt: string;
-  xSzie: "2x" | "3.5x";
+  xSize: "2x" | "3.5x";
   textColor?: string;
   xSpacing?: boolean;
 }
@@ -44,8 +44,8 @@ const LegacyHorizontalScroll: React.FC<HorizontalScrollProps> = (propsIn) => {
       >
         <div
           className={classNames({
-            "w-[200%]": props.xSzie === "2x",
-            "w-[350%]": props.xSzie === "3.5x",
+            "w-[200%]": props.xSize === "2x",
+            "w-[350%]": props.xSize === "3.5x",
           })}
         >
           <Image

@@ -34,14 +34,14 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             : undefined,
         }}
         className={classNames("flex h-full min-h-screen w-full flex-col", {
-          "absolute left-0 top-0": props.absolute,
+          "absolute top-0 left-0": props.absolute,
           relative: !props.absolute,
           "mb-spacing-2lg": props.bottomSpacing,
         })}
         id={props.project.uri}
       >
         {/* Project image */}
-        <div className="relative min-h-0 w-full flex-shrink flex-grow overflow-hidden">
+        <div className="relative min-h-0 w-full shrink grow overflow-hidden">
           <PayloadImage
             media={props.project.projectImage}
             payload={props.payload}
@@ -56,10 +56,10 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             className="object-cover object-center md:hidden"
             sizes="100vw"
           />
-          <div className="absolute left-0 top-0 flex h-full w-full justify-center">
+          <div className="absolute top-0 left-0 flex h-full w-full justify-center">
             {/* Project name */}
             <div
-              className={`relative mx-spacing-lg mt-spacing-lg flex-grow self-stretch ${titleColor}`}
+              className={`mx-spacing-lg mt-spacing-lg relative grow self-stretch ${titleColor}`}
             >
               <div className="relative">
                 {/* Optional cover color for background */}
@@ -69,7 +69,7 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
                       height: "calc(200% + 48px)",
                       background: `linear-gradient(180deg, white 0%, transparent 100%)`,
                     }}
-                    className="absolute -left-spacing-lg -right-spacing-lg -top-8 lg:-top-12 xl:-top-24"
+                    className="-left-spacing-lg -right-spacing-lg absolute -top-8 lg:-top-12 xl:-top-24"
                   ></div>
                 )}
                 <div className="relative">
@@ -92,7 +92,7 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-4 right-4">
+            <div className="absolute right-4 bottom-4">
               <ScrollIndicator light={true} />
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
 
         {/* Project details */}
         <div className="flex flex-col items-center">
-          <div className="single mx-spacing-lg flex flex-row space-x-spacing py-8">
+          <div className="single mx-spacing-lg space-x-spacing flex flex-row py-8">
             <div className="grid w-full grid-cols-2 gap-2">
               <div className={styles.detailSection}>
                 <span>Duration: </span>

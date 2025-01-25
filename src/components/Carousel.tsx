@@ -42,13 +42,13 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
       ref={ref}
     >
       <div
-        className={`flex w-single flex-row items-center md:space-x-4 ${props.textColor}`}
+        className={`w-single flex flex-row items-center md:space-x-4 ${props.textColor}`}
       >
         <div className="relative h-full w-0 md:w-auto">
           <IconChevronLeft
             size={isMd ? 48 : 32}
-            className={classNames("carousel_angle left-0 top-0", {
-              "!opacity-0": currentIndex === 0,
+            className={classNames("carousel_angle top-0 left-0", {
+              "opacity-0!": currentIndex === 0,
               "cursor-pointer": currentIndex !== 0,
             })}
             onClick={() => {
@@ -57,7 +57,7 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
           />
         </div>
 
-        <div className="flex-grow overflow-hidden">
+        <div className="grow overflow-hidden">
           <motion.div
             className="flex w-full flex-row"
             transition={transitionFast}
@@ -67,10 +67,7 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
             animate={{ transform: `translateX(-${currentIndex}00%)` }}
           >
             {props.images.map((image, index) => (
-              <div
-                className="relative w-full flex-shrink-0 select-none"
-                key={index}
-              >
+              <div className="relative w-full shrink-0 select-none" key={index}>
                 <Image
                   src={image}
                   alt={`${props.description} ${index}`}
@@ -86,9 +83,9 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
         <div className="relative h-full w-0 md:w-auto">
           <IconChevronRight
             size={isMd ? 48 : 32}
-            className={classNames("carousel_angle right-0 top-0", {
+            className={classNames("carousel_angle top-0 right-0", {
               "cursor-pointer": currentIndex !== props.images.length - 1,
-              "!opacity-0": currentIndex === props.images.length - 1,
+              "opacity-0!": currentIndex === props.images.length - 1,
             })}
             onClick={() => {
               if (currentIndex < props.images.length - 1)
@@ -97,8 +94,8 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
           />
         </div>
       </div>
-      <div className="single relative mb-spacing-3lg mt-4 h-3">
-        <div className="absolute bottom-0 left-1/2 top-0 flex -translate-x-1/2 flex-row space-x-3">
+      <div className="single mb-spacing-3lg relative mt-4 h-3">
+        <div className="absolute top-0 bottom-0 left-1/2 flex -translate-x-1/2 flex-row space-x-3">
           {props.images.map((_, index) => (
             <div
               className={`relative h-3 w-3 cursor-pointer ${props.textColor}`}

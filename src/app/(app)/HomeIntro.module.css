@@ -1,3 +1,5 @@
+@reference "./global.css";
+
 .button {
   @apply px-2 py-1 md:px-4 md:py-2;
   @apply cursor-pointer rounded-lg text-[#7E4001] ring-2 ring-[#7E4001];

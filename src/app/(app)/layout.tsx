@@ -35,7 +35,7 @@ export default async function RootLayout(props: PropsWithChildren) {
         <div className="flex flex-col lg:flex-row">
           <GlobalStateContextProvider projectNames={projectNames}>
             <Sidebar />
-            <div className="relative min-h-screen flex-grow overflow-x-hidden">
+            <div className="relative min-h-screen grow overflow-x-hidden">
               <PageAnimation>{props.children}</PageAnimation>
             </div>
           </GlobalStateContextProvider>

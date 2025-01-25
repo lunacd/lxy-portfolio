@@ -15,7 +15,7 @@ export default function EqualSplit(
   const props = { ...defaultProps, ...propsIn };
   return (
     <div
-      className={classNames("grid grid-cols-1 gap-spacing md:grid-cols-2", {
+      className={classNames("gap-spacing grid grid-cols-1 md:grid-cols-2", {
         "w-single": !props.fill,
         "w-full": props.fill,
       })}

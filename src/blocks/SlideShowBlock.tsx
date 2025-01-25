@@ -25,7 +25,7 @@ export default function SlideShowBlock(props: SlideShowBlockProps) {
             className={classNames(
               "transition-opacity duration-700 ease-linear",
               {
-                "absolute left-0 top-0 h-full w-full": index > 0,
+                "absolute top-0 left-0 h-full w-full": index > 0,
                 single: index === 0,
               },
             )}

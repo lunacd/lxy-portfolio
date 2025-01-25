@@ -11,8 +11,7 @@ const Scroller = forwardRef<HTMLDivElement, PropsWithChildren<ScrollerProps>>(
     return (
       <div
         style={{ backgroundColor: props.bgColor ? props.bgColor : undefined }}
-        className="h-screen min-h-[30rem] flex-grow overflow-x-hidden overflow-y-scroll
-          xl:min-h-[34rem]"
+        className="h-screen min-h-[30rem] grow overflow-x-hidden overflow-y-scroll xl:min-h-[34rem]"
         ref={ref}
       >
         <div className="flex flex-col items-center">

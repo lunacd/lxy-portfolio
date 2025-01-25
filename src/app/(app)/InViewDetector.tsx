@@ -27,7 +27,7 @@ export default function InViewDetector(
   }, [dispatch, inView, props.detectorKey]);
   return (
     <div className={classNames("relative", props.className)}>
-      <div className="absolute left-1/2 top-1/2 h-1 w-1" ref={centerRef}></div>
+      <div className="absolute top-1/2 left-1/2 h-1 w-1" ref={centerRef}></div>
       {props.children}
     </div>
   );

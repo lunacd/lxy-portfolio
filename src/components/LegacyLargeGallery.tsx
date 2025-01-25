@@ -39,7 +39,7 @@ const LegacyLargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
         single: props.xSpacing,
       })}
     >
-      <div className="w-full space-y-spacing">
+      <div className="space-y-spacing w-full">
         {props.rows.map((row, index) => (
           <GalleryRow
             layout={row.layout}

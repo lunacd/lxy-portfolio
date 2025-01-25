@@ -21,7 +21,7 @@ export default async function HomeSection(props: HomeSectionProps) {
   return (
     <>
       {/* Project image */}
-      <div className="relative min-h-0 w-full flex-shrink flex-grow overflow-hidden">
+      <div className="relative min-h-0 w-full shrink grow overflow-hidden">
         <PayloadImage
           media={props.project.projectImage}
           payload={props.payload}
@@ -36,11 +36,11 @@ export default async function HomeSection(props: HomeSectionProps) {
           className="object-cover object-center md:hidden"
           sizes="100vw"
         />
-        <div className="absolute left-0 top-0 h-full w-full">
+        <div className="absolute top-0 left-0 h-full w-full">
           <FloatUpMotion className="flex h-full flex-col">
             {/* Project name */}
             <div
-              className={`relative mx-spacing-lg mt-spacing-lg flex-grow self-stretch ${titleColor}`}
+              className={`mx-spacing-lg mt-spacing-lg relative grow self-stretch ${titleColor}`}
             >
               <div className="relative">
                 {/* Optional cover color for background */}
@@ -50,7 +50,7 @@ export default async function HomeSection(props: HomeSectionProps) {
                       height: "calc(200% + 48px)",
                       background: `linear-gradient(180deg, white 0%, transparent 100%)`,
                     }}
-                    className="absolute -left-spacing-lg -right-spacing-lg -top-8 lg:-top-12 xl:-top-24"
+                    className="-left-spacing-lg -right-spacing-lg absolute -top-8 lg:-top-12 xl:-top-24"
                   ></div>
                 )}
                 <div className="relative lg:max-w-[50%] 2xl:max-w-[30%]">
@@ -98,7 +98,7 @@ export default async function HomeSection(props: HomeSectionProps) {
           {/* Link to page */}
           <Link
             href={getProjectLink(props.project.uri, props.project.externalLink)}
-            className="absolute left-0 top-0 block h-full w-full cursor-pointer"
+            className="absolute top-0 left-0 block h-full w-full cursor-pointer"
           ></Link>
         </div>
       </div>

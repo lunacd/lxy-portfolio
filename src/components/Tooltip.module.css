@@ -1,10 +1,12 @@
+@reference "../app/(app)/global.css";
+
 .content {
   @apply relative;
 }
 
 .tooltip {
   /* Positioning */
-  @apply absolute -top-2 left-1/2 -translate-x-1/2 text-nowrap text-xs;
+  @apply absolute -top-2 left-1/2 -translate-x-1/2 text-xs text-nowrap;
   /* Styling */
   @apply rounded-md bg-gray-200 px-2 py-1 shadow;
   /* Transition */

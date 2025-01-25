@@ -60,7 +60,7 @@ const LegacyAnimatable: React.FC<AnimatableProps> = (propsIn) => {
           return (
             <div
               className={classNames(
-                "absolute left-0 top-0 h-full w-full transition-opacity duration-700 ease-linear",
+                "absolute top-0 left-0 h-full w-full transition-opacity duration-700 ease-linear",
                 {
                   "opacity-0":
                     props.frame % props.source.frames.length !== index,

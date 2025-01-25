@@ -25,7 +25,7 @@ export default function GalleryRow(props: GalleryRowProps) {
   if (layout === GalleryRowLayout.FixedHeight) {
     return (
       <motion.div
-        className="flex flex-row space-x-spacing"
+        className="space-x-spacing flex flex-row"
         style={{ y: "3rem" }}
         animate={{ y: isInView ? "0rem" : "3rem" }}
         transition={transitionSlow}
@@ -58,7 +58,7 @@ export default function GalleryRow(props: GalleryRowProps) {
     return (
       <motion.div
         className={classNames(
-          "grid auto-cols-fr grid-flow-col space-x-spacing",
+          "space-x-spacing grid auto-cols-fr grid-flow-col",
           {
             "items-start": layout === GalleryRowLayout.EqualWidthStart,
             "items-end": layout === GalleryRowLayout.EqualWidthEnd,

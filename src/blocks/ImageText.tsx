@@ -32,7 +32,7 @@ export function RichImageText(propsIn: RichImageTextProps) {
   return (
     <FloatUpMotion>
       <div
-        className="mx-spacing-lg mb-spacing-3lg grid w-single grid-cols-1 gap-spacing
+        className="mx-spacing-lg mb-spacing-3lg w-single gap-spacing grid grid-cols-1
           md:grid-cols-3"
       >
         <div className="md:col-span-2">

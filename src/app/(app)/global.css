@@ -1,6 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --spacing-spacing: var(--lxy-spacing);
+  --spacing-spacing-lg: var(--lxy-spacing-lg);
+  --spacing-spacing-2lg: calc(2 * var(--lxy-spacing-lg));
+  --spacing-spacing-3lg: calc(3 * var(--lxy-spacing-lg));
+
+  --space-spacing: var(--lxy-spacing);
+  --space-spacing-lg: var(--lxy-spacing-lg);
+
+  --width-single: var(--single);
+  --width-single-small: var(--single-small);
+  --width-two-thirds: var(--two-thirds);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 html,
 body {
@@ -19,34 +49,36 @@ ul {
 }
 
 :root {
-  --spacing: 1rem;
-  --spacing-lg: 2rem;
+  --lxy-spacing: 1rem;
+  --lxy-spacing-lg: 2rem;
   --sidebar: 0rem;
-  --single: calc(100vw - var(--sidebar) - 2 * var(--spacing-lg));
-  --single-small: calc(100vw - var(--sidebar) - 4 * var(--spacing-lg));
+  --single: calc(100vw - var(--sidebar) - 2 * var(--lxy-spacing-lg));
+  --single-small: calc(100vw - var(--sidebar) - 4 * var(--lxy-spacing-lg));
   --half: calc(
-    (100vw - var(--sidebar) - 2 * var(--spacing-lg) - var(--spacing)) / 2
+    (100vw - var(--sidebar) - 2 * var(--lxy-spacing-lg) - var(--lxy-spacing)) /
+      2
   );
   --two-thirds: calc(
-    (100vw - var(--sidebar) - 2 * var(--spacing-lg) - var(--spacing)) * 2 / 3
+    (100vw - var(--sidebar) - 2 * var(--lxy-spacing-lg) - var(--lxy-spacing)) *
+      2 / 3
   );
   --one-third: calc(
-    (100vw - 21rem - 2 * var(--spacing-lg) - var(--spacing)) / 3
+    (100vw - 21rem - 2 * var(--lxy-spacing-lg) - var(--lxy-spacing)) / 3
   );
 }
 
 @media (min-width: 1024px) {
   :root {
-    --spacing: 1.5rem;
-    --spacing-lg: 2rem;
+    --lxy-spacing: 1.5rem;
+    --lxy-spacing-lg: 2rem;
     --sidebar: 16rem;
   }
 }
 
 @media (min-width: 1280px) {
   :root {
-    --spacing: 3rem;
-    --spacing-lg: 4rem;
+    --lxy-spacing: 3rem;
+    --lxy-spacing-lg: 4rem;
     --sidebar: 21rem;
   }
 }
@@ -93,7 +125,7 @@ ul {
 }
 
 .about_textOverlay {
-  @apply absolute left-0 top-0 flex h-full w-full items-center justify-center;
+  @apply absolute top-0 left-0 flex h-full w-full items-center justify-center;
 
   & div {
     @apply text-lg font-bold text-white;
@@ -106,7 +138,7 @@ ul {
 
 .about_overlayWindow {
   /* Position */
-  @apply absolute bottom-spacing-lg left-spacing-lg right-spacing-lg top-spacing-lg z-20;
+  @apply bottom-spacing-lg left-spacing-lg right-spacing-lg top-spacing-lg absolute z-20;
 
   /* Layout */
   @apply flex flex-row items-center;

@@ -22,7 +22,7 @@ export default function LandingScrollIndicator(props: PropsWithChildren) {
       <Scroller bgColor="white" ref={containerRef}>
         {props.children}
       </Scroller>
-      <div className="fixed bottom-4 right-8 z-10">
+      <div className="fixed right-8 bottom-4 z-10">
         {showIndicator && <ScrollIndicator light={true} />}
       </div>
     </>

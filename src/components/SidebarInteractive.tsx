@@ -104,7 +104,7 @@ export default function SidebarInteractive({
           lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
       >
         {/* Content container */}
-        <div className="absolute right-14 top-0 flex h-full w-36 flex-col py-16 xl:right-24">
+        <div className="absolute top-0 right-14 flex h-full w-36 flex-col py-16 xl:right-24">
           {/* Logo */}
           <Link
             className="cursor-pointer"
@@ -127,7 +127,7 @@ export default function SidebarInteractive({
           </Link>
 
           {/* Routes */}
-          <div className="mt-16 flex flex-col space-y-1 pb-6 pt-4">
+          <div className="mt-16 flex flex-col space-y-1 pt-4 pb-6">
             <AnimatePresence initial={false} mode="popLayout">
               <MotionLink className="subtitle" href="/" key="allProjects">
                 All Projects
@@ -259,17 +259,17 @@ export default function SidebarInteractive({
 
         {/* Open-close button: desktop */}
         <div
-          className="absolute -right-16 top-20 z-20 hidden h-24 w-16 overflow-hidden lg:block
+          className="absolute top-20 -right-16 z-20 hidden h-24 w-16 overflow-hidden lg:block
             xl:-right-20 xl:w-20"
         >
           <div
-            className="absolute -left-8 top-0 h-16 w-16 cursor-pointer rounded-full bg-white shadow-lg
+            className="absolute top-0 -left-8 h-16 w-16 cursor-pointer rounded-full bg-white shadow-lg
               xl:-left-10 xl:h-20 xl:w-20"
             onClick={() => {
               setOpen((orig) => !orig);
             }}
           >
-            <div className="absolute bottom-0 right-0 top-0 flex w-1/2 items-center">
+            <div className="absolute top-0 right-0 bottom-0 flex w-1/2 items-center">
               <MotionIconChevronLeft
                 animate={{
                   rotateY: open ? 0 : 180,
@@ -299,7 +299,7 @@ export default function SidebarInteractive({
       ></motion.div>
 
       {/* Open-close button: mobile */}
-      <div className="absolute right-2 top-4 z-10 cursor-pointer p-4 lg:hidden">
+      <div className="absolute top-4 right-2 z-10 cursor-pointer p-4 lg:hidden">
         <MotionImage
           animate={{
             rotate: open ? 90 : 0,

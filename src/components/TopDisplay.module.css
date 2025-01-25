@@ -1,3 +1,5 @@
+@reference "../app/(app)/global.css";
+
 .detailSection {
   @apply font-extralight;
   & span:first-of-type {

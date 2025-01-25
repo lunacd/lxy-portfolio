@@ -9,12 +9,12 @@ export function getSpacing(
     case "medium":
       return "1rem";
     case "regular":
-      return "var(--spacing)";
+      return "var(--lxy-spacing)";
     case "large":
-      return "var(--spacing-lg)";
+      return "var(--lxy-spacing-lg)";
     case "xl":
-      return "calc(2 * var(--spacing-lg))";
+      return "calc(2 * var(--lxy-spacing-lg))";
     case "xxl":
-      return "calc(3 * var(--spacing-lg))";
+      return "calc(3 * var(--lxy-spacing-lg))";
   }
 }
