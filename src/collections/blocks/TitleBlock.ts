@@ -1,4 +1,4 @@
-import { bottomMargin, colorField } from "../CommonFields";
+import { colorField } from "../CommonFields";
 import { Block } from "payload";
 
 const TitleBlock: Block = {
@@ -17,7 +17,13 @@ const TitleBlock: Block = {
       required: true,
     },
     colorField(),
-    bottomMargin,
+    {
+      name: "bottomMargin",
+      type: "radio",
+      required: true,
+      defaultValue: "large",
+      options: ["none", "small", "medium", "regular", "large", "xl", "xxl"],
+    },
   ],
 };
 
