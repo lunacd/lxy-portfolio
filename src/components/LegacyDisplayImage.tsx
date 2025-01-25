@@ -12,7 +12,6 @@ interface DisplayImageProps {
   frame?: number;
   overlayTitle?: string;
   overlayText?: string;
-  textPosition?: "left" | "right";
   textColor?: string;
 }
 
@@ -20,7 +19,6 @@ const defaultProps = {
   botSpacing: true,
   xSpacing: false,
   textColor: "text-black",
-  textPosition: "left",
 };
 
 export default function DisplayImage(propsIn: DisplayImageProps) {
@@ -41,16 +39,11 @@ export default function DisplayImage(propsIn: DisplayImageProps) {
           frame={props.frame}
         ></LegacyAnimatable>
         <div
-          className={classNames("absolute bottom-2/3", {
+          className={classNames("absolute right-2/3 bottom-2/3 pr-4", {
             "top-0": props.xSpacing,
             "top-4": !props.xSpacing,
-            "left-0": props.xSpacing && props.textPosition === "left",
-            "left-spacing-lg": !props.xSpacing && props.textPosition === "left",
-            "right-0": props.xSpacing && props.textPosition === "right",
-            "right-spacing-lg":
-              !props.xSpacing && props.textPosition === "right",
-            "right-2/3 pr-4": props.textPosition === "left",
-            "left-2/3 pl-4 text-right": props.textPosition === "right",
+            "left-0": props.xSpacing,
+            "left-spacing-lg": !props.xSpacing,
           })}
         >
           {props.overlayTitle && (
@@ -79,11 +72,10 @@ interface StaticDisplayImageProps {
   frame?: number;
   overlayTitle?: string;
   overlayText?: string;
-  textPosition?: "left" | "right";
   textColor?: string;
 }
 
-export function StaticDisplayImage(props: StaticDisplayImageProps) {
+export function LegacyStaticDisplayImage(props: StaticDisplayImageProps) {
   return (
     <DisplayImage
       {...props}

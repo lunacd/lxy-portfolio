@@ -4,7 +4,7 @@ import { PropsWithChildren, ReactNode } from "react";
 import ImageText from "src/blocks/ImageText";
 
 import Carousel from "@/components/Carousel";
-import DisplayImage from "@/components/LegacyDisplayImage";
+import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
@@ -192,7 +192,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
 
       {/* Brand Benchmark */}
       <LegacySubtitle title="HAY's Brand Benchmarks" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Benchmark }], width: 4784, height: 2735 }}
         alt="Brand benchmark"
         xSpacing
@@ -200,14 +200,14 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
 
       {/* Ideation */}
       <LegacySubtitle title="Overlap Ideation" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Ideation }], width: 8000, height: 4500 }}
         alt="Ideation for Overlap"
       />
 
       {/* Prototype */}
       <LegacySubtitle title="Prototype &amp; Form Perfection" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Prototype }], width: 7677, height: 4163 }}
         alt="Prototype for Overlap"
       />

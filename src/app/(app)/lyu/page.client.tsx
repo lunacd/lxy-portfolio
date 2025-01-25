@@ -4,7 +4,7 @@ import { PropsWithChildren, ReactNode } from "react";
 
 import Carousel from "@/components/Carousel";
 import { GalleryRowLayout } from "@/components/GalleryRow";
-import DisplayImage from "@/components/LegacyDisplayImage";
+import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
@@ -122,12 +122,12 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
 
       {/* Ideation */}
       <LegacyTitle title="Ideation - Tote" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: IdeationTote }], width: 2400, height: 1053 }}
         alt="Ideation for the tote"
       />
       <LegacyTitle title="Ideation - Slippers" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{
           frames: [{ src: IdeationSlipper }],
           width: 5047,

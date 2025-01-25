@@ -4,7 +4,7 @@ import { PropsWithChildren, ReactNode } from "react";
 import ImageText from "src/blocks/ImageText";
 
 import Button from "@/components/Button";
-import DisplayImage from "@/components/LegacyDisplayImage";
+import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacyTextImage from "@/components/LegacyTextImage";
@@ -81,7 +81,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       {/* Brand Research */}
       <LegacyTitle title="Rolls-Royce Brand Research" />
       <LegacySubtitle title="Brand Research Book" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: BrandResearch }], width: 1920, height: 1080 }}
         alt="Brand research"
         botSpacing={false}
@@ -165,7 +165,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
 
       {/* Design Direction */}
       <LegacyTitle title="Design Direction" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Direction1 }], width: 1920, height: 961 }}
         alt="Soothing Curves"
         xSpacing={false}
@@ -173,7 +173,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         overlayTitle="Soothing Curves"
         overlayText="Contour line | decoration line"
       />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Direction2 }], width: 1920, height: 961 }}
         alt="Soothing Curves"
         xSpacing={false}
@@ -181,7 +181,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         overlayTitle="Subtle Repeated Surfacing"
         overlayText="Array | Concave &amp; Extrude"
       />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Direction3 }], width: 1920, height: 961 }}
         alt="Soothing Curves"
         xSpacing={false}
@@ -191,7 +191,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
 
       {/* CMF Board */}
       <LegacyTitle title="CMF Moodboard" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: CMF }], width: 1920, height: 961 }}
         alt="CMF Color"
         xSpacing={false}
@@ -199,7 +199,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         overlayTitle="Color"
         overlayText="Low saturation brown and green different shades of Grey"
       />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Materials }], width: 1920, height: 961 }}
         alt="CMF Materials"
         xSpacing={false}
@@ -233,7 +233,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       {/* Form Ideation */}
       <LegacyTitle title="Form Ideation" />
       <LegacySubtitle title="2D Sketch, Shaping Foam, 3D Modeling" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Ideation }], width: 1920, height: 711 }}
         alt="Ideation"
       />
@@ -252,13 +252,13 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       {/* Tech Drawing */}
       <LegacySubtitle title="Tech Drawing" />
       <Paragraph paragraph="Soul Instrument Body" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: InstrumentTech }], width: 1920, height: 990 }}
         alt="Soul Instrument Tech Drawing"
         botSpacing={false}
       />
       <Paragraph paragraph="Wireless Charger" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: ChargerTech }], width: 1920, height: 990 }}
         alt="Wireless Charger Tech Drawing"
       />
@@ -329,7 +329,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
 
       <LegacySubtitle title="Tech Drawing" />
       <Paragraph paragraph="Lamp" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: LightTech }], width: 1920, height: 990 }}
         alt="Light Tech Drawing"
       />

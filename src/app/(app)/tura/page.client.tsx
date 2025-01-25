@@ -6,8 +6,8 @@ import { PropsWithChildren, ReactNode } from "react";
 import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import EqualSplit from "@/components/EqualSplit";
-import DisplayImage, {
-  StaticDisplayImage,
+import LegacyDisplayImage, {
+  LegacyStaticDisplayImage,
 } from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
@@ -216,7 +216,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
 
       {/* Positioning Matrix */}
       <LegacySubtitle title="Positioning Matrix" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{
           frames: [{ src: PositioningMatrix }],
           width: 1920,
@@ -257,14 +257,14 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       <LegacySubtitle title="Persona" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Persona }], width: 1920, height: 1187 }}
         alt="Persona"
         xSpacing
       />
 
       <LegacySubtitle title="Moodboard" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Moodboard }], height: 827, width: 1920 }}
         alt="Moodboard"
       />
@@ -325,14 +325,14 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       <Spacing size="large" />
 
       <LegacySubtitle title="Journey Map" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: JourneyMap }], height: 603, width: 1920 }}
         alt="Journey Map"
         xSpacing
       />
 
       <LegacySubtitle title="Blob Scenario" />
-      <StaticDisplayImage
+      <LegacyStaticDisplayImage
         src={Scenario}
         width={1920}
         height={914}
@@ -393,7 +393,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       <Spacing size="large" />
 
       <LegacySubtitle title="Structure Map" />
-      <StaticDisplayImage
+      <LegacyStaticDisplayImage
         src={Structure}
         width={1920}
         height={897}
@@ -412,7 +412,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       <LegacySubtitle title="Color Theme Ideation" />
-      <StaticDisplayImage
+      <LegacyStaticDisplayImage
         src={ColorTheme}
         width={1920}
         height={722}
@@ -451,7 +451,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       <LegacyTitle title="Main Features" />
 
       <LegacySubtitle title="Instruction" />
-      <StaticDisplayImage
+      <LegacyStaticDisplayImage
         src={Feature1}
         width={1920}
         height={899}
@@ -460,7 +460,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       <LegacySubtitle title="Log In" />
-      <StaticDisplayImage
+      <LegacyStaticDisplayImage
         src={Feature2}
         width={1920}
         height={899}
@@ -469,7 +469,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       <LegacySubtitle title="Travel Schedule" />
-      <StaticDisplayImage
+      <LegacyStaticDisplayImage
         src={Feature3}
         width={1920}
         height={899}
@@ -478,7 +478,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       <LegacySubtitle title="Create Community" />
-      <StaticDisplayImage
+      <LegacyStaticDisplayImage
         src={Feature4}
         width={1920}
         height={899}
@@ -487,7 +487,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       <LegacySubtitle title="Self-scheduled Plan" />
-      <StaticDisplayImage
+      <LegacyStaticDisplayImage
         src={Feature5}
         width={1920}
         height={899}
@@ -496,7 +496,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       <LegacySubtitle title="Homepage" />
-      <StaticDisplayImage
+      <LegacyStaticDisplayImage
         src={Feature6}
         width={1920}
         height={899}

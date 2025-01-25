@@ -3,7 +3,7 @@
 import { PropsWithChildren, ReactNode } from "react";
 
 import Carousel from "@/components/Carousel";
-import DisplayImage from "@/components/LegacyDisplayImage";
+import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
@@ -76,7 +76,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
       {/* Usage Scenario */}
       <LegacyTitle title="Usage Scenario" />
       <LegacySubtitle title="Balcony" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: UsageScenario }], width: 1920, height: 961 }}
         alt="Usage scenario setting"
         xSpacing={true}
@@ -112,7 +112,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         <Spacing size="medium" />
         {/* Ideation */}
         <LegacyTitle title="Ideation" textColor="text-white" />
-        <DisplayImage
+        <LegacyDisplayImage
           source={{ frames: [{ src: Ideation }], width: 1920, height: 961 }}
           alt="Ideation"
           xSpacing={true}
@@ -148,7 +148,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         {/* Explode */}
         <LegacyTitle title="Exploded View" textColor="text-white" />
         <div className="single px-32">
-          <DisplayImage
+          <LegacyDisplayImage
             source={{ frames: [{ src: Explode }], width: 1920, height: 2149 }}
             alt="Exploded view"
             xSpacing={false}

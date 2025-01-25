@@ -3,7 +3,7 @@
 import { PropsWithChildren, ReactNode } from "react";
 
 import { GalleryRowLayout } from "@/components/GalleryRow";
-import DisplayImage from "@/components/LegacyDisplayImage";
+import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
@@ -71,7 +71,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
       />
 
       <LegacyTitle title="Overview" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Overview }], width: 1920, height: 1163 }}
         alt="Overview"
         xSpacing
@@ -92,18 +92,18 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
       <LegacyTitle title="Different Usages" />
       <LegacySubtitle title="Normal chair, arm chair, chair with desktop, stool" />
       <div className="hidden md:block">
-        <DisplayImage
+        <LegacyDisplayImage
           source={{ frames: [{ src: Usage }], width: 1920, height: 622 }}
           alt="Usages"
         />
       </div>
       <div className="md:hidden">
-        <DisplayImage
+        <LegacyDisplayImage
           source={{ frames: [{ src: UsageM1 }], width: 6535, height: 4474 }}
           alt="Usage 1"
           botSpacing={false}
         />
-        <DisplayImage
+        <LegacyDisplayImage
           source={{ frames: [{ src: UsageM2 }], width: 6535, height: 4474 }}
           alt="Usage 2"
         />
@@ -111,18 +111,18 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
 
       <LegacyTitle title="Usage Environment" />
       <LegacySubtitle title="Open Offices" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Environment1 }], width: 1920, height: 1079 }}
         alt="Open offices"
       />
       <LegacySubtitle title="Lobby" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Environment2 }], width: 1920, height: 1079 }}
         alt="Lobby"
       />
 
       <LegacyTitle title="Colorways" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Colorways }], width: 1920, height: 1078 }}
         alt="Colorways"
       />
@@ -164,14 +164,14 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
       />
 
       <LegacyTitle title="Final Tech Drawing" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: TechDrawing }], width: 1920, height: 750 }}
         alt="Tech drawing"
         xSpacing
       />
 
       <LegacyTitle title="Final Structure" />
-      <DisplayImage
+      <LegacyDisplayImage
         source={{ frames: [{ src: Structure }], width: 1920, height: 1490 }}
         alt="Structure"
         xSpacing
