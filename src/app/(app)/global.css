@@ -62,9 +62,6 @@ ul {
     (100vw - var(--sidebar) - 2 * var(--lxy-spacing-lg) - var(--lxy-spacing)) *
       2 / 3
   );
-  --one-third: calc(
-    (100vw - 21rem - 2 * var(--lxy-spacing-lg) - var(--lxy-spacing)) / 3
-  );
 }
 
 @media (min-width: 1024px) {
@@ -112,11 +109,6 @@ ul {
 /* 2 | 1 */
 .two-thirds {
   width: var(--two-thirds);
-}
-
-/* 1 | 2 */
-.one-third {
-  width: var(--one-third);
 }
 
 /* About page */
