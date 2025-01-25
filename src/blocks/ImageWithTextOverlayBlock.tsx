@@ -15,7 +15,7 @@ export default function ImageWithTextOverlayBlock(
   props: ImageWithTextOverlayBlockProps,
 ) {
   return (
-    <div className="relative">
+    <div className="relative flex md:block flex-col-reverse gap-4">
       <PayloadImage
         media={props.image}
         payload={props.payload}
@@ -28,7 +28,7 @@ export default function ImageWithTextOverlayBlock(
         textColor={props.textColor}
         blockType="text"
         bottomMargin="none"
-        className="absolute top-0 left-0"
+        className="md:absolute top-0 right-2/3 left-0"
       ></TextBlock>
     </div>
   );
