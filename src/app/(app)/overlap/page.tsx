@@ -38,7 +38,9 @@ export default async function Overlap() {
         topChildren={
           <>
             <TopDisplay project={overlapData} payload={payload} />
-            <Blocks blocks={overlapPageData.blocks} payload={payload} />
+            <div className="w-single">
+              <Blocks blocks={overlapPageData.blocks} payload={payload} />
+            </div>
           </>
         }
       >
