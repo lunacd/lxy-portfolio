@@ -1,17 +1,14 @@
 "use client";
 
 import { PropsWithChildren, ReactNode } from "react";
-import ImageText from "@/components/LegacyImageText";
 
 import Carousel from "@/components/Carousel";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
-import LegacyTextImage from "@/components/LegacyTextImage";
 import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
 import Spacing from "@/components/Spacing";
-import useFrameIndex from "@/utils/useFrameIndex";
 
 import Benchmark from "@/images/overlap/benchmark-full.webp";
 import CMF1 from "@/images/overlap/cmf/cmf-1-full.webp";
@@ -27,9 +24,6 @@ import DNA2 from "@/images/overlap/dna/dna-2-small.webp";
 import DNA3 from "@/images/overlap/dna/dna-3-small.webp";
 import DNA4 from "@/images/overlap/dna/dna-4-small.webp";
 import DNA5 from "@/images/overlap/dna/dna-5-small.webp";
-import FileSorterUseImage21 from "@/images/overlap/file-sorter-use-2-1-big.webp";
-import FileSorterUseImage22 from "@/images/overlap/file-sorter-use-2-2-big.webp";
-import FileSorterUseImage23 from "@/images/overlap/file-sorter-use-2-3-big.webp";
 import Gallery2 from "@/images/overlap/gallery/gallery-2-half.webp";
 import Gallery3 from "@/images/overlap/gallery/gallery-3-half.webp";
 import Gallery4 from "@/images/overlap/gallery/gallery-4-half.webp";
@@ -60,56 +54,15 @@ import TechDrawing8 from "@/images/overlap/tech-drawing/tech-drawing-08-full.web
 import TechDrawing9 from "@/images/overlap/tech-drawing/tech-drawing-09-full.webp";
 import TechDrawing10 from "@/images/overlap/tech-drawing/tech-drawing-10-full.webp";
 import TechDrawing11 from "@/images/overlap/tech-drawing/tech-drawing-11-full.webp";
-import TrayImage from "@/images/overlap/tray-half.webp";
-import TrayUseImage1 from "@/images/overlap/tray-use-1-big.webp";
-import TrayUseImage2 from "@/images/overlap/tray-use-2-big.webp";
 
 interface OverlapProps {
   topChildren: ReactNode;
 }
 
 export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
-  const currentIndex = useFrameIndex(2000);
-
   return (
     <>
       {props.topChildren}
-
-      <ImageText
-        alt="File sorter usage 2"
-        content={["Different Overlapping Order"]}
-        source={{
-          frames: [
-            { src: FileSorterUseImage21 },
-            { src: FileSorterUseImage22 },
-            { src: FileSorterUseImage23 },
-          ],
-          width: 6300,
-          height: 5387,
-        }}
-        frame={currentIndex}
-      />
-
-      {/* Tray */}
-      <LegacyTextImage
-        title="Tray"
-        content={[
-          "Four different colors, size, and depth trays to categorize office accessories",
-        ]}
-        image={TrayImage}
-        width={4684}
-        height={4125}
-      />
-      <ImageText
-        alt="Tray usage 1"
-        content={["Different combinations"]}
-        source={{ frames: [{ src: TrayUseImage1 }], width: 6300, height: 4500 }}
-      />
-      <ImageText
-        alt="Tray usage 2"
-        content={["Different usage"]}
-        source={{ frames: [{ src: TrayUseImage2 }], width: 6296, height: 4500 }}
-      />
 
       {/* Tech Drawing */}
       <LegacyTitle title="Tech Drawing" />
