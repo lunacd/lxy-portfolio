@@ -24,10 +24,9 @@ export default function SlideShowBlock(props: SlideShowBlockProps) {
         {props.images.map((image, index) => (
           <div
             className={classNames(
-              "transition-opacity duration-700 ease-linear",
+              "w-full transition-opacity duration-700 ease-linear",
               {
-                "absolute top-0 left-0 h-full w-full": index > 0,
-                single: index === 0,
+                "absolute top-0 left-0 h-full": index > 0,
               },
             )}
             key={index}
