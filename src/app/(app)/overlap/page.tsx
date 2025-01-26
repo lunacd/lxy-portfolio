@@ -1,4 +1,3 @@
-import OverlapClient from "./page.client";
 import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
@@ -36,22 +35,15 @@ export default async function Overlap() {
   return (
     <AnimationCoordinator>
       <Scroller bgColor={overlapData.backgroundColor}>
-        <OverlapClient
-          topChildren={
-            <>
-              <TopDisplay project={overlapData} payload={payload} />
-              <div className="w-single">
-                <Blocks blocks={overlapPageData.blocks} payload={payload} />
-              </div>
-            </>
-          }
-        >
-          <ProjectNavigation
-            prev="/soul"
-            next="/again-from-scratch"
-            payload={payload}
-          />
-        </OverlapClient>
+        <TopDisplay project={overlapData} payload={payload} />
+        <div className="w-single">
+          <Blocks blocks={overlapPageData.blocks} payload={payload} />
+        </div>
+        <ProjectNavigation
+          prev="/soul"
+          next="/again-from-scratch"
+          payload={payload}
+        />
       </Scroller>
     </AnimationCoordinator>
   );
