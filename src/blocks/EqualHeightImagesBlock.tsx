@@ -1,5 +1,6 @@
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
+import "server-only";
 
 import PayloadImage from "@/components/PayloadImage";
 import { getSpacing } from "@/utils/spacingUtil";

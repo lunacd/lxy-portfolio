@@ -2,6 +2,7 @@ import { ProjectPage } from "@payload-types";
 import classNames from "classnames";
 import { Payload } from "payload";
 import React from "react";
+import "server-only";
 
 import PayloadImage from "@/components/PayloadImage";
 import SlideShowAnimation from "@/components/SlideShowAnimation";

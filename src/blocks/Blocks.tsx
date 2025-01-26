@@ -1,5 +1,6 @@
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
+import "server-only";
 import Block from "src/blocks/Block";
 
 import FloatUpMotion from "@/components/FloatUpMotion";

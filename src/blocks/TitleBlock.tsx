@@ -1,6 +1,5 @@
 import { ProjectPage } from "@payload-types";
 import classNames from "classnames";
-import "server-only";
 
 import { getSpacing } from "@/utils/spacingUtil";
 
