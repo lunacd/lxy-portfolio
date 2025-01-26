@@ -4,8 +4,8 @@ import Image from "next/image";
 import { PropsWithChildren, ReactNode } from "react";
 
 import Button from "@/components/Button";
-import LegacyCarousel from "@/components/LegacyCarousel";
 import EqualSplit from "@/components/EqualSplit";
+import LegacyCarousel from "@/components/LegacyCarousel";
 import LegacyDisplayImage, {
   LegacyStaticDisplayImage,
 } from "@/components/LegacyDisplayImage";

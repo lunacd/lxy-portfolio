@@ -2,8 +2,8 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import LegacyCarousel from "@/components/LegacyCarousel";
 import { GalleryRowLayout } from "@/components/GalleryRow";
+import LegacyCarousel from "@/components/LegacyCarousel";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
