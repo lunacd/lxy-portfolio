@@ -1,4 +1,4 @@
-import ImageBlock from "./ImageBlock";
+import SlideShowBlock from "./SlideShowBlock";
 import TextBlock from "./TextBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
@@ -19,14 +19,13 @@ export default function ImageTextBlock(props: ImageTextBlockProps) {
         marginBottom: getSpacing(props.bottomMargin),
       }}
     >
-      <ImageBlock
-        blockType="image"
-        image={props.image}
-        imageSize={67}
+      <SlideShowBlock
+        images={props.images}
+        blockType="slideShow"
         bottomMargin="none"
         payload={props.payload}
         className="col-span-2"
-      ></ImageBlock>
+      ></SlideShowBlock>
       <TextBlock
         blockType="text"
         text={props.text}

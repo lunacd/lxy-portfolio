@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { getPayload } from "payload";
 
 import Blocks from "@/blocks/Blocks";
+import AnimationCoordinator from "@/components/AnimationCoordinator";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
@@ -33,23 +34,25 @@ export default async function Overlap() {
     })
   ).docs[0];
   return (
-    <Scroller bgColor={overlapData.backgroundColor}>
-      <OverlapClient
-        topChildren={
-          <>
-            <TopDisplay project={overlapData} payload={payload} />
-            <div className="w-single">
-              <Blocks blocks={overlapPageData.blocks} payload={payload} />
-            </div>
-          </>
-        }
-      >
-        <ProjectNavigation
-          prev="/soul"
-          next="/again-from-scratch"
-          payload={payload}
-        />
-      </OverlapClient>
-    </Scroller>
+    <AnimationCoordinator>
+      <Scroller bgColor={overlapData.backgroundColor}>
+        <OverlapClient
+          topChildren={
+            <>
+              <TopDisplay project={overlapData} payload={payload} />
+              <div className="w-single">
+                <Blocks blocks={overlapPageData.blocks} payload={payload} />
+              </div>
+            </>
+          }
+        >
+          <ProjectNavigation
+            prev="/soul"
+            next="/again-from-scratch"
+            payload={payload}
+          />
+        </OverlapClient>
+      </Scroller>
+    </AnimationCoordinator>
   );
 }

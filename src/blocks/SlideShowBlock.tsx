@@ -10,7 +10,7 @@ import { getSpacing } from "@/utils/spacingUtil";
 type SlideShowBlockProps = Extract<
   ProjectPage["blocks"][0],
   { blockType: "slideShow" }
-> & { payload: Payload };
+> & { payload: Payload; className?: string };
 
 export default function SlideShowBlock(props: SlideShowBlockProps) {
   return (
@@ -19,6 +19,7 @@ export default function SlideShowBlock(props: SlideShowBlockProps) {
         style={{
           marginBottom: getSpacing(props.bottomMargin),
         }}
+        className={props.className}
       >
         {props.images.map((image, index) => (
           <div

@@ -12,13 +12,20 @@ const ImageTextBlock: Block = {
       editor: editor,
     },
     {
-      name: "image",
-      type: "upload",
-      relationTo: "media",
+      name: "images",
+      type: "array",
+      fields: [
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+          admin: {
+            description: "Recommended width 1920px.",
+          },
+        },
+      ],
       required: true,
-      admin: {
-        description: "Recommended width 1920px.",
-      },
     },
     colorField(),
     bottomMargin,

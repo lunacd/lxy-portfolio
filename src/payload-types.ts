@@ -477,10 +477,13 @@ export interface ProjectPage {
           };
           [k: string]: unknown;
         };
-        /**
-         * Recommended width 1920px.
-         */
-        image: number | Media;
+        images: {
+          /**
+           * Recommended width 1920px.
+           */
+          image: number | Media;
+          id?: string | null;
+        }[];
         textColor: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
@@ -762,10 +765,13 @@ export interface ProjectPage {
                 };
                 [k: string]: unknown;
               };
-              /**
-               * Recommended width 1920px.
-               */
-              image: number | Media;
+              images: {
+                /**
+                 * Recommended width 1920px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
               textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
@@ -1047,10 +1053,13 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    /**
-                     * Recommended width 1920px.
-                     */
-                    image: number | Media;
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -1340,10 +1349,13 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    /**
-                     * Recommended width 1920px.
-                     */
-                    image: number | Media;
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -1639,10 +1651,13 @@ export interface ProjectPage {
                 };
                 [k: string]: unknown;
               };
-              /**
-               * Recommended width 1920px.
-               */
-              image: number | Media;
+              images: {
+                /**
+                 * Recommended width 1920px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
               textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
@@ -1924,10 +1939,13 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    /**
-                     * Recommended width 1920px.
-                     */
-                    image: number | Media;
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -2217,10 +2235,13 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    /**
-                     * Recommended width 1920px.
-                     */
-                    image: number | Media;
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -2536,10 +2557,13 @@ export interface Blog {
           };
           [k: string]: unknown;
         };
-        /**
-         * Recommended width 1920px.
-         */
-        image: number | Media;
+        images: {
+          /**
+           * Recommended width 1920px.
+           */
+          image: number | Media;
+          id?: string | null;
+        }[];
         textColor: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
@@ -2821,10 +2845,13 @@ export interface Blog {
                 };
                 [k: string]: unknown;
               };
-              /**
-               * Recommended width 1920px.
-               */
-              image: number | Media;
+              images: {
+                /**
+                 * Recommended width 1920px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
               textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
@@ -3106,10 +3133,13 @@ export interface Blog {
                       };
                       [k: string]: unknown;
                     };
-                    /**
-                     * Recommended width 1920px.
-                     */
-                    image: number | Media;
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -3399,10 +3429,13 @@ export interface Blog {
                       };
                       [k: string]: unknown;
                     };
-                    /**
-                     * Recommended width 1920px.
-                     */
-                    image: number | Media;
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -3698,10 +3731,13 @@ export interface Blog {
                 };
                 [k: string]: unknown;
               };
-              /**
-               * Recommended width 1920px.
-               */
-              image: number | Media;
+              images: {
+                /**
+                 * Recommended width 1920px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
               textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
@@ -3983,10 +4019,13 @@ export interface Blog {
                       };
                       [k: string]: unknown;
                     };
-                    /**
-                     * Recommended width 1920px.
-                     */
-                    image: number | Media;
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -4276,10 +4315,13 @@ export interface Blog {
                       };
                       [k: string]: unknown;
                     };
-                    /**
-                     * Recommended width 1920px.
-                     */
-                    image: number | Media;
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -4635,7 +4677,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | T
           | {
               text?: T;
-              image?: T;
+              images?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
               textColor?: T;
               bottomMargin?: T;
               id?: T;
@@ -4809,7 +4856,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | T
                       | {
                           text?: T;
-                          image?: T;
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
                           textColor?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -4983,7 +5035,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      image?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -5164,7 +5221,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      image?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -5350,7 +5412,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | T
                       | {
                           text?: T;
-                          image?: T;
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
                           textColor?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -5524,7 +5591,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      image?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -5705,7 +5777,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      image?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -5907,7 +5984,12 @@ export interface BlogsSelect<T extends boolean = true> {
           | T
           | {
               text?: T;
-              image?: T;
+              images?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
               textColor?: T;
               bottomMargin?: T;
               id?: T;
@@ -6081,7 +6163,12 @@ export interface BlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           text?: T;
-                          image?: T;
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
                           textColor?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -6255,7 +6342,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      image?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -6436,7 +6528,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      image?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -6622,7 +6719,12 @@ export interface BlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           text?: T;
-                          image?: T;
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
                           textColor?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -6796,7 +6898,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      image?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -6977,7 +7084,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      image?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
