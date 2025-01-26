@@ -2,7 +2,7 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import Carousel from "@/components/Carousel";
+import LegacyCarousel from "@/components/LegacyCarousel";
 import { GalleryRowLayout } from "@/components/GalleryRow";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
@@ -180,7 +180,7 @@ export default function LyuClient(props: PropsWithChildren<LyuProps>) {
 
       {/* Tech Pack */}
       <LegacyTitle title="Tech Pack" />
-      <Carousel
+      <LegacyCarousel
         images={[
           TechPack1,
           TechPack2,

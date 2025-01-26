@@ -1,3 +1,4 @@
+import CarouselBlock from "./CarouselBlock";
 import DocumentBlock from "./DocumentBlock";
 import EqualHeightImagesBlock from "./EqualHeightImagesBlock";
 import HorizontalGalleryBlock from "./HorizontalGalleryBlock";
@@ -28,4 +29,5 @@ export const nonNestingBlocks = [
   LargeGalleryBlock,
   ImageWithTextOverlayBlock,
   ImageTextBlock,
+  CarouselBlock,
 ];

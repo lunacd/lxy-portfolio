@@ -2,7 +2,7 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import Carousel from "@/components/Carousel";
+import LegacyCarousel from "@/components/LegacyCarousel";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
@@ -66,7 +66,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
 
       {/* Tech Drawing */}
       <LegacyTitle title="Tech Drawing" />
-      <Carousel
+      <LegacyCarousel
         images={[
           TechDrawing1,
           TechDrawing2,
@@ -126,7 +126,7 @@ export default function OverlapClient(props: PropsWithChildren<OverlapProps>) {
 
       {/* CMF & Manufacturing */}
       <LegacyTitle title="CMF &amp; Manufacturing" />
-      <Carousel
+      <LegacyCarousel
         images={[CMF1, CMF2, CMF3, CMF4, CMF5, CMF6, CMF7, CMF8]}
         description="CMF"
         width={8000}

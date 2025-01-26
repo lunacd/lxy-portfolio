@@ -491,6 +491,20 @@ export interface ProjectPage {
         blockType: 'imageText';
       }
     | {
+        items: {
+          /**
+           * All images must have the same size. Recommended image width: approximately 3840px.
+           */
+          image: number | Media;
+          id?: string | null;
+        }[];
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'carousel';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -779,6 +793,20 @@ export interface ProjectPage {
               blockType: 'imageText';
             }
           | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'carousel';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -1065,6 +1093,20 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1361,6 +1403,20 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1665,6 +1721,20 @@ export interface ProjectPage {
               blockType: 'imageText';
             }
           | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'carousel';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -1951,6 +2021,20 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2247,6 +2331,20 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2571,6 +2669,20 @@ export interface Blog {
         blockType: 'imageText';
       }
     | {
+        items: {
+          /**
+           * All images must have the same size. Recommended image width: approximately 3840px.
+           */
+          image: number | Media;
+          id?: string | null;
+        }[];
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'carousel';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -2859,6 +2971,20 @@ export interface Blog {
               blockType: 'imageText';
             }
           | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'carousel';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -3145,6 +3271,20 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3441,6 +3581,20 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3745,6 +3899,20 @@ export interface Blog {
               blockType: 'imageText';
             }
           | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'carousel';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -4031,6 +4199,20 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4327,6 +4509,20 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4688,6 +4884,20 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        carousel?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -4857,6 +5067,20 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           text?: T;
                           images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    carousel?:
+                      | T
+                      | {
+                          items?:
                             | T
                             | {
                                 image?: T;
@@ -5046,6 +5270,20 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       id?: T;
                                       blockName?: T;
                                     };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
                               };
                           spacing?: T;
                           justify?: T;
@@ -5222,6 +5460,20 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
                                         | T
                                         | {
                                             image?: T;
@@ -5423,6 +5675,20 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    carousel?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -5592,6 +5858,20 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
                                         | T
                                         | {
                                             image?: T;
@@ -5778,6 +6058,20 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
                                         | T
                                         | {
                                             image?: T;
@@ -5995,6 +6289,20 @@ export interface BlogsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        carousel?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -6164,6 +6472,20 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           text?: T;
                           images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    carousel?:
+                      | T
+                      | {
+                          items?:
                             | T
                             | {
                                 image?: T;
@@ -6353,6 +6675,20 @@ export interface BlogsSelect<T extends boolean = true> {
                                       id?: T;
                                       blockName?: T;
                                     };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
                               };
                           spacing?: T;
                           justify?: T;
@@ -6529,6 +6865,20 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
                                         | T
                                         | {
                                             image?: T;
@@ -6730,6 +7080,20 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    carousel?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -6899,6 +7263,20 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
                                         | T
                                         | {
                                             image?: T;
@@ -7085,6 +7463,20 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       text?: T;
                                       images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
                                         | T
                                         | {
                                             image?: T;

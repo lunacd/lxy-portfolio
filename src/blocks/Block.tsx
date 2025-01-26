@@ -1,22 +1,24 @@
-import EqualHeightImagesBlock from "./EqualHeightImagesBlock";
-import ImageTextBlock from "./ImageTextBlock";
-import ImageWithTextOverlayBlock from "./ImageWithTextOverlayBlock";
-import LargeGalleryBlock from "./LargeGalleryBlock";
-import SmallgallerBlock from "./SmallGalleryBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
-import ColumnBlock from "src/blocks/ColumnBlock";
-import DocumentBlock from "src/blocks/DocumentBlock";
-import HorizontalGalleryBlock from "src/blocks/HorizontalGalleryBlock";
-import HorizontalScrollBlock from "src/blocks/HorizontalScrollBlock";
-import ImageBlock from "src/blocks/ImageBlock";
-import RowBlock from "src/blocks/RowBlock";
-import SlideShowBlock from "src/blocks/SlideShowBlock";
-import TextBlock from "src/blocks/TextBlock";
-import TextImageBlock from "src/blocks/TextImageBlock";
-import TitleBlock from "src/blocks/TitleBlock";
-import YouTubeBlock from "src/blocks/YouTubeBlock";
+
+import CarouselBlock from "@/blocks/CarouselBlock";
+import ColumnBlock from "@/blocks/ColumnBlock";
+import DocumentBlock from "@/blocks/DocumentBlock";
+import EqualHeightImagesBlock from "@/blocks/EqualHeightImagesBlock";
+import HorizontalGalleryBlock from "@/blocks/HorizontalGalleryBlock";
+import HorizontalScrollBlock from "@/blocks/HorizontalScrollBlock";
+import ImageBlock from "@/blocks/ImageBlock";
+import ImageTextBlock from "@/blocks/ImageTextBlock";
+import ImageWithTextOverlayBlock from "@/blocks/ImageWithTextOverlayBlock";
+import LargeGalleryBlock from "@/blocks/LargeGalleryBlock";
+import RowBlock from "@/blocks/RowBlock";
+import SlideShowBlock from "@/blocks/SlideShowBlock";
+import SmallgallerBlock from "@/blocks/SmallGalleryBlock";
+import TextBlock from "@/blocks/TextBlock";
+import TextImageBlock from "@/blocks/TextImageBlock";
+import TitleBlock from "@/blocks/TitleBlock";
+import YouTubeBlock from "@/blocks/YouTubeBlock";
 
 type BlockType = ProjectPage["blocks"][number];
 
@@ -65,5 +67,7 @@ export default function Block(props: BlockProps) {
       );
     case "imageText":
       return <ImageTextBlock {...props.block} payload={props.payload} />;
+    case "carousel":
+      return <CarouselBlock {...props.block} payload={props.payload} />;
   }
 }

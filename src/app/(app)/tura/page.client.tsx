@@ -4,7 +4,7 @@ import Image from "next/image";
 import { PropsWithChildren, ReactNode } from "react";
 
 import Button from "@/components/Button";
-import Carousel from "@/components/Carousel";
+import LegacyCarousel from "@/components/LegacyCarousel";
 import EqualSplit from "@/components/EqualSplit";
 import LegacyDisplayImage, {
   LegacyStaticDisplayImage,
@@ -242,7 +242,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       <LegacyTitle title="User Research" />
 
       <LegacySubtitle title="Interviews" />
-      <Carousel
+      <LegacyCarousel
         images={[
           Interview1,
           Interview2,

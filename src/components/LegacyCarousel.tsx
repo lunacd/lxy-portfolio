@@ -24,7 +24,7 @@ const defaultProps = {
   textColor: "text-black",
 };
 
-const Carousel: React.FC<CarouselProps> = (propsIn) => {
+const LegacyCarousel: React.FC<CarouselProps> = (propsIn) => {
   const props = { ...defaultProps, ...propsIn };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -117,4 +117,4 @@ const Carousel: React.FC<CarouselProps> = (propsIn) => {
   );
 };
 
-export default Carousel;
+export default LegacyCarousel;

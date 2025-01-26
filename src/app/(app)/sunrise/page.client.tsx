@@ -2,7 +2,7 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import Carousel from "@/components/Carousel";
+import LegacyCarousel from "@/components/LegacyCarousel";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
@@ -137,7 +137,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
           title="Final Product Ortho Drawing"
           textColor="text-white"
         />
-        <Carousel
+        <LegacyCarousel
           images={[Ortho1, Ortho2, Ortho3, Ortho4, Ortho5]}
           description="Ortho drawing"
           height={960}
