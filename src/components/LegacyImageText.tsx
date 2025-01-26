@@ -1,9 +1,9 @@
 import FloatUpMotion from "@/components/FloatUpMotion";
 import LegacyAnimatable, { AnimationData } from "@/components/LegacyAnimatable";
-import TextSection, {
+import LegacyTextSection, {
   TextContent,
   createPlainContent,
-} from "@/components/TextSection";
+} from "@/components/LegacyTextSection";
 
 interface ImageTextProps {
   content: string[];
@@ -43,7 +43,7 @@ export function RichImageText(propsIn: RichImageTextProps) {
           />
         </div>
         <div className="flex flex-col justify-end">
-          <TextSection
+          <LegacyTextSection
             content={props.content}
             title={props.title}
             titleClass={props.titleClass}

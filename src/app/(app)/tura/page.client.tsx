@@ -15,11 +15,11 @@ import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import { RichTextImage } from "@/components/LegacyTextImage";
 import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
 import Spacing from "@/components/Spacing";
-import TextSection, {
+import LegacyTextSection, {
   TextAlignment,
   TextContentType,
   createPlainContent,
-} from "@/components/TextSection";
+} from "@/components/LegacyTextSection";
 
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
@@ -66,14 +66,14 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       {/* Overview */}
       <LegacyTitle title="Overview" />
       <EqualSplit>
-        <TextSection
+        <LegacyTextSection
           title="The Problem"
           content={createPlainContent([
             "Hard to find travel buddies that have similar interests.",
           ])}
           titleClass="subtitle"
         />
-        <TextSection
+        <LegacyTextSection
           title="The Goal"
           content={createPlainContent([
             "A phone app to help users meet new travel buddies by gathering people with similar interests. Users can choose their comfortable ways to meet new people and make friends during trips.",
@@ -175,7 +175,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
 
       <EqualSplit>
         <div>
-          <TextSection
+          <LegacyTextSection
             content={[
               { type: TextContentType.Subtitle, text: "Journal Ideation" },
             ]}
@@ -183,12 +183,12 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
           <Image src={Ideation1} alt="Journal Ideation" />
         </div>
         <div>
-          <TextSection
+          <LegacyTextSection
             content={[{ type: TextContentType.Subtitle, text: "Scenarios" }]}
           />
           <Image src={Ideation2} alt="Scenarios" />
           <EqualSplit fill>
-            <TextSection
+            <LegacyTextSection
               titleClass="subtitle"
               content={[
                 { type: TextContentType.Subtitle, text: "Before" },
@@ -198,8 +198,8 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
                   "- No similar hobbies",
                 ]),
               )}
-            ></TextSection>
-            <TextSection
+            ></LegacyTextSection>
+            <LegacyTextSection
               content={[
                 { type: TextContentType.Subtitle, text: "After" },
               ].concat(
@@ -208,7 +208,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
                   "- Trust each other",
                 ]),
               )}
-            ></TextSection>
+            ></LegacyTextSection>
           </EqualSplit>
         </div>
       </EqualSplit>
@@ -229,7 +229,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       <LegacySubtitle title="Mission Statement" />
       <div className="w-single flex justify-center">
         <div className="w-2/3">
-          <TextSection
+          <LegacyTextSection
             content={createPlainContent([
               "My mission is to gather people who love traveling and have similar interests by matching their information. Users can choose their comfortable ways (self-planned, other-planned, or I-planned) to meet new people and make friends during trips.",
             ])}
@@ -345,7 +345,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       <LegacySubtitle title="3 Purposes to open the app" />
       <div className="w-single gap-spacing grid grid-cols-1 md:grid-cols-3">
         <div>
-          <TextSection
+          <LegacyTextSection
             content={[
               {
                 type: TextContentType.Subtitle,
@@ -358,10 +358,10 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
                 "3. Schedule a trip",
               ]),
             )}
-          ></TextSection>
+          ></LegacyTextSection>
         </div>
         <div>
-          <TextSection
+          <LegacyTextSection
             content={[
               {
                 type: TextContentType.Subtitle,
@@ -373,10 +373,10 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
                 "2. Find/share with friends to trip “with me”.",
               ]),
             )}
-          ></TextSection>
+          ></LegacyTextSection>
         </div>
         <div>
-          <TextSection
+          <LegacyTextSection
             content={[
               {
                 type: TextContentType.Subtitle,
@@ -387,7 +387,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
                 "1. Find a trip schedule/a group of people to join",
               ]),
             )}
-          ></TextSection>
+          ></LegacyTextSection>
         </div>
       </div>
       <Spacing size="large" />

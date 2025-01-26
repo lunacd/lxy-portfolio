@@ -2,10 +2,10 @@ import Image, { StaticImageData } from "next/image";
 
 import EqualSplit from "@/components/EqualSplit";
 import FloatUpMotion from "@/components/FloatUpMotion";
-import TextSection, {
+import LegacyTextSection, {
   TextContent,
   createPlainContent,
-} from "@/components/TextSection";
+} from "@/components/LegacyTextSection";
 
 interface TextImageProps {
   title: string;
@@ -40,7 +40,7 @@ export function RichTextImage(propsIn: RichTextImageProps) {
       <FloatUpMotion>
         <EqualSplit>
           <div className="flex h-full flex-col justify-center">
-            <TextSection
+            <LegacyTextSection
               titleClass={props.titleClass}
               title={props.title}
               content={props.content}

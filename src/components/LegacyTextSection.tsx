@@ -37,7 +37,7 @@ const defaultProps = {
   alignment: TextAlignment.Left,
 };
 
-export default function TextSection(propsIn: TextSectionProps) {
+export default function LegacyTextSection(propsIn: TextSectionProps) {
   const props = { ...defaultProps, ...propsIn };
   return (
     <>

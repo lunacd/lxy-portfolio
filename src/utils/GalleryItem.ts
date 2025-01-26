@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-import { TextContent } from "@/components/TextSection";
+import { TextContent } from "@/components/LegacyTextSection";
 
 export default interface GalleryItem {
   title: string;

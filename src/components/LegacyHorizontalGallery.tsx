@@ -2,10 +2,10 @@ import classNames from "classnames";
 import Image from "next/image";
 
 import FloatUpMotion from "@/components/FloatUpMotion";
-import TextSection, {
+import LegacyTextSection, {
   TextAlignment,
   TextContentType,
-} from "@/components/TextSection";
+} from "@/components/LegacyTextSection";
 import GalleryItem from "@/utils/GalleryItem";
 
 interface HorizontalGalleryProps {
@@ -55,7 +55,7 @@ export default function LegacyHorizontalGallery(
               />
             </div>
             <div className="w-full text-left md:text-center">
-              <TextSection
+              <LegacyTextSection
                 content={
                   item.content
                     ? [

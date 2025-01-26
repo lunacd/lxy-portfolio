@@ -7,7 +7,7 @@ interface ParagraphProps {
   paragraph: string;
 }
 
-const Paragraph: React.FC<ParagraphProps> = (props) => {
+const LegacyParagraph: React.FC<ParagraphProps> = (props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -23,4 +23,4 @@ const Paragraph: React.FC<ParagraphProps> = (props) => {
   );
 };
 
-export default Paragraph;
+export default LegacyParagraph;

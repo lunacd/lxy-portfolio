@@ -5,13 +5,13 @@ import { PropsWithChildren, ReactNode } from "react";
 import Button from "@/components/Button";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
-import ImageText from "@/components/LegacyImageText";
+import LegacyImageText from "@/components/LegacyImageText";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacyTextImage from "@/components/LegacyTextImage";
 import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
-import Paragraph from "@/components/Paragraph";
+import LegacyParagraph from "@/components/LegacyParagraph";
 import Spacing from "@/components/Spacing";
-import { createPlainContent } from "@/components/TextSection";
+import { createPlainContent } from "@/components/LegacyTextSection";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import BrandResearch from "@/images/soul/brand-research-full.webp";
@@ -251,26 +251,26 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
 
       {/* Tech Drawing */}
       <LegacySubtitle title="Tech Drawing" />
-      <Paragraph paragraph="Soul Instrument Body" />
+      <LegacyParagraph paragraph="Soul Instrument Body" />
       <LegacyDisplayImage
         source={{ frames: [{ src: InstrumentTech }], width: 1920, height: 990 }}
         alt="Soul Instrument Tech Drawing"
         botSpacing={false}
       />
-      <Paragraph paragraph="Wireless Charger" />
+      <LegacyParagraph paragraph="Wireless Charger" />
       <LegacyDisplayImage
         source={{ frames: [{ src: ChargerTech }], width: 1920, height: 990 }}
         alt="Wireless Charger Tech Drawing"
       />
 
-      <ImageText
+      <LegacyImageText
         title="Uncompromising Elegance"
         alt="Uncompromising Elegance"
         content={["Elegant texture with special touching experience."]}
         source={{ frames: [{ src: Instrument3 }], width: 1280, height: 892 }}
         titleClass="subtitle"
       />
-      <ImageText
+      <LegacyImageText
         title="Automatic Startup"
         alt="Automatic Startup"
         content={[
@@ -279,7 +279,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         source={{ frames: [{ src: Instrument4 }], width: 1280, height: 892 }}
         titleClass="subtitle"
       />
-      <ImageText
+      <LegacyImageText
         title="Versatile Controls"
         alt="Versatile Controls"
         content={[
@@ -289,14 +289,14 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         source={{ frames: [{ src: Instrument5 }], width: 1280, height: 892 }}
         titleClass="subtitle"
       />
-      <ImageText
+      <LegacyImageText
         title="Wireless Charging"
         alt="Wireless Charging"
         content={["Place onto the base to recharge."]}
         source={{ frames: [{ src: Instrument6 }], width: 1280, height: 892 }}
         titleClass="subtitle"
       />
-      <ImageText
+      <LegacyImageText
         title="Indicator Light"
         alt="Indicator Light"
         content={[
@@ -308,7 +308,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         source={{ frames: [{ src: Instrument7 }], width: 1280, height: 892 }}
         titleClass="subtitle"
       />
-      <ImageText
+      <LegacyImageText
         title="Flexible Nesting"
         alt="Flexible Nesting"
         content={["Nesting from different angle."]}
@@ -328,12 +328,12 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
       />
 
       <LegacySubtitle title="Tech Drawing" />
-      <Paragraph paragraph="Lamp" />
+      <LegacyParagraph paragraph="Lamp" />
       <LegacyDisplayImage
         source={{ frames: [{ src: LightTech }], width: 1920, height: 990 }}
         alt="Light Tech Drawing"
       />
-      <ImageText
+      <LegacyImageText
         title="Peaceful Breathing Atmosphere"
         alt="Peaceful Breathing Atmosphere"
         content={[
@@ -347,7 +347,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         frame={frame}
         titleClass="subtitle"
       />
-      <ImageText
+      <LegacyImageText
         title="Rotatable"
         alt="Rotatable"
         content={[
