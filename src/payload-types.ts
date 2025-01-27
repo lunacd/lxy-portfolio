@@ -7549,6 +7549,42 @@ export interface Global {
   resume: number | Document;
   profile: string;
   profilePicture: number | Media;
+  craftspersonImages?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  dogLoverImages?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  photographerImages?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  thinkerImages?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  travellerImages?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  tools?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -7561,6 +7597,42 @@ export interface GlobalSelect<T extends boolean = true> {
   resume?: T;
   profile?: T;
   profilePicture?: T;
+  craftspersonImages?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  dogLoverImages?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  photographerImages?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  thinkerImages?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  travellerImages?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  tools?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

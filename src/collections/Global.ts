@@ -30,5 +30,77 @@ export const Global: GlobalConfig = {
       relationTo: "media",
       required: true,
     },
+    {
+      name: "craftspersonImages",
+      type: "array",
+      fields: [
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+        },
+      ],
+    },
+    {
+      name: "dogLoverImages",
+      type: "array",
+      fields: [
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+        },
+      ],
+    },
+    {
+      name: "photographerImages",
+      type: "array",
+      fields: [
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+        },
+      ],
+    },
+    {
+      name: "thinkerImages",
+      type: "array",
+      fields: [
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+        },
+      ],
+    },
+    {
+      name: "travellerImages",
+      type: "array",
+      fields: [
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+        },
+      ],
+    },
+    {
+      name: "tools",
+      type: "array",
+      fields: [
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+        },
+      ],
+    },
   ],
 };
