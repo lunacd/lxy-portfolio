@@ -7,11 +7,11 @@ import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyImageText from "@/components/LegacyImageText";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
-import LegacyTextImage from "@/components/LegacyTextImage";
-import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
 import LegacyParagraph from "@/components/LegacyParagraph";
-import Spacing from "@/components/Spacing";
+import LegacyTextImage from "@/components/LegacyTextImage";
 import { createPlainContent } from "@/components/LegacyTextSection";
+import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
+import Spacing from "@/components/Spacing";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import BrandResearch from "@/images/soul/brand-research-full.webp";

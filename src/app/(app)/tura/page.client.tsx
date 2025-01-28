@@ -13,13 +13,13 @@ import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import { RichTextImage } from "@/components/LegacyTextImage";
-import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
-import Spacing from "@/components/Spacing";
 import LegacyTextSection, {
   TextAlignment,
   TextContentType,
   createPlainContent,
 } from "@/components/LegacyTextSection";
+import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
+import Spacing from "@/components/Spacing";
 
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
