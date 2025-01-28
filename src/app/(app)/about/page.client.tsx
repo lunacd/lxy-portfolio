@@ -18,14 +18,13 @@ import {
   useState,
 } from "react";
 
+import TitleBlock from "@/blocks/TitleBlock";
 import Button from "@/components/Button";
 import LegacyAnimatable from "@/components/LegacyAnimatable";
-import LegacyTitle from "@/components/LegacyTitle";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Scroller from "@/components/Scroller";
 import Spacing from "@/components/Spacing";
 import { transitionFast } from "@/utils/transitions";
-import useFrameIndex from "@/utils/useFrameIndex";
 
 import CraftsPerson1 from "@/images/about/craftsperson-1-small.webp";
 import CraftsPerson2 from "@/images/about/craftsperson-2-small.webp";
@@ -64,7 +63,6 @@ import Traveller6 from "@/images/about/traveller-6-small.webp";
 const Tools = [Tool1, Tool2, Tool3, Tool4, Tool5, Tool6, Tool7, Tool8, Tool9];
 
 function VideoGallery() {
-  const frame = useFrameIndex(3000);
   const [overlayOpen, setOverlayOpen] = useState(false);
   const [videoLink, setVideoLink] = useState(
     "https://www.youtube.com/embed/cH5WShEmoR8",
@@ -92,15 +90,12 @@ function VideoGallery() {
             setOverlayOpen(true);
           }}
         >
-          <LegacyAnimatable
-            source={{
-              frames: [{ src: SocialInnovator, unoptimized: true }],
-              width: 960,
-              height: 580,
-            }}
-            frame={frame}
-            alt="Nature Observer"
-            fill
+          <Image
+            src={SocialInnovator}
+            alt="Social Innovator"
+            layout="fill"
+            unoptimized
+            className="about_darken"
           />
           <div className="about_textOverlay">
             <div>Social Innovator</div>
@@ -192,19 +187,16 @@ function VideoGallery() {
 
         {/* Nature observer */}
         <div
-          className="about_rounded about_darken relative col-span-5 col-start-1 row-span-4
-            row-start-5 lg:col-span-6 lg:col-start-4 lg:row-start-5"
+          className="about_rounded relative col-span-5 col-start-1 row-span-4 row-start-5
+            lg:col-span-6 lg:col-start-4 lg:row-start-5"
           style={{ flex: 960 / 606 }}
         >
-          <LegacyAnimatable
-            source={{
-              frames: [{ src: NatureObserver, unoptimized: true }],
-              width: 960,
-              height: 606,
-            }}
-            frame={frame}
+          <Image
+            src={NatureObserver}
             alt="Nature Observer"
-            fill
+            layout="fill"
+            className="about_darken"
+            unoptimized
           />
           <div className="about_textOverlay">
             <div>Nature Observer</div>
@@ -271,15 +263,12 @@ function VideoGallery() {
           className="about_rounded relative col-span-3 col-start-1 row-span-3 row-start-12
             lg:col-span-4 lg:col-start-7 lg:row-start-9"
         >
-          <LegacyAnimatable
-            source={{
-              frames: [{ src: Sports, unoptimized: true }],
-              width: 480,
-              height: 360,
-            }}
-            frame={frame}
+          <Image
+            src={Sports}
             alt="Sports Lover"
-            fill
+            layout="fill"
+            unoptimized
+            className="about_darken"
           />
           <div className="about_textOverlay">
             <div>Sports Lover</div>
@@ -370,12 +359,24 @@ export default function AboutClient(props: PropsWithChildren) {
         <Button href="/documents/resume">Resume</Button>
         <Spacing size="large" />
 
-        <LegacyTitle title="Who I am" />
+        <TitleBlock
+          text="Who I am"
+          textColor="dark"
+          blockType="title"
+          bottomMargin="large"
+          type="title"
+        />
         <Suspense>
           <VideoGallery />
         </Suspense>
 
-        <LegacyTitle title="Tools I use" />
+        <TitleBlock
+          text="Tools I Use"
+          textColor="dark"
+          blockType="title"
+          bottomMargin="large"
+          type="title"
+        />
         <div
           className="single mb-spacing-3lg flex flex-row flex-wrap justify-center gap-4
             lg:justify-between"
