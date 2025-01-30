@@ -3,15 +3,16 @@
 import Image from "next/image";
 import { PropsWithChildren, ReactNode } from "react";
 
-import Button from "@/components/Button";
-import EqualSplit from "@/components/EqualSplit";
+import LegacyButton from "@/components/LegacyButton";
 import LegacyCarousel from "@/components/LegacyCarousel";
 import LegacyDisplayImage, {
   LegacyStaticDisplayImage,
 } from "@/components/LegacyDisplayImage";
+import LegacyEqualSplit from "@/components/LegacyEqualSplit";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
+import LegacySpacing from "@/components/LegacySpacing";
 import { RichTextImage } from "@/components/LegacyTextImage";
 import LegacyTextSection, {
   TextAlignment,
@@ -19,7 +20,6 @@ import LegacyTextSection, {
   createPlainContent,
 } from "@/components/LegacyTextSection";
 import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
-import Spacing from "@/components/Spacing";
 
 import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
 import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
@@ -65,7 +65,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
 
       {/* Overview */}
       <LegacyTitle title="Overview" />
-      <EqualSplit>
+      <LegacyEqualSplit>
         <LegacyTextSection
           title="The Problem"
           content={createPlainContent([
@@ -80,8 +80,8 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
           ])}
           titleClass="subtitle"
         />
-      </EqualSplit>
-      <Spacing size="large" />
+      </LegacyEqualSplit>
+      <LegacySpacing size="large" />
 
       {/* Project Ideation */}
       <LegacyTitle title="Project Ideation" />
@@ -173,7 +173,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         alignment={TextAlignment.Left}
       />
 
-      <EqualSplit>
+      <LegacyEqualSplit>
         <div>
           <LegacyTextSection
             content={[
@@ -187,7 +187,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
             content={[{ type: TextContentType.Subtitle, text: "Scenarios" }]}
           />
           <Image src={Ideation2} alt="Scenarios" />
-          <EqualSplit fill>
+          <LegacyEqualSplit fill>
             <LegacyTextSection
               titleClass="subtitle"
               content={[
@@ -209,10 +209,10 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
                 ]),
               )}
             ></LegacyTextSection>
-          </EqualSplit>
+          </LegacyEqualSplit>
         </div>
-      </EqualSplit>
-      <Spacing size="large" />
+      </LegacyEqualSplit>
+      <LegacySpacing size="large" />
 
       {/* Positioning Matrix */}
       <LegacySubtitle title="Positioning Matrix" />
@@ -236,7 +236,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
           />
         </div>
       </div>
-      <Spacing size="large" />
+      <LegacySpacing size="large" />
 
       {/* User Research */}
       <LegacyTitle title="User Research" />
@@ -270,7 +270,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
       />
 
       <LegacySubtitle title="Text Scenario" />
-      <EqualSplit>
+      <LegacyEqualSplit>
         <div>
           <div>
             - Kiki loves traveling and listening to different people’s stories.
@@ -321,8 +321,8 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
             schedule to find more travel buddies.
           </div>
         </div>
-      </EqualSplit>
-      <Spacing size="large" />
+      </LegacyEqualSplit>
+      <LegacySpacing size="large" />
 
       <LegacySubtitle title="Journey Map" />
       <LegacyDisplayImage
@@ -390,7 +390,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
           ></LegacyTextSection>
         </div>
       </div>
-      <Spacing size="large" />
+      <LegacySpacing size="large" />
 
       <LegacySubtitle title="Structure Map" />
       <LegacyStaticDisplayImage
@@ -442,10 +442,10 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         description="Function and Scenario"
       />
 
-      <Button href="https://www.figma.com/design/cwBHzgGCND3lmJJZHzEDrb/Internship-Portfolio---UX?node-id=30-100&m=dev">
+      <LegacyButton href="https://www.figma.com/design/cwBHzgGCND3lmJJZHzEDrb/Internship-Portfolio---UX?node-id=30-100&m=dev">
         View hi-fi prototype on Figma
-      </Button>
-      <Spacing size="large" />
+      </LegacyButton>
+      <LegacySpacing size="large" />
 
       {/* Main Features */}
       <LegacyTitle title="Main Features" />

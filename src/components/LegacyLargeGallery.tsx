@@ -2,8 +2,10 @@ import classNames from "classnames";
 import React, { useState } from "react";
 import { useInterval } from "usehooks-ts";
 
-import GalleryRow, { GalleryRowLayout } from "@/components/GalleryRow";
 import { AnimationData } from "@/components/LegacyAnimatable";
+import LegacyGalleryRow, {
+  GalleryRowLayout,
+} from "@/components/LegacyGalleryRow";
 
 interface GalleryRowData {
   layout?: GalleryRowLayout;
@@ -41,13 +43,13 @@ const LegacyLargeGallery: React.FC<LargeGalleryProps> = (propsIn) => {
     >
       <div className="space-y-spacing w-full">
         {props.rows.map((row, index) => (
-          <GalleryRow
+          <LegacyGalleryRow
             layout={row.layout}
             images={row.images}
             description={props.description}
             currentFrame={currentFrame}
             key={index}
-          ></GalleryRow>
+          ></LegacyGalleryRow>
         ))}
       </div>
     </div>

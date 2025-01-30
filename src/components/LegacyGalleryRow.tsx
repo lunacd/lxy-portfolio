@@ -18,7 +18,7 @@ interface GalleryRowProps {
   currentFrame: number;
 }
 
-export default function GalleryRow(props: GalleryRowProps) {
+export default function LegacyGalleryRow(props: GalleryRowProps) {
   const layout = props.layout || GalleryRowLayout.FixedHeight;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });

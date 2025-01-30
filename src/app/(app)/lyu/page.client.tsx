@@ -2,9 +2,9 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import { GalleryRowLayout } from "@/components/GalleryRow";
 import LegacyCarousel from "@/components/LegacyCarousel";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
+import { GalleryRowLayout } from "@/components/LegacyGalleryRow";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";

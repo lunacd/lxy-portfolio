@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 import React from "react";
 
-import ProjectsGallery from "@/components/ProjectsGallery";
+import LegacyProjectsGallery from "@/components/LegacyProjectsGallery";
 import Scroller from "@/components/Scroller";
 import { getProjectsWithFocus, inferFocusName } from "@/utils/payloadHelpers";
 
@@ -40,7 +40,7 @@ export default async function ProjectsCategory({
   return (
     <Scroller bgColor="bg-[#FDF9F1]">
       <div className="single title mt-spacing">{focusName} Projects</div>
-      <ProjectsGallery payload={payload} projects={projects} />
+      <LegacyProjectsGallery payload={payload} projects={projects} />
     </Scroller>
   );
 }

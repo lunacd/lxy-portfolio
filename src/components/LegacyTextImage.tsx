@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 
-import EqualSplit from "@/components/EqualSplit";
 import FloatUpMotion from "@/components/FloatUpMotion";
+import LegacyEqualSplit from "@/components/LegacyEqualSplit";
 import LegacyTextSection, {
   TextContent,
   createPlainContent,
@@ -38,7 +38,7 @@ export function RichTextImage(propsIn: RichTextImageProps) {
   return (
     <div className={`mx-spacing-lg mb-spacing-3lg ${props.textColor}`}>
       <FloatUpMotion>
-        <EqualSplit>
+        <LegacyEqualSplit>
           <div className="flex h-full flex-col justify-center">
             <LegacyTextSection
               titleClass={props.titleClass}
@@ -55,7 +55,7 @@ export function RichTextImage(propsIn: RichTextImageProps) {
               placeholder="blur"
             />
           </div>
-        </EqualSplit>
+        </LegacyEqualSplit>
       </FloatUpMotion>
     </div>
   );

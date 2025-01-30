@@ -2,16 +2,16 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import Button from "@/components/Button";
+import LegacyButton from "@/components/LegacyButton";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyImageText from "@/components/LegacyImageText";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacyParagraph from "@/components/LegacyParagraph";
+import LegacySpacing from "@/components/LegacySpacing";
 import LegacyTextImage from "@/components/LegacyTextImage";
 import { createPlainContent } from "@/components/LegacyTextSection";
 import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
-import Spacing from "@/components/Spacing";
 import useFrameIndex from "@/utils/useFrameIndex";
 
 import BrandResearch from "@/images/soul/brand-research-full.webp";
@@ -86,9 +86,9 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         alt="Brand research"
         botSpacing={false}
       />
-      <Button href="https://drive.google.com/file/d/170AtY9rEoj9Msp1hRsGn0R4lRbDeCad0/view">
+      <LegacyButton href="https://drive.google.com/file/d/170AtY9rEoj9Msp1hRsGn0R4lRbDeCad0/view">
         Full Book
-      </Button>
+      </LegacyButton>
       <div className="pt-spacing-3lg" />
 
       <LegacyTextImage
@@ -414,7 +414,7 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         This is not a product of Rolls Royce. Branding and logo marks are used
         for demonstration purposes only.
       </div>
-      <Spacing size="medium" />
+      <LegacySpacing size="medium" />
 
       {props.children}
     </>

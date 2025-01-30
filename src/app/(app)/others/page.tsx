@@ -2,7 +2,7 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
-import ProjectsGallery from "@/components/ProjectsGallery";
+import LegacyProjectsGallery from "@/components/LegacyProjectsGallery";
 import Scroller from "@/components/Scroller";
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default async function Others() {
   ).docs;
   return (
     <Scroller bgColor="bg-[#FDF9F1]">
-      <ProjectsGallery projects={projects} payload={payload} />
+      <LegacyProjectsGallery projects={projects} payload={payload} />
     </Scroller>
   );
 }

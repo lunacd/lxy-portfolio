@@ -9,7 +9,7 @@ const defaultProps = {
   fill: false,
 };
 
-export default function EqualSplit(
+export default function LegacyEqualSplit(
   propsIn: PropsWithChildren<EqualSplitProps>,
 ) {
   const props = { ...defaultProps, ...propsIn };

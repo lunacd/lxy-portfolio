@@ -7,9 +7,9 @@ import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
+import LegacySpacing from "@/components/LegacySpacing";
 import LegacyTextImage from "@/components/LegacyTextImage";
 import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
-import Spacing from "@/components/Spacing";
 
 import Evo1 from "@/images/sunrise/evolution/evolution-1-small.webp";
 import Evo2 from "@/images/sunrise/evolution/evolution-2-small.webp";
@@ -109,7 +109,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
       />
 
       <div className="flex w-full flex-col items-center bg-[#212121]">
-        <Spacing size="medium" />
+        <LegacySpacing size="medium" />
         {/* Ideation */}
         <LegacyTitle title="Ideation" textColor="text-white" />
         <LegacyDisplayImage
@@ -184,7 +184,7 @@ export default function SunriseClient(props: PropsWithChildren<SunriseProps>) {
         />
       </div>
 
-      <Spacing size="medium" />
+      <LegacySpacing size="medium" />
       {/* Gallery */}
       <LegacyTitle title="Product Gallery" />
 

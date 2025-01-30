@@ -5,9 +5,9 @@ import "server-only";
 import Blocks from "src/blocks/Blocks";
 import TitleBlock from "src/blocks/TitleBlock";
 
+import LegacySpacing from "@/components/LegacySpacing";
 import { RefreshRouteOnSave } from "@/components/RefreshRouteOnSave";
 import Scroller from "@/components/Scroller";
-import Spacing from "@/components/Spacing";
 
 export async function generateMetadata({
   params,
@@ -59,7 +59,7 @@ export default async function Blog({
               day: "numeric",
             })}
           </div>
-          <Spacing size="medium" />
+          <LegacySpacing size="medium" />
           <Blocks payload={payload} blocks={blog.blocks} />
         </div>
       </Scroller>

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, forwardRef } from "react";
 
-import Spacing from "@/components/Spacing";
+import LegacySpacing from "@/components/LegacySpacing";
 
 interface ScrollerProps {
   bgColor?: string | null;
@@ -16,7 +16,7 @@ const Scroller = forwardRef<HTMLDivElement, PropsWithChildren<ScrollerProps>>(
       >
         <div className="flex flex-col items-center">
           {props.children}
-          <Spacing size="medium" />
+          <LegacySpacing size="medium" />
         </div>
       </div>
     );

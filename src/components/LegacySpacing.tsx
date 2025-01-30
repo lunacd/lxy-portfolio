@@ -5,7 +5,7 @@ interface SpacingProps {
   size: "small" | "medium" | "large";
 }
 
-const Spacing: React.FC<SpacingProps> = (props) => {
+const LegacySpacing: React.FC<SpacingProps> = (props) => {
   return (
     <div
       className={classNames({
@@ -17,4 +17,4 @@ const Spacing: React.FC<SpacingProps> = (props) => {
   );
 };
 
-export default Spacing;
+export default LegacySpacing;

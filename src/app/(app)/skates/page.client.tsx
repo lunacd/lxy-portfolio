@@ -2,15 +2,15 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import { GalleryRowLayout } from "@/components/GalleryRow";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
+import { GalleryRowLayout } from "@/components/LegacyGalleryRow";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySmallGallery from "@/components/LegacySmallGallery";
+import LegacySpacing from "@/components/LegacySpacing";
 import LegacyTextImage from "@/components/LegacyTextImage";
 import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
-import Spacing from "@/components/Spacing";
 
 import Belonging1 from "@/images/skates/belonging-1-small.webp";
 import Belonging2 from "@/images/skates/belonging-2-small.webp";
@@ -231,7 +231,7 @@ export default function SkatesClient(props: PropsWithChildren<SkatesProps>) {
       <div className="text-center text-xs">
         * This project is sponsored by Bernhardt Design.
       </div>
-      <Spacing size="medium" />
+      <LegacySpacing size="medium" />
       {props.children}
     </>
   );

@@ -10,10 +10,10 @@ import { Suspense } from "react";
 import SlideShowBlock from "@/blocks/SlideShowBlock";
 import TitleBlock from "@/blocks/TitleBlock";
 import AnimationCoordinator from "@/components/AnimationCoordinator";
-import Button from "@/components/Button";
 import FloatUpMotion from "@/components/FloatUpMotion";
+import LegacyButton from "@/components/LegacyButton";
+import LegacySpacing from "@/components/LegacySpacing";
 import PayloadImage from "@/components/PayloadImage";
-import Spacing from "@/components/Spacing";
 
 import NatureObserver from "@/images/about/nature-observer.gif";
 import Sports from "@/images/about/sports.gif";
@@ -173,7 +173,7 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
         </div>
       </div>
 
-      <Spacing size="large" />
+      <LegacySpacing size="large" />
     </>
   );
 }
@@ -200,8 +200,8 @@ export default async function About() {
         </div>
 
         {/* Resume */}
-        <Button href="/documents/resume">Resume</Button>
-        <Spacing size="large" />
+        <LegacyButton href="/documents/resume">Resume</LegacyButton>
+        <LegacySpacing size="large" />
 
         <div className="w-single">
           <TitleBlock

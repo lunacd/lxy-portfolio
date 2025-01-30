@@ -12,7 +12,9 @@ interface ProjectsGalleryProps {
   payload: Payload;
 }
 
-export default async function ProjectsGallery(props: ProjectsGalleryProps) {
+export default async function LegacyProjectsGallery(
+  props: ProjectsGalleryProps,
+) {
   return (
     <FloatUpMotion>
       <SmallGallerBlock

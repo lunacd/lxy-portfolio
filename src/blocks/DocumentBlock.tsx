@@ -2,7 +2,7 @@ import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
 
-import Button from "@/components/Button";
+import LegacyButton from "@/components/LegacyButton";
 import { getDocument } from "@/utils/payloadHelpers";
 import { getSpacing } from "@/utils/spacingUtil";
 
@@ -20,7 +20,7 @@ export default async function DocumentBlock(props: DocumentBlockProps) {
         marginBottom: getSpacing(props.bottomMargin),
       }}
     >
-      <Button href={document.url!}>{props.label}</Button>
+      <LegacyButton href={document.url!}>{props.label}</LegacyButton>
     </div>
   );
 }
