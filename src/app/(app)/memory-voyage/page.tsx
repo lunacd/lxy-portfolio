@@ -35,7 +35,7 @@ export default async function MemoryVoyage() {
   ).docs[0];
 
   return (
-    <AnimationCoordinator>
+    <AnimationCoordinator frameDuration={2000}>
       <Scroller
         bgColor={
           memoryVoyageData.pageBackgroundColor ??

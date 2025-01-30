@@ -7549,42 +7549,30 @@ export interface Global {
   resume: number | Document;
   profile: string;
   profilePicture: number | Media;
-  craftspersonImages?:
-    | {
-        image: number | Media;
-        id?: string | null;
-      }[]
-    | null;
-  dogLoverImages?:
-    | {
-        image: number | Media;
-        id?: string | null;
-      }[]
-    | null;
-  photographerImages?:
-    | {
-        image: number | Media;
-        id?: string | null;
-      }[]
-    | null;
-  thinkerImages?:
-    | {
-        image: number | Media;
-        id?: string | null;
-      }[]
-    | null;
-  travellerImages?:
-    | {
-        image: number | Media;
-        id?: string | null;
-      }[]
-    | null;
-  tools?:
-    | {
-        image: number | Media;
-        id?: string | null;
-      }[]
-    | null;
+  craftspersonImages: {
+    image: number | Media;
+    id?: string | null;
+  }[];
+  dogLoverImages: {
+    image: number | Media;
+    id?: string | null;
+  }[];
+  photographerImages: {
+    image: number | Media;
+    id?: string | null;
+  }[];
+  thinkerImages: {
+    image: number | Media;
+    id?: string | null;
+  }[];
+  travellerImages: {
+    image: number | Media;
+    id?: string | null;
+  }[];
+  tools: {
+    image: number | Media;
+    id?: string | null;
+  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }

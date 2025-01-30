@@ -35,7 +35,7 @@ export default async function MTron() {
   ).docs[0];
 
   return (
-    <AnimationCoordinator>
+    <AnimationCoordinator frameDuration={2000}>
       <Scroller
         bgColor={mTronData.pageBackgroundColor ?? mTronData.backgroundColor}
       >

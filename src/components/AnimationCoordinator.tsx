@@ -7,8 +7,14 @@ import useFrameIndex from "@/utils/useFrameIndex";
 
 export const AnimationContext = createContext<{ frame: number }>({ frame: 0 });
 
-export default function AnimationCoordinator(props: PropsWithChildren) {
-  const currentIndex = useFrameIndex(1500);
+interface AnimationCoordinatorProps {
+  frameDuration: number;
+}
+
+export default function AnimationCoordinator(
+  props: PropsWithChildren<AnimationCoordinatorProps>,
+) {
+  const currentIndex = useFrameIndex(props.frameDuration);
   return (
     <AnimationContext.Provider value={{ frame: currentIndex }}>
       {props.children}

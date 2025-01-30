@@ -41,6 +41,8 @@ export const Global: GlobalConfig = {
           required: true,
         },
       ],
+      required: true,
+      defaultValue: [],
     },
     {
       name: "dogLoverImages",
@@ -53,6 +55,8 @@ export const Global: GlobalConfig = {
           required: true,
         },
       ],
+      required: true,
+      defaultValue: [],
     },
     {
       name: "photographerImages",
@@ -65,6 +69,8 @@ export const Global: GlobalConfig = {
           required: true,
         },
       ],
+      required: true,
+      defaultValue: [],
     },
     {
       name: "thinkerImages",
@@ -77,6 +83,8 @@ export const Global: GlobalConfig = {
           required: true,
         },
       ],
+      required: true,
+      defaultValue: [],
     },
     {
       name: "travellerImages",
@@ -89,6 +97,8 @@ export const Global: GlobalConfig = {
           required: true,
         },
       ],
+      required: true,
+      defaultValue: [],
     },
     {
       name: "tools",
@@ -101,6 +111,8 @@ export const Global: GlobalConfig = {
           required: true,
         },
       ],
+      required: true,
+      defaultValue: [],
     },
   ],
 };

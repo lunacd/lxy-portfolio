@@ -33,7 +33,7 @@ export default async function Overlap() {
     })
   ).docs[0];
   return (
-    <AnimationCoordinator>
+    <AnimationCoordinator frameDuration={2000}>
       <Scroller bgColor={overlapData.backgroundColor}>
         <TopDisplay project={overlapData} payload={payload} />
         <div className="w-single">

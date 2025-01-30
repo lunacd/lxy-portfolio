@@ -25,6 +25,7 @@ export default function ImageTextBlock(props: ImageTextBlockProps) {
         bottomMargin="none"
         payload={props.payload}
         className="col-span-2"
+        sizes="67vw"
       ></SlideShowBlock>
       <TextBlock
         blockType="text"
