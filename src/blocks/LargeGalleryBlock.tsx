@@ -27,14 +27,16 @@ export default function LargeGalleryBlock(props: LargeGalleryBlockProps) {
           };
         } else {
           return {
-            blockType: "horizontalGallery",
+            blockType: "row",
             spacing: "regular",
-            textColor: "light",
             bottomMargin: "none",
-            items: row.images.map((image) => {
+            alignment: row.alignment,
+            blocks: row.images.map((image) => {
               return {
+                blockType: "image",
                 image: image.image,
-                text: null,
+                imageSize: 100 / row.images.length,
+                bottomMargin: "none",
               };
             }),
           };

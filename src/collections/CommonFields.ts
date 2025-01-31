@@ -25,3 +25,11 @@ export const justifyField: Field = {
   defaultValue: "start",
   required: true,
 };
+
+export const alignmentField: Field = {
+  name: "alignment",
+  type: "radio",
+  options: ["start", "center", "end"],
+  defaultValue: "start",
+  required: true,
+};

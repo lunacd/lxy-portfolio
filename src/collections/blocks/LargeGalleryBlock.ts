@@ -1,4 +1,4 @@
-import { bottomMargin } from "../CommonFields";
+import { alignmentField, bottomMargin } from "../CommonFields";
 import { Block } from "payload";
 
 const LargeGalleryBlock: Block = {
@@ -33,6 +33,7 @@ const LargeGalleryBlock: Block = {
               "When using Equal Width, images should have a width of 3840px / number of images. When using Equal Height, image widths should approximately add up to 3840px.",
           },
         },
+        alignmentField,
       ],
     },
     bottomMargin,

@@ -1,5 +1,6 @@
 import styles from "./RowBlock.module.css";
 import { ProjectPage } from "@payload-types";
+import classNames from "classnames";
 import { Payload } from "payload";
 import React from "react";
 import "server-only";
@@ -17,7 +18,11 @@ export type RowBlockProps = Extract<
 export default function RowBlock(props: RowBlockProps) {
   return (
     <div
-      className={`grid ${styles.row}`}
+      className={classNames(`grid ${styles.row}`, {
+        "items-start": props.alignment === "start",
+        "items-center": props.alignment === "center",
+        "items-end": props.alignment === "end",
+      })}
       style={
         {
           gap: getSpacing(props.spacing),
