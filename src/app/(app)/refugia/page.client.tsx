@@ -2,7 +2,7 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import LegacyButton from "@/components/LegacyButton";
+import Button from "@/components/Button";
 import LegacySpacing from "@/components/LegacySpacing";
 import LegacyTextImage from "@/components/LegacyTextImage";
 
@@ -27,7 +27,7 @@ export default function RefugiaClient(props: PropsWithChildren<RefugiaProps>) {
         height={620}
       />
 
-      <LegacyButton href="/refugia.pdf">View the Project</LegacyButton>
+      <Button href="/refugia.pdf">View the Project</Button>
       <LegacySpacing size="large" />
 
       {props.children}

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { PropsWithChildren, ReactNode } from "react";
 
-import LegacyButton from "@/components/LegacyButton";
+import Button from "@/components/Button";
 import LegacyCarousel from "@/components/LegacyCarousel";
 import LegacyDisplayImage, {
   LegacyStaticDisplayImage,
@@ -442,9 +442,9 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         description="Function and Scenario"
       />
 
-      <LegacyButton href="https://www.figma.com/design/cwBHzgGCND3lmJJZHzEDrb/Internship-Portfolio---UX?node-id=30-100&m=dev">
+      <Button href="https://www.figma.com/design/cwBHzgGCND3lmJJZHzEDrb/Internship-Portfolio---UX?node-id=30-100&m=dev">
         View hi-fi prototype on Figma
-      </LegacyButton>
+      </Button>
       <LegacySpacing size="large" />
 
       {/* Main Features */}

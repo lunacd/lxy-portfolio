@@ -2,7 +2,7 @@
 
 import { PropsWithChildren, ReactNode } from "react";
 
-import LegacyButton from "@/components/LegacyButton";
+import Button from "@/components/Button";
 import LegacyDisplayImage from "@/components/LegacyDisplayImage";
 import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyImageText from "@/components/LegacyImageText";
@@ -86,9 +86,9 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         alt="Brand research"
         botSpacing={false}
       />
-      <LegacyButton href="https://drive.google.com/file/d/170AtY9rEoj9Msp1hRsGn0R4lRbDeCad0/view">
+      <Button href="https://drive.google.com/file/d/170AtY9rEoj9Msp1hRsGn0R4lRbDeCad0/view">
         Full Book
-      </LegacyButton>
+      </Button>
       <div className="pt-spacing-3lg" />
 
       <LegacyTextImage

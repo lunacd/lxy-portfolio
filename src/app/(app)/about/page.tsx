@@ -10,8 +10,8 @@ import { Suspense } from "react";
 import SlideShowBlock from "@/blocks/SlideShowBlock";
 import TitleBlock from "@/blocks/TitleBlock";
 import AnimationCoordinator from "@/components/AnimationCoordinator";
+import Button from "@/components/Button";
 import FloatUpMotion from "@/components/FloatUpMotion";
-import LegacyButton from "@/components/LegacyButton";
 import LegacySpacing from "@/components/LegacySpacing";
 import PayloadImage from "@/components/PayloadImage";
 
@@ -200,7 +200,7 @@ export default async function About() {
         </div>
 
         {/* Resume */}
-        <LegacyButton href="/documents/resume">Resume</LegacyButton>
+        <Button href="/documents/resume">Resume</Button>
         <LegacySpacing size="large" />
 
         <div className="w-single">
