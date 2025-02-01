@@ -6,6 +6,7 @@ import "server-only";
 
 import PayloadImage from "@/components/PayloadImage";
 import SlideShowAnimation from "@/components/SlideShowAnimation";
+import { getMedia } from "@/utils/payloadHelpers";
 import { getSpacing } from "@/utils/spacingUtil";
 
 type SlideShowBlockProps = Extract<
@@ -19,33 +20,32 @@ type SlideShowBlockProps = Extract<
   equalHeight?: boolean;
 };
 
-export default function SlideShowBlock(props: SlideShowBlockProps) {
+export default async function SlideShowBlock(props: SlideShowBlockProps) {
+  if (props.images.length === 0) {
+    return <></>;
+  }
+  const firstImage = await getMedia(props.images[0].image, props.payload);
   return (
     <>
       <SlideShowAnimation
         style={{
           marginBottom: getSpacing(props.bottomMargin),
+          flex: props.equalHeight ? firstImage.width / firstImage.height : 0,
+          minWidth: 0,
         }}
         className={props.className ? props.className : ""}
       >
         {props.images.map((image, index) => (
-          <div
-            className={classNames(
-              "w-full transition-opacity duration-700 ease-linear",
-              {
-                "absolute top-0 left-0 h-full": index > 0,
-              },
-            )}
+          <PayloadImage
+            payload={props.payload}
+            sizes={props.sizes ? props.sizes : "100vw"}
+            media={image.image}
+            fill={props.fill}
+            className={classNames({
+              "absolute top-0 left-0 h-full": index > 0,
+            })}
             key={index}
-          >
-            <PayloadImage
-              payload={props.payload}
-              sizes={props.sizes ? props.sizes : "100vw"}
-              media={image.image}
-              fill={props.fill}
-              equalHeight={props.equalHeight}
-            />
-          </div>
+          />
         ))}
       </SlideShowAnimation>
     </>
