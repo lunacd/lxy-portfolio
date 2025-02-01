@@ -21,10 +21,13 @@ export default function SlideShowAnimation(
       {Children.map(props.children, (child, index) => (
         <div
           key={index}
-          className={classNames("transition-opacity duration-700 ease-linear", {
-            "opacity-100": frame % count === index,
-            "opacity-0": frame % count !== index,
-          })}
+          className={classNames(
+            "h-full w-full transition-opacity duration-700 ease-linear",
+            {
+              "opacity-100": frame % count === index,
+              "opacity-0": frame % count !== index,
+            },
+          )}
         >
           {child}
         </div>

@@ -41,8 +41,8 @@ export default async function SlideShowBlock(props: SlideShowBlockProps) {
             sizes={props.sizes ? props.sizes : "100vw"}
             media={image.image}
             fill={props.fill}
-            className={classNames({
-              "absolute top-0 left-0 h-full": index > 0,
+            className={classNames("h-full w-full", {
+              "absolute top-0 left-0": index > 0,
             })}
             key={index}
           />
