@@ -47,6 +47,7 @@ export default function HorizontalGalleryBlock(
           bottomMargin: "none",
         };
       })}
+      alignment="start"
       spacing={props.spacing}
       blockType="row"
       payload={props.payload}

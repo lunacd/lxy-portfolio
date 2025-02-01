@@ -42,6 +42,7 @@ export default function TextImageBlock(props: TextImageBlockProps) {
       ]}
       spacing="regular"
       blockType="row"
+      alignment="start"
       payload={props.payload}
       bottomMargin={props.bottomMargin}
     />
