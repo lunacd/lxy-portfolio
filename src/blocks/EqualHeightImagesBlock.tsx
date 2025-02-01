@@ -1,8 +1,8 @@
+import SlideShowBlock from "./SlideShowBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
 
-import PayloadImage from "@/components/PayloadImage";
 import { getSpacing } from "@/utils/spacingUtil";
 
 type EqualHeightImagesBlockProps = Extract<
@@ -22,13 +22,15 @@ export default function EqualHeightImagesBlock(
       }}
     >
       {props.items.map((item, index) => (
-        <PayloadImage
+        <SlideShowBlock
           key={index}
+          blockType="slideShow"
           payload={props.payload}
-          media={item.image}
+          images={item.images}
+          bottomMargin="none"
           sizes={`${item.imageSize}vw`}
           equalHeight={true}
-        ></PayloadImage>
+        />
       ))}
     </div>
   );

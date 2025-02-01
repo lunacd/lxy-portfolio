@@ -399,9 +399,12 @@ export interface ProjectPage {
     | {
         items: {
           /**
-           * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+           * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
            */
-          image: number | Media;
+          images: {
+            image: number | Media;
+            id?: string | null;
+          }[];
           /**
            * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
            */
@@ -702,9 +705,12 @@ export interface ProjectPage {
           | {
               items: {
                 /**
-                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                  */
-                image: number | Media;
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
                 /**
                  * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                  */
@@ -1005,9 +1011,12 @@ export interface ProjectPage {
                 | {
                     items: {
                       /**
-                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                        */
-                      image: number | Media;
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
                       /**
                        * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                        */
@@ -1316,9 +1325,12 @@ export interface ProjectPage {
                 | {
                     items: {
                       /**
-                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                        */
-                      image: number | Media;
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
                       /**
                        * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                        */
@@ -1635,9 +1647,12 @@ export interface ProjectPage {
           | {
               items: {
                 /**
-                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                  */
-                image: number | Media;
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
                 /**
                  * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                  */
@@ -1938,9 +1953,12 @@ export interface ProjectPage {
                 | {
                     items: {
                       /**
-                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                        */
-                      image: number | Media;
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
                       /**
                        * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                        */
@@ -2249,9 +2267,12 @@ export interface ProjectPage {
                 | {
                     items: {
                       /**
-                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                        */
-                      image: number | Media;
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
                       /**
                        * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                        */
@@ -2587,9 +2608,12 @@ export interface Blog {
     | {
         items: {
           /**
-           * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+           * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
            */
-          image: number | Media;
+          images: {
+            image: number | Media;
+            id?: string | null;
+          }[];
           /**
            * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
            */
@@ -2890,9 +2914,12 @@ export interface Blog {
           | {
               items: {
                 /**
-                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                  */
-                image: number | Media;
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
                 /**
                  * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                  */
@@ -3193,9 +3220,12 @@ export interface Blog {
                 | {
                     items: {
                       /**
-                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                        */
-                      image: number | Media;
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
                       /**
                        * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                        */
@@ -3504,9 +3534,12 @@ export interface Blog {
                 | {
                     items: {
                       /**
-                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                        */
-                      image: number | Media;
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
                       /**
                        * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                        */
@@ -3823,9 +3856,12 @@ export interface Blog {
           | {
               items: {
                 /**
-                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                  */
-                image: number | Media;
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
                 /**
                  * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                  */
@@ -4126,9 +4162,12 @@ export interface Blog {
                 | {
                     items: {
                       /**
-                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                        */
-                      image: number | Media;
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
                       /**
                        * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                        */
@@ -4437,9 +4476,12 @@ export interface Blog {
                 | {
                     items: {
                       /**
-                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
                        */
-                      image: number | Media;
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
                       /**
                        * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                        */
@@ -4850,7 +4892,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               items?:
                 | T
                 | {
-                    image?: T;
+                    images?:
+                      | T
+                      | {
+                          image?: T;
+                          id?: T;
+                        };
                     imageSize?: T;
                     id?: T;
                   };
@@ -5044,7 +5091,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           items?:
                             | T
                             | {
-                                image?: T;
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
                                 imageSize?: T;
                                 id?: T;
                               };
@@ -5238,7 +5290,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
                                             imageSize?: T;
                                             id?: T;
                                           };
@@ -5439,7 +5496,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
                                             imageSize?: T;
                                             id?: T;
                                           };
@@ -5647,7 +5709,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           items?:
                             | T
                             | {
-                                image?: T;
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
                                 imageSize?: T;
                                 id?: T;
                               };
@@ -5841,7 +5908,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
                                             imageSize?: T;
                                             id?: T;
                                           };
@@ -6042,7 +6114,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
                                             imageSize?: T;
                                             id?: T;
                                           };
@@ -6265,7 +6342,12 @@ export interface BlogsSelect<T extends boolean = true> {
               items?:
                 | T
                 | {
-                    image?: T;
+                    images?:
+                      | T
+                      | {
+                          image?: T;
+                          id?: T;
+                        };
                     imageSize?: T;
                     id?: T;
                   };
@@ -6459,7 +6541,12 @@ export interface BlogsSelect<T extends boolean = true> {
                           items?:
                             | T
                             | {
-                                image?: T;
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
                                 imageSize?: T;
                                 id?: T;
                               };
@@ -6653,7 +6740,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
                                             imageSize?: T;
                                             id?: T;
                                           };
@@ -6854,7 +6946,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
                                             imageSize?: T;
                                             id?: T;
                                           };
@@ -7062,7 +7159,12 @@ export interface BlogsSelect<T extends boolean = true> {
                           items?:
                             | T
                             | {
-                                image?: T;
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
                                 imageSize?: T;
                                 id?: T;
                               };
@@ -7256,7 +7358,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
                                             imageSize?: T;
                                             id?: T;
                                           };
@@ -7457,7 +7564,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
                                             imageSize?: T;
                                             id?: T;
                                           };

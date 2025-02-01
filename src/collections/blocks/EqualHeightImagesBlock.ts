@@ -10,13 +10,22 @@ const EqualHeightImagesBlock: Block = {
       required: true,
       fields: [
         {
-          name: "image",
-          type: "upload",
-          relationTo: "media",
+          name: "images",
+          type: "array",
+          fields: [
+            {
+              name: "image",
+              type: "upload",
+              relationTo: "media",
+              required: true,
+            },
+          ],
           required: true,
           admin: {
             description:
-              "Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px.",
+              "Images could have different aspect ratios, but they should generally be the same height. " +
+              "Their width should approximately add up to 3840px. " +
+              "Images in a list should have the same size. They will be shown in a slideshow.",
           },
         },
         {

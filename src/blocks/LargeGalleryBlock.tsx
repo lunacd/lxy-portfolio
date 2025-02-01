@@ -18,7 +18,11 @@ export default function LargeGalleryBlock(props: LargeGalleryBlockProps) {
             blockType: "equalHeightImages",
             items: row.images.map((image) => {
               return {
-                image: image.image,
+                images: [
+                  {
+                    image: image.image,
+                  },
+                ],
                 imageSize: 50,
               };
             }),

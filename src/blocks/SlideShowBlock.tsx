@@ -11,7 +11,13 @@ import { getSpacing } from "@/utils/spacingUtil";
 type SlideShowBlockProps = Extract<
   ProjectPage["blocks"][0],
   { blockType: "slideShow" }
-> & { payload: Payload; className?: string; sizes?: string; fill?: boolean };
+> & {
+  payload: Payload;
+  className?: string;
+  sizes?: string;
+  fill?: boolean;
+  equalHeight?: boolean;
+};
 
 export default function SlideShowBlock(props: SlideShowBlockProps) {
   return (
@@ -37,6 +43,7 @@ export default function SlideShowBlock(props: SlideShowBlockProps) {
               sizes={props.sizes ? props.sizes : "100vw"}
               media={image.image}
               fill={props.fill}
+              equalHeight={props.equalHeight}
             />
           </div>
         ))}
