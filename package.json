@@ -36,7 +36,7 @@
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.3",
     "@trivago/prettier-plugin-sort-imports": "^5.2.1",
     "@types/node": "^22.10.10",
     "@types/react": "^19.0.8",
@@ -52,7 +52,7 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "stylelint": "^16.14.1",
     "stylelint-config-recommended": "^15.0.0",
-    "tailwindcss": "^4.0.0",
+    "tailwindcss": "^4.0.3",
     "typescript": "^5.7.2"
   },
   "packageManager": "pnpm@9.15.4"
