@@ -67,11 +67,11 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
       '@trivago/prettier-plugin-sort-imports':
-        specifier: ^5.2.1
-        version: 5.2.1(prettier@3.4.2)
+        specifier: ^5.2.2
+        version: 5.2.2(prettier@3.4.2)
       '@types/node':
-        specifier: ^22.10.10
-        version: 22.10.10
+        specifier: ^22.13.1
+        version: 22.13.1
       '@types/react':
         specifier: ^19.0.8
         version: 19.0.8
@@ -104,7 +104,7 @@ importers:
         version: 0.7.2(prettier@3.4.2)
       prettier-plugin-tailwindcss:
         specifier: ^0.6.11
-        version: 0.6.11(@trivago/prettier-plugin-sort-imports@5.2.1(prettier@3.4.2))(prettier@3.4.2)
+        version: 0.6.11(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.4.2))(prettier@3.4.2)
       stylelint:
         specifier: ^16.14.1
         version: 16.14.1(typescript@5.7.3)
@@ -1652,8 +1652,8 @@ packages:
   '@tokenizer/token@0.3.0':
     resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
 
-  '@trivago/prettier-plugin-sort-imports@5.2.1':
-    resolution: {integrity: sha512-NDZndt0fmVThIx/8cExuJHLZagUVzfGCoVrwH9x6aZvwfBdkrDFTYujecek6X2WpG4uUFsVaPg5+aNQPSyjcmw==}
+  '@trivago/prettier-plugin-sort-imports@5.2.2':
+    resolution: {integrity: sha512-fYDQA9e6yTNmA13TLVSA+WMQRc5Bn/c0EUBditUHNfMMxN7M82c38b1kEggVE3pLpZ0FwkwJkUEKMiOi52JXFA==}
     engines: {node: '>18.12'}
     peerDependencies:
       '@vue/compiler-sfc': 3.x
@@ -1701,8 +1701,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@22.10.10':
-    resolution: {integrity: sha512-X47y/mPNzxviAGY5TcYPtYL8JsY3kAq2n8fMmKoRCxq/c4v4pyGNCzM2R6+M5/umG4ZfHuT+sgqDYqWc9rJ6ww==}
+  '@types/node@22.13.1':
+    resolution: {integrity: sha512-jK8uzQlrvXqEU91UxiK5J7pKHyzgnI1Qnl0QDHIgVGuolJhRb9EEl28Cj9b3rGR8B2lhFCtvIm5os8lFnO/1Ew==}
 
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
@@ -6536,7 +6536,7 @@ snapshots:
 
   '@tokenizer/token@0.3.0': {}
 
-  '@trivago/prettier-plugin-sort-imports@5.2.1(prettier@3.4.2)':
+  '@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.4.2)':
     dependencies:
       '@babel/generator': 7.26.5
       '@babel/parser': 7.26.7
@@ -6554,7 +6554,7 @@ snapshots:
 
   '@types/busboy@1.5.4':
     dependencies:
-      '@types/node': 22.10.10
+      '@types/node': 22.13.1
 
   '@types/debug@4.1.12':
     dependencies:
@@ -6582,7 +6582,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@22.10.10':
+  '@types/node@22.13.1':
     dependencies:
       undici-types: 6.20.0
 
@@ -6590,7 +6590,7 @@ snapshots:
 
   '@types/pg@8.10.2':
     dependencies:
-      '@types/node': 22.10.10
+      '@types/node': 22.13.1
       pg-protocol: 1.7.0
       pg-types: 4.0.2
 
@@ -9217,11 +9217,11 @@ snapshots:
       diff: 5.1.0
       prettier: 3.4.2
 
-  prettier-plugin-tailwindcss@0.6.11(@trivago/prettier-plugin-sort-imports@5.2.1(prettier@3.4.2))(prettier@3.4.2):
+  prettier-plugin-tailwindcss@0.6.11(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.4.2))(prettier@3.4.2):
     dependencies:
       prettier: 3.4.2
     optionalDependencies:
-      '@trivago/prettier-plugin-sort-imports': 5.2.1(prettier@3.4.2)
+      '@trivago/prettier-plugin-sort-imports': 5.2.2(prettier@3.4.2)
 
   prettier@3.4.2: {}
 
