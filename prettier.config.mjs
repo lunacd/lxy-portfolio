@@ -15,6 +15,7 @@ const config = {
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   importOrder: ["^(?!@/).*", "^@/(?!images).*/.*", "^@/images/.*"],
+  endOfLine: "auto",
 };
 
 export default config;
