@@ -49,6 +49,14 @@ export const Blogs: CollectionConfig = {
       required: true,
     },
     {
+      name: "externalLink",
+      type: "text",
+      admin: {
+        description:
+          "If provided, the blog will link to the external URL instead.",
+      },
+    },
+    {
       name: "blocks",
       type: "blocks",
       blocks: blocks(1),

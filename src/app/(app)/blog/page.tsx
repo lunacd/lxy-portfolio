@@ -90,7 +90,10 @@ export default async function Blogs() {
                   ],
                 },
               },
-              link: `/blog/${blog.id}`,
+              link:
+                blog.externalLink && blog.externalLink.length !== 0
+                  ? blog.externalLink
+                  : `/blog/${blog.id}`,
             };
           })}
           payload={payload}

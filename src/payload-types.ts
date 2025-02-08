@@ -2412,6 +2412,10 @@ export interface Blog {
     value: string;
     id?: string | null;
   }[];
+  /**
+   * If provided, the blog will link to the external URL instead.
+   */
+  externalLink?: string | null;
   blocks: (
     | {
         text: string;
@@ -6220,6 +6224,7 @@ export interface BlogsSelect<T extends boolean = true> {
         value?: T;
         id?: T;
       };
+  externalLink?: T;
   blocks?:
     | T
     | {
