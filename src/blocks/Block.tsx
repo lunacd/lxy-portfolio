@@ -11,7 +11,6 @@ import HorizontalScrollBlock from "@/blocks/HorizontalScrollBlock";
 import ImageBlock from "@/blocks/ImageBlock";
 import ImageTextBlock from "@/blocks/ImageTextBlock";
 import ImageWithTextOverlayBlock from "@/blocks/ImageWithTextOverlayBlock";
-import LargeGalleryBlock from "@/blocks/LargeGalleryBlock";
 import RowBlock from "@/blocks/RowBlock";
 import SlideShowBlock from "@/blocks/SlideShowBlock";
 import SmallgallerBlock from "@/blocks/SmallGalleryBlock";
@@ -59,8 +58,6 @@ export default function Block(props: BlockProps) {
       return (
         <EqualHeightImagesBlock {...props.block} payload={props.payload} />
       );
-    case "largeGallery":
-      return <LargeGalleryBlock {...props.block} payload={props.payload} />;
     case "imageWithTextOverlay":
       return (
         <ImageWithTextOverlayBlock {...props.block} payload={props.payload} />

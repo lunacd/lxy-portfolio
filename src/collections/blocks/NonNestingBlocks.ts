@@ -6,7 +6,6 @@ import HorizontalScrollBlock from "./HorizontalScrollBlock";
 import ImageBlock from "./ImageBlock";
 import ImageTextBlock from "./ImageTextBlock";
 import ImageWithTextOverlayBlock from "./ImageWithTextOverlayBlock";
-import LargeGalleryBlock from "./LargeGalleryBlock";
 import SlideShowBlock from "./SlideShowBlock";
 import SmallGalleryBlock from "./SmallGalleryBlock";
 import TextBlock from "./TextBlock";
@@ -26,7 +25,6 @@ export const nonNestingBlocks = [
   SlideShowBlock,
   SmallGalleryBlock,
   EqualHeightImagesBlock,
-  LargeGalleryBlock,
   ImageWithTextOverlayBlock,
   ImageTextBlock,
   CarouselBlock,
