@@ -26,7 +26,7 @@
     "@tabler/icons-react": "^3.29.0",
     "@vercel/speed-insights": "^1.1.0",
     "classnames": "^2.5.1",
-    "motion": "12.4.1",
+    "motion": "12.4.3",
     "next": "^15.1.6",
     "payload": "^3.22.0",
     "react": "^19.0.0",
