@@ -36,15 +36,14 @@
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^15.1.6",
+    "@eslint/eslintrc": "^3.2.0",
     "@tailwindcss/postcss": "^4.0.5",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "@typescript-eslint/parser": "^8.24.0",
-    "@typescript-eslint/eslint-plugin": "^8.24.0",
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.2",
     "eslint": "^9.20.0",
+    "eslint-config-next": "^15.1.6",
     "postcss": "^8.5.1",
     "prettier": "^3.5.0",
     "prettier-plugin-classnames": "^0.7.6",
