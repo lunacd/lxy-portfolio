@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^3.8.0",
-    "@next/third-parties": "^15.1.6",
+    "@next/third-parties": "^15.1.7",
     "@payloadcms/db-postgres": "^3.22.0",
     "@payloadcms/live-preview-react": "^3.22.0",
     "@payloadcms/next": "^3.22.0",
@@ -27,7 +27,7 @@
     "@vercel/speed-insights": "^1.1.0",
     "classnames": "^2.5.1",
     "motion": "12.4.1",
-    "next": "^15.1.6",
+    "next": "^15.1.7",
     "payload": "^3.22.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -36,7 +36,7 @@
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^15.1.6",
+    "@next/eslint-plugin-next": "^15.1.7",
     "@tailwindcss/postcss": "^4.0.5",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@typescript-eslint/parser": "^8.24.0",
