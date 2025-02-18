@@ -24,8 +24,17 @@ updates:
           - tailwindcss
           - "@tailwindcss/postcss"
           - postcss
+          - eslint-config-next
       tailwind:
         patterns:
           - tailwindcss
           - "@tailwindcss/postcss"
           - postcss
+      lowRisk:
+        patterns:
+          - "@chakra-ui/react"
+          - "@tabler/icons-react"
+          - "@vercel/speed-insights"
+          - server-only
+          - sharp
+          - usehooks-ts
