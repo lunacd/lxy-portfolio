@@ -5,7 +5,6 @@ import { Payload } from "payload";
 import "server-only";
 
 import Row from "@/components/Row";
-import { getSpacing } from "@/utils/spacingUtil";
 
 type HorizontalGalleryBlockProps = Extract<
   ProjectPage["blocks"][0],
