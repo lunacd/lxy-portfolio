@@ -69,9 +69,6 @@ export const getProjectsWithFocus = React.cache(
       "focuses.focusId": {
         equals: focusId,
       },
-      isMainProject: {
-        equals: true,
-      },
     };
     return (
       await payload.find({
