@@ -1,6 +1,13 @@
-export function getSpacing(
-  spacing: "none" | "small" | "medium" | "regular" | "large" | "xl" | "xxl",
-): string {
+export type Spacing =
+  | "none"
+  | "small"
+  | "medium"
+  | "regular"
+  | "large"
+  | "xl"
+  | "xxl";
+
+export function getSpacing(spacing: Spacing): string {
   switch (spacing) {
     case "none":
       return "0";

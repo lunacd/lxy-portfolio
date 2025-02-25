@@ -64,6 +64,7 @@ export interface Config {
   auth: {
     users: UserAuthOperations;
   };
+  blocks: {};
   collections: {
     users: User;
     media: Media;
@@ -291,10 +292,6 @@ export interface ProjectPage {
       }
     | {
         items: {
-          /**
-           * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-           */
-          image: number | Media;
           /**
            * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
            */
@@ -587,10 +584,6 @@ export interface ProjectPage {
           | {
               items: {
                 /**
-                 * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                 */
-                image: number | Media;
-                /**
                  * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                  */
                 images: {
@@ -881,10 +874,6 @@ export interface ProjectPage {
                   }
                 | {
                     items: {
-                      /**
-                       * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                       */
-                      image: number | Media;
                       /**
                        * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                        */
@@ -1184,10 +1173,6 @@ export interface ProjectPage {
                   }
                 | {
                     items: {
-                      /**
-                       * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                       */
-                      image: number | Media;
                       /**
                        * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                        */
@@ -1496,10 +1481,6 @@ export interface ProjectPage {
           | {
               items: {
                 /**
-                 * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                 */
-                image: number | Media;
-                /**
                  * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                  */
                 images: {
@@ -1790,10 +1771,6 @@ export interface ProjectPage {
                   }
                 | {
                     items: {
-                      /**
-                       * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                       */
-                      image: number | Media;
                       /**
                        * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                        */
@@ -2093,10 +2070,6 @@ export interface ProjectPage {
                   }
                 | {
                     items: {
-                      /**
-                       * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                       */
-                      image: number | Media;
                       /**
                        * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                        */
@@ -2428,10 +2401,6 @@ export interface Blog {
     | {
         items: {
           /**
-           * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-           */
-          image: number | Media;
-          /**
            * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
            */
           images: {
@@ -2723,10 +2692,6 @@ export interface Blog {
           | {
               items: {
                 /**
-                 * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                 */
-                image: number | Media;
-                /**
                  * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                  */
                 images: {
@@ -3017,10 +2982,6 @@ export interface Blog {
                   }
                 | {
                     items: {
-                      /**
-                       * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                       */
-                      image: number | Media;
                       /**
                        * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                        */
@@ -3320,10 +3281,6 @@ export interface Blog {
                   }
                 | {
                     items: {
-                      /**
-                       * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                       */
-                      image: number | Media;
                       /**
                        * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                        */
@@ -3632,10 +3589,6 @@ export interface Blog {
           | {
               items: {
                 /**
-                 * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                 */
-                image: number | Media;
-                /**
                  * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                  */
                 images: {
@@ -3926,10 +3879,6 @@ export interface Blog {
                   }
                 | {
                     items: {
-                      /**
-                       * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                       */
-                      image: number | Media;
                       /**
                        * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                        */
@@ -4229,10 +4178,6 @@ export interface Blog {
                   }
                 | {
                     items: {
-                      /**
-                       * All images must have the same size. Recommended image width: approximately 3840 / number of items.
-                       */
-                      image: number | Media;
                       /**
                        * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
                        */
@@ -4702,7 +4647,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               items?:
                 | T
                 | {
-                    image?: T;
                     images?:
                       | T
                       | {
@@ -4887,7 +4831,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           items?:
                             | T
                             | {
-                                image?: T;
                                 images?:
                                   | T
                                   | {
@@ -5072,7 +5015,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
                                             images?:
                                               | T
                                               | {
@@ -5264,7 +5206,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
                                             images?:
                                               | T
                                               | {
@@ -5463,7 +5404,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           items?:
                             | T
                             | {
-                                image?: T;
                                 images?:
                                   | T
                                   | {
@@ -5648,7 +5588,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
                                             images?:
                                               | T
                                               | {
@@ -5840,7 +5779,6 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
                                             images?:
                                               | T
                                               | {
@@ -6055,7 +5993,6 @@ export interface BlogsSelect<T extends boolean = true> {
               items?:
                 | T
                 | {
-                    image?: T;
                     images?:
                       | T
                       | {
@@ -6240,7 +6177,6 @@ export interface BlogsSelect<T extends boolean = true> {
                           items?:
                             | T
                             | {
-                                image?: T;
                                 images?:
                                   | T
                                   | {
@@ -6425,7 +6361,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
                                             images?:
                                               | T
                                               | {
@@ -6617,7 +6552,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
                                             images?:
                                               | T
                                               | {
@@ -6816,7 +6750,6 @@ export interface BlogsSelect<T extends boolean = true> {
                           items?:
                             | T
                             | {
-                                image?: T;
                                 images?:
                                   | T
                                   | {
@@ -7001,7 +6934,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
                                             images?:
                                               | T
                                               | {
@@ -7193,7 +7125,6 @@ export interface BlogsSelect<T extends boolean = true> {
                                       items?:
                                         | T
                                         | {
-                                            image?: T;
                                             images?:
                                               | T
                                               | {
