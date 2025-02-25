@@ -20,9 +20,8 @@ export default function HorizontalGalleryBlock(
   function makeItemBlocks(item: (typeof props.items)[0]): NestedColumnBlocks {
     const blocks: NestedColumnBlocks = [
       {
-        blockType: "image",
-        image: item.image,
-        imageSize: 100 / props.items.length,
+        blockType: "slideShow",
+        images: item.images,
         bottomMargin: "none",
       },
     ];
@@ -37,21 +36,8 @@ export default function HorizontalGalleryBlock(
     return blocks;
   }
   return (
-    <RowBlock
-      blocks={props.items.map((item) => {
-        return {
-          blockType: "column",
-          blocks: makeItemBlocks(item),
-          spacing: "small",
-          justify: "start",
-          bottomMargin: "none",
-        };
-      })}
-      alignment="start"
-      spacing={props.spacing}
-      blockType="row"
-      payload={props.payload}
-      bottomMargin={props.bottomMargin}
-    />
+    <div className="grid">
+
+    </div>
   );
 }
