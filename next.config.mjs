@@ -1,4 +1,7 @@
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 import { withPayload } from "@payloadcms/next/withPayload";
+
+initOpenNextCloudflareForDev();
 
 const nextConfig = withPayload({
   reactStrictMode: true,
@@ -20,6 +23,8 @@ const nextConfig = withPayload({
         search: "",
       },
     ],
+    loader: "custom",
+    loaderFile: "./imageLoader.ts",
   },
   async redirects() {
     return [
