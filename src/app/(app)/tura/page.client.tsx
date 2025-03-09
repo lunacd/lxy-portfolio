@@ -442,7 +442,7 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
         description="Function and Scenario"
       />
 
-      <Button href="https://www.figma.com/design/cwBHzgGCND3lmJJZHzEDrb/Internship-Portfolio---UX?node-id=30-100&m=dev">
+      <Button href="https://www.figma.com/proto/0rLcVTl8XUGg5y5N6hXPwm/TURA?page-id=194%3A0&node-id=194-4697&node-type=CANVAS&viewport=2523%2C569%2C0.23&t=4xP6Bbz95Hdpctgy-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=194%3A4697">
         View hi-fi prototype on Figma
       </Button>
       <LegacySpacing size="large" />
