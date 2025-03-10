@@ -28,12 +28,14 @@ export default async function RootLayout(props: PropsWithChildren) {
       sort: "order",
     })
   ).docs;
-  const projectNames = projects.map((project) => project.name);
+  const projectRoutes = projects.map((project) => {
+    return { name: project.name, uri: project.uri };
+  });
   return (
     <html lang="en">
       <body className={catamaran.className}>
         <div className="flex flex-col lg:flex-row">
-          <GlobalStateContextProvider projectNames={projectNames}>
+          <GlobalStateContextProvider projectRoutes={projectRoutes}>
             <Sidebar />
             <div className="relative min-h-screen grow overflow-x-hidden">
               <PageAnimation>{props.children}</PageAnimation>

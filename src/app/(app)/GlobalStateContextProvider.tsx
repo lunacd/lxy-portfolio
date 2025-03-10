@@ -7,7 +7,10 @@ import { getInitialState, stateReducer } from "@/utils/GlobalState";
 import GlobalStateContext from "@/utils/GlobalStateContext";
 
 interface GlobalStateContextProviderProps {
-  projectNames: string[];
+  projectRoutes: {
+    name: string;
+    uri: string;
+  }[];
 }
 
 export default function GlobalStateContextProvider(
@@ -16,7 +19,7 @@ export default function GlobalStateContextProvider(
   const pathname = usePathname();
   const [globalState, dispatch] = useReducer(
     stateReducer,
-    { pathname: pathname, projectNames: props.projectNames },
+    { pathname: pathname, projectRoutes: props.projectRoutes },
     getInitialState,
   );
   const providerValue = {

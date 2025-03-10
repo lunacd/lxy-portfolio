@@ -1,7 +1,6 @@
 "use client";
 
 import { useMediaQuery } from "@chakra-ui/react";
-import { Project } from "@payload-types";
 import {
   IconBrandInstagram,
   IconBrandLinkedin,
@@ -16,17 +15,9 @@ import { useEffect, useState } from "react";
 
 import Tooltip from "@/components/Tooltip";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
-import { mainFocuses } from "@/utils/projectData";
 import { transitionFast as transitionDefault } from "@/utils/transitions";
 
 import HamburgerBlack from "@/images/hamburger-black.svg";
-
-interface SidebarInteractiveProps {
-  allProjects: Project[];
-  projectsWithFocus: {
-    [uri: string]: Project[];
-  };
-}
 
 const MotionImage = motion.create(Image);
 const MotionIconChevronLeft = motion.create(IconChevronLeft);
@@ -42,40 +33,8 @@ const linkVariants = {
   hovered: { x: "0.75rem" },
 };
 
-export default function SidebarInteractive({
-  allProjects,
-  projectsWithFocus,
-}: SidebarInteractiveProps) {
+export default function SidebarInteractive() {
   const { globalState } = useGlobalStateContext();
-
-  const projects = globalState.focus
-    ? projectsWithFocus[globalState.focus]
-    : allProjects;
-  const routes = projects.map((project) => {
-    return {
-      name: project.name,
-      uri: project.uri,
-    };
-  });
-  const prefixRoutes = [];
-  const suffixRoutes = [];
-  if (globalState.focus) {
-    let insertRouteAfter = false;
-    for (const mainFocus of Object.values(mainFocuses)) {
-      const focusLink = {
-        name: mainFocus.name,
-        uri: `focus/${mainFocus.uri}`,
-      };
-      if (insertRouteAfter) {
-        suffixRoutes.push(focusLink);
-      } else {
-        prefixRoutes.push(focusLink);
-      }
-      if (mainFocus.uri === globalState.focus) {
-        insertRouteAfter = true;
-      }
-    }
-  }
 
   const [isLG, isXL] = useMediaQuery(
     ["(min-width: 1024px)", "(min-width: 1280px)"],
@@ -129,20 +88,9 @@ export default function SidebarInteractive({
           {/* Routes */}
           <div className="mt-16 flex flex-col space-y-1 pt-4 pb-6">
             <AnimatePresence initial={false} mode="popLayout">
-              <MotionLink className="subtitle" href="/" key="allProjects">
-                All Projects
+              <MotionLink className="subtitle" href="/" key="title">
+                {globalState.title}
               </MotionLink>
-              {prefixRoutes.map((route) => (
-                <MotionLink
-                  href={`/${route.uri}`}
-                  className="subtitle"
-                  key={route.uri}
-                  transition={transitionDefault}
-                  layout
-                >
-                  {route.name}
-                </MotionLink>
-              ))}
               <motion.div
                 key={globalState.focus ? globalState.focus : "all"}
                 transition={transitionDefault}
@@ -150,7 +98,7 @@ export default function SidebarInteractive({
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                {routes.map((route) => (
+                {globalState.sideBarRoutes.map((route) => (
                   <motion.div key={route.uri} className="flex flex-row">
                     <motion.div
                       className="flex flex-row items-center"
@@ -188,17 +136,6 @@ export default function SidebarInteractive({
                   </motion.div>
                 ))}
               </motion.div>
-              {suffixRoutes.map((route) => (
-                <MotionLink
-                  href={`/${route.uri}`}
-                  className="subtitle"
-                  key={route.uri}
-                  transition={transitionDefault}
-                  layout
-                >
-                  {route.name}
-                </MotionLink>
-              ))}
 
               <MotionLink
                 className="subtitle"

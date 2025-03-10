@@ -1,4 +1,5 @@
 import HomeIntro from "./HomeIntro";
+import HomeProjects from "./HomeProjects";
 import HomeSection from "./HomeSection";
 import InViewDetector from "./InViewDetector";
 import config from "@payload-config";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title: "Shirley Lyu Portfolio",
 };
 
-export default async function Home() {
+export default async function Landing() {
   const payload = await getPayload({
     config,
   });
@@ -32,18 +33,19 @@ export default async function Home() {
   const globalData = await payload.findGlobal({
     slug: "global",
   });
+
+  const homeSections = projects.map((project) => (
+    <InViewDetector
+      detectorKey={project.uri}
+      className="flex h-[90vh] w-full flex-col"
+    >
+      <HomeSection project={project} payload={payload} />
+    </InViewDetector>
+  ));
   return (
     <Scroller bgColor="#FDF9F1">
       <HomeIntro profilePicture={globalData.profilePicture} payload={payload} />
-      {projects.map((project) => (
-        <InViewDetector
-          key={project.uri}
-          detectorKey={project.uri}
-          className="flex h-[90vh] w-full flex-col"
-        >
-          <HomeSection project={project} payload={payload} />
-        </InViewDetector>
-      ))}
+      <HomeProjects projects={projects} homeSections={homeSections} />
       <ConnectPrompt payload={payload} />
     </Scroller>
   );

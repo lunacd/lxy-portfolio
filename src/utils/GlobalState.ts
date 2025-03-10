@@ -1,12 +1,16 @@
 export function getInitialState({
   pathname,
-  projectNames,
+  projectRoutes,
 }: {
   pathname: string;
-  projectNames: string[];
+  projectRoutes: {
+    name: string;
+    uri: string;
+  }[];
 }): GlobalState {
   let currentProjectIndex: number;
   let currentProject: string;
+  const projectNames = projectRoutes.map((route) => route.name);
   if (isProject(pathname, projectNames)) {
     currentProject = getProjectNameFromPathname(pathname);
     currentProjectIndex = projectNames.indexOf(currentProject);
@@ -18,6 +22,8 @@ export function getInitialState({
     currentProjectIndex: currentProjectIndex,
     currentProject: currentProject,
     projectNames: projectNames,
+    title: "All Projects",
+    sideBarRoutes: projectRoutes,
     focus: getFocus(pathname),
   };
 }
@@ -30,12 +36,25 @@ export type GlobalStateAction =
   | {
       type: "changeRoute";
       newPath: string;
+    }
+  | {
+      type: "setContent";
+      title: string;
+      projectRoutes: {
+        name: string;
+        uri: string;
+      }[];
     };
 
 export interface GlobalState {
   currentProjectIndex: number;
   currentProject: string;
   projectNames: string[];
+  title: string;
+  sideBarRoutes: {
+    name: string;
+    uri: string;
+  }[];
   focus?: string;
 }
 
@@ -69,6 +88,9 @@ export function stateReducer(state: GlobalState, action: GlobalStateAction) {
       1,
       action.newPath.length - 1,
     );
+  } else if (action.type === "setContent") {
+    newState.sideBarRoutes = action.projectRoutes;
+    newState.title = action.title;
   }
   return newState;
 }
