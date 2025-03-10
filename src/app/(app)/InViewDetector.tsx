@@ -9,6 +9,7 @@ import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 interface InViewDetectorProps {
   detectorKey: string;
   className?: string;
+  id?: string | undefined;
 }
 
 export default function InViewDetector(
@@ -26,7 +27,7 @@ export default function InViewDetector(
     }
   }, [dispatch, inView, props.detectorKey]);
   return (
-    <div className={classNames("relative", props.className)}>
+    <div className={classNames("relative", props.className)} id={props.id}>
       <div className="absolute top-1/2 left-1/2 h-1 w-1" ref={centerRef}></div>
       {props.children}
     </div>

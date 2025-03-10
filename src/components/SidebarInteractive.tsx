@@ -109,13 +109,16 @@ export default function SidebarInteractive() {
                       }
                       whileHover="hovered"
                     >
-                      <Link
+                      <div
                         onClick={() => {
-                          if (!isLG) {
-                            setOpen(false);
-                          }
+                          const targetElement = document.getElementById(
+                            route.uri,
+                          );
+                          targetElement?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
                         }}
-                        href={`/${route.uri}`}
                         className={"paragraph cursor-pointer"}
                       >
                         <motion.div
@@ -131,7 +134,7 @@ export default function SidebarInteractive() {
                         >
                           {route.name}
                         </motion.div>
-                      </Link>
+                      </div>
                     </motion.div>
                   </motion.div>
                 ))}

@@ -37,7 +37,8 @@ export default async function Landing() {
   const homeSections = projects.map((project) => (
     <InViewDetector
       detectorKey={project.uri}
-      className="flex h-[90vh] w-full flex-col"
+      className="flex h-[90vh] w-full scroll-mt-40 flex-col"
+      id={project.uri}
     >
       <HomeSection project={project} payload={payload} />
     </InViewDetector>
