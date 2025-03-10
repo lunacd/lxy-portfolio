@@ -4,7 +4,6 @@ import { getPayload } from "payload";
 import Block from "src/blocks/Block";
 
 import FloatUpMotion from "@/components/FloatUpMotion";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -40,7 +39,6 @@ export default async function AgainFromScratch() {
           <Block block={block} payload={payload} />
         </FloatUpMotion>
       ))}
-      <ProjectNavigation prev="/overlap" next="/sunrise" payload={payload} />
     </Scroller>
   );
 }

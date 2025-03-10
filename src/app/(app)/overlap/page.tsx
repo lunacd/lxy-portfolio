@@ -4,7 +4,6 @@ import { getPayload } from "payload";
 
 import Blocks from "@/blocks/Blocks";
 import AnimationCoordinator from "@/components/AnimationCoordinator";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -39,11 +38,6 @@ export default async function Overlap() {
         <div className="w-single">
           <Blocks blocks={overlapPageData.blocks} payload={payload} />
         </div>
-        <ProjectNavigation
-          prev="/soul"
-          next="/again-from-scratch"
-          payload={payload}
-        />
       </Scroller>
     </AnimationCoordinator>
   );

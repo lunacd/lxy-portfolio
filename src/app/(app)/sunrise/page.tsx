@@ -3,7 +3,6 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -28,11 +27,6 @@ export default async function Sunrise() {
       <SunriseClient
         topChildren={<TopDisplay project={sunriseData} payload={payload} />}
       >
-        <ProjectNavigation
-          prev="/again-from-scratch"
-          next="/m-tron"
-          payload={payload}
-        />
       </SunriseClient>
     </Scroller>
   );

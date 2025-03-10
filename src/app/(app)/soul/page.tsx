@@ -3,7 +3,6 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -28,11 +27,6 @@ export default async function Soul() {
       <SoulClient
         topChildren={<TopDisplay project={soulData} payload={payload} />}
       >
-        <ProjectNavigation
-          prev="/lamboozled"
-          next="/overlap"
-          payload={payload}
-        />
       </SoulClient>
     </Scroller>
   );

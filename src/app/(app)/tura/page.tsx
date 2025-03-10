@@ -3,7 +3,6 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -27,13 +26,7 @@ export default async function Tura() {
     <Scroller bgColor={turaData.backgroundColor}>
       <TuraClient
         topChildren={<TopDisplay project={turaData} payload={payload} />}
-      >
-        <ProjectNavigation
-          prev="/overlap"
-          next="/curiously"
-          payload={payload}
-        />
-      </TuraClient>
+      ></TuraClient>
     </Scroller>
   );
 }

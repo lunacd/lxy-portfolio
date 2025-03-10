@@ -3,7 +3,6 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -28,7 +27,6 @@ export default async function Skates() {
       <SkatesClient
         topChildren={<TopDisplay project={skatesData} payload={payload} />}
       >
-        <ProjectNavigation next="/tura" payload={payload} />
       </SkatesClient>
     </Scroller>
   );

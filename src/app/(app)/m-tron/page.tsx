@@ -5,7 +5,6 @@ import Block from "src/blocks/Block";
 
 import AnimationCoordinator from "@/components/AnimationCoordinator";
 import FloatUpMotion from "@/components/FloatUpMotion";
-import ProjectNavigation from "@/components/ProjectNavigation";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -45,12 +44,6 @@ export default async function MTron() {
             <Block block={block} payload={payload} />
           </FloatUpMotion>
         ))}
-        <ProjectNavigation
-          prev="/sunrise"
-          next="/memory-voyage"
-          textColor="text-white"
-          payload={payload}
-        />
       </Scroller>
     </AnimationCoordinator>
   );
