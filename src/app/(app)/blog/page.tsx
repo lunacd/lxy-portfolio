@@ -2,7 +2,7 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 import "server-only";
-import SmallgallerBlock from "src/blocks/SmallGalleryBlock";
+import SmallGalleryBlock from "src/blocks/SmallGalleryBlock";
 import TitleBlock from "src/blocks/TitleBlock";
 
 import Scroller from "@/components/Scroller";
@@ -41,7 +41,7 @@ export default async function Blogs() {
             bottomMargin="xxl"
           />
         )}
-        <SmallgallerBlock
+        <SmallGalleryBlock
           items={blogs.map((blog) => {
             return {
               image: blog.coverImage,

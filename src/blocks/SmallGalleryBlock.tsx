@@ -12,7 +12,7 @@ type SmallGalleryBlockProps = Extract<
   { blockType: "smallGallery" }
 > & { payload: Payload };
 
-export default function SmallgallerBlock(props: SmallGalleryBlockProps) {
+export default function SmallGalleryBlock(props: SmallGalleryBlockProps) {
   return (
     <div className="single mb-spacing-3lg mt-spacing-lg gap-spacing grid grid-cols-2 lg:grid-cols-3">
       {props.items.map((item, index) => {
