@@ -8,6 +8,7 @@ const defaultState: GlobalState = {
   projectNames: [],
   title: "",
   sideBarRoutes: [],
+  onLanding: true,
 };
 
 const GlobalStateContext = createContext<{

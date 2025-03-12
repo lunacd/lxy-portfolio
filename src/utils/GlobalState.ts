@@ -25,6 +25,7 @@ export function getInitialState({
     title: "All Projects",
     sideBarRoutes: projectRoutes,
     focus: getFocus(pathname),
+    onLanding: pathname === "/",
   };
 }
 
@@ -55,6 +56,7 @@ export interface GlobalState {
     name: string;
     uri: string;
   }[];
+  onLanding: boolean;
   focus?: string;
 }
 
@@ -88,6 +90,11 @@ export function stateReducer(state: GlobalState, action: GlobalStateAction) {
       1,
       action.newPath.length - 1,
     );
+    if (action.newPath === "/") {
+      newState.onLanding = true;
+    } else {
+      newState.onLanding = false;
+    }
   } else if (action.type === "setContent") {
     newState.sideBarRoutes = action.projectRoutes;
     newState.title = action.title;

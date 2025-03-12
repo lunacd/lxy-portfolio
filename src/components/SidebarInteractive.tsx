@@ -56,7 +56,7 @@ export default function SidebarInteractive() {
           x: "-100%",
         }}
         animate={{
-          x: open ? "0%" : "-100%",
+          x: open && globalState.onLanding ? "0%" : "-100%",
         }}
         transition={transitionDefault}
         className="absolute z-10 h-screen w-[16rem] flex-shrink-0 bg-white shadow-lg
@@ -159,9 +159,6 @@ export default function SidebarInteractive() {
                 Blogs
               </MotionLink>
             </AnimatePresence>
-            {/*<Link className="subtitle" href="/others">*/}
-            {/*  More Work*/}
-            {/*</Link>*/}
           </div>
 
           {/* Social links */}
@@ -198,31 +195,33 @@ export default function SidebarInteractive() {
         </div>
 
         {/* Open-close button: desktop */}
-        <div
-          className="absolute top-20 -right-16 z-20 hidden h-24 w-16 overflow-hidden lg:block
-            xl:-right-20 xl:w-20"
-        >
+        {globalState.onLanding && (
           <div
-            className="absolute top-0 -left-8 h-16 w-16 cursor-pointer rounded-full bg-white shadow-lg
-              xl:-left-10 xl:h-20 xl:w-20"
-            onClick={() => {
-              setOpen((orig) => !orig);
-            }}
+            className="absolute top-20 -right-16 z-20 hidden h-24 w-16 overflow-hidden lg:block
+              xl:-right-20 xl:w-20"
           >
-            <div className="absolute top-0 right-0 bottom-0 flex w-1/2 items-center">
-              <MotionIconChevronLeft
-                animate={{
-                  rotateY: open ? 0 : 180,
-                }}
-                className=""
-                transition={{
-                  duration: 0.2,
-                }}
-                size={isXL ? 36 : 24}
-              />
+            <div
+              className="absolute top-0 -left-8 h-16 w-16 cursor-pointer rounded-full bg-white shadow-lg
+                xl:-left-10 xl:h-20 xl:w-20"
+              onClick={() => {
+                setOpen((orig) => !orig);
+              }}
+            >
+              <div className="absolute top-0 right-0 bottom-0 flex w-1/2 items-center">
+                <MotionIconChevronLeft
+                  animate={{
+                    rotateY: open ? 0 : 180,
+                  }}
+                  className=""
+                  transition={{
+                    duration: 0.2,
+                  }}
+                  size={isXL ? 36 : 24}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </motion.div>
 
       {/* Sizing placeholder for desktop */}
@@ -233,25 +232,40 @@ export default function SidebarInteractive() {
           width: "0rem",
         }}
         animate={{
-          width: open ? (isXL ? "21rem" : "16rem") : "0rem",
+          width:
+            open && globalState.onLanding ? (isXL ? "21rem" : "16rem") : "0rem",
         }}
         transition={transitionDefault}
       ></motion.div>
 
       {/* Open-close button: mobile */}
-      <div className="absolute top-4 right-2 z-10 cursor-pointer p-4 lg:hidden">
-        <MotionImage
-          animate={{
-            rotate: open ? 90 : 0,
-          }}
-          className="w-6 transition-colors duration-200"
-          src={HamburgerBlack}
-          alt="Menu"
-          onClick={() => {
-            setOpen((orig) => !orig);
-          }}
-        />
-      </div>
+      {globalState.onLanding && (
+        <div className="absolute top-4 right-2 z-10 cursor-pointer p-4 lg:hidden">
+          <MotionImage
+            animate={{
+              rotate: open ? 90 : 0,
+            }}
+            className="w-6 transition-colors duration-200"
+            src={HamburgerBlack}
+            alt="Menu"
+            onClick={() => {
+              setOpen((orig) => !orig);
+            }}
+          />
+        </div>
+      )}
+
+      {/* Return home button */}
+      {!globalState.onLanding && (
+        <Link
+          className="absolute top-20 left-0 z-10 grid -translate-x-1/2 cursor-pointer grid-rows-2
+            rounded-full bg-white px-6 py-2"
+          style={{ writingMode: "vertical-lr" }}
+          href="/"
+        >
+          <div className="row-start-2">Return to Home</div>
+        </Link>
+      )}
     </>
   );
 }
