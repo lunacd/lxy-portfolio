@@ -4,6 +4,7 @@ import { getPayload } from "payload";
 import Block from "src/blocks/Block";
 
 import FloatUpMotion from "@/components/FloatUpMotion";
+import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -21,6 +22,7 @@ export default async function Lamboozled() {
       where: {
         uri: { equals: "curiously" },
       },
+      depth: 2,
     })
   ).docs[0];
   const curiouslyPageData = (
@@ -40,6 +42,12 @@ export default async function Lamboozled() {
           <Block block={block} payload={payload} />
         </FloatUpMotion>
       ))}
+      <RelatedWork
+        projects={curiouslyProjectData.relatedWorks.map(
+          (relatedWork) => relatedWork.relatedWork,
+        )}
+        payload={payload}
+      />
     </Scroller>
   );
 }

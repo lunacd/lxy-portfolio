@@ -3,6 +3,7 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
+import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -20,14 +21,20 @@ export default async function Soul() {
       where: {
         uri: { equals: "soul" },
       },
+      depth: 2,
     })
   ).docs[0];
   return (
     <Scroller bgColor={soulData.backgroundColor}>
       <SoulClient
         topChildren={<TopDisplay project={soulData} payload={payload} />}
-      >
-      </SoulClient>
+      ></SoulClient>
+      <RelatedWork
+        projects={soulData.relatedWorks.map(
+          (relatedWork) => relatedWork.relatedWork,
+        )}
+        payload={payload}
+      />
     </Scroller>
   );
 }

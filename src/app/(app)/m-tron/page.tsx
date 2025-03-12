@@ -5,6 +5,7 @@ import Block from "src/blocks/Block";
 
 import AnimationCoordinator from "@/components/AnimationCoordinator";
 import FloatUpMotion from "@/components/FloatUpMotion";
+import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -22,6 +23,7 @@ export default async function MTron() {
       where: {
         uri: { equals: "m-tron" },
       },
+      depth: 2,
     })
   ).docs[0];
   const mTronPageData = (
@@ -45,6 +47,12 @@ export default async function MTron() {
           </FloatUpMotion>
         ))}
       </Scroller>
+      <RelatedWork
+        projects={mTronData.relatedWorks.map(
+          (relatedWork) => relatedWork.relatedWork,
+        )}
+        payload={payload}
+      />
     </AnimationCoordinator>
   );
 }

@@ -13,7 +13,7 @@ import ImageTextBlock from "@/blocks/ImageTextBlock";
 import ImageWithTextOverlayBlock from "@/blocks/ImageWithTextOverlayBlock";
 import RowBlock from "@/blocks/RowBlock";
 import SlideShowBlock from "@/blocks/SlideShowBlock";
-import SmallgallerBlock from "@/blocks/SmallGalleryBlock";
+import SmallGalleryBlock from "@/blocks/SmallGalleryBlock";
 import TextBlock from "@/blocks/TextBlock";
 import TextImageBlock from "@/blocks/TextImageBlock";
 import TitleBlock from "@/blocks/TitleBlock";
@@ -53,7 +53,7 @@ export default function Block(props: BlockProps) {
     case "slideShow":
       return <SlideShowBlock {...props.block} payload={props.payload} />;
     case "smallGallery":
-      return <SmallgallerBlock {...props.block} payload={props.payload} />;
+      return <SmallGalleryBlock {...props.block} payload={props.payload} />;
     case "equalHeightImages":
       return (
         <EqualHeightImagesBlock {...props.block} payload={props.payload} />

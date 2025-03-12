@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { getPayload } from "payload";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
+import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -21,6 +22,7 @@ export default async function Refugia() {
       where: {
         uri: { equals: "refugia" },
       },
+      depth: 2,
     })
   ).docs[0];
   return (
@@ -30,6 +32,12 @@ export default async function Refugia() {
       >
         <ConnectPrompt payload={payload} />
       </RefugiaClient>
+      <RelatedWork
+        projects={refugiaData.relatedWorks.map(
+          (relatedWork) => relatedWork.relatedWork,
+        )}
+        payload={payload}
+      />
     </Scroller>
   );
 }

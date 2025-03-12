@@ -4,6 +4,7 @@ import { getPayload } from "payload";
 
 import Blocks from "@/blocks/Blocks";
 import AnimationCoordinator from "@/components/AnimationCoordinator";
+import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -21,6 +22,7 @@ export default async function Overlap() {
       where: {
         uri: { equals: "overlap" },
       },
+      depth: 2,
     })
   ).docs[0];
   const overlapPageData = (
@@ -39,6 +41,12 @@ export default async function Overlap() {
           <Blocks blocks={overlapPageData.blocks} payload={payload} />
         </div>
       </Scroller>
+      <RelatedWork
+        projects={overlapData.relatedWorks.map(
+          (relatedWork) => relatedWork.relatedWork,
+        )}
+        payload={payload}
+      />
     </AnimationCoordinator>
   );
 }

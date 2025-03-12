@@ -21,6 +21,7 @@ import * as migration_20250208_023806 from './20250208_023806';
 import * as migration_20250217_222027 from './20250217_222027';
 import * as migration_20250218_004247 from './20250218_004247';
 import * as migration_20250218_012212 from './20250218_012212';
+import * as migration_20250312_220108 from './20250312_220108';
 
 export const migrations = [
   {
@@ -136,6 +137,11 @@ export const migrations = [
   {
     up: migration_20250218_012212.up,
     down: migration_20250218_012212.down,
-    name: '20250218_012212'
+    name: '20250218_012212',
+  },
+  {
+    up: migration_20250312_220108.up,
+    down: migration_20250312_220108.down,
+    name: '20250312_220108'
   },
 ];

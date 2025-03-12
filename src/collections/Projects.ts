@@ -205,5 +205,18 @@ export const Projects: CollectionConfig = {
           "If this is not empty, projects will link to the external link given here rather than the internal page.",
       },
     },
+    {
+      name: "relatedWorks",
+      type: "array",
+      required: true,
+      fields: [
+        {
+          name: "relatedWork",
+          type: "relationship",
+          relationTo: "projects",
+          required: true,
+        },
+      ],
+    },
   ],
 };

@@ -248,6 +248,10 @@ export interface Project {
    * If this is not empty, projects will link to the external link given here rather than the internal page.
    */
   externalLink?: string | null;
+  relatedWorks: {
+    relatedWork: number | Project;
+    id?: string | null;
+  }[];
   updatedAt: string;
   createdAt: string;
 }
@@ -4610,6 +4614,12 @@ export interface ProjectsSelect<T extends boolean = true> {
   imageCover?: T;
   awardImage?: T;
   externalLink?: T;
+  relatedWorks?:
+    | T
+    | {
+        relatedWork?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

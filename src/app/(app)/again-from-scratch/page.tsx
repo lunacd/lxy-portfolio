@@ -4,6 +4,7 @@ import { getPayload } from "payload";
 import Block from "src/blocks/Block";
 
 import FloatUpMotion from "@/components/FloatUpMotion";
+import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -21,6 +22,7 @@ export default async function AgainFromScratch() {
       where: {
         uri: { equals: "again-from-scratch" },
       },
+      depth: 2,
     })
   ).docs[0];
   const againFromScratchPageData = (
@@ -39,6 +41,12 @@ export default async function AgainFromScratch() {
           <Block block={block} payload={payload} />
         </FloatUpMotion>
       ))}
+      <RelatedWork
+        projects={againFromScratchProjectData.relatedWorks.map(
+          (relatedWork) => relatedWork.relatedWork,
+        )}
+        payload={payload}
+      />
     </Scroller>
   );
 }

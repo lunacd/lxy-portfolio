@@ -5,6 +5,7 @@ import Block from "src/blocks/Block";
 
 import AnimationCoordinator from "@/components/AnimationCoordinator";
 import FloatUpMotion from "@/components/FloatUpMotion";
+import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
@@ -22,6 +23,7 @@ export default async function MemoryVoyage() {
       where: {
         uri: { equals: "memory-voyage" },
       },
+      depth: 2,
     })
   ).docs[0];
   const memoryVoyagePageData = (
@@ -48,6 +50,12 @@ export default async function MemoryVoyage() {
           </FloatUpMotion>
         ))}
       </Scroller>
+      <RelatedWork
+        projects={memoryVoyageData.relatedWorks.map(
+          (relatedWork) => relatedWork.relatedWork,
+        )}
+        payload={payload}
+      />
     </AnimationCoordinator>
   );
 }
