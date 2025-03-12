@@ -1,6 +1,7 @@
 "use client";
 
 import { Project } from "@payload-types";
+import classNames from "classnames";
 import { AnimatePresence, motion } from "motion/react";
 import { JSX, MouseEventHandler, useEffect, useState } from "react";
 
@@ -9,12 +10,25 @@ import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 interface ProjectChoiceProps {
   name: string;
   onClick: MouseEventHandler<HTMLDivElement>;
+  selected: boolean;
 }
 
 function ProjectChoice(props: ProjectChoiceProps) {
   return (
-    <div className="cursor-pointer" onClick={props.onClick}>
+    <div
+      className={classNames("relative cursor-pointer p-4 text-lg", {
+        // "border-b-2 border-black": props.selected,
+      })}
+      onClick={props.onClick}
+    >
       {props.name}
+      {props.selected && (
+        <motion.div
+          className="absolute right-0 bottom-0 left-0 h-[2px] bg-black"
+          layoutId="selected-indicator"
+          layout
+        ></motion.div>
+      )}
     </div>
   );
 }
@@ -70,23 +84,34 @@ export default function HomeProjects(props: HomeProjectsProps) {
   }, [selected, props]);
   return (
     <>
-      <div className="sticky top-0 z-10 flex w-full flex-row justify-center bg-[#FDF9F1]">
-        <div className="w-single flex flex-row gap-4">
-          <ProjectChoice name="All" onClick={() => setSelected("all")} />
+      <div className="sticky top-0 z-10 flex w-full flex-row justify-center bg-[#FDF9F1] shadow-lg">
+        <div className="w-single mb-4 flex flex-row gap-4 border-b border-black">
+          <ProjectChoice
+            name="All"
+            onClick={() => setSelected("all")}
+            selected={selected === "all"}
+          />
           <ProjectChoice
             name="Product Design"
             onClick={() => setSelected("product-design")}
+            selected={selected === "product-design"}
           />
           <ProjectChoice
             name="User Experience Design"
             onClick={() => setSelected("user-experience-design")}
+            selected={selected === "user-experience-design"}
           />
-          <ProjectChoice name="EdTech" onClick={() => setSelected("edtech")} />
+          <ProjectChoice
+            name="EdTech"
+            onClick={() => setSelected("edtech")}
+            selected={selected === "edtech"}
+          />
         </div>
       </div>
       <AnimatePresence>
         {activeSections.map((value) => (
           <motion.div
+            layoutId={value.project.uri}
             key={value.project.uri}
             layout
             className="w-full"
