@@ -11,9 +11,9 @@ export default function PageAnimation(props: PropsWithChildren) {
     <AnimatePresence initial={false}>
       <motion.div
         className="absolute top-0 left-0 z-0 h-full w-full"
-        initial={{ x: "100%" }}
-        animate={{ x: "0%" }}
-        exit={{ x: "-100%" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 100 }}
+        exit={{ opacity: 0 }}
         transition={{ ease: "easeInOut", duration: 0.5 }}
         key={pathname}
         layoutId={pathname}
