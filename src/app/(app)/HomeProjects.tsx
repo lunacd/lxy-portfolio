@@ -108,14 +108,14 @@ export default function HomeProjects(props: HomeProjectsProps) {
           />
         </div>
       </div>
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {activeSections.map((value) => (
           <motion.div
-            layoutId={value.project.uri}
-            key={value.project.uri}
-            layout
+            key={`${selected}-${value.project.uri}`}
             className="w-full"
             exit={{ opacity: 0 }}
+            initial={{ y: "5rem" }}
+            animate={{ y: 0 }}
           >
             {value.section}
           </motion.div>
