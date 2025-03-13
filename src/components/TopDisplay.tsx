@@ -56,11 +56,9 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             className="object-cover object-center md:hidden"
             sizes="100vw"
           />
-          <div className="absolute top-0 left-0 flex h-full w-full justify-center">
+          <div className="absolute top-0 left-0 flex h-full w-full flex-row justify-center">
             {/* Project name */}
-            <div
-              className={`mx-spacing-lg mt-spacing-lg relative grow self-stretch ${titleColor}`}
-            >
+            <div className={`w-single mt-spacing-lg relative ${titleColor}`}>
               <div className="relative">
                 {/* Optional cover color for background */}
                 {props.project.imageCover && (
