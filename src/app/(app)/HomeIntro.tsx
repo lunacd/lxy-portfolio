@@ -1,6 +1,4 @@
-import styles from "./HomeIntro.module.css";
 import { Media } from "@payload-types";
-import Link from "next/link";
 import { Payload } from "payload";
 import "server-only";
 

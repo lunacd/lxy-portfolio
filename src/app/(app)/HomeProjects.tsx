@@ -81,7 +81,7 @@ export default function HomeProjects(props: HomeProjectsProps) {
         };
       }),
     });
-  }, [selected, props]);
+  }, [selected, props, dispatch]);
   return (
     <>
       <div className="sticky top-0 z-10 flex w-full flex-row justify-center bg-[#FDF9F1] shadow-lg">
