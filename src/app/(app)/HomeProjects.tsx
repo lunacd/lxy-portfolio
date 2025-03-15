@@ -87,7 +87,7 @@ export default function HomeProjects(props: HomeProjectsProps) {
       <div className="sticky top-0 z-10 flex w-full flex-row justify-center bg-[#FDF9F1] shadow-lg">
         <div className="w-single mb-4 flex flex-row gap-4 border-b border-black">
           <ProjectChoice
-            name="All"
+            name="All Projects"
             onClick={() => setSelected("all")}
             selected={selected === "all"}
           />
