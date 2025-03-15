@@ -33,7 +33,7 @@ export default async function Lyu() {
         <ConnectPrompt payload={payload} />
       </LyuClient>
       <RelatedWork
-        color={lyuData.textColor}
+        color={lyuData.contentColor}
         projects={lyuData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}

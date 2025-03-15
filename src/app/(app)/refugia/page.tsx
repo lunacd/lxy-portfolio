@@ -33,7 +33,7 @@ export default async function Refugia() {
         <ConnectPrompt payload={payload} />
       </RefugiaClient>
       <RelatedWork
-        color={refugiaData.textColor}
+        color={refugiaData.contentColor}
         projects={refugiaData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}

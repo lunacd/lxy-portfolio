@@ -51,7 +51,7 @@ export default async function MemoryVoyage() {
         ))}
       </Scroller>
       <RelatedWork
-        color={memoryVoyageData.textColor}
+        color={memoryVoyageData.contentColor}
         projects={memoryVoyageData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}

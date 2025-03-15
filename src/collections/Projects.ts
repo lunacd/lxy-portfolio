@@ -206,6 +206,13 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: "contentColor",
+      type: "radio",
+      options: ["light", "dark"],
+      required: true,
+      defaultValue: "dark",
+    },
+    {
       name: "relatedWorks",
       type: "array",
       required: true,

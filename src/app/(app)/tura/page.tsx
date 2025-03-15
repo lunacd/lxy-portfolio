@@ -30,7 +30,7 @@ export default async function Tura() {
         topChildren={<TopDisplay project={turaData} payload={payload} />}
       ></TuraClient>
       <RelatedWork
-        color={turaData.textColor}
+        color={turaData.contentColor}
         projects={turaData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}
