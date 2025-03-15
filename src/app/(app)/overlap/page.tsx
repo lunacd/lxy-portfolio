@@ -42,6 +42,7 @@ export default async function Overlap() {
         </div>
       </Scroller>
       <RelatedWork
+        color={overlapData.textColor}
         projects={overlapData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}

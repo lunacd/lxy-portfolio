@@ -3,9 +3,9 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
+import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
-import RelatedWork from "@/components/RelatedWork";
 
 export const metadata: Metadata = {
   title: "Tura | Shirley Lyu",
@@ -21,7 +21,7 @@ export default async function Tura() {
       where: {
         uri: { equals: "tura" },
       },
-      depth: 2
+      depth: 2,
     })
   ).docs[0];
   return (
@@ -30,6 +30,7 @@ export default async function Tura() {
         topChildren={<TopDisplay project={turaData} payload={payload} />}
       ></TuraClient>
       <RelatedWork
+        color={turaData.textColor}
         projects={turaData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}

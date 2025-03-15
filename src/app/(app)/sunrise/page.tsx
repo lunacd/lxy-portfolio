@@ -30,6 +30,7 @@ export default async function Sunrise() {
         topChildren={<TopDisplay project={sunriseData} payload={payload} />}
       ></SunriseClient>
       <RelatedWork
+        color={sunriseData.textColor}
         projects={sunriseData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}

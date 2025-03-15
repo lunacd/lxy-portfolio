@@ -30,6 +30,7 @@ export default async function Soul() {
         topChildren={<TopDisplay project={soulData} payload={payload} />}
       ></SoulClient>
       <RelatedWork
+        color={soulData.textColor}
         projects={soulData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}

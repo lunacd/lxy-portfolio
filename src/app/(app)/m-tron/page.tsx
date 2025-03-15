@@ -48,6 +48,7 @@ export default async function MTron() {
         ))}
       </Scroller>
       <RelatedWork
+        color={mTronData.textColor}
         projects={mTronData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}

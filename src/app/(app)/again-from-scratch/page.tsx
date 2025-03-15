@@ -45,6 +45,7 @@ export default async function AgainFromScratch() {
         projects={againFromScratchProjectData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}
+        color={againFromScratchProjectData.textColor}
         payload={payload}
       />
     </Scroller>

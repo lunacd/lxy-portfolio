@@ -30,6 +30,7 @@ export default async function Skates() {
         topChildren={<TopDisplay project={skatesData} payload={payload} />}
       ></SkatesClient>
       <RelatedWork
+        color={skatesData.textColor}
         projects={skatesData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}

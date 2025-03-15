@@ -43,6 +43,7 @@ export default async function Lamboozled() {
         </FloatUpMotion>
       ))}
       <RelatedWork
+        color={curiouslyProjectData.textColor}
         projects={curiouslyProjectData.relatedWorks.map(
           (relatedWork) => relatedWork.relatedWork,
         )}
