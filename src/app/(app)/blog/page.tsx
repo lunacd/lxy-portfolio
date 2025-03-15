@@ -42,6 +42,7 @@ export default async function Blogs() {
           />
         )}
         <SmallGalleryBlock
+          textColor="dark"
           items={blogs.map((blog) => {
             return {
               image: blog.coverImage,

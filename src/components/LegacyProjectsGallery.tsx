@@ -18,6 +18,7 @@ export default async function LegacyProjectsGallery(
   return (
     <FloatUpMotion>
       <SmallGallerBlock
+        textColor="dark"
         items={props.projects.map((project) => {
           return {
             image: project.projectGalleryImage,
