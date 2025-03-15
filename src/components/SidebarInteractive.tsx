@@ -259,7 +259,7 @@ export default function SidebarInteractive() {
       {!globalState.onLanding && (
         <Link
           className="absolute top-20 left-0 z-10 grid -translate-x-1/2 cursor-pointer grid-rows-2
-            rounded-full bg-white px-6 py-2"
+            rounded-full bg-white px-6 py-2 shadow-lg"
           style={{ writingMode: "vertical-lr" }}
           href="/"
         >
