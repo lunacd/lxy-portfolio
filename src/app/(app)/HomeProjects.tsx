@@ -3,7 +3,7 @@
 import { Project } from "@payload-types";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "motion/react";
-import { JSX, MouseEventHandler, useEffect, useState } from "react";
+import { JSX, MouseEventHandler, useEffect, useRef, useState } from "react";
 
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 
@@ -65,6 +65,8 @@ export default function HomeProjects(props: HomeProjectsProps) {
   >([]);
   const { dispatch } = useGlobalStateContext();
 
+  const projectTopRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const categoryName = CategoryUriToName[selected];
     const sections = props.homeSections
@@ -99,9 +101,14 @@ export default function HomeProjects(props: HomeProjectsProps) {
         };
       }),
     });
+    projectTopRef.current!.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }, [selected, props, dispatch]);
   return (
     <>
+      <div ref={projectTopRef}></div>
       <div className="sticky top-0 z-10 flex w-full flex-row justify-center bg-[#FDF9F1] shadow-lg">
         <div className="w-single mb-4 flex flex-row gap-4 border-b border-black">
           <ProjectChoice
