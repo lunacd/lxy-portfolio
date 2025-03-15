@@ -194,10 +194,6 @@ export interface Project {
    */
   order: number;
   /**
-   * The order of projects used in subsets of projects, like Product Design projects.
-   */
-  subsetOrder: number;
-  /**
    * When checked, this project will show on the landing page and will be included in project galleries. When un-checked, this project will be included only in More Works.
    */
   isMainProject: boolean;
@@ -4607,7 +4603,6 @@ export interface ProjectsSelect<T extends boolean = true> {
   name?: T;
   uri?: T;
   order?: T;
-  subsetOrder?: T;
   isMainProject?: T;
   duration?: T;
   category?: T;
