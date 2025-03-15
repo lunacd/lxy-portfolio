@@ -15,7 +15,7 @@ export default function RelatedWork(props: RelatedWorkProps) {
   return (
     <>
       <div
-        className={classNames("border-b", {
+        className={classNames("w-single border-b", {
           "border-black": props.color === "dark",
           "border-white": props.color === "light",
         })}

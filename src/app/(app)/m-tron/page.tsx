@@ -46,14 +46,14 @@ export default async function MTron() {
             <Block block={block} payload={payload} />
           </FloatUpMotion>
         ))}
+        <RelatedWork
+          color={mTronData.contentColor}
+          projects={mTronData.relatedWorks.map(
+            (relatedWork) => relatedWork.relatedWork,
+          )}
+          payload={payload}
+        />
       </Scroller>
-      <RelatedWork
-        color={mTronData.contentColor}
-        projects={mTronData.relatedWorks.map(
-          (relatedWork) => relatedWork.relatedWork,
-        )}
-        payload={payload}
-      />
     </AnimationCoordinator>
   );
 }
