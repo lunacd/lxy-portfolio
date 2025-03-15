@@ -45,6 +45,19 @@ const CategoryUriToName: { [key: string]: string } = {
   edtech: "EdTech",
 };
 
+const CategoryToSortKey: {
+  [key: string]:
+    | "order"
+    | "uiuxOrder"
+    | "industrialDesignOrder"
+    | "edTechOrder";
+} = {
+  all: "order",
+  "product-design": "industrialDesignOrder",
+  "user-experience-design": "uiuxOrder",
+  edtech: "edTechOrder",
+};
+
 export default function HomeProjects(props: HomeProjectsProps) {
   const [selected, setSelected] = useState("all");
   const [activeSections, setActiveSections] = useState<
@@ -69,7 +82,12 @@ export default function HomeProjects(props: HomeProjectsProps) {
           value.project.focuses.find((focus) => focus.focusId === selected) !==
           undefined
         );
-      });
+      })
+      .sort(
+        (a, b) =>
+          a.project[CategoryToSortKey[selected]] -
+          b.project[CategoryToSortKey[selected]],
+      );
     setActiveSections(sections);
     dispatch({
       type: "setContent",

@@ -193,6 +193,9 @@ export interface Project {
    * Customizes the order of projects. Projects with a smaller value are displayed first.
    */
   order: number;
+  uiuxOrder: number;
+  industrialDesignOrder: number;
+  edTechOrder: number;
   /**
    * When checked, this project will show on the landing page and will be included in project galleries. When un-checked, this project will be included only in More Works.
    */
@@ -4603,6 +4606,9 @@ export interface ProjectsSelect<T extends boolean = true> {
   name?: T;
   uri?: T;
   order?: T;
+  uiuxOrder?: T;
+  industrialDesignOrder?: T;
+  edTechOrder?: T;
   isMainProject?: T;
   duration?: T;
   category?: T;
