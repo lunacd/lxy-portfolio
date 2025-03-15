@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { Payload } from "payload";
 
 import TitleBlock from "@/blocks/TitleBlock";
+import { getSpacing } from "@/utils/spacingUtil";
 
 interface RelatedWorkProps {
   projects: (Project | number)[];
@@ -19,6 +20,7 @@ export default function RelatedWork(props: RelatedWorkProps) {
           "border-black": props.color === "dark",
           "border-white": props.color === "light",
         })}
+        style={{ marginBottom: getSpacing("regular") }}
       ></div>
       <div className="w-single">
         <TitleBlock
@@ -29,7 +31,11 @@ export default function RelatedWork(props: RelatedWorkProps) {
           type="title"
         />
       </div>
-      <ProjectsGallery projects={props.projects} payload={props.payload} />
+      <ProjectsGallery
+        projects={props.projects}
+        payload={props.payload}
+        color={props.color}
+      />
     </>
   );
 }

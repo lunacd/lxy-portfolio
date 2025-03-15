@@ -43,7 +43,7 @@ export default function SmallGalleryBlock(props: SmallGalleryBlockProps) {
             <div className="mt-2">
               <TextBlock
                 text={item.text}
-                textColor="dark"
+                textColor={props.textColor}
                 blockType="text"
                 bottomMargin="none"
               />

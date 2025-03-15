@@ -7,6 +7,7 @@ import { getProject } from "@/utils/payloadHelpers";
 
 interface ProjectsGalleryProps {
   projects: (Project | number)[];
+  color: "dark" | "light";
   payload: Payload;
 }
 
@@ -43,6 +44,7 @@ export default async function ProjectsGallery(props: ProjectsGalleryProps) {
           };
         }),
       )}
+      textColor={props.color}
       payload={props.payload}
       blockType="smallGallery"
       bottomMargin="xxl"

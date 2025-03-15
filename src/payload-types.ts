@@ -454,6 +454,7 @@ export interface ProjectPage {
           link?: string | null;
           id?: string | null;
         }[];
+        textColor: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -745,6 +746,7 @@ export interface ProjectPage {
                 link?: string | null;
                 id?: string | null;
               }[];
+              textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1036,6 +1038,7 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
+                    textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1335,6 +1338,7 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
+                    textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1642,6 +1646,7 @@ export interface ProjectPage {
                 link?: string | null;
                 id?: string | null;
               }[];
+              textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1933,6 +1938,7 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
+                    textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2232,6 +2238,7 @@ export interface ProjectPage {
                       link?: string | null;
                       id?: string | null;
                     }[];
+                    textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2562,6 +2569,7 @@ export interface Blog {
           link?: string | null;
           id?: string | null;
         }[];
+        textColor: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2853,6 +2861,7 @@ export interface Blog {
                 link?: string | null;
                 id?: string | null;
               }[];
+              textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3144,6 +3153,7 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
+                    textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3443,6 +3453,7 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
+                    textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3750,6 +3761,7 @@ export interface Blog {
                 link?: string | null;
                 id?: string | null;
               }[];
+              textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -4041,6 +4053,7 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
+                    textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4340,6 +4353,7 @@ export interface Blog {
                       link?: string | null;
                       id?: string | null;
                     }[];
+                    textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4748,6 +4762,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                     link?: T;
                     id?: T;
                   };
+              textColor?: T;
               bottomMargin?: T;
               id?: T;
               blockName?: T;
@@ -4932,6 +4947,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
+                          textColor?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -5116,6 +5132,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5307,6 +5324,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5505,6 +5523,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
+                          textColor?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -5689,6 +5708,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5880,6 +5900,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6094,6 +6115,7 @@ export interface BlogsSelect<T extends boolean = true> {
                     link?: T;
                     id?: T;
                   };
+              textColor?: T;
               bottomMargin?: T;
               id?: T;
               blockName?: T;
@@ -6278,6 +6300,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
+                          textColor?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -6462,6 +6485,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6653,6 +6677,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6851,6 +6876,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 link?: T;
                                 id?: T;
                               };
+                          textColor?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -7035,6 +7061,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -7226,6 +7253,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             link?: T;
                                             id?: T;
                                           };
+                                      textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
