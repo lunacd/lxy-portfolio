@@ -30,15 +30,15 @@ export default async function Lyu() {
       <LyuClient
         topChildren={<TopDisplay project={lyuData} payload={payload} />}
       >
+        <RelatedWork
+          color={lyuData.contentColor}
+          projects={lyuData.relatedWorks.map(
+            (relatedWork) => relatedWork.relatedWork,
+          )}
+          payload={payload}
+        />
         <ConnectPrompt payload={payload} />
       </LyuClient>
-      <RelatedWork
-        color={lyuData.contentColor}
-        projects={lyuData.relatedWorks.map(
-          (relatedWork) => relatedWork.relatedWork,
-        )}
-        payload={payload}
-      />
     </Scroller>
   );
 }
