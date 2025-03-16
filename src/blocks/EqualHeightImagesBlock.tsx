@@ -31,7 +31,6 @@ export default async function EqualHeightImagesBlock(
           return (
             <SlideShow
               style={{
-                marginBottom: getSpacing(props.bottomMargin),
                 flex: firstImage.width / firstImage.height,
                 minWidth: 0,
               }}
