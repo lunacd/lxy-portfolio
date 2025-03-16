@@ -40,14 +40,14 @@ export default async function Overlap() {
         <div className="w-single">
           <Blocks blocks={overlapPageData.blocks} payload={payload} />
         </div>
+        <RelatedWork
+          color={overlapData.contentColor}
+          projects={overlapData.relatedWorks.map(
+            (relatedWork) => relatedWork.relatedWork,
+          )}
+          payload={payload}
+        />
       </Scroller>
-      <RelatedWork
-        color={overlapData.contentColor}
-        projects={overlapData.relatedWorks.map(
-          (relatedWork) => relatedWork.relatedWork,
-        )}
-        payload={payload}
-      />
     </AnimationCoordinator>
   );
 }
