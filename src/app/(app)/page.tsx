@@ -5,7 +5,7 @@ import InViewDetector from "./InViewDetector";
 import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
-import React from "react";
+import React, { Suspense } from "react";
 
 import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
@@ -47,7 +47,9 @@ export default async function Landing() {
   return (
     <Scroller bgColor="#FDF9F1">
       <HomeIntro profilePicture={globalData.profilePicture} payload={payload} />
-      <HomeProjects projects={projects} homeSections={homeSections} />
+      <Suspense>
+        <HomeProjects projects={projects} homeSections={homeSections} />
+      </Suspense>
       <ConnectPrompt payload={payload} />
     </Scroller>
   );
