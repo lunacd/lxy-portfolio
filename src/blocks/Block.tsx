@@ -1,3 +1,4 @@
+import ButtonBlock from "./ButtonBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
@@ -67,6 +68,6 @@ export default function Block(props: BlockProps) {
     case "carousel":
       return <CarouselBlock {...props.block} payload={props.payload} />;
     case "button":
-      return 
+      return <ButtonBlock {...props.block} payload={props.payload} />;
   }
 }
