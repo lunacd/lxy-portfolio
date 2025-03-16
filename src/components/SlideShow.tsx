@@ -5,7 +5,6 @@ import classNames from "classnames";
 import { Payload } from "payload";
 import { CSSProperties } from "react";
 
-
 interface SlideShowProps {
   images: (Media | number)[];
   payload: Payload;
