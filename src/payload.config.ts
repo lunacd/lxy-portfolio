@@ -54,6 +54,11 @@ export default buildConfig({
     push: push,
   }),
   sharp,
+  upload: {
+    limits: {
+      fileSize: 25000000,
+    },
+  },
   plugins: [
     s3Storage({
       collections: {
