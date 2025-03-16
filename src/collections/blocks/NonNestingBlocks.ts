@@ -1,3 +1,4 @@
+import ButtonBlock from "./ButtonBlock";
 import CarouselBlock from "./CarouselBlock";
 import DocumentBlock from "./DocumentBlock";
 import EqualHeightImagesBlock from "./EqualHeightImagesBlock";
@@ -28,4 +29,5 @@ export const nonNestingBlocks = [
   ImageWithTextOverlayBlock,
   ImageTextBlock,
   CarouselBlock,
+  ButtonBlock,
 ];

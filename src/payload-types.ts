@@ -558,6 +558,15 @@ export interface ProjectPage {
         blockType: 'carousel';
       }
     | {
+        label: string;
+        link: string;
+        openInNewPage: boolean;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'button';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -854,6 +863,15 @@ export interface ProjectPage {
               blockType: 'carousel';
             }
           | {
+              label: string;
+              link: string;
+              openInNewPage: boolean;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'button';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -1148,6 +1166,15 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1452,6 +1479,15 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1766,6 +1802,15 @@ export interface ProjectPage {
               blockType: 'carousel';
             }
           | {
+              label: string;
+              link: string;
+              openInNewPage: boolean;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'button';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -2060,6 +2105,15 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2364,6 +2418,15 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2701,6 +2764,15 @@ export interface Blog {
         blockType: 'carousel';
       }
     | {
+        label: string;
+        link: string;
+        openInNewPage: boolean;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'button';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -2997,6 +3069,15 @@ export interface Blog {
               blockType: 'carousel';
             }
           | {
+              label: string;
+              link: string;
+              openInNewPage: boolean;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'button';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -3291,6 +3372,15 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3595,6 +3685,15 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3909,6 +4008,15 @@ export interface Blog {
               blockType: 'carousel';
             }
           | {
+              label: string;
+              link: string;
+              openInNewPage: boolean;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'button';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -4203,6 +4311,15 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4507,6 +4624,15 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
                   }
               )[];
               spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4885,6 +5011,16 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        button?:
+          | T
+          | {
+              label?: T;
+              link?: T;
+              openInNewPage?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -5071,6 +5207,16 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    button?:
+                      | T
+                      | {
+                          label?: T;
+                          link?: T;
+                          openInNewPage?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -5253,6 +5399,16 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5446,6 +5602,16 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5650,6 +5816,16 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    button?:
+                      | T
+                      | {
+                          label?: T;
+                          link?: T;
+                          openInNewPage?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -5832,6 +6008,16 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6025,6 +6211,16 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6245,6 +6441,16 @@ export interface BlogsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        button?:
+          | T
+          | {
+              label?: T;
+              link?: T;
+              openInNewPage?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -6431,6 +6637,16 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    button?:
+                      | T
+                      | {
+                          label?: T;
+                          link?: T;
+                          openInNewPage?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -6613,6 +6829,16 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6806,6 +7032,16 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -7010,6 +7246,16 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    button?:
+                      | T
+                      | {
+                          label?: T;
+                          link?: T;
+                          openInNewPage?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -7192,6 +7438,16 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -7385,6 +7641,16 @@ export interface BlogsSelect<T extends boolean = true> {
                                             id?: T;
                                           };
                                       textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;

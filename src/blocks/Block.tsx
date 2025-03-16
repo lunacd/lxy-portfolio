@@ -66,5 +66,7 @@ export default function Block(props: BlockProps) {
       return <ImageTextBlock {...props.block} payload={props.payload} />;
     case "carousel":
       return <CarouselBlock {...props.block} payload={props.payload} />;
+    case "button":
+      return 
   }
 }

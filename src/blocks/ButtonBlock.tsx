@@ -3,16 +3,14 @@ import { Payload } from "payload";
 import "server-only";
 
 import Button from "@/components/Button";
-import { getDocument } from "@/utils/payloadHelpers";
 import { getSpacing } from "@/utils/spacingUtil";
 
-type DocumentBlockProps = Extract<
+type ButtonBlockProps = Extract<
   ProjectPage["blocks"][0],
-  { blockType: "document" }
+  { blockType: "button" }
 > & { payload: Payload };
 
-export default async function DocumentBlock(props: DocumentBlockProps) {
-  const document = await getDocument(props.document, props.payload);
+export default async function ButtonBlock(props: ButtonBlockProps) {
   return (
     <div
       className="flex w-full justify-center"
@@ -20,7 +18,7 @@ export default async function DocumentBlock(props: DocumentBlockProps) {
         marginBottom: getSpacing(props.bottomMargin),
       }}
     >
-      <Button href={document.url!} openInNewPage>
+      <Button href={props.link} openInNewPage={props.openInNewPage}>
         {props.label}
       </Button>
     </div>
