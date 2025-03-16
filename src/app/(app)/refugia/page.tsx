@@ -25,20 +25,28 @@ export default async function Refugia() {
       depth: 2,
     })
   ).docs[0];
+  const refugiaPageData = (
+    await payload.find({
+      collection: "projectPages",
+      where: {
+        projectName: { equals: "Refugia" },
+      },
+    })
+  ).docs[0];
   return (
     <Scroller bgColor={refugiaData.backgroundColor}>
       <RefugiaClient
         topChildren={<TopDisplay project={refugiaData} payload={payload} />}
       >
+        <RelatedWork
+          color={refugiaData.contentColor}
+          projects={refugiaData.relatedWorks.map(
+            (relatedWork) => relatedWork.relatedWork,
+          )}
+          payload={payload}
+        />
         <ConnectPrompt payload={payload} />
       </RefugiaClient>
-      <RelatedWork
-        color={refugiaData.contentColor}
-        projects={refugiaData.relatedWorks.map(
-          (relatedWork) => relatedWork.relatedWork,
-        )}
-        payload={payload}
-      />
     </Scroller>
   );
 }
