@@ -33,3 +33,14 @@ export const alignmentField: Field = {
   defaultValue: "start",
   required: true,
 };
+
+export const imageSizeField: Field = {
+  name: "imageSize",
+  type: "number",
+  required: true,
+  defaultValue: 100,
+  admin: {
+    description:
+      "Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.",
+  },
+};

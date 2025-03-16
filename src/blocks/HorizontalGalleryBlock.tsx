@@ -1,10 +1,11 @@
-import SlideShowBlock from "./SlideShowBlock";
 import TextBlock from "./TextBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
 
 import Row from "@/components/Row";
+import SlideShow from "@/components/SlideShow";
+import { unwrapImages } from "@/utils/payloadHelpers";
 
 type HorizontalGalleryBlockProps = Extract<
   ProjectPage["blocks"][0],
@@ -23,13 +24,11 @@ export default function HorizontalGalleryBlock(
     >
       {props.items.map((item, index) => (
         <div className="flex flex-col gap-2" key={index}>
-          <SlideShowBlock
-            images={item.images}
-            bottomMargin="none"
+          <SlideShow
+            images={item.images.map(unwrapImages)}
             sizes={`${100 / props.items.length}vw`}
             payload={props.payload}
-            blockType="slideShow"
-          ></SlideShowBlock>
+          />
           {item.text && (
             <TextBlock
               text={item.text}

@@ -1,8 +1,9 @@
-import SlideShowBlock from "./SlideShowBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
 
+import SlideShow from "@/components/SlideShow";
+import { getMedia, unwrapImages } from "@/utils/payloadHelpers";
 import { getSpacing } from "@/utils/spacingUtil";
 
 type EqualHeightImagesBlockProps = Extract<
@@ -10,7 +11,7 @@ type EqualHeightImagesBlockProps = Extract<
   { blockType: "equalHeightImages" }
 > & { payload: Payload };
 
-export default function EqualHeightImagesBlock(
+export default async function EqualHeightImagesBlock(
   props: EqualHeightImagesBlockProps,
 ) {
   return (
@@ -21,17 +22,27 @@ export default function EqualHeightImagesBlock(
         marginBottom: getSpacing(props.bottomMargin),
       }}
     >
-      {props.items.map((item, index) => (
-        <SlideShowBlock
-          key={index}
-          blockType="slideShow"
-          payload={props.payload}
-          images={item.images}
-          bottomMargin="none"
-          sizes={`${item.imageSize}vw`}
-          equalHeight={true}
-        />
-      ))}
+      {await Promise.all(
+        props.items.map(async (item, index) => {
+          const firstImage = await getMedia(
+            item.images[0].image,
+            props.payload,
+          );
+          return (
+            <SlideShow
+              style={{
+                marginBottom: getSpacing(props.bottomMargin),
+                flex: firstImage.width / firstImage.height,
+                minWidth: 0,
+              }}
+              key={index}
+              payload={props.payload}
+              images={item.images.map(unwrapImages)}
+              sizes={`${item.imageSize}vw`}
+            />
+          );
+        }),
+      )}
     </div>
   );
 }

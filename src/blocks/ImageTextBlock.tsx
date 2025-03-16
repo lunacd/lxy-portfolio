@@ -1,9 +1,10 @@
-import SlideShowBlock from "./SlideShowBlock";
 import TextBlock from "./TextBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
 
+import SlideShow from "@/components/SlideShow";
+import { unwrapImages } from "@/utils/payloadHelpers";
 import { getSpacing } from "@/utils/spacingUtil";
 
 type ImageTextBlockProps = Extract<
@@ -19,14 +20,12 @@ export default function ImageTextBlock(props: ImageTextBlockProps) {
         marginBottom: getSpacing(props.bottomMargin),
       }}
     >
-      <SlideShowBlock
-        images={props.images}
-        blockType="slideShow"
-        bottomMargin="none"
+      <SlideShow
+        images={props.images.map(unwrapImages)}
         payload={props.payload}
         className="col-span-2"
         sizes="67vw"
-      ></SlideShowBlock>
+      />
       <TextBlock
         blockType="text"
         text={props.text}

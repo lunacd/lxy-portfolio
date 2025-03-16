@@ -418,6 +418,10 @@ export interface ProjectPage {
           image: number | Media;
           id?: string | null;
         }[];
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -710,6 +714,10 @@ export interface ProjectPage {
                 image: number | Media;
                 id?: string | null;
               }[];
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1002,6 +1010,10 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1302,6 +1314,10 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -1610,6 +1626,10 @@ export interface ProjectPage {
                 image: number | Media;
                 id?: string | null;
               }[];
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1902,6 +1922,10 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2202,6 +2226,10 @@ export interface ProjectPage {
                       image: number | Media;
                       id?: string | null;
                     }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2533,6 +2561,10 @@ export interface Blog {
           image: number | Media;
           id?: string | null;
         }[];
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -2825,6 +2857,10 @@ export interface Blog {
                 image: number | Media;
                 id?: string | null;
               }[];
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3117,6 +3153,10 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3417,6 +3457,10 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3725,6 +3769,10 @@ export interface Blog {
                 image: number | Media;
                 id?: string | null;
               }[];
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -4017,6 +4065,10 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4317,6 +4369,10 @@ export interface Blog {
                       image: number | Media;
                       id?: string | null;
                     }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -4748,6 +4804,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                     image?: T;
                     id?: T;
                   };
+              imageSize?: T;
               bottomMargin?: T;
               id?: T;
               blockName?: T;
@@ -4933,6 +4990,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
+                          imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -5118,6 +5176,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
+                                      imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5310,6 +5369,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
+                                      imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5509,6 +5569,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
+                          imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -5694,6 +5755,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
+                                      imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5886,6 +5948,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
+                                      imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6101,6 +6164,7 @@ export interface BlogsSelect<T extends boolean = true> {
                     image?: T;
                     id?: T;
                   };
+              imageSize?: T;
               bottomMargin?: T;
               id?: T;
               blockName?: T;
@@ -6286,6 +6350,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
+                          imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -6471,6 +6536,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
+                                      imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6663,6 +6729,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
+                                      imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6862,6 +6929,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                 image?: T;
                                 id?: T;
                               };
+                          imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -7047,6 +7115,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
+                                      imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -7239,6 +7308,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                             image?: T;
                                             id?: T;
                                           };
+                                      imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;

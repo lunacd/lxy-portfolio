@@ -7,13 +7,14 @@ import Image from "next/image";
 import { Payload, getPayload } from "payload";
 import { Suspense } from "react";
 
-import SlideShowBlock from "@/blocks/SlideShowBlock";
 import TitleBlock from "@/blocks/TitleBlock";
 import AnimationCoordinator from "@/components/AnimationCoordinator";
 import Button from "@/components/Button";
 import FloatUpMotion from "@/components/FloatUpMotion";
 import LegacySpacing from "@/components/LegacySpacing";
 import PayloadImage from "@/components/PayloadImage";
+import SlideShow from "@/components/SlideShow";
+import { unwrapImages } from "@/utils/payloadHelpers";
 
 import NatureObserver from "@/images/about/nature-observer.gif";
 import Sports from "@/images/about/sports.gif";
@@ -36,10 +37,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
             lg:col-span-4 lg:col-start-8 lg:row-start-2"
         >
           <div className="about_darken h-full w-full">
-            <SlideShowBlock
-              images={data.travellerImages}
-              bottomMargin="none"
-              blockType="slideShow"
+            <SlideShow
+              images={data.travellerImages.map(unwrapImages)}
               payload={payload}
               sizes="(min-width: 64rem) 33vw, (max-width: 64rem) 67vw"
               className="relative h-full w-full"
@@ -57,10 +56,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
             lg:col-span-3 lg:row-start-5"
         >
           <div className="about_darken h-full w-full">
-            <SlideShowBlock
-              images={data.craftspersonImages}
-              bottomMargin="none"
-              blockType="slideShow"
+            <SlideShow
+              images={data.craftspersonImages.map(unwrapImages)}
               payload={payload}
               sizes="(min-width: 64rem) 20vw, (max-width: 64rem) 33vw"
               className="relative h-full w-full"
@@ -78,10 +75,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
             lg:col-span-3 lg:col-start-1 lg:row-start-8"
         >
           <div className="about_darken h-full w-full">
-            <SlideShowBlock
-              images={data.photographerImages}
-              bottomMargin="none"
-              blockType="slideShow"
+            <SlideShow
+              images={data.photographerImages.map(unwrapImages)}
               payload={payload}
               sizes="(min-width: 64rem) 20vw, (max-width: 64rem) 33vw"
               className="relative h-full w-full"
@@ -120,10 +115,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
           }}
         >
           <div className="about_darken h-full w-full">
-            <SlideShowBlock
-              images={data.dogLoverImages}
-              bottomMargin="none"
-              blockType="slideShow"
+            <SlideShow
+              images={data.dogLoverImages.map(unwrapImages)}
               payload={payload}
               sizes="(min-width: 64rem) 20vw, (max-width: 64rem) 0"
               className="relative h-full w-full"
@@ -141,10 +134,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
             lg:block"
         >
           <div className="about_darken h-full w-full">
-            <SlideShowBlock
-              images={data.thinkerImages}
-              bottomMargin="none"
-              blockType="slideShow"
+            <SlideShow
+              images={data.thinkerImages.map(unwrapImages)}
               payload={payload}
               sizes="(min-width: 64rem) 20vw, (max-width: 64rem) 0"
               className="relative h-full w-full"

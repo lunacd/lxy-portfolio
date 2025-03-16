@@ -53,6 +53,10 @@ export async function getDocument(
   return rawDocument;
 }
 
+export function unwrapImages(image: { image: Media | number }) {
+  return image.image;
+}
+
 export function getProjectLink(
   uri: string,
   externalLink: string | undefined | null,

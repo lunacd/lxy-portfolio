@@ -1,4 +1,4 @@
-import { bottomMargin } from "../CommonFields";
+import { bottomMargin, imageSizeField } from "../CommonFields";
 import { Block } from "payload";
 
 const SlideShowBlock: Block = {
@@ -20,6 +20,7 @@ const SlideShowBlock: Block = {
       ],
       required: true,
     },
+    imageSizeField,
     bottomMargin,
   ],
 };
