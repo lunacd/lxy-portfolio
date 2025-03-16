@@ -3,6 +3,7 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
+import Blocks from "@/blocks/Blocks";
 import ConnectPrompt from "@/components/ConnectPrompt";
 import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
@@ -38,6 +39,9 @@ export default async function Refugia() {
       <RefugiaClient
         topChildren={<TopDisplay project={refugiaData} payload={payload} />}
       >
+        <div className="w-single">
+          <Blocks blocks={refugiaPageData.blocks} payload={payload} />
+        </div>
         <RelatedWork
           color={refugiaData.contentColor}
           projects={refugiaData.relatedWorks.map(
