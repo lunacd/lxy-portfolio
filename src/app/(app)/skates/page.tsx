@@ -1,4 +1,3 @@
-import SkatesClient from "./page.client";
 import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
@@ -36,25 +35,18 @@ export default async function Skates() {
   ).docs[0];
   return (
     <Scroller bgColor={skatesData.backgroundColor}>
-      <SkatesClient
-        topChildren={
-          <>
-            <TopDisplay project={skatesData} payload={payload} />
-            <div className="w-single">
-              <Blocks blocks={skatesPageData.blocks} payload={payload} />
-            </div>
-          </>
-        }
-      >
-        <RelatedWork
-          color={skatesData.contentColor}
-          projects={skatesData.relatedWorks.map(
-            (relatedWork) => relatedWork.relatedWork,
-          )}
-          payload={payload}
-        />
-        <ConnectPrompt payload={payload} />
-      </SkatesClient>
+      <TopDisplay project={skatesData} payload={payload} />
+      <div className="w-single">
+        <Blocks blocks={skatesPageData.blocks} payload={payload} />
+      </div>
+      <RelatedWork
+        color={skatesData.contentColor}
+        projects={skatesData.relatedWorks.map(
+          (relatedWork) => relatedWork.relatedWork,
+        )}
+        payload={payload}
+      />
+      <ConnectPrompt payload={payload} />
     </Scroller>
   );
 }
