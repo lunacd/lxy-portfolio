@@ -3,6 +3,7 @@
 import { Project } from "@payload-types";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "motion/react";
+import { useSearchParams } from "next/navigation";
 import { JSX, MouseEventHandler, useEffect, useRef, useState } from "react";
 
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
@@ -59,7 +60,12 @@ const CategoryToSortKey: {
 };
 
 export default function HomeProjects(props: HomeProjectsProps) {
-  const [selected, setSelected] = useState("all");
+  const searchParams = useSearchParams();
+  const queryCategory = searchParams.get("category");
+
+  const [selected, setSelected] = useState(
+    queryCategory ? queryCategory : "all",
+  );
   const [activeSections, setActiveSections] = useState<
     { section: JSX.Element; project: Project }[]
   >([]);
