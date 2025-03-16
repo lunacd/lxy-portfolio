@@ -1,4 +1,3 @@
-import RefugiaClient from "./page.client";
 import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
@@ -36,21 +35,18 @@ export default async function Refugia() {
   ).docs[0];
   return (
     <Scroller bgColor={refugiaData.backgroundColor}>
-      <RefugiaClient
-        topChildren={<TopDisplay project={refugiaData} payload={payload} />}
-      >
-        <div className="w-single">
-          <Blocks blocks={refugiaPageData.blocks} payload={payload} />
-        </div>
-        <RelatedWork
-          color={refugiaData.contentColor}
-          projects={refugiaData.relatedWorks.map(
-            (relatedWork) => relatedWork.relatedWork,
-          )}
-          payload={payload}
-        />
-        <ConnectPrompt payload={payload} />
-      </RefugiaClient>
+      <TopDisplay project={refugiaData} payload={payload} />
+      <div className="w-single">
+        <Blocks blocks={refugiaPageData.blocks} payload={payload} />
+      </div>
+      <RelatedWork
+        color={refugiaData.contentColor}
+        projects={refugiaData.relatedWorks.map(
+          (relatedWork) => relatedWork.relatedWork,
+        )}
+        payload={payload}
+      />
+      <ConnectPrompt payload={payload} />
     </Scroller>
   );
 }
