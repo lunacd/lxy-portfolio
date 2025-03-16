@@ -265,7 +265,7 @@ export interface ProjectPage {
   blocks: (
     | {
         text: string;
-        type: 'title' | 'subtitle';
+        titleType: 'title' | 'subtitle';
         textColor: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
@@ -366,6 +366,7 @@ export interface ProjectPage {
       }
     | {
         title: string;
+        titleType: 'title' | 'subtitle';
         text: {
           root: {
             type: string;
@@ -570,7 +571,7 @@ export interface ProjectPage {
         blocks: (
           | {
               text: string;
-              type: 'title' | 'subtitle';
+              titleType: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
@@ -671,6 +672,7 @@ export interface ProjectPage {
             }
           | {
               title: string;
+              titleType: 'title' | 'subtitle';
               text: {
                 root: {
                   type: string;
@@ -875,7 +877,7 @@ export interface ProjectPage {
               blocks: (
                 | {
                     text: string;
-                    type: 'title' | 'subtitle';
+                    titleType: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -976,6 +978,7 @@ export interface ProjectPage {
                   }
                 | {
                     title: string;
+                    titleType: 'title' | 'subtitle';
                     text: {
                       root: {
                         type: string;
@@ -1188,7 +1191,7 @@ export interface ProjectPage {
               blocks: (
                 | {
                     text: string;
-                    type: 'title' | 'subtitle';
+                    titleType: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -1289,6 +1292,7 @@ export interface ProjectPage {
                   }
                 | {
                     title: string;
+                    titleType: 'title' | 'subtitle';
                     text: {
                       root: {
                         type: string;
@@ -1509,7 +1513,7 @@ export interface ProjectPage {
         blocks: (
           | {
               text: string;
-              type: 'title' | 'subtitle';
+              titleType: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
@@ -1610,6 +1614,7 @@ export interface ProjectPage {
             }
           | {
               title: string;
+              titleType: 'title' | 'subtitle';
               text: {
                 root: {
                   type: string;
@@ -1814,7 +1819,7 @@ export interface ProjectPage {
               blocks: (
                 | {
                     text: string;
-                    type: 'title' | 'subtitle';
+                    titleType: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -1915,6 +1920,7 @@ export interface ProjectPage {
                   }
                 | {
                     title: string;
+                    titleType: 'title' | 'subtitle';
                     text: {
                       root: {
                         type: string;
@@ -2127,7 +2133,7 @@ export interface ProjectPage {
               blocks: (
                 | {
                     text: string;
-                    type: 'title' | 'subtitle';
+                    titleType: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -2228,6 +2234,7 @@ export interface ProjectPage {
                   }
                 | {
                     title: string;
+                    titleType: 'title' | 'subtitle';
                     text: {
                       root: {
                         type: string;
@@ -2471,7 +2478,7 @@ export interface Blog {
   blocks: (
     | {
         text: string;
-        type: 'title' | 'subtitle';
+        titleType: 'title' | 'subtitle';
         textColor: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
@@ -2572,6 +2579,7 @@ export interface Blog {
       }
     | {
         title: string;
+        titleType: 'title' | 'subtitle';
         text: {
           root: {
             type: string;
@@ -2776,7 +2784,7 @@ export interface Blog {
         blocks: (
           | {
               text: string;
-              type: 'title' | 'subtitle';
+              titleType: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
@@ -2877,6 +2885,7 @@ export interface Blog {
             }
           | {
               title: string;
+              titleType: 'title' | 'subtitle';
               text: {
                 root: {
                   type: string;
@@ -3081,7 +3090,7 @@ export interface Blog {
               blocks: (
                 | {
                     text: string;
-                    type: 'title' | 'subtitle';
+                    titleType: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -3182,6 +3191,7 @@ export interface Blog {
                   }
                 | {
                     title: string;
+                    titleType: 'title' | 'subtitle';
                     text: {
                       root: {
                         type: string;
@@ -3394,7 +3404,7 @@ export interface Blog {
               blocks: (
                 | {
                     text: string;
-                    type: 'title' | 'subtitle';
+                    titleType: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -3495,6 +3505,7 @@ export interface Blog {
                   }
                 | {
                     title: string;
+                    titleType: 'title' | 'subtitle';
                     text: {
                       root: {
                         type: string;
@@ -3715,7 +3726,7 @@ export interface Blog {
         blocks: (
           | {
               text: string;
-              type: 'title' | 'subtitle';
+              titleType: 'title' | 'subtitle';
               textColor: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
@@ -3816,6 +3827,7 @@ export interface Blog {
             }
           | {
               title: string;
+              titleType: 'title' | 'subtitle';
               text: {
                 root: {
                   type: string;
@@ -4020,7 +4032,7 @@ export interface Blog {
               blocks: (
                 | {
                     text: string;
-                    type: 'title' | 'subtitle';
+                    titleType: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -4121,6 +4133,7 @@ export interface Blog {
                   }
                 | {
                     title: string;
+                    titleType: 'title' | 'subtitle';
                     text: {
                       root: {
                         type: string;
@@ -4333,7 +4346,7 @@ export interface Blog {
               blocks: (
                 | {
                     text: string;
-                    type: 'title' | 'subtitle';
+                    titleType: 'title' | 'subtitle';
                     textColor: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
@@ -4434,6 +4447,7 @@ export interface Blog {
                   }
                 | {
                     title: string;
+                    titleType: 'title' | 'subtitle';
                     text: {
                       root: {
                         type: string;
@@ -4835,7 +4849,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | T
           | {
               text?: T;
-              type?: T;
+              titleType?: T;
               textColor?: T;
               bottomMargin?: T;
               id?: T;
@@ -4903,6 +4917,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | T
           | {
               title?: T;
+              titleType?: T;
               text?: T;
               image?: T;
               textColor?: T;
@@ -5031,7 +5046,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | T
                       | {
                           text?: T;
-                          type?: T;
+                          titleType?: T;
                           textColor?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -5099,6 +5114,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | T
                       | {
                           title?: T;
+                          titleType?: T;
                           text?: T;
                           image?: T;
                           textColor?: T;
@@ -5227,7 +5243,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      type?: T;
+                                      titleType?: T;
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -5295,6 +5311,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       title?: T;
+                                      titleType?: T;
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
@@ -5430,7 +5447,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      type?: T;
+                                      titleType?: T;
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -5498,6 +5515,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       title?: T;
+                                      titleType?: T;
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
@@ -5640,7 +5658,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | T
                       | {
                           text?: T;
-                          type?: T;
+                          titleType?: T;
                           textColor?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -5708,6 +5726,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | T
                       | {
                           title?: T;
+                          titleType?: T;
                           text?: T;
                           image?: T;
                           textColor?: T;
@@ -5836,7 +5855,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      type?: T;
+                                      titleType?: T;
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -5904,6 +5923,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       title?: T;
+                                      titleType?: T;
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
@@ -6039,7 +6059,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      type?: T;
+                                      titleType?: T;
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -6107,6 +6127,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       title?: T;
+                                      titleType?: T;
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
@@ -6265,7 +6286,7 @@ export interface BlogsSelect<T extends boolean = true> {
           | T
           | {
               text?: T;
-              type?: T;
+              titleType?: T;
               textColor?: T;
               bottomMargin?: T;
               id?: T;
@@ -6333,6 +6354,7 @@ export interface BlogsSelect<T extends boolean = true> {
           | T
           | {
               title?: T;
+              titleType?: T;
               text?: T;
               image?: T;
               textColor?: T;
@@ -6461,7 +6483,7 @@ export interface BlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           text?: T;
-                          type?: T;
+                          titleType?: T;
                           textColor?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -6529,6 +6551,7 @@ export interface BlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           title?: T;
+                          titleType?: T;
                           text?: T;
                           image?: T;
                           textColor?: T;
@@ -6657,7 +6680,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      type?: T;
+                                      titleType?: T;
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -6725,6 +6748,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       title?: T;
+                                      titleType?: T;
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
@@ -6860,7 +6884,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      type?: T;
+                                      titleType?: T;
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -6928,6 +6952,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       title?: T;
+                                      titleType?: T;
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
@@ -7070,7 +7095,7 @@ export interface BlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           text?: T;
-                          type?: T;
+                          titleType?: T;
                           textColor?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -7138,6 +7163,7 @@ export interface BlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           title?: T;
+                          titleType?: T;
                           text?: T;
                           image?: T;
                           textColor?: T;
@@ -7266,7 +7292,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      type?: T;
+                                      titleType?: T;
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -7334,6 +7360,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       title?: T;
+                                      titleType?: T;
                                       text?: T;
                                       image?: T;
                                       textColor?: T;
@@ -7469,7 +7496,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       text?: T;
-                                      type?: T;
+                                      titleType?: T;
                                       textColor?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -7537,6 +7564,7 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       title?: T;
+                                      titleType?: T;
                                       text?: T;
                                       image?: T;
                                       textColor?: T;

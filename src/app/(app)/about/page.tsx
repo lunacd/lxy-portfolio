@@ -200,7 +200,7 @@ export default async function About() {
             textColor="dark"
             blockType="title"
             bottomMargin="large"
-            type="title"
+            titleType="title"
           />
         </div>
         <Suspense>
@@ -213,7 +213,7 @@ export default async function About() {
             textColor="dark"
             blockType="title"
             bottomMargin="large"
-            type="title"
+            titleType="title"
           />
         </div>
         <div

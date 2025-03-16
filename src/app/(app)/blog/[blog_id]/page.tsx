@@ -56,7 +56,7 @@ export default async function Blog({
           <TitleBlock
             text={blog.title}
             blockType="title"
-            type="title"
+            titleType="title"
             textColor="dark"
             bottomMargin="none"
           />

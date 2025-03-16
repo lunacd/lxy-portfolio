@@ -28,7 +28,7 @@ export default function RelatedWork(props: RelatedWorkProps) {
           blockType="title"
           bottomMargin="regular"
           textColor={props.color}
-          type="title"
+          titleType="title"
         />
       </div>
       <ProjectsGallery

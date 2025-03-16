@@ -12,7 +12,7 @@ export default function TitleBlock(props: TitleBlockProps) {
   return (
     <div
       className={classNames(
-        `${props.type} ${props.className ? props.className : ""}`,
+        `${props.titleType} ${props.className ? props.className : ""}`,
         {
           "text-white": props.textColor === "light",
           "text-black": props.textColor === "dark",

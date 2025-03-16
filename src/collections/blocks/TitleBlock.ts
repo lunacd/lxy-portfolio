@@ -1,4 +1,4 @@
-import { colorField } from "../CommonFields";
+import { colorField, titleTypeField } from "../CommonFields";
 import { Block } from "payload";
 
 const TitleBlock: Block = {
@@ -9,13 +9,7 @@ const TitleBlock: Block = {
       type: "text",
       required: true,
     },
-    {
-      name: "type",
-      type: "radio",
-      options: ["title", "subtitle"],
-      defaultValue: "title",
-      required: true,
-    },
+    titleTypeField,
     colorField(),
     {
       name: "bottomMargin",

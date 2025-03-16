@@ -44,3 +44,11 @@ export const imageSizeField: Field = {
       "Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.",
   },
 };
+
+export const titleTypeField: Field = {
+  name: "titleType",
+  type: "radio",
+  options: ["title", "subtitle"],
+  defaultValue: "title",
+  required: true,
+};

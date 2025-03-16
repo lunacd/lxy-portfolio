@@ -27,7 +27,7 @@ export default async function Blogs() {
       <div className="mt-spacing-lg w-single">
         <TitleBlock
           text="Blogs"
-          type="title"
+          titleType="title"
           textColor="dark"
           bottomMargin="xxl"
           blockType="title"
@@ -35,7 +35,7 @@ export default async function Blogs() {
         {blogs.length === 0 && (
           <TitleBlock
             text="Nothing yet! Come back for more!"
-            type="subtitle"
+            titleType="subtitle"
             textColor="dark"
             blockType="title"
             bottomMargin="xxl"

@@ -19,7 +19,7 @@ export default function TextImageBlock(props: TextImageBlockProps) {
               blockType: "title",
               text: props.title,
               textColor: props.textColor,
-              type: "title",
+              titleType: props.titleType,
               bottomMargin: "none",
             },
             {

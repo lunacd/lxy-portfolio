@@ -1,4 +1,4 @@
-import { bottomMargin, colorField } from "../CommonFields";
+import { bottomMargin, colorField, titleTypeField } from "../CommonFields";
 import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
@@ -10,6 +10,7 @@ const TextImageBlock: Block = {
       type: "text",
       required: true,
     },
+    titleTypeField,
     {
       name: "text",
       type: "richText",
