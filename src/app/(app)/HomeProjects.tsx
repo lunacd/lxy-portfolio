@@ -40,7 +40,7 @@ interface HomeProjectsProps {
 
 const CategoryUriToName: { [key: string]: string } = {
   all: "All Projects",
-  "product-design": "Product Design",
+  "industrial-design": "Industrial Design",
   "user-experience-design": "UI/UX",
   edtech: "EdTech",
 };
@@ -53,7 +53,7 @@ const CategoryToSortKey: {
     | "edTechOrder";
 } = {
   all: "order",
-  "product-design": "industrialDesignOrder",
+  "industrial-design": "industrialDesignOrder",
   "user-experience-design": "uiuxOrder",
   edtech: "edTechOrder",
 };
@@ -117,9 +117,9 @@ export default function HomeProjects(props: HomeProjectsProps) {
             selected={selected === "all"}
           />
           <ProjectChoice
-            name="Product Design"
-            onClick={() => setSelected("product-design")}
-            selected={selected === "product-design"}
+            name="Industrial Design"
+            onClick={() => setSelected("industrial-design")}
+            selected={selected === "industrial-design"}
           />
           <ProjectChoice
             name="User Experience Design"
