@@ -40,7 +40,9 @@ export default async function Skates() {
         topChildren={
           <>
             <TopDisplay project={skatesData} payload={payload} />
-            <Blocks blocks={skatesPageData.blocks} payload={payload} />
+            <div className="w-single">
+              <Blocks blocks={skatesPageData.blocks} payload={payload} />
+            </div>
           </>
         }
       >
