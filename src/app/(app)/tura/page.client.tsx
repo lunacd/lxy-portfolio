@@ -180,13 +180,13 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
               { type: TextContentType.Subtitle, text: "Journal Ideation" },
             ]}
           />
-          <Image src={Ideation1} alt="Journal Ideation" />
+          <Image src={Ideation1} alt="Journal Ideation" unoptimized />
         </div>
         <div>
           <LegacyTextSection
             content={[{ type: TextContentType.Subtitle, text: "Scenarios" }]}
           />
-          <Image src={Ideation2} alt="Scenarios" />
+          <Image src={Ideation2} alt="Scenarios" unoptimized />
           <LegacyEqualSplit fill>
             <LegacyTextSection
               titleClass="subtitle"

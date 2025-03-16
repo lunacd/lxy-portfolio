@@ -52,6 +52,7 @@ export default function LegacyHorizontalGallery(
                 width={props.width}
                 height={props.height}
                 placeholder="blur"
+                unoptimized
               />
             </div>
             <div className="w-full text-left md:text-center">

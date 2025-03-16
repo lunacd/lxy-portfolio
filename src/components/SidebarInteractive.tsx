@@ -81,6 +81,7 @@ export default function SidebarInteractive() {
                 className="cursor-pointer"
                 height={75}
                 width={167}
+                unoptimized
               />
             </div>
           </Link>

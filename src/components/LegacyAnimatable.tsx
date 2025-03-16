@@ -49,7 +49,8 @@ const LegacyAnimatable: React.FC<AnimatableProps> = (propsIn) => {
           alt={props.alt}
           width={props.fill ? undefined : props.source.width}
           height={props.fill ? undefined : props.source.height}
-          unoptimized={props.source.frames[0].unoptimized}
+          // unoptimized={props.source.frames[0].unoptimized}
+          unoptimized
           placeholder={props.source.frames[0].unblurred ? "blur" : undefined}
           fill={props.fill}
           className={classNames({ "object-cover": props.fill })}
@@ -73,7 +74,8 @@ const LegacyAnimatable: React.FC<AnimatableProps> = (propsIn) => {
                 alt={props.alt}
                 width={props.fill ? undefined : props.source.width}
                 height={props.fill ? undefined : props.source.height}
-                unoptimized={image.unoptimized}
+                // unoptimized={image.unoptimized}
+                unoptimized
                 placeholder="blur"
                 fill={props.fill}
                 className={classNames({ "object-cover": props.fill })}

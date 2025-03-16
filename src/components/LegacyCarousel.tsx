@@ -74,6 +74,7 @@ const LegacyCarousel: React.FC<CarouselProps> = (propsIn) => {
                   height={props.height}
                   width={props.width}
                   placeholder="blur"
+                  unoptimized
                 />
               </div>
             ))}

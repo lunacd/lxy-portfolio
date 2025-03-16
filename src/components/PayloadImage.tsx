@@ -35,7 +35,8 @@ export default async function PayloadImage(props: PayloadImageProps) {
       }}
       fill={props.fill}
       sizes={props.sizes}
-      unoptimized={props.unoptimized}
+      // unoptimized={props.unoptimized}
+      unoptimized
     ></Image>
   );
 }

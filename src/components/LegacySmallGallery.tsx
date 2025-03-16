@@ -38,6 +38,7 @@ const LegacySmallGallery: React.FC<SmallGalleryProps> = (propsIn) => {
               width={props.width}
               height={props.height}
               placeholder="blur"
+              unoptimized
             />
           </div>
           <div className="subtitle mt-2 text-center">{item.title}</div>

@@ -53,6 +53,7 @@ export function RichTextImage(propsIn: RichTextImageProps) {
               width={props.width}
               height={props.height}
               placeholder="blur"
+              unoptimized
             />
           </div>
         </LegacyEqualSplit>
