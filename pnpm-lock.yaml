@@ -103,11 +103,11 @@ importers:
         specifier: ^0.6.11
         version: 0.6.11(@trivago/prettier-plugin-sort-imports@5.2.2(prettier@3.5.3))(prettier@3.5.3)
       stylelint:
-        specifier: ^16.15.0
-        version: 16.15.0(typescript@5.8.2)
+        specifier: ^16.16.0
+        version: 16.16.0(typescript@5.8.2)
       stylelint-config-recommended:
         specifier: ^15.0.0
-        version: 15.0.0(stylelint@16.15.0(typescript@5.8.2))
+        version: 15.0.0(stylelint@16.16.0(typescript@5.8.2))
       tailwindcss:
         specifier: ^4.0.12
         version: 4.0.12
@@ -2946,8 +2946,8 @@ packages:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==}
     engines: {node: '>=0.10.0'}
 
-  hookified@1.7.1:
-    resolution: {integrity: sha512-OXcdHsXeOiD7OJ5zvWj8Oy/6RCdLwntAX+wUrfemNcMGn6sux4xbEHi2QXwqePYhjQ/yvxxq2MvCRirdlHscBw==}
+  hookified@1.8.1:
+    resolution: {integrity: sha512-GrO2l93P8xCWBSTBX9l2BxI78VU/MAAYag+pG8curS3aBGy0++ZlxrQ7PdUOUVMbn5BwkGb6+eRrnf43ipnFEA==}
 
   html-tags@3.3.1:
     resolution: {integrity: sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==}
@@ -3204,8 +3204,8 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  keyv@5.3.1:
-    resolution: {integrity: sha512-13hQT2q2VIwOoaJdJa7nY3J8UVbYtMTJFHnwm9LI+SaQRfUiM6Em9KZeOVTCKbMnGcRIL3NSUFpAdjZCq24nLQ==}
+  keyv@5.3.2:
+    resolution: {integrity: sha512-Lji2XRxqqa5Wg+CHLVfFKBImfJZ4pCSccu9eVWK6w4c2SDFLd8JAn1zqTuSFnsxb7ope6rMsnIHfp+eBbRBRZQ==}
 
   kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
@@ -4218,8 +4218,8 @@ packages:
     peerDependencies:
       stylelint: ^16.13.0
 
-  stylelint@16.15.0:
-    resolution: {integrity: sha512-OK6Rs7EPdcdmjqiDycadZY4fw3f5/TC1X6/tGjnF3OosbwCeNs7nG+79MCAtjEg7ckwqTJTsku08e0Rmaz5nUw==}
+  stylelint@16.16.0:
+    resolution: {integrity: sha512-40X5UOb/0CEFnZVEHyN260HlSSUxPES+arrUphOumGWgXERHfwCD0kNBVILgQSij8iliYVwlc0V7M5bcLP9vPg==}
     engines: {node: '>=18.12.0'}
     hasBin: true
 
@@ -7310,8 +7310,8 @@ snapshots:
 
   cacheable@1.8.9:
     dependencies:
-      hookified: 1.7.1
-      keyv: 5.3.1
+      hookified: 1.8.1
+      keyv: 5.3.2
 
   call-bind-apply-helpers@1.0.2:
     dependencies:
@@ -8052,7 +8052,7 @@ snapshots:
     dependencies:
       cacheable: 1.8.9
       flatted: 3.3.3
-      hookified: 1.7.1
+      hookified: 1.8.1
 
   flatted@3.3.3: {}
 
@@ -8227,7 +8227,7 @@ snapshots:
     dependencies:
       parse-passwd: 1.0.0
 
-  hookified@1.7.1: {}
+  hookified@1.8.1: {}
 
   html-tags@3.3.1: {}
 
@@ -8468,7 +8468,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  keyv@5.3.1:
+  keyv@5.3.2:
     dependencies:
       '@keyv/serialize': 1.0.3
 
@@ -9620,11 +9620,11 @@ snapshots:
       client-only: 0.0.1
       react: 19.0.0
 
-  stylelint-config-recommended@15.0.0(stylelint@16.15.0(typescript@5.8.2)):
+  stylelint-config-recommended@15.0.0(stylelint@16.16.0(typescript@5.8.2)):
     dependencies:
-      stylelint: 16.15.0(typescript@5.8.2)
+      stylelint: 16.16.0(typescript@5.8.2)
 
-  stylelint@16.15.0(typescript@5.8.2):
+  stylelint@16.16.0(typescript@5.8.2):
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-tokenizer@3.0.3)
       '@csstools/css-tokenizer': 3.0.3
