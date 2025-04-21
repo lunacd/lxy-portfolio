@@ -16,7 +16,7 @@
     "generate:importmap": "payload generate:importmap"
   },
   "dependencies": {
-    "@chakra-ui/react": "^3.15.1",
+    "@chakra-ui/react": "^3.16.1",
     "@next/third-parties": "^15.3.0",
     "@payloadcms/db-postgres": "^3.34.0",
     "@payloadcms/live-preview-react": "^3.34.0",
