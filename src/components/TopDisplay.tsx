@@ -66,8 +66,10 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
                     style={{
                       height: "calc(200% + 48px)",
                       background: `linear-gradient(180deg, white 0%, transparent 100%)`,
+                      left: "calc((-100vw + var(--single)) / 2)",
+                      right: "calc((-100vw + var(--single)) / 2)",
                     }}
-                    className="-left-spacing-lg -right-spacing-lg absolute -top-8 lg:-top-12 xl:-top-24"
+                    className="absolute -top-8 lg:-top-12 xl:-top-24"
                   ></div>
                 )}
                 <div className="relative">
