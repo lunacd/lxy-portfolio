@@ -61,11 +61,14 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             <div className={`w-single mt-spacing-lg relative ${titleColor}`}>
               <div className="relative">
                 {/* Optional cover color for background */}
-                {props.project.imageCover && (
+                {props.project.imageOverlayType !== "none" && (
                   <div
                     style={{
                       height: "calc(200% + 48px)",
-                      background: `linear-gradient(180deg, white 0%, transparent 100%)`,
+                      background:
+                        props.project.imageOverlayType === "light"
+                          ? "linear-gradient(180deg, white 0%, transparent 100%)"
+                          : "linear-gradient(180deg, black 0%, transparent 100%)",
                       left: "calc((-100vw + var(--single)) / 2)",
                       right: "calc((-100vw + var(--single)) / 2)",
                     }}

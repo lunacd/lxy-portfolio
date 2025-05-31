@@ -40,13 +40,16 @@ export default async function HomeSection(props: HomeSectionProps) {
             <div
               className={`mx-spacing-lg my-spacing-lg relative grow self-stretch ${titleColor}`}
             >
-              <div className="relative h-full">
+              <div className="relative">
                 {/* Optional cover color for background */}
-                {props.project.imageCover && (
+                {props.project.imageOverlayType !== "none" && (
                   <div
                     style={{
-                      height: "calc(200% + 48px)",
-                      background: `linear-gradient(180deg, white 0%, transparent 100%)`,
+                      height: "calc(170% + 48px)",
+                      background:
+                        props.project.imageOverlayType === "light"
+                          ? "linear-gradient(180deg, white 0%, transparent 100%)"
+                          : "linear-gradient(180deg, rgba(0, 0, 0, 80%) 0%, transparent 100%)",
                     }}
                     className="-left-spacing-lg -right-spacing-lg absolute -top-8 lg:-top-12 xl:-top-24"
                   ></div>

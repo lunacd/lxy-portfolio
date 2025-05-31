@@ -242,6 +242,10 @@ export interface Project {
    */
   imageCover?: boolean | null;
   /**
+   * Select dark or light if this project needs an overlay displayed beneath the text and on top of the image.
+   */
+  imageOverlayType: 'dark' | 'light' | 'none';
+  /**
    * A small image for the award that this project has received.
    */
   awardImage?: (number | null) | Media;
@@ -4827,6 +4831,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   pageBackgroundColor?: T;
   textColor?: T;
   imageCover?: T;
+  imageOverlayType?: T;
   awardImage?: T;
   externalLink?: T;
   contentColor?: T;

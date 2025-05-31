@@ -203,6 +203,17 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: "imageOverlayType",
+      type: "radio",
+      options: ["dark", "light", "none"],
+      required: true,
+      defaultValue: "none",
+      admin: {
+        description:
+          "Select dark or light if this project needs an overlay displayed beneath the text and on top of the image.",
+      },
+    },
+    {
       name: "awardImage",
       type: "upload",
       relationTo: "media",
