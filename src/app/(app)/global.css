@@ -81,7 +81,7 @@ ul {
 }
 
 .title {
-  @apply text-lg font-semibold lg:text-xl xl:text-2xl;
+  @apply text-3xl font-semibold;
 }
 
 .subtitle {

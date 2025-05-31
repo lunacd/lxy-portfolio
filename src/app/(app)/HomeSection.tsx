@@ -55,7 +55,7 @@ export default async function HomeSection(props: HomeSectionProps) {
                   ></div>
                 )}
                 <div className="relative flex h-full flex-col items-start gap-5 lg:max-w-[50%] 2xl:max-w-[30%]">
-                  <div className="text-3xl">{props.project.name}</div>
+                  <div className="title">{props.project.name}</div>
                   <div className="text-base">{props.project.brief}</div>
 
                   <div>

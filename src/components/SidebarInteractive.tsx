@@ -89,6 +89,15 @@ export default function SidebarInteractive() {
           {/* Routes */}
           <div className="mt-16 flex flex-col space-y-1 pt-4 pb-6">
             <AnimatePresence initial={false} mode="popLayout">
+              <MotionLink
+                className="subtitle"
+                href="/about"
+                transition={transitionDefault}
+                layout
+                key="about"
+              >
+                About
+              </MotionLink>
               <MotionLink className="subtitle" href="/" key="title">
                 {globalState.title}
               </MotionLink>
@@ -141,15 +150,6 @@ export default function SidebarInteractive() {
                 ))}
               </motion.div>
 
-              <MotionLink
-                className="subtitle"
-                href="/about"
-                transition={transitionDefault}
-                layout
-                key="about"
-              >
-                About
-              </MotionLink>
               <MotionLink
                 className="subtitle"
                 href="/blog"
