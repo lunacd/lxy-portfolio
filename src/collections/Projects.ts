@@ -99,6 +99,12 @@ export const Projects: CollectionConfig = {
       required: true,
     },
     {
+      name: "flavor",
+      type: "text",
+      required: true,
+      defaultValue: ""
+    },
+    {
       name: "projectSize",
       type: "text",
       admin: {

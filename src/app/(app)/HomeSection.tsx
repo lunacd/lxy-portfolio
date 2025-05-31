@@ -53,7 +53,12 @@ export default async function HomeSection(props: HomeSectionProps) {
                 )}
                 <div className="relative flex h-full flex-col items-start gap-5 lg:max-w-[50%] 2xl:max-w-[30%]">
                   <div className="text-3xl">{props.project.name}</div>
-                  <div className="-mt-3 text-base">{props.project.brief}</div>
+                  <div className="text-base">{props.project.brief}</div>
+
+                  <div>
+                    <span className="font-bold">Flavor: </span>
+                    {props.project.flavor}
+                  </div>
 
                   <div className="flex flex-row flex-wrap gap-2">
                     {props.project.focuses &&
@@ -71,6 +76,7 @@ export default async function HomeSection(props: HomeSectionProps) {
                       props.project.uri,
                       props.project.externalLink,
                     )}
+                    className="mt-5"
                   >
                     View Project
                   </Button>

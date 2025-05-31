@@ -203,6 +203,7 @@ export interface Project {
   isMainProject: boolean;
   duration?: string | null;
   category: string;
+  flavor: string;
   /**
    * This will be displayed after category on landing page and project page， but will not show in project galleries.
    */
@@ -4809,6 +4810,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   isMainProject?: T;
   duration?: T;
   category?: T;
+  flavor?: T;
   projectSize?: T;
   focuses?:
     | T
