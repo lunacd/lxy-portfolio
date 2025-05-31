@@ -77,6 +77,7 @@ export default async function HomeSection(props: HomeSectionProps) {
                       props.project.externalLink,
                     )}
                     className="mt-5"
+                    color={props.project.textColor}
                   >
                     View Project
                   </Button>

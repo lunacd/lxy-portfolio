@@ -191,7 +191,9 @@ export default async function About() {
         </div>
 
         {/* Resume */}
-        <Button href="/documents/resume">Resume</Button>
+        <Button href="/documents/resume" color="dark">
+          Resume
+        </Button>
         <LegacySpacing size="large" />
 
         <div className="w-single">

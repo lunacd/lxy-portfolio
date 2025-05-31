@@ -20,7 +20,7 @@ export default async function DocumentBlock(props: DocumentBlockProps) {
         marginBottom: getSpacing(props.bottomMargin),
       }}
     >
-      <Button href={document.url!} openInNewPage>
+      <Button href={document.url!} openInNewPage color="dark">
         {props.label}
       </Button>
     </div>

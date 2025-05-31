@@ -10,6 +10,8 @@
     "lint": "next lint && prettier --check . && stylelint \"**/*.css\"",
     "format": "prettier --write .",
     "export": "next build && next export",
+    "tsc": "tsc --noEmit --incremental",
+    "tsc:watch": "pnpm run tsc --watch",
     "payload": "payload",
     "generate:types": "payload generate:types",
     "standalone-script": "payload run ./src/scripts/standalone-script.ts",

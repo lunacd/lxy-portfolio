@@ -102,7 +102,7 @@ export const Projects: CollectionConfig = {
       name: "flavor",
       type: "text",
       required: true,
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "projectSize",

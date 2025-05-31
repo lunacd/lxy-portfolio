@@ -18,7 +18,7 @@ export default async function ButtonBlock(props: ButtonBlockProps) {
         marginBottom: getSpacing(props.bottomMargin),
       }}
     >
-      <Button href={props.link} openInNewPage={props.openInNewPage}>
+      <Button href={props.link} openInNewPage={props.openInNewPage} color="dark">
         {props.label}
       </Button>
     </div>
