@@ -86,7 +86,10 @@ export default function SoulClient(props: PropsWithChildren<SoulProps>) {
         alt="Brand research"
         botSpacing={false}
       />
-      <Button href="https://drive.google.com/file/d/170AtY9rEoj9Msp1hRsGn0R4lRbDeCad0/view" color="dark">
+      <Button
+        href="https://drive.google.com/file/d/170AtY9rEoj9Msp1hRsGn0R4lRbDeCad0/view"
+        color="dark"
+      >
         Full Book
       </Button>
       <div className="pt-spacing-3lg" />
