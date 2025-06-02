@@ -11,6 +11,12 @@ importers:
       '@chakra-ui/react':
         specifier: ^3.19.1
         version: 3.19.1(@emotion/react@11.14.0(@types/react@19.1.6)(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@lottiefiles/dotlottie-react':
+        specifier: ^0.13.5
+        version: 0.13.5(react@19.1.0)
+      '@lottiefiles/dotlottie-web':
+        specifier: ^0.44.0
+        version: 0.44.0
       '@next/third-parties':
         specifier: ^15.3.3
         version: 15.3.3(next@15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.77.4))(react@19.1.0)
@@ -1236,6 +1242,14 @@ packages:
     resolution: {integrity: sha512-rKHpUEd3nrvMY7ghmOC0AeGSYT7YIviba+JViaOzrCX4/Wtv5C/3Sl7Io12Z9k+s1BKmy7C28bOdQHvRWaD7vQ==}
     peerDependencies:
       yjs: '>=13.5.22'
+
+  '@lottiefiles/dotlottie-react@0.13.5':
+    resolution: {integrity: sha512-4U5okwjRqDPkjB572hfZtLXJ/LGfCo6vDwUB2KIPEUoSgqbIlw+UrbnaqVp3GS+dRvhMD27F2JObpHpYRlpF0Q==}
+    peerDependencies:
+      react: ^17 || ^18 || ^19
+
+  '@lottiefiles/dotlottie-web@0.44.0':
+    resolution: {integrity: sha512-IUWKVciDJI/BMWDWnh7j0Ngd0N8q9ySRAwm84aDqIE07qpmdZ7x1rkIpBaU1yHSNqNYHeh1Rxsl+LC3CY4f0KA==}
 
   '@monaco-editor/loader@1.5.0':
     resolution: {integrity: sha512-hKoGSM+7aAc7eRTRjpqAZucPmoNOC4UUbknb/VNoTkEIkCPhqV8LfbsgM1webRM7S/z21eHEx9Fkwx8Z/C/+Xw==}
@@ -6132,6 +6146,13 @@ snapshots:
       '@lexical/selection': 0.28.0
       lexical: 0.28.0
       yjs: 13.6.24
+
+  '@lottiefiles/dotlottie-react@0.13.5(react@19.1.0)':
+    dependencies:
+      '@lottiefiles/dotlottie-web': 0.44.0
+      react: 19.1.0
+
+  '@lottiefiles/dotlottie-web@0.44.0': {}
 
   '@monaco-editor/loader@1.5.0':
     dependencies:

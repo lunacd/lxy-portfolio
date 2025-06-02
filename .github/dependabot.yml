@@ -30,6 +30,10 @@ updates:
           - tailwindcss
           - "@tailwindcss/postcss"
           - postcss
+      lottie:
+        patterns:
+          - react-lottie
+          - "@types/react-lottie"
       lowRisk:
         patterns:
           - "@chakra-ui/react"

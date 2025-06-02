@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^3.19.1",
+    "@lottiefiles/dotlottie-react": "^0.13.5",
+    "@lottiefiles/dotlottie-web": "^0.44.0",
     "@next/third-parties": "^15.3.3",
     "@payloadcms/db-postgres": "^3.36.1",
     "@payloadcms/live-preview-react": "^3.36.1",
@@ -56,5 +58,5 @@
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3"
   },
-  "packageManager": "pnpm@10.6.1"
+  "packageManager": "pnpm@10.11.0"
 }
