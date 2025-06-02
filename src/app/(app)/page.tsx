@@ -1,11 +1,10 @@
 import HomeIntro from "./HomeIntro";
-import HomeProjects from "./HomeProjects";
 import HomeSection from "./HomeSection";
 import InViewDetector from "./InViewDetector";
 import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
-import React, { Suspense } from "react";
+import React from "react";
 
 import SmallGalleryBlock from "@/blocks/SmallGalleryBlock";
 import TitleBlock from "@/blocks/TitleBlock";
@@ -44,22 +43,21 @@ export default async function Landing() {
   const globalData = promises[1];
   const blogs = promises[2].docs;
 
-  const homeSections = projects.map((project) => (
-    <InViewDetector
-      key={project.uri}
-      detectorKey={project.uri}
-      className="flex h-[90vh] w-full scroll-mt-40 flex-col"
-      id={project.uri}
-    >
-      <HomeSection project={project} payload={payload} />
-    </InViewDetector>
-  ));
   return (
     <Scroller bgColor="#FDF9F1">
       <HomeIntro profilePicture={globalData.profilePicture} payload={payload} />
-      <Suspense>
-        <HomeProjects projects={projects} homeSections={homeSections} />
-      </Suspense>
+      {projects.map((project) => (
+        <div key={project.uri} className="w-full">
+          <InViewDetector
+            key={project.uri}
+            detectorKey={project.uri}
+            className="flex h-[90vh] w-full scroll-mt-40 flex-col"
+            id={project.uri}
+          >
+            <HomeSection project={project} payload={payload} />
+          </InViewDetector>
+        </div>
+      ))}
 
       <div className="mt-spacing-3lg w-single">
         <TitleBlock
