@@ -8,7 +8,6 @@ import React from "react";
 
 import SmallGalleryBlock from "@/blocks/SmallGalleryBlock";
 import TitleBlock from "@/blocks/TitleBlock";
-import AnimationCoordinator from "@/components/AnimationCoordinator";
 import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
 
