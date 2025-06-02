@@ -32,8 +32,7 @@ updates:
           - postcss
       lottie:
         patterns:
-          - react-lottie
-          - "@types/react-lottie"
+          - "@lottiefiles/*"
       lowRisk:
         patterns:
           - "@chakra-ui/react"
