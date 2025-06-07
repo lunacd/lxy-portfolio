@@ -33,6 +33,14 @@ const linkVariants = {
   hovered: { x: "0.75rem" },
 };
 
+function scrollElementIntoView(id: string) {
+  const targetElement = document.getElementById(id);
+  targetElement?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}
+
 export default function SidebarInteractive() {
   const { globalState } = useGlobalStateContext();
 
@@ -121,13 +129,7 @@ export default function SidebarInteractive() {
                     >
                       <div
                         onClick={() => {
-                          const targetElement = document.getElementById(
-                            route.uri,
-                          );
-                          targetElement?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                          });
+                          scrollElementIntoView(route.uri);
                         }}
                         className={"paragraph cursor-pointer"}
                       >
@@ -150,15 +152,17 @@ export default function SidebarInteractive() {
                 ))}
               </motion.div>
 
-              <MotionLink
-                className="subtitle"
-                href="/blog"
+              <motion.div
+                className="subtitle cursor-pointer"
                 transition={transitionDefault}
                 layout
                 key="blog"
+                onClick={() => {
+                  scrollElementIntoView("blogs");
+                }}
               >
                 Blogs
-              </MotionLink>
+              </motion.div>
             </AnimatePresence>
           </div>
 

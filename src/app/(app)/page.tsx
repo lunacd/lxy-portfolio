@@ -59,7 +59,7 @@ export default async function Landing() {
         </div>
       ))}
 
-      <div className="mt-spacing-3lg w-single">
+      <div className="mt-spacing-3lg w-single" id="blogs">
         <TitleBlock
           text="Blogs"
           titleType="title"
