@@ -18,7 +18,7 @@ interface CarouselInteractiveProps {
   itemCount: number;
 }
 
-export default function CarouselInteractive(
+export default function Carousel(
   props: React.PropsWithChildren<CarouselInteractiveProps>,
 ) {
   const [currentIndex, setCurrentIndex] = useState(0);

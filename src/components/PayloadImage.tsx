@@ -29,8 +29,8 @@ export default async function PayloadImage(props: PayloadImageProps) {
       style={{
         ...props.style,
         ...{
-          flex: props.equalHeight ? media.width / media.height : 0,
-          minWidth: 0,
+          flex: props.equalHeight ? media.width / media.height : undefined,
+          minWidth: props.equalHeight ? 0 : undefined,
         },
       }}
       fill={props.fill}

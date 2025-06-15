@@ -1,3 +1,4 @@
+import { editor } from "./LexicalEditor";
 import type { GlobalConfig } from "payload";
 
 export const Global: GlobalConfig = {
@@ -29,6 +30,40 @@ export const Global: GlobalConfig = {
       type: "upload",
       relationTo: "media",
       required: true,
+    },
+    {
+      name: "testimonials",
+      type: "array",
+      fields: [
+        {
+          name: "content",
+          type: "richText",
+          editor: editor,
+          required: true,
+        },
+        {
+          name: "author",
+          type: "richText",
+          editor: editor,
+          required: true,
+        },
+        {
+          name: "avatar",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+          admin: {
+            description: "1024x1217px",
+          },
+        },
+        {
+          name: "color",
+          type: "text",
+          required: true,
+        },
+      ],
+      required: true,
+      defaultValue: [],
     },
     {
       name: "craftspersonImages",

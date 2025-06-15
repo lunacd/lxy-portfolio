@@ -1,4 +1,4 @@
-import CarouselInteractive from "./CarouselInteractive";
+import CarouselInteractive from "../components/Carousel";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";

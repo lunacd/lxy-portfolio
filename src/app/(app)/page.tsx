@@ -8,8 +8,11 @@ import React from "react";
 
 import SmallGalleryBlock from "@/blocks/SmallGalleryBlock";
 import TitleBlock from "@/blocks/TitleBlock";
+import Carousel from "@/components/Carousel";
 import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
+import Testimonial from "@/components/Testimonial";
+import { getSpacing } from "@/utils/spacingUtil";
 
 export const metadata: Metadata = {
   title: "Shirley Lyu Portfolio",
@@ -45,7 +48,10 @@ export default async function Landing() {
 
   return (
     <Scroller bgColor="#FDF9F1">
+      {/* About Me */}
       <HomeIntro profilePicture={globalData.profilePicture} payload={payload} />
+
+      {/* Projects */}
       {projects.map((project) => (
         <div key={project.uri} className="w-full">
           <InViewDetector
@@ -59,7 +65,28 @@ export default async function Landing() {
         </div>
       ))}
 
-      <div className="mt-spacing-3lg w-single" id="blogs">
+      {/* Testimonials */}
+      <div
+        id="testimonials"
+        style={{ marginTop: getSpacing("xxl") }}
+        className="w-single"
+      ></div>
+      <Carousel textColor="dark" itemCount={globalData.testimonials.length}>
+        {globalData.testimonials.map((testimonial, index) => (
+          <div className="relative w-full shrink-0 pr-4 pb-4 pl-8" key={index}>
+            <Testimonial
+              testimonial={testimonial.content}
+              author={testimonial.author}
+              avatar={testimonial.avatar}
+              payload={payload}
+              color={testimonial.color}
+            ></Testimonial>
+          </div>
+        ))}
+      </Carousel>
+
+      {/* Blogs */}
+      <div className="w-single" id="blogs">
         <TitleBlock
           text="Blogs"
           titleType="title"

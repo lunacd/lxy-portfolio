@@ -158,6 +158,17 @@ export default function SidebarInteractive() {
                 className="subtitle cursor-pointer"
                 transition={transitionDefault}
                 layout
+                key="testimonials"
+                onClick={() => {
+                  scrollElementIntoView("testimonials");
+                }}
+              >
+                Testimonials
+              </motion.div>
+              <motion.div
+                className="subtitle cursor-pointer"
+                transition={transitionDefault}
+                layout
                 key="blog"
                 onClick={() => {
                   scrollElementIntoView("blogs");

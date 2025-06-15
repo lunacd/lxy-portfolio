@@ -62,7 +62,6 @@ type TextBlockProps = Extract<
 export type RichTextContent = TextBlockProps["text"];
 
 export default function TextBlock(props: TextBlockProps) {
-  console.log("Rendering TextBlock", props);
   return (
     <div
       className={classNames(props.className ? props.className : "", {

@@ -221,10 +221,6 @@ export interface Project {
    */
   projectImage?: (number | null) | Media;
   /**
-   * Image displayed on the landing page for mobile users. Aspect ratio should be similar to a typical vertical phone screen. Recommended width: about 1440px.
-   */
-  mobileProjectImage?: (number | null) | Media;
-  /**
    * Image displayed in project galleries. Required dimension: 1280 x 1058.
    */
   projectGalleryImage: number | Media;
@@ -4951,7 +4947,6 @@ export interface ProjectsSelect<T extends boolean = true> {
       };
   brief?: T;
   projectImage?: T;
-  mobileProjectImage?: T;
   projectGalleryImage?: T;
   backgroundColor?: T;
   pageBackgroundColor?: T;
@@ -8020,6 +8015,44 @@ export interface Global {
   resume: number | Document;
   profile: string;
   profilePicture: number | Media;
+  testimonials: {
+    content: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    author: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    /**
+     * 1024x1217px
+     */
+    avatar: number | Media;
+    color: string;
+    id?: string | null;
+  }[];
   craftspersonImages: {
     image: number | Media;
     id?: string | null;
@@ -8056,6 +8089,15 @@ export interface GlobalSelect<T extends boolean = true> {
   resume?: T;
   profile?: T;
   profilePicture?: T;
+  testimonials?:
+    | T
+    | {
+        content?: T;
+        author?: T;
+        avatar?: T;
+        color?: T;
+        id?: T;
+      };
   craftspersonImages?:
     | T
     | {
