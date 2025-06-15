@@ -44,7 +44,7 @@ export default async function RootLayout(props: PropsWithChildren) {
             </div>
           </GlobalStateContextProvider>
         </div>
-        <div className="flex p-8 md:hidden flex-col gap-4">
+        <div className="flex flex-col gap-4 p-8 md:hidden">
           <Image
             src="/logo.svg"
             alt="Shirley Lyu Logo"

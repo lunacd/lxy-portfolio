@@ -20,7 +20,7 @@ export default async function TeslaServiceTraining() {
     await payload.find({
       collection: "projects",
       where: {
-        uri: { equals: "tesla-na-service-training" },
+        uri: { equals: "tesla-service-training" },
       },
       depth: 2,
     })
@@ -29,7 +29,7 @@ export default async function TeslaServiceTraining() {
     await payload.find({
       collection: "projectPages",
       where: {
-        projectName: { equals: "Tesla NA Service Training" },
+        projectName: { equals: "Tesla Service Training" },
       },
     })
   ).docs[0];
