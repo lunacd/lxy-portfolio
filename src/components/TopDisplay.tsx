@@ -49,13 +49,6 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             className="hidden object-cover object-center md:block"
             sizes="100vw"
           />
-          <PayloadImage
-            media={props.project.mobileProjectImage}
-            payload={props.payload}
-            fill
-            className="object-cover object-center md:hidden"
-            sizes="100vw"
-          />
           <div className="absolute top-0 left-0 flex h-full w-full flex-row justify-center">
             {/* Project name */}
             <div className={`w-single mt-spacing-lg relative ${titleColor}`}>

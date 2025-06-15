@@ -154,15 +154,6 @@ export const Projects: CollectionConfig = {
       },
     },
     {
-      name: "mobileProjectImage",
-      type: "upload",
-      relationTo: "media",
-      admin: {
-        description:
-          "Image displayed on the landing page for mobile users. Aspect ratio should be similar to a typical vertical phone screen. Recommended width: about 1440px.",
-      },
-    },
-    {
       name: "projectGalleryImage",
       type: "upload",
       relationTo: "media",
