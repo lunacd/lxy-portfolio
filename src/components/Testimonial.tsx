@@ -23,7 +23,7 @@ export default function Testimonial(props: TestimonialProps) {
         backgroundColor: props.color,
         boxShadow: "-1rem 1rem 0px 0px rgba(0,0,0,0.6)",
       }}
-      className="relative flex h-full flex-row rounded-2xl"
+      className="relative flex h-full flex-row gap-4 rounded-2xl"
     >
       <div className="flex flex-row py-8 pl-8">
         <div className={classNames(pollerOne.className, "text-8xl")}>“</div>
