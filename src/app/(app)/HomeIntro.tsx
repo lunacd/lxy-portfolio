@@ -27,7 +27,7 @@ export default function HomeIntro(props: HomeIntroProps) {
               </div>
             </div>
             <Button href="/about" color="dark" className="mt-8 self-start">
-              Learn More about Me
+              Learn More About Me
             </Button>
           </div>
           <div className="w-1/2 self-end overflow-hidden rounded-lg md:w-1/3">

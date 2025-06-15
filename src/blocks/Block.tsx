@@ -6,6 +6,7 @@ import "server-only";
 import CarouselBlock from "@/blocks/CarouselBlock";
 import ColumnBlock from "@/blocks/ColumnBlock";
 import DocumentBlock from "@/blocks/DocumentBlock";
+import EmbedBlock from "@/blocks/EmbedBlock";
 import EqualHeightImagesBlock from "@/blocks/EqualHeightImagesBlock";
 import HorizontalGalleryBlock from "@/blocks/HorizontalGalleryBlock";
 import HorizontalScrollBlock from "@/blocks/HorizontalScrollBlock";
@@ -69,5 +70,7 @@ export default function Block(props: BlockProps) {
       return <CarouselBlock {...props.block} payload={props.payload} />;
     case "button":
       return <ButtonBlock {...props.block} payload={props.payload} />;
+    case "embed":
+      return <EmbedBlock {...props.block} />;
   }
 }

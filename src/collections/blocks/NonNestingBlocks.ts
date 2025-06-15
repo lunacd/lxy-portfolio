@@ -1,6 +1,7 @@
 import ButtonBlock from "./ButtonBlock";
 import CarouselBlock from "./CarouselBlock";
 import DocumentBlock from "./DocumentBlock";
+import EmbedBlock from "./EmbedBlock";
 import EqualHeightImagesBlock from "./EqualHeightImagesBlock";
 import HorizontalGalleryBlock from "./HorizontalGalleryBlock";
 import HorizontalScrollBlock from "./HorizontalScrollBlock";
@@ -30,4 +31,5 @@ export const nonNestingBlocks = [
   ImageTextBlock,
   CarouselBlock,
   ButtonBlock,
+  EmbedBlock,
 ];
