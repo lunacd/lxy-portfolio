@@ -1,6 +1,4 @@
 import config from "@payload-config";
-import { IconChevronLeft } from "@tabler/icons-react";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 import "server-only";
@@ -46,12 +44,12 @@ export default async function Blog({
   return (
     <>
       <Scroller>
-        <Link href="/blog/">
+        {/* <Link href="/blog/">
           <div className="mt-spacing-lg w-single-small flex flex-row justify-start gap-2">
             <IconChevronLeft></IconChevronLeft>
             All Blogs
           </div>
-        </Link>
+        </Link> */}
         <div className="mt-spacing-lg w-single-small">
           <TitleBlock
             text={blog.title}
