@@ -29,8 +29,8 @@ function TextChild(props: TextChildProps) {
       return (
         <span
           className={classNames({
-            "font-bold": props.format === "bold",
-            italic: props.format === "italic",
+            "font-bold": (props.format as number) & 1,
+            italic: (props.format as number) & 2,
           })}
         >
           {props.text as string}
@@ -59,7 +59,10 @@ type TextBlockProps = Extract<
   className?: string;
 };
 
+export type RichTextContent = TextBlockProps["text"];
+
 export default function TextBlock(props: TextBlockProps) {
+  console.log("Rendering TextBlock", props);
   return (
     <div
       className={classNames(props.className ? props.className : "", {
