@@ -9,10 +9,10 @@ import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 
 export const metadata: Metadata = {
-  title: "Skates | Shirley Lyu",
+  title: "Tesla NA Service Training | Shirley Lyu",
 };
 
-export default async function Skates() {
+export default async function TeslaServiceTraining() {
   const payload = await getPayload({
     config,
   });
@@ -20,24 +20,24 @@ export default async function Skates() {
     await payload.find({
       collection: "projects",
       where: {
-        uri: { equals: "tesla" },
+        uri: { equals: "tesla-na-service-training" },
       },
       depth: 2,
     })
   ).docs[0];
-  const skatesPageData = (
+  const teslaPageData = (
     await payload.find({
       collection: "projectPages",
       where: {
-        projectName: { equals: "Tesla" },
+        projectName: { equals: "Tesla NA Service Training" },
       },
     })
   ).docs[0];
   return (
-    <Scroller bgColor={""}>
+    <Scroller bgColor={teslaData.backgroundColor}>
       <TopDisplay project={teslaData} payload={payload} />
       <div className="w-single">
-        <Blocks blocks={skatesPageData.blocks} payload={payload} />
+        <Blocks blocks={teslaPageData.blocks} payload={payload} />
       </div>
       <RelatedWork
         color={teslaData.contentColor}
