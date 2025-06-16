@@ -39,7 +39,9 @@ export default async function Tura() {
         topChildren={
           <>
             <TopDisplay project={turaData} payload={payload} />
-            <Blocks blocks={skatesPageData.blocks} payload={payload} />
+            <div className="w-single">
+              <Blocks blocks={skatesPageData.blocks} payload={payload} />
+            </div>
           </>
         }
       ></TuraClient>
