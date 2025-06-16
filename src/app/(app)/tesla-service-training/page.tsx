@@ -48,7 +48,7 @@ export default async function TeslaServiceTraining() {
         )}
         payload={payload}
       />
-      <ConnectPrompt payload={payload} />
+      <ConnectPrompt payload={payload} textColor="light" />
     </Scroller>
   );
 }
