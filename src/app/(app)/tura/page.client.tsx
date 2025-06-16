@@ -9,21 +9,16 @@ import LegacyDisplayImage, {
   LegacyStaticDisplayImage,
 } from "@/components/LegacyDisplayImage";
 import LegacyEqualSplit from "@/components/LegacyEqualSplit";
-import LegacyHorizontalGallery from "@/components/LegacyHorizontalGallery";
 import LegacyHorizontalScroll from "@/components/LegacyHorizontalScroll";
 import LegacyLargeGallery from "@/components/LegacyLargeGallery";
 import LegacySpacing from "@/components/LegacySpacing";
 import { RichTextImage } from "@/components/LegacyTextImage";
 import LegacyTextSection, {
-  TextAlignment,
   TextContentType,
   createPlainContent,
 } from "@/components/LegacyTextSection";
 import LegacyTitle, { LegacySubtitle } from "@/components/LegacyTitle";
 
-import Competitive1 from "@/images/tura/competitive/competitive-1-small.webp";
-import Competitive2 from "@/images/tura/competitive/competitive-2-small.webp";
-import Competitive3 from "@/images/tura/competitive/competitive-3-small.webp";
 import Feature1 from "@/images/tura/feature/feature-1-full.webp";
 import Feature2 from "@/images/tura/feature/feature-2-full.webp";
 import Feature3 from "@/images/tura/feature/feature-3-full.webp";
@@ -62,116 +57,6 @@ export default function TuraClient(props: PropsWithChildren<TuraProps>) {
   return (
     <>
       {props.topChildren}
-
-      {/* Overview */}
-      <LegacyTitle title="Overview" />
-      <LegacyEqualSplit>
-        <LegacyTextSection
-          title="The Problem"
-          content={createPlainContent([
-            "Hard to find travel buddies that have similar interests.",
-          ])}
-          titleClass="subtitle"
-        />
-        <LegacyTextSection
-          title="The Goal"
-          content={createPlainContent([
-            "A phone app to help users meet new travel buddies by gathering people with similar interests. Users can choose their comfortable ways to meet new people and make friends during trips.",
-          ])}
-          titleClass="subtitle"
-        />
-      </LegacyEqualSplit>
-      <LegacySpacing size="large" />
-
-      {/* Project Ideation */}
-      <LegacyTitle title="Project Ideation" />
-      <LegacySubtitle title="Competitive Research" />
-      <LegacyHorizontalGallery
-        items={[
-          {
-            image: Competitive1,
-            title: "Unite Strangers",
-            content: [
-              {
-                type: TextContentType.Normal,
-                text: "A website for strangers to meet and travel together",
-              },
-              {
-                type: TextContentType.Subtitle,
-                text: "Pro",
-              },
-              {
-                type: TextContentType.Normal,
-                text: "Curated trips, application form for trips",
-              },
-              {
-                type: TextContentType.Subtitle,
-                text: "Con",
-              },
-              {
-                type: TextContentType.Normal,
-                text: "Self-organized trips, no obvious security measures",
-              },
-            ],
-          },
-          {
-            image: Competitive2,
-            title: "Adequate Travel",
-            content: [
-              {
-                type: TextContentType.Normal,
-                text: "An app to primarily to compare hotel prices worldwide and find the best and cheap hotel deals from all hotel booking sites",
-              },
-              {
-                type: TextContentType.Subtitle,
-                text: "Pro",
-              },
-              {
-                type: TextContentType.Normal,
-                text: "Fully featured with booking and planning",
-              },
-              {
-                type: TextContentType.Subtitle,
-                text: "Con",
-              },
-              {
-                type: TextContentType.Normal,
-                text: "Not built for stranger traveling, although it is theoretically possible，strangers must meet through stories and negotiate their own trips",
-              },
-            ],
-          },
-          {
-            image: Competitive3,
-            title: "You Xiake (游侠客）",
-
-            content: [
-              {
-                type: TextContentType.Normal,
-                text: "An app that provide you many travelling schedules to choose. You need to group with strangers and be leaded by a tour guider.",
-              },
-              {
-                type: TextContentType.Subtitle,
-                text: "Pro",
-              },
-              {
-                type: TextContentType.Normal,
-                text: "Fully featured with hotels and transportations, fully planned trips, travel-guide moderated trips (safe)",
-              },
-              {
-                type: TextContentType.Subtitle,
-                text: "Con",
-              },
-              {
-                type: TextContentType.Normal,
-                text: "No personalized trips, no option for solo trips, no oriented towards friendship-building",
-              },
-            ],
-          },
-        ]}
-        width={640}
-        height={327}
-        alignment={TextAlignment.Left}
-      />
 
       <LegacyEqualSplit>
         <div>
