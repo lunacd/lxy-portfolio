@@ -3,6 +3,7 @@ import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
+import Blocks from "@/blocks/Blocks";
 import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
@@ -24,10 +25,23 @@ export default async function Tura() {
       depth: 2,
     })
   ).docs[0];
+  const skatesPageData = (
+    await payload.find({
+      collection: "projectPages",
+      where: {
+        projectName: { equals: "Tura" },
+      },
+    })
+  ).docs[0];
   return (
     <Scroller bgColor={turaData.backgroundColor}>
       <TuraClient
-        topChildren={<TopDisplay project={turaData} payload={payload} />}
+        topChildren={
+          <>
+            <TopDisplay project={turaData} payload={payload} />
+            <Blocks blocks={skatesPageData.blocks} payload={payload} />
+          </>
+        }
       ></TuraClient>
       <RelatedWork
         color={turaData.contentColor}
