@@ -47,7 +47,7 @@ export default async function Landing() {
   const blogs = promises[2].docs;
 
   return (
-    <Scroller bgColor="#FDF9F1">
+    <Scroller bgColor="#FDF9F1" restoreId="home-scroller">
       {/* About Me */}
       <HomeIntro profilePicture={globalData.profilePicture} payload={payload} />
 

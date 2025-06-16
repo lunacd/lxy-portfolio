@@ -5,6 +5,7 @@ import "./global.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import config from "@payload-config";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ScrollRestoration } from "next-scroll-restoration";
 import { Catamaran } from "next/font/google";
 import Image from "next/image";
 import { getPayload } from "payload";
@@ -59,6 +60,7 @@ export default async function RootLayout(props: PropsWithChildren) {
             experience.
           </div>
         </div>
+        <ScrollRestoration />
         <SpeedInsights />
       </body>
       <GoogleAnalytics gaId="G-26S1RW6P14" />
