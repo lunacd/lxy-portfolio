@@ -1,6 +1,6 @@
 import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
 
-export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
+export async function up({ db }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
    CREATE TYPE "public"."enum_project_pages_blocks_row_2_spacing" AS ENUM('small', 'medium', 'regular', 'large', 'xl', 'xxl');
   CREATE TYPE "public"."enum_project_pages_blocks_row_2_bottom_margin" AS ENUM('none', 'small', 'medium', 'regular', 'large', 'xl', 'xxl');
@@ -40,7 +40,7 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX "blogs_blocks_row_2_path_idx" ON "blogs_blocks_row_2" USING btree ("_path");`)
 }
 
-export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
+export async function down({ db }: MigrateDownArgs): Promise<void> {
   await db.execute(sql`
    DROP TABLE "project_pages_blocks_row_2" CASCADE;
   DROP TABLE "blogs_blocks_row_2" CASCADE;
