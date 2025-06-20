@@ -33,10 +33,12 @@ export default async function TeslaServiceTraining() {
       },
     })
   ).docs[0];
+  const scrollerBackground =
+    teslaData.pageBackgroundColor && teslaData.pageBackgroundColor.length > 0
+      ? teslaData.pageBackgroundColor
+      : teslaData.backgroundColor;
   return (
-    <Scroller
-      bgColor={teslaData.pageBackgroundColor ?? teslaData.backgroundColor}
-    >
+    <Scroller bgColor={scrollerBackground}>
       <TopDisplay project={teslaData} payload={payload} />
       <div className="w-single">
         <Blocks blocks={teslaPageData.blocks} payload={payload} />
