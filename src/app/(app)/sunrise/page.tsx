@@ -28,7 +28,7 @@ export default async function Sunrise() {
     await payload.find({
       collection: "projectPages",
       where: {
-        projectName: { equals: "Tura" },
+        projectName: { equals: "Sunrise" },
       },
     })
   ).docs[0];
