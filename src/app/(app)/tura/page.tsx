@@ -1,4 +1,3 @@
-import TuraClient from "./page.client";
 import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
@@ -35,16 +34,10 @@ export default async function Tura() {
   ).docs[0];
   return (
     <Scroller bgColor={turaData.backgroundColor}>
-      <TuraClient
-        topChildren={
-          <>
-            <TopDisplay project={turaData} payload={payload} />
-            <div className="w-single">
-              <Blocks blocks={skatesPageData.blocks} payload={payload} />
-            </div>
-          </>
-        }
-      ></TuraClient>
+      <TopDisplay project={turaData} payload={payload} />
+      <div className="w-single">
+        <Blocks blocks={skatesPageData.blocks} payload={payload} />
+      </div>
       <RelatedWork
         color={turaData.contentColor}
         projects={turaData.relatedWorks.map(
