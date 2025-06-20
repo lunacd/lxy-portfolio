@@ -95,7 +95,12 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
         </div>
 
         {/* Project details */}
-        <div className="flex flex-col items-center">
+        <div
+          className={classNames("flex flex-col items-center", {
+            "text-white": props.project.contentColor === "light",
+            "text-black": props.project.contentColor === "dark",
+          })}
+        >
           <div className="single mx-spacing-lg space-x-spacing flex flex-row py-8">
             <div className="grid w-full grid-cols-2 gap-2">
               <div className={styles.detailSection}>
@@ -112,7 +117,13 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
               {props.project.focuses && (
                 <div className="col-span-2 flex flex-row flex-wrap space-x-2">
                   {props.project.focuses.map((focus, index) => {
-                    return <CategoryTag key={index} category={focus.focus} />;
+                    return (
+                      <CategoryTag
+                        key={index}
+                        category={focus.focus}
+                        textColor={props.project.contentColor}
+                      />
+                    );
                   })}
                 </div>
               )}

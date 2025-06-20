@@ -2,7 +2,7 @@ import classNames from "classnames";
 
 interface CategoryTagProps {
   category: string;
-  titleColor?: string;
+  textColor?: string;
 }
 
 const defaultProps = {
@@ -16,9 +16,8 @@ export default function CategoryTag(propsIn: CategoryTagProps) {
       className={classNames(
         "rounded-full border px-2 py-1 text-xs text-black md:text-sm",
         {
-          [props.titleColor]: true,
-          "border-gray-100": props.titleColor === "text-gray-100",
-          "border-gray-950": props.titleColor !== "text-gray-100",
+          "border-gray-100 text-gray-100": props.textColor === "light",
+          "border-gray-950 text-gray-950": props.textColor === "dark",
         },
       )}
     >
