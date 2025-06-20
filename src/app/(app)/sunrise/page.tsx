@@ -1,8 +1,8 @@
-import SunriseClient from "./page.client";
 import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
+import Blocks from "@/blocks/Blocks";
 import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
@@ -24,11 +24,20 @@ export default async function Sunrise() {
       depth: 2,
     })
   ).docs[0];
+  const sunrisePageData = (
+    await payload.find({
+      collection: "projectPages",
+      where: {
+        projectName: { equals: "Tura" },
+      },
+    })
+  ).docs[0];
   return (
     <Scroller bgColor={sunriseData.backgroundColor}>
-      <SunriseClient
-        topChildren={<TopDisplay project={sunriseData} payload={payload} />}
-      ></SunriseClient>
+      <TopDisplay project={sunriseData} payload={payload} />
+      <div className="w-single">
+        <Blocks blocks={sunrisePageData.blocks} payload={payload} />
+      </div>
       <RelatedWork
         color={sunriseData.contentColor}
         projects={sunriseData.relatedWorks.map(

@@ -24,7 +24,7 @@ export default async function Tura() {
       depth: 2,
     })
   ).docs[0];
-  const skatesPageData = (
+  const turaPageData = (
     await payload.find({
       collection: "projectPages",
       where: {
@@ -36,7 +36,7 @@ export default async function Tura() {
     <Scroller bgColor={turaData.backgroundColor}>
       <TopDisplay project={turaData} payload={payload} />
       <div className="w-single">
-        <Blocks blocks={skatesPageData.blocks} payload={payload} />
+        <Blocks blocks={turaPageData.blocks} payload={payload} />
       </div>
       <RelatedWork
         color={turaData.contentColor}
