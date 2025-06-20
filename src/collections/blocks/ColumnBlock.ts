@@ -18,7 +18,7 @@ export default function ColumnBlock(depth: number): Block {
       {
         name: "spacing",
         type: "radio",
-        options: ["small", "medium", "regular", "large", "xl", "xxl"],
+        options: ["none", "small", "medium", "regular", "large", "xl", "xxl"],
         required: true,
         defaultValue: "regular",
       },
