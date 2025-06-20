@@ -28,7 +28,6 @@ export default function Carousel(
   });
   return (
     <>
-      {" "}
       <div
         className={classNames(
           "w-single flex flex-row items-center md:space-x-4",
@@ -78,11 +77,16 @@ export default function Carousel(
           />
         </div>
       </div>
-      <div className="w-single mb-spacing-3lg relative mt-4 h-3">
+      <div
+        className={classNames("w-single mb-spacing-3lg relative mt-4 h-3", {
+          "text-white": props.textColor === "light",
+          "text-black": props.textColor === "dark",
+        })}
+      >
         <div className="absolute top-0 bottom-0 left-1/2 flex -translate-x-1/2 flex-row space-x-3">
           {[...Array(props.itemCount)].map((_, index) => (
             <div
-              className={`relative h-3 w-3 cursor-pointer ${props.textColor}`}
+              className={"relative h-3 w-3 cursor-pointer"}
               onClick={() => {
                 setCurrentIndex(index);
               }}
