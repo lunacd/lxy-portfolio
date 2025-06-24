@@ -1,8 +1,9 @@
-import SoulClient from "./page.client";
 import config from "@payload-config";
 import { Metadata } from "next";
 import { getPayload } from "payload";
 
+import Blocks from "@/blocks/Blocks";
+import AnimationCoordinator from "@/components/AnimationCoordinator";
 import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
@@ -24,18 +25,29 @@ export default async function Soul() {
       depth: 2,
     })
   ).docs[0];
+  const soulPageData = (
+    await payload.find({
+      collection: "projectPages",
+      where: {
+        projectName: { equals: "Soul" },
+      },
+    })
+  ).docs[0];
   return (
-    <Scroller bgColor={soulData.backgroundColor}>
-      <SoulClient
-        topChildren={<TopDisplay project={soulData} payload={payload} />}
-      ></SoulClient>
-      <RelatedWork
-        color={soulData.contentColor}
-        projects={soulData.relatedWorks.map(
-          (relatedWork) => relatedWork.relatedWork,
-        )}
-        payload={payload}
-      />
-    </Scroller>
+    <AnimationCoordinator frameDuration={2000}>
+      <Scroller bgColor={soulData.backgroundColor}>
+        <TopDisplay project={soulData} payload={payload} />
+        <div className="w-single">
+          <Blocks blocks={soulPageData.blocks} payload={payload} />
+        </div>
+        <RelatedWork
+          color={soulData.contentColor}
+          projects={soulData.relatedWorks.map(
+            (relatedWork) => relatedWork.relatedWork,
+          )}
+          payload={payload}
+        />
+      </Scroller>
+    </AnimationCoordinator>
   );
 }
