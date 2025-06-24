@@ -37,7 +37,15 @@ function TextChild(props: TextChildProps) {
         </span>
       );
     case "listitem":
-      return <li>{children}</li>;
+      return (
+        <li
+          className={classNames({
+            "text-center": props.format === "center",
+          })}
+        >
+          {children}
+        </li>
+      );
     case "link":
       return (
         <a
