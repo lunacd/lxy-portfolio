@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, forwardRef } from "react";
 
-import LegacySpacing from "@/components/LegacySpacing";
+import { getSpacing } from "@/utils/spacingUtil";
 
 interface ScrollerProps {
   bgColor?: string | null;
@@ -16,9 +16,11 @@ const Scroller = forwardRef<HTMLDivElement, PropsWithChildren<ScrollerProps>>(
         ref={ref}
         data-scroll-restoration-id={props.restoreId}
       >
-        <div className="flex flex-col items-center">
+        <div
+          className="flex flex-col items-center"
+          style={{ marginBottom: getSpacing("medium") }}
+        >
           {props.children}
-          <LegacySpacing size="medium" />
         </div>
       </div>
     );

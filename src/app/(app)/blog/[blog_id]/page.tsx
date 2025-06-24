@@ -5,9 +5,9 @@ import "server-only";
 import Blocks from "src/blocks/Blocks";
 import TitleBlock from "src/blocks/TitleBlock";
 
-import LegacySpacing from "@/components/LegacySpacing";
 import { RefreshRouteOnSave } from "@/components/RefreshRouteOnSave";
 import Scroller from "@/components/Scroller";
+import { getSpacing } from "@/utils/spacingUtil";
 
 export async function generateMetadata({
   params,
@@ -58,14 +58,16 @@ export default async function Blog({
             textColor="dark"
             bottomMargin="none"
           />
-          <div className="paragraph">
+          <div
+            className="paragraph"
+            style={{ marginBottom: getSpacing("medium") }}
+          >
             {new Date(blog.date).toLocaleDateString(undefined, {
               year: "numeric",
               month: "long",
               day: "numeric",
             })}
           </div>
-          <LegacySpacing size="medium" />
           <Blocks payload={payload} blocks={blog.blocks} />
         </div>
       </Scroller>
