@@ -85,15 +85,15 @@ ul {
 }
 
 .subtitle {
-  @apply text-base font-semibold xl:text-lg;
+  @apply text-lg font-semibold xl:text-xl;
 }
 
 .subsubtitle {
-  @apply text-base xl:text-lg;
+  @apply text-lg xl:text-xl;
 }
 
 .paragraph {
-  @apply text-xs font-extralight lg:text-sm xl:text-base;
+  @apply text-base font-extralight xl:text-lg;
 }
 
 /* 1 */
