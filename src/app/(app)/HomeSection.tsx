@@ -51,8 +51,8 @@ export default async function HomeSection(props: HomeSectionProps) {
                   <div className="title">{props.project.name}</div>
                   <div className="paragraph">{props.project.brief}</div>
 
-                  <div>
-                    <span className="font-bold">Flavor: </span>
+                  <div className="paragraph">
+                    <span className="font-semibold">Flavor: </span>
                     {props.project.flavor}
                   </div>
 
@@ -60,7 +60,10 @@ export default async function HomeSection(props: HomeSectionProps) {
                     {props.project.focuses &&
                       props.project.focuses.map((focus, index) => {
                         return (
-                          <div key={index} className="leading-4 italic">
+                          <div
+                            key={index}
+                            className="paragraph leading-4 italic"
+                          >
                             #{focus.focus.replace(/ /g, "")}
                           </div>
                         );
