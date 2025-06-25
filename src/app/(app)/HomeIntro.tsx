@@ -21,7 +21,7 @@ export default function HomeIntro(props: HomeIntroProps) {
         <div className="flex flex-col justify-around gap-4 md:flex-row">
           <div className="flex max-w-1/2 flex-col self-center md:self-end">
             <IntroAnimation />
-            <div className="mr-auto text-lg md:text-xl">
+            <div className="paragraph mr-auto">
               <div>
                 I create intuitive and impactful products and experiences
               </div>

@@ -70,7 +70,7 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
                 )}
                 <div className="relative">
                   <div className="title">{props.project.name}</div>
-                  <div className="mt-2 text-base lg:max-w-[25%]">
+                  <div className="mt-2 paragraph lg:max-w-[25%]">
                     {props.project.brief}
                   </div>
                 </div>

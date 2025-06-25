@@ -14,7 +14,7 @@ export default function CategoryTag(propsIn: CategoryTagProps) {
   return (
     <div
       className={classNames(
-        "rounded-full border px-2 py-1 text-xs text-black md:text-sm",
+        "rounded-full border px-2 py-1 text-black paragraph",
         {
           "border-gray-100 text-gray-100": props.textColor === "light",
           "border-gray-950 text-gray-950": props.textColor === "dark",

@@ -19,7 +19,7 @@ export default async function ConnectPrompt(propsIn: ConnectPromptProps) {
   });
   return (
     <>
-      <div className={`mt-8 text-lg ${props.textColor}`}>
+      <div className={`mt-8 paragraph ${props.textColor}`}>
         {data.connectionPrompt}
       </div>
       <a
