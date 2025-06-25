@@ -102,7 +102,7 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
           })}
         >
           <div className="single mx-spacing-lg space-x-spacing flex flex-row py-8">
-            <div className="grid w-full grid-cols-2 gap-2">
+            <div className="grid w-full grid-cols-2 gap-2 paragraph">
               <div className={styles.detailSection}>
                 <span>Duration: </span>
                 {props.project.duration}
