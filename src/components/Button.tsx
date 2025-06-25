@@ -14,7 +14,7 @@ export default function Button(props: PropsWithChildren<ButtonProps>) {
   return (
     <a
       className={classNames(
-        "subtitle rounded-full px-6 py-1",
+        "pargraph font-semibold rounded-full px-6 py-1",
         props.className,
         {
           "bg-black text-white": props.color === "dark",
