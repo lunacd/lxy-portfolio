@@ -1,5 +1,4 @@
 import config from "@payload-config";
-import { Project, ProjectPage } from "@payload-types";
 import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 

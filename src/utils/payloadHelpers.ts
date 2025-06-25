@@ -1,6 +1,5 @@
 import { Document, Media, Project } from "@payload-types";
-import { Payload, Where } from "payload";
-import React from "react";
+import { Payload } from "payload";
 import "server-only";
 
 interface NonOptionalMedia {
