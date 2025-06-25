@@ -98,7 +98,7 @@ export default function SidebarInteractive() {
           <div className="mt-16 flex flex-col space-y-1 pt-4 pb-6">
             <AnimatePresence initial={false} mode="popLayout">
               <motion.div
-                className="paragraph font-semibold cursor-pointer"
+                className="paragraph font-semibold! cursor-pointer"
                 transition={transitionDefault}
                 layout
                 key="about"
@@ -108,7 +108,7 @@ export default function SidebarInteractive() {
               >
                 About
               </motion.div>
-              <MotionLink className="paragraph font-semibold" href="/" key="title">
+              <MotionLink className="paragraph font-semibold!" href="/" key="title">
                 {globalState.title}
               </MotionLink>
               <motion.div
@@ -155,7 +155,7 @@ export default function SidebarInteractive() {
               </motion.div>
 
               <motion.div
-                className="paragraph font-semibold cursor-pointer"
+                className="paragraph font-semibold! cursor-pointer"
                 transition={transitionDefault}
                 layout
                 key="testimonials"
@@ -166,7 +166,7 @@ export default function SidebarInteractive() {
                 Testimonials
               </motion.div>
               <motion.div
-                className="paragraph font-semibold cursor-pointer"
+                className="paragraph font-semibold! cursor-pointer"
                 transition={transitionDefault}
                 layout
                 key="blog"
