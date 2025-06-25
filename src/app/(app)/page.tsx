@@ -119,9 +119,7 @@ export default async function Landing() {
                     {
                       type: "paragraph",
                       version: 0,
-                      children: [
-                        { type: "text", text: blog.title, format: "bold" },
-                      ],
+                      children: [{ type: "text", text: blog.title, format: 1 }],
                     },
                     {
                       type: "paragraph",
