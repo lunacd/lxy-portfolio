@@ -71,7 +71,10 @@ export default function SidebarInteractive() {
           lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
       >
         {/* Content container */}
-        <div className="absolute top-0 right-14 flex h-full w-36 flex-col py-16 xl:right-24">
+        <div
+          className="absolute top-0 right-14 flex h-full w-36 flex-col justify-between py-16
+            xl:right-24"
+        >
           {/* Logo */}
           <Link
             className="cursor-pointer"
@@ -95,10 +98,10 @@ export default function SidebarInteractive() {
           </Link>
 
           {/* Routes */}
-          <div className="mt-16 flex flex-col space-y-1 pt-4 pb-6">
+          <div className="flex flex-col space-y-1 pt-4 pb-6">
             <AnimatePresence initial={false} mode="popLayout">
               <motion.div
-                className="paragraph font-semibold! cursor-pointer"
+                className="paragraph cursor-pointer font-semibold!"
                 transition={transitionDefault}
                 layout
                 key="about"
@@ -108,7 +111,11 @@ export default function SidebarInteractive() {
               >
                 About
               </motion.div>
-              <MotionLink className="paragraph font-semibold!" href="/" key="title">
+              <MotionLink
+                className="paragraph font-semibold!"
+                href="/"
+                key="title"
+              >
                 {globalState.title}
               </MotionLink>
               <motion.div
@@ -155,7 +162,7 @@ export default function SidebarInteractive() {
               </motion.div>
 
               <motion.div
-                className="paragraph font-semibold! cursor-pointer"
+                className="paragraph cursor-pointer font-semibold!"
                 transition={transitionDefault}
                 layout
                 key="testimonials"
@@ -166,7 +173,7 @@ export default function SidebarInteractive() {
                 Testimonials
               </motion.div>
               <motion.div
-                className="paragraph font-semibold! cursor-pointer"
+                className="paragraph cursor-pointer font-semibold!"
                 transition={transitionDefault}
                 layout
                 key="blog"
@@ -180,7 +187,7 @@ export default function SidebarInteractive() {
           </div>
 
           {/* Social links */}
-          <div className="mt-auto flex flex-row justify-between">
+          <div className="flex flex-row justify-between">
             <Tooltip tip="Instagram">
               <a
                 href="https://www.instagram.com/lyu.shirley/"
