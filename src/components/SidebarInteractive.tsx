@@ -72,8 +72,8 @@ export default function SidebarInteractive() {
       >
         {/* Content container */}
         <div
-          className="absolute top-0 right-14 flex h-full w-36 flex-col justify-between py-16
-            xl:right-24"
+          className="absolute top-0 right-10 flex h-full w-44 flex-col justify-between py-16
+            xl:right-20"
         >
           {/* Logo */}
           <Link
