@@ -1,9 +1,10 @@
-import TextBlock from "./TextBlock";
 import { ProjectPage } from "@payload-types";
+import classNames from "classnames";
 import { Payload } from "payload";
 import "server-only";
 
 import PayloadImage from "@/components/PayloadImage";
+import Text from "@/components/Text";
 import { getSpacing } from "@/utils/spacingUtil";
 
 type ImageWithTextOverlayBlockProps = Extract<
@@ -23,13 +24,13 @@ export default function ImageWithTextOverlayBlock(
         style={{ marginBottom: getSpacing(props.bottomMargin) }}
         className="relative h-full w-full"
       />
-      <TextBlock
+      <Text
         text={props.textOverlay}
-        textColor={props.textColor}
-        blockType="text"
-        bottomMargin="none"
-        className="top-0 right-2/3 left-0 md:absolute"
-      ></TextBlock>
+        className={classNames("top-0 right-2/3 left-0 md:absolute", {
+          "text-white": props.textColor === "light",
+          "text-black": props.textColor === "dark",
+        })}
+      ></Text>
     </div>
   );
 }

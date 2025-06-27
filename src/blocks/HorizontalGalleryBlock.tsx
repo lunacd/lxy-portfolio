@@ -1,10 +1,11 @@
-import TextBlock from "./TextBlock";
 import { ProjectPage } from "@payload-types";
+import classNames from "classnames";
 import { Payload } from "payload";
 import "server-only";
 
 import Row from "@/components/Row";
 import SlideShow from "@/components/SlideShow";
+import Text from "@/components/Text";
 import { unwrapImages } from "@/utils/payloadHelpers";
 
 type HorizontalGalleryBlockProps = Extract<
@@ -30,12 +31,13 @@ export default function HorizontalGalleryBlock(
             payload={props.payload}
           />
           {item.text && (
-            <TextBlock
+            <Text
               text={item.text}
-              textColor={props.textColor}
-              bottomMargin="none"
-              blockType="text"
-            ></TextBlock>
+              className={classNames({
+                "text-white": props.textColor === "light",
+                "text-black": props.textColor === "dark",
+              })}
+            ></Text>
           )}
         </div>
       ))}

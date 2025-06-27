@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { Poller_One } from "next/font/google";
 import { Payload } from "payload";
 
-import TextBlock, { RichTextContent } from "@/blocks/TextBlock";
+import Text, { RichTextContent } from "@/components/Text";
 
 interface TestimonialProps {
   color: string;
@@ -32,19 +32,8 @@ export default function Testimonial(props: TestimonialProps) {
       <div className="flex grow flex-row py-8 pl-8">
         <div className={classNames(pollerOne.className, "text-8xl")}>“</div>
         <div className="ml-2 flex grow flex-col gap-8">
-          <TextBlock
-            text={props.testimonial}
-            textColor="dark"
-            blockType="text"
-            bottomMargin="none"
-          ></TextBlock>
-          <TextBlock
-            text={props.author}
-            textColor="dark"
-            blockType="text"
-            bottomMargin="none"
-            className="mt-auto"
-          ></TextBlock>
+          <Text text={props.testimonial}></Text>
+          <Text text={props.author} className="mt-auto"></Text>
         </div>
       </div>
       {props.avatar && (

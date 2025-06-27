@@ -1,4 +1,5 @@
 import ButtonBlock from "./ButtonBlock";
+import NoteBlock from "./NoteBlock";
 import TestimonialBlock from "./TestimonialBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
@@ -75,5 +76,7 @@ export default function Block(props: BlockProps) {
       return <EmbedBlock {...props.block} />;
     case "testimonial":
       return <TestimonialBlock {...props.block} payload={props.payload} />;
+    case "note":
+      return <NoteBlock {...props.block} />;
   }
 }
