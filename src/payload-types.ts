@@ -620,7 +620,7 @@ export interface ProjectPage {
         blockType: 'testimonial';
       }
     | {
-        noteEmoji: string;
+        emphasis: string;
         text: {
           root: {
             type: string;
@@ -636,12 +636,13 @@ export interface ProjectPage {
           };
           [k: string]: unknown;
         };
-        backgroundColor: string;
+        useBackground: boolean;
+        backgroundColor?: string | null;
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         textColor: 'dark' | 'light';
         id?: string | null;
         blockName?: string | null;
-        blockType: 'note';
+        blockType: 'emphasisText';
       }
     | {
         blocks: (
@@ -1000,7 +1001,7 @@ export interface ProjectPage {
               blockType: 'testimonial';
             }
           | {
-              noteEmoji: string;
+              emphasis: string;
               text: {
                 root: {
                   type: string;
@@ -1016,12 +1017,13 @@ export interface ProjectPage {
                 };
                 [k: string]: unknown;
               };
-              backgroundColor: string;
+              useBackground: boolean;
+              backgroundColor?: string | null;
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
               id?: string | null;
               blockName?: string | null;
-              blockType: 'note';
+              blockType: 'emphasisText';
             }
           | {
               blocks: (
@@ -1380,7 +1382,7 @@ export interface ProjectPage {
                     blockType: 'testimonial';
                   }
                 | {
-                    noteEmoji: string;
+                    emphasis: string;
                     text: {
                       root: {
                         type: string;
@@ -1396,12 +1398,13 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    backgroundColor: string;
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: 'note';
+                    blockType: 'emphasisText';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1768,7 +1771,7 @@ export interface ProjectPage {
                     blockType: 'testimonial';
                   }
                 | {
-                    noteEmoji: string;
+                    emphasis: string;
                     text: {
                       root: {
                         type: string;
@@ -1784,12 +1787,13 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    backgroundColor: string;
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: 'note';
+                    blockType: 'emphasisText';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2164,7 +2168,7 @@ export interface ProjectPage {
               blockType: 'testimonial';
             }
           | {
-              noteEmoji: string;
+              emphasis: string;
               text: {
                 root: {
                   type: string;
@@ -2180,12 +2184,13 @@ export interface ProjectPage {
                 };
                 [k: string]: unknown;
               };
-              backgroundColor: string;
+              useBackground: boolean;
+              backgroundColor?: string | null;
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
               id?: string | null;
               blockName?: string | null;
-              blockType: 'note';
+              blockType: 'emphasisText';
             }
           | {
               blocks: (
@@ -2544,7 +2549,7 @@ export interface ProjectPage {
                     blockType: 'testimonial';
                   }
                 | {
-                    noteEmoji: string;
+                    emphasis: string;
                     text: {
                       root: {
                         type: string;
@@ -2560,12 +2565,13 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    backgroundColor: string;
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: 'note';
+                    blockType: 'emphasisText';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2932,7 +2938,7 @@ export interface ProjectPage {
                     blockType: 'testimonial';
                   }
                 | {
-                    noteEmoji: string;
+                    emphasis: string;
                     text: {
                       root: {
                         type: string;
@@ -2948,12 +2954,13 @@ export interface ProjectPage {
                       };
                       [k: string]: unknown;
                     };
-                    backgroundColor: string;
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: 'note';
+                    blockType: 'emphasisText';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3351,7 +3358,7 @@ export interface Blog {
         blockType: 'testimonial';
       }
     | {
-        noteEmoji: string;
+        emphasis: string;
         text: {
           root: {
             type: string;
@@ -3367,12 +3374,13 @@ export interface Blog {
           };
           [k: string]: unknown;
         };
-        backgroundColor: string;
+        useBackground: boolean;
+        backgroundColor?: string | null;
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         textColor: 'dark' | 'light';
         id?: string | null;
         blockName?: string | null;
-        blockType: 'note';
+        blockType: 'emphasisText';
       }
     | {
         blocks: (
@@ -3731,7 +3739,7 @@ export interface Blog {
               blockType: 'testimonial';
             }
           | {
-              noteEmoji: string;
+              emphasis: string;
               text: {
                 root: {
                   type: string;
@@ -3747,12 +3755,13 @@ export interface Blog {
                 };
                 [k: string]: unknown;
               };
-              backgroundColor: string;
+              useBackground: boolean;
+              backgroundColor?: string | null;
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
               id?: string | null;
               blockName?: string | null;
-              blockType: 'note';
+              blockType: 'emphasisText';
             }
           | {
               blocks: (
@@ -4111,7 +4120,7 @@ export interface Blog {
                     blockType: 'testimonial';
                   }
                 | {
-                    noteEmoji: string;
+                    emphasis: string;
                     text: {
                       root: {
                         type: string;
@@ -4127,12 +4136,13 @@ export interface Blog {
                       };
                       [k: string]: unknown;
                     };
-                    backgroundColor: string;
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: 'note';
+                    blockType: 'emphasisText';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4499,7 +4509,7 @@ export interface Blog {
                     blockType: 'testimonial';
                   }
                 | {
-                    noteEmoji: string;
+                    emphasis: string;
                     text: {
                       root: {
                         type: string;
@@ -4515,12 +4525,13 @@ export interface Blog {
                       };
                       [k: string]: unknown;
                     };
-                    backgroundColor: string;
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: 'note';
+                    blockType: 'emphasisText';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4895,7 +4906,7 @@ export interface Blog {
               blockType: 'testimonial';
             }
           | {
-              noteEmoji: string;
+              emphasis: string;
               text: {
                 root: {
                   type: string;
@@ -4911,12 +4922,13 @@ export interface Blog {
                 };
                 [k: string]: unknown;
               };
-              backgroundColor: string;
+              useBackground: boolean;
+              backgroundColor?: string | null;
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               textColor: 'dark' | 'light';
               id?: string | null;
               blockName?: string | null;
-              blockType: 'note';
+              blockType: 'emphasisText';
             }
           | {
               blocks: (
@@ -5275,7 +5287,7 @@ export interface Blog {
                     blockType: 'testimonial';
                   }
                 | {
-                    noteEmoji: string;
+                    emphasis: string;
                     text: {
                       root: {
                         type: string;
@@ -5291,12 +5303,13 @@ export interface Blog {
                       };
                       [k: string]: unknown;
                     };
-                    backgroundColor: string;
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: 'note';
+                    blockType: 'emphasisText';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -5663,7 +5676,7 @@ export interface Blog {
                     blockType: 'testimonial';
                   }
                 | {
-                    noteEmoji: string;
+                    emphasis: string;
                     text: {
                       root: {
                         type: string;
@@ -5679,12 +5692,13 @@ export interface Blog {
                       };
                       [k: string]: unknown;
                     };
-                    backgroundColor: string;
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     textColor: 'dark' | 'light';
                     id?: string | null;
                     blockName?: string | null;
-                    blockType: 'note';
+                    blockType: 'emphasisText';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -6096,11 +6110,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
-        note?:
+        emphasisText?:
           | T
           | {
-              noteEmoji?: T;
+              emphasis?: T;
               text?: T;
+              useBackground?: T;
               backgroundColor?: T;
               bottomMargin?: T;
               textColor?: T;
@@ -6325,11 +6340,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
-                    note?:
+                    emphasisText?:
                       | T
                       | {
-                          noteEmoji?: T;
+                          emphasis?: T;
                           text?: T;
+                          useBackground?: T;
                           backgroundColor?: T;
                           bottomMargin?: T;
                           textColor?: T;
@@ -6554,11 +6570,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       id?: T;
                                       blockName?: T;
                                     };
-                                note?:
+                                emphasisText?:
                                   | T
                                   | {
-                                      noteEmoji?: T;
+                                      emphasis?: T;
                                       text?: T;
+                                      useBackground?: T;
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
@@ -6790,11 +6807,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       id?: T;
                                       blockName?: T;
                                     };
-                                note?:
+                                emphasisText?:
                                   | T
                                   | {
-                                      noteEmoji?: T;
+                                      emphasis?: T;
                                       text?: T;
+                                      useBackground?: T;
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
@@ -7033,11 +7051,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
-                    note?:
+                    emphasisText?:
                       | T
                       | {
-                          noteEmoji?: T;
+                          emphasis?: T;
                           text?: T;
+                          useBackground?: T;
                           backgroundColor?: T;
                           bottomMargin?: T;
                           textColor?: T;
@@ -7262,11 +7281,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       id?: T;
                                       blockName?: T;
                                     };
-                                note?:
+                                emphasisText?:
                                   | T
                                   | {
-                                      noteEmoji?: T;
+                                      emphasis?: T;
                                       text?: T;
+                                      useBackground?: T;
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
@@ -7498,11 +7518,12 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       id?: T;
                                       blockName?: T;
                                     };
-                                note?:
+                                emphasisText?:
                                   | T
                                   | {
-                                      noteEmoji?: T;
+                                      emphasis?: T;
                                       text?: T;
+                                      useBackground?: T;
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
@@ -7757,11 +7778,12 @@ export interface BlogsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
-        note?:
+        emphasisText?:
           | T
           | {
-              noteEmoji?: T;
+              emphasis?: T;
               text?: T;
+              useBackground?: T;
               backgroundColor?: T;
               bottomMargin?: T;
               textColor?: T;
@@ -7986,11 +8008,12 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
-                    note?:
+                    emphasisText?:
                       | T
                       | {
-                          noteEmoji?: T;
+                          emphasis?: T;
                           text?: T;
+                          useBackground?: T;
                           backgroundColor?: T;
                           bottomMargin?: T;
                           textColor?: T;
@@ -8215,11 +8238,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                       id?: T;
                                       blockName?: T;
                                     };
-                                note?:
+                                emphasisText?:
                                   | T
                                   | {
-                                      noteEmoji?: T;
+                                      emphasis?: T;
                                       text?: T;
+                                      useBackground?: T;
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
@@ -8451,11 +8475,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                       id?: T;
                                       blockName?: T;
                                     };
-                                note?:
+                                emphasisText?:
                                   | T
                                   | {
-                                      noteEmoji?: T;
+                                      emphasis?: T;
                                       text?: T;
+                                      useBackground?: T;
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
@@ -8694,11 +8719,12 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
-                    note?:
+                    emphasisText?:
                       | T
                       | {
-                          noteEmoji?: T;
+                          emphasis?: T;
                           text?: T;
+                          useBackground?: T;
                           backgroundColor?: T;
                           bottomMargin?: T;
                           textColor?: T;
@@ -8923,11 +8949,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                       id?: T;
                                       blockName?: T;
                                     };
-                                note?:
+                                emphasisText?:
                                   | T
                                   | {
-                                      noteEmoji?: T;
+                                      emphasis?: T;
                                       text?: T;
+                                      useBackground?: T;
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
@@ -9159,11 +9186,12 @@ export interface BlogsSelect<T extends boolean = true> {
                                       id?: T;
                                       blockName?: T;
                                     };
-                                note?:
+                                emphasisText?:
                                   | T
                                   | {
-                                      noteEmoji?: T;
+                                      emphasis?: T;
                                       text?: T;
+                                      useBackground?: T;
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;

@@ -2,11 +2,11 @@ import { bottomMargin, colorField } from "../CommonFields";
 import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
-const NoteBlock: Block = {
-  slug: "note",
+const EmphasisTextBlock: Block = {
+  slug: "emphasisText",
   fields: [
     {
-      name: "noteEmoji",
+      name: "emphasis",
       type: "text",
       required: true,
     },
@@ -17,13 +17,17 @@ const NoteBlock: Block = {
       required: true,
     },
     {
+      name: "useBackground",
+      type: "checkbox",
+      required: true,
+    },
+    {
       name: "backgroundColor",
       type: "text",
-      required: true,
     },
     bottomMargin,
     colorField(),
   ],
 };
 
-export default NoteBlock;
+export default EmphasisTextBlock;

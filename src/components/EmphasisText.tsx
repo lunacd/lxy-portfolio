@@ -12,19 +12,11 @@ interface EmphasisTextProps {
 export default function EmphasisText(props: EmphasisTextProps) {
   return (
     <div
-      className={classNames(
-        props.className,
-        "flex flex-row gap-4 rounded-2xl p-4",
-      )}
-      style={{
-        ...props.style,
-        ...{
-          boxShadow: "-1rem 1rem 0px 0px rgba(0,0,0,0.6)",
-        },
-      }}
+      className={classNames(props.className, "flex flex-row gap-4")}
+      style={props.style}
     >
       <div className="self-center text-6xl">{props.emphasis}</div>
-      <Text text={props.text} className="grow" />
+      <Text text={props.text} className="grow self-center" />
     </div>
   );
 }

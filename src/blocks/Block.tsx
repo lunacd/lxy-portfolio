@@ -1,14 +1,13 @@
-import ButtonBlock from "./ButtonBlock";
-import NoteBlock from "./NoteBlock";
-import TestimonialBlock from "./TestimonialBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
 
+import ButtonBlock from "@/blocks/ButtonBlock";
 import CarouselBlock from "@/blocks/CarouselBlock";
 import ColumnBlock from "@/blocks/ColumnBlock";
 import DocumentBlock from "@/blocks/DocumentBlock";
 import EmbedBlock from "@/blocks/EmbedBlock";
+import EmphasisTextBlock from "@/blocks/EmphasisTextBlock";
 import EqualHeightImagesBlock from "@/blocks/EqualHeightImagesBlock";
 import HorizontalGalleryBlock from "@/blocks/HorizontalGalleryBlock";
 import HorizontalScrollBlock from "@/blocks/HorizontalScrollBlock";
@@ -18,6 +17,7 @@ import ImageWithTextOverlayBlock from "@/blocks/ImageWithTextOverlayBlock";
 import RowBlock from "@/blocks/RowBlock";
 import SlideShowBlock from "@/blocks/SlideShowBlock";
 import SmallGalleryBlock from "@/blocks/SmallGalleryBlock";
+import TestimonialBlock from "@/blocks/TestimonialBlock";
 import TextBlock from "@/blocks/TextBlock";
 import TextImageBlock from "@/blocks/TextImageBlock";
 import TitleBlock from "@/blocks/TitleBlock";
@@ -76,7 +76,7 @@ export default function Block(props: BlockProps) {
       return <EmbedBlock {...props.block} />;
     case "testimonial":
       return <TestimonialBlock {...props.block} payload={props.payload} />;
-    case "note":
-      return <NoteBlock {...props.block} />;
+    case "emphasisText":
+      return <EmphasisTextBlock {...props.block} />;
   }
 }

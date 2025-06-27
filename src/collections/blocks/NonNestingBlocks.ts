@@ -2,13 +2,13 @@ import ButtonBlock from "./ButtonBlock";
 import CarouselBlock from "./CarouselBlock";
 import DocumentBlock from "./DocumentBlock";
 import EmbedBlock from "./EmbedBlock";
+import EmphasisTextBlock from "./EmphasisTextBlock";
 import EqualHeightImagesBlock from "./EqualHeightImagesBlock";
 import HorizontalGalleryBlock from "./HorizontalGalleryBlock";
 import HorizontalScrollBlock from "./HorizontalScrollBlock";
 import ImageBlock from "./ImageBlock";
 import ImageTextBlock from "./ImageTextBlock";
 import ImageWithTextOverlayBlock from "./ImageWithTextOverlayBlock";
-import NoteBlock from "./NoteBlock";
 import SlideShowBlock from "./SlideShowBlock";
 import SmallGalleryBlock from "./SmallGalleryBlock";
 import TestimonialBlock from "./TestimonialBlock";
@@ -35,5 +35,5 @@ export const nonNestingBlocks = [
   ButtonBlock,
   EmbedBlock,
   TestimonialBlock,
-  NoteBlock,
+  EmphasisTextBlock,
 ];
