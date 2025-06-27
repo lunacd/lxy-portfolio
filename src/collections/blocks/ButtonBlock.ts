@@ -21,6 +21,7 @@ const ButtonBlock: Block = {
     },
     bottomMargin,
   ],
+  imageURL: "/payload/button.png",
 };
 
 export default ButtonBlock;

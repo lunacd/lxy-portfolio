@@ -16,6 +16,7 @@ const ImageBlock: Block = {
     imageSizeField,
     bottomMargin,
   ],
+  imageURL: "/payload/image.png",
 };
 
 export default ImageBlock;

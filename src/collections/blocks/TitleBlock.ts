@@ -19,6 +19,7 @@ const TitleBlock: Block = {
       options: ["none", "small", "medium", "regular", "large", "xl", "xxl"],
     },
   ],
+  imageURL: "/payload/title.png",
 };
 
 export default TitleBlock;

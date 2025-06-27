@@ -14,6 +14,7 @@ const TextBlock: Block = {
     colorField(),
     bottomMargin,
   ],
+  imageURL: "/payload/text.png",
 };
 
 export default TextBlock;
