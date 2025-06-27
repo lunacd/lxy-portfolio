@@ -29,9 +29,9 @@ export default function Testimonial(props: TestimonialProps) {
         props.className,
       )}
     >
-      <div className="flex flex-row py-8 pl-8 grow">
+      <div className="flex grow flex-row py-8 pl-8">
         <div className={classNames(pollerOne.className, "text-8xl")}>“</div>
-        <div className="ml-2 flex flex-col gap-8 grow">
+        <div className="ml-2 flex grow flex-col gap-8">
           <TextBlock
             text={props.testimonial}
             textColor="dark"

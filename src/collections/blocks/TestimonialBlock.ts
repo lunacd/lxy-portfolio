@@ -1,4 +1,4 @@
-import { bottomMargin, colorField } from "../CommonFields";
+import { bottomMargin } from "../CommonFields";
 import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
