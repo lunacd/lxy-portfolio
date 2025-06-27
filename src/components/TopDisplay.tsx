@@ -70,7 +70,7 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
                 )}
                 <div className="relative">
                   <div className="title">{props.project.name}</div>
-                  <div className="mt-2 paragraph lg:max-w-[25%]">
+                  <div className="paragraph mt-2 lg:max-w-[25%]">
                     {props.project.brief}
                   </div>
                 </div>
@@ -102,7 +102,7 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
           })}
         >
           <div className="single mx-spacing-lg space-x-spacing flex flex-row py-8">
-            <div className="grid w-full grid-cols-2 gap-2 paragraph">
+            <div className="paragraph grid w-full grid-cols-2 gap-2">
               <div className={styles.detailSection}>
                 <span>Duration: </span>
                 {props.project.duration}
