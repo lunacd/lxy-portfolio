@@ -10,8 +10,9 @@ interface TestimonialProps {
   color: string;
   testimonial: RichTextContent;
   author: RichTextContent;
-  avatar: Media | number;
+  avatar?: Media | number | null;
   payload: Payload;
+  className?: string;
 }
 
 const pollerOne = Poller_One({ subsets: ["latin"], weight: "400" });
@@ -23,11 +24,14 @@ export default function Testimonial(props: TestimonialProps) {
         backgroundColor: props.color,
         boxShadow: "-1rem 1rem 0px 0px rgba(0,0,0,0.6)",
       }}
-      className="relative flex h-full flex-row gap-4 rounded-2xl"
+      className={classNames(
+        "relative flex h-full flex-row gap-4 rounded-2xl",
+        props.className,
+      )}
     >
-      <div className="flex flex-row py-8 pl-8">
+      <div className="flex flex-row py-8 pl-8 grow">
         <div className={classNames(pollerOne.className, "text-8xl")}>“</div>
-        <div className="ml-2 flex flex-col gap-8">
+        <div className="ml-2 flex flex-col gap-8 grow">
           <TextBlock
             text={props.testimonial}
             textColor="dark"
@@ -43,13 +47,15 @@ export default function Testimonial(props: TestimonialProps) {
           ></TextBlock>
         </div>
       </div>
-      <PayloadImage
-        media={props.avatar}
-        payload={props.payload}
-        sizes="100%"
-        className="mt-8 min-h-0 w-1/4 max-w-40 self-end"
-        style={{ aspectRatio: "1024 / 1217" }}
-      />
+      {props.avatar && (
+        <PayloadImage
+          media={props.avatar}
+          payload={props.payload}
+          sizes="100%"
+          className="mt-8 min-h-0 w-1/4 max-w-40 self-end"
+          style={{ aspectRatio: "1024 / 1217" }}
+        />
+      )}
     </div>
   );
 }

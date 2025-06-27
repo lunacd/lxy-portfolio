@@ -579,6 +579,47 @@ export interface ProjectPage {
         blockType: 'embed';
       }
     | {
+        content: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        author: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        /**
+         * 1024x1217px
+         */
+        avatar?: (number | null) | Media;
+        color: string;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'testimonial';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -894,6 +935,47 @@ export interface ProjectPage {
               blockType: 'embed';
             }
           | {
+              content: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              author: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * 1024x1217px
+               */
+              avatar?: (number | null) | Media;
+              color: string;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'testimonial';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -1207,6 +1289,47 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1530,6 +1653,47 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1863,6 +2027,47 @@ export interface ProjectPage {
               blockType: 'embed';
             }
           | {
+              content: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              author: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * 1024x1217px
+               */
+              avatar?: (number | null) | Media;
+              color: string;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'testimonial';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -2176,6 +2381,47 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2499,6 +2745,47 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2855,6 +3142,47 @@ export interface Blog {
         blockType: 'embed';
       }
     | {
+        content: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        author: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        /**
+         * 1024x1217px
+         */
+        avatar?: (number | null) | Media;
+        color: string;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'testimonial';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -3170,6 +3498,47 @@ export interface Blog {
               blockType: 'embed';
             }
           | {
+              content: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              author: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * 1024x1217px
+               */
+              avatar?: (number | null) | Media;
+              color: string;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'testimonial';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -3483,6 +3852,47 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3806,6 +4216,47 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4139,6 +4590,47 @@ export interface Blog {
               blockType: 'embed';
             }
           | {
+              content: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              author: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * 1024x1217px
+               */
+              avatar?: (number | null) | Media;
+              color: string;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'testimonial';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -4452,6 +4944,47 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4775,6 +5308,47 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -5175,6 +5749,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        testimonial?:
+          | T
+          | {
+              content?: T;
+              author?: T;
+              avatar?: T;
+              color?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -5382,6 +5967,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    testimonial?:
+                      | T
+                      | {
+                          content?: T;
+                          author?: T;
+                          avatar?: T;
+                          color?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -5585,6 +6181,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -5799,6 +6406,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6024,6 +6642,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    testimonial?:
+                      | T
+                      | {
+                          content?: T;
+                          author?: T;
+                          avatar?: T;
+                          color?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -6227,6 +6856,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6441,6 +7081,17 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -6682,6 +7333,17 @@ export interface BlogsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        testimonial?:
+          | T
+          | {
+              content?: T;
+              author?: T;
+              avatar?: T;
+              color?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -6889,6 +7551,17 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    testimonial?:
+                      | T
+                      | {
+                          content?: T;
+                          author?: T;
+                          avatar?: T;
+                          color?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -7092,6 +7765,17 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -7306,6 +7990,17 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -7531,6 +8226,17 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    testimonial?:
+                      | T
+                      | {
+                          content?: T;
+                          author?: T;
+                          avatar?: T;
+                          color?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -7734,6 +8440,17 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -7948,6 +8665,17 @@ export interface BlogsSelect<T extends boolean = true> {
                                       embedLink?: T;
                                       width?: T;
                                       height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;

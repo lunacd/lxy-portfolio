@@ -10,6 +10,7 @@ import ImageTextBlock from "./ImageTextBlock";
 import ImageWithTextOverlayBlock from "./ImageWithTextOverlayBlock";
 import SlideShowBlock from "./SlideShowBlock";
 import SmallGalleryBlock from "./SmallGalleryBlock";
+import TestimonialBlock from "./TestimonialBlock";
 import TextBlock from "./TextBlock";
 import TextImageBlock from "./TextImageBlock";
 import TitleBlock from "./TitleBlock";
@@ -32,4 +33,5 @@ export const nonNestingBlocks = [
   CarouselBlock,
   ButtonBlock,
   EmbedBlock,
+  TestimonialBlock,
 ];

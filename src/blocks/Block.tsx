@@ -1,4 +1,5 @@
 import ButtonBlock from "./ButtonBlock";
+import TestimonialBlock from "./TestimonialBlock";
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
@@ -72,5 +73,7 @@ export default function Block(props: BlockProps) {
       return <ButtonBlock {...props.block} payload={props.payload} />;
     case "embed":
       return <EmbedBlock {...props.block} />;
+    case "testimonial":
+      return <TestimonialBlock {...props.block} payload={props.payload} />;
   }
 }
