@@ -1,15 +1,25 @@
-import InteractiveImageBlock, {
-  InteractiveImageBlockProps,
-} from "./InteractiveImageBlock";
+import InteractiveImageItem from "./InteractiveImageItem";
 import PayloadImage from "./PayloadImage";
+import { RichTextContent } from "./Text";
 import { Media } from "@payload-types";
 import { Payload } from "payload";
 
+import { TextColor } from "@/utils/CommonTypes";
+
+interface InteractiveImageItem {
+  left: number;
+  top: number;
+  text: RichTextContent;
+  textPosition: "left" | "right" | "top" | "bottom";
+  maxTextWidth: number;
+}
 interface InteractiveImageProps {
   media: Media | number;
   sizes: string;
   payload: Payload;
-  interactiveBlocks: InteractiveImageBlockProps[];
+  interactiveBlocks: InteractiveImageItem[];
+  backgroundColor: string;
+  textColor: TextColor;
   style?: React.CSSProperties;
 }
 
@@ -22,7 +32,12 @@ export default function InteractiveImage(props: InteractiveImageProps) {
         payload={props.payload}
       ></PayloadImage>
       {props.interactiveBlocks.map((block, index) => (
-        <InteractiveImageBlock {...block} key={index}></InteractiveImageBlock>
+        <InteractiveImageItem
+          {...block}
+          backgroundColor={props.backgroundColor}
+          textColor={props.textColor}
+          key={index}
+        ></InteractiveImageItem>
       ))}
     </div>
   );

@@ -1,4 +1,4 @@
-import { bottomMargin as bottomMarginField } from "../CommonFields";
+import { bottomMargin as bottomMarginField, colorField } from "../CommonFields";
 import { editor } from "../LexicalEditor";
 import { Block } from "payload";
 
@@ -25,6 +25,13 @@ const InteractiveImageBlock: Block = {
           "Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.",
       },
     },
+    {
+      name: "backgroundColor",
+      type: "text",
+      required: true,
+      defaultValue: "#000",
+    },
+    colorField(),
     {
       name: "interactiveBlocks",
       type: "array",

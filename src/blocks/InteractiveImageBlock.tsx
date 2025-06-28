@@ -19,6 +19,8 @@ export default function InteractiveImageBlock(
       sizes={`${props.imageSize}wv`}
       interactiveBlocks={props.interactiveBlocks}
       payload={props.payload}
+      backgroundColor={props.backgroundColor}
+      textColor={props.textColor}
       style={{ marginBottom: getSpacing(props.bottomMargin) }}
     ></InteractiveImage>
   );

@@ -6,15 +6,19 @@ import classNames from "classnames";
 import { motion } from "motion/react";
 import { useState } from "react";
 
+import { TextColor } from "@/utils/CommonTypes";
+
 export interface InteractiveImageBlockProps {
   left: number;
   top: number;
   text: RichTextContent;
   textPosition: "left" | "right" | "top" | "bottom";
   maxTextWidth: number;
+  backgroundColor: string;
+  textColor: TextColor;
 }
 
-export default function InteractiveImageBlock(
+export default function InteractiveImageItem(
   props: InteractiveImageBlockProps,
 ) {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,15 +31,24 @@ export default function InteractiveImageBlock(
         animate={{ rotate: isOpen ? 45 : 0 }}
       >
         <div
-          className="h-full w-full cursor-pointer rounded-full bg-white shadow select-none"
+          className={classNames(
+            "h-full w-full cursor-pointer rounded-full shadow-lg select-none",
+            {
+              "text-black": props.textColor === "dark",
+              "text-white": props.textColor === "light",
+            },
+          )}
+          style={{ backgroundColor: props.backgroundColor }}
           onClick={() => setIsOpen(!isOpen)}
         >
           <IconPlus />
         </div>
       </motion.div>
       <motion.div
-        className={classNames("absolute rounded bg-white p-4 shadow", {
+        className={classNames("absolute rounded-xl p-4 shadow-xl", {
           "ml-4 translate-x-3 -translate-y-3": props.textPosition === "right",
+          "text-black": props.textColor === "dark",
+          "text-white": props.textColor === "light",
           hidden: !isOpen,
         })}
         style={{
@@ -43,6 +56,7 @@ export default function InteractiveImageBlock(
           // Adjust for half of icon width and 1rem of padding
           left: `${props.left}%`,
           top: `${props.top}%`,
+          backgroundColor: props.backgroundColor,
         }}
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -10 }}

@@ -654,6 +654,8 @@ export interface ProjectPage {
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
         imageSize: number;
+        backgroundColor: string;
+        textColor: 'dark' | 'light';
         interactiveBlocks: {
           /**
            * Percentage of image width.
@@ -1080,6 +1082,8 @@ export interface ProjectPage {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
+              backgroundColor: string;
+              textColor: 'dark' | 'light';
               interactiveBlocks: {
                 /**
                  * Percentage of image width.
@@ -1506,6 +1510,8 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
                     interactiveBlocks: {
                       /**
                        * Percentage of image width.
@@ -1940,6 +1946,8 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
                     interactiveBlocks: {
                       /**
                        * Percentage of image width.
@@ -2382,6 +2390,8 @@ export interface ProjectPage {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
+              backgroundColor: string;
+              textColor: 'dark' | 'light';
               interactiveBlocks: {
                 /**
                  * Percentage of image width.
@@ -2808,6 +2818,8 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
                     interactiveBlocks: {
                       /**
                        * Percentage of image width.
@@ -3242,6 +3254,8 @@ export interface ProjectPage {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
                     interactiveBlocks: {
                       /**
                        * Percentage of image width.
@@ -3707,6 +3721,8 @@ export interface Blog {
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
         imageSize: number;
+        backgroundColor: string;
+        textColor: 'dark' | 'light';
         interactiveBlocks: {
           /**
            * Percentage of image width.
@@ -4133,6 +4149,8 @@ export interface Blog {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
+              backgroundColor: string;
+              textColor: 'dark' | 'light';
               interactiveBlocks: {
                 /**
                  * Percentage of image width.
@@ -4559,6 +4577,8 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
                     interactiveBlocks: {
                       /**
                        * Percentage of image width.
@@ -4993,6 +5013,8 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
                     interactiveBlocks: {
                       /**
                        * Percentage of image width.
@@ -5435,6 +5457,8 @@ export interface Blog {
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
               imageSize: number;
+              backgroundColor: string;
+              textColor: 'dark' | 'light';
               interactiveBlocks: {
                 /**
                  * Percentage of image width.
@@ -5861,6 +5885,8 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
                     interactiveBlocks: {
                       /**
                        * Percentage of image width.
@@ -6295,6 +6321,8 @@ export interface Blog {
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
                     imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
                     interactiveBlocks: {
                       /**
                        * Percentage of image width.
@@ -6759,6 +6787,8 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | {
               image?: T;
               imageSize?: T;
+              backgroundColor?: T;
+              textColor?: T;
               interactiveBlocks?:
                 | T
                 | {
@@ -7008,6 +7038,8 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
+                          backgroundColor?: T;
+                          textColor?: T;
                           interactiveBlocks?:
                             | T
                             | {
@@ -7257,6 +7289,8 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
                                       interactiveBlocks?:
                                         | T
                                         | {
@@ -7513,6 +7547,8 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
                                       interactiveBlocks?:
                                         | T
                                         | {
@@ -7776,6 +7812,8 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
+                          backgroundColor?: T;
+                          textColor?: T;
                           interactiveBlocks?:
                             | T
                             | {
@@ -8025,6 +8063,8 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
                                       interactiveBlocks?:
                                         | T
                                         | {
@@ -8281,6 +8321,8 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
                                       interactiveBlocks?:
                                         | T
                                         | {
@@ -8560,6 +8602,8 @@ export interface BlogsSelect<T extends boolean = true> {
           | {
               image?: T;
               imageSize?: T;
+              backgroundColor?: T;
+              textColor?: T;
               interactiveBlocks?:
                 | T
                 | {
@@ -8809,6 +8853,8 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
+                          backgroundColor?: T;
+                          textColor?: T;
                           interactiveBlocks?:
                             | T
                             | {
@@ -9058,6 +9104,8 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
                                       interactiveBlocks?:
                                         | T
                                         | {
@@ -9314,6 +9362,8 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
                                       interactiveBlocks?:
                                         | T
                                         | {
@@ -9577,6 +9627,8 @@ export interface BlogsSelect<T extends boolean = true> {
                       | {
                           image?: T;
                           imageSize?: T;
+                          backgroundColor?: T;
+                          textColor?: T;
                           interactiveBlocks?:
                             | T
                             | {
@@ -9826,6 +9878,8 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
                                       interactiveBlocks?:
                                         | T
                                         | {
@@ -10082,6 +10136,8 @@ export interface BlogsSelect<T extends boolean = true> {
                                   | {
                                       image?: T;
                                       imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
                                       interactiveBlocks?:
                                         | T
                                         | {
