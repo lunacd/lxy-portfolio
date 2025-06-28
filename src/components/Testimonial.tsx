@@ -29,7 +29,11 @@ export default function Testimonial(props: TestimonialProps) {
         props.className,
       )}
     >
-      <div className="flex grow flex-row py-8 pl-8">
+      <div
+        className={classNames("flex grow flex-row py-8 pl-8", {
+          "pr-8": !props.avatar,
+        })}
+      >
         <div className={classNames(pollerOne.className, "text-8xl")}>“</div>
         <div className="ml-2 flex grow flex-col gap-8">
           <Text text={props.testimonial}></Text>
