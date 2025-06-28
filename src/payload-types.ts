@@ -646,6 +646,51 @@ export interface ProjectPage {
         blockType: 'emphasisText';
       }
     | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
+        image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        interactiveBlocks: {
+          /**
+           * Percentage of image width.
+           */
+          left: number;
+          /**
+           * Percentage of image height.
+           */
+          top: number;
+          textPosition: 'left' | 'right' | 'top' | 'bottom';
+          /**
+           * Percentage of image width.
+           */
+          maxTextWidth: number;
+          text: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          id?: string | null;
+        }[];
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'interactiveImage';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -1027,6 +1072,51 @@ export interface ProjectPage {
               blockType: 'emphasisText';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              interactiveBlocks: {
+                /**
+                 * Percentage of image width.
+                 */
+                left: number;
+                /**
+                 * Percentage of image height.
+                 */
+                top: number;
+                textPosition: 'left' | 'right' | 'top' | 'bottom';
+                /**
+                 * Percentage of image width.
+                 */
+                maxTextWidth: number;
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                id?: string | null;
+              }[];
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'interactiveImage';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -1406,6 +1496,51 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -1795,6 +1930,51 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2194,6 +2374,51 @@ export interface ProjectPage {
               blockType: 'emphasisText';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              interactiveBlocks: {
+                /**
+                 * Percentage of image width.
+                 */
+                left: number;
+                /**
+                 * Percentage of image height.
+                 */
+                top: number;
+                textPosition: 'left' | 'right' | 'top' | 'bottom';
+                /**
+                 * Percentage of image width.
+                 */
+                maxTextWidth: number;
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                id?: string | null;
+              }[];
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'interactiveImage';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -2573,6 +2798,51 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -2962,6 +3232,51 @@ export interface ProjectPage {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -3384,6 +3699,51 @@ export interface Blog {
         blockType: 'emphasisText';
       }
     | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
+        image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        interactiveBlocks: {
+          /**
+           * Percentage of image width.
+           */
+          left: number;
+          /**
+           * Percentage of image height.
+           */
+          top: number;
+          textPosition: 'left' | 'right' | 'top' | 'bottom';
+          /**
+           * Percentage of image width.
+           */
+          maxTextWidth: number;
+          text: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          id?: string | null;
+        }[];
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'interactiveImage';
+      }
+    | {
         blocks: (
           | {
               text: string;
@@ -3765,6 +4125,51 @@ export interface Blog {
               blockType: 'emphasisText';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              interactiveBlocks: {
+                /**
+                 * Percentage of image width.
+                 */
+                left: number;
+                /**
+                 * Percentage of image height.
+                 */
+                top: number;
+                textPosition: 'left' | 'right' | 'top' | 'bottom';
+                /**
+                 * Percentage of image width.
+                 */
+                maxTextWidth: number;
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                id?: string | null;
+              }[];
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'interactiveImage';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -4144,6 +4549,51 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4533,6 +4983,51 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -4932,6 +5427,51 @@ export interface Blog {
               blockType: 'emphasisText';
             }
           | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              interactiveBlocks: {
+                /**
+                 * Percentage of image width.
+                 */
+                left: number;
+                /**
+                 * Percentage of image height.
+                 */
+                top: number;
+                textPosition: 'left' | 'right' | 'top' | 'bottom';
+                /**
+                 * Percentage of image width.
+                 */
+                maxTextWidth: number;
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                id?: string | null;
+              }[];
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'interactiveImage';
+            }
+          | {
               blocks: (
                 | {
                     text: string;
@@ -5311,6 +5851,51 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -5700,6 +6285,51 @@ export interface Blog {
                     id?: string | null;
                     blockName?: string | null;
                     blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
                   }
               )[];
               spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
@@ -6124,6 +6754,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        interactiveImage?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              interactiveBlocks?:
+                | T
+                | {
+                    left?: T;
+                    top?: T;
+                    textPosition?: T;
+                    maxTextWidth?: T;
+                    text?: T;
+                    id?: T;
+                  };
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -6354,6 +7003,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    interactiveImage?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          interactiveBlocks?:
+                            | T
+                            | {
+                                left?: T;
+                                top?: T;
+                                textPosition?: T;
+                                maxTextWidth?: T;
+                                text?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -6581,6 +7249,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -6818,6 +7505,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -7065,6 +7771,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    interactiveImage?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          interactiveBlocks?:
+                            | T
+                            | {
+                                left?: T;
+                                top?: T;
+                                textPosition?: T;
+                                maxTextWidth?: T;
+                                text?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -7292,6 +8017,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -7529,6 +8273,25 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -7792,6 +8555,25 @@ export interface BlogsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        interactiveImage?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              interactiveBlocks?:
+                | T
+                | {
+                    left?: T;
+                    top?: T;
+                    textPosition?: T;
+                    maxTextWidth?: T;
+                    text?: T;
+                    id?: T;
+                  };
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
         row?:
           | T
           | {
@@ -8022,6 +8804,25 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    interactiveImage?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          interactiveBlocks?:
+                            | T
+                            | {
+                                left?: T;
+                                top?: T;
+                                textPosition?: T;
+                                maxTextWidth?: T;
+                                text?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -8249,6 +9050,25 @@ export interface BlogsSelect<T extends boolean = true> {
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -8486,6 +9306,25 @@ export interface BlogsSelect<T extends boolean = true> {
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -8733,6 +9572,25 @@ export interface BlogsSelect<T extends boolean = true> {
                           id?: T;
                           blockName?: T;
                         };
+                    interactiveImage?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          interactiveBlocks?:
+                            | T
+                            | {
+                                left?: T;
+                                top?: T;
+                                textPosition?: T;
+                                maxTextWidth?: T;
+                                text?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     column?:
                       | T
                       | {
@@ -8960,6 +9818,25 @@ export interface BlogsSelect<T extends boolean = true> {
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };
@@ -9197,6 +10074,25 @@ export interface BlogsSelect<T extends boolean = true> {
                                       backgroundColor?: T;
                                       bottomMargin?: T;
                                       textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
                                     };

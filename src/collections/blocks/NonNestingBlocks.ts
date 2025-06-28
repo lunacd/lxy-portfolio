@@ -9,6 +9,7 @@ import HorizontalScrollBlock from "./HorizontalScrollBlock";
 import ImageBlock from "./ImageBlock";
 import ImageTextBlock from "./ImageTextBlock";
 import ImageWithTextOverlayBlock from "./ImageWithTextOverlayBlock";
+import InteractiveImageBlock from "./InteractiveImageBlock";
 import SlideShowBlock from "./SlideShowBlock";
 import SmallGalleryBlock from "./SmallGalleryBlock";
 import TestimonialBlock from "./TestimonialBlock";
@@ -36,4 +37,5 @@ export const nonNestingBlocks = [
   EmbedBlock,
   TestimonialBlock,
   EmphasisTextBlock,
+  InteractiveImageBlock,
 ];

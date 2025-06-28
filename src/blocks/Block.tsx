@@ -14,6 +14,7 @@ import HorizontalScrollBlock from "@/blocks/HorizontalScrollBlock";
 import ImageBlock from "@/blocks/ImageBlock";
 import ImageTextBlock from "@/blocks/ImageTextBlock";
 import ImageWithTextOverlayBlock from "@/blocks/ImageWithTextOverlayBlock";
+import InteractiveImageBlock from "@/blocks/InteractiveImageBlock";
 import RowBlock from "@/blocks/RowBlock";
 import SlideShowBlock from "@/blocks/SlideShowBlock";
 import SmallGalleryBlock from "@/blocks/SmallGalleryBlock";
@@ -78,5 +79,7 @@ export default function Block(props: BlockProps) {
       return <TestimonialBlock {...props.block} payload={props.payload} />;
     case "emphasisText":
       return <EmphasisTextBlock {...props.block} />;
+    case "interactiveImage":
+      return <InteractiveImageBlock {...props.block} payload={props.payload} />;
   }
 }
