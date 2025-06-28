@@ -17,7 +17,7 @@ export default function EmphasisTextBlock(props: EmphasisTextBlockProps) {
       className={classNames({
         "text-white": props.textColor === "light",
         "text-black": props.textColor === "dark",
-        "rounded-2xl p-4": props.useBackground,
+        "rounded-2xl p-8": props.useBackground,
       })}
       style={{
         marginBottom: getSpacing(props.bottomMargin),
