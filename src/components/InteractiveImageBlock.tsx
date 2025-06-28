@@ -30,7 +30,7 @@ export default function InteractiveImageBlock(
           className="h-full w-full cursor-pointer rounded-full bg-white shadow select-none"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <IconPlus/>
+          <IconPlus />
         </div>
       </motion.div>
       <motion.div
