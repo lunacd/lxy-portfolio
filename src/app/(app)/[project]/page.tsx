@@ -90,9 +90,15 @@ export default async function ProjectPageComponent({
     })
   ).docs[0];
 
+  const scrollerBackground =
+    projectData.pageBackgroundColor &&
+    projectData.pageBackgroundColor.length > 0
+      ? projectData.pageBackgroundColor
+      : projectData.backgroundColor;
+
   return (
     <AnimationCoordinator frameDuration={2000}>
-      <Scroller bgColor={projectData.backgroundColor}>
+      <Scroller bgColor={scrollerBackground}>
         <TopDisplay project={projectData} payload={payload} />
         <Blocks blocks={pageData.blocks} payload={payload} />
         <RelatedWork
