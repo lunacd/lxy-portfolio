@@ -179,13 +179,6 @@ export const Projects: CollectionConfig = {
       },
     },
     {
-      name: "textColor",
-      type: "radio",
-      options: ["light", "dark"],
-      required: true,
-      defaultValue: "dark",
-    },
-    {
       name: "imageCover",
       type: "checkbox",
       admin: {
@@ -220,6 +213,20 @@ export const Projects: CollectionConfig = {
         description:
           "If this is not empty, projects will link to the external link given here rather than the internal page.",
       },
+    },
+    {
+      name: "textColor",
+      type: "radio",
+      options: ["light", "dark"],
+      required: true,
+      defaultValue: "dark",
+    },
+    {
+      name: "bannerTextColor",
+      type: "radio",
+      options: ["light", "dark"],
+      required: true,
+      defaultValue: "dark",
     },
     {
       name: "contentColor",

@@ -97,8 +97,8 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
         {/* Project details */}
         <div
           className={classNames("flex flex-col items-center", {
-            "text-white": props.project.contentColor === "light",
-            "text-black": props.project.contentColor === "dark",
+            "text-white": props.project.bannerTextColor === "light",
+            "text-black": props.project.bannerTextColor === "dark",
           })}
         >
           <div className="single mx-spacing-lg space-x-spacing flex flex-row py-8">
@@ -121,7 +121,7 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
                       <CategoryTag
                         key={index}
                         category={focus.focus}
-                        textColor={props.project.contentColor}
+                        textColor={props.project.bannerTextColor}
                       />
                     );
                   })}

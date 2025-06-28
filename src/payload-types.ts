@@ -232,7 +232,6 @@ export interface Project {
    * Background for the main project page. If unspecified, will use the background color entered above.
    */
   pageBackgroundColor?: string | null;
-  textColor: 'light' | 'dark';
   /**
    * Check this if this project needs a white cover displayed beneath the text and on top of the image.
    */
@@ -249,6 +248,8 @@ export interface Project {
    * If this is not empty, projects will link to the external link given here rather than the internal page.
    */
   externalLink?: string | null;
+  textColor: 'light' | 'dark';
+  bannerTextColor: 'light' | 'dark';
   contentColor: 'light' | 'dark';
   relatedWorks: {
     relatedWork: number | Project;
@@ -5874,11 +5875,12 @@ export interface ProjectsSelect<T extends boolean = true> {
   projectGalleryImage?: T;
   backgroundColor?: T;
   pageBackgroundColor?: T;
-  textColor?: T;
   imageCover?: T;
   imageOverlayType?: T;
   awardImage?: T;
   externalLink?: T;
+  textColor?: T;
+  bannerTextColor?: T;
   contentColor?: T;
   relatedWorks?:
     | T
