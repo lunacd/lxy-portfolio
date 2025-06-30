@@ -26,7 +26,8 @@ export const metadata: Metadata = {
 function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
   return (
     <div
-      className="single mb-4 grid grid-cols-5 grid-rows-13 gap-4 lg:grid-cols-12 lg:grid-rows-12"
+      className="single mb-4 grid grid-cols-5 grid-rows-13 gap-4 lg:grid-cols-12
+        lg:grid-rows-12"
       style={{ marginBottom: getSpacing("large") }}
     >
       {/* Social innovator */}
@@ -34,8 +35,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
 
       {/* Traveller */}
       <div
-        className="about_rounded relative col-span-3 col-start-3 row-span-3 row-start-9
-          lg:col-span-4 lg:col-start-8 lg:row-start-2"
+        className="about_rounded relative col-span-3 col-start-3 row-span-3
+          row-start-9 lg:col-span-4 lg:col-start-8 lg:row-start-2"
       >
         <div className="about_darken h-full w-full">
           <SlideShow
@@ -53,8 +54,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
 
       {/* Craftsperson */}
       <div
-        className="about_rounded relative col-span-2 col-start-1 row-span-3 row-start-9
-          lg:col-span-3 lg:row-start-5"
+        className="about_rounded relative col-span-2 col-start-1 row-span-3
+          row-start-9 lg:col-span-3 lg:row-start-5"
       >
         <div className="about_darken h-full w-full">
           <SlideShow
@@ -72,8 +73,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
 
       {/* Photographer */}
       <div
-        className="about_rounded relative col-span-2 col-start-4 row-span-3 row-start-12
-          lg:col-span-3 lg:col-start-1 lg:row-start-8"
+        className="about_rounded relative col-span-2 col-start-4 row-span-3
+          row-start-12 lg:col-span-3 lg:col-start-1 lg:row-start-8"
       >
         <div className="about_darken h-full w-full">
           <SlideShow
@@ -91,8 +92,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
 
       {/* Nature observer */}
       <div
-        className="about_rounded relative col-span-5 col-start-1 row-span-4 row-start-5
-          lg:col-span-6 lg:col-start-4 lg:row-start-5"
+        className="about_rounded relative col-span-5 col-start-1 row-span-4
+          row-start-5 lg:col-span-6 lg:col-start-4 lg:row-start-5"
         style={{ flex: 960 / 606 }}
       >
         <Image
@@ -109,8 +110,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
 
       {/* Dog lover */}
       <div
-        className="about_rounded relative col-span-3 col-start-10 row-span-4 row-start-5 hidden
-          lg:block"
+        className="about_rounded relative col-span-3 col-start-10 row-span-4
+          row-start-5 hidden lg:block"
         style={{
           flex: 640 / 838,
         }}
@@ -131,8 +132,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
 
       {/* Thinker */}
       <div
-        className="about_rounded relative col-span-3 col-start-4 row-span-4 row-start-9 hidden
-          lg:block"
+        className="about_rounded relative col-span-3 col-start-4 row-span-4
+          row-start-9 hidden lg:block"
       >
         <div className="about_darken h-full w-full">
           <SlideShow
@@ -149,8 +150,8 @@ function VideoGallery({ data, payload }: { data: Global; payload: Payload }) {
       </div>
       {/* Sports lover */}
       <div
-        className="about_rounded relative col-span-3 col-start-1 row-span-3 row-start-12
-          lg:col-span-4 lg:col-start-7 lg:row-start-9"
+        className="about_rounded relative col-span-3 col-start-1 row-span-3
+          row-start-12 lg:col-span-4 lg:col-start-7 lg:row-start-9"
       >
         <Image
           src={Sports}
@@ -177,7 +178,10 @@ export default async function About() {
   return (
     <AnimationCoordinator frameDuration={3000}>
       <ConditionalScrollIndicator>
-        <div className="single my-spacing-lg gap-spacing grid grid-cols-1 lg:grid-cols-3">
+        <div
+          className="single my-spacing-lg gap-spacing grid grid-cols-1
+            lg:grid-cols-3"
+        >
           <div className="about_rounded">
             <PayloadImage
               media={data.profilePicture}
@@ -217,8 +221,8 @@ export default async function About() {
           />
         </div>
         <div
-          className="single mb-spacing-3lg flex flex-row flex-wrap justify-center gap-4
-            lg:justify-between"
+          className="single mb-spacing-3lg flex flex-row flex-wrap
+            justify-center gap-4 lg:justify-between"
         >
           {data.tools.map((tool, index) => (
             <FloatUpMotion key={index}>

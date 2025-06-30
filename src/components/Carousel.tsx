@@ -83,7 +83,10 @@ export default function Carousel(
           "text-black": props.textColor === "dark",
         })}
       >
-        <div className="absolute top-0 bottom-0 left-1/2 flex -translate-x-1/2 flex-row space-x-3">
+        <div
+          className="absolute top-0 bottom-0 left-1/2 flex -translate-x-1/2
+            flex-row space-x-3"
+        >
           {[...Array(props.itemCount)].map((_, index) => (
             <div
               className={"relative h-3 w-3 cursor-pointer"}
