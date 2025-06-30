@@ -49,7 +49,10 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             className="hidden object-cover object-center md:block"
             sizes="100vw"
           />
-          <div className="absolute top-0 left-0 flex h-full w-full flex-row justify-center">
+          <div
+            className="absolute top-0 left-0 flex h-full w-full flex-row
+              justify-center"
+          >
             {/* Project name */}
             <div className={`w-single mt-spacing-lg relative ${titleColor}`}>
               <div className="relative">
@@ -101,7 +104,9 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             "text-black": props.project.bannerTextColor === "dark",
           })}
         >
-          <div className="single mx-spacing-lg space-x-spacing flex flex-row py-8">
+          <div
+            className="single mx-spacing-lg space-x-spacing flex flex-row py-8"
+          >
             <div className="paragraph grid w-full grid-cols-2 gap-2">
               <div className={styles.detailSection}>
                 <span>Duration: </span>

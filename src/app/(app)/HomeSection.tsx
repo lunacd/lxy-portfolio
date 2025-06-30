@@ -31,7 +31,8 @@ export default async function HomeSection(props: HomeSectionProps) {
           <FloatUpMotion className="flex h-full flex-col">
             {/* Project name */}
             <div
-              className={`mx-spacing-lg my-spacing-lg relative grow self-stretch ${titleColor}`}
+              className={`mx-spacing-lg my-spacing-lg relative grow self-stretch
+                ${titleColor}`}
             >
               <div className="relative">
                 {/* Optional cover color for background */}
@@ -44,10 +45,14 @@ export default async function HomeSection(props: HomeSectionProps) {
                           ? "linear-gradient(180deg, white 0%, transparent 100%)"
                           : "linear-gradient(180deg, rgba(0, 0, 0, 80%) 0%, transparent 100%)",
                     }}
-                    className="-left-spacing-lg -right-spacing-lg absolute -top-8 lg:-top-12 xl:-top-24"
+                    className="-left-spacing-lg -right-spacing-lg absolute
+                      -top-8 lg:-top-12 xl:-top-24"
                   ></div>
                 )}
-                <div className="relative flex h-full flex-col items-start gap-5 lg:max-w-[50%] 2xl:max-w-[30%]">
+                <div
+                  className="relative flex h-full flex-col items-start gap-5
+                    lg:max-w-[50%] 2xl:max-w-[30%]"
+                >
                   <div className="title">{props.project.name}</div>
                   <div className="paragraph">{props.project.brief}</div>
 

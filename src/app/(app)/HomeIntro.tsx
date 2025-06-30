@@ -17,7 +17,10 @@ export default function HomeIntro(props: HomeIntroProps) {
       className="w-single py-spacing-lg flex h-[75vh] flex-col"
       id="about-me"
     >
-      <div className="relative flex grow flex-col justify-center gap-4 md:gap-8 xl:gap-12">
+      <div
+        className="relative flex grow flex-col justify-center gap-4 md:gap-8
+          xl:gap-12"
+      >
         <div className="flex flex-col justify-around gap-4 md:flex-row">
           <div className="flex max-w-1/2 flex-col self-center md:self-end">
             <IntroAnimation />

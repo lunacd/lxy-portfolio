@@ -28,8 +28,8 @@ export default function SocialInnovator() {
     <>
       {/* Setting aspect ratio on this one to use as a guideline for grid cell heights */}
       <div
-        className="about_rounded relative col-span-5 col-start-1 row-span-4 row-start-1
-          cursor-pointer lg:col-span-6 lg:col-start-2"
+        className="about_rounded relative col-span-5 col-start-1 row-span-4
+          row-start-1 cursor-pointer lg:col-span-6 lg:col-start-2"
         style={{ aspectRatio: "1.65517241" }}
         onClick={() => {
           setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
@@ -77,7 +77,10 @@ export default function SocialInnovator() {
                   allowFullScreen
                   className="relative z-20 w-full border-0 lg:h-full lg:w-2/3"
                 ></iframe>
-                <div className="mx-4 my-10 mb-4 flex w-full flex-col justify-center overflow-y-auto lg:w-1/3">
+                <div
+                  className="mx-4 my-10 mb-4 flex w-full flex-col justify-center
+                    overflow-y-auto lg:w-1/3"
+                >
                   <div className="title mb-2">Organization Mission</div>
                   <div className="paragraph">
                     Wanyi is a city-based organization that designs and

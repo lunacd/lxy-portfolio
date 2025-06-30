@@ -67,13 +67,13 @@ export default function SidebarInteractive() {
           x: open && globalState.onLanding ? "0%" : "-100%",
         }}
         transition={transitionDefault}
-        className="absolute z-10 h-screen w-[16rem] flex-shrink-0 bg-white shadow-lg
-          lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
+        className="absolute z-10 h-screen w-[16rem] flex-shrink-0 bg-white
+          shadow-lg lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
       >
         {/* Content container */}
         <div
-          className="absolute top-0 right-10 flex h-full w-44 flex-col justify-between py-16
-            xl:right-20"
+          className="absolute top-0 right-10 flex h-full w-44 flex-col
+            justify-between py-16 xl:right-20"
         >
           {/* Logo */}
           <Link
@@ -222,17 +222,20 @@ export default function SidebarInteractive() {
         {/* Open-close button: desktop */}
         {globalState.onLanding && (
           <div
-            className="absolute top-20 -right-16 z-20 hidden h-24 w-16 overflow-hidden lg:block
-              xl:-right-20 xl:w-20"
+            className="absolute top-20 -right-16 z-20 hidden h-24 w-16
+              overflow-hidden lg:block xl:-right-20 xl:w-20"
           >
             <div
-              className="absolute top-0 -left-8 h-16 w-16 cursor-pointer rounded-full bg-white shadow-lg
-                xl:-left-10 xl:h-20 xl:w-20"
+              className="absolute top-0 -left-8 h-16 w-16 cursor-pointer
+                rounded-full bg-white shadow-lg xl:-left-10 xl:h-20 xl:w-20"
               onClick={() => {
                 setOpen((orig) => !orig);
               }}
             >
-              <div className="absolute top-0 right-0 bottom-0 flex w-1/2 items-center">
+              <div
+                className="absolute top-0 right-0 bottom-0 flex w-1/2
+                  items-center"
+              >
                 <MotionIconChevronLeft
                   animate={{
                     rotateY: open ? 0 : 180,
@@ -265,7 +268,9 @@ export default function SidebarInteractive() {
 
       {/* Open-close button: mobile */}
       {globalState.onLanding && (
-        <div className="absolute top-4 right-2 z-10 cursor-pointer p-4 lg:hidden">
+        <div
+          className="absolute top-4 right-2 z-10 cursor-pointer p-4 lg:hidden"
+        >
           <MotionImage
             animate={{
               rotate: open ? 90 : 0,
@@ -283,8 +288,9 @@ export default function SidebarInteractive() {
       {/* Return home button */}
       {!globalState.onLanding && (
         <Link
-          className="absolute top-20 left-0 z-10 grid -translate-x-1/2 cursor-pointer grid-rows-2
-            rounded-full bg-white px-6 py-2 shadow-lg"
+          className="absolute top-20 left-0 z-10 grid -translate-x-1/2
+            cursor-pointer grid-rows-2 rounded-full bg-white px-6 py-2
+            shadow-lg"
           style={{ writingMode: "vertical-lr" }}
           href="/"
         >
