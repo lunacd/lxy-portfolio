@@ -8,6 +8,7 @@ import {
   IconFileText,
   IconMail,
 } from "@tabler/icons-react";
+import classNames from "classnames";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +22,6 @@ import HamburgerBlack from "@/images/hamburger-black.svg";
 
 const MotionImage = motion.create(Image);
 const MotionIconChevronLeft = motion.create(IconChevronLeft);
-const MotionLink = motion.create(Link);
 
 const dashVariants = {
   rest: { opacity: 0 },
@@ -39,6 +39,38 @@ function scrollElementIntoView(id: string) {
     behavior: "smooth",
     block: "start",
   });
+}
+
+function TitleLink(props: {
+  text: string;
+  linkKey: string;
+  isFocused: boolean;
+}) {
+  return (
+    <motion.div
+      className="paragraph cursor-pointer font-semibold!"
+      transition={transitionDefault}
+      layout
+      key={props.linkKey}
+      onClick={() => {
+        scrollElementIntoView(props.linkKey);
+      }}
+    >
+      <span className="relative">
+        {props.text}
+        <div
+          className={classNames(
+            `absolute right-0 bottom-[2px] left-0 border-b-2 border-b-black
+            transition-transform`,
+            {
+              "scale-x-100": props.isFocused,
+              "scale-x-0": !props.isFocused,
+            },
+          )}
+        ></div>
+      </span>
+    </motion.div>
+  );
 }
 
 export default function SidebarInteractive() {
@@ -100,24 +132,22 @@ export default function SidebarInteractive() {
           {/* Routes */}
           <div className="flex flex-col space-y-1 pt-4 pb-6">
             <AnimatePresence initial={false} mode="popLayout">
-              <motion.div
-                className="paragraph cursor-pointer font-semibold!"
-                transition={transitionDefault}
-                layout
+              <TitleLink
+                text="About"
+                linkKey="about"
                 key="about"
-                onClick={() => {
-                  scrollElementIntoView("about-me");
-                }}
-              >
-                About
-              </motion.div>
-              <MotionLink
-                className="paragraph font-semibold!"
-                href="/"
-                key="title"
-              >
-                {globalState.title}
-              </MotionLink>
+                isFocused={globalState.currentProject === "about"}
+              />
+              <TitleLink
+                linkKey="projects"
+                text="All Projects"
+                isFocused={
+                  !["about", "blogs", "testimonials"].includes(
+                    globalState.currentProject,
+                  )
+                }
+                key="projects"
+              />
               <motion.div
                 key={globalState.focus ? globalState.focus : "all"}
                 transition={transitionDefault}
@@ -161,28 +191,18 @@ export default function SidebarInteractive() {
                 ))}
               </motion.div>
 
-              <motion.div
-                className="paragraph cursor-pointer font-semibold!"
-                transition={transitionDefault}
-                layout
+              <TitleLink
+                linkKey="testimonials"
+                text="Testimonials"
                 key="testimonials"
-                onClick={() => {
-                  scrollElementIntoView("testimonials");
-                }}
-              >
-                Testimonials
-              </motion.div>
-              <motion.div
-                className="paragraph cursor-pointer font-semibold!"
-                transition={transitionDefault}
-                layout
-                key="blog"
-                onClick={() => {
-                  scrollElementIntoView("blogs");
-                }}
-              >
-                Blogs
-              </motion.div>
+                isFocused={globalState.currentProject === "testimonials"}
+              />
+              <TitleLink
+                linkKey="blogs"
+                text="Blogs"
+                key="blogs"
+                isFocused={globalState.currentProject === "blogs"}
+              />
             </AnimatePresence>
           </div>
 

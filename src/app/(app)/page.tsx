@@ -49,44 +49,62 @@ export default async function Landing() {
   return (
     <Scroller bgColor="#FDF9F1" restoreId="home-scroller">
       {/* About Me */}
-      <HomeIntro profilePicture={globalData.profilePicture} payload={payload} />
+      <InViewDetector detectorKey="about" height="short" id="about">
+        <HomeIntro
+          profilePicture={globalData.profilePicture}
+          payload={payload}
+        />
+      </InViewDetector>
 
       {/* Projects */}
+      <div id="projects"></div>
       {projects.map((project) => (
         <div key={project.uri} className="w-full">
           <InViewDetector
             key={project.uri}
             detectorKey={project.uri}
-            className="flex h-[90vh] w-full scroll-mt-40 flex-col"
+            className="flex h-[90vh] w-full scroll-mt-8 flex-col"
             id={project.uri}
+            height="short"
           >
             <HomeSection project={project} payload={payload} />
           </InViewDetector>
         </div>
       ))}
+      <div style={{ marginBottom: getSpacing("xxl") }}></div>
 
       {/* Testimonials */}
-      <div
+      <InViewDetector
+        detectorKey="testimonials"
+        className="w-wingle scroll-mt-16"
         id="testimonials"
-        style={{ marginTop: getSpacing("xxl") }}
-        className="w-single"
-      ></div>
-      <Carousel textColor="dark" itemCount={globalData.testimonials.length}>
-        {globalData.testimonials.map((testimonial, index) => (
-          <div className="relative w-full shrink-0 pr-4 pb-4 pl-8" key={index}>
-            <Testimonial
-              testimonial={testimonial.content}
-              author={testimonial.author}
-              avatar={testimonial.avatar}
-              payload={payload}
-              color={testimonial.color}
-            ></Testimonial>
-          </div>
-        ))}
-      </Carousel>
+        height="short"
+      >
+        <Carousel textColor="dark" itemCount={globalData.testimonials.length}>
+          {globalData.testimonials.map((testimonial, index) => (
+            <div
+              className="relative w-full shrink-0 pr-4 pb-4 pl-8"
+              key={index}
+            >
+              <Testimonial
+                testimonial={testimonial.content}
+                author={testimonial.author}
+                avatar={testimonial.avatar}
+                payload={payload}
+                color={testimonial.color}
+              ></Testimonial>
+            </div>
+          ))}
+        </Carousel>
+      </InViewDetector>
 
       {/* Blogs */}
-      <div className="w-single" id="blogs">
+      <InViewDetector
+        detectorKey="blogs"
+        className="w-wingle scroll-mt-8"
+        id="blogs"
+        height="tall"
+      >
         <TitleBlock
           text="Blogs"
           titleType="title"
@@ -161,7 +179,8 @@ export default async function Landing() {
           blockType="smallGallery"
           bottomMargin="xxl"
         />
-      </div>
+      </InViewDetector>
+
       <ConnectPrompt payload={payload} />
     </Scroller>
   );

@@ -6,7 +6,6 @@ const defaultState: GlobalState = {
   currentProjectIndex: -1,
   currentProject: "",
   projectNames: [],
-  title: "",
   sideBarRoutes: [],
   onLanding: true,
 };

@@ -13,10 +13,7 @@ interface HomeIntroProps {
 
 export default function HomeIntro(props: HomeIntroProps) {
   return (
-    <div
-      className="w-single py-spacing-lg flex h-[75vh] flex-col"
-      id="about-me"
-    >
+    <div className="w-single py-spacing-lg flex h-[75vh] flex-col">
       <div
         className="relative flex grow flex-col justify-center gap-4 md:gap-8
           xl:gap-12"
