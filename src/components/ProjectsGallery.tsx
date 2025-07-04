@@ -31,7 +31,7 @@ export default async function ProjectsGallery(props: ProjectsGalleryProps) {
                     type: "paragraph",
                     version: 0,
                     children: [
-                      { type: "text", text: project.name, format: "bold" },
+                      { type: "text", text: project.name, format: 1 },
                     ],
                   },
                 ],
