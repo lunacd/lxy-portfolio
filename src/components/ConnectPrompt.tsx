@@ -1,6 +1,9 @@
+import classNames from "classnames";
 import { Payload } from "payload";
 import React from "react";
 import "server-only";
+
+import { getSpacing } from "@/utils/spacingUtil";
 
 interface ConnectPromptProps {
   textColor?: string;
@@ -18,8 +21,11 @@ export default async function ConnectPrompt(propsIn: ConnectPromptProps) {
     depth: 0,
   });
   return (
-    <>
-      <div className={`paragraph mt-8 ${props.textColor}`}>
+    <div
+      style={{ marginBottom: getSpacing("xxl") }}
+      className="w-single flex flex-col items-center"
+    >
+      <div className={classNames("paragraph mt-8", props.textColor)}>
         {data.connectionPrompt}
       </div>
       <a
@@ -28,6 +34,6 @@ export default async function ConnectPrompt(propsIn: ConnectPromptProps) {
       >
         shirley.lyu.xiaoya@gmail.com
       </a>
-    </>
+    </div>
   );
 }
