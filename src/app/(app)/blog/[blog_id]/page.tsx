@@ -43,7 +43,7 @@ export default async function Blog({
   }
   return (
     <>
-      <Scroller>
+      <Scroller bgColor="#FDF9F1">
         {/* <Link href="/blog/">
           <div className="mt-spacing-lg w-single-small flex flex-row justify-start gap-2">
             <IconChevronLeft></IconChevronLeft>
