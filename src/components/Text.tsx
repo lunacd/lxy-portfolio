@@ -49,6 +49,9 @@ function TextChild(props: TextChildProps) {
         <a
           href={(props.fields as { url: string }).url}
           className="text-blue-500 underline"
+          target={
+            (props.fields as { newTab: boolean }).newTab ? "_blank" : "_self"
+          }
         >
           {children}
         </a>
@@ -70,6 +73,7 @@ interface TextProps {
 }
 
 export default function Text(props: TextProps) {
+  console.log(props);
   return (
     <div className={props.className} style={props.style}>
       {props.text.root.children.map((child, index) => (
