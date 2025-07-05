@@ -1,6 +1,6 @@
 import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
 
-export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
+export async function up({ db }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
    ALTER TYPE "public"."enum_project_pages_blocks_image_with_text_overlay_text_color" RENAME TO "enum_iwto_text_color";
   ALTER TYPE "public"."enum_project_pages_blocks_image_with_text_overlay_bottom_margin" RENAME TO "enum_iwto_bottom_margin";
@@ -25,7 +25,7 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   DROP TYPE "public"."enum_blogs_blocks_image_with_text_overlay_bottom_margin";`)
 }
 
-export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
+export async function down({ db }: MigrateDownArgs): Promise<void> {
   await db.execute(sql`
    CREATE TYPE "public"."enum_blogs_blocks_image_with_text_overlay_text_color" AS ENUM('dark', 'light');
   CREATE TYPE "public"."enum_blogs_blocks_image_with_text_overlay_bottom_margin" AS ENUM('none', 'small', 'medium', 'regular', 'large', 'xl', 'xxl');
