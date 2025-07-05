@@ -4,6 +4,7 @@ import { Block } from "payload";
 
 const ImageWithTextOverlayBlock: Block = {
   slug: "imageWithTextOverlay",
+  dbName: "iwto",
   fields: [
     {
       name: "image",
