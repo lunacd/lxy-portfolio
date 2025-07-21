@@ -33,10 +33,6 @@ const nextConfig = withPayload({
   async rewrites() {
     return [
       {
-        source: "/breathe",
-        destination: "/breathe.pdf",
-      },
-      {
         source: "/resume.pdf",
         destination: "/documents/resume",
       },
