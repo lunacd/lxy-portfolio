@@ -61,24 +61,6 @@ export const Projects: CollectionConfig = {
       },
     },
     {
-      name: "uiuxOrder",
-      type: "number",
-      required: true,
-      defaultValue: 0,
-    },
-    {
-      name: "industrialDesignOrder",
-      type: "number",
-      required: true,
-      defaultValue: 0,
-    },
-    {
-      name: "edTechOrder",
-      type: "number",
-      required: true,
-      defaultValue: 0,
-    },
-    {
       name: "isMainProject",
       type: "checkbox",
       required: true,
