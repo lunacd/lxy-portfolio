@@ -27,7 +27,6 @@ export default function GlobalStateContextProvider(
     dispatch,
   };
   useEffect(() => {
-    console.log("Changing route to ", pathname);
     dispatch({ type: "changeRoute", newPath: pathname });
   }, [pathname]);
   return (
