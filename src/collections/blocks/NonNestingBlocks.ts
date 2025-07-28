@@ -17,25 +17,28 @@ import TextBlock from "./TextBlock";
 import TextImageBlock from "./TextImageBlock";
 import TitleBlock from "./TitleBlock";
 import YouTubeBlock from "./YouTubeBlock";
+import { Block } from "payload";
 
-export const nonNestingBlocks = [
-  TitleBlock,
-  TextBlock,
-  HorizontalGalleryBlock,
-  ImageBlock,
-  YouTubeBlock,
-  DocumentBlock,
-  TextImageBlock,
-  HorizontalScrollBlock,
-  SlideShowBlock,
-  SmallGalleryBlock,
-  EqualHeightImagesBlock,
-  ImageWithTextOverlayBlock,
-  ImageTextBlock,
-  CarouselBlock,
-  ButtonBlock,
-  EmbedBlock,
-  TestimonialBlock,
-  EmphasisTextBlock,
-  InteractiveImageBlock,
-];
+export function nonNestingBlocks(collectionName: string): Block[] {
+  return [
+    TitleBlock,
+    TextBlock,
+    HorizontalGalleryBlock,
+    ImageBlock,
+    YouTubeBlock,
+    DocumentBlock,
+    TextImageBlock,
+    HorizontalScrollBlock,
+    SlideShowBlock,
+    SmallGalleryBlock,
+    EqualHeightImagesBlock,
+    ImageWithTextOverlayBlock,
+    ImageTextBlock,
+    CarouselBlock,
+    ButtonBlock,
+    EmbedBlock,
+    TestimonialBlock,
+    EmphasisTextBlock,
+    InteractiveImageBlock(collectionName),
+  ];
+}

@@ -3,9 +3,14 @@ import ColumnBlock from "./ColumnBlock";
 import { nonNestingBlocks } from "./NonNestingBlocks";
 import { Block } from "payload";
 
-export default function RowBlock(depth: number): Block {
+export default function RowBlock(collectionName: string, depth: number): Block {
   const nested =
-    depth == 0 ? [] : [ColumnBlock(depth - 1), RowBlock(depth - 1)];
+    depth == 0
+      ? []
+      : [
+          ColumnBlock(collectionName, depth - 1),
+          RowBlock(collectionName, depth - 1),
+        ];
   return {
     slug: "row",
     fields: [
@@ -13,7 +18,7 @@ export default function RowBlock(depth: number): Block {
         name: "blocks",
         type: "blocks",
         required: true,
-        blocks: nonNestingBlocks.concat(nested),
+        blocks: nonNestingBlocks(collectionName).concat(nested),
       },
       {
         name: "spacing",

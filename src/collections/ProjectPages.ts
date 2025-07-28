@@ -15,7 +15,7 @@ export const ProjectPages: CollectionConfig = {
     {
       name: "blocks",
       type: "blocks",
-      blocks: blocks(1),
+      blocks: blocks("projectPages", 1),
       required: true,
     },
   ],

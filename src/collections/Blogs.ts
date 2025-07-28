@@ -59,7 +59,7 @@ export const Blogs: CollectionConfig = {
     {
       name: "blocks",
       type: "blocks",
-      blocks: blocks(1),
+      blocks: blocks("blogs", 1),
       required: true,
     },
   ],
