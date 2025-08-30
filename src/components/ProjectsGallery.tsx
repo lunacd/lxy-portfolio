@@ -44,7 +44,7 @@ export default async function ProjectsGallery(props: ProjectsGalleryProps) {
             link:
               project.externalLink && project.externalLink.length !== 0
                 ? project.externalLink
-                : `/${project.uri}`,
+                : `/${props.type}/${project.uri}`,
           };
         }),
       )}
