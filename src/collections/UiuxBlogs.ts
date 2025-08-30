@@ -1,8 +1,8 @@
 import { blocks } from "./blocks/AllBlocks";
 import type { CollectionConfig } from "payload";
 
-export const Blogs: CollectionConfig = {
-  slug: "blogs",
+export const UiuxBlogs: CollectionConfig = {
+  slug: "uiuxBlogs",
   admin: {
     useAsTitle: "title",
     livePreview: {

@@ -13,7 +13,7 @@ import React, { PropsWithChildren } from "react";
 
 import Sidebar from "@/components/Sidebar";
 import { PortfolioType, stringIsType } from "@/utils/CommonTypes";
-import { typeToPayloadProjectSlug } from "@/utils/payloadHelpers";
+import { payloadProjectSlug } from "@/utils/payloadHelpers";
 
 const catamaran = Catamaran({ subsets: ["latin"] });
 
@@ -33,7 +33,7 @@ export default async function RootLayout(
   }
   const projects = (
     await payload.find({
-      collection: typeToPayloadProjectSlug(type),
+      collection: payloadProjectSlug(type),
       pagination: false,
       where: {
         isMainProject: {

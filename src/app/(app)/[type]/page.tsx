@@ -13,7 +13,7 @@ import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
 import Testimonial from "@/components/Testimonial";
 import { PortfolioType, stringIsType } from "@/utils/CommonTypes";
-import { typeToPayloadProjectSlug } from "@/utils/payloadHelpers";
+import { payloadBlogSlug, payloadProjectSlug } from "@/utils/payloadHelpers";
 import { getSpacing } from "@/utils/spacingUtil";
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ export default async function Landing({
   });
   const promises = await Promise.all([
     payload.find({
-      collection: typeToPayloadProjectSlug(type),
+      collection: payloadProjectSlug(type),
       pagination: false,
       where: {
         isMainProject: {
@@ -59,7 +59,7 @@ export default async function Landing({
       slug: "global",
     }),
     payload.find({
-      collection: "blogs",
+      collection: payloadBlogSlug(type),
       sort: "-date",
       pagination: false,
     }),

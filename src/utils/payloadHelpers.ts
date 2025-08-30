@@ -36,7 +36,7 @@ export async function getMedia(
   return bangMediaFields(rawMedia);
 }
 
-export function typeToPayloadProjectSlug(
+export function payloadProjectSlug(
   type: PortfolioType,
 ): "uiuxProjects" | "productProjects" | "edtechProjects" {
   switch (type) {
@@ -51,6 +51,21 @@ export function typeToPayloadProjectSlug(
   }
 }
 
+export function payloadBlogSlug(
+  type: PortfolioType,
+): "uiuxBlogs" | "productBlogs" | "edtechBlogs" {
+  switch (type) {
+    case "product-designer":
+      return "uiuxBlogs";
+    case "industrial-designer":
+      return "productBlogs";
+    case "instructional-designer":
+      return "edtechBlogs";
+    default:
+      throw new Error(`Unknown project type: ${type}`);
+  }
+}
+
 export async function getProject(
   type: PortfolioType,
   rawProject: number | UiuxProject | ProductProject | EdtechProject,
@@ -58,7 +73,7 @@ export async function getProject(
 ): Promise<UiuxProject | ProductProject | EdtechProject> {
   if (typeof rawProject === "number") {
     return await payload.findByID({
-      collection: typeToPayloadProjectSlug(type),
+      collection: payloadProjectSlug(type),
       id: rawProject,
     });
   }

@@ -8,7 +8,7 @@ import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
 import { portfolioTypes, stringIsType } from "@/utils/CommonTypes";
-import { typeToPayloadProjectSlug } from "@/utils/payloadHelpers";
+import { payloadProjectSlug } from "@/utils/payloadHelpers";
 
 interface ParamType {
   type: string;
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
   for (const type of portfolioTypes) {
     const projects = (
       await payload.find({
-        collection: typeToPayloadProjectSlug(type),
+        collection: payloadProjectSlug(type),
         depth: 1,
         select: {
           uri: true,
@@ -56,7 +56,7 @@ export async function generateMetadata({
   }
   const projectData = (
     await payload.find({
-      collection: typeToPayloadProjectSlug(type),
+      collection: payloadProjectSlug(type),
       depth: 1,
       select: {
         name: true,
@@ -87,7 +87,7 @@ export default async function ProjectPageComponent({
   }
   const projectData = (
     await payload.find({
-      collection: typeToPayloadProjectSlug(type),
+      collection: payloadProjectSlug(type),
       depth: 2,
       where: {
         uri: {

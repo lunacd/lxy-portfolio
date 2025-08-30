@@ -74,7 +74,9 @@ export interface Config {
     productProjects: ProductProject;
     edtechProjects: EdtechProject;
     projectPages: ProjectPage;
-    blogs: Blog;
+    uiuxBlogs: UiuxBlog;
+    edtechBlogs: EdtechBlog;
+    productBlogs: ProductBlog;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -88,7 +90,9 @@ export interface Config {
     productProjects: ProductProjectsSelect<false> | ProductProjectsSelect<true>;
     edtechProjects: EdtechProjectsSelect<false> | EdtechProjectsSelect<true>;
     projectPages: ProjectPagesSelect<false> | ProjectPagesSelect<true>;
-    blogs: BlogsSelect<false> | BlogsSelect<true>;
+    uiuxBlogs: UiuxBlogsSelect<false> | UiuxBlogsSelect<true>;
+    edtechBlogs: EdtechBlogsSelect<false> | EdtechBlogsSelect<true>;
+    productBlogs: ProductBlogsSelect<false> | ProductBlogsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -3468,9 +3472,6143 @@ export interface ProjectPage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "blogs".
+ * via the `definition` "uiuxBlogs".
  */
-export interface Blog {
+export interface UiuxBlog {
+  id: number;
+  title: string;
+  date: string;
+  /**
+   * Required dimension: 1280 x 1058.
+   */
+  coverImage: number | Media;
+  tags: {
+    value: string;
+    id?: string | null;
+  }[];
+  /**
+   * If provided, the blog will link to the external URL instead.
+   */
+  externalLink?: string | null;
+  blocks: (
+    | {
+        text: string;
+        titleType: 'title' | 'subtitle';
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'title';
+      }
+    | {
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'text';
+      }
+    | {
+        items: {
+          /**
+           * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+           */
+          images: {
+            image: number | Media;
+            id?: string | null;
+          }[];
+          text?: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'horizontalGallery';
+      }
+    | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
+        image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'image';
+      }
+    | {
+        /**
+         * Get embed link by going to the YouTube video page, click share, and then choose embed.
+         */
+        embedLink: string;
+        width: number;
+        height: number;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'youtube';
+      }
+    | {
+        label: string;
+        /**
+         * The document to link to.
+         */
+        document: number | Document;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'document';
+      }
+    | {
+        title: string;
+        titleType: 'title' | 'subtitle';
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        /**
+         * Recommended width 1920px.
+         */
+        image: number | Media;
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'textImage';
+      }
+    | {
+        /**
+         * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+         */
+        image: number | Media;
+        /**
+         * The text displayed on top of the image to tell users to scroll.
+         */
+        scrollPrompt: string;
+        /**
+         * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+         */
+        width: number;
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'horizontalScroll';
+      }
+    | {
+        images: {
+          /**
+           * Recommended width 3840px.
+           */
+          image: number | Media;
+          id?: string | null;
+        }[];
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'slideShow';
+      }
+    | {
+        items: {
+          /**
+           * Recommended width 1280px.
+           */
+          image: number | Media;
+          /**
+           * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+           */
+          text: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          /**
+           * If specified, the displayed image will be clickable and will link to the given link.
+           */
+          link?: string | null;
+          id?: string | null;
+        }[];
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'smallGallery';
+      }
+    | {
+        items: {
+          /**
+           * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+           */
+          images: {
+            image: number | Media;
+            id?: string | null;
+          }[];
+          /**
+           * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+           */
+          imageSize: number;
+          id?: string | null;
+        }[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'equalHeightImages';
+      }
+    | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
+        image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        textOverlay: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'imageWithTextOverlay';
+      }
+    | {
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        images: {
+          /**
+           * Recommended width 1920px.
+           */
+          image: number | Media;
+          id?: string | null;
+        }[];
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'imageText';
+      }
+    | {
+        items: {
+          /**
+           * All images must have the same size. Recommended image width: approximately 3840px.
+           */
+          image: number | Media;
+          id?: string | null;
+        }[];
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'carousel';
+      }
+    | {
+        label: string;
+        link: string;
+        openInNewPage: boolean;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'button';
+      }
+    | {
+        embedLink: string;
+        width: number;
+        height: number;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'embed';
+      }
+    | {
+        content: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        author: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        /**
+         * 1024x1217px
+         */
+        avatar?: (number | null) | Media;
+        color: string;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'testimonial';
+      }
+    | {
+        emphasis: string;
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        useBackground: boolean;
+        backgroundColor?: string | null;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        textColor: 'dark' | 'light';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'emphasisText';
+      }
+    | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
+        image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        backgroundColor: string;
+        textColor: 'dark' | 'light';
+        interactiveBlocks: {
+          /**
+           * Percentage of image width.
+           */
+          left: number;
+          /**
+           * Percentage of image height.
+           */
+          top: number;
+          textPosition: 'left' | 'right' | 'top' | 'bottom';
+          /**
+           * Percentage of image width.
+           */
+          maxTextWidth: number;
+          text: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          id?: string | null;
+        }[];
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'interactiveImage';
+      }
+    | {
+        blocks: (
+          | {
+              text: string;
+              titleType: 'title' | 'subtitle';
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'title';
+            }
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'text';
+            }
+          | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                 */
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                text?: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                } | null;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'horizontalGallery';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'image';
+            }
+          | {
+              /**
+               * Get embed link by going to the YouTube video page, click share, and then choose embed.
+               */
+              embedLink: string;
+              width: number;
+              height: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'youtube';
+            }
+          | {
+              label: string;
+              /**
+               * The document to link to.
+               */
+              document: number | Document;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'document';
+            }
+          | {
+              title: string;
+              titleType: 'title' | 'subtitle';
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * Recommended width 1920px.
+               */
+              image: number | Media;
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'textImage';
+            }
+          | {
+              /**
+               * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+               */
+              image: number | Media;
+              /**
+               * The text displayed on top of the image to tell users to scroll.
+               */
+              scrollPrompt: string;
+              /**
+               * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+               */
+              width: number;
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'horizontalScroll';
+            }
+          | {
+              images: {
+                /**
+                 * Recommended width 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'slideShow';
+            }
+          | {
+              items: {
+                /**
+                 * Recommended width 1280px.
+                 */
+                image: number | Media;
+                /**
+                 * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                 */
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                /**
+                 * If specified, the displayed image will be clickable and will link to the given link.
+                 */
+                link?: string | null;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'smallGallery';
+            }
+          | {
+              items: {
+                /**
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                 */
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                /**
+                 * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                 */
+                imageSize: number;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'equalHeightImages';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              textOverlay: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageWithTextOverlay';
+            }
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              images: {
+                /**
+                 * Recommended width 1920px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageText';
+            }
+          | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'carousel';
+            }
+          | {
+              label: string;
+              link: string;
+              openInNewPage: boolean;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'button';
+            }
+          | {
+              embedLink: string;
+              width: number;
+              height: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'embed';
+            }
+          | {
+              content: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              author: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * 1024x1217px
+               */
+              avatar?: (number | null) | Media;
+              color: string;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'testimonial';
+            }
+          | {
+              emphasis: string;
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              useBackground: boolean;
+              backgroundColor?: string | null;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              textColor: 'dark' | 'light';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'emphasisText';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              backgroundColor: string;
+              textColor: 'dark' | 'light';
+              interactiveBlocks: {
+                /**
+                 * Percentage of image width.
+                 */
+                left: number;
+                /**
+                 * Percentage of image height.
+                 */
+                top: number;
+                textPosition: 'left' | 'right' | 'top' | 'bottom';
+                /**
+                 * Percentage of image width.
+                 */
+                maxTextWidth: number;
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                id?: string | null;
+              }[];
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'interactiveImage';
+            }
+          | {
+              blocks: (
+                | {
+                    text: string;
+                    titleType: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      text?: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      } | null;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+                | {
+                    /**
+                     * Get embed link by going to the YouTube video page, click share, and then choose embed.
+                     */
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'youtube';
+                  }
+                | {
+                    label: string;
+                    /**
+                     * The document to link to.
+                     */
+                    document: number | Document;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'document';
+                  }
+                | {
+                    title: string;
+                    titleType: 'title' | 'subtitle';
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * Recommended width 1920px.
+                     */
+                    image: number | Media;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'textImage';
+                  }
+                | {
+                    /**
+                     * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+                     */
+                    image: number | Media;
+                    /**
+                     * The text displayed on top of the image to tell users to scroll.
+                     */
+                    scrollPrompt: string;
+                    /**
+                     * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+                     */
+                    width: number;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalScroll';
+                  }
+                | {
+                    images: {
+                      /**
+                       * Recommended width 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'slideShow';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Recommended width 1280px.
+                       */
+                      image: number | Media;
+                      /**
+                       * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                       */
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * If specified, the displayed image will be clickable and will link to the given link.
+                       */
+                      link?: string | null;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
+                  }
+                | {
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
+                  }
+                | {
+                    emphasis: string;
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
+                  }
+              )[];
+              spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              justify: 'start' | 'center' | 'end';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'column';
+            }
+          | {
+              blocks: (
+                | {
+                    text: string;
+                    titleType: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      text?: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      } | null;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+                | {
+                    /**
+                     * Get embed link by going to the YouTube video page, click share, and then choose embed.
+                     */
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'youtube';
+                  }
+                | {
+                    label: string;
+                    /**
+                     * The document to link to.
+                     */
+                    document: number | Document;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'document';
+                  }
+                | {
+                    title: string;
+                    titleType: 'title' | 'subtitle';
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * Recommended width 1920px.
+                     */
+                    image: number | Media;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'textImage';
+                  }
+                | {
+                    /**
+                     * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+                     */
+                    image: number | Media;
+                    /**
+                     * The text displayed on top of the image to tell users to scroll.
+                     */
+                    scrollPrompt: string;
+                    /**
+                     * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+                     */
+                    width: number;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalScroll';
+                  }
+                | {
+                    images: {
+                      /**
+                       * Recommended width 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'slideShow';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Recommended width 1280px.
+                       */
+                      image: number | Media;
+                      /**
+                       * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                       */
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * If specified, the displayed image will be clickable and will link to the given link.
+                       */
+                      link?: string | null;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
+                  }
+                | {
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
+                  }
+                | {
+                    emphasis: string;
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
+                  }
+              )[];
+              spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              alignment: 'start' | 'center' | 'end';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'row';
+            }
+        )[];
+        spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        alignment: 'start' | 'center' | 'end';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'row';
+      }
+    | {
+        blocks: (
+          | {
+              text: string;
+              titleType: 'title' | 'subtitle';
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'title';
+            }
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'text';
+            }
+          | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                 */
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                text?: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                } | null;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'horizontalGallery';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'image';
+            }
+          | {
+              /**
+               * Get embed link by going to the YouTube video page, click share, and then choose embed.
+               */
+              embedLink: string;
+              width: number;
+              height: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'youtube';
+            }
+          | {
+              label: string;
+              /**
+               * The document to link to.
+               */
+              document: number | Document;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'document';
+            }
+          | {
+              title: string;
+              titleType: 'title' | 'subtitle';
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * Recommended width 1920px.
+               */
+              image: number | Media;
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'textImage';
+            }
+          | {
+              /**
+               * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+               */
+              image: number | Media;
+              /**
+               * The text displayed on top of the image to tell users to scroll.
+               */
+              scrollPrompt: string;
+              /**
+               * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+               */
+              width: number;
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'horizontalScroll';
+            }
+          | {
+              images: {
+                /**
+                 * Recommended width 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'slideShow';
+            }
+          | {
+              items: {
+                /**
+                 * Recommended width 1280px.
+                 */
+                image: number | Media;
+                /**
+                 * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                 */
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                /**
+                 * If specified, the displayed image will be clickable and will link to the given link.
+                 */
+                link?: string | null;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'smallGallery';
+            }
+          | {
+              items: {
+                /**
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                 */
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                /**
+                 * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                 */
+                imageSize: number;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'equalHeightImages';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              textOverlay: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageWithTextOverlay';
+            }
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              images: {
+                /**
+                 * Recommended width 1920px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageText';
+            }
+          | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'carousel';
+            }
+          | {
+              label: string;
+              link: string;
+              openInNewPage: boolean;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'button';
+            }
+          | {
+              embedLink: string;
+              width: number;
+              height: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'embed';
+            }
+          | {
+              content: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              author: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * 1024x1217px
+               */
+              avatar?: (number | null) | Media;
+              color: string;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'testimonial';
+            }
+          | {
+              emphasis: string;
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              useBackground: boolean;
+              backgroundColor?: string | null;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              textColor: 'dark' | 'light';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'emphasisText';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              backgroundColor: string;
+              textColor: 'dark' | 'light';
+              interactiveBlocks: {
+                /**
+                 * Percentage of image width.
+                 */
+                left: number;
+                /**
+                 * Percentage of image height.
+                 */
+                top: number;
+                textPosition: 'left' | 'right' | 'top' | 'bottom';
+                /**
+                 * Percentage of image width.
+                 */
+                maxTextWidth: number;
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                id?: string | null;
+              }[];
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'interactiveImage';
+            }
+          | {
+              blocks: (
+                | {
+                    text: string;
+                    titleType: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      text?: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      } | null;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+                | {
+                    /**
+                     * Get embed link by going to the YouTube video page, click share, and then choose embed.
+                     */
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'youtube';
+                  }
+                | {
+                    label: string;
+                    /**
+                     * The document to link to.
+                     */
+                    document: number | Document;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'document';
+                  }
+                | {
+                    title: string;
+                    titleType: 'title' | 'subtitle';
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * Recommended width 1920px.
+                     */
+                    image: number | Media;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'textImage';
+                  }
+                | {
+                    /**
+                     * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+                     */
+                    image: number | Media;
+                    /**
+                     * The text displayed on top of the image to tell users to scroll.
+                     */
+                    scrollPrompt: string;
+                    /**
+                     * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+                     */
+                    width: number;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalScroll';
+                  }
+                | {
+                    images: {
+                      /**
+                       * Recommended width 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'slideShow';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Recommended width 1280px.
+                       */
+                      image: number | Media;
+                      /**
+                       * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                       */
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * If specified, the displayed image will be clickable and will link to the given link.
+                       */
+                      link?: string | null;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
+                  }
+                | {
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
+                  }
+                | {
+                    emphasis: string;
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
+                  }
+              )[];
+              spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              justify: 'start' | 'center' | 'end';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'column';
+            }
+          | {
+              blocks: (
+                | {
+                    text: string;
+                    titleType: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      text?: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      } | null;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+                | {
+                    /**
+                     * Get embed link by going to the YouTube video page, click share, and then choose embed.
+                     */
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'youtube';
+                  }
+                | {
+                    label: string;
+                    /**
+                     * The document to link to.
+                     */
+                    document: number | Document;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'document';
+                  }
+                | {
+                    title: string;
+                    titleType: 'title' | 'subtitle';
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * Recommended width 1920px.
+                     */
+                    image: number | Media;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'textImage';
+                  }
+                | {
+                    /**
+                     * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+                     */
+                    image: number | Media;
+                    /**
+                     * The text displayed on top of the image to tell users to scroll.
+                     */
+                    scrollPrompt: string;
+                    /**
+                     * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+                     */
+                    width: number;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalScroll';
+                  }
+                | {
+                    images: {
+                      /**
+                       * Recommended width 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'slideShow';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Recommended width 1280px.
+                       */
+                      image: number | Media;
+                      /**
+                       * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                       */
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * If specified, the displayed image will be clickable and will link to the given link.
+                       */
+                      link?: string | null;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
+                  }
+                | {
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
+                  }
+                | {
+                    emphasis: string;
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
+                  }
+              )[];
+              spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              alignment: 'start' | 'center' | 'end';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'row';
+            }
+        )[];
+        spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        justify: 'start' | 'center' | 'end';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'column';
+      }
+  )[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "edtechBlogs".
+ */
+export interface EdtechBlog {
+  id: number;
+  title: string;
+  date: string;
+  /**
+   * Required dimension: 1280 x 1058.
+   */
+  coverImage: number | Media;
+  tags: {
+    value: string;
+    id?: string | null;
+  }[];
+  /**
+   * If provided, the blog will link to the external URL instead.
+   */
+  externalLink?: string | null;
+  blocks: (
+    | {
+        text: string;
+        titleType: 'title' | 'subtitle';
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'title';
+      }
+    | {
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'text';
+      }
+    | {
+        items: {
+          /**
+           * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+           */
+          images: {
+            image: number | Media;
+            id?: string | null;
+          }[];
+          text?: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'horizontalGallery';
+      }
+    | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
+        image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'image';
+      }
+    | {
+        /**
+         * Get embed link by going to the YouTube video page, click share, and then choose embed.
+         */
+        embedLink: string;
+        width: number;
+        height: number;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'youtube';
+      }
+    | {
+        label: string;
+        /**
+         * The document to link to.
+         */
+        document: number | Document;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'document';
+      }
+    | {
+        title: string;
+        titleType: 'title' | 'subtitle';
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        /**
+         * Recommended width 1920px.
+         */
+        image: number | Media;
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'textImage';
+      }
+    | {
+        /**
+         * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+         */
+        image: number | Media;
+        /**
+         * The text displayed on top of the image to tell users to scroll.
+         */
+        scrollPrompt: string;
+        /**
+         * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+         */
+        width: number;
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'horizontalScroll';
+      }
+    | {
+        images: {
+          /**
+           * Recommended width 3840px.
+           */
+          image: number | Media;
+          id?: string | null;
+        }[];
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'slideShow';
+      }
+    | {
+        items: {
+          /**
+           * Recommended width 1280px.
+           */
+          image: number | Media;
+          /**
+           * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+           */
+          text: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          /**
+           * If specified, the displayed image will be clickable and will link to the given link.
+           */
+          link?: string | null;
+          id?: string | null;
+        }[];
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'smallGallery';
+      }
+    | {
+        items: {
+          /**
+           * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+           */
+          images: {
+            image: number | Media;
+            id?: string | null;
+          }[];
+          /**
+           * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+           */
+          imageSize: number;
+          id?: string | null;
+        }[];
+        spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'equalHeightImages';
+      }
+    | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
+        image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        textOverlay: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'imageWithTextOverlay';
+      }
+    | {
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        images: {
+          /**
+           * Recommended width 1920px.
+           */
+          image: number | Media;
+          id?: string | null;
+        }[];
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'imageText';
+      }
+    | {
+        items: {
+          /**
+           * All images must have the same size. Recommended image width: approximately 3840px.
+           */
+          image: number | Media;
+          id?: string | null;
+        }[];
+        textColor: 'dark' | 'light';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'carousel';
+      }
+    | {
+        label: string;
+        link: string;
+        openInNewPage: boolean;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'button';
+      }
+    | {
+        embedLink: string;
+        width: number;
+        height: number;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'embed';
+      }
+    | {
+        content: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        author: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        /**
+         * 1024x1217px
+         */
+        avatar?: (number | null) | Media;
+        color: string;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'testimonial';
+      }
+    | {
+        emphasis: string;
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        useBackground: boolean;
+        backgroundColor?: string | null;
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        textColor: 'dark' | 'light';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'emphasisText';
+      }
+    | {
+        /**
+         * For a full-width image, recommended width is 3840px.
+         */
+        image: number | Media;
+        /**
+         * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+         */
+        imageSize: number;
+        backgroundColor: string;
+        textColor: 'dark' | 'light';
+        interactiveBlocks: {
+          /**
+           * Percentage of image width.
+           */
+          left: number;
+          /**
+           * Percentage of image height.
+           */
+          top: number;
+          textPosition: 'left' | 'right' | 'top' | 'bottom';
+          /**
+           * Percentage of image width.
+           */
+          maxTextWidth: number;
+          text: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          id?: string | null;
+        }[];
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'interactiveImage';
+      }
+    | {
+        blocks: (
+          | {
+              text: string;
+              titleType: 'title' | 'subtitle';
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'title';
+            }
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'text';
+            }
+          | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                 */
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                text?: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                } | null;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'horizontalGallery';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'image';
+            }
+          | {
+              /**
+               * Get embed link by going to the YouTube video page, click share, and then choose embed.
+               */
+              embedLink: string;
+              width: number;
+              height: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'youtube';
+            }
+          | {
+              label: string;
+              /**
+               * The document to link to.
+               */
+              document: number | Document;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'document';
+            }
+          | {
+              title: string;
+              titleType: 'title' | 'subtitle';
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * Recommended width 1920px.
+               */
+              image: number | Media;
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'textImage';
+            }
+          | {
+              /**
+               * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+               */
+              image: number | Media;
+              /**
+               * The text displayed on top of the image to tell users to scroll.
+               */
+              scrollPrompt: string;
+              /**
+               * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+               */
+              width: number;
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'horizontalScroll';
+            }
+          | {
+              images: {
+                /**
+                 * Recommended width 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'slideShow';
+            }
+          | {
+              items: {
+                /**
+                 * Recommended width 1280px.
+                 */
+                image: number | Media;
+                /**
+                 * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                 */
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                /**
+                 * If specified, the displayed image will be clickable and will link to the given link.
+                 */
+                link?: string | null;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'smallGallery';
+            }
+          | {
+              items: {
+                /**
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                 */
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                /**
+                 * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                 */
+                imageSize: number;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'equalHeightImages';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              textOverlay: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageWithTextOverlay';
+            }
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              images: {
+                /**
+                 * Recommended width 1920px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageText';
+            }
+          | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'carousel';
+            }
+          | {
+              label: string;
+              link: string;
+              openInNewPage: boolean;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'button';
+            }
+          | {
+              embedLink: string;
+              width: number;
+              height: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'embed';
+            }
+          | {
+              content: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              author: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * 1024x1217px
+               */
+              avatar?: (number | null) | Media;
+              color: string;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'testimonial';
+            }
+          | {
+              emphasis: string;
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              useBackground: boolean;
+              backgroundColor?: string | null;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              textColor: 'dark' | 'light';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'emphasisText';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              backgroundColor: string;
+              textColor: 'dark' | 'light';
+              interactiveBlocks: {
+                /**
+                 * Percentage of image width.
+                 */
+                left: number;
+                /**
+                 * Percentage of image height.
+                 */
+                top: number;
+                textPosition: 'left' | 'right' | 'top' | 'bottom';
+                /**
+                 * Percentage of image width.
+                 */
+                maxTextWidth: number;
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                id?: string | null;
+              }[];
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'interactiveImage';
+            }
+          | {
+              blocks: (
+                | {
+                    text: string;
+                    titleType: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      text?: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      } | null;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+                | {
+                    /**
+                     * Get embed link by going to the YouTube video page, click share, and then choose embed.
+                     */
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'youtube';
+                  }
+                | {
+                    label: string;
+                    /**
+                     * The document to link to.
+                     */
+                    document: number | Document;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'document';
+                  }
+                | {
+                    title: string;
+                    titleType: 'title' | 'subtitle';
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * Recommended width 1920px.
+                     */
+                    image: number | Media;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'textImage';
+                  }
+                | {
+                    /**
+                     * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+                     */
+                    image: number | Media;
+                    /**
+                     * The text displayed on top of the image to tell users to scroll.
+                     */
+                    scrollPrompt: string;
+                    /**
+                     * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+                     */
+                    width: number;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalScroll';
+                  }
+                | {
+                    images: {
+                      /**
+                       * Recommended width 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'slideShow';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Recommended width 1280px.
+                       */
+                      image: number | Media;
+                      /**
+                       * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                       */
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * If specified, the displayed image will be clickable and will link to the given link.
+                       */
+                      link?: string | null;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
+                  }
+                | {
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
+                  }
+                | {
+                    emphasis: string;
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
+                  }
+              )[];
+              spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              justify: 'start' | 'center' | 'end';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'column';
+            }
+          | {
+              blocks: (
+                | {
+                    text: string;
+                    titleType: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      text?: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      } | null;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+                | {
+                    /**
+                     * Get embed link by going to the YouTube video page, click share, and then choose embed.
+                     */
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'youtube';
+                  }
+                | {
+                    label: string;
+                    /**
+                     * The document to link to.
+                     */
+                    document: number | Document;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'document';
+                  }
+                | {
+                    title: string;
+                    titleType: 'title' | 'subtitle';
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * Recommended width 1920px.
+                     */
+                    image: number | Media;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'textImage';
+                  }
+                | {
+                    /**
+                     * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+                     */
+                    image: number | Media;
+                    /**
+                     * The text displayed on top of the image to tell users to scroll.
+                     */
+                    scrollPrompt: string;
+                    /**
+                     * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+                     */
+                    width: number;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalScroll';
+                  }
+                | {
+                    images: {
+                      /**
+                       * Recommended width 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'slideShow';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Recommended width 1280px.
+                       */
+                      image: number | Media;
+                      /**
+                       * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                       */
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * If specified, the displayed image will be clickable and will link to the given link.
+                       */
+                      link?: string | null;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
+                  }
+                | {
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
+                  }
+                | {
+                    emphasis: string;
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
+                  }
+              )[];
+              spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              alignment: 'start' | 'center' | 'end';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'row';
+            }
+        )[];
+        spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        alignment: 'start' | 'center' | 'end';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'row';
+      }
+    | {
+        blocks: (
+          | {
+              text: string;
+              titleType: 'title' | 'subtitle';
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'title';
+            }
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'text';
+            }
+          | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                 */
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                text?: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                } | null;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'horizontalGallery';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'image';
+            }
+          | {
+              /**
+               * Get embed link by going to the YouTube video page, click share, and then choose embed.
+               */
+              embedLink: string;
+              width: number;
+              height: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'youtube';
+            }
+          | {
+              label: string;
+              /**
+               * The document to link to.
+               */
+              document: number | Document;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'document';
+            }
+          | {
+              title: string;
+              titleType: 'title' | 'subtitle';
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * Recommended width 1920px.
+               */
+              image: number | Media;
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'textImage';
+            }
+          | {
+              /**
+               * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+               */
+              image: number | Media;
+              /**
+               * The text displayed on top of the image to tell users to scroll.
+               */
+              scrollPrompt: string;
+              /**
+               * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+               */
+              width: number;
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'horizontalScroll';
+            }
+          | {
+              images: {
+                /**
+                 * Recommended width 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'slideShow';
+            }
+          | {
+              items: {
+                /**
+                 * Recommended width 1280px.
+                 */
+                image: number | Media;
+                /**
+                 * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                 */
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                /**
+                 * If specified, the displayed image will be clickable and will link to the given link.
+                 */
+                link?: string | null;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'smallGallery';
+            }
+          | {
+              items: {
+                /**
+                 * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                 */
+                images: {
+                  image: number | Media;
+                  id?: string | null;
+                }[];
+                /**
+                 * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                 */
+                imageSize: number;
+                id?: string | null;
+              }[];
+              spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'equalHeightImages';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              textOverlay: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageWithTextOverlay';
+            }
+          | {
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              images: {
+                /**
+                 * Recommended width 1920px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'imageText';
+            }
+          | {
+              items: {
+                /**
+                 * All images must have the same size. Recommended image width: approximately 3840px.
+                 */
+                image: number | Media;
+                id?: string | null;
+              }[];
+              textColor: 'dark' | 'light';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'carousel';
+            }
+          | {
+              label: string;
+              link: string;
+              openInNewPage: boolean;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'button';
+            }
+          | {
+              embedLink: string;
+              width: number;
+              height: number;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'embed';
+            }
+          | {
+              content: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              author: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              /**
+               * 1024x1217px
+               */
+              avatar?: (number | null) | Media;
+              color: string;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'testimonial';
+            }
+          | {
+              emphasis: string;
+              text: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              useBackground: boolean;
+              backgroundColor?: string | null;
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              textColor: 'dark' | 'light';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'emphasisText';
+            }
+          | {
+              /**
+               * For a full-width image, recommended width is 3840px.
+               */
+              image: number | Media;
+              /**
+               * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+               */
+              imageSize: number;
+              backgroundColor: string;
+              textColor: 'dark' | 'light';
+              interactiveBlocks: {
+                /**
+                 * Percentage of image width.
+                 */
+                left: number;
+                /**
+                 * Percentage of image height.
+                 */
+                top: number;
+                textPosition: 'left' | 'right' | 'top' | 'bottom';
+                /**
+                 * Percentage of image width.
+                 */
+                maxTextWidth: number;
+                text: {
+                  root: {
+                    type: string;
+                    children: {
+                      type: string;
+                      version: number;
+                      [k: string]: unknown;
+                    }[];
+                    direction: ('ltr' | 'rtl') | null;
+                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                    indent: number;
+                    version: number;
+                  };
+                  [k: string]: unknown;
+                };
+                id?: string | null;
+              }[];
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'interactiveImage';
+            }
+          | {
+              blocks: (
+                | {
+                    text: string;
+                    titleType: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      text?: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      } | null;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+                | {
+                    /**
+                     * Get embed link by going to the YouTube video page, click share, and then choose embed.
+                     */
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'youtube';
+                  }
+                | {
+                    label: string;
+                    /**
+                     * The document to link to.
+                     */
+                    document: number | Document;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'document';
+                  }
+                | {
+                    title: string;
+                    titleType: 'title' | 'subtitle';
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * Recommended width 1920px.
+                     */
+                    image: number | Media;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'textImage';
+                  }
+                | {
+                    /**
+                     * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+                     */
+                    image: number | Media;
+                    /**
+                     * The text displayed on top of the image to tell users to scroll.
+                     */
+                    scrollPrompt: string;
+                    /**
+                     * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+                     */
+                    width: number;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalScroll';
+                  }
+                | {
+                    images: {
+                      /**
+                       * Recommended width 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'slideShow';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Recommended width 1280px.
+                       */
+                      image: number | Media;
+                      /**
+                       * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                       */
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * If specified, the displayed image will be clickable and will link to the given link.
+                       */
+                      link?: string | null;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
+                  }
+                | {
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
+                  }
+                | {
+                    emphasis: string;
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
+                  }
+              )[];
+              spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              justify: 'start' | 'center' | 'end';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'column';
+            }
+          | {
+              blocks: (
+                | {
+                    text: string;
+                    titleType: 'title' | 'subtitle';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'title';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'text';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840 / number of items. The images in the inner-list will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      text?: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      } | null;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalGallery';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'image';
+                  }
+                | {
+                    /**
+                     * Get embed link by going to the YouTube video page, click share, and then choose embed.
+                     */
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'youtube';
+                  }
+                | {
+                    label: string;
+                    /**
+                     * The document to link to.
+                     */
+                    document: number | Document;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'document';
+                  }
+                | {
+                    title: string;
+                    titleType: 'title' | 'subtitle';
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * Recommended width 1920px.
+                     */
+                    image: number | Media;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'textImage';
+                  }
+                | {
+                    /**
+                     * Approximately 3840 x the number of screens you want this image to scroll. Max 11520 px.
+                     */
+                    image: number | Media;
+                    /**
+                     * The text displayed on top of the image to tell users to scroll.
+                     */
+                    scrollPrompt: string;
+                    /**
+                     * The percentage width of the image. For example, if the image should be 6x the width of screen, use 600.
+                     */
+                    width: number;
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'horizontalScroll';
+                  }
+                | {
+                    images: {
+                      /**
+                       * Recommended width 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'slideShow';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Recommended width 1280px.
+                       */
+                      image: number | Media;
+                      /**
+                       * It's recommended to use Title 2 as the main description, and use normal text for whatever that follows it.
+                       */
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * If specified, the displayed image will be clickable and will link to the given link.
+                       */
+                      link?: string | null;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'smallGallery';
+                  }
+                | {
+                    items: {
+                      /**
+                       * Images could have different aspect ratios, but they should generally be the same height. Their width should approximately add up to 3840px. Images in a list should have the same size. They will be shown in a slideshow.
+                       */
+                      images: {
+                        image: number | Media;
+                        id?: string | null;
+                      }[];
+                      /**
+                       * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                       */
+                      imageSize: number;
+                      id?: string | null;
+                    }[];
+                    spacing: 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'equalHeightImages';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    textOverlay: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageWithTextOverlay';
+                  }
+                | {
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    images: {
+                      /**
+                       * Recommended width 1920px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'imageText';
+                  }
+                | {
+                    items: {
+                      /**
+                       * All images must have the same size. Recommended image width: approximately 3840px.
+                       */
+                      image: number | Media;
+                      id?: string | null;
+                    }[];
+                    textColor: 'dark' | 'light';
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'carousel';
+                  }
+                | {
+                    label: string;
+                    link: string;
+                    openInNewPage: boolean;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'button';
+                  }
+                | {
+                    embedLink: string;
+                    width: number;
+                    height: number;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'embed';
+                  }
+                | {
+                    content: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    author: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    /**
+                     * 1024x1217px
+                     */
+                    avatar?: (number | null) | Media;
+                    color: string;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'testimonial';
+                  }
+                | {
+                    emphasis: string;
+                    text: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    useBackground: boolean;
+                    backgroundColor?: string | null;
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    textColor: 'dark' | 'light';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'emphasisText';
+                  }
+                | {
+                    /**
+                     * For a full-width image, recommended width is 3840px.
+                     */
+                    image: number | Media;
+                    /**
+                     * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
+                     */
+                    imageSize: number;
+                    backgroundColor: string;
+                    textColor: 'dark' | 'light';
+                    interactiveBlocks: {
+                      /**
+                       * Percentage of image width.
+                       */
+                      left: number;
+                      /**
+                       * Percentage of image height.
+                       */
+                      top: number;
+                      textPosition: 'left' | 'right' | 'top' | 'bottom';
+                      /**
+                       * Percentage of image width.
+                       */
+                      maxTextWidth: number;
+                      text: {
+                        root: {
+                          type: string;
+                          children: {
+                            type: string;
+                            version: number;
+                            [k: string]: unknown;
+                          }[];
+                          direction: ('ltr' | 'rtl') | null;
+                          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                          indent: number;
+                          version: number;
+                        };
+                        [k: string]: unknown;
+                      };
+                      id?: string | null;
+                    }[];
+                    bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'interactiveImage';
+                  }
+              )[];
+              spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+              alignment: 'start' | 'center' | 'end';
+              id?: string | null;
+              blockName?: string | null;
+              blockType: 'row';
+            }
+        )[];
+        spacing: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        justify: 'start' | 'center' | 'end';
+        bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'column';
+      }
+  )[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "productBlogs".
+ */
+export interface ProductBlog {
   id: number;
   title: string;
   date: string;
@@ -6569,8 +12707,16 @@ export interface PayloadLockedDocument {
         value: number | ProjectPage;
       } | null)
     | ({
-        relationTo: 'blogs';
-        value: number | Blog;
+        relationTo: 'uiuxBlogs';
+        value: number | UiuxBlog;
+      } | null)
+    | ({
+        relationTo: 'edtechBlogs';
+        value: number | EdtechBlog;
+      } | null)
+    | ({
+        relationTo: 'productBlogs';
+        value: number | ProductBlog;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -8605,9 +14751,3639 @@ export interface ProjectPagesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "blogs_select".
+ * via the `definition` "uiuxBlogs_select".
  */
-export interface BlogsSelect<T extends boolean = true> {
+export interface UiuxBlogsSelect<T extends boolean = true> {
+  title?: T;
+  date?: T;
+  coverImage?: T;
+  tags?:
+    | T
+    | {
+        value?: T;
+        id?: T;
+      };
+  externalLink?: T;
+  blocks?:
+    | T
+    | {
+        title?:
+          | T
+          | {
+              text?: T;
+              titleType?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        text?:
+          | T
+          | {
+              text?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        horizontalGallery?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    images?:
+                      | T
+                      | {
+                          image?: T;
+                          id?: T;
+                        };
+                    text?: T;
+                    id?: T;
+                  };
+              spacing?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        image?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        youtube?:
+          | T
+          | {
+              embedLink?: T;
+              width?: T;
+              height?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        document?:
+          | T
+          | {
+              label?: T;
+              document?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        textImage?:
+          | T
+          | {
+              title?: T;
+              titleType?: T;
+              text?: T;
+              image?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        horizontalScroll?:
+          | T
+          | {
+              image?: T;
+              scrollPrompt?: T;
+              width?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        slideShow?:
+          | T
+          | {
+              images?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              imageSize?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        smallGallery?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    text?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        equalHeightImages?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    images?:
+                      | T
+                      | {
+                          image?: T;
+                          id?: T;
+                        };
+                    imageSize?: T;
+                    id?: T;
+                  };
+              spacing?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        imageWithTextOverlay?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              textOverlay?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        imageText?:
+          | T
+          | {
+              text?: T;
+              images?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        carousel?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        button?:
+          | T
+          | {
+              label?: T;
+              link?: T;
+              openInNewPage?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        embed?:
+          | T
+          | {
+              embedLink?: T;
+              width?: T;
+              height?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        testimonial?:
+          | T
+          | {
+              content?: T;
+              author?: T;
+              avatar?: T;
+              color?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        emphasisText?:
+          | T
+          | {
+              emphasis?: T;
+              text?: T;
+              useBackground?: T;
+              backgroundColor?: T;
+              bottomMargin?: T;
+              textColor?: T;
+              id?: T;
+              blockName?: T;
+            };
+        interactiveImage?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              backgroundColor?: T;
+              textColor?: T;
+              interactiveBlocks?:
+                | T
+                | {
+                    left?: T;
+                    top?: T;
+                    textPosition?: T;
+                    maxTextWidth?: T;
+                    text?: T;
+                    id?: T;
+                  };
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        row?:
+          | T
+          | {
+              blocks?:
+                | T
+                | {
+                    title?:
+                      | T
+                      | {
+                          text?: T;
+                          titleType?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    text?:
+                      | T
+                      | {
+                          text?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    horizontalGallery?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                text?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    image?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    youtube?:
+                      | T
+                      | {
+                          embedLink?: T;
+                          width?: T;
+                          height?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    document?:
+                      | T
+                      | {
+                          label?: T;
+                          document?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    textImage?:
+                      | T
+                      | {
+                          title?: T;
+                          titleType?: T;
+                          text?: T;
+                          image?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    horizontalScroll?:
+                      | T
+                      | {
+                          image?: T;
+                          scrollPrompt?: T;
+                          width?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    slideShow?:
+                      | T
+                      | {
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    smallGallery?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                text?: T;
+                                link?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    equalHeightImages?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                imageSize?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    imageWithTextOverlay?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          textOverlay?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    imageText?:
+                      | T
+                      | {
+                          text?: T;
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    carousel?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    button?:
+                      | T
+                      | {
+                          label?: T;
+                          link?: T;
+                          openInNewPage?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    embed?:
+                      | T
+                      | {
+                          embedLink?: T;
+                          width?: T;
+                          height?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    testimonial?:
+                      | T
+                      | {
+                          content?: T;
+                          author?: T;
+                          avatar?: T;
+                          color?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    emphasisText?:
+                      | T
+                      | {
+                          emphasis?: T;
+                          text?: T;
+                          useBackground?: T;
+                          backgroundColor?: T;
+                          bottomMargin?: T;
+                          textColor?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    interactiveImage?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          backgroundColor?: T;
+                          textColor?: T;
+                          interactiveBlocks?:
+                            | T
+                            | {
+                                left?: T;
+                                top?: T;
+                                textPosition?: T;
+                                maxTextWidth?: T;
+                                text?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    column?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      titleType?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                youtube?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                document?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      document?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                textImage?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      titleType?: T;
+                                      text?: T;
+                                      image?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalScroll?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      scrollPrompt?: T;
+                                      width?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                slideShow?:
+                                  | T
+                                  | {
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                smallGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            text?: T;
+                                            link?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageText?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                embed?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                emphasisText?:
+                                  | T
+                                  | {
+                                      emphasis?: T;
+                                      text?: T;
+                                      useBackground?: T;
+                                      backgroundColor?: T;
+                                      bottomMargin?: T;
+                                      textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          justify?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    row?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      titleType?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                youtube?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                document?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      document?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                textImage?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      titleType?: T;
+                                      text?: T;
+                                      image?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalScroll?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      scrollPrompt?: T;
+                                      width?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                slideShow?:
+                                  | T
+                                  | {
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                smallGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            text?: T;
+                                            link?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageText?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                embed?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                emphasisText?:
+                                  | T
+                                  | {
+                                      emphasis?: T;
+                                      text?: T;
+                                      useBackground?: T;
+                                      backgroundColor?: T;
+                                      bottomMargin?: T;
+                                      textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          alignment?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                  };
+              spacing?: T;
+              bottomMargin?: T;
+              alignment?: T;
+              id?: T;
+              blockName?: T;
+            };
+        column?:
+          | T
+          | {
+              blocks?:
+                | T
+                | {
+                    title?:
+                      | T
+                      | {
+                          text?: T;
+                          titleType?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    text?:
+                      | T
+                      | {
+                          text?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    horizontalGallery?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                text?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    image?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    youtube?:
+                      | T
+                      | {
+                          embedLink?: T;
+                          width?: T;
+                          height?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    document?:
+                      | T
+                      | {
+                          label?: T;
+                          document?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    textImage?:
+                      | T
+                      | {
+                          title?: T;
+                          titleType?: T;
+                          text?: T;
+                          image?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    horizontalScroll?:
+                      | T
+                      | {
+                          image?: T;
+                          scrollPrompt?: T;
+                          width?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    slideShow?:
+                      | T
+                      | {
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    smallGallery?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                text?: T;
+                                link?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    equalHeightImages?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                imageSize?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    imageWithTextOverlay?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          textOverlay?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    imageText?:
+                      | T
+                      | {
+                          text?: T;
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    carousel?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    button?:
+                      | T
+                      | {
+                          label?: T;
+                          link?: T;
+                          openInNewPage?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    embed?:
+                      | T
+                      | {
+                          embedLink?: T;
+                          width?: T;
+                          height?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    testimonial?:
+                      | T
+                      | {
+                          content?: T;
+                          author?: T;
+                          avatar?: T;
+                          color?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    emphasisText?:
+                      | T
+                      | {
+                          emphasis?: T;
+                          text?: T;
+                          useBackground?: T;
+                          backgroundColor?: T;
+                          bottomMargin?: T;
+                          textColor?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    interactiveImage?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          backgroundColor?: T;
+                          textColor?: T;
+                          interactiveBlocks?:
+                            | T
+                            | {
+                                left?: T;
+                                top?: T;
+                                textPosition?: T;
+                                maxTextWidth?: T;
+                                text?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    column?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      titleType?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                youtube?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                document?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      document?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                textImage?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      titleType?: T;
+                                      text?: T;
+                                      image?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalScroll?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      scrollPrompt?: T;
+                                      width?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                slideShow?:
+                                  | T
+                                  | {
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                smallGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            text?: T;
+                                            link?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageText?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                embed?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                emphasisText?:
+                                  | T
+                                  | {
+                                      emphasis?: T;
+                                      text?: T;
+                                      useBackground?: T;
+                                      backgroundColor?: T;
+                                      bottomMargin?: T;
+                                      textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          justify?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    row?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      titleType?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                youtube?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                document?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      document?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                textImage?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      titleType?: T;
+                                      text?: T;
+                                      image?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalScroll?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      scrollPrompt?: T;
+                                      width?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                slideShow?:
+                                  | T
+                                  | {
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                smallGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            text?: T;
+                                            link?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageText?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                embed?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                emphasisText?:
+                                  | T
+                                  | {
+                                      emphasis?: T;
+                                      text?: T;
+                                      useBackground?: T;
+                                      backgroundColor?: T;
+                                      bottomMargin?: T;
+                                      textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          alignment?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                  };
+              spacing?: T;
+              justify?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "edtechBlogs_select".
+ */
+export interface EdtechBlogsSelect<T extends boolean = true> {
+  title?: T;
+  date?: T;
+  coverImage?: T;
+  tags?:
+    | T
+    | {
+        value?: T;
+        id?: T;
+      };
+  externalLink?: T;
+  blocks?:
+    | T
+    | {
+        title?:
+          | T
+          | {
+              text?: T;
+              titleType?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        text?:
+          | T
+          | {
+              text?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        horizontalGallery?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    images?:
+                      | T
+                      | {
+                          image?: T;
+                          id?: T;
+                        };
+                    text?: T;
+                    id?: T;
+                  };
+              spacing?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        image?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        youtube?:
+          | T
+          | {
+              embedLink?: T;
+              width?: T;
+              height?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        document?:
+          | T
+          | {
+              label?: T;
+              document?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        textImage?:
+          | T
+          | {
+              title?: T;
+              titleType?: T;
+              text?: T;
+              image?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        horizontalScroll?:
+          | T
+          | {
+              image?: T;
+              scrollPrompt?: T;
+              width?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        slideShow?:
+          | T
+          | {
+              images?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              imageSize?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        smallGallery?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    text?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        equalHeightImages?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    images?:
+                      | T
+                      | {
+                          image?: T;
+                          id?: T;
+                        };
+                    imageSize?: T;
+                    id?: T;
+                  };
+              spacing?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        imageWithTextOverlay?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              textOverlay?: T;
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        imageText?:
+          | T
+          | {
+              text?: T;
+              images?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        carousel?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                  };
+              textColor?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        button?:
+          | T
+          | {
+              label?: T;
+              link?: T;
+              openInNewPage?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        embed?:
+          | T
+          | {
+              embedLink?: T;
+              width?: T;
+              height?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        testimonial?:
+          | T
+          | {
+              content?: T;
+              author?: T;
+              avatar?: T;
+              color?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        emphasisText?:
+          | T
+          | {
+              emphasis?: T;
+              text?: T;
+              useBackground?: T;
+              backgroundColor?: T;
+              bottomMargin?: T;
+              textColor?: T;
+              id?: T;
+              blockName?: T;
+            };
+        interactiveImage?:
+          | T
+          | {
+              image?: T;
+              imageSize?: T;
+              backgroundColor?: T;
+              textColor?: T;
+              interactiveBlocks?:
+                | T
+                | {
+                    left?: T;
+                    top?: T;
+                    textPosition?: T;
+                    maxTextWidth?: T;
+                    text?: T;
+                    id?: T;
+                  };
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+        row?:
+          | T
+          | {
+              blocks?:
+                | T
+                | {
+                    title?:
+                      | T
+                      | {
+                          text?: T;
+                          titleType?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    text?:
+                      | T
+                      | {
+                          text?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    horizontalGallery?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                text?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    image?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    youtube?:
+                      | T
+                      | {
+                          embedLink?: T;
+                          width?: T;
+                          height?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    document?:
+                      | T
+                      | {
+                          label?: T;
+                          document?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    textImage?:
+                      | T
+                      | {
+                          title?: T;
+                          titleType?: T;
+                          text?: T;
+                          image?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    horizontalScroll?:
+                      | T
+                      | {
+                          image?: T;
+                          scrollPrompt?: T;
+                          width?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    slideShow?:
+                      | T
+                      | {
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    smallGallery?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                text?: T;
+                                link?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    equalHeightImages?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                imageSize?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    imageWithTextOverlay?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          textOverlay?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    imageText?:
+                      | T
+                      | {
+                          text?: T;
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    carousel?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    button?:
+                      | T
+                      | {
+                          label?: T;
+                          link?: T;
+                          openInNewPage?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    embed?:
+                      | T
+                      | {
+                          embedLink?: T;
+                          width?: T;
+                          height?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    testimonial?:
+                      | T
+                      | {
+                          content?: T;
+                          author?: T;
+                          avatar?: T;
+                          color?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    emphasisText?:
+                      | T
+                      | {
+                          emphasis?: T;
+                          text?: T;
+                          useBackground?: T;
+                          backgroundColor?: T;
+                          bottomMargin?: T;
+                          textColor?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    interactiveImage?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          backgroundColor?: T;
+                          textColor?: T;
+                          interactiveBlocks?:
+                            | T
+                            | {
+                                left?: T;
+                                top?: T;
+                                textPosition?: T;
+                                maxTextWidth?: T;
+                                text?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    column?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      titleType?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                youtube?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                document?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      document?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                textImage?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      titleType?: T;
+                                      text?: T;
+                                      image?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalScroll?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      scrollPrompt?: T;
+                                      width?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                slideShow?:
+                                  | T
+                                  | {
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                smallGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            text?: T;
+                                            link?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageText?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                embed?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                emphasisText?:
+                                  | T
+                                  | {
+                                      emphasis?: T;
+                                      text?: T;
+                                      useBackground?: T;
+                                      backgroundColor?: T;
+                                      bottomMargin?: T;
+                                      textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          justify?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    row?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      titleType?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                youtube?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                document?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      document?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                textImage?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      titleType?: T;
+                                      text?: T;
+                                      image?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalScroll?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      scrollPrompt?: T;
+                                      width?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                slideShow?:
+                                  | T
+                                  | {
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                smallGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            text?: T;
+                                            link?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageText?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                embed?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                emphasisText?:
+                                  | T
+                                  | {
+                                      emphasis?: T;
+                                      text?: T;
+                                      useBackground?: T;
+                                      backgroundColor?: T;
+                                      bottomMargin?: T;
+                                      textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          alignment?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                  };
+              spacing?: T;
+              bottomMargin?: T;
+              alignment?: T;
+              id?: T;
+              blockName?: T;
+            };
+        column?:
+          | T
+          | {
+              blocks?:
+                | T
+                | {
+                    title?:
+                      | T
+                      | {
+                          text?: T;
+                          titleType?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    text?:
+                      | T
+                      | {
+                          text?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    horizontalGallery?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                text?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    image?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    youtube?:
+                      | T
+                      | {
+                          embedLink?: T;
+                          width?: T;
+                          height?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    document?:
+                      | T
+                      | {
+                          label?: T;
+                          document?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    textImage?:
+                      | T
+                      | {
+                          title?: T;
+                          titleType?: T;
+                          text?: T;
+                          image?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    horizontalScroll?:
+                      | T
+                      | {
+                          image?: T;
+                          scrollPrompt?: T;
+                          width?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    slideShow?:
+                      | T
+                      | {
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          imageSize?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    smallGallery?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                text?: T;
+                                link?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    equalHeightImages?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                images?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      id?: T;
+                                    };
+                                imageSize?: T;
+                                id?: T;
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    imageWithTextOverlay?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          textOverlay?: T;
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    imageText?:
+                      | T
+                      | {
+                          text?: T;
+                          images?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    carousel?:
+                      | T
+                      | {
+                          items?:
+                            | T
+                            | {
+                                image?: T;
+                                id?: T;
+                              };
+                          textColor?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    button?:
+                      | T
+                      | {
+                          label?: T;
+                          link?: T;
+                          openInNewPage?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    embed?:
+                      | T
+                      | {
+                          embedLink?: T;
+                          width?: T;
+                          height?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    testimonial?:
+                      | T
+                      | {
+                          content?: T;
+                          author?: T;
+                          avatar?: T;
+                          color?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    emphasisText?:
+                      | T
+                      | {
+                          emphasis?: T;
+                          text?: T;
+                          useBackground?: T;
+                          backgroundColor?: T;
+                          bottomMargin?: T;
+                          textColor?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    interactiveImage?:
+                      | T
+                      | {
+                          image?: T;
+                          imageSize?: T;
+                          backgroundColor?: T;
+                          textColor?: T;
+                          interactiveBlocks?:
+                            | T
+                            | {
+                                left?: T;
+                                top?: T;
+                                textPosition?: T;
+                                maxTextWidth?: T;
+                                text?: T;
+                                id?: T;
+                              };
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    column?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      titleType?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                youtube?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                document?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      document?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                textImage?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      titleType?: T;
+                                      text?: T;
+                                      image?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalScroll?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      scrollPrompt?: T;
+                                      width?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                slideShow?:
+                                  | T
+                                  | {
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                smallGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            text?: T;
+                                            link?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageText?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                embed?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                emphasisText?:
+                                  | T
+                                  | {
+                                      emphasis?: T;
+                                      text?: T;
+                                      useBackground?: T;
+                                      backgroundColor?: T;
+                                      bottomMargin?: T;
+                                      textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          justify?: T;
+                          bottomMargin?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    row?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                title?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      titleType?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                text?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                image?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                youtube?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                document?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      document?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                textImage?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      titleType?: T;
+                                      text?: T;
+                                      image?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                horizontalScroll?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      scrollPrompt?: T;
+                                      width?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                slideShow?:
+                                  | T
+                                  | {
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      imageSize?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                smallGallery?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            text?: T;
+                                            link?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                equalHeightImages?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            images?:
+                                              | T
+                                              | {
+                                                  image?: T;
+                                                  id?: T;
+                                                };
+                                            imageSize?: T;
+                                            id?: T;
+                                          };
+                                      spacing?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageWithTextOverlay?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      textOverlay?: T;
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageText?:
+                                  | T
+                                  | {
+                                      text?: T;
+                                      images?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                carousel?:
+                                  | T
+                                  | {
+                                      items?:
+                                        | T
+                                        | {
+                                            image?: T;
+                                            id?: T;
+                                          };
+                                      textColor?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                button?:
+                                  | T
+                                  | {
+                                      label?: T;
+                                      link?: T;
+                                      openInNewPage?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                embed?:
+                                  | T
+                                  | {
+                                      embedLink?: T;
+                                      width?: T;
+                                      height?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      content?: T;
+                                      author?: T;
+                                      avatar?: T;
+                                      color?: T;
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                emphasisText?:
+                                  | T
+                                  | {
+                                      emphasis?: T;
+                                      text?: T;
+                                      useBackground?: T;
+                                      backgroundColor?: T;
+                                      bottomMargin?: T;
+                                      textColor?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                interactiveImage?:
+                                  | T
+                                  | {
+                                      image?: T;
+                                      imageSize?: T;
+                                      backgroundColor?: T;
+                                      textColor?: T;
+                                      interactiveBlocks?:
+                                        | T
+                                        | {
+                                            left?: T;
+                                            top?: T;
+                                            textPosition?: T;
+                                            maxTextWidth?: T;
+                                            text?: T;
+                                            id?: T;
+                                          };
+                                      bottomMargin?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          spacing?: T;
+                          bottomMargin?: T;
+                          alignment?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                  };
+              spacing?: T;
+              justify?: T;
+              bottomMargin?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "productBlogs_select".
+ */
+export interface ProductBlogsSelect<T extends boolean = true> {
   title?: T;
   date?: T;
   coverImage?: T;

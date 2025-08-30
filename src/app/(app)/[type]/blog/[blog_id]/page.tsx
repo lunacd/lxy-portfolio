@@ -7,34 +7,46 @@ import TitleBlock from "src/blocks/TitleBlock";
 
 import { RefreshRouteOnSave } from "@/components/RefreshRouteOnSave";
 import Scroller from "@/components/Scroller";
+import { PortfolioType, stringIsType } from "@/utils/CommonTypes";
+import { payloadBlogSlug } from "@/utils/payloadHelpers";
 import { getSpacing } from "@/utils/spacingUtil";
+
+interface ParamType {
+  type: PortfolioType;
+  blog_id: number;
+}
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ blog_id: number }>;
+  params: Promise<ParamType>;
 }) {
+  const { type, blog_id } = await params;
+  if (!stringIsType(type)) {
+    throw new Error(`Invalid type: ${type}`);
+  }
   const payload = await getPayload({
     config,
   });
-  const id = (await params).blog_id;
-  const blog = await payload.findByID({ collection: "blogs", id: id });
+  const blog = await payload.findByID({
+    collection: payloadBlogSlug(type),
+    id: blog_id,
+  });
   return {
     title: `${blog.title} | Shirley Lyu`,
   };
 }
 
-export default async function Blog({
-  params,
-}: {
-  params: Promise<{ blog_id: string }>;
-}) {
+export default async function Blog({ params }: { params: Promise<ParamType> }) {
   const payload = await getPayload({
     config,
   });
-  const blog_id = (await params).blog_id;
+  const { blog_id, type } = await params;
+  if (!stringIsType(type)) {
+    throw new Error(`Invalid type: ${type}`);
+  }
   const blog = await payload.findByID({
-    collection: "blogs",
+    collection: payloadBlogSlug(type),
     id: blog_id,
     disableErrors: true,
   });

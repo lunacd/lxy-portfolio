@@ -1,6 +1,6 @@
 import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
 
-export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
+export async function up({ db }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
    CREATE TYPE "public"."enum_product_projects_image_overlay_type" AS ENUM('dark', 'light', 'none');
   CREATE TYPE "public"."enum_product_projects_text_color" AS ENUM('light', 'dark');
@@ -305,7 +305,7 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX "payload_locked_documents_rels_edtech_projects_id_idx" ON "payload_locked_documents_rels" USING btree ("edtech_projects_id");`)
 }
 
-export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
+export async function down({ db }: MigrateDownArgs): Promise<void> {
   await db.execute(sql`
    ALTER TYPE "public"."enum_uiux_projects_image_overlay_type" RENAME TO "enum_projects_image_overlay_type";
   ALTER TYPE "public"."enum_uiux_projects_text_color" RENAME TO "enum_projects_text_color";

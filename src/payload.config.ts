@@ -1,10 +1,12 @@
-import { Blogs } from "./collections/Blogs";
 import { Documents } from "./collections/Documents";
+import { EdtechBlogs } from "./collections/EdtechBlogs";
 import { EdtechProjects } from "./collections/EdtechProjects";
 import { Global } from "./collections/Global";
 import { Media } from "./collections/Media";
+import { ProductBlogs } from "./collections/ProductBlogs";
 import { ProductProjects } from "./collections/ProductProjects";
 import { ProjectPages } from "./collections/ProjectPages";
+import { UiuxBlogs } from "./collections/UiuxBlogs";
 import { UiuxProjects } from "./collections/UiuxProjects";
 import { Users } from "./collections/Users";
 import { migrations } from "./migrations";
@@ -49,7 +51,9 @@ export default buildConfig({
     ProductProjects,
     EdtechProjects,
     ProjectPages,
-    Blogs,
+    UiuxBlogs,
+    EdtechBlogs,
+    ProductBlogs,
   ],
   globals: [Global],
   editor: lexicalEditor(),
