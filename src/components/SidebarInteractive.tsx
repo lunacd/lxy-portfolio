@@ -15,6 +15,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import Tooltip from "@/components/Tooltip";
+import { PortfolioType } from "@/utils/CommonTypes";
 import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 import { transitionFast as transitionDefault } from "@/utils/transitions";
 
@@ -73,7 +74,11 @@ function TitleLink(props: {
   );
 }
 
-export default function SidebarInteractive() {
+interface SidebarInteractiveProps {
+  type: PortfolioType;
+}
+
+export default function SidebarInteractive(props: SidebarInteractiveProps) {
   const { globalState } = useGlobalStateContext();
 
   const [isLG, isXL] = useMediaQuery(
@@ -115,7 +120,7 @@ export default function SidebarInteractive() {
                 setOpen(false);
               }
             }}
-            href="/"
+            href={`/${props.type}/`}
           >
             <div className="w-full">
               <Image
@@ -232,7 +237,11 @@ export default function SidebarInteractive() {
               </a>
             </Tooltip>
             <Tooltip tip="Resume">
-              <a href="/documents/resume" target="_blank" rel="noreferrer">
+              <a
+                href={`/${props.type}/documents/resume`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <IconFileText size={isLG ? 20 : 18} />
               </a>
             </Tooltip>
@@ -312,7 +321,7 @@ export default function SidebarInteractive() {
             cursor-pointer grid-rows-2 rounded-full bg-white px-6 py-2
             shadow-lg"
           style={{ writingMode: "vertical-lr" }}
-          href="/"
+          href={`/${props.type}/`}
         >
           <div className="row-start-2">Return to Home</div>
         </Link>

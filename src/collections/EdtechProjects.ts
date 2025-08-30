@@ -21,8 +21,8 @@ const sanitizeName: FieldHook = ({ value }) => {
   return value.trim();
 };
 
-export const Projects: CollectionConfig = {
-  slug: "projects",
+export const EdtechProjects: CollectionConfig = {
+  slug: "edtechProjects",
   admin: {
     useAsTitle: "name",
   },
@@ -91,7 +91,7 @@ export const Projects: CollectionConfig = {
       type: "text",
       admin: {
         description:
-          "This will be displayed after category on landing page and project page， but will not show in project galleries.",
+          "This will be displayed after category on landing page and project page, but will not show in project galleries.",
       },
     },
     {
@@ -225,7 +225,7 @@ export const Projects: CollectionConfig = {
         {
           name: "relatedWork",
           type: "relationship",
-          relationTo: "projects",
+          relationTo: "edtechProjects",
           required: true,
         },
       ],

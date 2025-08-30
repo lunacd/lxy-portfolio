@@ -70,7 +70,9 @@ export interface Config {
     users: User;
     media: Media;
     document: Document;
-    projects: Project;
+    uiuxProjects: UiuxProject;
+    productProjects: ProductProject;
+    edtechProjects: EdtechProject;
     projectPages: ProjectPage;
     blogs: Blog;
     'payload-locked-documents': PayloadLockedDocument;
@@ -82,7 +84,9 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     document: DocumentSelect<false> | DocumentSelect<true>;
-    projects: ProjectsSelect<false> | ProjectsSelect<true>;
+    uiuxProjects: UiuxProjectsSelect<false> | UiuxProjectsSelect<true>;
+    productProjects: ProductProjectsSelect<false> | ProductProjectsSelect<true>;
+    edtechProjects: EdtechProjectsSelect<false> | EdtechProjectsSelect<true>;
     projectPages: ProjectPagesSelect<false> | ProjectPagesSelect<true>;
     blogs: BlogsSelect<false> | BlogsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -191,9 +195,9 @@ export interface Document {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projects".
+ * via the `definition` "uiuxProjects".
  */
-export interface Project {
+export interface UiuxProject {
   id: number;
   name: string;
   uri: string;
@@ -209,7 +213,7 @@ export interface Project {
   category: string;
   flavor: string;
   /**
-   * This will be displayed after category on landing page and project page， but will not show in project galleries.
+   * This will be displayed after category on landing page and project page, but will not show in project galleries.
    */
   projectSize?: string | null;
   focuses?:
@@ -256,7 +260,153 @@ export interface Project {
   bannerTextColor: 'light' | 'dark';
   contentColor: 'light' | 'dark';
   relatedWorks: {
-    relatedWork: number | Project;
+    relatedWork: number | UiuxProject;
+    id?: string | null;
+  }[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "productProjects".
+ */
+export interface ProductProject {
+  id: number;
+  name: string;
+  uri: string;
+  /**
+   * Customizes the order of projects. Projects with a smaller value are displayed first.
+   */
+  order: number;
+  /**
+   * When checked, this project will show on the landing page and will be included in project galleries. When un-checked, this project will be included only in More Works.
+   */
+  isMainProject: boolean;
+  duration?: string | null;
+  category: string;
+  flavor: string;
+  /**
+   * This will be displayed after category on landing page and project page, but will not show in project galleries.
+   */
+  projectSize?: string | null;
+  focuses?:
+    | {
+        focus: string;
+        focusId: string;
+        id?: string | null;
+      }[]
+    | null;
+  brief?: string | null;
+  /**
+   * Image displayed on the landing page for desktop users. Aspect ratio should be similar to a typical horizontal desktop display. Recommended width 3840px if 4K is supported, or 1920 if 4k support is not interesting.
+   */
+  projectImage?: (number | null) | Media;
+  /**
+   * Image displayed in project galleries. Required dimension: 1280 x 1058.
+   */
+  projectGalleryImage: number | Media;
+  /**
+   * Anything CSS recognizes, e.g. white or #123456.
+   */
+  backgroundColor?: string | null;
+  /**
+   * Background for the main project page. If unspecified, will use the background color entered above.
+   */
+  pageBackgroundColor?: string | null;
+  /**
+   * Check this if this project needs a white cover displayed beneath the text and on top of the image.
+   */
+  imageCover?: boolean | null;
+  /**
+   * Select dark or light if this project needs an overlay displayed beneath the text and on top of the image.
+   */
+  imageOverlayType: 'dark' | 'light' | 'none';
+  /**
+   * A small image for the award that this project has received.
+   */
+  awardImage?: (number | null) | Media;
+  /**
+   * If this is not empty, projects will link to the external link given here rather than the internal page.
+   */
+  externalLink?: string | null;
+  textColor: 'light' | 'dark';
+  bannerTextColor: 'light' | 'dark';
+  contentColor: 'light' | 'dark';
+  relatedWorks: {
+    relatedWork: number | ProductProject;
+    id?: string | null;
+  }[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "edtechProjects".
+ */
+export interface EdtechProject {
+  id: number;
+  name: string;
+  uri: string;
+  /**
+   * Customizes the order of projects. Projects with a smaller value are displayed first.
+   */
+  order: number;
+  /**
+   * When checked, this project will show on the landing page and will be included in project galleries. When un-checked, this project will be included only in More Works.
+   */
+  isMainProject: boolean;
+  duration?: string | null;
+  category: string;
+  flavor: string;
+  /**
+   * This will be displayed after category on landing page and project page, but will not show in project galleries.
+   */
+  projectSize?: string | null;
+  focuses?:
+    | {
+        focus: string;
+        focusId: string;
+        id?: string | null;
+      }[]
+    | null;
+  brief?: string | null;
+  /**
+   * Image displayed on the landing page for desktop users. Aspect ratio should be similar to a typical horizontal desktop display. Recommended width 3840px if 4K is supported, or 1920 if 4k support is not interesting.
+   */
+  projectImage?: (number | null) | Media;
+  /**
+   * Image displayed in project galleries. Required dimension: 1280 x 1058.
+   */
+  projectGalleryImage: number | Media;
+  /**
+   * Anything CSS recognizes, e.g. white or #123456.
+   */
+  backgroundColor?: string | null;
+  /**
+   * Background for the main project page. If unspecified, will use the background color entered above.
+   */
+  pageBackgroundColor?: string | null;
+  /**
+   * Check this if this project needs a white cover displayed beneath the text and on top of the image.
+   */
+  imageCover?: boolean | null;
+  /**
+   * Select dark or light if this project needs an overlay displayed beneath the text and on top of the image.
+   */
+  imageOverlayType: 'dark' | 'light' | 'none';
+  /**
+   * A small image for the award that this project has received.
+   */
+  awardImage?: (number | null) | Media;
+  /**
+   * If this is not empty, projects will link to the external link given here rather than the internal page.
+   */
+  externalLink?: string | null;
+  textColor: 'light' | 'dark';
+  bannerTextColor: 'light' | 'dark';
+  contentColor: 'light' | 'dark';
+  relatedWorks: {
+    relatedWork: number | EdtechProject;
     id?: string | null;
   }[];
   updatedAt: string;
@@ -6403,8 +6553,16 @@ export interface PayloadLockedDocument {
         value: number | Document;
       } | null)
     | ({
-        relationTo: 'projects';
-        value: number | Project;
+        relationTo: 'uiuxProjects';
+        value: number | UiuxProject;
+      } | null)
+    | ({
+        relationTo: 'productProjects';
+        value: number | ProductProject;
+      } | null)
+    | ({
+        relationTo: 'edtechProjects';
+        value: number | EdtechProject;
       } | null)
     | ({
         relationTo: 'projectPages';
@@ -6518,9 +6676,91 @@ export interface DocumentSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projects_select".
+ * via the `definition` "uiuxProjects_select".
  */
-export interface ProjectsSelect<T extends boolean = true> {
+export interface UiuxProjectsSelect<T extends boolean = true> {
+  name?: T;
+  uri?: T;
+  order?: T;
+  isMainProject?: T;
+  duration?: T;
+  category?: T;
+  flavor?: T;
+  projectSize?: T;
+  focuses?:
+    | T
+    | {
+        focus?: T;
+        focusId?: T;
+        id?: T;
+      };
+  brief?: T;
+  projectImage?: T;
+  projectGalleryImage?: T;
+  backgroundColor?: T;
+  pageBackgroundColor?: T;
+  imageCover?: T;
+  imageOverlayType?: T;
+  awardImage?: T;
+  externalLink?: T;
+  textColor?: T;
+  bannerTextColor?: T;
+  contentColor?: T;
+  relatedWorks?:
+    | T
+    | {
+        relatedWork?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "productProjects_select".
+ */
+export interface ProductProjectsSelect<T extends boolean = true> {
+  name?: T;
+  uri?: T;
+  order?: T;
+  isMainProject?: T;
+  duration?: T;
+  category?: T;
+  flavor?: T;
+  projectSize?: T;
+  focuses?:
+    | T
+    | {
+        focus?: T;
+        focusId?: T;
+        id?: T;
+      };
+  brief?: T;
+  projectImage?: T;
+  projectGalleryImage?: T;
+  backgroundColor?: T;
+  pageBackgroundColor?: T;
+  imageCover?: T;
+  imageOverlayType?: T;
+  awardImage?: T;
+  externalLink?: T;
+  textColor?: T;
+  bannerTextColor?: T;
+  contentColor?: T;
+  relatedWorks?:
+    | T
+    | {
+        relatedWork?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "edtechProjects_select".
+ */
+export interface EdtechProjectsSelect<T extends boolean = true> {
   name?: T;
   uri?: T;
   order?: T;

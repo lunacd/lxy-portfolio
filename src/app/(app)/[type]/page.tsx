@@ -12,19 +12,41 @@ import Carousel from "@/components/Carousel";
 import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
 import Testimonial from "@/components/Testimonial";
+import { PortfolioType, stringIsType } from "@/utils/CommonTypes";
+import { typeToPayloadProjectSlug } from "@/utils/payloadHelpers";
 import { getSpacing } from "@/utils/spacingUtil";
 
 export const metadata: Metadata = {
   title: "Shirley Lyu Portfolio",
 };
 
-export default async function Landing() {
+interface ParamType {
+  type: string;
+}
+
+export async function generateStaticParams() {
+  return [
+    { type: "product-designer" },
+    { type: "instructional-designer" },
+    { type: "industrial-designer" },
+  ];
+}
+
+export default async function Landing({
+  params,
+}: {
+  params: Promise<ParamType>;
+}) {
+  const { type } = await params;
+  if (!stringIsType(type)) {
+    throw new Error(`Unknown project type: ${type}`);
+  }
   const payload = await getPayload({
     config,
   });
   const promises = await Promise.all([
     payload.find({
-      collection: "projects",
+      collection: typeToPayloadProjectSlug(type),
       pagination: false,
       where: {
         isMainProject: {
@@ -51,6 +73,7 @@ export default async function Landing() {
       {/* About Me */}
       <InViewDetector detectorKey="about" height="short" id="about">
         <HomeIntro
+          type={type}
           profilePicture={globalData.profilePicture}
           payload={payload}
         />
@@ -67,7 +90,7 @@ export default async function Landing() {
             id={project.uri}
             height="short"
           >
-            <HomeSection project={project} payload={payload} />
+            <HomeSection type={type} project={project} payload={payload} />
           </InViewDetector>
         </div>
       ))}
@@ -172,7 +195,7 @@ export default async function Landing() {
               link:
                 blog.externalLink && blog.externalLink.length !== 0
                   ? blog.externalLink
-                  : `/blog/${blog.id}`,
+                  : `/${type}/blog/${blog.id}`,
             };
           })}
           payload={payload}

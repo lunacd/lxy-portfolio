@@ -1,5 +1,5 @@
 import styles from "./TopDisplay.module.css";
-import { Project } from "@payload-types";
+import { EdtechProject, ProductProject, UiuxProject } from "@payload-types";
 import classNames from "classnames";
 import { Payload } from "payload";
 import React from "react";
@@ -10,7 +10,7 @@ import PayloadImage from "@/components/PayloadImage";
 import ScrollIndicator from "@/components/ScrollIndicator";
 
 export interface TopDisplayProps {
-  project: Project;
+  project: EdtechProject | ProductProject | UiuxProject;
   absolute?: boolean;
   link?: boolean;
   bottomSpacing?: boolean;

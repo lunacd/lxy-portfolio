@@ -12,16 +12,28 @@ import { getPayload } from "payload";
 import React, { PropsWithChildren } from "react";
 
 import Sidebar from "@/components/Sidebar";
+import { PortfolioType, stringIsType } from "@/utils/CommonTypes";
+import { typeToPayloadProjectSlug } from "@/utils/payloadHelpers";
 
 const catamaran = Catamaran({ subsets: ["latin"] });
 
-export default async function RootLayout(props: PropsWithChildren) {
+interface ParamType {
+  type: string;
+}
+
+export default async function RootLayout(
+  props: PropsWithChildren<{ params: Promise<ParamType> }>,
+) {
+  const { type } = await props.params;
   const payload = await getPayload({
     config,
   });
+  if (!stringIsType(type)) {
+    throw new Error(`Unknown project type: ${type}`);
+  }
   const projects = (
     await payload.find({
-      collection: "projects",
+      collection: typeToPayloadProjectSlug(type),
       pagination: false,
       where: {
         isMainProject: {
@@ -39,7 +51,7 @@ export default async function RootLayout(props: PropsWithChildren) {
       <body className={catamaran.className}>
         <div className="hidden flex-col md:flex lg:flex-row">
           <GlobalStateContextProvider projectRoutes={projectRoutes}>
-            <Sidebar />
+            <Sidebar type={type} />
             <div className="relative min-h-screen grow overflow-x-hidden">
               <PageAnimation>{props.children}</PageAnimation>
             </div>

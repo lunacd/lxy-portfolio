@@ -1,7 +1,12 @@
 import "server-only";
 
 import SidebarInteractive from "@/components/SidebarInteractive";
+import { PortfolioType } from "@/utils/CommonTypes";
 
-export default async function Sidebar() {
-  return <SidebarInteractive />;
+interface SidebarProps {
+  type: PortfolioType;
+}
+
+export default async function Sidebar(props: SidebarProps) {
+  return <SidebarInteractive type={props.type} />;
 }

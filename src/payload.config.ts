@@ -1,9 +1,11 @@
 import { Blogs } from "./collections/Blogs";
 import { Documents } from "./collections/Documents";
+import { EdtechProjects } from "./collections/EdtechProjects";
 import { Global } from "./collections/Global";
 import { Media } from "./collections/Media";
+import { ProductProjects } from "./collections/ProductProjects";
 import { ProjectPages } from "./collections/ProjectPages";
-import { Projects } from "./collections/Projects";
+import { UiuxProjects } from "./collections/UiuxProjects";
 import { Users } from "./collections/Users";
 import { migrations } from "./migrations";
 import { postgresAdapter } from "@payloadcms/db-postgres";
@@ -39,7 +41,16 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Documents, Projects, ProjectPages, Blogs],
+  collections: [
+    Users,
+    Media,
+    Documents,
+    UiuxProjects,
+    ProductProjects,
+    EdtechProjects,
+    ProjectPages,
+    Blogs,
+  ],
   globals: [Global],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

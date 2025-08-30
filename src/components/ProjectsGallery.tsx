@@ -1,12 +1,14 @@
-import { Project } from "@payload-types";
+import { EdtechProject, ProductProject, UiuxProject } from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
 
 import SmallGalleryBlock from "@/blocks/SmallGalleryBlock";
+import { PortfolioType } from "@/utils/CommonTypes";
 import { getProject } from "@/utils/payloadHelpers";
 
 interface ProjectsGalleryProps {
-  projects: (Project | number)[];
+  type: PortfolioType;
+  projects: (UiuxProject | EdtechProject | ProductProject | number)[];
   color: "dark" | "light";
   payload: Payload;
 }
@@ -16,7 +18,11 @@ export default async function ProjectsGallery(props: ProjectsGalleryProps) {
     <SmallGalleryBlock
       items={await Promise.all(
         props.projects.map(async (rawProject) => {
-          const project = await getProject(rawProject, props.payload);
+          const project = await getProject(
+            props.type,
+            rawProject,
+            props.payload,
+          );
           return {
             image: project.projectGalleryImage,
             text: {

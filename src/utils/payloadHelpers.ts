@@ -1,4 +1,11 @@
-import { Document, Media, Project } from "@payload-types";
+import { PortfolioType } from "./CommonTypes";
+import {
+  Document,
+  EdtechProject,
+  Media,
+  ProductProject,
+  UiuxProject,
+} from "@payload-types";
 import { Payload } from "payload";
 import "server-only";
 
@@ -29,12 +36,31 @@ export async function getMedia(
   return bangMediaFields(rawMedia);
 }
 
+export function typeToPayloadProjectSlug(
+  type: PortfolioType,
+): "uiuxProjects" | "productProjects" | "edtechProjects" {
+  switch (type) {
+    case "product-designer":
+      return "uiuxProjects";
+    case "industrial-designer":
+      return "productProjects";
+    case "instructional-designer":
+      return "edtechProjects";
+    default:
+      throw new Error(`Unknown project type: ${type}`);
+  }
+}
+
 export async function getProject(
-  rawProject: number | Project,
+  type: PortfolioType,
+  rawProject: number | UiuxProject | ProductProject | EdtechProject,
   payload: Payload,
-) {
+): Promise<UiuxProject | ProductProject | EdtechProject> {
   if (typeof rawProject === "number") {
-    return await payload.findByID({ collection: "projects", id: rawProject });
+    return await payload.findByID({
+      collection: typeToPayloadProjectSlug(type),
+      id: rawProject,
+    });
   }
   return rawProject;
 }
@@ -57,11 +83,12 @@ export function unwrapImages(image: { image: Media | number }) {
 }
 
 export function getProjectLink(
+  type: PortfolioType,
   uri: string,
   externalLink: string | undefined | null,
 ): string {
   if (externalLink && externalLink.length > 0) {
     return externalLink;
   }
-  return `/${uri}`;
+  return `/${type}/${uri}`;
 }

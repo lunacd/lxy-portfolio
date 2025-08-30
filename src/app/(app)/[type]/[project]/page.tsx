@@ -7,38 +7,56 @@ import AnimationCoordinator from "@/components/AnimationCoordinator";
 import RelatedWork from "@/components/RelatedWork";
 import Scroller from "@/components/Scroller";
 import TopDisplay from "@/components/TopDisplay";
+import { portfolioTypes, stringIsType } from "@/utils/CommonTypes";
+import { typeToPayloadProjectSlug } from "@/utils/payloadHelpers";
+
+interface ParamType {
+  type: string;
+  project: string;
+}
 
 export async function generateStaticParams() {
   const payload = await getPayload({
     config,
   });
-  const projects = (
-    await payload.find({
-      collection: "projects",
-      depth: 1,
-      select: {
-        uri: true,
-      },
-    })
-  ).docs;
 
-  return projects.map((project) => ({
-    project: project.uri,
-  }));
+  let params: { type: string; project: string }[] = [];
+  for (const type of portfolioTypes) {
+    const projects = (
+      await payload.find({
+        collection: typeToPayloadProjectSlug(type),
+        depth: 1,
+        select: {
+          uri: true,
+        },
+      })
+    ).docs;
+    params = params.concat(
+      projects.map((project) => ({
+        type,
+        project: project.uri,
+      })),
+    );
+  }
+
+  return params;
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ project: string }>;
+  params: Promise<ParamType>;
 }) {
-  const { project } = await params;
+  const { project, type } = await params;
   const payload = await getPayload({
     config,
   });
+  if (!stringIsType(type)) {
+    throw new Error(`Unknown project type: ${type}`);
+  }
   const projectData = (
     await payload.find({
-      collection: "projects",
+      collection: typeToPayloadProjectSlug(type),
       depth: 1,
       select: {
         name: true,
@@ -58,15 +76,18 @@ export async function generateMetadata({
 export default async function ProjectPageComponent({
   params,
 }: {
-  params: Promise<{ project: string }>;
+  params: Promise<ParamType>;
 }) {
-  const { project } = await params;
+  const { project, type } = await params;
   const payload = await getPayload({
     config,
   });
+  if (!stringIsType(type)) {
+    throw new Error(`Unknown project type: ${type}`);
+  }
   const projectData = (
     await payload.find({
-      collection: "projects",
+      collection: typeToPayloadProjectSlug(type),
       depth: 2,
       where: {
         uri: {
@@ -102,6 +123,7 @@ export default async function ProjectPageComponent({
         <TopDisplay project={projectData} payload={payload} />
         <Blocks blocks={pageData.blocks} payload={payload} />
         <RelatedWork
+          type={type}
           projects={projectData.relatedWorks.map(
             (relatedWork) => relatedWork.relatedWork,
           )}

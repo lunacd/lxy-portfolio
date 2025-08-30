@@ -5,8 +5,10 @@ import "server-only";
 
 import Button from "@/components/Button";
 import PayloadImage from "@/components/PayloadImage";
+import { PortfolioType } from "@/utils/CommonTypes";
 
 interface HomeIntroProps {
+  type: PortfolioType;
   profilePicture: Media | number;
   payload: Payload;
 }
@@ -26,7 +28,11 @@ export default function HomeIntro(props: HomeIntroProps) {
                 I create intuitive and impactful products and experiences
               </div>
             </div>
-            <Button href="/about" color="dark" className="mt-8 self-start">
+            <Button
+              href={`/${props.type}/about`}
+              color="dark"
+              className="mt-8 self-start"
+            >
               Learn More About Me
             </Button>
           </div>

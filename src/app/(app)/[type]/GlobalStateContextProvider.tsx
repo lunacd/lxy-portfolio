@@ -19,7 +19,7 @@ export default function GlobalStateContextProvider(
   const pathname = usePathname();
   const [globalState, dispatch] = useReducer(
     stateReducer,
-    { pathname: pathname, projectRoutes: props.projectRoutes },
+    { rawPathname: pathname, projectRoutes: props.projectRoutes },
     getInitialState,
   );
   const providerValue = {

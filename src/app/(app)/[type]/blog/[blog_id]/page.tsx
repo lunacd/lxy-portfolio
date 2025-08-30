@@ -44,12 +44,6 @@ export default async function Blog({
   return (
     <>
       <Scroller bgColor="#FDF9F1">
-        {/* <Link href="/blog/">
-          <div className="mt-spacing-lg w-single-small flex flex-row justify-start gap-2">
-            <IconChevronLeft></IconChevronLeft>
-            All Blogs
-          </div>
-        </Link> */}
         <div className="mt-spacing-lg w-single-small">
           <TitleBlock
             text={blog.title}

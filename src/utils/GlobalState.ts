@@ -1,13 +1,18 @@
+function removeLeadingSection(pathname: string): string {
+  return "/" + pathname.split("/").slice(2).join("/");
+}
+
 export function getInitialState({
-  pathname,
+  rawPathname,
   projectRoutes,
 }: {
-  pathname: string;
+  rawPathname: string;
   projectRoutes: {
     name: string;
     uri: string;
   }[];
 }): GlobalState {
+  const pathname = removeLeadingSection(rawPathname);
   let currentProjectIndex: number;
   let currentProject: string;
   const projectNames = projectRoutes.map((route) => route.name);
@@ -24,7 +29,7 @@ export function getInitialState({
     projectNames: projectNames,
     sideBarRoutes: projectRoutes,
     focus: getFocus(pathname),
-    onLanding: pathname === "/",
+    onLanding: pathname.split("/").length <= 2,
   };
 }
 
@@ -75,12 +80,10 @@ export function stateReducer(state: GlobalState, action: GlobalStateAction) {
     newState.currentProjectIndex = state.projectNames.indexOf(action.project);
     newState.currentProject = action.project;
   } else if (action.type === "changeRoute") {
-    newState.focus = getFocus(action.newPath);
-    newState.currentProject = action.newPath.slice(
-      1,
-      action.newPath.length - 1,
-    );
-    if (action.newPath === "/") {
+    const pathname = removeLeadingSection(action.newPath);
+    newState.focus = getFocus(pathname);
+    newState.currentProject = pathname.slice(1, pathname.length - 1);
+    if (pathname === "/") {
       newState.onLanding = true;
     } else {
       newState.onLanding = false;

@@ -1,4 +1,4 @@
-import { Project } from "@payload-types";
+import { EdtechProject, ProductProject, UiuxProject } from "@payload-types";
 import { Payload } from "payload";
 import React from "react";
 import "server-only";
@@ -6,10 +6,12 @@ import "server-only";
 import Button from "@/components/Button";
 import FloatUpMotion from "@/components/FloatUpMotion";
 import PayloadImage from "@/components/PayloadImage";
+import { PortfolioType } from "@/utils/CommonTypes";
 import { getProjectLink } from "@/utils/payloadHelpers";
 
 interface HomeSectionProps {
-  project: Project;
+  type: PortfolioType;
+  project: UiuxProject | ProductProject | EdtechProject;
   payload: Payload;
 }
 
@@ -77,6 +79,7 @@ export default async function HomeSection(props: HomeSectionProps) {
 
                   <Button
                     href={getProjectLink(
+                      props.type,
                       props.project.uri,
                       props.project.externalLink,
                     )}
