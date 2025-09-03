@@ -236,15 +236,6 @@ export default function SidebarInteractive(props: SidebarInteractiveProps) {
                 <IconBrandLinkedin size={isLG ? 20 : 18} />
               </a>
             </Tooltip>
-            <Tooltip tip="Resume">
-              <a
-                href={`/${props.type}/documents/resume`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <IconFileText size={isLG ? 20 : 18} />
-              </a>
-            </Tooltip>
           </div>
         </div>
 
