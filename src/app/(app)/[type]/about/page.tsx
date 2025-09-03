@@ -192,10 +192,6 @@ export default async function About() {
           <div className="lg:col-span-2 lg:self-end">{data.profile}</div>
         </div>
 
-        {/* Resume */}
-        <Button href="/documents/resume" color="dark">
-          Resume
-        </Button>
         <div style={{ paddingTop: getSpacing("large") }}></div>
 
         <div className="w-single">
