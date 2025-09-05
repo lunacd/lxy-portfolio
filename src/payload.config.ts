@@ -1,3 +1,4 @@
+import { AllBlogs } from "./collections/AllBlogs";
 import { AllProjects } from "./collections/AllProjects";
 import { Documents } from "./collections/Documents";
 import { EdtechBlogs } from "./collections/EdtechBlogs";
@@ -56,6 +57,7 @@ export default buildConfig({
     UiuxBlogs,
     EdtechBlogs,
     ProductBlogs,
+    AllBlogs,
   ],
   globals: [Global],
   editor: lexicalEditor(),

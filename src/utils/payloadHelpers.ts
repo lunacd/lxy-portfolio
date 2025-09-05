@@ -55,7 +55,7 @@ export function payloadProjectSlug(
 
 export function payloadBlogSlug(
   type: PortfolioType,
-): "uiuxBlogs" | "productBlogs" | "edtechBlogs" {
+): "uiuxBlogs" | "productBlogs" | "edtechBlogs" | "allBlogs" {
   switch (type) {
     case "product-designer":
       return "uiuxBlogs";
@@ -63,6 +63,8 @@ export function payloadBlogSlug(
       return "productBlogs";
     case "instructional-designer":
       return "edtechBlogs";
+    case "designer":
+      return "allBlogs";
     default:
       throw new Error(`Unknown project type: ${type}`);
   }
