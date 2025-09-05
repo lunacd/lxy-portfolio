@@ -1,3 +1,4 @@
+import { AllProjects } from "./collections/AllProjects";
 import { Documents } from "./collections/Documents";
 import { EdtechBlogs } from "./collections/EdtechBlogs";
 import { EdtechProjects } from "./collections/EdtechProjects";
@@ -50,6 +51,7 @@ export default buildConfig({
     UiuxProjects,
     ProductProjects,
     EdtechProjects,
+    AllProjects,
     ProjectPages,
     UiuxBlogs,
     EdtechBlogs,

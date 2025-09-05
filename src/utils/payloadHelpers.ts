@@ -38,7 +38,7 @@ export async function getMedia(
 
 export function payloadProjectSlug(
   type: PortfolioType,
-): "uiuxProjects" | "productProjects" | "edtechProjects" {
+): "uiuxProjects" | "productProjects" | "edtechProjects" | "allProjects" {
   switch (type) {
     case "product-designer":
       return "uiuxProjects";
@@ -46,6 +46,8 @@ export function payloadProjectSlug(
       return "productProjects";
     case "instructional-designer":
       return "edtechProjects";
+    case "designer":
+      return "allProjects";
     default:
       throw new Error(`Unknown project type: ${type}`);
   }
