@@ -12,7 +12,7 @@ import Carousel from "@/components/Carousel";
 import ConnectPrompt from "@/components/ConnectPrompt";
 import Scroller from "@/components/Scroller";
 import Testimonial from "@/components/Testimonial";
-import { PortfolioType, stringIsType } from "@/utils/CommonTypes";
+import { stringIsType } from "@/utils/CommonTypes";
 import { payloadBlogSlug, payloadProjectSlug } from "@/utils/payloadHelpers";
 import { getSpacing } from "@/utils/spacingUtil";
 

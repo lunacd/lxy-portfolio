@@ -12,7 +12,7 @@ import { getPayload } from "payload";
 import React, { PropsWithChildren } from "react";
 
 import Sidebar from "@/components/Sidebar";
-import { PortfolioType, stringIsType } from "@/utils/CommonTypes";
+import { stringIsType } from "@/utils/CommonTypes";
 import { payloadProjectSlug } from "@/utils/payloadHelpers";
 
 const catamaran = Catamaran({ subsets: ["latin"] });

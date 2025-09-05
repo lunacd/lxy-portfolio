@@ -5,7 +5,6 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconChevronLeft,
-  IconFileText,
   IconMail,
 } from "@tabler/icons-react";
 import classNames from "classnames";

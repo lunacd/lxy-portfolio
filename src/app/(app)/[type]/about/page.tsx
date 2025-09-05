@@ -9,7 +9,6 @@ import { Suspense } from "react";
 
 import TitleBlock from "@/blocks/TitleBlock";
 import AnimationCoordinator from "@/components/AnimationCoordinator";
-import Button from "@/components/Button";
 import FloatUpMotion from "@/components/FloatUpMotion";
 import PayloadImage from "@/components/PayloadImage";
 import SlideShow from "@/components/SlideShow";

@@ -1,4 +1,4 @@
-export default {
+const config = {
   extends: "stylelint-config-recommended",
   rules: {
     "at-rule-no-unknown": [
@@ -15,3 +15,5 @@ export default {
     ],
   },
 };
+
+export default config;

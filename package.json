@@ -7,7 +7,7 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && prettier --check . && stylelint \"**/*.css\"",
+    "lint": "eslint . && prettier --check . && stylelint \"**/*.css\"",
     "format": "prettier --write .",
     "export": "next build && next export",
     "tsc": "tsc --noEmit --incremental",
@@ -41,6 +41,7 @@
     "usehooks-ts": "3.1.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@next/eslint-plugin-next": "15.5.0",
     "@tailwindcss/postcss": "4.1.12",
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
@@ -49,6 +50,7 @@
     "@types/react-dom": "19.1.7",
     "@typescript-eslint/parser": "^8.40.0",
     "eslint": "9.33.0",
+    "eslint-config-next": "15.5.0",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
     "postcss": "8.5.6",
