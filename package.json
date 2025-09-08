@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@chakra-ui/react": "3.25.0",
-    "@lottiefiles/dotlottie-react": "0.15.1",
-    "@lottiefiles/dotlottie-web": "0.50.1",
+    "@lottiefiles/dotlottie-react": "0.15.2",
+    "@lottiefiles/dotlottie-web": "0.50.2",
     "@next/third-parties": "15.5.0",
     "@payloadcms/db-postgres": "3.54.0",
     "@payloadcms/live-preview-react": "3.54.0",
