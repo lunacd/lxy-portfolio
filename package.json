@@ -18,7 +18,7 @@
     "generate:importmap": "payload generate:importmap"
   },
   "dependencies": {
-    "@chakra-ui/react": "3.25.0",
+    "@chakra-ui/react": "3.27.0",
     "@lottiefiles/dotlottie-react": "0.15.2",
     "@lottiefiles/dotlottie-web": "0.50.2",
     "@next/third-parties": "15.5.2",
