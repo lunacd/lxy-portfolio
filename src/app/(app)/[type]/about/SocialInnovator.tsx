@@ -5,25 +5,21 @@ import { AnimatePresence } from "motion/react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { transitionFast } from "@/utils/transitions";
 
 import SocialInnovatorImage from "@/images/about/social-innovator.gif";
 
 export default function SocialInnovator() {
-  const [overlayOpen, setOverlayOpen] = useState(false);
+  const searchParams = useSearchParams();
+  const [overlayOpen, setOverlayOpen] = useState(
+    searchParams.get("v") === "kidmania",
+  );
   const [videoLink, setVideoLink] = useState(
     "https://www.youtube.com/embed/cH5WShEmoR8",
   );
-  const searchParams = useSearchParams();
 
-  useEffect(() => {
-    if (searchParams.get("v") === "kidmania") {
-      setVideoLink("https://www.youtube.com/embed/cH5WShEmoR8");
-      setOverlayOpen(true);
-    }
-  }, [searchParams]);
   return (
     <>
       {/* Setting aspect ratio on this one to use as a guideline for grid cell heights */}
