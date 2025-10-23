@@ -515,7 +515,7 @@ export interface ProjectPage {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -545,7 +545,7 @@ export interface ProjectPage {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -609,7 +609,7 @@ export interface ProjectPage {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -679,7 +679,7 @@ export interface ProjectPage {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -736,7 +736,7 @@ export interface ProjectPage {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -758,7 +758,7 @@ export interface ProjectPage {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -819,7 +819,7 @@ export interface ProjectPage {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -834,7 +834,7 @@ export interface ProjectPage {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -861,7 +861,7 @@ export interface ProjectPage {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -909,7 +909,7 @@ export interface ProjectPage {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -943,7 +943,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -973,7 +973,7 @@ export interface ProjectPage {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -1037,7 +1037,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -1107,7 +1107,7 @@ export interface ProjectPage {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -1164,7 +1164,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -1186,7 +1186,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -1247,7 +1247,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -1262,7 +1262,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -1289,7 +1289,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -1337,7 +1337,7 @@ export interface ProjectPage {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -1371,7 +1371,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -1401,7 +1401,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -1465,7 +1465,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -1535,7 +1535,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -1592,7 +1592,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -1614,7 +1614,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -1675,7 +1675,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -1690,7 +1690,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -1717,7 +1717,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -1765,7 +1765,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -1807,7 +1807,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -1837,7 +1837,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -1901,7 +1901,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -1971,7 +1971,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -2028,7 +2028,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -2050,7 +2050,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -2111,7 +2111,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -2126,7 +2126,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -2153,7 +2153,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -2201,7 +2201,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -2251,7 +2251,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -2281,7 +2281,7 @@ export interface ProjectPage {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -2345,7 +2345,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -2415,7 +2415,7 @@ export interface ProjectPage {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -2472,7 +2472,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -2494,7 +2494,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -2555,7 +2555,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -2570,7 +2570,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -2597,7 +2597,7 @@ export interface ProjectPage {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -2645,7 +2645,7 @@ export interface ProjectPage {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -2679,7 +2679,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -2709,7 +2709,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -2773,7 +2773,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -2843,7 +2843,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -2900,7 +2900,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -2922,7 +2922,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -2983,7 +2983,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -2998,7 +2998,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -3025,7 +3025,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -3073,7 +3073,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -3115,7 +3115,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -3145,7 +3145,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -3209,7 +3209,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -3279,7 +3279,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -3336,7 +3336,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -3358,7 +3358,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -3419,7 +3419,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -3434,7 +3434,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -3461,7 +3461,7 @@ export interface ProjectPage {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -3509,7 +3509,7 @@ export interface ProjectPage {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -3582,7 +3582,7 @@ export interface UiuxBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -3612,7 +3612,7 @@ export interface UiuxBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -3676,7 +3676,7 @@ export interface UiuxBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -3746,7 +3746,7 @@ export interface UiuxBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -3803,7 +3803,7 @@ export interface UiuxBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -3825,7 +3825,7 @@ export interface UiuxBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -3886,7 +3886,7 @@ export interface UiuxBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -3901,7 +3901,7 @@ export interface UiuxBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -3928,7 +3928,7 @@ export interface UiuxBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -3976,7 +3976,7 @@ export interface UiuxBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -4010,7 +4010,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -4040,7 +4040,7 @@ export interface UiuxBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -4104,7 +4104,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -4174,7 +4174,7 @@ export interface UiuxBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -4231,7 +4231,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -4253,7 +4253,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -4314,7 +4314,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -4329,7 +4329,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -4356,7 +4356,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -4404,7 +4404,7 @@ export interface UiuxBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -4438,7 +4438,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -4468,7 +4468,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -4532,7 +4532,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -4602,7 +4602,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -4659,7 +4659,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -4681,7 +4681,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -4742,7 +4742,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -4757,7 +4757,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -4784,7 +4784,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -4832,7 +4832,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -4874,7 +4874,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -4904,7 +4904,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -4968,7 +4968,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -5038,7 +5038,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -5095,7 +5095,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -5117,7 +5117,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -5178,7 +5178,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -5193,7 +5193,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -5220,7 +5220,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -5268,7 +5268,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -5318,7 +5318,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -5348,7 +5348,7 @@ export interface UiuxBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -5412,7 +5412,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -5482,7 +5482,7 @@ export interface UiuxBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -5539,7 +5539,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -5561,7 +5561,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -5622,7 +5622,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -5637,7 +5637,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -5664,7 +5664,7 @@ export interface UiuxBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -5712,7 +5712,7 @@ export interface UiuxBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -5746,7 +5746,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -5776,7 +5776,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -5840,7 +5840,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -5910,7 +5910,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -5967,7 +5967,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -5989,7 +5989,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6050,7 +6050,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6065,7 +6065,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6092,7 +6092,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6140,7 +6140,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -6182,7 +6182,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6212,7 +6212,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -6276,7 +6276,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6346,7 +6346,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -6403,7 +6403,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6425,7 +6425,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6486,7 +6486,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6501,7 +6501,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6528,7 +6528,7 @@ export interface UiuxBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -6576,7 +6576,7 @@ export interface UiuxBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -6649,7 +6649,7 @@ export interface EdtechBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -6679,7 +6679,7 @@ export interface EdtechBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -6743,7 +6743,7 @@ export interface EdtechBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -6813,7 +6813,7 @@ export interface EdtechBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -6870,7 +6870,7 @@ export interface EdtechBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -6892,7 +6892,7 @@ export interface EdtechBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -6953,7 +6953,7 @@ export interface EdtechBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -6968,7 +6968,7 @@ export interface EdtechBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -6995,7 +6995,7 @@ export interface EdtechBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -7043,7 +7043,7 @@ export interface EdtechBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -7077,7 +7077,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -7107,7 +7107,7 @@ export interface EdtechBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -7171,7 +7171,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -7241,7 +7241,7 @@ export interface EdtechBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -7298,7 +7298,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -7320,7 +7320,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -7381,7 +7381,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -7396,7 +7396,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -7423,7 +7423,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -7471,7 +7471,7 @@ export interface EdtechBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -7505,7 +7505,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -7535,7 +7535,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -7599,7 +7599,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -7669,7 +7669,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -7726,7 +7726,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -7748,7 +7748,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -7809,7 +7809,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -7824,7 +7824,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -7851,7 +7851,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -7899,7 +7899,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -7941,7 +7941,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -7971,7 +7971,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -8035,7 +8035,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -8105,7 +8105,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -8162,7 +8162,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -8184,7 +8184,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -8245,7 +8245,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -8260,7 +8260,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -8287,7 +8287,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -8335,7 +8335,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -8385,7 +8385,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -8415,7 +8415,7 @@ export interface EdtechBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -8479,7 +8479,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -8549,7 +8549,7 @@ export interface EdtechBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -8606,7 +8606,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -8628,7 +8628,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -8689,7 +8689,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -8704,7 +8704,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -8731,7 +8731,7 @@ export interface EdtechBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -8779,7 +8779,7 @@ export interface EdtechBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -8813,7 +8813,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -8843,7 +8843,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -8907,7 +8907,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -8977,7 +8977,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -9034,7 +9034,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9056,7 +9056,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9117,7 +9117,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9132,7 +9132,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9159,7 +9159,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9207,7 +9207,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -9249,7 +9249,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9279,7 +9279,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -9343,7 +9343,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9413,7 +9413,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -9470,7 +9470,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9492,7 +9492,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9553,7 +9553,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9568,7 +9568,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9595,7 +9595,7 @@ export interface EdtechBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -9643,7 +9643,7 @@ export interface EdtechBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -9716,7 +9716,7 @@ export interface ProductBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -9746,7 +9746,7 @@ export interface ProductBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -9810,7 +9810,7 @@ export interface ProductBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -9880,7 +9880,7 @@ export interface ProductBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -9937,7 +9937,7 @@ export interface ProductBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -9959,7 +9959,7 @@ export interface ProductBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -10020,7 +10020,7 @@ export interface ProductBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -10035,7 +10035,7 @@ export interface ProductBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -10062,7 +10062,7 @@ export interface ProductBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -10110,7 +10110,7 @@ export interface ProductBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -10144,7 +10144,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -10174,7 +10174,7 @@ export interface ProductBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -10238,7 +10238,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -10308,7 +10308,7 @@ export interface ProductBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -10365,7 +10365,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -10387,7 +10387,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -10448,7 +10448,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -10463,7 +10463,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -10490,7 +10490,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -10538,7 +10538,7 @@ export interface ProductBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -10572,7 +10572,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -10602,7 +10602,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -10666,7 +10666,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -10736,7 +10736,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -10793,7 +10793,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -10815,7 +10815,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -10876,7 +10876,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -10891,7 +10891,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -10918,7 +10918,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -10966,7 +10966,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -11008,7 +11008,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -11038,7 +11038,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -11102,7 +11102,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -11172,7 +11172,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -11229,7 +11229,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -11251,7 +11251,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -11312,7 +11312,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -11327,7 +11327,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -11354,7 +11354,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -11402,7 +11402,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -11452,7 +11452,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -11482,7 +11482,7 @@ export interface ProductBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -11546,7 +11546,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -11616,7 +11616,7 @@ export interface ProductBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -11673,7 +11673,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -11695,7 +11695,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -11756,7 +11756,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -11771,7 +11771,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -11798,7 +11798,7 @@ export interface ProductBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -11846,7 +11846,7 @@ export interface ProductBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -11880,7 +11880,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -11910,7 +11910,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -11974,7 +11974,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12044,7 +12044,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -12101,7 +12101,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12123,7 +12123,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12184,7 +12184,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12199,7 +12199,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12226,7 +12226,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12274,7 +12274,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -12316,7 +12316,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12346,7 +12346,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -12410,7 +12410,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12480,7 +12480,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -12537,7 +12537,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12559,7 +12559,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12620,7 +12620,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12635,7 +12635,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12662,7 +12662,7 @@ export interface ProductBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -12710,7 +12710,7 @@ export interface ProductBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -12783,7 +12783,7 @@ export interface AllBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -12813,7 +12813,7 @@ export interface AllBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -12877,7 +12877,7 @@ export interface AllBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -12947,7 +12947,7 @@ export interface AllBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -13004,7 +13004,7 @@ export interface AllBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -13026,7 +13026,7 @@ export interface AllBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -13087,7 +13087,7 @@ export interface AllBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -13102,7 +13102,7 @@ export interface AllBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -13129,7 +13129,7 @@ export interface AllBlog {
           root: {
             type: string;
             children: {
-              type: string;
+              type: any;
               version: number;
               [k: string]: unknown;
             }[];
@@ -13177,7 +13177,7 @@ export interface AllBlog {
             root: {
               type: string;
               children: {
-                type: string;
+                type: any;
                 version: number;
                 [k: string]: unknown;
               }[];
@@ -13211,7 +13211,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -13241,7 +13241,7 @@ export interface AllBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -13305,7 +13305,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -13375,7 +13375,7 @@ export interface AllBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -13432,7 +13432,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -13454,7 +13454,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -13515,7 +13515,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -13530,7 +13530,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -13557,7 +13557,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -13605,7 +13605,7 @@ export interface AllBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -13639,7 +13639,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -13669,7 +13669,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -13733,7 +13733,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -13803,7 +13803,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -13860,7 +13860,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -13882,7 +13882,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -13943,7 +13943,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -13958,7 +13958,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -13985,7 +13985,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -14033,7 +14033,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -14075,7 +14075,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -14105,7 +14105,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -14169,7 +14169,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -14239,7 +14239,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -14296,7 +14296,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -14318,7 +14318,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -14379,7 +14379,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -14394,7 +14394,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -14421,7 +14421,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -14469,7 +14469,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -14519,7 +14519,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -14549,7 +14549,7 @@ export interface AllBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -14613,7 +14613,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -14683,7 +14683,7 @@ export interface AllBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -14740,7 +14740,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -14762,7 +14762,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -14823,7 +14823,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -14838,7 +14838,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -14865,7 +14865,7 @@ export interface AllBlog {
                 root: {
                   type: string;
                   children: {
-                    type: string;
+                    type: any;
                     version: number;
                     [k: string]: unknown;
                   }[];
@@ -14913,7 +14913,7 @@ export interface AllBlog {
                   root: {
                     type: string;
                     children: {
-                      type: string;
+                      type: any;
                       version: number;
                       [k: string]: unknown;
                     }[];
@@ -14947,7 +14947,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -14977,7 +14977,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -15041,7 +15041,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15111,7 +15111,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -15168,7 +15168,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15190,7 +15190,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15251,7 +15251,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15266,7 +15266,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15293,7 +15293,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15341,7 +15341,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -15383,7 +15383,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15413,7 +15413,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -15477,7 +15477,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15547,7 +15547,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -15604,7 +15604,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15626,7 +15626,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15687,7 +15687,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15702,7 +15702,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15729,7 +15729,7 @@ export interface AllBlog {
                       root: {
                         type: string;
                         children: {
-                          type: string;
+                          type: any;
                           version: number;
                           [k: string]: unknown;
                         }[];
@@ -15777,7 +15777,7 @@ export interface AllBlog {
                         root: {
                           type: string;
                           children: {
-                            type: string;
+                            type: any;
                             version: number;
                             [k: string]: unknown;
                           }[];
@@ -25252,7 +25252,7 @@ export interface Global {
       root: {
         type: string;
         children: {
-          type: string;
+          type: any;
           version: number;
           [k: string]: unknown;
         }[];
@@ -25267,7 +25267,7 @@ export interface Global {
       root: {
         type: string;
         children: {
-          type: string;
+          type: any;
           version: number;
           [k: string]: unknown;
         }[];

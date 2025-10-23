@@ -3,6 +3,7 @@ import React, { PropsWithChildren, useContext, useRef } from "react";
 
 export default function FrozenRouter(props: PropsWithChildren) {
   const context = useContext(LayoutRouterContext);
+  // eslint-disable-next-line react-hooks/refs
   const frozen = useRef(context).current;
 
   return (
