@@ -25,6 +25,7 @@ updates:
           - "@tailwindcss/postcss"
           - postcss
           - eslint-config-next
+          - "@next/*"
       tailwind:
         patterns:
           - tailwindcss
