@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -12,7 +16,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "noErrorTruncation": true,
     "plugins": [
@@ -22,14 +26,34 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["src/components/*"],
-      "@/blocks/*": ["src/blocks/*"],
-      "@/utils/*": ["src/utils/*"],
-      "@/images/*": ["images/*"],
-      "@payload-config": ["./src/payload.config.ts"],
-      "@payload-types": ["./src/payload-types.ts"]
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/blocks/*": [
+        "src/blocks/*"
+      ],
+      "@/utils/*": [
+        "src/utils/*"
+      ],
+      "@/images/*": [
+        "images/*"
+      ],
+      "@payload-config": [
+        "./src/payload.config.ts"
+      ],
+      "@payload-types": [
+        "./src/payload-types.ts"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

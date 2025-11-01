@@ -3,6 +3,8 @@ import { withPayload } from "@payloadcms/next/withPayload";
 const nextConfig = withPayload({
   reactStrictMode: true,
   trailingSlash: true,
+  turbopack: {},
+  serverExternalPackages: ["@payloadcms/db-postgres"],
   images: {
     remotePatterns: [
       {
