@@ -79,6 +79,7 @@ export interface Config {
     edtechBlogs: EdtechBlog;
     productBlogs: ProductBlog;
     allBlogs: AllBlog;
+    'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -97,6 +98,7 @@ export interface Config {
     edtechBlogs: EdtechBlogsSelect<false> | EdtechBlogsSelect<true>;
     productBlogs: ProductBlogsSelect<false> | ProductBlogsSelect<true>;
     allBlogs: AllBlogsSelect<false> | AllBlogsSelect<true>;
+    'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -15817,6 +15819,23 @@ export interface AllBlog {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-kv".
+ */
+export interface PayloadKv {
+  id: number;
+  key: string;
+  data:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -15869,6 +15888,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'allBlogs';
         value: number | AllBlog;
+      } | null)
+    | ({
+        relationTo: 'payload-kv';
+        value: number | PayloadKv;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -25201,6 +25224,14 @@ export interface AllBlogsSelect<T extends boolean = true> {
       };
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-kv_select".
+ */
+export interface PayloadKvSelect<T extends boolean = true> {
+  key?: T;
+  data?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
