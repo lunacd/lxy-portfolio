@@ -3558,6 +3558,10 @@ export interface UiuxBlog {
   title: string;
   date: string;
   /**
+   * Whether the blog is shown publicly on the site.
+   */
+  enabled: boolean;
+  /**
    * Required dimension: 1280 x 1058.
    */
   coverImage: number | Media;
@@ -6624,6 +6628,10 @@ export interface EdtechBlog {
   id: number;
   title: string;
   date: string;
+  /**
+   * Whether the blog is shown publicly on the site.
+   */
+  enabled: boolean;
   /**
    * Required dimension: 1280 x 1058.
    */
@@ -9692,6 +9700,10 @@ export interface ProductBlog {
   title: string;
   date: string;
   /**
+   * Whether the blog is shown publicly on the site.
+   */
+  enabled: boolean;
+  /**
    * Required dimension: 1280 x 1058.
    */
   coverImage: number | Media;
@@ -12758,6 +12770,10 @@ export interface AllBlog {
   id: number;
   title: string;
   date: string;
+  /**
+   * Whether the blog is shown publicly on the site.
+   */
+  enabled: boolean;
   /**
    * Required dimension: 1280 x 1058.
    */
@@ -17972,6 +17988,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
 export interface UiuxBlogsSelect<T extends boolean = true> {
   title?: T;
   date?: T;
+  enabled?: T;
   coverImage?: T;
   tags?:
     | T
@@ -19787,6 +19804,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
 export interface EdtechBlogsSelect<T extends boolean = true> {
   title?: T;
   date?: T;
+  enabled?: T;
   coverImage?: T;
   tags?:
     | T
@@ -21602,6 +21620,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
 export interface ProductBlogsSelect<T extends boolean = true> {
   title?: T;
   date?: T;
+  enabled?: T;
   coverImage?: T;
   tags?:
     | T
@@ -23417,6 +23436,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
 export interface AllBlogsSelect<T extends boolean = true> {
   title?: T;
   date?: T;
+  enabled?: T;
   coverImage?: T;
   tags?:
     | T

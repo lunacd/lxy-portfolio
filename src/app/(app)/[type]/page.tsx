@@ -66,7 +66,7 @@ export default async function Landing({
   ]);
   const projects = promises[0].docs;
   const globalData = promises[1];
-  const blogs = promises[2].docs;
+  const blogs = promises[2].docs.filter((blog) => blog.enabled);
 
   return (
     <Scroller bgColor="#FDF9F1" restoreId="home-scroller">

@@ -28,6 +28,15 @@ export const UiuxBlogs: CollectionConfig = {
       },
     },
     {
+      name: "enabled",
+      type: "checkbox",
+      required: true,
+      defaultValue: true,
+      admin: {
+        description: "Whether the blog is shown publicly on the site.",
+      },
+    },
+    {
       name: "coverImage",
       type: "upload",
       required: true,
