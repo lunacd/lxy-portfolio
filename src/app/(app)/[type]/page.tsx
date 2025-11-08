@@ -62,11 +62,16 @@ export default async function Landing({
       collection: payloadBlogSlug(type),
       sort: "-date",
       pagination: false,
+      where: {
+        enabled: {
+          equals: true,
+        },
+      },
     }),
   ]);
   const projects = promises[0].docs;
   const globalData = promises[1];
-  const blogs = promises[2].docs.filter((blog) => blog.enabled);
+  const blogs = promises[2].docs;
 
   return (
     <Scroller bgColor="#FDF9F1" restoreId="home-scroller">
