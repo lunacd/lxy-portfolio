@@ -15904,10 +15904,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'allBlogs';
         value: number | AllBlog;
-      } | null)
-    | ({
-        relationTo: 'payload-kv';
-        value: number | PayloadKv;
       } | null);
   globalSlug?: string | null;
   user: {
