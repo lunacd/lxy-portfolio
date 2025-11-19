@@ -4,7 +4,6 @@ const nextConfig = withPayload({
   reactStrictMode: true,
   trailingSlash: true,
   turbopack: {},
-  serverExternalPackages: ["@payloadcms/db-postgres"],
   images: {
     remotePatterns: [
       {
