@@ -18,6 +18,7 @@
     "generate:importmap": "payload generate:importmap"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.934.0",
     "@chakra-ui/react": "3.29.0",
     "@lottiefiles/dotlottie-react": "0.17.7",
     "@lottiefiles/dotlottie-web": "0.56.0",
