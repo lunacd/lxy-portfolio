@@ -43,7 +43,7 @@ export default async function RootLayout(
       sort: "order",
     })
   ).docs;
-  console.log(projects);
+  console.log("layout.tsx", projects);
   const projectRoutes = projects.map((project) => {
     return { name: project.name, uri: project.uri };
   });

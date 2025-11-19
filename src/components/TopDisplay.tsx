@@ -25,6 +25,7 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
   const props = { ...defaultProps, ...propsIn };
   const titleColor =
     props.project.textColor === "light" ? "text-gray-100" : "text-gray-950";
+  console.log("Rendering TopDisplay for project:", props.project);
   return (
     <>
       <div

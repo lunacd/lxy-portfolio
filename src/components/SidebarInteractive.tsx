@@ -103,8 +103,8 @@ export default function SidebarInteractive(props: SidebarInteractiveProps) {
           x: open && globalState.onLanding ? "0%" : "-100%",
         }}
         transition={transitionDefault}
-        className="absolute z-10 h-screen w-[16rem] flex-shrink-0 bg-white
-          shadow-lg lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
+        className="absolute z-10 h-screen w-[16rem] shrink-0 bg-white shadow-lg
+          lg:min-h-[30rem] xl:min-h-[34rem] xl:w-[21rem]"
       >
         {/* Content container */}
         <div
