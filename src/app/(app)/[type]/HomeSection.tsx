@@ -18,7 +18,6 @@ interface HomeSectionProps {
 export default async function HomeSection(props: HomeSectionProps) {
   const titleColor =
     props.project.textColor === "light" ? "text-gray-100" : "text-gray-950";
-  console.log("Rendering HomeSection for project:", props.project);
   return (
     <>
       {/* Project image */}
