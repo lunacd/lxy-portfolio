@@ -48,7 +48,7 @@
     "@types/node": "24.10.1",
     "@types/react": "19.2.5",
     "@types/react-dom": "19.2.3",
-    "@typescript-eslint/parser": "^8.46.4",
+    "@typescript-eslint/parser": "^8.47.0",
     "eslint": "9.39.1",
     "eslint-config-next": "15.4.7",
     "eslint-plugin-react": "7.37.5",
@@ -58,7 +58,7 @@
     "prettier-plugin-classnames": "0.8.5",
     "prettier-plugin-merge": "0.8.0",
     "prettier-plugin-tailwindcss": "0.7.1",
-    "stylelint": "16.25.0",
+    "stylelint": "16.26.0",
     "stylelint-config-recommended": "17.0.0",
     "tailwindcss": "4.1.17",
     "typescript": "5.9.3"
