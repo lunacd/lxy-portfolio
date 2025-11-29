@@ -15,11 +15,11 @@ importers:
         specifier: 3.29.0
         version: 3.29.0(@emotion/react@11.14.0(@types/react@19.2.5)(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@lottiefiles/dotlottie-react':
-        specifier: 0.17.7
-        version: 0.17.7(react@19.1.0)
+        specifier: 0.17.8
+        version: 0.17.8(react@19.1.0)
       '@lottiefiles/dotlottie-web':
-        specifier: 0.56.0
-        version: 0.56.0
+        specifier: 0.57.0
+        version: 0.57.0
       '@next/third-parties':
         specifier: 15.4.7
         version: 15.4.7(next@15.4.7(@babel/core@7.27.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.77.4))(react@19.1.0)
@@ -1262,13 +1262,13 @@ packages:
     peerDependencies:
       yjs: '>=13.5.22'
 
-  '@lottiefiles/dotlottie-react@0.17.7':
-    resolution: {integrity: sha512-A6wO3zqkDx/t0ULfctcr1Bmb1f1hc4zUV3NcbKQOsBGAOIx1vABV/fRabFYElvbJl9lmOR24yMh//Z0fvvJV+Q==}
+  '@lottiefiles/dotlottie-react@0.17.8':
+    resolution: {integrity: sha512-Hk0bISNURSqL7t+H7S5lW2NQVa1hiibnqRRg6kOWZpswBxfQk+/6WBPc9EfuetdoZmiMoDsmcI0HR4I20oTBRg==}
     peerDependencies:
       react: ^17 || ^18 || ^19
 
-  '@lottiefiles/dotlottie-web@0.56.0':
-    resolution: {integrity: sha512-bWHRIGzjZs3Hjkz0JRsCMX2ya9a1tGU4atdrlfM3UoN0iamsDE64kSCMfGuchCwGAxg0xEh84CkF+SVV1NU9ow==}
+  '@lottiefiles/dotlottie-web@0.57.0':
+    resolution: {integrity: sha512-gcgvu9T21YzeY3JjHCZrxftucsxzMH6e9h+8NMv8mbfo1y1M9/jdcsdu40S+pnSLz9/OyiSBQ/EjDsbSOHZy0w==}
 
   '@monaco-editor/loader@1.7.0':
     resolution: {integrity: sha512-gIwR1HrJrrx+vfyOhYmCZ0/JcWqG5kbfG7+d3f/C1LXk2EvzAbHSg3MQ5lO2sMlo9izoAZ04shohfKLVT6crVA==}
@@ -1463,6 +1463,7 @@ packages:
   '@smithy/core@3.18.4':
     resolution: {integrity: sha512-o5tMqPZILBvvROfC8vC+dSVnWJl9a0u9ax1i1+Bq8515eYjUJqqk5XjjEsDLoeL5dSqGSh6WGdVx1eJ1E/Nwhw==}
     engines: {node: '>=18.0.0'}
+    deprecated: Please upgrade your lockfile to use the latest 3.x version of @smithy/core for various fixes, see https://github.com/smithy-lang/smithy-typescript/blob/main/packages/core/CHANGELOG.md
 
   '@smithy/core@3.18.5':
     resolution: {integrity: sha512-6gnIz3h+PEPQGDj8MnRSjDvKBah042jEoPgjFGJ4iJLBE78L4lY/n98x14XyPF4u3lN179Ub/ZKFY5za9GeLQw==}
@@ -6429,12 +6430,12 @@ snapshots:
       lexical: 0.35.0
       yjs: 13.6.24
 
-  '@lottiefiles/dotlottie-react@0.17.7(react@19.1.0)':
+  '@lottiefiles/dotlottie-react@0.17.8(react@19.1.0)':
     dependencies:
-      '@lottiefiles/dotlottie-web': 0.56.0
+      '@lottiefiles/dotlottie-web': 0.57.0
       react: 19.1.0
 
-  '@lottiefiles/dotlottie-web@0.56.0': {}
+  '@lottiefiles/dotlottie-web@0.57.0': {}
 
   '@monaco-editor/loader@1.7.0':
     dependencies:
