@@ -5,19 +5,6 @@ updates:
     schedule:
       interval: "weekly"
     groups:
-      react:
-        patterns:
-          - react
-          - react-dom
-      payload:
-        patterns:
-          - payload
-          - "@payloadcms/*"
-      next:
-        patterns:
-          - next
-          - "@next/*"
-          - eslint-config-next
       devDependencies:
         dependency-type: "development"
         exclude-patterns:
