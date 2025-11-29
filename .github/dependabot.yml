@@ -4,6 +4,14 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: react
+      - dependency-name: react-dom
+      - dependency-name: payload
+      - dependency-name: "@payloadcms/*"
+      - dependency-name: next
+      - dependency-name: "@next/*"
+      - dependency-name: eslint-config-next
     groups:
       devDependencies:
         dependency-type: "development"
