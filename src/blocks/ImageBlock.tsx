@@ -18,6 +18,7 @@ export default function ImageBlock(props: ImageBlockProps) {
       sizes={`${props.imageSize}vw`}
       style={{ marginBottom: getSpacing(props.bottomMargin) }}
       className={props.className}
+      canZoom={props.canZoom}
     />
   );
 }

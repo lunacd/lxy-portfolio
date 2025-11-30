@@ -15,9 +15,10 @@ interface PayloadInteractiveImageProps {
   unoptimized?: boolean;
   equalHeight?: boolean;
   style?: CSSProperties;
+  canZoom?: boolean | undefined | null;
 }
 
-const MotionImage = motion(Image);
+const MotionImage = motion.create(Image);
 
 export default function PayloadImageInteractive(
   props: PayloadInteractiveImageProps,
@@ -25,34 +26,47 @@ export default function PayloadImageInteractive(
   const [isZoomed, setIsZoomed] = useState(false);
   return (
     <div
-      className={isZoomed ? "fixed inset-0 z-50 bg-black/80" : ""}
-      onClick={() => {
-        setIsZoomed((orig) => !orig);
+      style={{
+        ...props.style,
+        ...{ aspectRatio: props.media.width / props.media.height },
       }}
+      className={props.className}
     >
-      <MotionImage
-        layoutId={props.media.url}
-        src={props.media.url}
-        alt={props.media.alt}
-        width={props.fill ? undefined : props.media.width}
-        height={props.fill ? undefined : props.media.height}
-        className={classNames(props.className, {
-          "absolute top-1/2 -translate-y-1/2": isZoomed,
-        })}
-        style={{
-          ...props.style,
-          ...{
+      <motion.div
+        className={isZoomed ? "fixed inset-0 z-50" : ""}
+        onClick={() => {
+          if (props.canZoom === true) {
+            setIsZoomed((orig) => !orig);
+          }
+        }}
+        animate={
+          isZoomed
+            ? { background: "rgba(0, 0, 0, 0.8)" }
+            : { background: "rgba(0, 0, 0, 0)" }
+        }
+      >
+        <MotionImage
+          layoutId={props.canZoom ? props.media.url : undefined}
+          src={props.media.url}
+          alt={props.media.alt}
+          width={props.fill ? undefined : props.media.width}
+          height={props.fill ? undefined : props.media.height}
+          className={classNames({
+            [`absolute top-1/2 left-1/2 max-h-full max-w-full -translate-x-1/2
+            -translate-y-1/2 object-contain`]: isZoomed,
+          })}
+          style={{
             flex: props.equalHeight
               ? props.media.width / props.media.height
               : undefined,
             minWidth: props.equalHeight ? 0 : undefined,
-          },
-        }}
-        fill={props.fill}
-        sizes={props.sizes}
-        // unoptimized={props.unoptimized}
-        unoptimized
-      ></MotionImage>
+          }}
+          fill={props.fill}
+          sizes={props.sizes}
+          // unoptimized={props.unoptimized}
+          unoptimized
+        ></MotionImage>
+      </motion.div>
     </div>
   );
 }
