@@ -1,6 +1,5 @@
 import PayloadImageInteractive from "./PayloadImageInteractive";
 import { Media } from "@payload-types";
-import Image from "next/image";
 import { Payload } from "payload";
 import { CSSProperties } from "react";
 import "server-only";
