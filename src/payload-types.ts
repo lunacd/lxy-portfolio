@@ -573,6 +573,7 @@ export interface ProjectPage {
          * For a full-width image, recommended width is 3840px.
          */
         image: number | Media;
+        canZoom?: boolean | null;
         /**
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
@@ -1001,6 +1002,7 @@ export interface ProjectPage {
                * For a full-width image, recommended width is 3840px.
                */
               image: number | Media;
+              canZoom?: boolean | null;
               /**
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
@@ -1429,6 +1431,7 @@ export interface ProjectPage {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -1865,6 +1868,7 @@ export interface ProjectPage {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -2309,6 +2313,7 @@ export interface ProjectPage {
                * For a full-width image, recommended width is 3840px.
                */
               image: number | Media;
+              canZoom?: boolean | null;
               /**
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
@@ -2737,6 +2742,7 @@ export interface ProjectPage {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -3173,6 +3179,7 @@ export interface ProjectPage {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -3644,6 +3651,7 @@ export interface UiuxBlog {
          * For a full-width image, recommended width is 3840px.
          */
         image: number | Media;
+        canZoom?: boolean | null;
         /**
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
@@ -4072,6 +4080,7 @@ export interface UiuxBlog {
                * For a full-width image, recommended width is 3840px.
                */
               image: number | Media;
+              canZoom?: boolean | null;
               /**
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
@@ -4500,6 +4509,7 @@ export interface UiuxBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -4936,6 +4946,7 @@ export interface UiuxBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -5380,6 +5391,7 @@ export interface UiuxBlog {
                * For a full-width image, recommended width is 3840px.
                */
               image: number | Media;
+              canZoom?: boolean | null;
               /**
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
@@ -5808,6 +5820,7 @@ export interface UiuxBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -6244,6 +6257,7 @@ export interface UiuxBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -6715,6 +6729,7 @@ export interface EdtechBlog {
          * For a full-width image, recommended width is 3840px.
          */
         image: number | Media;
+        canZoom?: boolean | null;
         /**
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
@@ -7143,6 +7158,7 @@ export interface EdtechBlog {
                * For a full-width image, recommended width is 3840px.
                */
               image: number | Media;
+              canZoom?: boolean | null;
               /**
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
@@ -7571,6 +7587,7 @@ export interface EdtechBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -8007,6 +8024,7 @@ export interface EdtechBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -8451,6 +8469,7 @@ export interface EdtechBlog {
                * For a full-width image, recommended width is 3840px.
                */
               image: number | Media;
+              canZoom?: boolean | null;
               /**
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
@@ -8879,6 +8898,7 @@ export interface EdtechBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -9315,6 +9335,7 @@ export interface EdtechBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -9786,6 +9807,7 @@ export interface ProductBlog {
          * For a full-width image, recommended width is 3840px.
          */
         image: number | Media;
+        canZoom?: boolean | null;
         /**
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
@@ -10214,6 +10236,7 @@ export interface ProductBlog {
                * For a full-width image, recommended width is 3840px.
                */
               image: number | Media;
+              canZoom?: boolean | null;
               /**
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
@@ -10642,6 +10665,7 @@ export interface ProductBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -11078,6 +11102,7 @@ export interface ProductBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -11522,6 +11547,7 @@ export interface ProductBlog {
                * For a full-width image, recommended width is 3840px.
                */
               image: number | Media;
+              canZoom?: boolean | null;
               /**
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
@@ -11950,6 +11976,7 @@ export interface ProductBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -12386,6 +12413,7 @@ export interface ProductBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -12857,6 +12885,7 @@ export interface AllBlog {
          * For a full-width image, recommended width is 3840px.
          */
         image: number | Media;
+        canZoom?: boolean | null;
         /**
          * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
          */
@@ -13285,6 +13314,7 @@ export interface AllBlog {
                * For a full-width image, recommended width is 3840px.
                */
               image: number | Media;
+              canZoom?: boolean | null;
               /**
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
@@ -13713,6 +13743,7 @@ export interface AllBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -14149,6 +14180,7 @@ export interface AllBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -14593,6 +14625,7 @@ export interface AllBlog {
                * For a full-width image, recommended width is 3840px.
                */
               image: number | Media;
+              canZoom?: boolean | null;
               /**
                * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                */
@@ -15021,6 +15054,7 @@ export interface AllBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -15457,6 +15491,7 @@ export interface AllBlog {
                      * For a full-width image, recommended width is 3840px.
                      */
                     image: number | Media;
+                    canZoom?: boolean | null;
                     /**
                      * Approximate percentage of screen this image will take. For example, if three images are shown side-by-side, then enter 33.
                      */
@@ -16225,6 +16260,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
           | T
           | {
               image?: T;
+              canZoom?: T;
               imageSize?: T;
               bottomMargin?: T;
               id?: T;
@@ -16476,6 +16512,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | T
                       | {
                           image?: T;
+                          canZoom?: T;
                           imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -16727,6 +16764,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -16985,6 +17023,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -17250,6 +17289,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                       | T
                       | {
                           image?: T;
+                          canZoom?: T;
                           imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -17501,6 +17541,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -17759,6 +17800,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -18041,6 +18083,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
           | T
           | {
               image?: T;
+              canZoom?: T;
               imageSize?: T;
               bottomMargin?: T;
               id?: T;
@@ -18292,6 +18335,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           image?: T;
+                          canZoom?: T;
                           imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -18543,6 +18587,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -18801,6 +18846,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -19066,6 +19112,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           image?: T;
+                          canZoom?: T;
                           imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -19317,6 +19364,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -19575,6 +19623,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -19857,6 +19906,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
           | T
           | {
               image?: T;
+              canZoom?: T;
               imageSize?: T;
               bottomMargin?: T;
               id?: T;
@@ -20108,6 +20158,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           image?: T;
+                          canZoom?: T;
                           imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -20359,6 +20410,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -20617,6 +20669,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -20882,6 +20935,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           image?: T;
+                          canZoom?: T;
                           imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -21133,6 +21187,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -21391,6 +21446,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -21673,6 +21729,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
           | T
           | {
               image?: T;
+              canZoom?: T;
               imageSize?: T;
               bottomMargin?: T;
               id?: T;
@@ -21924,6 +21981,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           image?: T;
+                          canZoom?: T;
                           imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -22175,6 +22233,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -22433,6 +22492,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -22698,6 +22758,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           image?: T;
+                          canZoom?: T;
                           imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -22949,6 +23010,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -23207,6 +23269,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -23489,6 +23552,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
           | T
           | {
               image?: T;
+              canZoom?: T;
               imageSize?: T;
               bottomMargin?: T;
               id?: T;
@@ -23740,6 +23804,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           image?: T;
+                          canZoom?: T;
                           imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -23991,6 +24056,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -24249,6 +24315,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -24514,6 +24581,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                       | T
                       | {
                           image?: T;
+                          canZoom?: T;
                           imageSize?: T;
                           bottomMargin?: T;
                           id?: T;
@@ -24765,6 +24833,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;
@@ -25023,6 +25092,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                                   | T
                                   | {
                                       image?: T;
+                                      canZoom?: T;
                                       imageSize?: T;
                                       bottomMargin?: T;
                                       id?: T;

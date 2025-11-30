@@ -9,7 +9,7 @@ import {
 import { Payload } from "payload";
 import "server-only";
 
-interface NonOptionalMedia {
+export interface NonOptionalMedia {
   url: string;
   alt: string;
   width: number;

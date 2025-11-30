@@ -13,6 +13,12 @@ const ImageBlock: Block = {
         description: "For a full-width image, recommended width is 3840px.",
       },
     },
+    {
+      name: "canZoom",
+      type: "checkbox",
+      label: "Enable Zoom on Click",
+      defaultValue: false,
+    },
     imageSizeField,
     bottomMargin,
   ],
