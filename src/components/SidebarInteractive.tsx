@@ -75,6 +75,10 @@ function TitleLink(props: {
 
 interface SidebarInteractiveProps {
   type: PortfolioType;
+  projectRoutes: {
+    name: string;
+    uri: string;
+  }[];
 }
 
 export default function SidebarInteractive(props: SidebarInteractiveProps) {
@@ -153,13 +157,12 @@ export default function SidebarInteractive(props: SidebarInteractiveProps) {
                 key="projects"
               />
               <motion.div
-                key={globalState.focus ? globalState.focus : "all"}
                 transition={transitionDefault}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                {globalState.sideBarRoutes.map((route) => (
+                {props.projectRoutes.map((route) => (
                   <motion.div key={route.uri} className="flex flex-row">
                     <motion.div
                       className="flex flex-row items-center"

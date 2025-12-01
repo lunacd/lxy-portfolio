@@ -46,12 +46,13 @@ export default async function RootLayout(
   const projectRoutes = projects.map((project) => {
     return { name: project.name, uri: project.uri };
   });
+  const projectNames = projects.map((project) => project.name);
   return (
     <html lang="en">
       <body className={catamaran.className}>
         <div className="hidden flex-col md:flex lg:flex-row">
-          <GlobalStateContextProvider projectRoutes={projectRoutes}>
-            <Sidebar type={type} />
+          <GlobalStateContextProvider projectNames={projectNames}>
+            <Sidebar type={type} projectRoutes={projectRoutes} />
             <div className="relative min-h-screen grow overflow-x-hidden">
               <PageAnimation>{props.children}</PageAnimation>
             </div>
