@@ -16,6 +16,8 @@ interface PayloadImageProps {
   equalHeight?: boolean;
   style?: CSSProperties;
   canZoom?: boolean | undefined | null;
+  objectFit?: string | undefined;
+  objectPosition?: string | undefined;
 }
 
 export default async function PayloadImage(props: PayloadImageProps) {
@@ -30,6 +32,8 @@ export default async function PayloadImage(props: PayloadImageProps) {
       equalHeight={props.equalHeight}
       style={props.style}
       canZoom={props.canZoom}
+      objectFit={props.objectFit}
+      objectPosition={props.objectPosition}
     ></PayloadImageInteractive>
   );
 }

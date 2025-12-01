@@ -16,6 +16,8 @@ interface PayloadInteractiveImageProps {
   equalHeight?: boolean;
   style?: CSSProperties;
   canZoom?: boolean | undefined | null;
+  objectFit?: string | undefined;
+  objectPosition?: string | undefined;
 }
 
 const MotionImage = motion.create(Image);
@@ -28,12 +30,16 @@ export default function PayloadImageInteractive(
     <div
       style={{
         ...props.style,
-        ...{ aspectRatio: props.media.width / props.media.height },
+        ...{
+          aspectRatio: props.fill
+            ? undefined
+            : props.media.width / props.media.height,
+        },
       }}
       className={props.className}
     >
       <motion.div
-        className={isZoomed ? "fixed inset-0 z-50" : ""}
+        className={isZoomed ? "fixed inset-0 z-50" : "h-full w-full"}
         onClick={() => {
           if (props.canZoom === true) {
             setIsZoomed((orig) => !orig);
@@ -53,7 +59,7 @@ export default function PayloadImageInteractive(
           height={props.fill ? undefined : props.media.height}
           className={classNames({
             [`absolute top-1/2 left-1/2 max-h-full max-w-full -translate-x-1/2
-            -translate-y-1/2 object-contain`]: isZoomed,
+            -translate-y-1/2`]: isZoomed,
           })}
           style={{
             flex: props.equalHeight
@@ -65,6 +71,8 @@ export default function PayloadImageInteractive(
           sizes={props.sizes}
           // unoptimized={props.unoptimized}
           unoptimized
+          objectFit={isZoomed ? "contain" : props.objectFit}
+          objectPosition={isZoomed ? undefined : props.objectPosition}
         ></MotionImage>
       </motion.div>
     </div>
