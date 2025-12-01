@@ -13,6 +13,8 @@ export const portfolioTypes: PortfolioType[] = [
   "designer",
 ];
 
+export type ObjectFit = "fill" | "contain" | "cover" | "none" | "scale-down";
+
 export function stringIsType(value: string): value is PortfolioType {
   return portfolioTypes.includes(value as PortfolioType);
 }
