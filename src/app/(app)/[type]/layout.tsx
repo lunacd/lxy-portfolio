@@ -12,6 +12,7 @@ import { getPayload } from "payload";
 import React, { PropsWithChildren } from "react";
 
 import Sidebar from "@/components/Sidebar";
+import ZoomedImage from "@/components/ZoomedImage";
 import { stringIsType } from "@/utils/CommonTypes";
 import { payloadProjectSlug } from "@/utils/payloadHelpers";
 
@@ -56,6 +57,7 @@ export default async function RootLayout(
             <div className="relative min-h-screen grow overflow-x-hidden">
               <PageAnimation>{props.children}</PageAnimation>
             </div>
+            <ZoomedImage />
           </GlobalStateContextProvider>
         </div>
         <div className="flex flex-col gap-4 p-8 md:hidden">

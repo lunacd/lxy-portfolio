@@ -24,6 +24,7 @@ export function getInitialState({
     currentProject: currentProject,
     projectNames: projectNames,
     onLanding: pathname.split("/").length <= 2,
+    zoomImage: null,
   };
 }
 
@@ -35,6 +36,16 @@ export type GlobalStateAction =
   | {
       type: "changeRoute";
       newPath: string;
+    }
+  | {
+      type: "setZoomImage";
+      src: string;
+      alt: string;
+      width: number;
+      height: number;
+    }
+  | {
+      type: "clearZoomImage";
     };
 
 export interface GlobalState {
@@ -42,6 +53,12 @@ export interface GlobalState {
   currentProject: string;
   projectNames: string[];
   onLanding: boolean;
+  zoomImage: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  } | null;
 }
 
 function getProjectNameFromPathname(pathname: string) {
@@ -69,6 +86,15 @@ export function stateReducer(state: GlobalState, action: GlobalStateAction) {
     } else {
       newState.onLanding = false;
     }
+  } else if (action.type === "setZoomImage") {
+    newState.zoomImage = {
+      src: action.src,
+      alt: action.alt,
+      width: action.width,
+      height: action.height,
+    };
+  } else if (action.type === "clearZoomImage") {
+    newState.zoomImage = null;
   }
   return newState;
 }

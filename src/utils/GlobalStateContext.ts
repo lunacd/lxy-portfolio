@@ -7,6 +7,7 @@ const defaultState: GlobalState = {
   currentProject: "",
   projectNames: [],
   onLanding: true,
+  zoomImage: null,
 };
 
 const GlobalStateContext = createContext<{

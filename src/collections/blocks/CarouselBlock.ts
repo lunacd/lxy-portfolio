@@ -1,4 +1,4 @@
-import { bottomMargin, colorField } from "../CommonFields";
+import { bottomMargin, canZoomField, colorField } from "../CommonFields";
 import { Block } from "payload";
 
 const CarouselBlock: Block = {
@@ -21,6 +21,7 @@ const CarouselBlock: Block = {
         },
       ],
     },
+    canZoomField,
     colorField(),
     bottomMargin,
   ],

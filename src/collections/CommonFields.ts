@@ -52,3 +52,12 @@ export const titleTypeField: Field = {
   defaultValue: "title",
   required: true,
 };
+
+export const canZoomField: Field = {
+  name: "canZoom",
+  type: "checkbox",
+  admin: {
+    description: "Enable Zoom on Click",
+  },
+  defaultValue: false,
+};
