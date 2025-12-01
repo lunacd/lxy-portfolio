@@ -31,7 +31,7 @@ export default function PayloadImageInteractive(
       alt={props.media.alt}
       width={props.fill ? undefined : props.media.width}
       height={props.fill ? undefined : props.media.height}
-      className={classNames(props.className, "w-full")}
+      className={classNames(props.className)}
       style={{
         flex: props.equalHeight
           ? props.media.width / props.media.height
