@@ -12,5 +12,7 @@ interface SidebarProps {
 }
 
 export default async function Sidebar(props: SidebarProps) {
-  return <SidebarInteractive type={props.type} projectRoutes={props.projectRoutes} />;
+  return (
+    <SidebarInteractive type={props.type} projectRoutes={props.projectRoutes} />
+  );
 }
