@@ -22,6 +22,7 @@ export default function CarouselBlock(props: CarouselBlockProps) {
             media={item.image}
             sizes="100vw"
             payload={props.payload}
+            canZoom={props.canZoom}
           />
         </div>
       ))}

@@ -4,7 +4,6 @@ import { Payload } from "payload";
 import { CSSProperties } from "react";
 import "server-only";
 
-import { ObjectFit } from "@/utils/CommonTypes";
 import { getMedia } from "@/utils/payloadHelpers";
 
 interface PayloadImageProps {
@@ -17,8 +16,6 @@ interface PayloadImageProps {
   equalHeight?: boolean;
   style?: CSSProperties;
   canZoom?: boolean | undefined | null;
-  objectFit?: ObjectFit | undefined;
-  objectPosition?: string | undefined;
 }
 
 export default async function PayloadImage(props: PayloadImageProps) {
@@ -33,8 +30,6 @@ export default async function PayloadImage(props: PayloadImageProps) {
       equalHeight={props.equalHeight}
       style={props.style}
       canZoom={props.canZoom}
-      objectFit={props.objectFit}
-      objectPosition={props.objectPosition}
     ></PayloadImageInteractive>
   );
 }

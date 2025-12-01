@@ -46,10 +46,8 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             media={props.project.projectImage}
             payload={props.payload}
             fill
-            className="hidden md:block"
+            className="hidden object-cover object-center md:block"
             sizes="100vw"
-            objectFit="cover"
-            objectPosition="center"
           />
           <div
             className="absolute top-0 left-0 flex h-full w-full flex-row

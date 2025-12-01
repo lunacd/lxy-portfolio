@@ -1,4 +1,4 @@
-import { bottomMargin, imageSizeField } from "../CommonFields";
+import { bottomMargin, canZoomField, imageSizeField } from "../CommonFields";
 import { Block } from "payload";
 
 const ImageBlock: Block = {
@@ -13,12 +13,7 @@ const ImageBlock: Block = {
         description: "For a full-width image, recommended width is 3840px.",
       },
     },
-    {
-      name: "canZoom",
-      type: "checkbox",
-      label: "Enable Zoom on Click",
-      defaultValue: false,
-    },
+    canZoomField,
     imageSizeField,
     bottomMargin,
   ],

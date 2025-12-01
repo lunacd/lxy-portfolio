@@ -3,9 +3,9 @@
 import classNames from "classnames";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { CSSProperties, useState } from "react";
+import { CSSProperties } from "react";
 
-import { ObjectFit } from "@/utils/CommonTypes";
+import { useGlobalStateContext } from "@/utils/GlobalStateContext";
 import { NonOptionalMedia } from "@/utils/payloadHelpers";
 
 interface PayloadInteractiveImageProps {
@@ -17,8 +17,6 @@ interface PayloadInteractiveImageProps {
   equalHeight?: boolean;
   style?: CSSProperties;
   canZoom?: boolean | undefined | null;
-  objectFit?: ObjectFit | undefined;
-  objectPosition?: string | undefined;
 }
 
 const MotionImage = motion.create(Image);
@@ -26,56 +24,34 @@ const MotionImage = motion.create(Image);
 export default function PayloadImageInteractive(
   props: PayloadInteractiveImageProps,
 ) {
-  const [isZoomed, setIsZoomed] = useState(false);
+  const { dispatch } = useGlobalStateContext();
   return (
-    <div
+    <MotionImage
+      src={props.media.url}
+      alt={props.media.alt}
+      width={props.fill ? undefined : props.media.width}
+      height={props.fill ? undefined : props.media.height}
+      className={classNames(props.className, "w-full")}
       style={{
-        ...props.style,
-        ...{
-          aspectRatio: props.fill
-            ? undefined
-            : props.media.width / props.media.height,
-        },
+        flex: props.equalHeight
+          ? props.media.width / props.media.height
+          : undefined,
+        minWidth: props.equalHeight ? 0 : undefined,
       }}
-      className={props.className}
-    >
-      <motion.div
-        className={isZoomed ? "fixed inset-0 z-50" : "h-full w-full"}
-        onClick={() => {
-          if (props.canZoom === true) {
-            setIsZoomed((orig) => !orig);
-          }
-        }}
-        animate={
-          isZoomed
-            ? { background: "rgba(0, 0, 0, 0.8)" }
-            : { background: "rgba(0, 0, 0, 0)" }
+      fill={props.fill}
+      sizes={props.sizes}
+      onClick={() => {
+        if (props.canZoom) {
+          dispatch({
+            type: "setZoomImage",
+            src: props.media.url,
+            alt: props.media.alt,
+            width: props.media.width,
+            height: props.media.height,
+          });
         }
-      >
-        <MotionImage
-          layoutId={props.canZoom ? props.media.url : undefined}
-          src={props.media.url}
-          alt={props.media.alt}
-          width={props.fill ? undefined : props.media.width}
-          height={props.fill ? undefined : props.media.height}
-          className={classNames({
-            [`absolute top-1/2 left-1/2 max-h-full max-w-full -translate-x-1/2
-            -translate-y-1/2`]: isZoomed,
-            "w-full": !isZoomed,
-          })}
-          style={{
-            flex: props.equalHeight
-              ? props.media.width / props.media.height
-              : undefined,
-            minWidth: props.equalHeight ? 0 : undefined,
-            objectFit: isZoomed ? "contain" : props.objectFit,
-            objectPosition: isZoomed ? undefined : props.objectPosition,
-          }}
-          fill={props.fill}
-          sizes={props.sizes}
-          unoptimized
-        ></MotionImage>
-      </motion.div>
-    </div>
+      }}
+      unoptimized
+    ></MotionImage>
   );
 }
