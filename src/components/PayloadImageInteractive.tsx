@@ -33,10 +33,13 @@ export default function PayloadImageInteractive(
       height={props.fill ? undefined : props.media.height}
       className={classNames(props.className)}
       style={{
-        flex: props.equalHeight
-          ? props.media.width / props.media.height
-          : undefined,
-        minWidth: props.equalHeight ? 0 : undefined,
+        ...props.style,
+        ...{
+          flex: props.equalHeight
+            ? props.media.width / props.media.height
+            : undefined,
+          minWidth: props.equalHeight ? 0 : undefined,
+        },
       }}
       fill={props.fill}
       sizes={props.sizes}
