@@ -3,6 +3,7 @@ import HomeSection from "./HomeSection";
 import InViewDetector from "./InViewDetector";
 import config from "@payload-config";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 import React from "react";
 
@@ -39,7 +40,7 @@ export default async function Landing({
 }) {
   const { type } = await params;
   if (!stringIsType(type)) {
-    throw new Error(`Unknown project type: ${type}`);
+    return notFound();
   }
   const payload = await getPayload({
     config,
