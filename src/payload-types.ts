@@ -811,6 +811,7 @@ export interface ProjectPage {
         label: string;
         link: string;
         openInNewPage: boolean;
+        color: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -1247,6 +1248,7 @@ export interface ProjectPage {
               label: string;
               link: string;
               openInNewPage: boolean;
+              color: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -1683,6 +1685,7 @@ export interface ProjectPage {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2127,6 +2130,7 @@ export interface ProjectPage {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -2579,6 +2583,7 @@ export interface ProjectPage {
               label: string;
               link: string;
               openInNewPage: boolean;
+              color: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -3015,6 +3020,7 @@ export interface ProjectPage {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3459,6 +3465,7 @@ export interface ProjectPage {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -3938,6 +3945,7 @@ export interface UiuxBlog {
         label: string;
         link: string;
         openInNewPage: boolean;
+        color: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -4374,6 +4382,7 @@ export interface UiuxBlog {
               label: string;
               link: string;
               openInNewPage: boolean;
+              color: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -4810,6 +4819,7 @@ export interface UiuxBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -5254,6 +5264,7 @@ export interface UiuxBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -5706,6 +5717,7 @@ export interface UiuxBlog {
               label: string;
               link: string;
               openInNewPage: boolean;
+              color: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -6142,6 +6154,7 @@ export interface UiuxBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -6586,6 +6599,7 @@ export interface UiuxBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -7065,6 +7079,7 @@ export interface EdtechBlog {
         label: string;
         link: string;
         openInNewPage: boolean;
+        color: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -7501,6 +7516,7 @@ export interface EdtechBlog {
               label: string;
               link: string;
               openInNewPage: boolean;
+              color: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -7937,6 +7953,7 @@ export interface EdtechBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -8381,6 +8398,7 @@ export interface EdtechBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -8833,6 +8851,7 @@ export interface EdtechBlog {
               label: string;
               link: string;
               openInNewPage: boolean;
+              color: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -9269,6 +9288,7 @@ export interface EdtechBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -9713,6 +9733,7 @@ export interface EdtechBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -10192,6 +10213,7 @@ export interface ProductBlog {
         label: string;
         link: string;
         openInNewPage: boolean;
+        color: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -10628,6 +10650,7 @@ export interface ProductBlog {
               label: string;
               link: string;
               openInNewPage: boolean;
+              color: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -11064,6 +11087,7 @@ export interface ProductBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -11508,6 +11532,7 @@ export interface ProductBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -11960,6 +11985,7 @@ export interface ProductBlog {
               label: string;
               link: string;
               openInNewPage: boolean;
+              color: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -12396,6 +12422,7 @@ export interface ProductBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -12840,6 +12867,7 @@ export interface ProductBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -13319,6 +13347,7 @@ export interface AllBlog {
         label: string;
         link: string;
         openInNewPage: boolean;
+        color: 'dark' | 'light';
         bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
         id?: string | null;
         blockName?: string | null;
@@ -13755,6 +13784,7 @@ export interface AllBlog {
               label: string;
               link: string;
               openInNewPage: boolean;
+              color: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -14191,6 +14221,7 @@ export interface AllBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -14635,6 +14666,7 @@ export interface AllBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -15087,6 +15119,7 @@ export interface AllBlog {
               label: string;
               link: string;
               openInNewPage: boolean;
+              color: 'dark' | 'light';
               bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
               id?: string | null;
               blockName?: string | null;
@@ -15523,6 +15556,7 @@ export interface AllBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -15967,6 +16001,7 @@ export interface AllBlog {
                     label: string;
                     link: string;
                     openInNewPage: boolean;
+                    color: 'dark' | 'light';
                     bottomMargin: 'none' | 'small' | 'medium' | 'regular' | 'large' | 'xl' | 'xxl';
                     id?: string | null;
                     blockName?: string | null;
@@ -16650,6 +16685,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
               label?: T;
               link?: T;
               openInNewPage?: T;
+              color?: T;
               bottomMargin?: T;
               id?: T;
               blockName?: T;
@@ -16903,6 +16939,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           label?: T;
                           link?: T;
                           openInNewPage?: T;
+                          color?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -17156,6 +17193,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -17416,6 +17454,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -17683,6 +17722,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                           label?: T;
                           link?: T;
                           openInNewPage?: T;
+                          color?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -17936,6 +17976,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -18196,6 +18237,7 @@ export interface ProjectPagesSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -18480,6 +18522,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
               label?: T;
               link?: T;
               openInNewPage?: T;
+              color?: T;
               bottomMargin?: T;
               id?: T;
               blockName?: T;
@@ -18733,6 +18776,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                           label?: T;
                           link?: T;
                           openInNewPage?: T;
+                          color?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -18986,6 +19030,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -19246,6 +19291,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -19513,6 +19559,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                           label?: T;
                           link?: T;
                           openInNewPage?: T;
+                          color?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -19766,6 +19813,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -20026,6 +20074,7 @@ export interface UiuxBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -20310,6 +20359,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
               label?: T;
               link?: T;
               openInNewPage?: T;
+              color?: T;
               bottomMargin?: T;
               id?: T;
               blockName?: T;
@@ -20563,6 +20613,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                           label?: T;
                           link?: T;
                           openInNewPage?: T;
+                          color?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -20816,6 +20867,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -21076,6 +21128,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -21343,6 +21396,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                           label?: T;
                           link?: T;
                           openInNewPage?: T;
+                          color?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -21596,6 +21650,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -21856,6 +21911,7 @@ export interface EdtechBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -22140,6 +22196,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
               label?: T;
               link?: T;
               openInNewPage?: T;
+              color?: T;
               bottomMargin?: T;
               id?: T;
               blockName?: T;
@@ -22393,6 +22450,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                           label?: T;
                           link?: T;
                           openInNewPage?: T;
+                          color?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -22646,6 +22704,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -22906,6 +22965,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -23173,6 +23233,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                           label?: T;
                           link?: T;
                           openInNewPage?: T;
+                          color?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -23426,6 +23487,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -23686,6 +23748,7 @@ export interface ProductBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -23970,6 +24033,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
               label?: T;
               link?: T;
               openInNewPage?: T;
+              color?: T;
               bottomMargin?: T;
               id?: T;
               blockName?: T;
@@ -24223,6 +24287,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                           label?: T;
                           link?: T;
                           openInNewPage?: T;
+                          color?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -24476,6 +24541,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -24736,6 +24802,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -25003,6 +25070,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                           label?: T;
                           link?: T;
                           openInNewPage?: T;
+                          color?: T;
                           bottomMargin?: T;
                           id?: T;
                           blockName?: T;
@@ -25256,6 +25324,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;
@@ -25516,6 +25585,7 @@ export interface AllBlogsSelect<T extends boolean = true> {
                                       label?: T;
                                       link?: T;
                                       openInNewPage?: T;
+                                      color?: T;
                                       bottomMargin?: T;
                                       id?: T;
                                       blockName?: T;

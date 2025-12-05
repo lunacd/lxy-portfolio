@@ -21,7 +21,7 @@ export default async function ButtonBlock(props: ButtonBlockProps) {
       <Button
         href={props.link}
         openInNewPage={props.openInNewPage}
-        color="dark"
+        color={props.color}
       >
         {props.label}
       </Button>
