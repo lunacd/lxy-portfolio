@@ -15,11 +15,11 @@ importers:
         specifier: 3.30.0
         version: 3.30.0(@emotion/react@11.14.0(@types/react@19.2.7)(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@lottiefiles/dotlottie-react':
-        specifier: 0.17.9
-        version: 0.17.9(react@19.2.1)
+        specifier: 0.17.10
+        version: 0.17.10(react@19.2.1)
       '@lottiefiles/dotlottie-web':
-        specifier: 0.58.0
-        version: 0.58.0
+        specifier: 0.58.1
+        version: 0.58.1
       '@next/third-parties':
         specifier: 15.4.8
         version: 15.4.8(next@15.4.8(@babel/core@7.27.4)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.77.4))(react@19.2.1)
@@ -1266,13 +1266,13 @@ packages:
     peerDependencies:
       yjs: '>=13.5.22'
 
-  '@lottiefiles/dotlottie-react@0.17.9':
-    resolution: {integrity: sha512-hlSFMj7hG+6ZZkWOAnM+u9vH+FMqGlb2Bvnvr4TzUqQLoE/68aEZExFFVFV8GEFbyLP2tKm9KsL10HmpD4dK1w==}
+  '@lottiefiles/dotlottie-react@0.17.10':
+    resolution: {integrity: sha512-ikrN05/q0/KjqIU+n48uNwmE7DeZIC9y3Nd19httcKqe273zoOeNYycEaQzLSdcpEGnWLmHaZpgtoo07aQZAXg==}
     peerDependencies:
       react: ^17 || ^18 || ^19
 
-  '@lottiefiles/dotlottie-web@0.58.0':
-    resolution: {integrity: sha512-I4Hh3GNBVJbRrutDteoaS92acSlQ39rtqXee+pOv3uvZIt8YQzDytTSpPRIsY/C0zVmiJ07Do0W3gvvuPxXWsg==}
+  '@lottiefiles/dotlottie-web@0.58.1':
+    resolution: {integrity: sha512-YC4pmScrV0R3rd11gU5xHrjeNczlCic69zlnMH/buDIzYxIbpR88oPUhGtKgu5ln7EJchoLpeRJbA3uLCzSeTA==}
 
   '@monaco-editor/loader@1.7.0':
     resolution: {integrity: sha512-gIwR1HrJrrx+vfyOhYmCZ0/JcWqG5kbfG7+d3f/C1LXk2EvzAbHSg3MQ5lO2sMlo9izoAZ04shohfKLVT6crVA==}
@@ -6485,12 +6485,12 @@ snapshots:
       lexical: 0.35.0
       yjs: 13.6.24
 
-  '@lottiefiles/dotlottie-react@0.17.9(react@19.2.1)':
+  '@lottiefiles/dotlottie-react@0.17.10(react@19.2.1)':
     dependencies:
-      '@lottiefiles/dotlottie-web': 0.58.0
+      '@lottiefiles/dotlottie-web': 0.58.1
       react: 19.2.1
 
-  '@lottiefiles/dotlottie-web@0.58.0': {}
+  '@lottiefiles/dotlottie-web@0.58.1': {}
 
   '@monaco-editor/loader@1.7.0':
     dependencies:
