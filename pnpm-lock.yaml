@@ -15,11 +15,11 @@ importers:
         specifier: 3.30.0
         version: 3.30.0(@emotion/react@11.14.0(@types/react@19.2.7)(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@lottiefiles/dotlottie-react':
-        specifier: 0.17.10
-        version: 0.17.10(react@19.2.1)
+        specifier: 0.17.12
+        version: 0.17.12(react@19.2.1)
       '@lottiefiles/dotlottie-web':
-        specifier: 0.58.1
-        version: 0.58.1
+        specifier: 0.60.0
+        version: 0.60.0
       '@next/third-parties':
         specifier: 15.4.10
         version: 15.4.10(next@15.4.10(@babel/core@7.28.5)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.77.4))(react@19.2.1)
@@ -1248,13 +1248,13 @@ packages:
     peerDependencies:
       yjs: '>=13.5.22'
 
-  '@lottiefiles/dotlottie-react@0.17.10':
-    resolution: {integrity: sha512-ikrN05/q0/KjqIU+n48uNwmE7DeZIC9y3Nd19httcKqe273zoOeNYycEaQzLSdcpEGnWLmHaZpgtoo07aQZAXg==}
+  '@lottiefiles/dotlottie-react@0.17.12':
+    resolution: {integrity: sha512-9GdIiJ6L7i24Av9TWGDLnmS6Ud3skNTbG10/kuZPL6m7qq68UNxyAhiA1/7DOo5y1Y+DWZpdkKXYnXntXdYQZA==}
     peerDependencies:
       react: ^17 || ^18 || ^19
 
-  '@lottiefiles/dotlottie-web@0.58.1':
-    resolution: {integrity: sha512-YC4pmScrV0R3rd11gU5xHrjeNczlCic69zlnMH/buDIzYxIbpR88oPUhGtKgu5ln7EJchoLpeRJbA3uLCzSeTA==}
+  '@lottiefiles/dotlottie-web@0.60.0':
+    resolution: {integrity: sha512-AbQYmyZ8ZihCGPwjdN0e7bJ7W7yVmHG24IXn8kxyFJJNJmSJEaarpOSivu/1KoFGiw86OMmiWcLXrPs1XjT6Qw==}
 
   '@monaco-editor/loader@1.7.0':
     resolution: {integrity: sha512-gIwR1HrJrrx+vfyOhYmCZ0/JcWqG5kbfG7+d3f/C1LXk2EvzAbHSg3MQ5lO2sMlo9izoAZ04shohfKLVT6crVA==}
@@ -3570,8 +3570,8 @@ packages:
   lexical@0.35.0:
     resolution: {integrity: sha512-3VuV8xXhh5xJA6tzvfDvE0YBCMkIZUmxtRilJQDDdCgJCc+eut6qAv2qbN+pbqvarqcQqPN1UF+8YvsjmyOZpw==}
 
-  lib0@0.2.115:
-    resolution: {integrity: sha512-noaW4yNp6hCjOgDnWWxW0vGXE3kZQI5Kqiwz+jIWXavI9J9WyfJ9zjsbQlQlgjIbHBrvlA/x3TSIXBUJj+0L6g==}
+  lib0@0.2.116:
+    resolution: {integrity: sha512-4zsosjzmt33rx5XjmFVYUAeLNh+BTeDTiwGdLt4muxiir2btsc60Nal0EvkvDRizg+pnlK1q+BtYi7M+d4eStw==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -6427,12 +6427,12 @@ snapshots:
       lexical: 0.35.0
       yjs: 13.6.24
 
-  '@lottiefiles/dotlottie-react@0.17.10(react@19.2.1)':
+  '@lottiefiles/dotlottie-react@0.17.12(react@19.2.1)':
     dependencies:
-      '@lottiefiles/dotlottie-web': 0.58.1
+      '@lottiefiles/dotlottie-web': 0.60.0
       react: 19.2.1
 
-  '@lottiefiles/dotlottie-web@0.58.1': {}
+  '@lottiefiles/dotlottie-web@0.60.0': {}
 
   '@monaco-editor/loader@1.7.0':
     dependencies:
@@ -9429,7 +9429,7 @@ snapshots:
 
   lexical@0.35.0: {}
 
-  lib0@0.2.115:
+  lib0@0.2.116:
     dependencies:
       isomorphic.js: 0.2.5
 
@@ -10962,7 +10962,7 @@ snapshots:
 
   yjs@13.6.24:
     dependencies:
-      lib0: 0.2.115
+      lib0: 0.2.116
 
   yocto-queue@0.1.0: {}
 

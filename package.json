@@ -20,8 +20,8 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.956.0",
     "@chakra-ui/react": "3.30.0",
-    "@lottiefiles/dotlottie-react": "0.17.10",
-    "@lottiefiles/dotlottie-web": "0.58.1",
+    "@lottiefiles/dotlottie-react": "0.17.12",
+    "@lottiefiles/dotlottie-web": "0.60.0",
     "@next/third-parties": "15.4.10",
     "@payloadcms/db-postgres": "3.68.5",
     "@payloadcms/live-preview-react": "3.68.5",
