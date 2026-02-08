@@ -65,7 +65,7 @@ export default async function HomeSection(props: HomeSectionProps) {
                   <div className="title">{props.project.name}</div>
                   <div className="paragraph">{props.project.brief}</div>
 
-                  <div className="paragraph hidden md:flex">
+                  <div className="paragraph hidden md:block">
                     <span className="font-semibold">Flavor: </span>
                     {props.project.flavor}
                   </div>

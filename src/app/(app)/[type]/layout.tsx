@@ -1,13 +1,11 @@
 import GlobalStateContextProvider from "./GlobalStateContextProvider";
 import PageAnimation from "./PageAnimation";
-import WalkingDuck from "./WalkingDuck";
 import "./global.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import config from "@payload-config";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ScrollRestoration } from "next-scroll-restoration";
 import { Catamaran } from "next/font/google";
-import Image from "next/image";
 import { getPayload } from "payload";
 import React, { PropsWithChildren } from "react";
 
