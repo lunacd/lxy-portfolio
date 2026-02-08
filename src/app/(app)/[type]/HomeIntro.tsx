@@ -20,8 +20,13 @@ export default function HomeIntro(props: HomeIntroProps) {
         className="relative flex grow flex-col justify-center gap-4 md:gap-8
           xl:gap-12"
       >
-        <div className="flex flex-col justify-around gap-4 md:flex-row">
-          <div className="flex max-w-1/2 flex-col self-center md:self-end">
+        <div
+          className="flex flex-col-reverse justify-around md:flex-row md:gap-4"
+        >
+          <div
+            className="flex max-w-full flex-col self-center md:max-w-1/2
+              md:self-end"
+          >
             <IntroAnimation />
             <div className="paragraph mr-auto">
               <div>
@@ -36,7 +41,7 @@ export default function HomeIntro(props: HomeIntroProps) {
               Learn More About Me
             </Button>
           </div>
-          <div className="w-1/2 self-end overflow-hidden rounded-lg md:w-1/3">
+          <div className="w-1/2 overflow-hidden rounded-lg md:w-1/3 md:self-end">
             <PayloadImage
               media={props.profilePicture}
               payload={props.payload}

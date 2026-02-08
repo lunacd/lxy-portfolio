@@ -49,6 +49,13 @@ export default function TopDisplay(propsIn: TopDisplayProps) {
             className="hidden object-cover object-center md:block"
             sizes="100vw"
           />
+          <PayloadImage
+            media={props.project.projectGalleryImage}
+            payload={props.payload}
+            fill
+            className="object-cover object-center md:hidden"
+            sizes="100vw"
+          />
           <div
             className="absolute top-0 left-0 flex h-full w-full flex-row
               justify-center"

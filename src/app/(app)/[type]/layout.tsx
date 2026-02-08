@@ -51,7 +51,7 @@ export default async function RootLayout(
   return (
     <html lang="en">
       <body className={catamaran.className}>
-        <div className="hidden flex-col md:flex lg:flex-row">
+        <div className="flex flex-col lg:flex-row">
           <GlobalStateContextProvider projectNames={projectNames}>
             <Sidebar type={type} projectRoutes={projectRoutes} />
             <div className="relative min-h-screen grow overflow-x-hidden">
@@ -59,21 +59,6 @@ export default async function RootLayout(
             </div>
             <ZoomedImage />
           </GlobalStateContextProvider>
-        </div>
-        <div className="flex flex-col gap-4 p-8 md:hidden">
-          <Image
-            src="/logo.svg"
-            alt="Shirley Lyu Logo"
-            height={75}
-            width={167}
-            unoptimized
-            className="max-w-1/2 self-center"
-          />
-          <WalkingDuck />
-          <div className="text-center">
-            Please use a larger screen to view this site to ensure best viewing
-            experience.
-          </div>
         </div>
         <ScrollRestoration />
         <SpeedInsights />

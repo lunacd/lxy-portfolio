@@ -26,7 +26,14 @@ export default async function HomeSection(props: HomeSectionProps) {
           media={props.project.projectImage}
           payload={props.payload}
           fill
-          className="hidden object-cover object-center md:block"
+          className="object-cover object-center hidden md:block"
+          sizes="100vw"
+        />
+        <PayloadImage
+          media={props.project.projectGalleryImage}
+          payload={props.payload}
+          fill
+          className="object-cover object-center md:hidden"
           sizes="100vw"
         />
         <div className="absolute top-0 left-0 h-full w-full">
@@ -58,7 +65,7 @@ export default async function HomeSection(props: HomeSectionProps) {
                   <div className="title">{props.project.name}</div>
                   <div className="paragraph">{props.project.brief}</div>
 
-                  <div className="paragraph">
+                  <div className="paragraph hidden md:flex">
                     <span className="font-semibold">Flavor: </span>
                     {props.project.flavor}
                   </div>

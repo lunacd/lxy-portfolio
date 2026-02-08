@@ -81,19 +81,19 @@ ul {
 }
 
 .title {
-  @apply text-4xl font-semibold;
+  @apply text-2xl md:text-4xl font-semibold;
 }
 
 .subtitle {
-  @apply text-[22px] font-semibold xl:text-[24px];
+  @apply text-[20px] md:text-[22px] font-semibold xl:text-[24px];
 }
 
 .subsubtitle {
-  @apply text-[20px];
+  @apply text-[18px] md:text-[20px];
 }
 
 .paragraph {
-  @apply text-lg font-extralight xl:text-xl;
+  @apply text-base md:text-lg font-extralight xl:text-xl;
 }
 
 /* 1 */
