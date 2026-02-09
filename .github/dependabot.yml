@@ -12,6 +12,7 @@ updates:
       - dependency-name: next
       - dependency-name: "@next/*"
       - dependency-name: eslint-config-next
+      - dependency-name: eslint
     groups:
       devDependencies:
         dependency-type: "development"
