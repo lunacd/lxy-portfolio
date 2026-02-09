@@ -30,11 +30,18 @@ export default function Testimonial(props: TestimonialProps) {
       )}
     >
       <div
-        className={classNames("flex grow flex-col md:flex-row p-4 md:py-8 md:pl-8 md:pr-0", {
-          "pr-8": !props.avatar,
-        })}
+        className={classNames(
+          "flex grow flex-col p-4 md:flex-row md:py-8 md:pr-0 md:pl-8",
+          {
+            "pr-8": !props.avatar,
+          },
+        )}
       >
-        <div className={classNames(pollerOne.className, "text-8xl leading-none")}>“</div>
+        <div
+          className={classNames(pollerOne.className, "text-8xl leading-none")}
+        >
+          “
+        </div>
         <div className="ml-2 flex grow flex-col gap-8">
           <Text text={props.testimonial}></Text>
           <Text text={props.author} className="mt-auto"></Text>
@@ -45,7 +52,7 @@ export default function Testimonial(props: TestimonialProps) {
           media={props.avatar}
           payload={props.payload}
           sizes="100%"
-          className="mt-8 min-h-0 w-1/4 max-w-40 self-end hidden md:block"
+          className="mt-8 hidden min-h-0 w-1/4 max-w-40 self-end md:block"
           style={{ aspectRatio: "1024 / 1217" }}
         />
       )}

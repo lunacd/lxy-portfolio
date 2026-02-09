@@ -26,7 +26,7 @@ export default async function HomeSection(props: HomeSectionProps) {
           media={props.project.projectImage}
           payload={props.payload}
           fill
-          className="object-cover object-center hidden md:block"
+          className="hidden object-cover object-center md:block"
           sizes="100vw"
         />
         <PayloadImage
