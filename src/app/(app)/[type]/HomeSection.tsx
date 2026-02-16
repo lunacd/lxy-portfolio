@@ -59,6 +59,17 @@ export default async function HomeSection(props: HomeSectionProps) {
                   ></div>
                 )}
                 <div
+                  style={{
+                    height: "calc(200% + 48px)",
+                    background:
+                      props.project.textColor === "dark"
+                        ? "linear-gradient(180deg, white 0%, transparent 100%)"
+                        : "linear-gradient(180deg, rgba(0, 0, 0, 80%) 0%, transparent 100%)",
+                  }}
+                  className="-left-spacing-lg -right-spacing-lg absolute -top-8
+                    md:hidden"
+                ></div>
+                <div
                   className="relative flex h-full flex-col items-start gap-5
                     lg:max-w-[50%] 2xl:max-w-[30%]"
                 >
