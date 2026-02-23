@@ -1,4 +1,3 @@
-import TextBlock from "./TextBlock";
 import { ProjectPage } from "@payload-types";
 import classNames from "classnames";
 import { Payload } from "payload";
