@@ -12,11 +12,11 @@ importers:
         specifier: 3.34.0
         version: 3.34.0(@emotion/react@11.14.0(@types/react@19.2.14)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@lottiefiles/dotlottie-react':
-        specifier: 0.18.6
-        version: 0.18.6(react@19.2.4)
+        specifier: 0.18.7
+        version: 0.18.7(react@19.2.4)
       '@lottiefiles/dotlottie-web':
-        specifier: 0.66.2
-        version: 0.66.2
+        specifier: 0.67.0
+        version: 0.67.0
       '@next/third-parties':
         specifier: 16.2.0
         version: 16.2.0(next@16.2.0(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(sass@1.77.4))(react@19.2.4)
@@ -1414,13 +1414,13 @@ packages:
     peerDependencies:
       yjs: '>=13.5.22'
 
-  '@lottiefiles/dotlottie-react@0.18.6':
-    resolution: {integrity: sha512-tEGpV+8u4m8CeVuLG9uUgYDR9DPY4VRQGQCYZ6nuVLx4prrWL6q4ZvXRH2ws3+G4fRbDXN9xuPrNZvJ4+3rZzQ==}
+  '@lottiefiles/dotlottie-react@0.18.7':
+    resolution: {integrity: sha512-aEUS3GR7U3ldT74Xt4l1pPz5KfY4IOXM30e4LMChXH2qNcwy3PZdoT7i44jf+vV+qgEffXshAAepVAZD6XZmTw==}
     peerDependencies:
       react: ^17 || ^18 || ^19
 
-  '@lottiefiles/dotlottie-web@0.66.2':
-    resolution: {integrity: sha512-Z8MMJmSRbvEPqsNMrTN6KzAZNDLSYB98N7BjpVo5+nFGpUMGlu+20UkGmJUHI5ED4S6CDwAWnl+hriGyMCKTow==}
+  '@lottiefiles/dotlottie-web@0.67.0':
+    resolution: {integrity: sha512-XdMbVQAKqI8NLGqwN1RYQv0eGDM74JhISJFOovBf7k2Uh5B3QJwMOYhMqz8L0UZAs+LzXYdP/wZR7s8hh0uo2g==}
 
   '@monaco-editor/loader@1.7.0':
     resolution: {integrity: sha512-gIwR1HrJrrx+vfyOhYmCZ0/JcWqG5kbfG7+d3f/C1LXk2EvzAbHSg3MQ5lO2sMlo9izoAZ04shohfKLVT6crVA==}
@@ -6675,12 +6675,12 @@ snapshots:
       lexical: 0.41.0
       yjs: 13.6.24
 
-  '@lottiefiles/dotlottie-react@0.18.6(react@19.2.4)':
+  '@lottiefiles/dotlottie-react@0.18.7(react@19.2.4)':
     dependencies:
-      '@lottiefiles/dotlottie-web': 0.66.2
+      '@lottiefiles/dotlottie-web': 0.67.0
       react: 19.2.4
 
-  '@lottiefiles/dotlottie-web@0.66.2': {}
+  '@lottiefiles/dotlottie-web@0.67.0': {}
 
   '@monaco-editor/loader@1.7.0':
     dependencies:
