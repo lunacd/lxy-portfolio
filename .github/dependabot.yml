@@ -22,11 +22,15 @@ updates:
           - postcss
           - eslint-config-next
           - "@next/*"
+          - typescript
       tailwind:
         patterns:
           - tailwindcss
           - "@tailwindcss/postcss"
           - postcss
+      typescript:
+        patterns:
+          - typescript
       lottie:
         patterns:
           - "@lottiefiles/*"
