@@ -130,7 +130,8 @@ ul {
 
 .about_overlayWindow {
   /* Position */
-  @apply bottom-spacing-lg left-spacing-lg right-spacing-lg top-spacing-lg absolute z-20;
+  @apply bottom-spacing-lg left-spacing-lg right-spacing-lg top-spacing-lg
+    absolute z-20;
 
   /* Layout */
   @apply flex flex-row items-center;
