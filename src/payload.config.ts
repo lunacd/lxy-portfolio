@@ -17,7 +17,6 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { s3Storage } from "@payloadcms/storage-s3";
 import path from "path";
 import { CollectionConfig, ImageSize, buildConfig } from "payload";
-import sharp from "sharp";
 import { fileURLToPath } from "url";
 
 const filename = fileURLToPath(import.meta.url);
@@ -72,7 +71,6 @@ export default buildConfig({
     prodMigrations: push ? undefined : migrations,
     push: push,
   }),
-  sharp,
   upload: {
     limits: {
       fileSize: 25000000,
