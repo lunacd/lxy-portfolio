@@ -11,7 +11,7 @@ import classNames from "classnames";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 
 import Tooltip from "@/components/Tooltip";
 import { PortfolioType } from "@/utils/CommonTypes";
@@ -32,6 +32,14 @@ const linkVariants = {
   rest: { x: 0 },
   hovered: { x: "0.75rem" },
 };
+
+function getIsLG() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  return window.matchMedia("(min-width: 1024px)").matches;
+}
 
 function scrollElementIntoView(id: string) {
   const targetElement = document.getElementById(id);
@@ -84,17 +92,31 @@ interface SidebarInteractiveProps {
 export default function SidebarInteractive(props: SidebarInteractiveProps) {
   const { globalState } = useGlobalStateContext();
 
-  const [isLG, isXL] = useMediaQuery(
-    ["(min-width: 1024px)", "(min-width: 1280px)"],
-    {
-      ssr: true,
-      fallback: [false, false],
-    },
-  );
-  const [open, setOpen] = useState(isLG);
+  const [isLG, setIsLG] = useState(() => getIsLG());
+  const [open, setOpen] = useState(() => getIsLG());
+
   useEffect(() => {
-    setOpen(isLG);
-  }, [isLG]);
+    const mediaWatcher = window.matchMedia("(min-width: 1024px)");
+
+    // Watch for breakpoint updates after initial render.
+    function updateIsLG(e: MediaQueryListEvent) {
+      startTransition(() => {
+        setOpen(e.matches);
+        setIsLG(e.matches);
+      });
+    }
+    mediaWatcher.addEventListener("change", updateIsLG);
+
+    // clean up after ourselves
+    return function cleanup() {
+      mediaWatcher.removeEventListener("change", updateIsLG);
+    };
+  }, []);
+
+  const [isXL] = useMediaQuery(["(min-width: 1280px)"], {
+    ssr: true,
+    fallback: [false, false],
+  });
 
   return (
     <>
