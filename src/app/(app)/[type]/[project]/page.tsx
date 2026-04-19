@@ -1,4 +1,5 @@
 import config from "@payload-config";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 
@@ -46,13 +47,13 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<ParamType>;
-}) {
+}): Promise<Metadata> {
   const { project, type } = await params;
   const payload = await getPayload({
     config,
   });
   if (!stringIsType(type)) {
-    throw new Error(`Unknown project type: ${type}`);
+    return { title: "Page not found | Shirley Lyu" };
   }
   const projectData = (
     await payload.find({
@@ -83,7 +84,7 @@ export default async function ProjectPageComponent({
     config,
   });
   if (!stringIsType(type)) {
-    throw new Error(`Unknown project type: ${type}`);
+    notFound();
   }
   const projectData = (
     await payload.find({
