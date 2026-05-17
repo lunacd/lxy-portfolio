@@ -27,7 +27,7 @@
     "@payloadcms/next": "3.84.1",
     "@payloadcms/richtext-lexical": "3.84.1",
     "@payloadcms/storage-s3": "3.84.1",
-    "@tabler/icons-react": "3.41.1",
+    "@tabler/icons-react": "3.44.0",
     "@vercel/speed-insights": "2.0.0",
     "classnames": "2.5.1",
     "motion": "12.38.0",
