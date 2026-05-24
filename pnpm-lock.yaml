@@ -12,11 +12,11 @@ importers:
         specifier: 3.35.0
         version: 3.35.0(@emotion/react@11.14.0(@types/react@19.2.14)(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@lottiefiles/dotlottie-react':
-        specifier: 0.19.2
-        version: 0.19.2(react@19.2.6)
+        specifier: 0.19.4
+        version: 0.19.4(react@19.2.6)
       '@lottiefiles/dotlottie-web':
-        specifier: 0.72.1
-        version: 0.72.1
+        specifier: 0.74.0
+        version: 0.74.0
       '@next/third-parties':
         specifier: 16.2.6
         version: 16.2.6(next@16.2.6(@babel/core@7.29.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(sass@1.77.4))(react@19.2.6)
@@ -1372,13 +1372,15 @@ packages:
     peerDependencies:
       yjs: '>=13.5.22'
 
-  '@lottiefiles/dotlottie-react@0.19.2':
-    resolution: {integrity: sha512-qXvCU5Wm/BNYfoS/+MzeVqn03yu2v3XTJ+ik8kKgyHlbf6Vcgz3byOQk9H/mOciedjhGr+YmZXZ+ItqFUmA3Iw==}
+  '@lottiefiles/dotlottie-react@0.19.4':
+    resolution: {integrity: sha512-YgX1Ie0gK9MEA89Ap7Ic/lOv85sOzELV3y3RAQ4GrB79+wJ4gLga9Ge59mWzBqjlbT8bZNhNPEm+jYyV8kMYqg==}
+    engines: {node: '>=18.17.0', npm: '>=9.5.0'}
     peerDependencies:
       react: ^17 || ^18 || ^19
 
-  '@lottiefiles/dotlottie-web@0.72.1':
-    resolution: {integrity: sha512-TPHCTQHw4oZBiIi/JPd6CtjPzsazpyRVUloO7kA5khF6IX/sCIfBa8l/Tav333pskO6gFMtlnfRPwEOatMZS/A==}
+  '@lottiefiles/dotlottie-web@0.74.0':
+    resolution: {integrity: sha512-rG12+dJSVhQDdleGr9epR7zU/UJ6hh8jzBDHAurClHP5t5dSrOh3eP3UCFxolpVPcobaRVYsBnYg4HQokQewpg==}
+    engines: {node: '>=18.17.0', npm: '>=9.5.0'}
 
   '@monaco-editor/loader@1.7.0':
     resolution: {integrity: sha512-gIwR1HrJrrx+vfyOhYmCZ0/JcWqG5kbfG7+d3f/C1LXk2EvzAbHSg3MQ5lO2sMlo9izoAZ04shohfKLVT6crVA==}
@@ -6243,12 +6245,12 @@ snapshots:
       lexical: 0.41.0
       yjs: 13.6.24
 
-  '@lottiefiles/dotlottie-react@0.19.2(react@19.2.6)':
+  '@lottiefiles/dotlottie-react@0.19.4(react@19.2.6)':
     dependencies:
-      '@lottiefiles/dotlottie-web': 0.72.1
+      '@lottiefiles/dotlottie-web': 0.74.0
       react: 19.2.6
 
-  '@lottiefiles/dotlottie-web@0.72.1': {}
+  '@lottiefiles/dotlottie-web@0.74.0': {}
 
   '@monaco-editor/loader@1.7.0':
     dependencies:
