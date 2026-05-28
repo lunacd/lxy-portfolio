@@ -1,9 +1,8 @@
 import { ProjectPage } from "@payload-types";
 import { Payload } from "payload";
-import React from "react";
 import "server-only";
-import Block from "src/blocks/Block";
 
+import Block from "@/blocks/Block";
 import Row from "@/components/Row";
 
 export type RowBlockProps = Extract<

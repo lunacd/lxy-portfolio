@@ -2,9 +2,9 @@ import config from "@payload-config";
 import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 import "server-only";
-import Blocks from "src/blocks/Blocks";
-import TitleBlock from "src/blocks/TitleBlock";
 
+import Blocks from "@/blocks/Blocks";
+import TitleBlock from "@/blocks/TitleBlock";
 import { RefreshRouteOnSave } from "@/components/RefreshRouteOnSave";
 import Scroller from "@/components/Scroller";
 import { PortfolioType, stringIsType } from "@/utils/CommonTypes";
