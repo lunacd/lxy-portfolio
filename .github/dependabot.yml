@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 3
     ignore:
       - dependency-name: react
       - dependency-name: react-dom
