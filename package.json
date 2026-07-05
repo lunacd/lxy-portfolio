@@ -30,7 +30,7 @@
     "@tabler/icons-react": "3.44.0",
     "@vercel/speed-insights": "2.0.0",
     "classnames": "2.5.1",
-    "motion": "12.42.0",
+    "motion": "12.42.2",
     "next": "16.2.9",
     "next-scroll-restoration": "0.0.4",
     "payload": "3.85.1",
