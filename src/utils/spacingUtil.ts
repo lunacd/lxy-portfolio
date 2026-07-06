@@ -1,11 +1,5 @@
 export type Spacing =
-  | "none"
-  | "small"
-  | "medium"
-  | "regular"
-  | "large"
-  | "xl"
-  | "xxl";
+  "none" | "small" | "medium" | "regular" | "large" | "xl" | "xxl";
 
 export function getSpacing(spacing: Spacing): string {
   switch (spacing) {
