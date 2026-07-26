@@ -18,7 +18,7 @@
     "generate:importmap": "payload generate:importmap"
   },
   "dependencies": {
-    "@chakra-ui/react": "3.36.0",
+    "@chakra-ui/react": "3.36.1",
     "@lottiefiles/dotlottie-react": "0.19.12",
     "@lottiefiles/dotlottie-web": "0.78.2",
     "@next/third-parties": "16.2.10",
@@ -27,7 +27,7 @@
     "@payloadcms/next": "3.85.2",
     "@payloadcms/richtext-lexical": "3.85.2",
     "@payloadcms/storage-s3": "3.85.2",
-    "@tabler/icons-react": "3.44.0",
+    "@tabler/icons-react": "3.45.0",
     "@vercel/speed-insights": "2.0.0",
     "classnames": "2.5.1",
     "motion": "12.42.2",
