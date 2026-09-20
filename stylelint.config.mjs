@@ -13,6 +13,12 @@ const config = {
         ignoreAtRules: ["apply"],
       },
     ],
+    "at-rule-prelude-no-invalid": [
+      true,
+      {
+        ignoreAtRules: ["apply"],
+      },
+    ],
   },
 };
 
