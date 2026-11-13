@@ -9,3 +9,5 @@ onlyBuiltDependencies:
   - esbuild
   - sharp
   - unrs-resolver
+overrides:
+  "dompurify": ">=3.4.17"
