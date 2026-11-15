@@ -11,3 +11,4 @@ onlyBuiltDependencies:
   - unrs-resolver
 overrides:
   "dompurify": ">=3.4.17"
+  "@lexical/headless": ">=0.53.0"
